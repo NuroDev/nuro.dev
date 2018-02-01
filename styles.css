@@ -1,26 +1,26 @@
 /*=============================
-  Global Styles
+  Core Styles
 =============================*/
 html {
   height: 100vh;
   color: #fff;
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 500;
+  text-align: left;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   text-transform: uppercase;
   letter-spacing: .2em;
   background-color: #03A9F4;
   background: linear-gradient(180deg, rgba(3, 169, 244, 0.75) 0%, rgba(13, 71, 161, 0.5) 100%) fixed, url('public/bg.png');
   background-attachment: fixed;
   background-size: cover;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   overflow: hidden;
 }
 
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
 }
 
 .container {
@@ -28,18 +28,33 @@ html {
   height: 100vh;
 }
 
+/*=============================
+  Content
+=============================*/
 .content {
   position: fixed;
   bottom: 10%;
   left: 5%;
   float: left;
-  text-align: left;
   overflow: hidden;
 }
 
 .logo {
   width: 326px;
   height: 128px;
+  animation: 1s ease-in-out 0s 1 slideInFromLeft;
+}
+
+.header {
+  animation: 1.25s ease-in-out 0s 1 slideInFromLeft;
+}
+
+.subHeader {
+  animation: 1.5s ease-in-out 0s 1 slideInFromLeft;
+}
+
+.links {
+  animation: 1.75s ease-in-out 0s 1 slideInFromLeft;
 }
 
 .link-icons {
@@ -69,6 +84,9 @@ h2 {
   margin-bottom: 20px;
 }
 
+/*=============================
+  Responsiveness
+=============================*/
 @media (max-width: 500px) {
   .content {
     bottom: 5%;
@@ -84,5 +102,19 @@ h2 {
     font-size: 15px;
     margin: 5px;
     margin-bottom: 20px;
+  }
+}
+
+/*=============================
+  Transitions
+=============================*/
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
