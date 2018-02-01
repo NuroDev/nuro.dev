@@ -1,0 +1,5 @@
+node_modules
+build
+.tmp
+.next
+.DS_Store
