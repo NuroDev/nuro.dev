@@ -9,9 +9,15 @@
 
           <br />
 
-          <v-card light class='pa-1 ma-4 elevation-1 repoCard' :style='"border-left: 10px solid " + CalculateBorderColor(repos.language)' v-for='(repos, i) in repos' :key='i'>
+          <v-card light class='pa-1 ma-4 elevation-2 repoCard' :style='"border-left: 10px solid " + CalculateBorderColor(repos.language)' v-for='(repos, i) in repos' :key='i'>
             <v-card-media>
               <v-spacer />
+              <v-tooltip left v-if='repos.archived' >
+                <v-btn flat icon large ripple color='grey darken-3' class='ma-2' slot='activator'>
+                  <v-icon color='grey darken-3'>archive</v-icon>
+                </v-btn>
+                <span>Archived</span>
+              </v-tooltip>
               <span class='headline mt-3' v-html='repos.name' />
               <v-btn flat icon large color='grey darken-3' ripple :href='repos.html_url' class='ma-2'>
                 <v-icon color='grey darken-3'>open_in_new</v-icon>
@@ -111,5 +117,8 @@ export default {
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
     transform: scale(1.025);
+  }
+  .repoCard:active {
+    transform: scale(0.97);
   }
 </style>
