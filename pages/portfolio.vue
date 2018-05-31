@@ -61,6 +61,9 @@ export default {
       if (inputLang === 'C++') {
         return '#f34b7d'
       }
+      if (inputLang === 'C#') {
+        return '#f34b7d'
+      }
       if (inputLang === 'Rust') {
         return '#dea584'
       }
