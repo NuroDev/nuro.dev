@@ -91,6 +91,9 @@ export default {
       if (inputLang === 'JavaScript') {
         return '#f1e05a'
       }
+      if (inputLang === 'Vue') {
+        return '#2c3e50'
+      }
       if (inputLang === 'Lua') {
         return '#000080'
       }
