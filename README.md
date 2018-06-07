@@ -8,7 +8,7 @@
 <br />
 <br />
 
-<img alt='Website' src="https://github.com/NuroDev/nuro-sh/blob/master/screenshot.png?raw=true" />
+<img alt='Website' src="screenshot.png" />
 
 </div>
 
