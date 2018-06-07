@@ -9,23 +9,15 @@
 
           <br />
 
-          <v-flex xs12 sm12 md12 lg12 xl12>
-            <v-card light class='elevation-0'>
-              <v-card-title>
-                <span class='contactTwitterText'>The best place to contact me for a fast response is on Twitter: </span>
-                <v-btn flat block large color='grey darken-3' href='https://twitter.com/nurodev'>
-                  <icon name="twitter" class='iconLeft' />
-                  <span>Twitter</span>
-                </v-btn>
-              </v-card-title>
-              <v-card-title>
-                <span class='contactTwitterText'>For all other enquiries, feel free to send me an email: </span>
-                <v-btn flat block large color='grey darken-3' href='mailto:me@nuro.sh'>
-                  <icon name="mail" class='iconLeft' />
-                  <span>Email</span>
-                </v-btn>
-              </v-card-title>
-            </v-card>
+          <v-flex xs12>
+            <v-btn flat large color='grey darken-3' class='roundedButton' href='https://twitter.com/nurodev'>
+              <icon name='twitter' class='iconLeft' />
+              <span>Twitter</span>
+            </v-btn>
+            <v-btn flat large color='grey darken-3' class='roundedButton' href='mailto:me@nuro.sh'>
+              <icon name='mail' class='iconLeft' />
+              <span>Email</span>
+            </v-btn>
           </v-flex>
         </v-flex>
       </v-layout>
