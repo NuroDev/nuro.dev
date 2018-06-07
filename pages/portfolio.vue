@@ -3,30 +3,36 @@
     <AppToolbar />
     <v-container fluid text-xs-center>
       <v-layout row wrap align-center>
-        <v-flex xs12 sm12 md12 lg12 xl12 class='contentContainer'>
+        <v-flex xs12 class='contentContainer'>
 
           <h1 class='portfolioHeader display-2 mb-4'>Portfolio</h1>
 
           <br />
 
-          <v-card light class='pa-1 ma-4 elevation-2 repoCard' :style='"border-left: 10px solid " + CalculateBorderColor(repos.language)' v-for='(repos, i) in repos' :key='i'>
+          <v-card light class='pa-4 ma-4 elevation-2 repoCard' :style='"border-left: 10px solid " + CalculateBorderColor(repos.language) + ";"' v-for='(repos, i) in repos' :key='i'>
             <v-card-media>
               <v-spacer />
               <v-tooltip left v-if='repos.archived' >
                 <v-btn flat icon large ripple color='grey darken-3' class='ma-2' slot='activator'>
-                  <v-icon color='grey darken-3'>archive</v-icon>
+                  <icon name='package' />
                 </v-btn>
                 <span>Archived</span>
               </v-tooltip>
+              <v-tooltip left v-if='repos.fork' >
+                <v-btn flat icon large ripple color='grey darken-3' class='ma-2' slot='activator'>
+                  <v-icon>call_split</v-icon>
+                </v-btn>
+                <span>Fork</span>
+              </v-tooltip>
               <span class='headline mt-3' v-html='repos.name' />
               <v-btn flat icon large color='grey darken-3' ripple :href='repos.html_url' class='ma-2'>
-                <v-icon color='grey darken-3'>open_in_new</v-icon>
+                <icon name='external-link' />
               </v-btn>
               <v-spacer />
             </v-card-media>
             <v-card-text>
               <v-btn flat large color='amber' ripple class='mr-4'>
-                <v-icon left color='amber'>star</v-icon>
+                <icon name='star' class='iconLeft' />
                 <span v-html='repos.stargazers_count' />
               </v-btn>
               <span v-html='repos.description' />
