@@ -64,6 +64,12 @@ export default {
       if (inputLang === 'C#') {
         return '#f34b7d'
       }
+      if (inputLang === 'Objective-C') {
+        return '#438eff'
+      }
+      if (inputLang === 'Swift') {
+        return '#ffac45'
+      }
       if (inputLang === 'Rust') {
         return '#dea584'
       }
