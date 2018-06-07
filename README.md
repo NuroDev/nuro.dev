@@ -1,7 +1,27 @@
-# [nuro.sh](https://nuro.sh)
-> Website for nuro.sh
+<div align="center">
 
-[![License](https://img.shields.io/aur/license/yaourt.svg?style=flat-square&colorB=f44336)](https://github.com/Meadowcottage/meadowcottage.github.io/blob/master/LICENSE)
-[![gitmoji](https://img.shields.io/badge/gitmoji-%20%F0%9F%98%9C%20%F0%9F%98%8D-FFDD67.svg?style=flat-square)](https://gitmoji.carloscuesta.me/)
+<h1> NURO.SH </h1>
+<p> Website for nuro.sh 🖥️ </p>
 
-<img alt='nuro.sh' src="Screenshot.png">
+[![License](https://img.shields.io/badge/license-mit-blue.svg?longCache=true&style=for-the-badge)](http://www.gnu.org/licenses/) [![gitmoji](https://img.shields.io/badge/gitmoji-%20%F0%9F%98%9C%20%F0%9F%98%8D-FFDD67.svg?longCache=true&style=for-the-badge)](https://gitmoji.carloscuesta.me/)
+
+<br />
+<br />
+
+<img alt='Website' src="screenshot.png" />
+
+</div>
+
+## Development
+
+```
+$ git clone https://github.com/nurodev/nuro-sh.git
+$ npm install 
+# yarn
+$ npm run dev 
+# yarn dev
+```
+
+## License
+
+MIT
