@@ -108,6 +108,9 @@ export default {
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
     transform: scale(1.0);
+    -webkit-box-shadow: 0 8px 15px rgba(125, 147, 178, 0.25)!important;
+    -moz-box-shadow: 0 8px 15px rgba(125, 147, 178, 0.25)!important;
+    box-shadow: 0 8px 15px rgba(125, 147, 178, 0.25)!important;
   }
   .repoCard:hover {
     -webkit-transition: all 0.5s;
