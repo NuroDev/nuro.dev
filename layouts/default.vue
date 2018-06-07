@@ -16,6 +16,7 @@
   ::-webkit-scrollbar { 
     display: none; 
   }
+
   html,
   body,
   .application.theme--light,
@@ -30,18 +31,39 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
   .container {
     padding: 0!important;
   }
+
   .btn--large {
     font-size: 16px;
   }
+
   .iconLeft {
     margin-right: 16px;
   }
+
   .roundedButton {
     border-radius: 40px!important;
   }
+
+  .spacedLetters {
+    letter-spacing: .20em!important;
+  }
+
+  .contentContainer {
+    background-color: #fafcff!important;
+    height: 100%;
+    padding: 20px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: .20em;
+    color: #424242;
+    animation: 1s ease-in-out 0s 1 slideInLeft;
+  }
+  
   @keyframes slideInLeft {
     0% {
       opacity: 0;

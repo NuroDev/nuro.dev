@@ -1,15 +1,15 @@
 <template>
-  <section class='white portfolioContainer elevation-0'>
+  <section class='contentContainer elevation-0'>
     <AppToolbar />
     <v-container fluid text-xs-center>
       <v-layout row wrap align-center>
-        <v-flex xs12 class='contentContainer'>
+        <v-flex xs12>
 
-          <h1 class='portfolioHeader display-2 mb-4'>Portfolio</h1>
+          <h1 class='spacedLetters display-2 mb-4'>Portfolio</h1>
 
           <br />
 
-          <v-card light class='pa-4 ma-4 elevation-2 repoCard' :style='"border-left: 10px solid " + CalculateBorderColor(repos.language) + ";"' v-for='(repos, i) in repos' :key='i'>
+          <v-card light class='pa-4 ma-4 elevation-0 repoCard' :style='"border-left: 10px solid " + CalculateBorderColor(repos.language) + ";"' v-for='(repos, i) in repos' :key='i'>
             <v-card-media>
               <v-spacer />
               <v-tooltip left v-if='repos.archived' >
@@ -103,25 +103,6 @@ export default {
 </script>
 
 <style>
-  .portfolioContainer {
-    height: 100%;
-    padding: 20px;
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: .20em;
-    color: #424242;
-    animation: 1s ease-in-out 0s 1 slideInLeft;
-  }
-  .portfolioAvatar {
-    margin: 60px;
-  }
-  .portfolioHeader {
-    letter-spacing: .20em!important;
-  }
-  .portfolioSubHeader {
-    font-weight: 300!important;
-  }
   .repoCard {
     border-radius: 8px!important;
     -webkit-transition: all 0.5s;

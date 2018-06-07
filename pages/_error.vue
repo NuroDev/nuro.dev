@@ -1,5 +1,5 @@
 <template>
-  <v-jumbotron color='white' height='100vh'>
+  <v-jumbotron class='contentContainer elevation-0'>
     <v-container fill-height text-xs-center>
       <v-layout row wrap align-center>
         <v-flex xs12 sm12 md12 lg12 xl12 class='error'>
