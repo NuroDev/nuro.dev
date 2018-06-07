@@ -1,5 +1,5 @@
 <template>
-  <section class='white portfolioContainer elevation-24' dark>
+  <section class='white portfolioContainer elevation-0'>
     <AppToolbar />
     <v-container fluid text-xs-center>
       <v-layout row wrap align-center>

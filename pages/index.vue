@@ -1,5 +1,5 @@
 <template>
-  <section class='white indexContainer elevation-24' dark>
+  <section class='white indexContainer elevation-0'>
     <v-container fill-height text-xs-center>
       <v-layout row wrap align-center>
         <v-flex xs12 sm12 md12 lg12 xl12 class='contentContainer'>
@@ -14,22 +14,22 @@
           <br />
           <p class='indexSubHeader subheading'>Computer Games Programmer | Web Developer</p>
 
-          <v-flex xs12 sm12 md12 lg12 xl12>
-            <v-btn flat large color='grey darken-3' to='/portfolio'>
-              <icon name="image" class='iconLeft' />
+          <v-flex xs12>
+            <v-btn flat large color='grey darken-3' class='roundedButton' to='/portfolio'>
+              <icon name='image' class='iconLeft' />
               <span>Portfolio</span>
             </v-btn>
-            <v-btn flat large color='grey darken-3' href='/CV.pdf'>
-              <icon name="file-text" class='iconLeft' />
+            <v-btn flat large color='grey darken-3' class='roundedButton' href='/CV.pdf'>
+              <icon name='file-text' class='iconLeft' />
               <span>CV</span>
             </v-btn>
             <br />
-            <v-btn flat large color='grey darken-3' href='https://github.com/nurodev'>
-              <icon name="github" class='iconLeft' />
+            <v-btn flat large color='grey darken-3' class='roundedButton' href='https://github.com/nurodev'>
+              <icon name='github' class='iconLeft' />
               <span>Github</span>
             </v-btn>
-            <v-btn flat large color='grey darken-3' to='/contact'>
-              <icon name="mail" class='iconLeft' />
+            <v-btn flat large color='grey darken-3' class='roundedButton' to='/contact'>
+              <icon name='mail' class='iconLeft' />
               <span>Contact</span>
             </v-btn>
           </v-flex>
@@ -49,7 +49,6 @@ export default {
   }
 }
 </script>
-
 
 <style>
   .indexContainer {

@@ -39,6 +39,9 @@
   .iconLeft {
     margin-right: 16px;
   }
+  .roundedButton {
+    border-radius: 40px!important;
+  }
   @keyframes slideInLeft {
     0% {
       opacity: 0;

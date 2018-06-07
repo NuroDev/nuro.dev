@@ -1,5 +1,5 @@
 <template>
-  <section class='white contactContainer elevation-24' dark>
+  <section class='white contactContainer elevation-0'>
     <AppToolbar />
     <v-container fill-height text-xs-center>
       <v-layout row wrap align-center>
@@ -42,7 +42,6 @@ export default {
   }
 }
 </script>
-
 
 <style>
   .contactContainer {

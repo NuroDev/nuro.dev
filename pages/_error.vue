@@ -1,5 +1,5 @@
 <template>
-  <v-jumbotron color='white' height='100vh' dark>
+  <v-jumbotron color='white' height='100vh'>
     <v-container fill-height text-xs-center>
       <v-layout row wrap align-center>
         <v-flex xs12 sm12 md12 lg12 xl12 class='error'>
@@ -8,7 +8,7 @@
           <p class='errorSubTitle'>Sadly the page you were  <br /> looking for could not be found... </p>
 
           <v-btn flat large color='grey darken-3' to='/'>
-            <v-icon left>reply</v-icon>
+            <v-icon left>arrow_back</v-icon>
             <span>Back to Home</span>
           </v-btn>
 
