@@ -117,7 +117,7 @@ export default {
     font-weight: 300!important;
   }
   .repoCard {
-    border-radius: 4px!important;
+    border-radius: 8px!important;
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
     transform: scale(1.0);
