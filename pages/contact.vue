@@ -14,7 +14,11 @@
               <icon name='twitter' class='iconLeft' />
               <span>Twitter</span>
             </v-btn>
-            <v-btn flat large color='grey darken-3' class='roundedButton' href='mailto:me@nuro.sh'>
+            <v-btn flat large round color='grey darken-3' href='https://www.linkedin.com/in/nurodev/'>
+              <icon name='briefcase' class='iconLeft' />
+              <span>LinkedIn</span>
+            </v-btn>
+            <v-btn flat large round color='grey darken-3' href='mailto:me@nuro.sh'>
               <icon name='mail' class='iconLeft' />
               <span>Email</span>
             </v-btn>
