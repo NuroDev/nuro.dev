@@ -15,20 +15,15 @@
           <p class='subheading'>Computer Games Programmer | Web Developer</p>
 
           <v-flex xs12>
-            <v-btn flat large color='grey darken-3' class='roundedButton' to='/portfolio'>
+            <v-btn flat large round color='grey darken-3' to='/portfolio' prefetch>
               <icon name='image' class='iconLeft' />
               <span>Portfolio</span>
             </v-btn>
-            <v-btn flat large color='grey darken-3' class='roundedButton' href='/CV.pdf'>
-              <icon name='file-text' class='iconLeft' />
-              <span>CV</span>
-            </v-btn>
-            <br />
-            <v-btn flat large color='grey darken-3' class='roundedButton' href='https://github.com/nurodev'>
+            <v-btn flat large round color='grey darken-3' href='https://github.com/nurodev' prefetch>
               <icon name='github' class='iconLeft' />
               <span>Github</span>
             </v-btn>
-            <v-btn flat large color='grey darken-3' class='roundedButton' to='/contact'>
+            <v-btn flat large round color='grey darken-3' to='/contact' prefetch>
               <icon name='mail' class='iconLeft' />
               <span>Contact</span>
             </v-btn>

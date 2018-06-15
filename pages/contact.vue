@@ -6,11 +6,11 @@
         <v-flex xs12 sm12 md12 lg12 xl12>
 
           <h1 class='contactHeader display-2'>Contact</h1>
-
+          
           <br />
 
           <v-flex xs12>
-            <v-btn flat large color='grey darken-3' class='roundedButton' href='https://twitter.com/nurodev'>
+            <v-btn flat large round color='grey darken-3' href='https://twitter.com/nurodev'>
               <icon name='twitter' class='iconLeft' />
               <span>Twitter</span>
             </v-btn>

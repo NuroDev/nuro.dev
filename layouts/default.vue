@@ -44,10 +44,6 @@
     margin-right: 16px;
   }
 
-  .roundedButton {
-    border-radius: 40px!important;
-  }
-
   .spacedLetters {
     letter-spacing: .20em!important;
   }

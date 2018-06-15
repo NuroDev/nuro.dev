@@ -31,7 +31,7 @@
               <v-spacer />
             </v-card-media>
             <v-card-text>
-              <v-btn flat large color='amber' ripple class='mr-4'>
+              <v-btn flat large round color='amber' ripple class='mr-4'>
                 <icon name='star' class='iconLeft' />
                 <span v-html='repos.stargazers_count' />
               </v-btn>
