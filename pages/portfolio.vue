@@ -10,7 +10,7 @@
           <br />
 
           <v-card light class='pa-4 ma-4 elevation-0 repoCard' :style='"border-left: 10px solid " + CalculateBorderColor(repos.language) + ";"' v-for='(repos, i) in repos' :key='i'>
-            <v-card-media>
+            <v-card-title>
               <v-spacer />
               <v-tooltip left v-if='repos.archived' >
                 <v-btn flat icon large ripple color='grey darken-3' class='ma-2' slot='activator'>
@@ -24,12 +24,12 @@
                 </v-btn>
                 <span>Fork</span>
               </v-tooltip>
-              <span class='headline mt-3' v-html='repos.name' />
-              <v-btn flat icon large color='grey darken-3' ripple :href='repos.html_url' class='ma-2'>
+              <span class='headline mt-1' v-html='repos.name' />
+              <v-btn flat icon large color='grey darken-3' ripple :href='repos.html_url'>
                 <icon name='external-link' />
               </v-btn>
               <v-spacer />
-            </v-card-media>
+            </v-card-title>
             <v-card-text>
               <v-btn flat large round color='amber' ripple class='mr-4'>
                 <icon name='star' class='iconLeft' />
