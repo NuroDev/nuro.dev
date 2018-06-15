@@ -25,10 +25,10 @@
   },
   "dependencies": {
     "@nuxtjs/pwa": "latest",
-    "feather-icons": "^4.7.0",
+    "feather-icons": "latest",
     "nuxt": "latest",
-    "vue-feather-icons-ssr": "^0.1.7",
-    "vue-resource": "^1.5.0",
+    "vue-feather-icons-ssr": "latest",
+    "vue-resource": "latest",
     "vuetify": "latest"
   },
   "devDependencies": {

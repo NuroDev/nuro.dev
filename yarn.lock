@@ -1511,6 +1511,10 @@ core-js@^2.4.0, core-js@^2.5.0:
   version "2.5.5"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.5.tgz#b14dde936c640c0579a6b50cabcc132dd6127e3b"
 
+core-js@^2.5.3:
+  version "2.5.7"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.7.tgz#f972608ff0cead68b841a16a932d0b183791814e"
+
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
@@ -2427,11 +2431,12 @@ feather-icons@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/feather-icons/-/feather-icons-3.3.0.tgz#510d1b37cd99463f2439fc7c673577b8398ac2f2"
 
-feather-icons@^4.7.0:
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/feather-icons/-/feather-icons-4.7.0.tgz#78b4c78022f091b94e57b1b6fc81721a76387cfd"
+feather-icons@latest:
+  version "4.7.3"
+  resolved "https://registry.yarnpkg.com/feather-icons/-/feather-icons-4.7.3.tgz#c33d95f2df4582f26a0bb4c11f281fe7faec12aa"
   dependencies:
     classnames "^2.2.5"
+    core-js "^2.5.3"
 
 figures@^2.0.0:
   version "2.0.0"
@@ -6344,7 +6349,7 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-feather-icons-ssr@^0.1.7:
+vue-feather-icons-ssr@latest:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/vue-feather-icons-ssr/-/vue-feather-icons-ssr-0.1.7.tgz#142f8b56e1f4b1447a7e245a571780ced0db7a93"
   dependencies:
@@ -6380,9 +6385,9 @@ vue-meta@^1.4.3:
     lodash.isplainobject "^4.0.6"
     object-assign "^4.1.1"
 
-vue-resource@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/vue-resource/-/vue-resource-1.5.0.tgz#ba0c6ef7af2eeace03cf24a91f529471be974c72"
+vue-resource@latest:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/vue-resource/-/vue-resource-1.5.1.tgz#0f3d685e3254d21800bebd966edcf56c34b3b6e4"
   dependencies:
     got "^8.0.3"
 
