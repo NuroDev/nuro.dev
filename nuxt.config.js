@@ -70,9 +70,10 @@ module.exports = {
     sizes: [ 16, 128, 144, 152, 192, 256, 512 ]
   },
   plugins: [
+    '~/plugins/axios.js',
     '~/plugins/vuetify.js',
-    '~/plugins/feather-icons.js',
-    '~/plugins/vue-resource.js'
+    '~/plugins/feather-icons.js'
+    
   ],
   css: [
     '~/assets/style/app.styl'

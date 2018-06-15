@@ -57,11 +57,6 @@ export default {
       repos: []
     }
   },
-  mounted: function () {
-    this.$http.get('https://api.github.com/users/nurodev/repos', {responseType: 'json'}).then(response => {
-      this.repos = response.data.sort()
-    })
-  },
   methods: {
     CalculateBorderColor: (inputLang) => {
       if (inputLang === 'C++') {
@@ -101,6 +96,11 @@ export default {
         return '#89e051'
       }
     }
+  },
+  mounted: function () {
+    this.$http.get('https://api.github.com/users/nurodev/repos', {responseType: 'json'}).then(response => {
+      this.repos = response.data.sort()
+    })
   }
 }
 </script>
