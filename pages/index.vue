@@ -35,16 +35,6 @@
   </section>
 </template>
 
-<script>
-import FeatherIcon from '~/components/feather-icons'
-
-export default {
-  components: {
-    FeatherIcon
-  }
-}
-</script>
-
 <style>
   .indexAvatar {
     margin: 60px;

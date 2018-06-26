@@ -71,9 +71,8 @@ module.exports = {
   },
   plugins: [
     '~/plugins/axios.js',
-    '~/plugins/vuetify.js',
-    '~/plugins/feather-icons.js'
-    
+    '~/plugins/featherIcons.js',
+    '~/plugins/vuetify.js'
   ],
   css: [
     '~/assets/style/app.styl'

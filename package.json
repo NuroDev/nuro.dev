@@ -26,7 +26,6 @@
   "dependencies": {
     "@nuxtjs/pwa": "latest",
     "axios": "latest",
-    "feather-icons": "latest",
     "nuxt": "latest",
     "vue-axios": "latest",
     "vue-feather-icons-ssr": "latest",
