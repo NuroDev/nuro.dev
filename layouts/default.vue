@@ -1,13 +1,11 @@
 <template>
-  <v-app dark>
+  <v-app>
     <v-content>
-      <v-container fluid>
-        <v-layout>
-          <v-flex xs12 sm12 md6 lg6 xl6>
-            <nuxt />
-          </v-flex>
-        </v-layout>
-      </v-container>
+      <v-layout fill-height>
+        <v-flex xs12 sm12 md6 lg6 xl6>
+          <nuxt />
+        </v-flex>
+      </v-layout>
     </v-content>
   </v-app>
 </template>
@@ -21,9 +19,9 @@
   body,
   .application.theme--light,
   .application.theme--dark {
-    background: -moz-linear-gradient(top, rgba(41, 182, 246, 0.75) 0%,rgba(31, 30, 161, 0.75) 100%)fixed, url('/bg.webp'), url('/bg.png');
-    background: -webkit-linear-gradient(top, rgba(41, 182, 246, 0.75) 0%,rgba(31, 30, 161, 0.75) 100%)fixed, url('/bg.webp'), url('/bg.png');
-    background: linear-gradient(to bottom, rgba(41, 182, 246, 0.75) 0%,rgba(31, 30, 161, 0.75) 100%)fixed, url('/bg.webp'), url('/bg.png');
+    background: -moz-linear-gradient(top, rgba(79, 195, 247, 0.6) 0%,rgba(31, 30, 161, 0.6) 100%)fixed, url('/bg.webp'), url('/bg.jpg'), url('/bg_original.png');
+    background: -webkit-linear-gradient(top, rgba(79, 195, 247, 0.6) 0%,rgba(31, 30, 161, 0.6) 100%)fixed, url('/bg.webp'), url('/bg.jpg'), url('/bg_original.png');
+    background: linear-gradient(to bottom, rgba(79, 195, 247, 0.6) 0%,rgba(31, 30, 161, 0.6) 100%)fixed, url('/bg.webp'), url('/bg.jpg'), url('/bg_original.png');
     background-attachment: fixed;
     background-size: cover;
     margin: 0;
