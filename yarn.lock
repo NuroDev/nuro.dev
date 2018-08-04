@@ -6179,6 +6179,10 @@ vue-axios@latest:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/vue-axios/-/vue-axios-2.1.1.tgz#6167f2db93065d9bcfc90e65d063ccf34f8b1d63"
 
+vue-confetti@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/vue-confetti/-/vue-confetti-0.4.1.tgz#ee48fb531d90c89b798678aa90ff2d60ca5768b2"
+
 vue-feather-icons-ssr@latest:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/vue-feather-icons-ssr/-/vue-feather-icons-ssr-0.1.7.tgz#142f8b56e1f4b1447a7e245a571780ced0db7a93"

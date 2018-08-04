@@ -71,6 +71,7 @@ module.exports = {
   },
   plugins: [
     '~/plugins/axios.js',
+    '~/plugins/confetti.js',
     '~/plugins/featherIcons.js',
     '~/plugins/vuetify.js'
   ],

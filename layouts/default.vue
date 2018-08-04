@@ -10,6 +10,21 @@
   </v-app>
 </template>
 
+<script>
+  export default {
+    mounted: function () {
+      let currentDate = new Date().getDate()
+      let currentMonth = new Date().getMonth()
+
+      if (currentMonth === 7 && currentDate === 9) {
+        this.$confetti.start({
+          shape: 'circle'
+        })
+      }
+    }
+  }
+</script>
+
 <style>
   ::-webkit-scrollbar { 
     display: none; 

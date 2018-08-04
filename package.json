@@ -28,6 +28,7 @@
     "axios": "latest",
     "nuxt": "latest",
     "vue-axios": "latest",
+    "vue-confetti": "^0.4.1",
     "vue-feather-icons-ssr": "latest",
     "vuetify": "latest"
   },
