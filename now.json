@@ -1,0 +1,9 @@
+{
+    "version": 2,
+    "name": "nuro-sh",
+    "alias": "nuro.sh",
+    "public": true,
+    "builds": [
+      { "src": "package.json", "use": "@now/static-build" }
+    ]
+  }
