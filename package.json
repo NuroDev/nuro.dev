@@ -1,48 +1,27 @@
 {
   "name": "nuro-sh",
-  "version": "1.1.1",
-  "description": "Website for nuro.sh",
-  "author": "NURO",
+  "version": "1.1.2",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
-  },
-  "now": {
-    "name": "nuro-sh",
-    "alias": [
-      "nuro.sh"
-    ],
-    "public": true,
-    "scale": {
-      "bru1": {
-        "min": 1,
-        "max": 1
-      }
-    }
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@nuxtjs/pwa": "latest",
-    "axios": "latest",
-    "nuxt": "latest",
-    "vue-axios": "latest",
-    "vue-confetti": "^0.4.1",
-    "vue-feather-icons-ssr": "latest",
-    "vuetify": "latest"
+    "@babel/polyfill": "^7.0.0-rc.1",
+    "vue": "^2.5.21",
+    "vue-router": "^3.0.1",
+    "vuetify": "^1.3.0"
   },
   "devDependencies": {
-    "babel-eslint": "^7.2.3",
-    "eslint": "^4.3.0",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-loader": "^1.9.0",
-    "eslint-plugin-html": "^3.1.1",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-node": "^5.1.1",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.1"
+    "@vue/cli-plugin-babel": "^3.3.0",
+    "@vue/cli-plugin-eslint": "^3.3.0",
+    "@vue/cli-service": "^3.3.0",
+    "@vue/eslint-config-prettier": "^4.0.1",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.8.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "vue-cli-plugin-vuetify": "^0.4.6",
+    "vue-template-compiler": "^2.5.21"
   }
 }
