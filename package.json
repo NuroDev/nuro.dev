@@ -19,7 +19,7 @@
     "vue-confetti": "^2.0.5",
     "vue-feather-icons-ssr": "latest",
     "vue-niege": "^0.1.1",
-    "vuetify": "latest"
+    "vuetify": "1.5.19"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
