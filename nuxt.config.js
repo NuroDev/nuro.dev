@@ -1,25 +1,7 @@
 module.exports = {
-  /*
-  ** Build configuration
-  */
-  build: {
-    vendor: [
-      '~/plugins/vuetify.js'
-    ],
-    extractCSS: true,
-    /*
-    ** Run ESLint on save
-    */
-    extend (config, ctx) {
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-    }
+  mode: 'spa',
+  generate: {
+    dir: 'public'
   },
   render: {
     http2: {
@@ -53,7 +35,7 @@ module.exports = {
     name: 'NURO | Developer',
     description: 'NURO | Developer',
     lang: 'en',
-    theme_color: '#2196F3'
+    theme_color: '#ffffff'
   },
   manifest: {
     name: 'NURO',
@@ -63,13 +45,14 @@ module.exports = {
     start_url: '/',
     display: 'standalone',
     orientation: 'portrait',
-    background_color: '#2196F3',
-    theme_color: '#2196F3'
+    background_color: '#ffffff',
+    theme_color: '#ffffff'
   },
   icon: {
-    sizes: [ 16, 128, 144, 152, 192, 256, 512 ]
+    sizes: [16, 128, 144, 152, 192, 256, 512]
   },
   plugins: [
+    '~/plugins/aos.js',
     '~/plugins/axios.js',
     '~/plugins/confetti.js',
     '~/plugins/featherIcons.js',
