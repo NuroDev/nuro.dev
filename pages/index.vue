@@ -12,7 +12,7 @@
           <div data-aos="fade-up" data-aos-duration="1200" data-aos-easing="ease-in-out-back">
             <h1 class="spacedLetters display-2">👋🏻 Hello, I'm Ben</h1>
             <br />
-            <p class="subheading">Computer Games Programmer | Web Developer</p>
+            <p class="subheading">Games Programmer | Web Developer</p>
           </div>
 
           <v-flex xs12>
