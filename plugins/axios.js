@@ -1,5 +1,5 @@
-import Vue from 'vue'
-import Axios from 'axios'
-import VueAxios from 'vue-axios'
+import Vue from 'vue';
+import Axios from 'axios';
+import VueAxios from 'vue-axios';
 
-Vue.use(VueAxios, Axios)
+Vue.use(VueAxios, Axios);
