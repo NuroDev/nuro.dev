@@ -10,7 +10,7 @@
       <v-layout row wrap align-center justify-center>
         <v-flex xs12 sm6 md6 lg4 xl4>
           <h1
-            class="spacedLetters display-2 mb-4"
+            class="spacedLetters display-2 font-weight-black mb-4"
             data-aos="fade-down"
             data-aos-duration="1000"
             data-aos-easing="ease-in-out-back"
@@ -29,25 +29,25 @@
                 <v-spacer />
                 <v-tooltip left v-if="repos.archived">
                   <v-btn flat icon large ripple color="grey darken-3" class="ma-2" slot="activator">
-                    <icon name="package" />
+                    <IconArchived />
                   </v-btn>
                   <span>Archived</span>
                 </v-tooltip>
                 <v-tooltip left v-if="repos.fork">
                   <v-btn flat icon large ripple color="grey darken-3" class="ma-2" slot="activator">
-                    <v-icon>call_split</v-icon>
+                    <IconFork />
                   </v-btn>
                   <span>Fork</span>
                 </v-tooltip>
                 <span class="headline mt-1" v-html="repos.name" />
                 <v-btn flat icon large color="grey darken-3" ripple :href="repos.html_url">
-                  <icon name="external-link" />
+                  <IconLink />
                 </v-btn>
                 <v-spacer />
               </v-card-title>
               <v-card-text>
                 <v-btn flat large round color="amber" ripple class="mr-4">
-                  <icon name="star" class="iconLeft" />
+                  <IconStar class="mr-3" />
                   <span v-html="repos.stargazers_count" />
                 </v-btn>
                 <span v-html="repos.description" />
@@ -62,10 +62,18 @@
 
 <script>
 import AppToolbar from "~/components/appToolbar";
+import IconArchived from '~/static/icons/archived.svg';
+import IconFork from '~/static/icons/fork.svg';
+import IconLink from '~/static/icons/external-link.svg';
+import IconStar from '~/static/icons/star.svg';
 
 export default {
   components: {
-    AppToolbar
+    AppToolbar,
+    IconArchived,
+    IconFork,
+    IconLink,
+    IconStar
   },
   data() {
     return {

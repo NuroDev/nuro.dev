@@ -21,13 +21,27 @@
               large
               round
               color="grey darken-3"
-              to="/portfolio"
+              href="https://blog.nuro.sh"
               prefetch
               data-aos="fade-up"
               data-aos-duration="1400"
               data-aos-easing="ease-in-out-back"
             >
-              <icon name="image" class="iconLeft" />
+              <IconBlog class="mr-3" />
+              <span>Blog</span>
+            </v-btn>
+            <v-btn
+              flat
+              large
+              round
+              color="grey darken-3"
+              to="/portfolio"
+              prefetch
+              data-aos="fade-up"
+              data-aos-duration="1600"
+              data-aos-easing="ease-in-out-back"
+            >
+              <IconPortfolio class="mr-3" />
               <span>Portfolio</span>
             </v-btn>
             <v-btn
@@ -38,25 +52,41 @@
               href="https://github.com/nurodev"
               prefetch
               data-aos="fade-up"
-              data-aos-duration="1600"
+              data-aos-duration="1800"
               data-aos-easing="ease-in-out-back"
             >
-              <icon name="github" class="iconLeft" />
+              <IconGitHub class="mr-3" />
               <span>Github</span>
+            </v-btn>
+          </v-flex>
+          <v-flex xs12>
+            <v-btn
+              flat
+              large
+              round
+              color="grey darken-3"
+              href="https://twitter.com/nurodev"
+              prefetch
+              data-aos="fade-up"
+              data-aos-duration="2000"
+              data-aos-easing="ease-in-out-back"
+            >
+              <IconTwitter class="mr-3" />
+              <span>Twitter</span>
             </v-btn>
             <v-btn
               flat
               large
               round
               color="grey darken-3"
-              to="/contact"
+              href="https://www.linkedin.com/in/nurodev/"
               prefetch
               data-aos="fade-up"
-              data-aos-duration="1800"
+              data-aos-duration="2200"
               data-aos-easing="ease-in-out-back"
             >
-              <icon name="mail" class="iconLeft" />
-              <span>Contact</span>
+              <IconLinkedIn class="mr-3" />
+              <span>LinkedIn</span>
             </v-btn>
           </v-flex>
         </v-flex>
@@ -64,6 +94,24 @@
     </v-container>
   </section>
 </template>
+
+<script>
+import IconBlog from '~/static/icons/blog.svg';
+import IconGitHub from '~/static/icons/github.svg';
+import IconLinkedIn from '~/static/icons/linkedin.svg';
+import IconPortfolio from '~/static/icons/portfolio.svg';
+import IconTwitter from '~/static/icons/twitter.svg';
+
+export default {
+  components: {
+    IconBlog,
+    IconGitHub,
+    IconLinkedIn,
+    IconPortfolio,
+    IconTwitter,
+  }  
+}
+</script>
 
 <style>
 .indexAvatar {
