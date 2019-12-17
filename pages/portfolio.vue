@@ -41,7 +41,7 @@
 										icon
 										large
 										ripple
-										color="grey darken-3"
+										color="grey darken-1"
 										class="ma-2"
 										slot="activator"
 									>
@@ -55,7 +55,7 @@
 										icon
 										large
 										ripple
-										color="grey darken-3"
+										color="grey darken-1"
 										class="ma-2"
 										slot="activator"
 									>
@@ -68,7 +68,7 @@
 									flat
 									icon
 									large
-									color="grey darken-3"
+									color="grey darken-1"
 									ripple
 									:href="repos.html_url"
 								>
