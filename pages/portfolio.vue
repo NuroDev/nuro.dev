@@ -24,7 +24,6 @@
 						data-aos-easing="ease-in-out-back"
 					>
 						<v-card
-							light
 							class="pa-2 ma-4 elevation-0 repoCard"
 							:style="
 								'border-left: 10px solid ' +
@@ -170,9 +169,6 @@ export default {
 	-webkit-transition: all 0.5s;
 	transition: all 0.5s;
 	transform: scale(1);
-	-webkit-box-shadow: 0 8px 15px rgba(125, 147, 178, 0.25) !important;
-	-moz-box-shadow: 0 8px 15px rgba(125, 147, 178, 0.25) !important;
-	box-shadow: 0 8px 15px rgba(125, 147, 178, 0.25) !important;
 }
 .repoCard:hover {
 	-webkit-transition: all 0.5s;
@@ -181,5 +177,8 @@ export default {
 }
 .repoCard:active {
 	transform: scale(0.97);
+}
+.theme--dark.v-sheet {
+	background-color: #1C1D1F!important;
 }
 </style>

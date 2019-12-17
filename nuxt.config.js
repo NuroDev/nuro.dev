@@ -52,7 +52,7 @@ module.exports = {
 			name: 'NURO | Developer',
 			description: 'NURO | Developer',
 			lang: 'en',
-			theme_color: '#ffffff',
+			theme_color: '#1E1E24',
 		},
 		manifest: {
 			name: 'NURO',
@@ -62,8 +62,8 @@ module.exports = {
 			start_url: '/',
 			display: 'standalone',
 			orientation: 'portrait',
-			background_color: '#ffffff',
-			theme_color: '#ffffff',
+			background_color: '#1E1E24',
+			theme_color: '#1E1E24',
 		},
 		icon: {
 			sizes: [16, 128, 144, 152, 192, 256, 512],

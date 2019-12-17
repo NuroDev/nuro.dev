@@ -8,7 +8,7 @@
 						data-aos-duration="1000"
 						data-aos-easing="ease-in-out-back"
 					>
-						<v-avatar size="128px" class="indexAvatar elevation-24">
+						<v-avatar size="160px" class="indexAvatar elevation-0">
 							<img src="/avatar.png" alt="Avatar" />
 						</v-avatar>
 					</div>
@@ -18,7 +18,7 @@
 						data-aos-duration="1200"
 						data-aos-easing="ease-in-out-back"
 					>
-						<h1 class="spacedLetters display-2">👋🏻 Hello, I'm Ben</h1>
+						<h1 class="spacedLetters display-2 font-weight-black">👋🏻 Hello, I'm Ben</h1>
 						<br />
 						<p class="subheading">Games Programmer | Web Developer</p>
 					</div>
@@ -28,7 +28,7 @@
 							flat
 							large
 							round
-							color="grey darken-3"
+							color="white"
 							href="https://blog.nuro.sh"
 							prefetch
 							data-aos="fade-up"
@@ -42,7 +42,7 @@
 							flat
 							large
 							round
-							color="grey darken-3"
+							color="white"
 							to="/portfolio"
 							prefetch
 							data-aos="fade-up"
@@ -56,7 +56,7 @@
 							flat
 							large
 							round
-							color="grey darken-3"
+							color="white"
 							href="https://github.com/nurodev"
 							prefetch
 							data-aos="fade-up"
@@ -72,7 +72,7 @@
 							flat
 							large
 							round
-							color="grey darken-3"
+							color="white"
 							href="https://twitter.com/nurodev"
 							prefetch
 							data-aos="fade-up"
@@ -86,7 +86,7 @@
 							flat
 							large
 							round
-							color="grey darken-3"
+							color="white"
 							href="https://www.linkedin.com/in/nurodev/"
 							prefetch
 							data-aos="fade-up"
@@ -123,7 +123,7 @@ export default {
 
 <style>
 .indexAvatar {
-	margin: 60px;
+	margin: 20px;
 	-webkit-transition: all 0.5s;
 	transition: all 0.5s;
 	transform: scale(1);
@@ -135,5 +135,8 @@ export default {
 }
 .indexAvatar:active {
 	transform: scale(0.9);
+}
+.subheading {
+  color: #95a2b3!important;
 }
 </style>

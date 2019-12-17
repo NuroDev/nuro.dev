@@ -1,5 +1,5 @@
 <template>
-	<v-app>
+	<v-app dark>
 		<v-content>
 			<v-layout fill-height>
 				<v-flex xs12>
@@ -42,7 +42,7 @@ html,
 body,
 .application.theme--light,
 .application.theme--dark {
-	background-color: #ffffff !important;
+	background: linear-gradient(180deg,#15151E 0%,#1E1E24 100%) !important;
 	margin: 0;
 	font-family: 'Roboto', Arial, Helvetica, sans-serif;
 	-webkit-font-smoothing: antialiased;
@@ -72,6 +72,5 @@ body,
 	font-weight: 300;
 	text-transform: uppercase;
 	letter-spacing: 0.2em;
-	color: #424242;
 }
 </style>
