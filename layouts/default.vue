@@ -42,7 +42,7 @@ html,
 body,
 .application.theme--light,
 .application.theme--dark {
-	background: linear-gradient(180deg,#5e29de 0%,#05a9f4 100%) !important;
+	background: linear-gradient(180deg,#05a9f4 0%,#5e29de 100%) !important;
 	margin: 0;
 	font-family: 'Roboto', Arial, Helvetica, sans-serif;
 	-webkit-font-smoothing: antialiased;
