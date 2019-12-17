@@ -28,6 +28,7 @@
 						data-aos-easing="ease-in-out-back"
 					>
 						<v-card
+							light
 							class="pa-2 ma-4 elevation-0 repoCard"
 							:style="
 								'border-bottom: 10px solid ' +
