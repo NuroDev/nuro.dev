@@ -113,41 +113,45 @@ export default {
 	},
 	methods: {
 		CalculateBorderColor: (inputLang) => {
-			if (inputLang === 'C++') {
-				return '#f34b7d';
-			}
-			if (inputLang === 'C#') {
-				return '#f34b7d';
-			}
-			if (inputLang === 'Objective-C') {
-				return '#438eff';
-			}
-			if (inputLang === 'Swift') {
-				return '#ffac45';
-			}
-			if (inputLang === 'Rust') {
-				return '#dea584';
-			}
-			if (inputLang === 'Java') {
-				return '#b07219';
-			}
-			if (inputLang === 'HTML') {
-				return '#e34c26';
-			}
-			if (inputLang === 'CSS') {
-				return '#563d7c';
-			}
-			if (inputLang === 'JavaScript') {
-				return '#f1e05a';
-			}
-			if (inputLang === 'Vue') {
-				return '#2c3e50';
-			}
-			if (inputLang === 'Lua') {
-				return '#000080';
-			}
-			if (inputLang === 'Shell') {
-				return '#89e051';
+			switch (inputLang) {
+				case 'C++':
+					return '#f34b7d';
+					break;
+				case 'C#':
+					return '#f34b7d';
+					break;
+				case 'Objective-C':
+					return '#438eff';
+					break;
+				case 'Swift':
+					return '#ffac45';
+					break;
+				case 'Rust':
+					return '#dea584';
+					break;
+				case 'Java':
+					return '#b07219';
+					break;
+				case 'HTML':
+					return '#e34c26';
+					break;
+				case 'CSS':
+					return '#563d7c';
+					break;
+				case 'JavaScript':
+					return '#f1e05a';
+					break;
+				case 'Vue':
+					return '#2c3e50';
+					break;
+				case 'Lua':
+					return '#000080';
+					break;
+				case 'Shell':
+					return '#89e051';
+					break;
+				default:
+						break;
 			}
 		},
 	},
