@@ -5,7 +5,7 @@
 				<v-flex xs12>
 					<Snow
 						:active="new Date().getMonth() === 11"
-						color="#424242"
+						color="#fff"
 						:wind="1"
 						speed="m"
 					/>
@@ -42,7 +42,7 @@ html,
 body,
 .application.theme--light,
 .application.theme--dark {
-	background: linear-gradient(180deg,#15151E 0%,#1E1E24 100%) !important;
+	background: linear-gradient(180deg,#0D1836 0%,#436FE6 100%) !important;
 	margin: 0;
 	font-family: 'Roboto', Arial, Helvetica, sans-serif;
 	-webkit-font-smoothing: antialiased;
