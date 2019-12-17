@@ -136,7 +136,4 @@ export default {
 .indexAvatar:active {
 	transform: scale(0.9);
 }
-.subheading {
-  color: #95a2b3!important;
-}
 </style>
