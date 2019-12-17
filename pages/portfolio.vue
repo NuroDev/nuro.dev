@@ -2,11 +2,8 @@
 	<section class="contentContainer elevation-0">
 		<AppToolbar />
 		<v-container fluid text-xs-center>
-			<v-layout row wrap align-center>
-				<v-flex xs12> </v-flex>
-			</v-layout>
 			<v-layout row wrap align-center justify-center>
-				<v-flex xs12 sm6 md6 lg4 xl4>
+				<v-flex xs12>
 					<h1
 						class="spacedLetters display-2 font-weight-black mb-4"
 						data-aos="fade-down"
@@ -18,9 +15,16 @@
 
 					<br />
 
+					
+				</v-flex>
+			</v-layout>
+			<v-layout row wrap align-start justify-start>
+				<v-flex xs12 sm6 md6 lg4 xl4 v-for="(repos, i) in repos" :key="i">
 					<div
 						data-aos="fade-up"
 						data-aos-duration="1200"
+						:data-aos-delay="i * 50"
+						:data-aos-offset="-(i * 100)"
 						data-aos-easing="ease-in-out-back"
 					>
 						<v-card
@@ -30,8 +34,6 @@
 									CalculateBorderColor(repos.language) +
 									';'
 							"
-							v-for="(repos, i) in repos"
-							:key="i"
 						>
 							<v-card-title>
 								<v-spacer />
