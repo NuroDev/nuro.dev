@@ -26,7 +26,7 @@
 						<v-card
 							class="pa-2 ma-4 elevation-0 repoCard"
 							:style="
-								'border-left: 10px solid ' +
+								'border-bottom: 10px solid ' +
 									CalculateBorderColor(repos.language) +
 									';'
 							"
