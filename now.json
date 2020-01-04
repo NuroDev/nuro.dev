@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "name": "nuro-sh",
+    "name": "nuro.sh",
     "alias": "nuro.sh",
     "public": true,
     "regions": [
