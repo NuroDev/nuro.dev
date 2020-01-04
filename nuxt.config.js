@@ -1,11 +1,6 @@
 module.exports = {
 	mode: 'spa',
 
-	// Set build directory
-	generate: {
-		dir: 'public',
-	},
-
 	// Use HTTP2
 	render: {
 		http2: {
