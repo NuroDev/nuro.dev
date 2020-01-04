@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  @apply bg-gray-100
+}
+
+.defaultTransition {
+    transition: all .3s;
+}
+
+.avatar {
+    @apply defaultTransition;
+    transform: scale(1.0);
+}
+.avatar:hover {
+    transform: scale(1.1);
+}
+.avatar:active {
+    transform: scale(0.9);
+}
