@@ -6,8 +6,9 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt generate",
+    "build": "nuxt build",
     "start": "nuxt start",
+    "generate": "nuxt generate",
     "prettier": "prettier --config .prettierrc.json --write \"**/*.{js,css,vue}\""
   },
   "dependencies": {
