@@ -4,7 +4,7 @@
 			<v-layout fill-height>
 				<v-flex xs12>
 					<Snow
-						active
+						:active="new Date().getMonth() === 11"
 						color="#fff"
 						:wind="1"
 						speed="m"
