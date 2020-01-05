@@ -2,7 +2,7 @@
 	<div class="flex flex-col h-full">
 		<Navbar />
 
-		<main class="mt-16 flex flex-wrap items-center justify-around">
+		<main class="mt-16 flex flex-col items-center justify-center">
 			<BlogCard 
 				v-for="(post, i) in 5" 
 				:key="i"
