@@ -7,5 +7,10 @@
         "sfo1",
         "bru1",
         "lhr1"
+    ],
+    "routes": [
+        { "src": "/", "dest": "/index.html" },
+        { "src": "/portfolio", "dest": "/portfolio.html" },
+        { "src": "/contact", "dest": "/contact.html" }
     ]
 }
