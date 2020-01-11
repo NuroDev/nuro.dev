@@ -10,34 +10,44 @@ fields:
 - name: banner_alt
   type: text
   config:
-    required: false
+    required: true
   label: Banner Alt
 - name: tags
   type: tag_list
-  default: []
+  default:
+  - Random
   label: Tags
 - name: title
   type: text
   config:
-    required: false
+    required: true
   label: Title
 - name: description
   type: text
   config:
-    required: false
+    required: true
   label: Description
 - name: date
   type: datetime
   label: Date
   description: ''
   config:
-    required: false
+    required: true
     date_format: 
     time_format: 
     display_utc: false
 - name: layout
   type: text
   config:
-    required: false
+    required: true
   label: Layout
   default: BlogCard
+- name: content
+  type: textarea
+  default: ''
+  config:
+    required: true
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: Content
