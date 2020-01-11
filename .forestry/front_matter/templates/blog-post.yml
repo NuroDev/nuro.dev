@@ -1,4 +1,43 @@
 ---
 label: Blog Post
 hide_body: false
-fields: []
+fields:
+- name: banner
+  type: file
+  config:
+    maxSize: 250
+  label: Banner
+- name: banner_alt
+  type: text
+  config:
+    required: false
+  label: Banner Alt
+- name: tags
+  type: tag_list
+  default: []
+  label: Tags
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+- name: description
+  type: text
+  config:
+    required: false
+  label: Description
+- name: date
+  type: datetime
+  label: Date
+  description: ''
+  config:
+    required: false
+    date_format: 
+    time_format: 
+    display_utc: false
+- name: layout
+  type: text
+  config:
+    required: false
+  label: Layout
+  default: BlogCard
