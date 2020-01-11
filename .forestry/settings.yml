@@ -9,15 +9,12 @@ sections:
 - type: document
   path: src/README.md
   label: Homepage
-  match: "**/*"
 - type: document
   path: src/portfolio.md
   label: Portfolio
-  match: "**/*"
 - type: document
   path: src/contact.md
   label: Contact
-  match: "**/*"
 - type: directory
   path: src/blog
   label: Blog
