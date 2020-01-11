@@ -6,13 +6,7 @@
 			<BlogCard
 				v-for="(post, i) in posts"
 				:key="i"
-				:banner="post.frontmatter.banner"
-				:banner_alt="post.frontmatter.banner_alt"
-				:tags="post.frontmatter.tags"
-				:title="post.frontmatter.title"
-				:description="post.frontmatter.description"
-				:date="formatDate(post.date)"
-				:url="post.path"
+				:post="post"
 				data-aos="fade-up"
 				:data-aos-duration="i * 200 + 1000"
 				data-aos-easing="ease-in-out-back"
@@ -23,7 +17,6 @@
 
 <script>
 import AOS from 'aos';
-import moment from 'moment';
 
 import BlogCard from '@theme/components/BlogCard.vue';
 import Navbar from '@theme/components/Navbar.vue';
@@ -40,9 +33,6 @@ export default {
 		return {
 			posts: [],
 		};
-	},
-	methods: {
-		formatDate: (date) => moment(date).format('Do MMM YYYY'),
 	},
 	mounted() {
 		AOS.init({
