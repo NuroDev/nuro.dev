@@ -2,7 +2,7 @@
 	<div>
 		<!-- Wrapper element to stop AOS transition overrides -->
 		<article
-			class="max-w-md overflow-hidden rounded-lg shadow-md hover:shadow-2xl defaultTransition mx-4 mb-4 md:mb-12 bg-white"
+			class="max-w-md overflow-hidden rounded-lg shadow-md hover:shadow-2xl defaultTransition animatedPress mx-4 mb-4 md:mb-12 bg-white"
 		>
 			<a :href="post.path" v-if="post.frontmatter.banner">
 				<img

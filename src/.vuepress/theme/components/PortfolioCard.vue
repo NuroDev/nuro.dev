@@ -3,7 +3,7 @@
 		<!-- Wrapper element to stop AOS transition overrides -->
 		<article
 			:class="
-				`md:max-w-lg overflow-hidden rounded-lg shadow-md hover:shadow-2xl defaultTransition p-6 md:p-16 mx-8 mb-8 md:mb-12 bg-white ${
+				`max-w-full md:max-w-xl overflow-hidden rounded-lg shadow-md hover:shadow-2xl defaultTransition animatedPress p-6 md:p-16 mx-8 mb-8 md:mb-12 bg-white ${
 					repo.archived ? 'opacity-25' : null
 				}`
 			"
