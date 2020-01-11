@@ -10,6 +10,7 @@
     "build": "vuepress build src"
   },
   "devDependencies": {
+    "aos": "^2.3.4",
     "autoprefixer": "^9.7.3",
     "moment": "^2.24.0",
     "postcss": "^7.0.26",

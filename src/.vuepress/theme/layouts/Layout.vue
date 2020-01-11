@@ -9,12 +9,24 @@
 </template>
 
 <script>
+import AOS from 'aos';
+
 import Navbar from '@theme/components/Navbar.vue';
+
+// TODO: Move to theme.styl
+import 'aos/dist/aos.css';
 
 export default {
 	components: {
 		Navbar,
 	},
+	mounted() {
+		AOS.init({
+			duration: 1000,
+			easing: 'ease-in-out-sin',
+			once: true,
+		});
+	}
 }
 </script>
 
