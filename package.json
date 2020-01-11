@@ -13,6 +13,7 @@
   "devDependencies": {
     "aos": "^2.3.4",
     "autoprefixer": "^9.7.3",
+    "github-colors": "^2.2.18",
     "moment": "^2.24.0",
     "postcss": "^7.0.26",
     "prettier": "^1.19.1",
