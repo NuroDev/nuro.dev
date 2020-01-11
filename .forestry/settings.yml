@@ -3,7 +3,16 @@ new_page_extension: md
 auto_deploy: false
 admin_path: 
 webhook_url: 
-sections: 
+sections:
+- type: document
+  path: src/.vuepress/config.js
+  label: Config
+  match: "**/*"
+- type: directory
+  path: ''
+  label: Assets
+  create: all
+  match: "**/*"
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
