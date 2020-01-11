@@ -4,14 +4,18 @@ auto_deploy: false
 admin_path: ''
 webhook_url: 
 sections:
-- type: directory
-  path: src/.vuepress/public/assets
-  label: Assets
-  create: all
-  match: "**/*"
+- type: heading
+  label: General
 - type: document
   path: src/.vuepress/config.js
   label: Config
+- type: heading
+  label: Blog
+- type: directory
+  path: src/blog
+  label: Posts
+  create: all
+  match: "**/*"
 upload_dir: src/.vuepress/public/assets
 public_path: "/assets"
 front_matter_path: ''
