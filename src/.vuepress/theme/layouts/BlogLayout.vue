@@ -36,10 +36,10 @@ export default {
 		BlogCard,
 		Navbar,
 	},
-	data () {
+	data() {
 		return {
-			posts: []
-		}
+			posts: [],
+		};
 	},
 	methods: {
 		formatDate: (date) => moment(date).format('Do MMM YYYY'),
@@ -51,9 +51,9 @@ export default {
 			once: true,
 		});
 
-		this.posts = this.$site.pages.filter(
-			x => x.path.startsWith('/blog/') && !x.frontmatter.index
-		).sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
+		this.posts = this.$site.pages
+			.filter((x) => x.path.startsWith('/blog/') && !x.frontmatter.index)
+			.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
 	},
 };
 </script>

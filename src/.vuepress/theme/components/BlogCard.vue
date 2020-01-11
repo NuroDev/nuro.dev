@@ -5,7 +5,11 @@
 			class="max-w-md overflow-hidden rounded-lg shadow-md hover:shadow-2xl defaultTransition mx-4 mb-4 md:mb-12 bg-white"
 		>
 			<a :href="url" v-if="banner">
-				<img class="w-full" :src="`/assets/blog/${banner}`" :alt="banner_alt ? banner_alt : ''">
+				<img
+					class="w-full"
+					:src="`/assets/blog/${banner}`"
+					:alt="banner_alt ? banner_alt : ''"
+				/>
 			</a>
 			<div class="p-4 md:p-16">
 				<span
@@ -21,7 +25,7 @@
 					v-text="title"
 				/>
 				<p class="text-gray-500" v-text="description" />
-				</br>
+
 				<p class="text-gray-500" v-text="date" />
 				<a
 					:href="url"
@@ -57,7 +61,7 @@ export default {
 		},
 		tags: {
 			type: Array,
-			default: ["Random"],
+			default: ['Random'],
 			required: true,
 		},
 		title: {
