@@ -2,9 +2,9 @@
 	<div class="flex flex-col h-full">
 		<Navbar />
 
-		<main class="container max-w-3xl mx-auto mt-16 flex flex-wrap items-center justify-around">
-
-		</main>
+		<main
+			class="container max-w-3xl mx-auto mt-16 flex flex-wrap items-center justify-around"
+		></main>
 	</div>
 </template>
 
@@ -26,8 +26,8 @@ export default {
 			easing: 'ease-in-out-sin',
 			once: true,
 		});
-	}
-}
+	},
+};
 </script>
 
 <style lang="stylus">
