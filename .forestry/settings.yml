@@ -12,8 +12,8 @@ sections:
 - type: document
   path: src/.vuepress/config.js
   label: Config
-upload_dir: uploads
-public_path: "/uploads"
+upload_dir: src/.vuepress/public/assets
+public_path: "/assets"
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
