@@ -4,14 +4,14 @@ auto_deploy: false
 admin_path: 
 webhook_url: 
 sections:
-- type: document
-  path: src/.vuepress/config.js
-  label: Config
-  match: "**/*"
 - type: directory
   path: ''
   label: Assets
   create: all
+  match: "**/*"
+- type: document
+  path: src/.vuepress/config.js
+  label: Config
   match: "**/*"
 upload_dir: uploads
 public_path: "/uploads"
