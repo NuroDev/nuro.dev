@@ -4,7 +4,9 @@
 
 		<main
 			class="container max-w-3xl mx-auto mt-16 flex flex-wrap items-center justify-around"
-		></main>
+		>
+			<div class="text">👋🏻 HELLO, I'M BEN</div>
+		</main>
 	</div>
 </template>
 
