@@ -8,7 +8,9 @@
 				:key="i"
 				:post="post"
 				data-aos="fade-up"
-				:data-aos-duration="i * 200 + 1000"
+				data-aos-duration="1200"
+				:data-aos-delay="i * 50"
+				:data-aos-offset="-(i * 100)"
 				data-aos-easing="ease-in-out-back"
 			/>
 		</main>
