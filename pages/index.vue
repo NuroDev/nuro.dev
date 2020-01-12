@@ -4,7 +4,7 @@
 			<v-layout row wrap align-center>
 				<v-flex xs12 sm12 md12 lg12 xl12>
 					<div
-						data-aos="fade-down"
+						data-aos="zoom-in"
 						data-aos-duration="1000"
 						data-aos-easing="ease-in-out-back"
 					>
@@ -14,13 +14,20 @@
 					</div>
 
 					<div
-						data-aos="fade-up"
+						data-aos="fade-left"
 						data-aos-duration="1200"
 						data-aos-easing="ease-in-out-back"
 					>
-						<h1 class="spacedLetters display-2 font-weight-black">👋🏻 Hello, I'm Ben</h1>
+						<h1 class="spacedLetters display-2 font-weight-black text-uppercase">👋🏻 Hello, I'm Ben</h1>
 						<br />
-						<p class="subheading">Games Programmer | Web Developer</p>
+					</div>
+
+					<div
+						data-aos="fade-right"
+						data-aos-duration="1400"
+						data-aos-easing="ease-in-out-back"
+					>
+						<p class="subheading text-uppercase">Games Programmer | Web Developer</p>
 					</div>
 
 					<v-flex xs12>
@@ -28,11 +35,10 @@
 							flat
 							large
 							round
-							color="white"
 							href="https://blog.nuro.sh"
 							prefetch
 							data-aos="fade-up"
-							data-aos-duration="1400"
+							data-aos-duration="1200"
 							data-aos-easing="ease-in-out-back"
 						>
 							<IconBlog class="mr-3" />
@@ -42,11 +48,10 @@
 							flat
 							large
 							round
-							color="white"
 							to="/portfolio"
 							prefetch
 							data-aos="fade-up"
-							data-aos-duration="1600"
+							data-aos-duration="1400"
 							data-aos-easing="ease-in-out-back"
 						>
 							<IconPortfolio class="mr-3" />
@@ -56,11 +61,10 @@
 							flat
 							large
 							round
-							color="white"
 							href="https://github.com/nurodev"
 							prefetch
 							data-aos="fade-up"
-							data-aos-duration="1800"
+							data-aos-duration="1600"
 							data-aos-easing="ease-in-out-back"
 						>
 							<IconGitHub class="mr-3" />
@@ -72,11 +76,10 @@
 							flat
 							large
 							round
-							color="white"
 							href="https://twitter.com/nurodev"
 							prefetch
 							data-aos="fade-up"
-							data-aos-duration="2000"
+							data-aos-duration="1800"
 							data-aos-easing="ease-in-out-back"
 						>
 							<IconTwitter class="mr-3" />
@@ -86,11 +89,10 @@
 							flat
 							large
 							round
-							color="white"
 							href="https://www.linkedin.com/in/nurodev/"
 							prefetch
 							data-aos="fade-up"
-							data-aos-duration="2200"
+							data-aos-duration="2000"
 							data-aos-easing="ease-in-out-back"
 						>
 							<IconLinkedIn class="mr-3" />

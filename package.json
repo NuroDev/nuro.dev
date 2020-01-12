@@ -15,6 +15,7 @@
     "@nuxtjs/robots": "^2.4.2",
     "aos": "^2.3.4",
     "axios": "^0.19.0",
+    "github-colors": "^2.2.18",
     "nuxt": "^2.10.2",
     "nuxt-svg-loader": "^1.0.1",
     "svg-to-vue-component": "^0.3.8",

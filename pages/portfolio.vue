@@ -1,11 +1,11 @@
 <template>
 	<section class="contentContainer elevation-0">
 		<AppToolbar />
-		<v-container fluid text-xs-center>
+		<v-container fluid>
 			<v-layout row wrap align-center justify-center>
 				<v-flex xs12>
 					<h1
-						class="spacedLetters display-2 font-weight-black mb-4"
+						class="spacedLetters display-2 font-weight-black mb-4 text-uppercase text-xs-center"
 						data-aos="fade-down"
 						data-aos-duration="1000"
 						data-aos-easing="ease-in-out-back"
@@ -18,8 +18,10 @@
 					
 				</v-flex>
 			</v-layout>
-			<v-layout row wrap align-start justify-start>
-				<v-flex xs12 sm6 md6 lg4 xl4 v-for="(repos, i) in repos" :key="i">
+
+			<v-layout row wrap align-center justify-center>
+				<v-flex xs12 sm6 md6 lg4 xl4 grow v-for="(repo, i) in repos" :key="i">
+					
 					<div
 						data-aos="fade-up"
 						data-aos-duration="1200"
@@ -27,67 +29,32 @@
 						:data-aos-offset="-(i * 100)"
 						data-aos-easing="ease-in-out-back"
 					>
-						<v-card
-							light
-							class="pa-2 ma-4 elevation-0 repoCard"
-							:style="
-								'border-bottom: 10px solid ' +
-									CalculateBorderColor(repos.language) +
-									';'
-							"
-						>
-							<v-card-title>
-								<v-spacer />
-								<v-tooltip left v-if="repos.archived">
-									<v-btn
-										flat
-										icon
-										large
-										ripple
-										color="grey darken-1"
-										class="ma-2"
-										slot="activator"
-									>
-										<IconArchived />
-									</v-btn>
-									<span>Archived</span>
-								</v-tooltip>
-								<v-tooltip left v-if="repos.fork">
-									<v-btn
-										flat
-										icon
-										large
-										ripple
-										color="grey darken-1"
-										class="ma-2"
-										slot="activator"
-									>
-										<IconFork />
-									</v-btn>
-									<span>Fork</span>
-								</v-tooltip>
-								<span class="headline mt-1" v-html="repos.name" />
-								<v-btn
-									flat
-									icon
-									large
-									color="grey darken-1"
-									ripple
-									:href="repos.html_url"
-								>
-									<IconLink />
-								</v-btn>
-								<v-spacer />
-							</v-card-title>
-							<v-card-text>
-								<v-btn flat large round color="amber" ripple class="mr-4">
-									<IconStar class="mr-3" />
-									<span v-html="repos.stargazers_count" />
-								</v-btn>
-								<span v-html="repos.description" />
-							</v-card-text>
-						</v-card>
+						<a :href="repo.html_url">
+							<v-card
+								light
+								class="pa-4 ma-5 repoCard"
+								:style="`border: .5px solid ${repo.languageColor}; ${repo.archived ? 'opacity: .25;' : null}`"
+							>
+								<v-card-title>
+									<v-chip outline class="pa-3" :style="`color: ${repo.languageColor}`" v-text="`#${repo.language}`" />
+									<v-chip outline class="pa-1" :style="`color: ${repo.languageColor}`">
+										<IconStar class="mr-2" />
+										<span v-text="repo.stargazers_count" />
+									</v-chip>
+									<v-chip v-if="repo.archived" outline class="pa-3" color="red" v-text="`#archived`" />
+								</v-card-title>
+
+								<v-card-title>
+									<span class="display-1 mt-1 text-xs-left" v-html="repo.name" />
+								</v-card-title>
+								
+								<v-card-text>
+									<span class="text-sm-left" v-html="repo.description" />
+								</v-card-text>
+							</v-card>
+						</a>
 					</div>
+					
 				</v-flex>
 			</v-layout>
 		</v-container>
@@ -95,6 +62,8 @@
 </template>
 
 <script>
+import GitHubColors from 'github-colors';
+
 import AppToolbar from '~/components/appToolbar';
 import IconArchived from '~/static/icons/archived.svg';
 import IconFork from '~/static/icons/fork.svg';
@@ -109,64 +78,20 @@ export default {
 		IconLink,
 		IconStar,
 	},
-	data() {
+	data () {
 		return {
-			repos: [],
+			repos: []
 		};
 	},
-	methods: {
-		CalculateBorderColor: (inputLang) => {
-			switch (inputLang) {
-				case 'C++':
-					return '#f34b7d';
-					break;
-				case 'C#':
-					return '#f34b7d';
-					break;
-				case 'Objective-C':
-					return '#438eff';
-					break;
-				case 'Swift':
-					return '#ffac45';
-					break;
-				case 'Rust':
-					return '#dea584';
-					break;
-				case 'Java':
-					return '#b07219';
-					break;
-				case 'HTML':
-					return '#e34c26';
-					break;
-				case 'CSS':
-					return '#563d7c';
-					break;
-				case 'JavaScript':
-					return '#f1e05a';
-					break;
-				case 'Vue':
-					return '#2c3e50';
-					break;
-				case 'Lua':
-					return '#000080';
-					break;
-				case 'Shell':
-					return '#89e051';
-					break;
-				default:
-						break;
-			}
-		},
-	},
-	mounted: function() {
-		this.$http
-			.get('https://api.github.com/users/nurodev/repos', {
-				responseType: 'json',
-			})
-			.then((response) => {
-				this.repos = response.data.sort();
-			});
-	},
+	async mounted () {
+		let response = await fetch('https://api.github.com/users/nurodev/repos')
+		let json = await response.json();
+		this.repos = json.sort();
+
+		this.repos.forEach(repo => {
+			repo.languageColor = GitHubColors.get(repo.language).color;
+		});
+	}
 };
 </script>
 
@@ -176,16 +101,15 @@ export default {
 	-webkit-transition: all 0.5s;
 	transition: all 0.5s;
 	transform: scale(1);
+	box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -1px rgba(0,0,0,.06);
 }
 .repoCard:hover {
 	-webkit-transition: all 0.5s;
 	transition: all 0.5s;
 	transform: scale(1.025);
+	box-shadow: 0 25px 50px -12px rgba(0,0,0,.25);
 }
 .repoCard:active {
 	transform: scale(0.97);
-}
-.theme--dark.v-sheet {
-	background-color: #1C1D1F!important;
 }
 </style>

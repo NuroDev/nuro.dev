@@ -1,5 +1,5 @@
 <template>
-	<v-toolbar dark class="transparent elevation-0">
+	<v-toolbar class="transparent elevation-0">
 		<v-btn large icon to="/">
 			<v-icon>arrow_back</v-icon>
 		</v-btn>

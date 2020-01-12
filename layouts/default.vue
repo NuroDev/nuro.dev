@@ -1,11 +1,11 @@
 <template>
-	<v-app dark>
+	<v-app>
 		<v-content>
 			<v-layout fill-height>
 				<v-flex xs12>
 					<Snow
 						:active="new Date().getMonth() === 11"
-						color="#fff"
+						color="#181818"
 						:wind="1"
 						speed="m"
 					/>
@@ -38,11 +38,15 @@ export default {
 	display: none;
 }
 
+a:link {
+  text-decoration: none;
+}
+
 html,
 body,
 .application.theme--light,
 .application.theme--dark {
-	background: linear-gradient(180deg,#05a9f4 0%,#5e29de 100%) !important;
+	background: #f7fafc !important;
 	margin: 0;
 	font-family: 'Roboto', Arial, Helvetica, sans-serif;
 	-webkit-font-smoothing: antialiased;
@@ -70,7 +74,7 @@ body,
 	padding: 20px;
 	font-family: 'Roboto', Arial, Helvetica, sans-serif;
 	font-weight: 300;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 	letter-spacing: 0.2em;
 }
 </style>
