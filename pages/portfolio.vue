@@ -100,16 +100,11 @@ export default {
 	border-radius: 8px !important;
 	-webkit-transition: all 0.5s;
 	transition: all 0.5s;
-	transform: scale(1);
 	box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -1px rgba(0,0,0,.06);
 }
 .repoCard:hover {
 	-webkit-transition: all 0.5s;
 	transition: all 0.5s;
-	transform: scale(1.025);
 	box-shadow: 0 25px 50px -12px rgba(0,0,0,.25);
-}
-.repoCard:active {
-	transform: scale(0.97);
 }
 </style>
