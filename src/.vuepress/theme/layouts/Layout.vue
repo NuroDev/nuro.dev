@@ -2,17 +2,13 @@
 	<div class="flex flex-col h-screen">
 		<Navbar />
 
-		<main
-			class="container h-screen max-w-full mx-auto flex flex-wrap items-center justify-around"
-		>
+		<main class="container h-screen max-w-full mx-auto flex flex-wrap items-center justify-around">
 			<h1 class="title">
 				Hi! 👋🏻
-				<br />
-				I'm Ben,
-				<br />
-				a <span>developer</span>
-				<br />
-				based in the UK
+				<br />I'm Ben,
+				<br />a
+				<span>developer</span>
+				<br />based in the UK
 			</h1>
 		</main>
 	</div>

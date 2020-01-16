@@ -4,6 +4,10 @@
 
 $primary = #0072ff
 
+* {
+  transition: all .3s;
+}
+
 *::selection {
   background-color: $primary;
   color: white;
@@ -19,10 +23,6 @@ body {
 
 nav a {
   letter-spacing: .2em;
-}
-
-.defaultTransition {
-  transition: all .3s;
 }
 
 .title {
@@ -54,23 +54,6 @@ nav a {
 }
 
 @media(prefers-color-scheme: light) {
-  html {
-    @apply bg-white;
-  }
-
-  body {
-    background-image: radial-gradient(#ccc 1px, transparent 1px), radial-gradient(#ccc 1px, transparent 1px);
-  }
-
-  nav a {
-    @apply text-black;
-
-    &:hover {
-      @apply text-white;
-      @apply bg-black;
-    }
-  }
-
   article {
     @apply bg-white;
     @apply shadow-md;
@@ -99,6 +82,27 @@ nav a {
     }
   }
 
+  body {
+    background-image: radial-gradient(#ccc 1px, transparent 1px), radial-gradient(#ccc 1px, transparent 1px);
+  }
+
+  .feather {
+    @apply text-black;
+  }
+
+  html {
+    @apply bg-white;
+  }
+
+  nav a {
+    @apply text-black;
+
+    &:hover {
+      @apply bg-black;
+      @apply text-white;
+    }
+  }
+
   .title {
     @apply text-black;
   }
@@ -109,24 +113,6 @@ nav a {
 }
 
 @media(prefers-color-scheme: dark) {
-  html {
-    @apply bg-black;
-  }
-
-  body {
-    background-image: radial-gradient(#222 1px, transparent 1px), radial-gradient(#222 1px, transparent 1px);
-  }
-
-  nav a {
-    @apply text-white;
-    @apply bg-black;
-
-    &:hover {
-      @apply text-black;
-      @apply bg-white;
-    }
-  }
-
   article {
     @apply bg-black;
     border: 1px solid white;
@@ -146,6 +132,28 @@ nav a {
 
     &:hover {
       transform: translateY(-10px);
+    }
+  }
+
+  body {
+    background-image: radial-gradient(#222 1px, transparent 1px), radial-gradient(#222 1px, transparent 1px);
+  }
+
+  .feather {
+    @apply text-white;
+  }
+
+  html {
+    @apply bg-black;
+  }
+
+  nav a {
+    @apply bg-black;
+    @apply text-white;
+
+    &:hover {
+      @apply bg-white;
+      @apply text-black;
     }
   }
 

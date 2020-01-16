@@ -1,7 +1,7 @@
 <template>
 	<a :href="post.path">
 		<article
-			class="max-w-md mx-8 md:mx-4 mb-4 md:mb-12 overflow-hidden rounded-lg defaultTransition cursor-pointer"
+			class="max-w-md mx-8 md:mx-4 mb-4 md:mb-12 overflow-hidden rounded-lg cursor-pointer"
 		>
 			<img
 				class="w-full"
@@ -23,6 +23,8 @@
 					v-text="post.frontmatter.title"
 				/>
 				<p class="text-gray-500" v-text="post.frontmatter.description" />
+
+				<br />
 
 				<p class="text-gray-500" v-text="formatDate(post.frontmatter.date)" />
 			</div>

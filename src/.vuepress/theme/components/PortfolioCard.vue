@@ -1,12 +1,7 @@
 <template>
 	<a :href="repo.html_url">
-		<!-- Wrapper element to stop AOS transition overrides -->
 		<article
-			:class="
-				`max-w-full md:max-w-xl p-6 md:p-16 mx-8 mb-8 md:mb-12 overflow-hidden rounded-lg defaultTransition blogCard cursor-pointer ${
-					repo.archived ? 'opacity-25' : null
-				}`
-			"
+			:class="`max-w-full md:max-w-xl p-6 md:p-16 mx-8 mb-8 md:mb-12 overflow-hidden rounded-lg blogCard cursor-pointer ${repo.archived ? 'opacity-25' : null}`"
 			:style="`border: .5px solid ${languageColor};`"
 		>
 			<div class="py-4">
@@ -43,7 +38,7 @@ import GitHubColors from 'github-colors';
 export default {
 	data() {
 		return {
-			languageColor: '',
+			languageColor: null,
 		};
 	},
 	props: {
