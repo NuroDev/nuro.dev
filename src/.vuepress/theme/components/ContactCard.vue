@@ -1,11 +1,11 @@
 <template>
 	<div data-aos="fade-up" :data-aos-delay="delay" data-aos-easing="ease-in-out-back">
 		<a :href="url">
-			<article class="max-w-md mx-8 md:mx-4 mb-8 md:mb-12 overflow-hidden rounded-lg cursor-pointer">
+			<article class="flex flex-row flex-no-wrap max-w-md mx-8 md:mx-4 mb-8 md:mb-12 px-8 overflow-hidden rounded-lg cursor-pointer">
 				<slot />
 
-				<div class="pb-4 px-16">
-					<h1 class="text-xl md:text-2xl mb-4 block font-bold uppercase tracking-widest" v-text="title" />
+				<div class="p-4 px-8">
+					<h1 class="text-xl md:text-2xl block font-bold uppercase tracking-widest" v-text="title" />
 				</div>
 			</article>
 		</a>

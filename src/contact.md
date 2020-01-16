@@ -1,3 +1,3 @@
 ---
-layout: ContactLayout
+layout: Contact
 ---
