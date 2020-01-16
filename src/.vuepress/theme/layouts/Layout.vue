@@ -1,11 +1,19 @@
 <template>
-	<div class="flex flex-col h-full">
+	<div class="flex flex-col h-screen">
 		<Navbar />
 
 		<main
-			class="container max-w-3xl mx-auto mt-16 flex flex-wrap items-center justify-around"
+			class="container h-screen max-w-full mx-auto flex flex-wrap items-center justify-around"
 		>
-			<div class="text">👋🏻 HELLO, I'M BEN</div>
+			<h1 class="title">
+				Hi! 👋🏻
+				<br />
+				I'm Ben,
+				<br />
+				a <span>developer</span>
+				<br />
+				based in the UK
+			</h1>
 		</main>
 	</div>
 </template>

@@ -2,65 +2,158 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
+$primary = #0072ff
+
+*::selection {
+  background-color: $primary;
+  color: white;
+}
+
 body {
-  @apply bg-gray-100
+  background-position: 0 0, 27px 27px;
+  background-attachment: fixed;
+  background-size: 54px 54px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+nav a {
+  letter-spacing: .2em;
 }
 
 .defaultTransition {
-    transition: all .3s;
+  transition: all .3s;
 }
 
-.animatedPress {
-    @apply defaultTransition;
-    transform: scale(1.0);
+.title {
+  font-size: 5rem;
+  font-weight: bold;
 }
-.animatedPress:hover {
-    transform: scale(1.025);
+@media screen and (max-width: 1024px) {
+  .title { font-size: 4rem; }
 }
-.animatedPress:active {
-    transform: scale(0.975);
+@media screen and (max-width: 768px) {
+  .title { font-size: 3rem; }
 }
-
-
-.text { 
-  position: relative;
-  display: inline-block;
-  font-family: Monaco, Arial, Helvetica, sans-serif;
-  line-height: 24px;
-  font-size: 24px;
+@media screen and (max-width: 425px) {
+  .title { font-size: 2.5rem; }
 }
-
-.text::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: -15px;
-  display: inline-block;
-  @apply bg-gray-400;
-  vertical-align: top;
-  width: 10px;
-  height: 24px;
-
-  /* 
-  Animation paramaters:
-  blink = animation-name, 
-  1s = animation-duration, 
-  step-end = animation-timing-function,
-  infinite = animation-iteration-count
-  */
-  -webkit-animation: blink 1s step-end infinite;
-  animation: blink 1s step-end infinite;
+@media screen and (max-width: 320px) {
+  .title { font-size: 2rem; }
+}
+.title span {
+  text-decoration: none;
+  background: $primary;
+  padding: 0px 15px;
+  transition: all 0.15s ease-in-out;
 }
 
-@-webkit-keyframes blink {
-  0% { opacity: 1.0; }
-  50% { opacity: 0.0; }
-  100% { opacity: 1.0; }
+.title span::selection {
+  background-color: rgba(255, 255, 255, 0.85);
+  color: black;
 }
 
-@keyframes blink {
-  0% { opacity: 1.0; }
-  50% { opacity: 0.0; }
-  100% { opacity: 1.0; }
+@media(prefers-color-scheme: light) {
+  html {
+    @apply bg-white;
+  }
+
+  body {
+    background-image: radial-gradient(#ccc 1px, transparent 1px), radial-gradient(#ccc 1px, transparent 1px);
+  }
+
+  nav a {
+    @apply text-black;
+
+    &:hover {
+      @apply text-white;
+      @apply bg-black;
+    }
+  }
+
+  article {
+    @apply bg-white;
+    @apply shadow-md;
+
+    a {
+      @apply text-black;
+    }
+
+    h1 {
+      @apply text-gray-800;
+    }
+
+    p {
+      @apply text-gray-500;
+    }
+
+    .tag {
+      @apply text-gray-500;
+      @apply border-gray-500;
+      border: 1px solid;
+    }
+
+    &:hover {
+      @apply shadow-2xl;
+      transform: translateY(-10px);
+    }
+  }
+
+  .title {
+    @apply text-black;
+  }
+
+  .title span {
+    @apply text-white;
+  }
+}
+
+@media(prefers-color-scheme: dark) {
+  html {
+    @apply bg-black;
+  }
+
+  body {
+    background-image: radial-gradient(#222 1px, transparent 1px), radial-gradient(#222 1px, transparent 1px);
+  }
+
+  nav a {
+    @apply text-white;
+    @apply bg-black;
+
+    &:hover {
+      @apply text-black;
+      @apply bg-white;
+    }
+  }
+
+  article {
+    @apply bg-black;
+    border: 1px solid white;
+
+    h1 {
+      @apply text-white;
+    }
+
+    p {
+      @apply text-gray-500;
+    }
+
+    .tag {
+      @apply text-white;
+      border: 1px solid white;
+    }
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+  }
+
+  .title {
+    @apply text-white;
+  }
+
+  .title span {
+    @apply text-black;
+  }
 }

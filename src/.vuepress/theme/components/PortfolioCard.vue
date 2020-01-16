@@ -3,7 +3,7 @@
 		<!-- Wrapper element to stop AOS transition overrides -->
 		<article
 			:class="
-				`max-w-full md:max-w-xl overflow-hidden rounded-lg shadow-md hover:shadow-2xl defaultTransition animatedPress p-6 md:p-16 mx-8 mb-8 md:mb-12 bg-white ${
+				`max-w-full md:max-w-xl p-6 md:p-16 mx-8 mb-8 md:mb-12 overflow-hidden rounded-lg defaultTransition blogCard cursor-pointer ${
 					repo.archived ? 'opacity-25' : null
 				}`
 			"
@@ -26,12 +26,12 @@
 					:style="`border: 1px solid`"
 					v-text="`#Archived`"
 				/>
-				<span
+				<h1
 					:href="repo.html_url"
-					class="text-2xl md:text-4xl mb-4 block font-semibold leading-tight text-gray-800 hover:text-gray-700"
+					class="text-2xl md:text-4xl mb-4 block font-semibold leading-tight"
 					v-text="repo.name"
 				/>
-				<p class="text-gray-500" v-text="repo.description" />
+				<p class v-text="repo.description" />
 			</div>
 		</article>
 	</a>

@@ -7,7 +7,7 @@ module.exports = {
 	},
 	plugins: ['vuepress-plugin-reading-time'],
 	serviceWorker: true,
-	title: 'N U R O ™',
+	title: '👋🏻 N U R O ™',
 	themeConfig: {
 		lastUpdated: 'Last Updated',
 		nav: [
