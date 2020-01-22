@@ -18,6 +18,7 @@
     "postcss": "^7.0.26",
     "prettier": "^1.19.1",
     "tailwindcss": "^1.1.4",
+    "vue-typed-js": "^0.1.2",
     "vuepress": "^1.2.0",
     "vuepress-plugin-reading-time": "^0.1.1"
   }
