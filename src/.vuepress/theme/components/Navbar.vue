@@ -6,10 +6,10 @@
 					href="/"
 					class="p-2 px-4 font-bold uppercase tracking-widest cursor-pointer"
 				>home</a>
-				<a
+				<!-- <a
 					href="/blog"
 					class="p-2 px-4 font-bold uppercase tracking-widest cursor-pointer"
-				>blog</a>
+				>blog</a> -->
 				<a
 					href="/portfolio"
 					class="p-2 px-4 font-bold uppercase tracking-widest cursor-pointer"
