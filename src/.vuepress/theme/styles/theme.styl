@@ -55,8 +55,7 @@ nav a {
 
 @media(prefers-color-scheme: light) {
   article {
-    @apply bg-white;
-    @apply shadow-md;
+    @apply bg-white shadow-md;
 
     a {
       @apply text-black;
@@ -71,8 +70,7 @@ nav a {
     }
 
     .tag {
-      @apply text-gray-500;
-      @apply border-gray-500;
+      @apply border-gray-500 text-gray-500;
       border: 1px solid;
     }
 
@@ -98,8 +96,7 @@ nav a {
     @apply text-black;
 
     &:hover {
-      @apply bg-black;
-      @apply text-white;
+      @apply bg-black text-white;
     }
   }
 
@@ -148,12 +145,10 @@ nav a {
   }
 
   nav a {
-    @apply bg-black;
-    @apply text-white;
+    @apply bg-black text-white;
 
     &:hover {
-      @apply bg-white;
-      @apply text-black;
+      @apply bg-white text-black;
     }
   }
 
