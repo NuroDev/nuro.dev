@@ -1,12 +1,12 @@
 <template>
-	<div class="flex flex-col h-full">
+	<div class="flex flex-col h-screen">
 		<Navbar />
 
-		<main class="mt-16 flex flex-column flex-wrap items-center justify-center">
-			<PortfolioCard
-				v-for="(repo, i) in repos"
+		<main class="mt-16 flex flex-row flex-wrap items-center justify-center">
+			<CardBlog
+				v-for="(post, i) in posts"
 				:key="i"
-				:repo="repo"
+				:post="post"
 				data-aos="fade-up"
 				data-aos-duration="1200"
 				:data-aos-delay="i * 50"
@@ -20,7 +20,7 @@
 <script>
 import AOS from 'aos';
 
-import PortfolioCard from '@theme/components/PortfolioCard.vue';
+import CardBlog from '@theme/components/CardBlog.vue';
 import Navbar from '@theme/components/Navbar.vue';
 
 // TODO: Move to theme.styl
@@ -28,24 +28,24 @@ import 'aos/dist/aos.css';
 
 export default {
 	components: {
-		PortfolioCard,
+		CardBlog,
 		Navbar,
 	},
 	data() {
 		return {
-			repos: [],
+			posts: [],
 		};
 	},
-	async mounted() {
+	mounted() {
 		AOS.init({
 			duration: 1000,
 			easing: 'ease-in-out-sin',
 			once: true,
 		});
 
-		let res = await fetch('https://api.github.com/users/nurodev/repos');
-		let json = await res.json();
-		this.repos = json;
+		this.posts = this.$site.pages
+			.filter((x) => x.path.startsWith('/blog/') && !x.frontmatter.index)
+			.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
 	},
 };
 </script>

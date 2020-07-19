@@ -1,7 +1,7 @@
 <template>
 	<a :href="repo.html_url">
 		<article
-			:class="`max-w-full md:max-w-xl p-6 md:p-16 mx-8 mb-8 md:mb-12 overflow-hidden rounded-lg blogCard cursor-pointer ${repo.archived ? 'opacity-25' : null}`"
+			:class="`max-w-lg p-6 md:p-16 mx-8 mb-8 md:mb-12 overflow-hidden rounded-lg blogCard cursor-pointer ${repo.archived ? 'opacity-25' : null}`"
 			:style="`border: .5px solid ${languageColor};`"
 		>
 			<div class="py-4">
@@ -13,13 +13,19 @@
 				<span
 					class="inline-block rounded-full px-3 py-1 border border-yellow-500 mr-2 mb-5 tracking-widest text-xs tag-notes"
 					:style="`border: 1px solid ${languageColor}; color: ${languageColor};`"
-					v-text="`⭑ ${repo.stargazers_count}`"
+					v-text="`⭐ ${repo.stargazers_count}`"
+				/>
+				<span
+					v-if="repo.fork"
+					class="inline-block rounded-full px-3 py-1 text-red-500 border-red-500 mr-2 mb-5 uppercase tracking-widest text-xs tag-notes"
+					:style="`border: 1px solid ${languageColor}; color: ${languageColor};`"
+					v-text="`🍴 Fork`"
 				/>
 				<span
 					v-if="repo.archived"
 					class="inline-block rounded-full px-3 py-1 text-red-500 border-red-500 mr-2 mb-5 uppercase tracking-widest text-xs tag-notes"
 					:style="`border: 1px solid`"
-					v-text="`#Archived`"
+					v-text="`#archived`"
 				/>
 				<h1
 					:href="repo.html_url"
@@ -38,7 +44,7 @@ import GitHubColors from 'github-colors';
 export default {
 	data() {
 		return {
-			languageColor: null,
+			languageColor: '#ffffff',
 		};
 	},
 	props: {

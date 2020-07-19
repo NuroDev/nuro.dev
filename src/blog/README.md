@@ -1,5 +1,5 @@
 ---
 title: Blog
-layout: BlogLayout
+layout: Blog
 index: true
 ---
