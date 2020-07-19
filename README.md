@@ -15,7 +15,7 @@
 
 Clone the repository
 ```shell
-$ git clone https://github.com/nurodev/nuro.sh.git
+$ git clone https://github.com/nurodev/nuro.dev.git
 ```
 
 Install dependencies using npm or yarn
