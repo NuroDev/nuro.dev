@@ -7,7 +7,7 @@
 <br />
 <br />
 
-<img alt='Website' src="screenshot.png" />
+<img alt='Website' src=".github/assets/screenshot.png" />
 
 </div>
 
