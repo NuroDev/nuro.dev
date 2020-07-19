@@ -1,13 +1,8 @@
 {
     "version": 2,
     "name": "nuro.sh",
-    "alias": "nuro.sh",
+    "alias": ["nuro.dev", "nuro.sh"],
     "public": true,
-    "regions": [
-        "sfo1",
-        "bru1",
-        "lhr1"
-    ],
     "routes": [
         { "src": "/", "dest": "/index.html" },
         { "src": "/portfolio", "dest": "/portfolio.html" },
