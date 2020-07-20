@@ -29,4 +29,4 @@ $ npm run dev # yarn dev
 
 ## 📄 License
 
-MIT © [Ben Dixon](https://github.com/nurodev/nuro.sh/blob/master/LICENSE)
+MIT © [Ben Dixon](https://github.com/nurodev/nuro.dev/blob/master/LICENSE)
