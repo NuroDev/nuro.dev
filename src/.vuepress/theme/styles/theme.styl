@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$primary = #0072ff
+
+* {
+  transition: all .3s;
+}
+
+*::selection {
+  background-color: $primary;
+  color: white;
+}
+
+body {
+  background-position: 0 0, 27px 27px;
+  background-attachment: fixed;
+  background-size: 54px 54px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+nav a {
+  letter-spacing: .2em;
+}
+
+.title {
+  font-size: 5rem;
+  font-weight: bold;
+}
+@media screen and (max-width: 1024px) {
+  .title { font-size: 4rem; }
+}
+@media screen and (max-width: 768px) {
+  .title { font-size: 3rem; }
+}
+@media screen and (max-width: 425px) {
+  .title { font-size: 2.5rem; }
+}
+@media screen and (max-width: 320px) {
+  .title { font-size: 2rem; }
+}
+.title span {
+  text-decoration: none;
+  background: $primary;
+  padding: 0px 15px;
+  transition: all 0.15s ease-in-out;
+}
+
+.title span::selection {
+  background-color: rgba(255, 255, 255, 0.85);
+  color: black;
+}
+
+@media(prefers-color-scheme: light) {
+  article {
+    @apply bg-white shadow-md;
+
+    a {
+      @apply text-black;
+    }
+
+    h1 {
+      @apply text-gray-800;
+    }
+
+    p {
+      @apply text-gray-500;
+    }
+
+    .tag {
+      @apply border-gray-500 text-gray-500;
+      border: 1px solid;
+    }
+
+    &:hover {
+      @apply shadow-2xl;
+      transform: translateY(-10px);
+    }
+  }
+
+  body {
+    background-image: radial-gradient(#ccc 1px, transparent 1px), radial-gradient(#ccc 1px, transparent 1px);
+  }
+
+  .feather {
+    @apply text-black;
+  }
+
+  html {
+    @apply bg-white;
+  }
+
+  nav a {
+    @apply text-black;
+
+    &:hover {
+      @apply bg-black text-white;
+    }
+  }
+
+  .title {
+    @apply text-black;
+  }
+
+  .title span {
+    @apply text-white;
+  }
+}
+
+@media(prefers-color-scheme: dark) {
+  article {
+    @apply bg-black;
+    border: 1px solid white;
+
+    h1 {
+      @apply text-white;
+    }
+
+    p {
+      @apply text-gray-500;
+    }
+
+    .tag {
+      @apply text-white;
+      border: 1px solid white;
+    }
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+  }
+
+  body {
+    background-image: radial-gradient(#222 1px, transparent 1px), radial-gradient(#222 1px, transparent 1px);
+  }
+
+  .feather {
+    @apply text-white;
+  }
+
+  html {
+    @apply bg-black;
+  }
+
+  nav a {
+    @apply bg-black text-white;
+
+    &:hover {
+      @apply bg-white text-black;
+    }
+  }
+
+  .title {
+    @apply text-white;
+  }
+
+  .title span {
+    @apply text-black;
+  }
+}

@@ -1,7 +1,0 @@
-<template>
-	<v-toolbar class="transparent elevation-0">
-		<v-btn large icon to="/">
-			<v-icon>arrow_back</v-icon>
-		</v-btn>
-	</v-toolbar>
-</template>
