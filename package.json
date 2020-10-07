@@ -20,6 +20,7 @@
     "tailwindcss": "^1.1.4",
     "vue-typed-js": "^0.1.2",
     "vuepress": "^1.2.0",
+    "vuepress-plugin-plausible": "^0.0.2",
     "vuepress-plugin-reading-time": "^0.1.1"
   }
 }

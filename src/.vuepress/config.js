@@ -5,7 +5,10 @@ module.exports = {
 	postcss: {
 		plugins: [require('tailwindcss'), require('autoprefixer')],
 	},
-	plugins: ['vuepress-plugin-reading-time'],
+	plugins: [
+		'vuepress-plugin-reading-time',
+		{'plausible': { domain: 'nuro.dev' }},
+	],
 	serviceWorker: true,
 	title: '👋🏻 N U R O ™',
 	themeConfig: {

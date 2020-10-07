@@ -7989,6 +7989,11 @@ vuepress-plugin-container@^2.0.2:
     "@vuepress/shared-utils" "^1.2.0"
     markdown-it-container "^2.0.0"
 
+vuepress-plugin-plausible@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-plausible/-/vuepress-plugin-plausible-0.0.2.tgz#adadd16b33fa769d9bd748d46d235b4cff7d6c1b"
+  integrity sha512-EbfcZZpsGb46K2C9zrhQZaj1fRCT4uZFDu9XRxecuFrqGX84dBTquTwRF/4SMUes3m7iAKVaK/qmZaSG08P1uA==
+
 vuepress-plugin-reading-time@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/vuepress-plugin-reading-time/-/vuepress-plugin-reading-time-0.1.1.tgz#3ea3dcded424a00c1d5175a50af8d5694899f1ea"
