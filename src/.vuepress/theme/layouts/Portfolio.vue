@@ -45,7 +45,7 @@ export default {
 
 		let res = await fetch('https://api.github.com/users/nurodev/repos');
 		let json = await res.json();
-		let sorted = json.filter(repo => !"NuroDev/NuroDev".includes(repo.full_name)); // Remove the profile README repo
+		let sorted = json.filter((repo) => !'NuroDev/NuroDev'.includes(repo.full_name)); // Remove the profile README repo
 		this.repos = sorted;
 	},
 };

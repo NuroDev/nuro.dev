@@ -1,7 +1,11 @@
 <template>
 	<a :href="repo.html_url">
 		<article
-			:class="`min-w-0 xs:min-w-full max-w-md p-6 md:p-16 mx-8 mb-8 md:mb-12 overflow-hidden rounded-lg blogCard cursor-pointer ${repo.archived ? 'opacity-25' : null}`"
+			:class="
+				`min-w-0 xs:min-w-full max-w-md p-6 md:p-16 mx-8 mb-8 md:mb-12 overflow-hidden rounded-lg blogCard cursor-pointer ${
+					repo.archived ? 'opacity-25' : null
+				}`
+			"
 			:style="`border: .5px solid ${languageColor};`"
 		>
 			<div class="py-4">

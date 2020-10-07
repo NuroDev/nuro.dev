@@ -2,10 +2,9 @@
 	<nav class="w-full pt-8">
 		<div class="flex items-center justify-center mx-auto">
 			<ul class="flex">
-				<a
-					href="/"
-					class="p-2 px-4 font-bold uppercase tracking-widest cursor-pointer"
-				>home</a>
+				<a href="/" class="p-2 px-4 font-bold uppercase tracking-widest cursor-pointer"
+					>home</a
+				>
 				<!-- <a
 					href="/blog"
 					class="p-2 px-4 font-bold uppercase tracking-widest cursor-pointer"
@@ -13,11 +12,13 @@
 				<a
 					href="/portfolio"
 					class="p-2 px-4 font-bold uppercase tracking-widest cursor-pointer"
-				>portfolio</a>
+					>portfolio</a
+				>
 				<a
 					href="/contact"
 					class="p-2 px-4 font-bold uppercase tracking-widest cursor-pointer"
-				>contact</a>
+					>contact</a
+				>
 			</ul>
 		</div>
 	</nav>

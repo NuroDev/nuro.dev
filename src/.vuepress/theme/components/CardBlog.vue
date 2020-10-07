@@ -29,7 +29,7 @@
 				<p class="text-gray-500" v-text="formatDate(post.frontmatter.date)" />
 			</div>
 		</article>
-	</a href="">
+	</a>
 </template>
 
 <script>
@@ -39,11 +39,11 @@ export default {
 	props: {
 		post: {
 			type: Object,
-			required: true
-		}
+			required: true,
+		},
 	},
 	methods: {
 		formatDate: (date) => moment(date).format('Do MMM YYYY'),
-	}
+	},
 };
 </script>
