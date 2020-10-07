@@ -27,5 +27,6 @@ module.exports = {
 		['link', { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#0072ff"}],
 		['link', { rel: "shortcut icon", href: "/favicon.ico"}],
 		['meta', { name: "theme-color", content: "#0072ff"}],
+		['script', { async: true, defer: true, "data-domain": "nuro.dev", src: "https://analytics.nuro.dev/js/plausible.js" }]
 	],
 };
