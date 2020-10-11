@@ -33,7 +33,7 @@ module.exports = {
 				async: true,
 				defer: true,
 				'data-website-id': '2b32cecd-efb1-4747-87f6-471765358b0d',
-				src="https://analytics.nuro.dev/umami.js",
+				src: "https://analytics.nuro.dev/umami.js",
 			},
 		],
 	],
