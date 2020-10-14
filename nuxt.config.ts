@@ -129,7 +129,6 @@ export default {
 			experimental: {
 				darkModeVariant: true,
 			},
-			plugins: [require('@tailwindcss/typography')],
 			purge: {
 				enabled: process.env.NODE_ENV === 'production',
 				content: [

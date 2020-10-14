@@ -22,7 +22,6 @@
 		"@nuxtjs/pwa": "^3.2.2",
 		"@nuxtjs/redirect-module": "^0.3.1",
 		"@nuxtjs/robots": "^2.4.2",
-		"@tailwindcss/typography": "^0.2.0",
 		"@types/vue-feather-icons": "^5.0.0",
 		"core-js": "^3.6.5",
 		"nuxt": "^2.14.6",
