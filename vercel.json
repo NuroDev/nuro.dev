@@ -6,7 +6,7 @@
 			"src": "nuxt.config.ts",
 			"use": "@nuxtjs/vercel-builder",
 			"config": {
-				
+				"generateStaticRoutes": true
 			}
 		},
 		{
