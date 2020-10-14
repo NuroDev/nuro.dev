@@ -26,8 +26,6 @@
 		"core-js": "^3.6.5",
 		"nuxt": "^2.14.6",
 		"remark-code-blocks": "^2.0.1",
-		"remark-code-import": "^0.2.0",
-		"remark-collapse": "^0.1.2",
 		"remark-emoji": "^2.1.0",
 		"vue-feather-icons": "^5.1.0"
 	},
@@ -42,13 +40,11 @@
 		"@nuxtjs/google-fonts": "^1.1.0",
 		"@nuxtjs/svg": "^0.1.12",
 		"@nuxtjs/tailwindcss": "^3.1.0",
-		"@types/node-fetch": "^2.5.7",
 		"babel-eslint": "^10.1.0",
 		"eslint": "^7.10.0",
 		"eslint-config-prettier": "^6.12.0",
 		"eslint-plugin-nuxt": "^1.0.0",
 		"eslint-plugin-prettier": "^3.1.4",
-		"node-fetch": "^2.6.1",
 		"prettier": "^2.1.2"
 	}
 }

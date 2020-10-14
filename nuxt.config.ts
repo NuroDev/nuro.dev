@@ -57,12 +57,7 @@ export default {
 	content: {
 		apiPrefix: '/content/',
 		markdown: {
-			remarkPlugins: [
-				'remark-code-blocks',
-				'remark-code-import',
-				'remark-collapse',
-				'remark-emoji',
-			],
+			remarkPlugins: ['remark-code-blocks', 'remark-emoji'],
 		},
 	},
 
