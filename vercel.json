@@ -1,11 +1,31 @@
 {
-    "version": 2,
-    "name": "nuro.dev",
-    "alias": ["nuro.dev", "nuro.sh"],
-    "public": true,
-    "routes": [
-        { "src": "/", "dest": "/index.html" },
-        { "src": "/portfolio", "dest": "/portfolio.html" },
-        { "src": "/contact", "dest": "/contact.html" }
-    ]
+	"version": 2,
+	"public": true,
+	"builds": [
+		{
+			"src": "nuxt.config.ts",
+			"use": "@nuxtjs/vercel-builder",
+			"config": {
+				
+			}
+		},
+		{
+			"src": "api/**/*.{js,ts}",
+			"use": "@vercel/node"
+		}
+	],
+	"routes": [
+		{
+			"src": "/api/(.*)",
+			"dest": "/api/(.*).{js,ts}",
+			"methods": [
+				"GET",
+				"OPTIONS"
+			],
+			"headers": {
+				"Access-Control-Allow-Methods": "GET",
+				"Access-Control-Allow-Headers": "Content-Type"
+			}
+		}
+	]
 }

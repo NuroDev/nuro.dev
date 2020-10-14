@@ -1,0 +1,12 @@
+.github/
+.nuxt/
+cache/
+dist/
+node_modules/
+
+.eslintrc.js
+.prettierignore
+.prettierrc.json
+*.log
+README.md
+sw.*

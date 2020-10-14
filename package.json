@@ -1,25 +1,55 @@
 {
-  "name": "nuro.sh",
-  "version": "1.2.1",
-  "description": "Personal Website for nuro.sh",
-  "repository": "https://github.com/nurodev/nuro.sh.git",
-  "author": "N U R O ™ <me@nuro.sh>",
-  "license": "MIT",
-  "scripts": {
-    "dev": "vuepress dev src",
-    "build": "vuepress build src",
-    "prettier": "prettier --config .prettierrc.json --write \"**/*.{js,css,vue}\""
-  },
-  "devDependencies": {
-    "aos": "^2.3.4",
-    "autoprefixer": "^9.7.3",
-    "github-colors": "^2.2.18",
-    "moment": "^2.24.0",
-    "postcss": "^7.0.26",
-    "prettier": "^1.19.1",
-    "tailwindcss": "^1.1.4",
-    "vue-typed-js": "^0.1.2",
-    "vuepress": "^1.2.0",
-    "vuepress-plugin-reading-time": "^0.1.1"
-  }
+	"private": true,
+	"name": "nuro.dev",
+	"version": "0.1.1",
+	"scripts": {
+		"dev": "nuxt-ts",
+		"build": "nuxt-ts build",
+		"start": "nuxt-ts start",
+		"generate": "nuxt-ts generate",
+		"lint:js": "eslint --ext .js,.ts,.vue --ignore-path .gitignore .",
+		"lint": "yarn lint:js",
+		"prettier": "prettier --config .prettierrc.json --write \"**/*.{js,ts,css,vue}\"",
+		"vc:dev": "vercel dev -A vercel.dev.json",
+		"vc:prod": "vercel"
+	},
+	"dependencies": {
+		"@luxdamore/nuxt-canvas-sketch": "^1.5.4",
+		"@nuxt/content": "^1.9.0",
+		"@nuxt/http": "^0.6.0",
+		"@nuxt/typescript-runtime": "^2.0.0",
+		"@nuxtjs/composition-api": "^0.13.0",
+		"@nuxtjs/pwa": "^3.2.2",
+		"@nuxtjs/redirect-module": "^0.3.1",
+		"@nuxtjs/robots": "^2.4.2",
+		"@tailwindcss/typography": "^0.2.0",
+		"@types/vue-feather-icons": "^5.0.0",
+		"core-js": "^3.6.5",
+		"nuxt": "^2.14.6",
+		"remark-code-blocks": "^2.0.1",
+		"remark-code-import": "^0.2.0",
+		"remark-collapse": "^0.1.2",
+		"remark-emoji": "^2.1.0",
+		"vue-feather-icons": "^5.1.0"
+	},
+	"devDependencies": {
+		"@nuxt/image": "^0.0.3",
+		"@nuxt/types": "^2.14.6",
+		"@nuxt/typescript-build": "^2.0.3",
+		"@nuxtjs/color-mode": "^2.0.0",
+		"@nuxtjs/eslint-config": "^3.1.0",
+		"@nuxtjs/eslint-config-typescript": "^3.0.0",
+		"@nuxtjs/eslint-module": "^2.0.0",
+		"@nuxtjs/google-fonts": "^1.1.0",
+		"@nuxtjs/svg": "^0.1.12",
+		"@nuxtjs/tailwindcss": "^3.1.0",
+		"@types/node-fetch": "^2.5.7",
+		"babel-eslint": "^10.1.0",
+		"eslint": "^7.10.0",
+		"eslint-config-prettier": "^6.12.0",
+		"eslint-plugin-nuxt": "^1.0.0",
+		"eslint-plugin-prettier": "^3.1.4",
+		"node-fetch": "^2.6.1",
+		"prettier": "^2.1.2"
+	}
 }
