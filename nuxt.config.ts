@@ -4,8 +4,6 @@ const themeColor = '#000000';
 const domain = 'nuro.dev';
 
 export default {
-	mode: 'universal',
-	target: 'static',
 	components: true,
 	head: {
 		title,
