@@ -16,8 +16,8 @@
 	],
 	"routes": [
 		{
-			"src": "/api/(.*)",
-			"dest": "/api/(.*).{js,ts}",
+			"src": "/api/([^/]+)",
+			"dest": "/api/$1.ts",
 			"methods": [
 				"GET",
 				"OPTIONS"
