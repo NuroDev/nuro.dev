@@ -20,10 +20,7 @@
 				<div
 					class="col-span-1 transition duration-300 ease-in-out transform hover:-translate-y-2 shadow dark:shadow-none rounded-lg"
 				>
-					<div
-						class="p-8 bg-white dark:bg-gray-800 rounded-t-lg"
-						style="height: 14rem"
-					>
+					<div class="p-8 bg-white dark:bg-gray-800 rounded-t-lg" style="height: 14rem">
 						<h3
 							class="text-lg font-semibold rounded-full bg-red-600 inline-block px-2 text-red-200"
 						>
@@ -54,10 +51,7 @@
 				<div
 					class="col-span-1 transition duration-300 ease-in-out transform hover:-translate-y-2 shadow dark:shadow-none rounded-lg"
 				>
-					<div
-						class="p-8 bg-white dark:bg-gray-800 rounded-t-lg"
-						style="height: 14rem"
-					>
+					<div class="p-8 bg-white dark:bg-gray-800 rounded-t-lg" style="height: 14rem">
 						<h3
 							class="text-lg font-semibold rounded-full bg-red-600 inline-block px-2 text-red-200"
 						>

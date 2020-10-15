@@ -4,17 +4,11 @@
 			class="mx-auto max-w-screen-xl grid grid-cols-4 md:grid-cols-6 lg:grid-cols-10 gap-10 lg:gap-20 mb-3"
 		>
 			<div class="col-span-4 md:col-span-3">
-				<a href="/"
-					><span class="flex items-center"
-						><img
-							aria-label="Home"
-							class="h-10 w-auto ml-1"
-							src="/img/horn_transparent.png"
-							alt="Logo"
-						/>
-						<h1 class="ml-3 text-3xl font-semibold text-red-600">Title</h1></span
-					></a
-				>
+				<a href="/">
+					<span class="flex items-center">
+						<h1 class="ml-3 text-3xl font-semibold text-red-600">Title</h1>
+					</span>
+				</a>
 				<p class="text-md my-4 text-gray-500">
 					Data to enrich your online business<br /><br />
 
