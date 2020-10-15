@@ -40,11 +40,14 @@
 		"@nuxtjs/google-fonts": "^1.1.0",
 		"@nuxtjs/svg": "^0.1.12",
 		"@nuxtjs/tailwindcss": "^3.1.0",
+		"@types/node-fetch": "^2.5.7",
+		"@vercel/node": "^1.8.4",
 		"babel-eslint": "^10.1.0",
 		"eslint": "^7.10.0",
 		"eslint-config-prettier": "^6.12.0",
 		"eslint-plugin-nuxt": "^1.0.0",
 		"eslint-plugin-prettier": "^3.1.4",
+		"node-fetch": "^2.6.1",
 		"prettier": "^2.1.2"
 	}
 }
