@@ -18,5 +18,6 @@ export default Vue.extend({
 		const ip: any = await this.$http.$get(`${window.location.origin}/api/get_ip`);
 		console.log(ip);
 	},
+	fetchOnServer: false,
 });
 </script>
