@@ -7,6 +7,8 @@ node_modules/
 .eslintrc.js
 .prettierignore
 .prettierrc.json
+.vercelignore
 *.log
 README.md
 sw.*
+vercel.dev.json
