@@ -1,11 +1,19 @@
 {
-    "version": 2,
-    "name": "nuro.sh",
-    "alias": ["nuro.dev", "nuro.sh"],
-    "public": true,
-    "routes": [
-        { "src": "/", "dest": "/index.html" },
-        { "src": "/portfolio", "dest": "/portfolio.html" },
-        { "src": "/contact", "dest": "/contact.html" }
-    ]
+	"version": 2,
+	"public": true,
+	"alias": "nuro.dev",
+	"routes": [
+		{
+			"src": "/",
+			"dest": "/index.html"
+		},
+		{
+			"src": "/portfolio",
+			"dest": "/portfolio.html"
+		},
+		{
+			"src": "/contact",
+			"dest": "/contact.html"
+		}
+	]
 }
