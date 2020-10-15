@@ -18,15 +18,13 @@ html {
 	@apply box-border m-0;
 }
 
-.dark body {
-	@apply bg-gray-800 text-white;
-}
-
-.light .topography {
+.light body {
+	@apply bg-white;
 	background-image: url('/light-topography.svg');
 }
 
-.dark .topography {
+.dark body {
+	@apply bg-gray-900 text-white;
 	background-image: url('/dark-topography.svg');
 }
 </style>

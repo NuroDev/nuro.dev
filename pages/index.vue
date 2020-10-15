@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<section id="header" class="relative overflow-hidden">
+		<section id="header" class="relative overflow-hidden bg-white dark:bg-gray-800">
 			<div class="max-w-screen-xl mx-auto">
 				<div
 					class="relative z-10 pb-8 bg-white dark:bg-gray-800 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 py-16 pb-32"
@@ -225,7 +225,7 @@
 			</div>
 		</section>
 
-		<section id="theme" class="bg-gray-100 dark:bg-gray-900 topography dark:topography">
+		<section id="theme" class="">
 			<div
 				class="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between"
 			>
@@ -271,7 +271,7 @@
 			</div>
 		</section>
 
-		<section id="features" class="pt-24 pb-32">
+		<section id="features" class="pt-24 pb-32 bg-white dark:bg-gray-800 shadow dark:shadow-none">
 			<div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div class="lg:text-center">
 					<p
@@ -389,10 +389,7 @@
 			</div>
 		</section>
 
-		<section
-			id="pricing"
-			class="pt-24 pb-32 bg-gray-100 dark:bg-gray-900 topography dark:topography"
-		>
+		<section id="pricing" class="pt-24 pb-32">
 			<div class="lg:text-center">
 				<p class="text-base leading-6 text-red-600 font-semibold tracking-wide uppercase">
 					Pricing
@@ -411,7 +408,7 @@
 				>
 					<div class="col-span-1">
 						<div
-							class="p-8 bg-gray-300 dark:bg-gray-800 rounded-t-lg"
+							class="p-8 bg-gray-200 dark:bg-gray-800 rounded-t-lg"
 							style="height: 14rem"
 						>
 							<h3
@@ -426,7 +423,7 @@
 							<p class="text-gray-600 mt-2">Try and evaluate, as long as you want.</p>
 						</div>
 						<div
-							class="px-8 py-4 bg-gray-200 dark:bg-gray-700 rounded-b-lg"
+							class="px-8 py-4 bg-gray-100 dark:bg-gray-700 rounded-b-lg"
 							style="height: 9rem"
 						>
 							<ul>
@@ -458,7 +455,7 @@
 					</div>
 					<div class="col-span-1">
 						<div
-							class="p-8 bg-gray-300 dark:bg-gray-800 rounded-t-lg"
+							class="p-8 bg-gray-200 dark:bg-gray-800 rounded-t-lg"
 							style="height: 14rem"
 						>
 							<h3
@@ -477,7 +474,7 @@
 							</p>
 						</div>
 						<div
-							class="px-8 py-4 bg-gray-200 dark:bg-gray-700 rounded-b-lg text-gray-700 dark:text-white"
+							class="px-8 py-4 bg-gray-100 dark:bg-gray-700 rounded-b-lg text-gray-700 dark:text-white"
 							style="height: 9rem"
 						>
 							<ul>
