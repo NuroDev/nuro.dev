@@ -17,7 +17,7 @@ export default {
 			{
 				async: true,
 				defer: true,
-				'data-website-id': '2b32cecd-efb1-4747-87f6-471765358b0d',
+				'data-website-id': process.env.UMAMI_WEBSITE_ID,
 				'data-do-not-track': true,
 				src: `https://analytics.${domain}/umami.js`,
 			},
