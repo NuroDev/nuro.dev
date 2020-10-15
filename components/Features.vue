@@ -8,7 +8,7 @@
 				<h3
 					class="mt-2 text-3xl leading-8 font-extrabold tracking-tight sm:text-4xl sm:leading-10"
 				>
-					A 
+					A
 					<span class="text-red-600">better</span> way to send money.
 				</h3>
 				<p class="mt-4 max-w-2xl text-xl leading-7 text-gray-500 lg:mx-auto">
