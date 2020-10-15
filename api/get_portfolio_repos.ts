@@ -7,7 +7,7 @@ export default async function (_req: NowRequest, res: NowResponse) {
 	let repos = await response.json();
 
 	// Remove the profile README repo
-	repos = repos.filter((repo) => !'NuroDev/NuroDev'.includes(repo.full_name));
+	repos = repos.filter((repo: any) => !'NuroDev/NuroDev'.includes(repo.full_name));
 
 	res.send(JSON.stringify(repos));
 }
