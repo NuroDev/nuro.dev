@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="h-screen w-screen flex items-center bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white"
+		class="h-screen w-screen flex items-center bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
 	>
 		<div class="w-full py-16 px-12 m-16 flex flex-col items-center justify-center">
 			<div>
