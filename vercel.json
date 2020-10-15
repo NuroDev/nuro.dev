@@ -19,7 +19,7 @@
 	],
 	"routes": [
 		{
-			"src": "/api/([^/]+)",
+			"src": "/api/(.*)",
 			"dest": "/api/$1.ts",
 			"methods": [
 				"GET",
