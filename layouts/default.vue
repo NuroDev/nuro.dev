@@ -21,4 +21,12 @@ html {
 .dark body {
 	@apply bg-gray-800 text-white;
 }
+
+.light .topography {
+	background-image: url('/light-topography.svg');
+}
+
+.dark .topography {
+	background-image: url('/dark-topography.svg');
+}
 </style>

@@ -225,7 +225,7 @@
 			</div>
 		</section>
 
-		<section id="theme" class="bg-gray-100 dark:bg-gray-900">
+		<section id="theme" class="bg-gray-100 dark:bg-gray-900 topography dark:topography">
 			<div
 				class="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between"
 			>
@@ -389,7 +389,10 @@
 			</div>
 		</section>
 
-		<section id="pricing" class="pt-24 pb-32 bg-gray-100 dark:bg-gray-900">
+		<section
+			id="pricing"
+			class="pt-24 pb-32 bg-gray-100 dark:bg-gray-900 topography dark:topography"
+		>
 			<div class="lg:text-center">
 				<p class="text-base leading-6 text-red-600 font-semibold tracking-wide uppercase">
 					Pricing
