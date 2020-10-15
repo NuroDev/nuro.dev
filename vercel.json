@@ -1,6 +1,9 @@
 {
 	"version": 2,
 	"public": true,
+	"regions": [
+		"lhr1"
+	],
 	"builds": [
 		{
 			"src": "nuxt.config.ts",
