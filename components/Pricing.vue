@@ -18,10 +18,10 @@
 				class="mx-auto max-w-2xl grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 text-left h-76"
 			>
 				<div
-					class="col-span-1 transition duration-300 ease-in-out transform hover:-translate-y-2"
+					class="col-span-1 transition duration-300 ease-in-out transform hover:-translate-y-2 shadow dark:shadow-none rounded-lg"
 				>
 					<div
-						class="p-8 bg-gray-200 dark:bg-gray-800 rounded-t-lg"
+						class="p-8 bg-white dark:bg-gray-800 rounded-t-lg"
 						style="height: 14rem"
 					>
 						<h3
@@ -52,10 +52,10 @@
 					</div>
 				</div>
 				<div
-					class="col-span-1 transition duration-300 ease-in-out transform hover:-translate-y-2"
+					class="col-span-1 transition duration-300 ease-in-out transform hover:-translate-y-2 shadow dark:shadow-none rounded-lg"
 				>
 					<div
-						class="p-8 bg-gray-200 dark:bg-gray-800 rounded-t-lg"
+						class="p-8 bg-white dark:bg-gray-800 rounded-t-lg"
 						style="height: 14rem"
 					>
 						<h3

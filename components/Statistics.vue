@@ -22,7 +22,7 @@
 					class="p-4 md:w-1/4 sm:w-1/2 w-full transition duration-300 ease-in-out transform hover:-translate-y-2"
 				>
 					<div
-						class="border-2 border-gray-400 dark:border-gray-600 px-4 py-6 rounded-lg bg-white dark:bg-gray-800 shadow-sm dark:shadow-none"
+						class="px-4 py-6 rounded-lg bg-white dark:bg-gray-800 shadow dark:shadow-none"
 					>
 						<DownloadCloudIcon class="text-red-600 w-12 h-12 mb-3 inline-block" />
 						<h2 class="title-font font-medium text-3xl dark:text-white">2.7K</h2>
@@ -34,7 +34,7 @@
 					class="p-4 md:w-1/4 sm:w-1/2 w-full transition duration-300 ease-in-out transform hover:-translate-y-2"
 				>
 					<div
-						class="border-2 border-gray-400 dark:border-gray-600 px-4 py-6 rounded-lg bg-white dark:bg-gray-800 shadow-sm dark:shadow-none"
+						class="px-4 py-6 rounded-lg bg-white dark:bg-gray-800 shadow dark:shadow-none"
 					>
 						<UsersIcon class="text-red-600 w-12 h-12 mb-3 inline-block" />
 						<h2 class="title-font font-medium text-3xl dark:text-white">1.3K</h2>
@@ -46,7 +46,7 @@
 					class="p-4 md:w-1/4 sm:w-1/2 w-full transition duration-300 ease-in-out transform hover:-translate-y-2"
 				>
 					<div
-						class="border-2 border-gray-400 dark:border-gray-600 px-4 py-6 rounded-lg bg-white dark:bg-gray-800 shadow-sm dark:shadow-none"
+						class="px-4 py-6 rounded-lg bg-white dark:bg-gray-800 shadow dark:shadow-none"
 					>
 						<HeadphonesIcon class="text-red-600 w-12 h-12 mb-3 inline-block" />
 						<h2 class="title-font font-medium text-3xl dark:text-white">74</h2>
@@ -58,7 +58,7 @@
 					class="p-4 md:w-1/4 sm:w-1/2 w-full transition duration-300 ease-in-out transform hover:-translate-y-2"
 				>
 					<div
-						class="border-2 border-gray-400 dark:border-gray-600 px-4 py-6 rounded-lg bg-white dark:bg-gray-800 shadow-sm dark:shadow-none"
+						class="px-4 py-6 rounded-lg bg-white dark:bg-gray-800 shadow dark:shadow-none"
 					>
 						<ShieldIcon class="text-red-600 w-12 h-12 mb-3 inline-block" />
 						<h2 class="title-font font-medium text-3xl dark:text-white">46</h2>
