@@ -26,7 +26,7 @@
 					>
 						<DownloadCloudIcon class="text-red-600 w-12 h-12 mb-3 inline-block" />
 						<h2 class="title-font font-medium text-3xl dark:text-white">2.7K</h2>
-						<p class="leading-relaxed">Downloads</p>
+						<p class="leading-relaxed text-gray-500 dark:text-gray-600">Downloads</p>
 					</div>
 				</div>
 
@@ -38,7 +38,7 @@
 					>
 						<UsersIcon class="text-red-600 w-12 h-12 mb-3 inline-block" />
 						<h2 class="title-font font-medium text-3xl dark:text-white">1.3K</h2>
-						<p class="leading-relaxed">Users</p>
+						<p class="leading-relaxed text-gray-500 dark:text-gray-600">Users</p>
 					</div>
 				</div>
 
@@ -50,7 +50,7 @@
 					>
 						<HeadphonesIcon class="text-red-600 w-12 h-12 mb-3 inline-block" />
 						<h2 class="title-font font-medium text-3xl dark:text-white">74</h2>
-						<p class="leading-relaxed">Files</p>
+						<p class="leading-relaxed text-gray-500 dark:text-gray-600">Files</p>
 					</div>
 				</div>
 
@@ -62,7 +62,7 @@
 					>
 						<ShieldIcon class="text-red-600 w-12 h-12 mb-3 inline-block" />
 						<h2 class="title-font font-medium text-3xl dark:text-white">46</h2>
-						<p class="leading-relaxed">Places</p>
+						<p class="leading-relaxed text-gray-500 dark:text-gray-600">Places</p>
 					</div>
 				</div>
 			</div>
