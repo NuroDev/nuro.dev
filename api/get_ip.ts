@@ -18,7 +18,7 @@ interface Response {
 	zip: string;
 }
 
-export default async function (req: NowRequest, res: NowResponse) {
+export default async function (_req: NowRequest, res: NowResponse) {
 	try {
 		const response = await fetch('http://ip-api.com/json');
 		const json: Response = await response.json();
