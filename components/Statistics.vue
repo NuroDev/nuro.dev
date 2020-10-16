@@ -1,5 +1,5 @@
 <template>
-	<section class="bg-transparent body-font">
+	<section>
 		<div class="container px-5 py-24 mx-auto">
 			<div class="lg:text-center mb-16">
 				<p class="text-base leading-6 text-red-600 font-semibold tracking-wide uppercase">
