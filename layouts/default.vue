@@ -18,6 +18,10 @@ html {
 	@apply box-border m-0;
 }
 
+body {
+	@apply bg-fixed bg-center;
+}
+
 .light body {
 	@apply bg-white;
 	background-image: url('/light-topography.svg');
