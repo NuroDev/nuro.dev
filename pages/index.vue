@@ -1,8 +1,9 @@
 <template>
 	<div>
 		<Header id="header" />
-		<Statistics id="statistics" />
 		<Features id="features" />
+		<Statistics id="statistics" />
+		<Team id="team" />
 		<Pricing id="pricing" />
 		<Theme id="theme" />
 		<Footer id="footer" />
