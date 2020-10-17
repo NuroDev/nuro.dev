@@ -41,36 +41,19 @@ export default {
 		'@nuxtjs/redirect-module',
 	],
 
-	// https://github.com/LuXDAmore/generative-art
 	canvasSketch: {
 		hideErrorsInConsole: false,
 		hideGenericMessagesInConsole: false,
 	},
-
 	colorMode: {
 		classSuffix: '',
 	},
-
-	// https://content.nuxtjs.org/
 	content: {
 		apiPrefix: '/content/',
 		markdown: {
 			remarkPlugins: ['remark-code-blocks', 'remark-emoji'],
 		},
 	},
-
-	// https://github.com/nuxt-community/google-fonts-module
-	googleFonts: {
-		// families: {
-		// 	Roboto: true,
-		// 	Raleway: {
-		// 		wght: [100, 400],
-		// 		ital: [100],
-		// 	},
-		// },
-	},
-
-	// https://image.nuxtjs.org/providers/
 	image: {
 		providers: {
 			local: {
@@ -79,7 +62,6 @@ export default {
 			},
 		},
 	},
-
 	pwa: {
 		meta: {
 			favicon: true,
@@ -104,18 +86,15 @@ export default {
 			sizes: [16, 128, 144, 152, 192, 256, 512],
 		},
 	},
-
 	redirect: [
 		{ from: '^/github', to: 'https://github.com/nurodev', statusCode: 301 },
 		{ from: '^/linkedin', to: 'https://www.linkedin.com/in/nurodev/', statusCode: 301 },
 		{ from: '^/twitter', to: 'https://twitter.com/nurodev', statusCode: 301 },
 	],
-
 	robots: {
 		UserAgent: '*',
 		Disallow: '',
 	},
-
 	tailwindcss: {
 		config: {
 			dark: 'class',
