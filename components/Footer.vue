@@ -25,6 +25,7 @@
 			<span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
 				<NuxtLink
 					to="/twitter"
+					target="_blank"
 					class="ml-3 text-gray-500 hover:text-black dark:hover:text-white transition duration-300 ease-in-out hover:bg-gray-100 dark:hover:bg-gray-700 p-3 rounded-full"
 				>
 					<TwitterIcon size="1x" class="w-5 h-5" />
@@ -32,6 +33,7 @@
 
 				<NuxtLink
 					to="/github"
+					target="_blank"
 					class="ml-3 text-gray-500 hover:text-black dark:hover:text-white transition duration-300 ease-in-out hover:bg-gray-100 dark:hover:bg-gray-700 p-3 rounded-full"
 				>
 					<GithubIcon size="1x" class="w-5 h-5" />
@@ -39,6 +41,7 @@
 
 				<NuxtLink
 					to="/linkedin"
+					target="_blank"
 					class="ml-3 text-gray-500 hover:text-black dark:hover:text-white transition duration-300 ease-in-out hover:bg-gray-100 dark:hover:bg-gray-700 p-3 rounded-full"
 				>
 					<LinkedinIcon size="1x" class="w-5 h-5" />
