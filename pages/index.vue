@@ -13,12 +13,15 @@
 <script lang="ts">
 import Vue from 'vue';
 
-// TODO: Convert to use Vue3 composition API + useFetch
 export default Vue.extend({
-	async fetch() {
-		const ip: any = await this.$http.$get(`${window.location.origin}/api/get_ip`);
-		console.log(ip);
-	},
-	fetchOnServer: false,
+	async asyncData({ $http }) {
+		try {
+			const response: any = await $http.get(`/api/get_ip`);
+			const ip: any = await response.json();
+			console.log(ip);
+		} catch (error) {
+			console.error(`Fetch failed '/api/get_ip': ${error}`);
+		}
+	}
 });
 </script>
