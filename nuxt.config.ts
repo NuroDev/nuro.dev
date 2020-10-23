@@ -1,4 +1,4 @@
-const title = '👋🏻 N U R O ™';
+const title = 'N U R O ™';
 const description = `Hi! I'm Ben, a developer`;
 const themeColor = '#000000';
 const domain = 'nuro.dev';
