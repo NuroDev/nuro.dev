@@ -8,6 +8,9 @@ export default {
 	ssr: false,
 	components: true,
 	head: {
+		htmlAttrs: {
+			lang: 'en', // TODO: Use nuxt-i18n
+		},
 		title,
 		meta: [
 			{ charset: 'utf-8' },
