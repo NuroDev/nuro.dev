@@ -1,6 +1,4 @@
-<template>
-	<canvas id="background" class="fixed inset-0" />
-</template>
+<template></template>
 
 <script lang="ts">
 import Vue from 'vue';
@@ -44,10 +42,15 @@ export default Vue.extend({
 			renderer: new Renderer(),
 		}
 	},
-	created() {
+	mounted() {
 		// Initialize the renderer and push the canvas to the DOM
 		const gl = this.renderer.gl;
-		document.body.appendChild(gl.canvas); // TODO: Inject canvas to append layout div instead of the body
+		gl.canvas.id = 'background'
+		gl.canvas.classList.add('fixed', 'inset-0');
+		if (!document.getElementById('background')) {
+			const layout = document.getElementById('__layout');
+			if (layout) layout.appendChild(gl.canvas);
+		}
 		gl.clearColor(1, 1, 1, 1);
 
 		// TODO: Convert to a Vue method

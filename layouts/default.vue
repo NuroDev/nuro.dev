@@ -36,8 +36,4 @@ body {
 	/* TODO: Find a better way to set this */
 	background-image: url('/dark-topography.svg');
 }
-
-canvas {
-	@apply fixed inset-0;
-}
 </style>
