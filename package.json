@@ -4,14 +4,11 @@
 	"version": "0.1.1",
 	"scripts": {
 		"dev": "nuxt-ts",
-		"build": "nuxt-ts build",
+		"build": "nuxt-ts generate",
 		"start": "nuxt-ts start",
-		"generate": "nuxt-ts generate",
 		"lint:js": "eslint --ext .js,.ts,.vue --ignore-path .gitignore .",
 		"lint": "yarn lint:js",
-		"prettier": "prettier --config .prettierrc.json --write \"**/*.{js,ts,css,vue}\"",
-		"vc:dev": "vercel dev -A vercel.dev.json",
-		"vc:prod": "vercel"
+		"prettier": "prettier --config .prettierrc.json --write \"**/*.{js,ts,css,vue}\""
 	},
 	"dependencies": {
 		"@luxdamore/nuxt-canvas-sketch": "^1.5.4",

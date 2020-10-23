@@ -4,19 +4,6 @@
 	"regions": [
 		"lhr1"
 	],
-	"builds": [
-		{
-			"src": "nuxt.config.ts",
-			"use": "@nuxtjs/vercel-builder",
-			"config": {
-				"generateStaticRoutes": true
-			}
-		},
-		{
-			"src": "api/**/*.{js,ts}",
-			"use": "@vercel/node"
-		}
-	],
 	"routes": [
 		{
 			"src": "/api/(.*)",
