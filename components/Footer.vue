@@ -15,11 +15,11 @@
 			>
 				© 2020 —
 				<a
-					href="https://twitter.com/knyttneve"
+					href="https://twitter.com/nurodev"
 					class="text-gray-500 ml-1"
 					target="_blank"
 					rel="noopener noreferrer"
-					>@knyttneve</a
+					>@nurodev</a
 				>
 			</p>
 			<span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
