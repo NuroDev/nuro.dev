@@ -49,10 +49,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
+import Vue from 'vue';
 import { GithubIcon, LinkedinIcon, TwitterIcon } from 'vue-feather-icons';
 
-export default defineComponent({
+export default Vue.extend({
 	components: {
 		GithubIcon,
 		LinkedinIcon,

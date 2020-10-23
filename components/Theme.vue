@@ -47,10 +47,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
+import Vue from 'vue';
 import { MonitorIcon, MoonIcon, SunIcon } from 'vue-feather-icons';
 
-export default defineComponent({
+export default Vue.extend({
 	components: {
 		MonitorIcon,
 		MoonIcon,

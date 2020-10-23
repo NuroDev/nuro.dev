@@ -25,28 +25,18 @@ export default {
 			},
 		],
 	},
-
 	buildModules: [
 		'@nuxt/typescript-build',
 		'@nuxtjs/color-mode',
-		'@nuxtjs/composition-api',
-		'@nuxtjs/google-fonts',
 		'@nuxtjs/pwa',
 		'@nuxtjs/tailwindcss',
 	],
 	modules: [
-		'@luxdamore/nuxt-canvas-sketch',
-		'@nuxt/content',
+		// '@nuxt/content',
 		'@nuxt/http',
-		'@nuxt/image',
 		'@nuxtjs/pwa',
 		'@nuxtjs/redirect-module',
 	],
-
-	canvasSketch: {
-		hideErrorsInConsole: false,
-		hideGenericMessagesInConsole: false,
-	},
 	colorMode: {
 		classSuffix: '',
 	},
@@ -54,14 +44,6 @@ export default {
 		apiPrefix: '/content/',
 		markdown: {
 			remarkPlugins: ['remark-code-blocks', 'remark-emoji'],
-		},
-	},
-	image: {
-		providers: {
-			local: {
-				dir: '~/assets/images/',
-				clearCache: false,
-			},
 		},
 	},
 	pwa: {
@@ -107,7 +89,6 @@ export default {
 				enabled: process.env.NODE_ENV === 'production',
 				content: [
 					'api/**/*.{js,ts}',
-					'content/**/*.md',
 					'components/**/*.vue',
 					'layouts/**/*.vue',
 					'pages/**/*.vue',

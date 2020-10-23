@@ -78,13 +78,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
+import Vue from 'vue';
 import { FeatherIcon } from 'vue-feather-icons';
 
-export default defineComponent({
+export default Vue.extend({
 	components: {
 		FeatherIcon,
-	}
+	},
 });
 </script>
-

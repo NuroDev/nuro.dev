@@ -11,11 +11,9 @@
 		"prettier": "prettier --config .prettierrc.json --write \"**/*.{js,ts,css,vue}\""
 	},
 	"dependencies": {
-		"@luxdamore/nuxt-canvas-sketch": "^1.5.4",
 		"@nuxt/content": "^1.9.0",
 		"@nuxt/http": "^0.6.0",
 		"@nuxt/typescript-runtime": "^2.0.0",
-		"@nuxtjs/composition-api": "^0.13.0",
 		"@nuxtjs/pwa": "^3.2.2",
 		"@nuxtjs/redirect-module": "^0.3.1",
 		"@nuxtjs/robots": "^2.4.2",
@@ -27,14 +25,12 @@
 		"vue-feather-icons": "^5.1.0"
 	},
 	"devDependencies": {
-		"@nuxt/image": "^0.0.3",
 		"@nuxt/types": "^2.14.6",
 		"@nuxt/typescript-build": "^2.0.3",
 		"@nuxtjs/color-mode": "^2.0.0",
 		"@nuxtjs/eslint-config": "^3.1.0",
 		"@nuxtjs/eslint-config-typescript": "^3.0.0",
 		"@nuxtjs/eslint-module": "^2.0.0",
-		"@nuxtjs/google-fonts": "^1.1.0",
 		"@nuxtjs/svg": "^0.1.12",
 		"@nuxtjs/tailwindcss": "^3.1.0",
 		"@types/node-fetch": "^2.5.7",

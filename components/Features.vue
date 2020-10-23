@@ -118,10 +118,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
+import Vue from 'vue';
 import { BellIcon, DollarSignIcon, GlobeIcon, ZapIcon } from 'vue-feather-icons';
 
-export default defineComponent({
+export default Vue.extend({
 	components: {
 		BellIcon,
 		DollarSignIcon,
