@@ -93,6 +93,12 @@ export default {
 			orientation: 'portrait',
 			background_color: themeColor,
 			theme_color: themeColor,
+			icons: [{
+				src: '/icon.png',
+				type: 'image/png',
+				sizes: '512x512',
+				purpose: 'any maskable'
+			}]
 		},
 		icon: {
 			sizes: [16, 128, 144, 152, 192, 256, 512],
