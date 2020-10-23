@@ -1,7 +1,7 @@
 const title = 'N U R O ™';
 const description = `Hi! I'm Ben, a developer`;
 const themeColor = '#000000';
-const domain = 'nuro.dev';
+const domain = process.env.VERCEL_URL || 'localhost';
 
 export default {
 	target: 'static',
