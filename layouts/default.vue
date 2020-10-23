@@ -24,11 +24,11 @@ body {
 
 .light body {
 	@apply bg-white;
-	background-image: url('/light-topography.svg');
+	background-image: url('/light-topography.svg'); /* TODO: Find a better way to set this */
 }
 
 .dark body {
 	@apply bg-gray-900 text-white;
-	background-image: url('/dark-topography.svg');
+	background-image: url('/dark-topography.svg'); /* TODO: Find a better way to set this */
 }
 </style>
