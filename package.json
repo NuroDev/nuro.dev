@@ -20,6 +20,7 @@
 		"@types/vue-feather-icons": "^5.0.0",
 		"core-js": "^3.6.5",
 		"nuxt": "^2.14.6",
+		"ogl-typescript": "^0.1.20",
 		"remark-code-blocks": "^2.0.1",
 		"remark-emoji": "^2.1.0",
 		"vue-feather-icons": "^5.1.0"

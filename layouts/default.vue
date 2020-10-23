@@ -1,5 +1,8 @@
 <template>
-	<Nuxt />
+	<div>
+		<Nuxt />
+		<Background />
+	</div>
 </template>
 
 <style>
@@ -24,11 +27,17 @@ body {
 
 .light body {
 	@apply bg-white;
-	background-image: url('/light-topography.svg'); /* TODO: Find a better way to set this */
+	/* TODO: Find a better way to set this */
+	background-image: url('/light-topography.svg');
 }
 
 .dark body {
 	@apply bg-gray-900 text-white;
-	background-image: url('/dark-topography.svg'); /* TODO: Find a better way to set this */
+	/* TODO: Find a better way to set this */
+	background-image: url('/dark-topography.svg');
+}
+
+canvas {
+	@apply fixed inset-0;
 }
 </style>

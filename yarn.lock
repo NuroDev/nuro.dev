@@ -6914,6 +6914,11 @@ object.values@^1.1.0, object.values@^1.1.1:
     function-bind "^1.1.1"
     has "^1.0.3"
 
+ogl-typescript@^0.1.20:
+  version "0.1.20"
+  resolved "https://registry.yarnpkg.com/ogl-typescript/-/ogl-typescript-0.1.20.tgz#2d0c8125d4e230c2ac6b5b9dd3e2b8fc78f0e7fc"
+  integrity sha512-t9232r4Sc4eF+TtQ0Bo16GZ6LCkQiPgOW7tgkPmp3mkJNFihtNc+PaGBh1qFCwKB6K7gQ07NoIiLgWhyghA4GA==
+
 on-finished@^2.3.0, on-finished@~2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/on-finished/-/on-finished-2.3.0.tgz#20f1336481b083cd75337992a16971aa2d906947"
