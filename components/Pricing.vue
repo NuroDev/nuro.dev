@@ -1,19 +1,21 @@
 <template>
-	<section class="pt-24 pb-32">
+	<section class="container px-5 py-24 mx-auto">
 		<div class="lg:text-center">
-			<p class="text-base leading-6 text-red-600 font-semibold tracking-wide uppercase">
-				Pricing
-			</p>
-			<h3
-				class="mt-2 text-3xl leading-8 font-extrabold tracking-tight sm:text-4xl sm:leading-10"
-			>
-				Start
-				<span class="text-red-600">free</span>, grow with us.
-			</h3>
-			<p class="mt-4 max-w-2xl text-xl leading-7 text-gray-500 lg:mx-auto">
-				Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum
-				cupiditate veritatis in accusamus quisquam.
-			</p>
+			<div class="lg:text-center mb-16">
+				<p class="text-base leading-6 text-red-600 font-semibold tracking-wide uppercase">
+					Pricing
+				</p>
+				<h3
+					class="mt-2 text-3xl leading-8 font-extrabold tracking-tight sm:text-4xl sm:leading-10"
+				>
+					Start
+					<span class="text-red-600">free</span>, grow with us.
+				</h3>
+				<p class="mt-4 max-w-2xl text-xl leading-7 text-gray-500 lg:mx-auto">
+					Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum
+					cupiditate veritatis in accusamus quisquam.
+				</p>
+			</div>
 			<div
 				class="mx-auto max-w-2xl grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 text-left h-76"
 			>

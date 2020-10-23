@@ -1,6 +1,6 @@
 <template>
 	<section class="bg-white dark:bg-gray-800 shadow dark:shadow-none">
-		<div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-32">
+		<div class="container px-5 py-24 mx-auto">
 			<div class="lg:text-center mb-16">
 				<p class="text-base leading-6 text-red-600 font-semibold tracking-wide uppercase">
 					Features
