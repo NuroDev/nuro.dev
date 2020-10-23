@@ -13,6 +13,34 @@ export default {
 			{ charset: 'utf-8' },
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
 			{ hid: 'description', name: 'description', content: description },
+			{ hid: 'og:site_name', property: 'og:site_name', content: title },
+      		{ hid: 'og:type', property: 'og:type', content: 'website' },
+			{ hid: 'twitter:site', name: 'twitter:site', content: '@nurodev' },
+			{
+				hid: 'twitter:card',
+				name: 'twitter:card',
+				content: 'summary_large_image'
+			},
+			{
+				hid: 'og:image',
+				property: 'og:image',
+				content: `https://${domain}/social-card.png`,
+			},
+			{
+				hid: 'og:image:secure_url',
+				property: 'og:image:secure_url',
+				content: `https://${domain}/social-card.png`,
+			},
+			{
+				hid: 'og:image:alt',
+				property: 'og:image:alt',
+				content: title,
+			},
+			{
+				hid: 'twitter:image',
+				name: 'twitter:image',
+				content: `https://${domain}/social-card.png`,
+			}
 		],
 		link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
 		script: [
