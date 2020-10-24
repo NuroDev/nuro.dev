@@ -122,6 +122,18 @@ export default {
 			experimental: {
 				darkModeVariant: true,
 			},
+			plugins: [
+				require("tailwind-heropatterns")({
+					patterns: ["topography"],
+					colors: {
+						default: "#edf2f7",
+						"dark": "#2d3748",
+					},
+					opacity: {
+						default: 1.0,
+					},
+				}),
+			],
 			purge: {
 				enabled: process.env.NODE_ENV === 'production',
 				content: [

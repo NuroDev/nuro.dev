@@ -26,14 +26,10 @@ body {
 }
 
 .light body {
-	@apply bg-white;
-	/* TODO: Find a better way to set this */
-	background-image: url('/light-topography.svg');
+	@apply bg-white bg-hero-topography;
 }
 
 .dark body {
-	@apply bg-gray-900 text-white;
-	/* TODO: Find a better way to set this */
-	background-image: url('/dark-topography.svg');
+	@apply bg-gray-900 bg-hero-topography-dark text-white;
 }
 </style>
