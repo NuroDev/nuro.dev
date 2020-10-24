@@ -4,9 +4,9 @@ const themeColor = '#000000';
 const domain = process.env.VERCEL_URL || 'localhost';
 
 export default {
-	target: 'static',
-	ssr: false,
 	components: true,
+	ssr: false,
+	target: 'static',
 	head: {
 		htmlAttrs: {
 			lang: 'en', // TODO: Use nuxt-i18n
@@ -123,6 +123,12 @@ export default {
 			dark: 'class',
 			experimental: {
 				darkModeVariant: true,
+			},
+			future: {
+				defaultLineHeights: true,
+				purgeLayersByDefault: true,
+				removeDeprecatedGapUtilities: true,
+				standardFontWeights: true,
 			},
 			plugins: [
 				require('tailwind-heropatterns')({
