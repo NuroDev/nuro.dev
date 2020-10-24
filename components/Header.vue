@@ -43,15 +43,3 @@
 		</div>
 	</section>
 </template>
-
-<script lang="ts">
-import Vue from 'vue';
-import { GithubIcon, TwitterIcon } from 'vue-feather-icons';
-
-export default Vue.extend({
-	components: {
-		GithubIcon,
-		TwitterIcon,
-	},
-});
-</script>

@@ -55,7 +55,6 @@ export default Vue.extend({
 		window.addEventListener('resize', resize, false);
 		resize();
 
-		const geometry = new Triangle(gl);
 		const program = new Program(gl, {
 			vertex,
 			fragment,
