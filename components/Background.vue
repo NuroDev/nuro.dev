@@ -2,13 +2,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import {
-	Color,
-	Mesh,
-	Program,
-	Renderer,
-	Triangle,
-} from 'ogl-typescript';
+import { Color, Mesh, Program, Renderer, Triangle } from 'ogl-typescript';
 
 const vertex = `
 	attribute vec2 uv;
@@ -40,17 +34,19 @@ export default Vue.extend({
 	data() {
 		return {
 			renderer: new Renderer(),
-		}
+		};
 	},
 	mounted() {
 		// Initialize the renderer and push the canvas to the DOM
 		const gl = this.renderer.gl;
-		gl.canvas.id = 'background'
+		gl.canvas.id = 'background';
 		gl.canvas.classList.add('fixed', 'inset-0');
 		if (!document.getElementById('background')) {
 			const layout = document.getElementById('__layout');
 			if (layout) layout.appendChild(gl.canvas);
 		}
+
+		// Draw the clear color
 		gl.clearColor(1, 1, 1, 1);
 
 		// TODO: Convert to a Vue method
@@ -69,21 +65,21 @@ export default Vue.extend({
 				},
 				uColor: {
 					value: new Color(0.3, 0.2, 0.5),
-				}
+				},
 			},
 		});
 		const mesh = new Mesh(gl, {
 			geometry: new Triangle(gl),
-			program
+			program,
 		});
 
 		// Update every frame
 		const update = (t: number) => {
 			requestAnimationFrame(update);
 			program.uniforms.uTime.value = t * 0.001;
-			this.renderer.render({scene: mesh});
-		}
+			this.renderer.render({ scene: mesh });
+		};
 		requestAnimationFrame(update);
-	}
-})
+	},
+});
 </script>

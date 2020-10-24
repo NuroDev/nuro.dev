@@ -22,6 +22,6 @@ export default Vue.extend({
 		} catch (error) {
 			console.error(`Fetch failed '/api/get_ip': ${error}`);
 		}
-	}
+	},
 });
 </script>

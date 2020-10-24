@@ -17,12 +17,12 @@ export default {
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
 			{ hid: 'description', name: 'description', content: description },
 			{ hid: 'og:site_name', property: 'og:site_name', content: title },
-      		{ hid: 'og:type', property: 'og:type', content: 'website' },
+			{ hid: 'og:type', property: 'og:type', content: 'website' },
 			{ hid: 'twitter:site', name: 'twitter:site', content: '@nurodev' },
 			{
 				hid: 'twitter:card',
 				name: 'twitter:card',
-				content: 'summary_large_image'
+				content: 'summary_large_image',
 			},
 			{
 				hid: 'og:image',
@@ -43,7 +43,7 @@ export default {
 				hid: 'twitter:image',
 				name: 'twitter:image',
 				content: `https://${domain}/social-card.png`,
-			}
+			},
 		],
 		link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
 		script: [
@@ -96,12 +96,14 @@ export default {
 			orientation: 'portrait',
 			background_color: themeColor,
 			theme_color: themeColor,
-			icons: [{
-				src: '/icon.png',
-				type: 'image/png',
-				sizes: '512x512',
-				purpose: 'any maskable'
-			}]
+			icons: [
+				{
+					src: '/icon.png',
+					type: 'image/png',
+					sizes: '512x512',
+					purpose: 'any maskable',
+				},
+			],
 		},
 		icon: {
 			sizes: [16, 128, 144, 152, 192, 256, 512],
@@ -123,11 +125,11 @@ export default {
 				darkModeVariant: true,
 			},
 			plugins: [
-				require("tailwind-heropatterns")({
-					patterns: ["topography"],
+				require('tailwind-heropatterns')({
+					patterns: ['topography'],
 					colors: {
-						default: "#edf2f7",
-						"dark": "#2d3748",
+						default: '#edf2f7',
+						dark: '#2d3748',
 					},
 					opacity: {
 						default: 1.0,
