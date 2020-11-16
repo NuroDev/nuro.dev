@@ -1,7 +1,7 @@
 module.exports = {
 	base: '/',
 	description: 'Games Programmer | Web Developer',
-	dest: 'public',
+	dest: './dist/',
 	postcss: {
 		plugins: [require('tailwindcss'), require('autoprefixer')],
 	},
