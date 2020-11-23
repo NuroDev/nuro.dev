@@ -49,13 +49,13 @@ export default {
 		script: [
 			{
 				async: true,
-				defer: true,
-				'data-website-id': process.env.UMAMI_WEBSITE_ID,
-				'data-do-not-track': true,
-				src: `https://analytics.${domain}/umami.js`,
-			},
+				src: `https://cdn.panelbear.com/analytics.js?site=${process.env.PANELBEAR_ID}`,
+			}
 		],
 	},
+	plugins: [
+		'~/plugins/panelbear.js',
+	],
 	buildModules: [
 		'@nuxt/typescript-build',
 		'@nuxtjs/color-mode',
