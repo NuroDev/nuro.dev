@@ -31,40 +31,8 @@ module.exports = {
 			'script',
 			{
 				async: true,
-				defer: true,
-				'data-website-id': process.env.UMAMI_WEBSITE_ID,
-				'data-do-not-track': true,
-				src: 'https://analytics.nuro.dev/umami.js',
-			},
-		],
-		[
-			'script',
-			{
-				async: true,
 				src: 'https://cdn.splitbee.io/sb.js'
 			}
-		],
-		[
-			'script',
-			{
-				async: true,
-				src: `https://cdn.panelbear.com/analytics.js?site=${process.env.PANELBEAR_ID}`,
-			}
-		],
-		[
-			'script',
-			{},
-			`
-			window.panelbear = window.panelbear || function () {
-				window.panelbearQ = window.panelbearQ || []; panelbearQ.push(arguments);
-			};
-	
-			panelbear('config', {
-				site: '${process.env.PANELBEAR_ID}',
-				debug: ${process.env.NODE_ENV === 'development' ? true : false},
-				honorDNT: true,
-			});
-			`
 		]
 	],
 };
