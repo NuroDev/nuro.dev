@@ -34,8 +34,15 @@ module.exports = {
 				defer: true,
 				'data-website-id': process.env.UMAMI_WEBSITE_ID,
 				'data-do-not-track': true,
-				src: "https://analytics.nuro.dev/umami.js",
+				src: 'https://analytics.nuro.dev/umami.js',
 			},
+		],
+		[
+			'script',
+			{
+				async: true,
+				src: 'https://cdn.splitbee.io/sb.js'
+			}
 		],
 		[
 			'script',
