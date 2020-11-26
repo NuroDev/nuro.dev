@@ -49,13 +49,10 @@ export default {
 		script: [
 			{
 				async: true,
-				src: `https://cdn.panelbear.com/analytics.js?site=${process.env.PANELBEAR_ID}`,
+				src: 'https://cdn.splitbee.io/sb.js',
 			}
 		],
 	},
-	plugins: [
-		'~/plugins/panelbear.js',
-	],
 	buildModules: [
 		'@nuxt/typescript-build',
 		'@nuxtjs/color-mode',
