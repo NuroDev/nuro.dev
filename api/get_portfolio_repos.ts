@@ -2,9 +2,7 @@ import { NowRequest, NowResponse } from '@vercel/node';
 import { SplitbeeAnalytics } from '@splitbee/node';
 import fetch from 'node-fetch';
 
-import { SPLITBEE_PROJECT_ID } from process.env;
-
-const analytics = new SplitbeeAnalytics(SPLITBEE_PROJECT_ID);
+const analytics = new SplitbeeAnalytics(process.env.SPLITBEE_PROJECT_ID as string);
 
 export default async function (_req: NowRequest, res: NowResponse) {
 	// Get all repositoryż
