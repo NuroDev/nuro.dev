@@ -34,6 +34,7 @@
 		"@nuxtjs/eslint-module": "^2.0.0",
 		"@nuxtjs/svg": "^0.1.12",
 		"@nuxtjs/tailwindcss": "^3.1.0",
+		"@splitbee/node": "^0.1.7",
 		"@types/node-fetch": "^2.5.7",
 		"@vercel/node": "^1.8.4",
 		"babel-eslint": "^10.1.0",
