@@ -18,7 +18,7 @@ export default async function (_req: NowRequest, res: NowResponse) {
 		userId: 'myunique@user.id',
 		event: 'api/get_portfolio_repos',
 		data: {
-		  response: JSON.stringify(repos),
+			response: JSON.stringify(repos),
 		},
 	});
 

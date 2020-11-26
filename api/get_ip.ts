@@ -32,7 +32,7 @@ export default async function (_req: NowRequest, res: NowResponse) {
 			userId: 'myunique@user.id',
 			event: 'api/get_ip',
 			data: {
-			  response: JSON.stringify(json),
+				response: JSON.stringify(json),
 			},
 		});
 

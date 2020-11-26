@@ -50,7 +50,7 @@ export default {
 			{
 				async: true,
 				src: 'https://cdn.splitbee.io/sb.js',
-			}
+			},
 		],
 	},
 	buildModules: [
