@@ -6,8 +6,8 @@
 		"dev": "nuxt-ts",
 		"build": "nuxt-ts generate",
 		"start": "nuxt-ts start",
-		"lint:js": "eslint --ext .js,.ts,.vue --ignore-path .gitignore .",
-		"lint": "yarn lint:js",
+		"lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore .",
+		"lint:fix": "eslint --fix --ext .js,.ts,.vue --ignore-path .gitignore .",
 		"prettier": "prettier --config .prettierrc.json --write \"**/*.{js,ts,css,vue}\""
 	},
 	"dependencies": {
