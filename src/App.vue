@@ -2,6 +2,15 @@
 	<router-view />
 </template>
 
+<script lang="ts" setup>
+import splitbee from '@splitbee/web';
+
+if (import.meta.env.PROD)
+	splitbee.init({
+		disableCookie: true,
+	});
+</script>
+
 <style lang="postcss">
 #app {
 	@apply antialiased mt-64 text-center;
