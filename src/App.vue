@@ -13,7 +13,7 @@ if (import.meta.env.PROD)
 
 <style lang="postcss">
 #app {
-	@apply antialiased mt-64 text-center;
+	@apply antialiased text-center;
 	font-family: Avenir, Helvetica, Arial, sans-serif;
 	color: #2c3e50;
 }
