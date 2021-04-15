@@ -2,10 +2,5 @@
 	"version": 2,
 	"public": true,
 	"alias": "nuro.dev",
-	"regions": ["lhr1"],
-	"functions": {
-		"api/**/*.ts": {
-			"maxDuration": 30
-		}
-	}
+	"regions": ["lhr1"]
 }
