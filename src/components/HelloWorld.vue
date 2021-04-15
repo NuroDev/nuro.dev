@@ -52,26 +52,23 @@ const increment = () => count.value++;
 
 <style lang="postcss" scoped>
 a {
-	color: #42b983;
+	@apply text-green-500;
 }
 
 label {
-	margin: 0 0.5em;
-	font-weight: bold;
+	@apply font-bold m-1;
 }
 
 code {
-	background-color: #eee;
-	padding: 2px 4px;
-	border-radius: 4px;
-	color: #304455;
+	@apply m-2 px-1 py-1 rounded \
+		text-gray-800 dark:text-gray-300 bg-gray-200  dark:bg-gray-700 bg-opacity-75;
 }
 
 .button {
 	@apply m-8 px-1 rounded \
-  text-white bg-green-500 hover:bg-green-600 \
-  transition ease-in-out duration-300 \
-  focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-opacity-50;
+		text-white bg-green-500 hover:bg-green-600 \
+		transition ease-in-out duration-300 \
+		focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-opacity-50;
 
 	svg {
 		@apply ml-2 mt-2;
