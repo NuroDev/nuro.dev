@@ -22,7 +22,13 @@
 		<a href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
 	</p>
 
-	<button @click="increment" class="button">count is: {{ count }}</button>
+	<button @click="decrement" class="button">
+		<i-feather-arrow-down class="mr-2 w-4" />
+	</button>
+	<span>count is: {{ count }}</span>
+	<button @click="increment" class="button">
+		<i-feather-arrow-up class="mr-2 w-4" />
+	</button>
 	<p>
 		Edit
 		<code>components/HelloWorld.vue</code> to test hot module replacement.
@@ -40,6 +46,7 @@ defineProps({
 });
 
 const count = ref(0);
+const decrement = () => count.value--;
 const increment = () => count.value++;
 </script>
 
@@ -61,9 +68,13 @@ code {
 }
 
 .button {
-	@apply m-8 px-8 py-2 rounded-md \
+	@apply m-8 px-1 rounded \
   text-white bg-green-500 hover:bg-green-600 \
   transition ease-in-out duration-300 \
   focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-opacity-50;
+
+	svg {
+		@apply ml-2 mt-2;
+	}
 }
 </style>
