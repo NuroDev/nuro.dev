@@ -1,25 +1,25 @@
 {
-  "name": "nuro.sh",
-  "version": "1.2.1",
-  "description": "Personal Website for nuro.sh",
-  "repository": "https://github.com/nurodev/nuro.sh.git",
-  "author": "N U R O ™ <me@nuro.sh>",
-  "license": "MIT",
-  "scripts": {
-    "dev": "vuepress dev src",
-    "build": "vuepress build src",
-    "prettier": "prettier --config .prettierrc.json --write \"**/*.{js,css,vue}\""
-  },
-  "devDependencies": {
-    "aos": "^2.3.4",
-    "autoprefixer": "^9.7.3",
-    "github-colors": "^2.2.18",
-    "moment": "^2.24.0",
-    "postcss": "^7.0.26",
-    "prettier": "^1.19.1",
-    "tailwindcss": "^1.1.4",
-    "vue-typed-js": "^0.1.2",
-    "vuepress": "^1.2.0",
-    "vuepress-plugin-reading-time": "^0.1.1"
-  }
+	"name": "nuro.dev",
+	"version": "1.2.1",
+	"description": "Personal Website for nuro.dev",
+	"repository": "https://github.com/nurodev/nuro.sh.git",
+	"author": "nurodev <me@nuro.dev>",
+	"license": "MIT",
+	"scripts": {
+		"dev": "vuepress dev src",
+		"build": "vuepress build src",
+		"prettier": "prettier --config .prettierrc.json --write \"**/*.{js,css,vue}\""
+	},
+	"devDependencies": {
+		"aos": "^2.3.4",
+		"autoprefixer": "^9.7.3",
+		"github-colors": "^2.2.18",
+		"moment": "^2.24.0",
+		"postcss": "^7.0.26",
+		"prettier": "^1.19.1",
+		"tailwindcss": "^1.1.4",
+		"vue-typed-js": "^0.1.2",
+		"vuepress": "^1.2.0",
+		"vuepress-plugin-reading-time": "^0.1.1"
+	}
 }
