@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import { join } from 'path';
+import Components from 'vite-plugin-components';
 import Pages from 'vite-plugin-pages';
 import Vue from '@vitejs/plugin-vue';
 import WindiCSS from 'vite-plugin-windicss';
@@ -8,6 +9,9 @@ const extensions: Array<string> = ['vue', 'js', 'jsx', 'ts', 'tsx'];
 
 export default defineConfig({
 	plugins: [
+		Components({
+			extensions,
+		}),
 		Pages({
 			extensions,
 		}),
