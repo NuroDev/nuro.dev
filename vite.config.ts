@@ -7,7 +7,7 @@ import Pages from 'vite-plugin-pages';
 import Vue from '@vitejs/plugin-vue';
 import WindiCSS from 'vite-plugin-windicss';
 
-const extensions: Array<string> = ['js', 'jsx', 'md', 'ts', 'tsx', 'vue'];
+const extensions: Array<string> = ['md', 'vue'];
 
 export default defineConfig({
 	plugins: [
