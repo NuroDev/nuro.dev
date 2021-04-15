@@ -4,7 +4,7 @@
 		<img alt="Vue logo" src="../assets/logo.png" class="mx-auto" />
 		<div class="my-8">
 			<Switch
-				v-model="enabled"
+				@click="toggle"
 				:class="enabled ? 'bg-green-500' : 'bg-gray-200 dark:bg-gray-700'"
 				class="switch"
 			>
@@ -23,10 +23,12 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import { Switch } from '@headlessui/vue';
+import { useStorage, useToggle } from '@vueuse/core';
 
 import type { Ref } from 'vue';
 
-const enabled: Ref<null | undefined> = ref(null);
+const enabled: Ref<boolean> = useStorage('show-hello-world', true);
+const toggle = useToggle(enabled);
 </script>
 
 <style lang="postcss" scoped>
