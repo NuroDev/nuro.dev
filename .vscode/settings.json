@@ -1,0 +1,7 @@
+{
+	"editor.codeActionsOnSave": { "source.fixAll": true },
+	"editor.formatOnSave": true,
+	"editor.tabSize": 4,
+	"eslint.validate": ["html", "javascriptreact", "typescriptreact"],
+	"typescript.tsdk": "node_modules/typescript/lib"
+}
