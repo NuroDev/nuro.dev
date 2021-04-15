@@ -2,21 +2,5 @@
 	"version": 2,
 	"public": true,
 	"alias": "nuro.dev",
-	"regions": [
-		"lhr1"
-	], 
-	"routes": [
-		{
-			"src": "/",
-			"dest": "/index.html"
-		},
-		{
-			"src": "/portfolio",
-			"dest": "/portfolio.html"
-		},
-		{
-			"src": "/contact",
-			"dest": "/contact.html"
-		}
-	]
+	"regions": ["lhr1"]
 }

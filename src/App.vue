@@ -1,11 +1,6 @@
 <template>
-	<img alt="Vue logo" src="./assets/logo.png" class="mx-auto" />
-	<HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+	<router-view />
 </template>
-
-<script lang="ts" setup>
-import HelloWorld from './components/HelloWorld.vue';
-</script>
 
 <style lang="postcss">
 #app {
