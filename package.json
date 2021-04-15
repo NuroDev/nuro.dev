@@ -21,7 +21,7 @@
 		"dev": "vite",
 		"build": "vue-tsc --noEmit && vite build",
 		"serve": "vite preview",
-		"prettier": "prettier --config .prettierrc.json --write \"**/*.{js,css,vue}\""
+		"prettier": "prettier --write \"**/*.{css,js,json,jsx,ts,tsx,vue}\""
 	},
 	"dependencies": {
 		"@headlessui/vue": "^1.0.0",
