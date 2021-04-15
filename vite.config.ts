@@ -6,6 +6,7 @@ import Markdown from 'vite-plugin-md';
 import Pages from 'vite-plugin-pages';
 import Vue from '@vitejs/plugin-vue';
 import WindiCSS from 'vite-plugin-windicss';
+import Colors from 'windicss/colors';
 
 const extensions: Array<string> = ['md', 'vue'];
 
@@ -36,6 +37,13 @@ export default defineConfig({
 					require('windicss/plugin/aspect-ratio'),
 					require('windicss/plugin/typography'),
 				],
+				theme: {
+					extend: {
+						colors: {
+							gray: Colors.gray,
+						},
+					},
+				},
 			},
 		}),
 	],
