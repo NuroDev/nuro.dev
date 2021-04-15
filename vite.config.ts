@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import { join } from 'path';
 import Pages from 'vite-plugin-pages';
 import Vue from '@vitejs/plugin-vue';
 import WindiCSS from 'vite-plugin-windicss';
@@ -14,7 +15,16 @@ export default defineConfig({
 		WindiCSS({
 			config: {
 				darkMode: 'class',
+				plugins: [
+					require('windicss/plugin/aspect-ratio'),
+					require('windicss/plugin/typography'),
+				],
 			},
 		}),
 	],
+	resolve: {
+		alias: {
+			'~': join(__dirname, './src/'),
+		},
+	},
 });
