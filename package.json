@@ -25,6 +25,10 @@
 	},
 	"dependencies": {
 		"@splitbee/web": "^0.2.4",
+		"@vueuse/core": "^4.8.1",
+		"@vueuse/head": "^0.5.1",
+		"@vueuse/motion": "^1.5.4",
+		"@vueuse/sound": "^1.1.7",
 		"vue": "^3.0.5",
 		"vue-router": "^4.0.6"
 	},
