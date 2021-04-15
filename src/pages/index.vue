@@ -22,5 +22,7 @@
 import { ref } from 'vue';
 import { Switch } from '@headlessui/vue';
 
-const showHelloWorld = ref(true);
+import type { Ref } from 'vue';
+
+const showHelloWorld: Ref<null | undefined> = ref(null);
 </script>
