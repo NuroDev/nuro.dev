@@ -23,12 +23,20 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import { Switch } from '@headlessui/vue';
+import { useSound } from '@vueuse/sound';
 import { useStorage, useToggle } from '@vueuse/core';
 
 import type { Ref } from 'vue';
 
+import soundClick from '../assets/click.ogg';
+
 const enabled: Ref<boolean> = useStorage('show-hello-world', true);
-const toggle = useToggle(enabled);
+const toggleSwitch = useToggle(enabled);
+const { play } = useSound(soundClick);
+const toggle = () => {
+	toggleSwitch();
+	play();
+};
 </script>
 
 <style lang="postcss" scoped>
