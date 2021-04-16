@@ -65,10 +65,11 @@ code {
 }
 
 .button {
-	@apply m-8 px-1 rounded \
-		text-white bg-green-500 hover:bg-green-600 \
+	@apply w-11 h-11 m-8 px-1 rounded-full \
+		text-white text-gray-400 \
+		border border-gray-400 dark:border-gray-500 \
 		transition ease-in-out duration-300 \
-		focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-opacity-50;
+		focus:outline-none focus:text-green-500 focus:border-none focus:ring-4 focus:ring-green-500 focus:ring-opacity-50;
 
 	svg {
 		@apply ml-2 mt-2;

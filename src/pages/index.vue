@@ -39,7 +39,7 @@ const toggle = useToggle(enabled);
 .switch {
 	@apply relative inline-flex flex-shrink-0 h-[38px] w-[74px] rounded-full cursor-pointer \
 		border-2 border-transparent \
-		transition-colors ease-in-out duration-200 \
+		transition-colors ease-in-out duration-300 \
 		focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75;
 }
 </style>
