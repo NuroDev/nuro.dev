@@ -16,7 +16,9 @@ import soundClick from '../assets/click.ogg';
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
-const { play } = useSound(soundClick);
+const { play } = useSound(soundClick, {
+	volume: 0.25,
+});
 const toggleTheme = () => {
 	toggleDark();
 	play();

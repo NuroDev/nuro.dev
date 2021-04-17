@@ -32,7 +32,9 @@ import soundClick from '../assets/click.ogg';
 
 const enabled: Ref<boolean> = useStorage('show-hello-world', true);
 const toggleSwitch = useToggle(enabled);
-const { play } = useSound(soundClick);
+const { play } = useSound(soundClick, {
+	volume: 0.25,
+});
 const toggle = () => {
 	toggleSwitch();
 	play();
