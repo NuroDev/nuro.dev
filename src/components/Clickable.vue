@@ -1,15 +1,25 @@
 <template>
-	<div @click="play">
+	<div @click="playSound">
 		<slot />
 	</div>
 </template>
 
 <script lang="ts" setup>
 import { useSound } from '@vueuse/sound';
+import { defineProps } from 'vue';
 
 import soundClick from '../assets/click.ogg';
 
-const { play } = useSound(soundClick, {
-	volume: 0.25,
+const { volume } = defineProps({
+	volume: {
+		default: 0.25,
+		required: false,
+		type: Number,
+	},
 });
+
+const sound = useSound(soundClick, {
+	volume,
+});
+const playSound = () => sound.play();
 </script>
