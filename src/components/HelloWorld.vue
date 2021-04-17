@@ -22,13 +22,19 @@
 		<a href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
 	</p>
 
-	<button @click="decrement" class="button">
-		<i-feather-arrow-down class="mr-2 w-4" />
-	</button>
+	<Clickable class="inline-flex">
+		<button @click="decrement" class="button">
+			<i-feather-arrow-down class="mr-2 w-4" />
+		</button>
+	</Clickable>
+
 	<span>count is: {{ count }}</span>
-	<button @click="increment" class="button">
-		<i-feather-arrow-up class="mr-2 w-4" />
-	</button>
+
+	<Clickable class="inline-flex">
+		<button @click="increment" class="button">
+			<i-feather-arrow-up class="mr-2 w-4" />
+		</button>
+	</Clickable>
 	<p>
 		Edit
 		<code>components/HelloWorld.vue</code> to test hot module replacement.
@@ -36,6 +42,7 @@
 </template>
 
 <script lang="ts" setup>
+import { useStorage, useToggle } from '@vueuse/core';
 import { defineProps, ref } from 'vue';
 
 defineProps({
@@ -45,7 +52,7 @@ defineProps({
 	},
 });
 
-const count = ref(0);
+const count = useStorage('count', 0);
 const decrement = () => count.value--;
 const increment = () => count.value++;
 </script>

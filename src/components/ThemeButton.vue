@@ -1,10 +1,12 @@
 <template>
 	<div class="fixed top-0 right-0 m-8">
-		<button @click="toggleTheme" class="themeButton" :alt="isDark ? 'Dark' : 'Light'">
-			<i-feather-moon v-if="isDark" />
-			<i-feather-sun v-else-if="!isDark" />
-			<i-heroicons-outline-color-swatch v-else />
-		</button>
+		<Clickable>
+			<button @click="toggleDark" class="themeButton" :alt="isDark ? 'Dark' : 'Light'">
+				<i-feather-moon v-if="isDark" />
+				<i-feather-sun v-else-if="!isDark" />
+				<i-heroicons-outline-color-swatch v-else />
+			</button>
+		</Clickable>
 	</div>
 </template>
 
@@ -12,17 +14,8 @@
 import { useSound } from '@vueuse/sound';
 import { useDark, useToggle } from '@vueuse/core';
 
-import soundClick from '../assets/click.ogg';
-
 const isDark = useDark();
 const toggleDark = useToggle(isDark);
-const { play } = useSound(soundClick, {
-	volume: 0.25,
-});
-const toggleTheme = () => {
-	toggleDark();
-	play();
-};
 </script>
 
 <style lang="postcss" scoped>
