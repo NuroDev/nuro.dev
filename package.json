@@ -30,6 +30,7 @@
 		"@vueuse/head": "^0.5.1",
 		"@vueuse/motion": "^1.5.4",
 		"@vueuse/sound": "^1.1.7",
+		"inter-ui": "^3.18.0",
 		"vue": "^3.0.5",
 		"vue-router": "^4.0.6"
 	},
