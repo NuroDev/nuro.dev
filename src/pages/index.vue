@@ -4,6 +4,7 @@
 		<div class="my-8">
 			<Clickable>
 				<Switch
+					role="button"
 					@click="toggle"
 					:class="enabled ? 'bg-primary-500' : 'bg-gray-200 dark:bg-gray-700'"
 					class="switch"
