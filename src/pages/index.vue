@@ -19,7 +19,6 @@
 				</Switch>
 			</Clickable>
 		</div>
-		<HelloWorld v-if="enabled" msg="Hello Vue 3 + TypeScript + Vite" />
 	</div>
 </template>
 
