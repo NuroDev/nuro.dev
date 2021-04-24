@@ -24,7 +24,7 @@ const toggleDark = useToggle(isDark);
 		text-gray-500 dark:text-gray-200 \
 		border border-gray-300 dark:border-gray-500 \
 		transition ease-in-out duration-300 \
-		focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2;
+		focus:outline-none focus:ring-4 focus:ring-primary-500 focus:text-primary-500;
 	svg {
 		@apply relative -top-1 -left-1;
 	}

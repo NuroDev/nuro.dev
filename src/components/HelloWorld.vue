@@ -59,7 +59,7 @@ const increment = () => count.value++;
 
 <style lang="postcss" scoped>
 a {
-	@apply text-green-500;
+	@apply text-primary-500;
 }
 
 label {
@@ -76,10 +76,14 @@ code {
 		text-white text-gray-400 \
 		border border-gray-400 dark:border-gray-500 \
 		transition ease-in-out duration-300 \
-		focus:outline-none focus:text-green-500 focus:border-none focus:ring-4 focus:ring-green-500 focus:ring-opacity-50;
+		focus:outline-none focus:text-primary-500 focus:ring-4 focus:ring-primary-500;
 
 	svg {
 		@apply ml-2 mt-2;
 	}
+}
+
+.counter {
+	@apply flex flex-row justify-center items-center;
 }
 </style>
