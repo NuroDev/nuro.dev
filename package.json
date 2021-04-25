@@ -20,9 +20,9 @@
 	"scripts": {
 		"dev": "yarn dev:vercel",
 		"dev:local": "vite",
-		"dev:vercel": "vercel dev",
+		"dev:vercel": "vite build && vercel dev",
 		"build": "vue-tsc --noEmit && vite build",
-		"serve": "vite preview",
+		"preview": "vite preview",
 		"prettier": "prettier --write \"**/*.{css,js,json,jsx,ts,tsx,vue}\""
 	},
 	"dependencies": {
