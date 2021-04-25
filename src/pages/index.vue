@@ -21,6 +21,7 @@
 			</Clickable>
 		</div>
 	</div>
+	<Background v-if="enabled" />
 </template>
 
 <script lang="ts" setup>
