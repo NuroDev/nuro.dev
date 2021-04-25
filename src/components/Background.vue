@@ -11,11 +11,13 @@ import VertexShader from '../assets/shaders/background.vs?raw';
 import FragmentShader from '../assets/shaders/background.fs?raw';
 
 const background = ref<HTMLDivElement | null>(null);
+const renderer = new Renderer({
+	dpr: 2,
+	alpha: true,
+});
+const gl = renderer.gl;
 
 onMounted(async () => {
-	const renderer = new Renderer();
-	const gl = renderer.gl;
-
 	try {
 		background.value && background.value.appendChild(gl.canvas);
 	} catch (error) {
