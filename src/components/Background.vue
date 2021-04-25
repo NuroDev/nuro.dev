@@ -1,22 +1,23 @@
 <template>
-	<div id="background"></div>
+	<div ref="background" class="background" />
 </template>
 
 <script lang="ts" setup>
 import { useEventListener } from '@vueuse/core';
 import { Color, Mesh, Program, Renderer, Triangle } from 'ogl-typescript';
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
 
 import VertexShader from '../assets/shaders/background.vs?raw';
 import FragmentShader from '../assets/shaders/background.fs?raw';
+
+const background = ref<HTMLDivElement | null>(null);
 
 onMounted(async () => {
 	const renderer = new Renderer();
 	const gl = renderer.gl;
 
-	// TODO: Could be cleaned up by using `ref`s instead
 	try {
-		document.getElementById('background')?.appendChild(gl.canvas);
+		background.value && background.value.appendChild(gl.canvas);
 	} catch (error) {
 		console.error(`Failed to append canvas to DOM: `, error);
 	}
@@ -55,7 +56,7 @@ onMounted(async () => {
 </script>
 
 <style lang="postcss" scoped>
-#background {
+.background {
 	@apply fixed inset-0 -z-10;
 }
 </style>
