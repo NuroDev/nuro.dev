@@ -27,9 +27,9 @@ const toggleDark = useToggle(isDark);
 .themeButton {
 	@apply flex justify-center items-center w-12 h-12 p-2 rounded-lg \
 		text-gray-300 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-300 \
-		hover:bg-gray-100 bg-opacity-50 dark:hover:bg-gray-800 \
+		bg-gray-50 hover:bg-gray-100 hover:bg-opacity-50 dark:bg-gray-900 dark:hover:bg-gray-800 \
 		transition ease-in-out duration-300 \
-		focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-500 focus:ring-opacity-75;
+		focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-500;
 	/* transform translate-y-0 hover:-translate-y-1 active:translate-y-1; */
 
 	svg {
