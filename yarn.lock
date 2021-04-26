@@ -1325,9 +1325,9 @@ call-bind@^1.0.0, call-bind@^1.0.2:
     get-intrinsic "^1.0.2"
 
 caniuse-lite@^1.0.30001214:
-  version "1.0.30001215"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001215.tgz#4e7b45ecb88ea9d0c57aa0ee7acd18ae6515b645"
-  integrity sha512-48WKhSpgduUNyY7cHO3lVy7v5Nx2FrvYJrmZjOoQP7w+5dMejWUhjAAszUXioV5UwT2ZWHDEbPgv4sBkd20jDA==
+  version "1.0.30001214"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001214.tgz#70f153c78223515c6d37a9fde6cd69250da9d872"
+  integrity sha512-O2/SCpuaU3eASWVaesQirZv1MSjUNOvmugaD8zNSJqw6Vv5SGwoOpA9LJs3pNPfM745nxqPvfZY3MQKY4AKHYg==
 
 chainsaw@~0.1.0:
   version "0.1.0"
@@ -1891,9 +1891,9 @@ is-callable@^1.1.4, is-callable@^1.2.3:
   integrity sha512-J1DcMe8UYTBSrKezuIUTUwjXsho29693unXM2YhJUTR2txK/eG47bvNa/wipPFmZFgr/N6f1GA66dv0mEyTIyQ==
 
 is-core-module@^2.2.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/is-core-module/-/is-core-module-2.3.0.tgz#d341652e3408bca69c4671b79a0954a3d349f887"
-  integrity sha512-xSphU2KG9867tsYdLD4RWQ1VqdFl4HTO9Thf3I/3dLEfr0dbPTWKsuCKrgqMljg4nPE+Gq0VCnzT3gr0CyBmsw==
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/is-core-module/-/is-core-module-2.2.0.tgz#97037ef3d52224d85163f5597b2b63d9afed981a"
+  integrity sha512-XRAfAdyyY5F5cOXn7hYQDqh2Xmii+DEfIcQGxK/uNwMHhIkPWO0g8msXcbzLe+MpGoR951MlqM/2iIlU4vKDdQ==
   dependencies:
     has "^1.0.3"
 
@@ -2915,9 +2915,9 @@ vite-plugin-md@^0.6.3:
     markdown-it "^12.0.4"
 
 vite-plugin-pages@^0.9.6:
-  version "0.9.7"
-  resolved "https://registry.yarnpkg.com/vite-plugin-pages/-/vite-plugin-pages-0.9.7.tgz#9f60750226125d85fa2d329465f94c6b519e456f"
-  integrity sha512-EsIMvO0TbGSdeMgdX6IWhc95sX3vj8RzVIZqtT825e9p6GqDYEe5VH+GAELnLdc6gxh7cI6LHi9X6qOWEzIhxw==
+  version "0.9.6"
+  resolved "https://registry.yarnpkg.com/vite-plugin-pages/-/vite-plugin-pages-0.9.6.tgz#cc2190f37f2970263a67d5247399bf7fbb768996"
+  integrity sha512-7yJaTVJZB6bKI2P3zOP5PoOpp33jdE0eFyN1skuanTXYnZwh+E5ou0JbZqosE1kS3q4APSXgWISGsXHS+3xPvA==
   dependencies:
     "@vue/compiler-sfc" "^3.0.11"
     chalk "^4.1.1"
@@ -2950,9 +2950,9 @@ vite-plugin-windicss@^0.15.7:
     windicss "^2.5.14"
 
 vite@^2.2.1:
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-2.2.3.tgz#1acbdfa56ac00e00e7ccb6988f63f130c2f99dbb"
-  integrity sha512-PtjyBL4GtACM+uT5q5hi2+AlMBbb6YI2b2bam6QI8ZdZt4FezseF0yZHQx0G+b3po9jIJ/GS5N9gc5Yq9Rue7g==
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-2.2.2.tgz#9ad2063929ecd632f16dc9471217e26992938aad"
+  integrity sha512-Y0IMdu+YuKsisJPk6NaEwEQC7FFfLQSN97ZTE4gvrELrk8dGjTFslhNCG8wkdzMSLCzfOdpCMT8cPXAhqzkPfg==
   dependencies:
     esbuild "^0.9.3"
     postcss "^8.2.1"
