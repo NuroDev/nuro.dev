@@ -26,7 +26,7 @@ onMounted(async () => {
 
 	gl.clearColor(1, 1, 1, 1);
 
-	const resize = () => renderer.setSize(window.innerWidth, window.innerHeight);
+	const resize = () => renderer.setSize(window.innerWidth, window.innerHeight * 0.75);
 	useEventListener('resize', resize);
 	resize();
 
@@ -51,7 +51,9 @@ onMounted(async () => {
 	const update = (t: number) => {
 		requestAnimationFrame(update);
 		program.uniforms.uTime.value = t * 0.001;
-		renderer.render({ scene: mesh });
+		renderer.render({
+			scene: mesh,
+		});
 	};
 	requestAnimationFrame(update);
 });
