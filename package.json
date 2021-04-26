@@ -18,7 +18,7 @@
 		"useTabs": true
 	},
 	"scripts": {
-		"dev": "yarn dev:vercel",
+		"dev": "yarn dev:local",
 		"dev:local": "vite",
 		"dev:vercel": "vite build && vercel dev",
 		"build": "vue-tsc --noEmit && vite build",
