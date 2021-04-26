@@ -14,30 +14,39 @@
 <script lang="ts" setup>
 import { useEventListener } from '@vueuse/core';
 import { Color, Mesh, Program, Renderer, Triangle } from 'ogl-typescript';
-import { onMounted, ref } from 'vue';
+import { onBeforeUnmount, onMounted, ref } from 'vue';
+
+import type { Ref } from 'vue';
 
 import VertexShader from '../assets/shaders/background.vs?raw';
 import FragmentShader from '../assets/shaders/background.fs?raw';
 
 const background = ref<HTMLDivElement | null>(null);
-const renderer = new Renderer({
-	dpr: 2,
-	alpha: true,
-});
-const gl = renderer.gl;
+const renderer: Ref<Renderer | null> = ref(null);
+let request_id: number = 0;
 
-onMounted(async () => {
+onMounted(() => {
+	if (!renderer.value)
+		renderer.value = new Renderer({
+			dpr: 2,
+			alpha: true,
+		});
+
+	const gl = renderer.value.gl;
+	const resize = () => {
+		if (!renderer.value)
+			throw new Error(`Failed to resize renderer. Renderer instance is null`);
+		renderer.value.setSize(window.innerWidth, window.innerHeight * 0.75);
+	};
+
 	try {
 		if (background.value) background.value.appendChild(gl.canvas);
+		gl.clearColor(1, 1, 1, 1);
+		useEventListener('resize', resize);
+		resize();
 	} catch (error) {
-		return console.error(`Failed to append canvas to DOM: `, error);
+		throw error;
 	}
-
-	gl.clearColor(1, 1, 1, 1);
-
-	const resize = () => renderer.setSize(window.innerWidth, window.innerHeight * 0.75);
-	useEventListener('resize', resize);
-	resize();
 
 	const geometry = new Triangle(gl);
 	const program = new Program(gl, {
@@ -58,13 +67,19 @@ onMounted(async () => {
 	});
 
 	const update = (t: number) => {
-		requestAnimationFrame(update);
+		if (!renderer.value) throw new Error(`Update loop failed. Renderer instance is null`);
+		request_id = requestAnimationFrame(update);
 		program.uniforms.uTime.value = t * 0.001;
-		renderer.render({
+		renderer!.value.render({
 			scene: mesh,
 		});
 	};
-	requestAnimationFrame(update);
+	request_id = requestAnimationFrame(update);
+});
+
+onBeforeUnmount(() => {
+	cancelAnimationFrame(request_id);
+	renderer.value = null;
 });
 </script>
 
