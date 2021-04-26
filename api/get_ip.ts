@@ -1,8 +1,7 @@
-import { NowRequest, NowResponse } from '@vercel/node';
-import { SplitbeeAnalytics } from '@splitbee/node';
+import { VercelRequest, VercelResponse } from '@vercel/node';
 import fetch from 'node-fetch';
 
-interface Response {
+interface IResponse {
 	as: string;
 	city: string;
 	country: string;
@@ -19,21 +18,10 @@ interface Response {
 	zip: string;
 }
 
-const analytics = new SplitbeeAnalytics(process.env.SPLITBEE_PROJECT_ID as string);
-
-export default async function (_req: NowRequest, res: NowResponse) {
+export default async function (_req: VercelRequest, res: VercelResponse) {
 	try {
 		const response = await fetch('http://ip-api.com/json');
-		const json: Response = await response.json();
-
-		analytics.track({
-			userId: 'myunique@user.id',
-			event: 'api/get_ip',
-			data: {
-				response: JSON.stringify(json),
-			},
-		});
-
+		const json: IResponse = await response.json();
 		res.send(json);
 	} catch (error) {
 		res.send(error);

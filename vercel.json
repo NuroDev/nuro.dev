@@ -1,21 +1,17 @@
 {
 	"version": 2,
 	"public": true,
-	"regions": [
-		"lhr1"
-	],
-	"routes": [
+	"alias": "nuro.dev",
+	"regions": ["lhr1"],
+	"headers": [
 		{
-			"src": "/api/(.*)",
-			"dest": "/api/$1.ts",
-			"methods": [
-				"GET",
-				"OPTIONS"
-			],
-			"headers": {
-				"Access-Control-Allow-Methods": "GET",
-				"Access-Control-Allow-Headers": "Content-Type"
-			}
+			"source": "/(.*)",
+			"headers": [
+				{
+					"key": "Permissions-Policy",
+					"value": "interest-cohort=()"
+				}
+			]
 		}
 	]
 }

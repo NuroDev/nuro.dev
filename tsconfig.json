@@ -1,37 +1,15 @@
 {
 	"compilerOptions": {
-		"target": "ES2018",
-		"module": "ESNext",
-		"moduleResolution": "Node",
-		"lib": [
-			"ESNext",
-			"ESNext.AsyncIterable",
-			"DOM"
-		],
-		"esModuleInterop": true,
-		"allowJs": true,
-		"sourceMap": true,
+		"target": "esnext",
+		"module": "esnext",
+		"moduleResolution": "node",
 		"strict": true,
-		"noEmit": true,
-		"experimentalDecorators": true,
-		"baseUrl": ".",
-		"paths": {
-			"~/*": [
-				"./*"
-			],
-			"@/*": [
-				"./*"
-			]
-		},
-		"types": [
-			"@types/node",
-			"@nuxt/types",
-			"@nuxt/http"
-		]
+		"jsx": "preserve",
+		"sourceMap": true,
+		"resolveJsonModule": true,
+		"esModuleInterop": true,
+		"lib": ["esnext", "dom"],
+		"types": ["vite/client", "vite-plugin-pages/client", "vite-plugin-pwa/client"]
 	},
-	"exclude": [
-		"node_modules",
-		".nuxt",
-		"dist"
-	]
+	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
