@@ -19,9 +19,9 @@ const gl = renderer.gl;
 
 onMounted(async () => {
 	try {
-		background.value && background.value.appendChild(gl.canvas);
+		if (background.value) background.value.appendChild(gl.canvas);
 	} catch (error) {
-		console.error(`Failed to append canvas to DOM: `, error);
+		return console.error(`Failed to append canvas to DOM: `, error);
 	}
 
 	gl.clearColor(1, 1, 1, 1);
