@@ -30,7 +30,6 @@
 		"@splitbee/web": "^0.2.4",
 		"@vueuse/core": "^4.9.0",
 		"@vueuse/head": "^0.5.1",
-		"@vueuse/motion": "^1.5.4",
 		"@vueuse/sound": "^1.1.7",
 		"inter-ui": "^3.18.0",
 		"ogl-typescript": "^0.1.40",
