@@ -21,7 +21,17 @@
 			</Clickable>
 		</div>
 	</div>
-	<Background v-if="enabled" />
+
+	<transition
+		enter-active-class="transition duration-750 ease-in"
+		enter-from-class="transform opacity-0"
+		enter-to-class="transform opacity-100"
+		leave-active-class="transition duration-750 ease-in"
+		leave-from-class="transform opacity-100"
+		leave-to-class="transform opacity-0"
+	>
+		<Background v-if="enabled" />
+	</transition>
 </template>
 
 <script lang="ts" setup>
