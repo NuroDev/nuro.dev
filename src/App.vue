@@ -1,4 +1,5 @@
 <template>
+	<CommandModal />
 	<router-view />
 </template>
 
