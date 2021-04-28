@@ -24,7 +24,9 @@ if (import.meta.env.PROD)
 @include variable.all;
 
 html {
-	@apply antialiased bg-gray-50 text-gray-500 dark:text-gray-400;
+	@apply antialiased \
+		bg-gray-50 text-gray-500 dark:text-gray-400 \
+		transition ease-in-out duration-300;
 	font-family: 'Inter', 'system-ui';
 }
 html.dark {
