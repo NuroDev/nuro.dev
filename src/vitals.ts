@@ -48,12 +48,8 @@ function sendMetric({ context, debug, metric }: ISendOptions) {
 			? navigator['connection']['effectiveType']
 			: '';
 
-	const dsn: string = import.meta.env[
-		import.meta.env.DEV ? 'VITE_VERCEL_ANALYTICS_ID' : 'VERCEL_ANALYTICS_ID'
-	] as string;
-
 	const body = {
-		dsn,
+		dsn: import.meta.env.VERCEL_ANALYTICS_ID as string,
 		event_name: metric.name,
 		href: context.href,
 		id: metric.id,
@@ -62,7 +58,7 @@ function sendMetric({ context, debug, metric }: ISendOptions) {
 		value: metric.value.toString(),
 	};
 
-	if (debug) console.debug(`${metric.name}:`, body);
+	if (debug) console.debug(`${metric.name}:`, JSON.stringify(body, null, 4));
 
 	// This content type is necessary for `sendBeacon`
 	const blob = new Blob([new URLSearchParams(body).toString()], {
