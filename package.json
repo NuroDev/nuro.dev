@@ -36,7 +36,8 @@
 		"nprogress": "^0.2.0",
 		"ogl-typescript": "^0.1.40",
 		"vue": "^3.0.11",
-		"vue-router": "^4.0.6"
+		"vue-router": "^4.0.6",
+		"web-vitals": "^1.1.1"
 	},
 	"devDependencies": {
 		"@iconify/json": "^1.1.332",

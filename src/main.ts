@@ -1,14 +1,15 @@
 import { createApp } from 'vue';
 import { createHead } from '@vueuse/head';
 import { createRouter, createWebHistory } from 'vue-router';
-import routes from 'virtual:generated-pages';
 import nprogress from 'nprogress';
+import routes from 'virtual:generated-pages';
 
 import type { NavigationGuardNext, RouteLocationNormalized } from 'vue-router';
 
-import 'virtual:windi.css';
 import 'nprogress/nprogress.css';
+import 'virtual:windi.css';
 
+import { useVitals } from './vitals';
 import App from './App.vue';
 
 const head = createHead();
@@ -23,8 +24,9 @@ nprogress.configure({
 });
 
 router.beforeResolve(
-	(to: RouteLocationNormalized, _from: RouteLocationNormalized, next: NavigationGuardNext) => {
-		if (to.name) nprogress.start();
+	(route: RouteLocationNormalized, _from: RouteLocationNormalized, next: NavigationGuardNext) => {
+		if (route.name) nprogress.start();
+		if (import.meta.env.PROD) useVitals({ route });
 		next();
 	},
 );
