@@ -19,16 +19,6 @@ interface ISendOptions {
 	metric: Metric;
 }
 
-interface IBody {
-	dsn: string;
-	event_name: 'CLS' | 'FCP' | 'FID' | 'LCP' | 'TTFB';
-	href: string;
-	id: string;
-	page: string;
-	speed: string;
-	value: string;
-}
-
 const VITALS_URL = 'https://vitals.vercel-analytics.com/v1/vitals';
 
 export function useVitals(options: IVitalsOptions): void {
@@ -58,7 +48,7 @@ function sendMetric({ context, debug, metric }: ISendOptions) {
 			? navigator['connection']['effectiveType']
 			: '';
 
-	const body: IBody = {
+	const body = {
 		dsn: import.meta.env.VERCEL_ANALYTICS_ID as string,
 		event_name: metric.name,
 		href: context.href,
@@ -68,12 +58,10 @@ function sendMetric({ context, debug, metric }: ISendOptions) {
 		value: metric.value.toString(),
 	};
 
-	const bodyStr: string = JSON.stringify(body, null, 2);
-
-	if (debug) console.debug(`${metric.name}:`, bodyStr);
+	if (debug) console.debug(`${metric.name}:`, JSON.stringify(body, null, 4));
 
 	// This content type is necessary for `sendBeacon`
-	const blob = new Blob([new URLSearchParams(bodyStr).toString()], {
+	const blob = new Blob([new URLSearchParams(body).toString()], {
 		type: 'application/x-www-form-urlencoded',
 	});
 
