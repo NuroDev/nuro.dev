@@ -21,7 +21,26 @@ interface ISendOptions {
 
 const VITALS_URL = 'https://vitals.vercel-analytics.com/v1/vitals';
 
-const sendMetric = ({ context, debug, metric }: ISendOptions) => {
+export function useVitals(options: IVitalsOptions): void {
+	const { debug = import.meta.env.DEV, route } = options;
+
+	const context: IContext = {
+		fullPath: route.fullPath,
+		href: location.href,
+	};
+
+	try {
+		getFID((metric: Metric) => sendMetric({ context, metric, debug }));
+		getTTFB((metric: Metric) => sendMetric({ context, metric, debug }));
+		getLCP((metric: Metric) => sendMetric({ context, metric, debug }));
+		getCLS((metric: Metric) => sendMetric({ context, metric, debug }));
+		getFCP((metric: Metric) => sendMetric({ context, metric, debug }));
+	} catch (error) {
+		console.error('[Analytics]', error);
+	}
+}
+
+function sendMetric({ context, debug, metric }: ISendOptions) {
 	const speed: string =
 		'connection' in navigator &&
 		navigator['connection'] &&
@@ -58,23 +77,4 @@ const sendMetric = ({ context, debug, metric }: ISendOptions) => {
 				keepalive: true,
 				method: 'POST',
 		  });
-};
-
-export function useVitals(options: IVitalsOptions): void {
-	const { debug = import.meta.env.DEV, route } = options;
-
-	const context: IContext = {
-		fullPath: route.fullPath,
-		href: location.href,
-	};
-
-	try {
-		getFID((metric: Metric) => sendMetric({ context, metric, debug }));
-		getTTFB((metric: Metric) => sendMetric({ context, metric, debug }));
-		getLCP((metric: Metric) => sendMetric({ context, metric, debug }));
-		getCLS((metric: Metric) => sendMetric({ context, metric, debug }));
-		getFCP((metric: Metric) => sendMetric({ context, metric, debug }));
-	} catch (error) {
-		console.error('[Analytics]', error);
-	}
 }
