@@ -26,7 +26,7 @@ nprogress.configure({
 router.beforeResolve(
 	(route: RouteLocationNormalized, _from: RouteLocationNormalized, next: NavigationGuardNext) => {
 		if (route.name) nprogress.start();
-		useVitals({ route });
+		if (import.meta.env.PROD) useVitals({ route });
 		next();
 	},
 );
