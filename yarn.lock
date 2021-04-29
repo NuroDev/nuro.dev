@@ -2724,6 +2724,11 @@ supports-color@^7.0.0, supports-color@^7.1.0:
   dependencies:
     has-flag "^4.0.0"
 
+swrv@^1.0.0-beta.8:
+  version "1.0.0-beta.8"
+  resolved "https://registry.yarnpkg.com/swrv/-/swrv-1.0.0-beta.8.tgz#745723f5ca8a7a7e290e911cf7da34cecaf356d3"
+  integrity sha512-MsjaMOvZODfM0cess/HhbSrNbAotYinv4vzipLckKYBo/QmrvjNUPGZSRSqByXy/9AjrMRFWo0YanaVPbqADPQ==
+
 temp-dir@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/temp-dir/-/temp-dir-2.0.0.tgz#bde92b05bdfeb1516e804c9c00ad45177f31321e"
