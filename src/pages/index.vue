@@ -2,26 +2,30 @@
 	<ThemeButton />
 	<div class="content">
 		<div class="my-8">
-			<Clickable>
-				<Switch
-					role="button"
-					@click="toggle"
-					:class="enabled ? 'bg-primary-500' : 'bg-gray-200 dark:bg-gray-700'"
-					class="switch"
-				>
-					<span class="sr-only">Toggle Counter</span>
-					<span
-						aria-hidden="true"
-						:class="[
-							'dot',
-							enabled ? 'transform translate-x-9' : 'transform translate-x-0',
-						]"
-					/>
-				</Switch>
-			</Clickable>
+			<client-only>
+				<Clickable>
+					<Switch
+						role="button"
+						@click="toggle"
+						:class="enabled ? 'bg-primary-500' : 'bg-gray-200 dark:bg-gray-700'"
+						class="switch"
+					>
+						<span class="sr-only">Toggle Counter</span>
+						<span
+							aria-hidden="true"
+							:class="[
+								'dot',
+								enabled ? 'transform translate-x-9' : 'transform translate-x-0',
+							]"
+						/>
+					</Switch>
+				</Clickable>
+			</client-only>
 		</div>
 	</div>
-	<Background v-show="enabled" />
+	<client-only>
+		<Background v-show="enabled" />
+	</client-only>
 </template>
 
 <script lang="ts" setup>
