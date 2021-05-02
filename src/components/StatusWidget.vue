@@ -1,6 +1,6 @@
 <template>
 	<transition
-		enter-active-class="transform transition duration-300 ease-in-out"
+		enter-active-class="transform transition duration-300 delay-100 ease-in-out"
 		enter-from-class="opacity-0"
 		enter-to-class="opacity-100"
 		leave-active-class="transition duration-300 ease-in-out"
@@ -8,42 +8,81 @@
 		leave-to-class="opacity-0"
 	>
 		<div
-			class="max-w-xs w-full bg-white dark:bg-gray-700 shadow-lg rounded-lg pointer-events-auto grid grid-cols-5 ring-1 ring-black ring-opacity-5"
+			class="max-w-xs w-full bg-white dark:bg-gray-700 shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5"
 		>
-			<div class="flex justify-center items-center">
-				<span class="flex absolute h-3 w-3">
-					<span
-						v-if="isOnline"
-						:class="[
-							'animate-ping absolute inline-flex h-full w-full rounded-full opacity-75',
-							`bg-${status.color}-400`,
-						]"
-					/>
-					<span
-						:class="[
-							'relative inline-flex rounded-full h-3 w-3',
-							`bg-${status.color}-500`,
-						]"
-					/>
-				</span>
-			</div>
+			<div class="w-0 flex-1 p-4">
+				<div class="flex justify-center items-start">
+					<div>
+						<img
+							v-if="spotify"
+							class="w-full max-w-16 rounded pointer-events-none select-none"
+							:src="spotify.album_art_url"
+							:alt="`${spotify.song} - ${spotify.artist}`"
+						/>
 
-			<div class="col-span-4 flex justify-center items-center">
-				<div class="w-full mx-2 py-4 text-sm">
-					<template v-if="error">
-						<p class="font-extrabold text-gray-900 dark:text-white">
-							Failed to fetch Discord status
-						</p>
-						<p class="mt-1 text-gray-500 dark:text-gray-400" v-text="error.message" />
-					</template>
+						<div v-else class="flex-shrink-0 pt-0.5">
+							<div class="w-12 rounded-full" />
+						</div>
 
-					<template v-else-if="data">
-						<p
-							class="font-extrabold text-gray-900 dark:text-white"
-							v-text="status.title"
-						></p>
-						<p class="mt-1 text-gray-500 dark:text-gray-400" v-text="status.text" />
-					</template>
+						<span
+							:class="[
+								'flex absolute h-3 w-3',
+								spotify ? '-mt-14 ml-11' : 'mt-3 ml-4',
+							]"
+						>
+							<span
+								v-if="isOnline"
+								:class="[
+									'animate-ping absolute inline-flex h-full w-full rounded-full opacity-75',
+									`bg-${status.color}-400`,
+								]"
+							/>
+							<span
+								:class="[
+									'relative inline-flex rounded-full h-3 w-3',
+									`bg-${status.color}-500`,
+								]"
+							/>
+						</span>
+					</div>
+
+					<div :class="['w-full ml-3 text-sm', spotify && 'mt-1']">
+						<template v-if="error">
+							<p class="font-extrabold text-gray-900 dark:text-white">
+								Failed to fetch Discord status
+							</p>
+							<p
+								class="mt-1 text-gray-500 dark:text-gray-400"
+								v-text="error.message"
+							/>
+						</template>
+
+						<template v-else-if="data">
+							<template v-if="spotify">
+								<p
+									class="font-extrabold tracking-wide text-gray-900 dark:text-white"
+									v-text="spotify.song"
+								/>
+								<div class="mt-1 text-gray-500 dark:text-gray-400">
+									<p
+										v-if="spotify.album === spotify.artist"
+										v-text="spotify.album"
+									/>
+									<p class="tracking-wide" v-text="spotify.artist" />
+								</div>
+							</template>
+							<template v-else>
+								<p
+									class="font-extrabold text-gray-900 dark:text-white"
+									v-text="status.title"
+								/>
+								<p
+									class="mt-1 text-gray-500 dark:text-gray-400"
+									v-text="status.text"
+								/>
+							</template>
+						</template>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -54,7 +93,7 @@
 import useSWRV from 'swrv';
 import { computed } from 'vue';
 
-import type { DiscordData, LanyardResponse } from '../types/lanyard';
+import type { Activity, DiscordData, LanyardResponse } from '../types/lanyard';
 
 const DISCORD_ID_ENV = import.meta.env.DEV ? 'VITE_DISCORD_ID' : 'DISCORD_ID';
 const DISCORD_ID: string = import.meta.env[DISCORD_ID_ENV] as string;
@@ -129,4 +168,8 @@ const status = computed(() => {
 			};
 	}
 });
+
+const spotify = computed(() =>
+	!data.value?.listening_to_spotify || !data.value.spotify ? null : data.value.spotify,
+);
 </script>
