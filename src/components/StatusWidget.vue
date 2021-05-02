@@ -13,12 +13,16 @@
 			<div class="w-0 flex-1 p-4">
 				<div class="flex justify-center items-start">
 					<div>
-						<img
+						<div
 							v-if="spotify"
-							class="w-full max-w-16 rounded pointer-events-none select-none"
-							:src="spotify.album_art_url"
-							:alt="`${spotify.song} - ${spotify.artist}`"
-						/>
+							class="rounded pointer-events-none select-none ring-4 ring-gray-100 dark:ring-gray-500"
+						>
+							<img
+								class="w-full max-w-16 rounded"
+								:src="spotify.album_art_url"
+								:alt="`${spotify.song} - ${spotify.artist}`"
+							/>
+						</div>
 
 						<div v-else class="flex-shrink-0 pt-0.5">
 							<div class="w-12 rounded-full" />
