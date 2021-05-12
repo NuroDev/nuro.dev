@@ -15,7 +15,7 @@
 		"autoprefixer": "^9.7.3",
 		"github-colors": "^2.2.18",
 		"moment": "^2.24.0",
-		"postcss": "^7.0.26",
+		"postcss": "^8.2.10",
 		"prettier": "^1.19.1",
 		"tailwindcss": "^1.1.4",
 		"vue-typed-js": "^0.1.2",
