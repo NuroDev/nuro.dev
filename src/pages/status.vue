@@ -6,3 +6,11 @@
 		<StatusWidget />
 	</div>
 </template>
+
+<script lang="ts" setup>
+import { useHead } from '@vueuse/head';
+
+useHead({
+	title: 'nuro ─ status',
+});
+</script>
