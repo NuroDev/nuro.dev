@@ -37,7 +37,6 @@
 		"ogl-typescript": "^0.1.40",
 		"vue": "^3.0.11",
 		"vue-router": "^4.0.8",
-		"vue-web-vitals": "^0.1.2",
 		"web-vitals": "^1.1.1"
 	},
 	"devDependencies": {
