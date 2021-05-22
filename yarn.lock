@@ -4679,7 +4679,7 @@ vite-plugin-md@^0.6.7:
     gray-matter "^4.0.3"
     markdown-it "^12.0.6"
 
-vite-plugin-pages@^0.12.1:
+vite-plugin-pages@^0.12.0:
   version "0.12.1"
   resolved "https://registry.yarnpkg.com/vite-plugin-pages/-/vite-plugin-pages-0.12.1.tgz#7450ac806974c941ef4505fce7359c3f94dadd01"
   integrity sha512-JG7RURsLqVX7F1HPMD9kOXnY9Xn3bA5D6lXIRdFd2eYMHU8S4oRcrQFjQXAbonyOJB5qD3UxBb93uNQpKu6cUQ==
