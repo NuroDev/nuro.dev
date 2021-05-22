@@ -3,20 +3,25 @@
 	"public": true,
 	"alias": "nuro.dev",
 	"regions": ["lhr1"],
-	"headers": [
+	"routes": [
 		{
-			"source": "/(.*)",
-			"headers": [
-				{
-					"key": "Permissions-Policy",
-					"value": "interest-cohort=()"
-				}
-			]
+			"src": "/(.*)",
+			"dest": "/$1",
+			"headers": {
+				"Permissions-Policy": "interest-cohort=()"
+			}
+		},
+		{
+			"src": "/github",
+			"dest": "https://github.com/nurodev"
+		},
+		{
+			"src": "/linkedin",
+			"dest": "https://www.linkedin.com/in/nurodev"
+		},
+		{
+			"src": "/twitter",
+			"dest": "https://twitter.com/nurodev"
 		}
-	],
-	"redirects": [
-		{ "source": "/github", "destination": "https://github.com/nurodev" },
-		{ "source": "/linkedin", "destination": "https://www.linkedin.com/in/nurodev" },
-		{ "source": "/twitter", "destination": "https://twitter.com/nurodev" }
 	]
 }
