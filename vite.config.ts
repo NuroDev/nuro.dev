@@ -4,9 +4,12 @@ import { VitePWA as PWA } from 'vite-plugin-pwa';
 import Components from 'vite-plugin-components';
 import Icons, { ViteIconsResolver } from 'vite-plugin-icons';
 import Markdown from 'vite-plugin-md';
-import Pages from 'vite-plugin-pages';
+import Voie from 'vite-plugin-voie';
 import Vue from '@vitejs/plugin-vue';
 import WindiCSS from 'vite-plugin-windicss';
+
+import WindiPluginAspectRatio from 'windicss/plugin/aspect-ratio';
+import WindiPluginTypography from 'windicss/plugin/typography';
 
 const extensions: Array<string> = ['md', 'vue'];
 
@@ -26,9 +29,6 @@ export default defineConfig({
 			extensions,
 		}),
 		Icons(),
-		Pages({
-			extensions,
-		}),
 		Markdown(),
 		PWA({
 			manifest: {
@@ -61,16 +61,16 @@ export default defineConfig({
 				theme_color: '#0072ff',
 			},
 		}),
+		Voie({
+			extensions,
+		}),
 		Vue({
 			include: [/\.vue$/, /\.md$/],
 		}),
 		WindiCSS({
 			config: {
 				darkMode: 'class',
-				plugins: [
-					require('windicss/plugin/aspect-ratio'),
-					require('windicss/plugin/typography'),
-				],
+				plugins: [WindiPluginAspectRatio, WindiPluginTypography],
 				theme: {
 					extend: {
 						colors: {
