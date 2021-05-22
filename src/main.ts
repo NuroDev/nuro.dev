@@ -2,7 +2,7 @@ import { createApp } from 'vue';
 import { createHead } from '@vueuse/head';
 import { createRouter, createWebHistory } from 'vue-router';
 import nprogress from 'nprogress';
-import routes from 'voie-pages';
+import routes from 'virtual:generated-pages';
 
 import { NavigationGuardNext, RouteLocationNormalized } from 'vue-router';
 

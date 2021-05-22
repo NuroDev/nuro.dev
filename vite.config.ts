@@ -4,7 +4,7 @@ import { VitePWA as PWA } from 'vite-plugin-pwa';
 import Components from 'vite-plugin-components';
 import Icons, { ViteIconsResolver } from 'vite-plugin-icons';
 import Markdown from 'vite-plugin-md';
-import Voie from 'vite-plugin-voie';
+import Pages from 'vite-plugin-pages';
 import Vue from '@vitejs/plugin-vue';
 import WindiCSS from 'vite-plugin-windicss';
 
@@ -29,6 +29,9 @@ export default defineConfig({
 			extensions,
 		}),
 		Icons(),
+		Pages({
+			extensions,
+		}),
 		Markdown(),
 		PWA({
 			manifest: {
@@ -60,9 +63,6 @@ export default defineConfig({
 				short_name: 'nuro',
 				theme_color: '#0072ff',
 			},
-		}),
-		Voie({
-			extensions,
 		}),
 		Vue({
 			include: [/\.vue$/, /\.md$/],
