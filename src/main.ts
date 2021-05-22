@@ -4,7 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import nprogress from 'nprogress';
 import routes from 'virtual:generated-pages';
 
-import type { NavigationGuardNext, RouteLocationNormalized } from 'vue-router';
+import { NavigationGuardNext, RouteLocationNormalized } from 'vue-router';
 
 import 'nprogress/nprogress.css';
 import 'virtual:windi.css';
@@ -32,4 +32,7 @@ router.beforeResolve(
 );
 router.afterEach(() => nprogress.done());
 
-createApp(App).use(head).use(router).mount('#app');
+createApp(App)
+	.use(head)
+	.use(router)
+	.mount('#app');
