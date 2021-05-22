@@ -9,7 +9,7 @@ import { NavigationGuardNext, RouteLocationNormalized } from 'vue-router';
 import 'nprogress/nprogress.css';
 import 'virtual:windi.css';
 
-import { useVitals } from './vitals';
+import { useVitals } from 'vue-web-vitals';
 import App from './App.vue';
 
 const head = createHead();
@@ -17,6 +17,8 @@ const router = createRouter({
 	history: createWebHistory(),
 	routes,
 });
+
+useVitals({ router });
 
 nprogress.configure({
 	showSpinner: false,
@@ -26,7 +28,6 @@ nprogress.configure({
 router.beforeResolve(
 	(route: RouteLocationNormalized, _from: RouteLocationNormalized, next: NavigationGuardNext) => {
 		if (route.name) nprogress.start();
-		if (import.meta.env.PROD) useVitals({ route });
 		next();
 	},
 );

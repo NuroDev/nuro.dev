@@ -4905,6 +4905,13 @@ vue-tsc@^0.1.4:
   dependencies:
     vscode-vue-languageservice "0.25.6"
 
+vue-web-vitals@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/vue-web-vitals/-/vue-web-vitals-0.1.2.tgz#432bfd6f38941483afa97de9bf6f9509df8afade"
+  integrity sha512-Pa2EYKIGNzCSWYJ3Kk009/Xjts04qKhGu2KVSt6+B9AaaxCp70yGyXmvXg8LGU69420Q4FZjMm+rSe5fcGaWPA==
+  dependencies:
+    web-vitals "^1.1.1"
+
 vue@^3.0.11:
   version "3.0.11"
   resolved "https://registry.yarnpkg.com/vue/-/vue-3.0.11.tgz#c82f9594cbf4dcc869241d4c8dd3e08d9a8f4b5f"
