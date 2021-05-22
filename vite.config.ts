@@ -1,17 +1,19 @@
 import { defineConfig } from 'vite';
 import { join } from 'path';
-import Colors from 'windicss/colors';
+import { VitePWA as PWA } from 'vite-plugin-pwa';
 import Components from 'vite-plugin-components';
 import Icons, { ViteIconsResolver } from 'vite-plugin-icons';
 import Markdown from 'vite-plugin-md';
 import Pages from 'vite-plugin-pages';
-import { VitePWA as PWA } from 'vite-plugin-pwa';
 import Vue from '@vitejs/plugin-vue';
 import WindiCSS from 'vite-plugin-windicss';
 
 const extensions: Array<string> = ['md', 'vue'];
 
 export default defineConfig({
+	define: {
+		'import.meta.env.VERCEL_ANALYTICS_ID': JSON.stringify(process.env.VERCEL_ANALYTICS_ID),
+	},
 	plugins: [
 		Components({
 			customComponentResolvers: [
