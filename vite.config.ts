@@ -8,6 +8,9 @@ import Pages from 'vite-plugin-pages';
 import Vue from '@vitejs/plugin-vue';
 import WindiCSS from 'vite-plugin-windicss';
 
+import WindiPluginAspectRatio from 'windicss/plugin/aspect-ratio';
+import WindiPluginTypography from 'windicss/plugin/typography';
+
 const extensions: Array<string> = ['md', 'vue'];
 
 export default defineConfig({
@@ -67,10 +70,7 @@ export default defineConfig({
 		WindiCSS({
 			config: {
 				darkMode: 'class',
-				plugins: [
-					require('windicss/plugin/aspect-ratio'),
-					require('windicss/plugin/typography'),
-				],
+				plugins: [WindiPluginAspectRatio, WindiPluginTypography],
 				theme: {
 					extend: {
 						colors: {
