@@ -2,7 +2,7 @@
 	"private": true,
 	"name": "nuro.dev",
 	"version": "2.1.1",
-	"description": "Personal Website for nuro.sh",
+	"description": "Personal Website for nuro.dev",
 	"repository": "https://github.com/nurodev/nuro.dev.git",
 	"author": "nurodev <me@nuro.dev>",
 	"license": "MIT",
