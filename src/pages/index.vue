@@ -1,5 +1,4 @@
 <template>
-	<ThemeButton />
 	<div class="content">
 		<div class="my-8">
 			<Clickable>
