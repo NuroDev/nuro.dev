@@ -40,4 +40,8 @@ html.dark {
 #nprogress .bar {
 	@apply h-1 bg-gray-800 dark:bg-white;
 }
+
+* {
+	@apply transition ease-in-out duration-300;
+}
 </style>
