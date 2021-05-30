@@ -16,7 +16,12 @@
 			<h2 class="title" v-text="post.title" />
 			<p v-if="post.description" class="description" v-text="post.description" />
 			<div class="footer">
-				<img class="avatar" :src="post.author.imageUrl" :alt="post.author.name" />
+				<img
+					v-if="post.author"
+					class="avatar"
+					:src="post.author.imageUrl"
+					:alt="post.author.name"
+				/>
 				<div class="text-sm pl-4">
 					<div class="meta">
 						<span>18/05/2021</span>
