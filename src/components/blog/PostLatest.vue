@@ -52,10 +52,6 @@ defineProps({
 		border-1 border-gray-100 p-4 sm:border-none \
 		focus:outline-none focus:ring-4 focus:ring-primary-500;
 
-	* {
-		@apply transition ease-in-out duration-300;
-	}
-
 	.banner {
 		@apply flex justify-center \
 			w-full xl:w-2/4 max-w-xl sm:h-auto \
