@@ -74,7 +74,8 @@ defineProps({
 
 	.content {
 		@apply flex flex-col flex-1 justify-evenly \
-			m-auto sm:m-0 pb-3 sm:pl-12 sm:pb-0;
+			m-auto sm:m-0 pb-3 sm:pl-12 sm:pb-0 \
+			text-gray-300 dark:text-gray-400;
 
 		.title {
 			@apply mt-6 lg:mt-0 \
@@ -84,8 +85,7 @@ defineProps({
 
 		.description {
 			@apply mt-6 lg:mt-0 \
-				text-lg \
-				text-gray-300 dark:text-gray-400;
+				text-lg;
 		}
 
 		.footer {
@@ -99,8 +99,7 @@ defineProps({
 			}
 
 			.meta {
-				@apply flex items-center \
-					text-gray-200 dark:text-gray-400;
+				@apply flex items-center;
 			}
 
 			.divider {

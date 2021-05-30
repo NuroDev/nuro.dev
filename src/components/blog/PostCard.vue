@@ -68,6 +68,7 @@ defineProps({
 		.text {
 			@apply flex flex-col flex-1 justify-around mt-2 \
 				rounded-lg \
+				text-gray-300 dark:text-gray-400 \
 				focus:outline-none focus:ring-4 focus:border-none focus:ring-primary-500;
 
 			.title {
@@ -77,15 +78,13 @@ defineProps({
 
 			.description {
 				@apply mt-3 \
-					text-base line-clamp-2 \
-					text-gray-300 dark:text-gray-400;
+					text-base line-clamp-2;
 			}
 
 			.meta {
 				@apply flex items-start space-x-1 \
 					mt-4 \
-					text-sm \
-					text-gray-200 dark:text-gray-400;
+					text-sm;
 			}
 		}
 	}
