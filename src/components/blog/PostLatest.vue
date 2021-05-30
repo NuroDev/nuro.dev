@@ -52,9 +52,9 @@ defineProps({
 <style lang="postcss" scoped>
 .post {
 	@apply flex flex-col sm:flex-row \
-		mt-12 \
+		mt-12 p-4 \
 		rounded-lg \
-		border-1 border-gray-100 p-4 sm:border-none \
+		border-1 border-gray-100 dark:border-gray-500 sm:border-none \
 		focus:outline-none focus:ring-4 focus:ring-primary-500;
 
 	.banner {
