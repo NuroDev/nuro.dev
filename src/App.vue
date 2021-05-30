@@ -38,6 +38,6 @@ html.dark {
 }
 
 #nprogress .bar {
-	@apply h-0.5 bg-gray-800 dark:bg-white;
+	@apply h-1 bg-gray-800 dark:bg-white;
 }
 </style>
