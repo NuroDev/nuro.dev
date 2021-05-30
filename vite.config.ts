@@ -9,6 +9,7 @@ import Vue from '@vitejs/plugin-vue';
 import WindiCSS from 'vite-plugin-windicss';
 
 import WindiPluginAspectRatio from 'windicss/plugin/aspect-ratio';
+import WindiPluginLineClamp from 'windicss/plugin/line-clamp';
 import WindiPluginTypography from 'windicss/plugin/typography';
 
 const extensions: Array<string> = ['md', 'vue'];
@@ -70,7 +71,7 @@ export default defineConfig({
 		WindiCSS({
 			config: {
 				darkMode: 'class',
-				plugins: [WindiPluginAspectRatio, WindiPluginTypography],
+				plugins: [WindiPluginAspectRatio, WindiPluginLineClamp, WindiPluginTypography],
 				theme: {
 					extend: {
 						colors: {
