@@ -3,9 +3,10 @@
 		<div class="banner" v-if="post.imageUrl">
 			<img
 				class="h-48 w-full object-cover select-none"
-				:src="post.imageUrl"
-				alt=""
 				draggable="false"
+				loading="lazy"
+				:src="post.imageUrl"
+				:alt="post.title"
 			/>
 		</div>
 
