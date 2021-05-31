@@ -21,7 +21,9 @@
 			</Clickable>
 		</div>
 	</div>
-	<Background v-show="enabled" />
+	<client-only>
+		<Background v-show="enabled" />
+	</client-only>
 </template>
 
 <script lang="ts" setup>
