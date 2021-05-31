@@ -1,7 +1,5 @@
-import { getCLS, getFCP, getFID, getLCP, getTTFB } from 'web-vitals';
-
-import type { RouteLocationNormalized } from 'vue-router';
-import type { Metric } from 'web-vitals';
+import { getCLS, getFCP, getFID, getLCP, getTTFB, Metric } from 'web-vitals';
+import { RouteLocationNormalized } from 'vue-router';
 
 interface IVitalsOptions {
 	debug?: true;
