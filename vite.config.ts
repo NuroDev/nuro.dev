@@ -38,7 +38,10 @@ export default defineConfig({
 				{ dir: 'src/content/blog/', baseRoute: '/blog/' },
 			],
 		}),
-		Markdown(),
+		Markdown({
+			headEnabled: true,
+			wrapperComponent: 'Post',
+		}),
 		PWA({
 			manifest: {
 				background_color: '#0d0f11',
