@@ -30,7 +30,7 @@ const posts: IPosts = {
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 		date: 'Mar 16, 2020',
 		datetime: '2020-03-16',
-		imageUrl: 'https://cdn.sanity.io/images/f1avhira/production/e0790e1dd7227dc8f8b467e224586922a9787689-1280x700.png',
+		imageUrl: 'https://via.placeholder.com/1280x720',
 		readingTime: '2 min',
 		author: {
 			name: 'Ben',
@@ -45,7 +45,7 @@ const posts: IPosts = {
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
 			date: 'Mar 10, 2020',
 			datetime: '2020-03-10',
-			imageUrl: 'https://cdn.sanity.io/images/f1avhira/production/ee4f38fdd74f210137bd83d295c0697fc06421b7-1280x700.png',
+			imageUrl: 'https://via.placeholder.com/1280x720',
 			readingTime: '4 min',
 			author: {
 				name: 'Ben',
@@ -59,7 +59,7 @@ const posts: IPosts = {
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
 			date: 'Feb 12, 2020',
 			datetime: '2020-02-12',
-			imageUrl: 'https://cdn.sanity.io/images/f1avhira/production/2e005aa129f06b61fb541997504b0248c52c9fb0-1280x700.png',
+			imageUrl: 'https://via.placeholder.com/1280x720',
 			readingTime: '11 min',
 			author: {
 				name: 'Ben',
@@ -73,7 +73,7 @@ const posts: IPosts = {
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
 			date: 'Mar 16, 2020',
 			datetime: '2020-03-16',
-			imageUrl: 'https://cdn.sanity.io/images/f1avhira/production/5bc99f49cdd1c06a3e8699320b6f5a9e026d463f-1280x700.png',
+			imageUrl: 'https://via.placeholder.com/1280x720',
 			readingTime: '6 min',
 			author: {
 				name: 'Ben',
