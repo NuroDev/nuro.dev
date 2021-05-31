@@ -41,6 +41,7 @@
 	"devDependencies": {
 		"@iconify/json": "^1.1.350",
 		"@types/howler": "^2.2.2",
+		"@types/markdown-it-emoji": "^2.0.1",
 		"@types/node": "^15.6.1",
 		"@types/node-fetch": "^2.5.10",
 		"@types/nprogress": "^0.2.0",
@@ -49,6 +50,8 @@
 		"@vue/compiler-sfc": "^3.0.11",
 		"@vue/server-renderer": "^3.0.11",
 		"cross-env": "^7.0.3",
+		"markdown-it-anchor": "^7.1.0",
+		"markdown-it-emoji": "^2.0.0",
 		"node-fetch": "^2.6.1",
 		"typescript": "^4.3.2",
 		"vite": "^2.3.4",

@@ -9,6 +9,9 @@ import Pages from 'vite-plugin-pages';
 import Vue from '@vitejs/plugin-vue';
 import WindiCSS from 'vite-plugin-windicss';
 
+import MarkdownItAnchor from 'markdown-it-anchor';
+import MarkdownItEmoji from 'markdown-it-emoji';
+
 import WindiPluginAspectRatio from 'windicss/plugin/aspect-ratio';
 import WindiPluginLineClamp from 'windicss/plugin/line-clamp';
 import WindiPluginTypography from 'windicss/plugin/typography';
@@ -40,6 +43,9 @@ export default defineConfig({
 		}),
 		Markdown({
 			headEnabled: true,
+			markdownItSetup(md) {
+				md.use(MarkdownItAnchor).use(MarkdownItEmoji);
+			},
 			wrapperComponent: 'Post',
 		}),
 		PWA({
