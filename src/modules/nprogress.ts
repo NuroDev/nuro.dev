@@ -1,9 +1,10 @@
-import { ViteSSGContext } from 'vite-ssg';
 import nprogress from 'nprogress';
 
 import 'nprogress/nprogress.css';
 
-export function install({ isClient, router }: ViteSSGContext): void {
+import { IViteSSRContext } from '~/types';
+
+export function install({ isClient, router }: IViteSSRContext): void {
 	if (!isClient) return;
 
 	nprogress.configure({

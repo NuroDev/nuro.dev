@@ -18,11 +18,15 @@
 		"useTabs": true
 	},
 	"scripts": {
-		"dev": "yarn dev:local",
-		"dev:local": "cross-env DEBUG=vite-ssg:* vite",
-		"dev:vercel": "vite build && vercel dev",
-		"build": "vue-tsc --noEmit && cross-env DEBUG=vite-ssg:* vite-ssg build",
-		"preview": "vite preview",
+		"build": "vue-tsc --noEmit && yarn build:clean && vite-ssr build && yarn build:post",
+		"build:clean": "rimraf dist",
+		"build:post": "yarn build:post:client && yarn build:post:server",
+		"build:post:client": "cp -r dist/client/* dist/ && rimraf dist/client/",
+		"build:post:server": "mkdir -p api/renderer/ && mv dist/ssr-manifest.json api/renderer/ && cp dist/server/main.js api/renderer/ && rimraf dist/server",
+		"dev": "yarn dev:ssr",
+		"dev:spa": "vite",
+		"dev:ssr": "vite-ssr",
+		"preview": "vercel dev",
 		"prettier": "prettier --write \"**/*.{css,js,json,jsx,ts,tsx,vue}\""
 	},
 	"dependencies": {
@@ -35,7 +39,7 @@
 		"inter-ui": "^3.18.1",
 		"nprogress": "^0.2.0",
 		"ogl-typescript": "^0.1.40",
-		"vite-ssg": "^0.11.2",
+		"vite-ssr": "^0.10.1",
 		"vue": "^3.0.11",
 		"web-vitals": "^1.1.2"
 	},
@@ -51,6 +55,7 @@
 		"@vue/server-renderer": "^3.0.11",
 		"cross-env": "^7.0.3",
 		"node-fetch": "^2.6.1",
+		"rimraf": "^3.0.2",
 		"typescript": "^4.3.2",
 		"vite": "^2.3.4",
 		"vite-plugin-components": "^0.10.4",

@@ -4,6 +4,11 @@
 	"cleanUrls": true,
 	"public": true,
 	"regions": ["lhr1"],
+	"functions": {
+		"api/index.ts": {
+			"includeFiles": "api/renderer/**"
+		}
+	},
 	"headers": [
 		{
 			"source": "/(.*)",
@@ -13,6 +18,12 @@
 					"value": "interest-cohort=()"
 				}
 			]
+		}
+	],
+	"rewrites": [
+		{
+			"source": "/(.*)",
+			"destination": "/api/index.ts"
 		}
 	],
 	"redirects": [

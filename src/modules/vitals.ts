@@ -1,7 +1,6 @@
 import { getCLS, getFCP, getFID, getLCP, getTTFB, Metric } from 'web-vitals';
-import { ViteSSGContext } from 'vite-ssg';
 
-import { IVitalsContext, IVitalSendOptions, IVitalsOptions } from '~/types';
+import { IVitalsContext, IVitalSendOptions, IVitalsOptions, IViteSSRContext } from '~/types';
 
 const VITALS_URL = 'https://vitals.vercel-analytics.com/v1/vitals';
 
@@ -66,7 +65,7 @@ function sendMetric({ context, debug, metric }: IVitalSendOptions) {
  *
  * @returns {void}
  */
-export function install({ isClient, router }: ViteSSGContext): void {
+export function install({ isClient, router }: IViteSSRContext): void {
 	if (!isClient || !import.meta.env.PROD) return;
 
 	router.beforeEach((to) => useVitals({ route: to }));

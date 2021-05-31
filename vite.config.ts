@@ -1,11 +1,11 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import { VitePWA as PWA } from 'vite-plugin-pwa';
-import { ViteSSGOptions } from 'vite-ssg';
 import Components from 'vite-plugin-components';
 import Icons, { ViteIconsResolver } from 'vite-plugin-icons';
 import Markdown from 'vite-plugin-md';
 import Pages from 'vite-plugin-pages';
+import SSR from 'vite-ssr/plugin';
 import Vue from '@vitejs/plugin-vue';
 import WindiCSS from 'vite-plugin-windicss';
 
@@ -65,6 +65,7 @@ export default defineConfig({
 				theme_color: '#0072ff',
 			},
 		}),
+		SSR(),
 		Vue({
 			include: [/\.vue$/, /\.md$/],
 		}),
@@ -108,10 +109,5 @@ export default defineConfig({
 		alias: {
 			'~': resolve(__dirname, 'src'),
 		},
-	},
-	// @ts-ignore
-	ssgOptions: <ViteSSGOptions>{
-		script: 'async',
-		formatting: 'prettify',
 	},
 });
