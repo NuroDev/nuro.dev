@@ -30,6 +30,9 @@ html {
 }
 html.dark {
 	@apply bg-gray-900;
+	* {
+		--tw-ring-offset-color: #0c0e10;
+	}
 }
 
 @supports (font-variation-settings: normal) {
