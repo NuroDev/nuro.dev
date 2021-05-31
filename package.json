@@ -19,9 +19,9 @@
 	},
 	"scripts": {
 		"dev": "yarn dev:local",
-		"dev:local": "vite",
+		"dev:local": "cross-env DEBUG=vite-ssg:* vite",
 		"dev:vercel": "vite build && vercel dev",
-		"build": "vue-tsc --noEmit && vite build",
+		"build": "vue-tsc --noEmit && cross-env DEBUG=vite-ssg:* vite-ssg build",
 		"preview": "vite preview",
 		"prettier": "prettier --write \"**/*.{css,js,json,jsx,ts,tsx,vue}\""
 	},
@@ -36,7 +36,6 @@
 		"nprogress": "^0.2.0",
 		"ogl-typescript": "^0.1.40",
 		"vue": "^3.0.11",
-		"vue-router": "^4.0.8",
 		"web-vitals": "^1.1.1"
 	},
 	"devDependencies": {
@@ -48,6 +47,8 @@
 		"@vercel/node": "^1.10.0",
 		"@vitejs/plugin-vue": "^1.2.2",
 		"@vue/compiler-sfc": "^3.0.11",
+		"@vue/server-renderer": "^3.0.11",
+		"cross-env": "^7.0.3",
 		"node-fetch": "^2.6.1",
 		"typescript": "^4.2.4",
 		"vite": "^2.3.3",
@@ -57,6 +58,8 @@
 		"vite-plugin-pages": "^0.10.0",
 		"vite-plugin-pwa": "^0.7.3",
 		"vite-plugin-windicss": "^0.15.10",
+		"vite-ssg": "^0.11.2",
+		"vue-router": "^4.0.8",
 		"vue-tsc": "^0.1.4",
 		"windicss": "^3.0.9"
 	}
