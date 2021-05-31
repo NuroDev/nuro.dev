@@ -14,8 +14,6 @@ const { volume = 0.25 } = defineProps<{
 	volume?: number;
 }>();
 
-console.log(volume);
-
 const sound = useSound(soundClick, {
 	volume,
 });
