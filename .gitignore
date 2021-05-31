@@ -83,7 +83,7 @@ typings/
 .nuxt
 dist
 dist-ssr
-.vite-ssg-temp/
+api/renderer/
 
 # Gatsby files
 .cache/
