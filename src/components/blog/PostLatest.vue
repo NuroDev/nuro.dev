@@ -52,18 +52,17 @@ defineProps({
 
 <style lang="postcss" scoped>
 .post {
-	@apply flex flex-col sm:flex-row \
+	@apply flex flex-col lg:flex-row \
 		mt-12 p-4 \
 		rounded-lg \
-		border-2 border-gray-100 dark:border-gray-500 sm:border-none \
+		border-2 border-gray-100 dark:border-gray-500 lg:border-none \
 		focus:outline-none focus:ring-4 focus:ring-primary-500;
 
 	.banner {
 		@apply flex justify-center \
-			w-full xl:w-2/4 max-w-xl sm:h-auto \
+			w-full xl:w-2/4 lg:max-w-xl lg:h-auto \
 			overflow-hidden overflow-hidden \
-			rounded-lg hover:shadow-xl \
-			transform hover:-translate-y-1;
+			rounded-lg hover:shadow-xl;
 
 		picture {
 			img {
@@ -74,12 +73,12 @@ defineProps({
 
 	.content {
 		@apply flex flex-col flex-1 justify-evenly \
-			m-auto sm:m-0 pb-3 sm:pl-12 sm:pb-0 \
+			m-auto sm:m-0 pb-3 sm:p-1 sm:pt-0 lg:pl-12 \
 			text-gray-300 dark:text-gray-400;
 
 		.title {
 			@apply mt-6 lg:mt-0 \
-				text-2xl lg:text-5xl font-bold \
+				text-3xl sm:text-4xl lg:text-5xl font-bold \
 				text-gray-500 dark:text-white;
 		}
 

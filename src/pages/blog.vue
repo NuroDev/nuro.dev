@@ -1,8 +1,10 @@
 <template>
 	<div class="content">
 		<div class="relative max-w-6xl mx-auto">
-			<h2 class="title">📕 Blog</h2>
-			<p class="subTitle">Let's talk about games, tech & programming</p>
+			<div class="px-2">
+				<h2 class="title">📕 Blog</h2>
+				<p class="subTitle">Let's talk about games, tech & programming</p>
+			</div>
 			<PostLatest v-if="posts.latest" :post="posts.latest" />
 			<div class="posts">
 				<PostCard v-for="(post, i) in posts.all" :key="i" :post="post" />
@@ -128,8 +130,8 @@ const posts: IPosts = {
 
 	.posts {
 		@apply max-w-lg \
-			mt-12 mx-auto \
-			grid gap-5 lg:grid-cols-3 lg:max-w-none;
+			mt-4 lg:mt-12 mx-auto \
+			grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:max-w-none;
 	}
 }
 </style>
