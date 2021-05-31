@@ -1,9 +1,9 @@
 <template>
-	<a
+	<router-link
 		:aria-label="`Read blog post: ${post.title}`"
-		:href="post.url"
 		class="post"
 		rel="noopener noreferrer"
+		:to="post.url"
 	>
 		<div class="banner">
 			<picture>
@@ -32,7 +32,7 @@
 				</div>
 			</div>
 		</div>
-	</a>
+	</router-link>
 </template>
 
 <script lang="ts" setup>

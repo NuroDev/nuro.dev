@@ -1,5 +1,5 @@
 <template>
-	<a :aria-label="`Read blog post: ${post.title}`" :href="post.url" class="post">
+	<router-link :aria-label="`Read blog post: ${post.title}`" :to="post.url" class="post">
 		<div class="banner" v-if="post.imageUrl">
 			<img
 				class="h-48 w-full object-cover select-none"
@@ -24,7 +24,7 @@
 				</div>
 			</div>
 		</div>
-	</a>
+	</router-link>
 </template>
 
 <script lang="ts" setup>
