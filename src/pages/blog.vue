@@ -7,7 +7,7 @@
 			</div>
 			<PostLatest v-if="posts.latest" :post="posts.latest" />
 			<div class="posts">
-				<PostCard v-for="(post, i) in posts.all" :key="i" :post="post" />
+				<PostCard v-for="(post, i) in posts.all" :key="i" :post="post" :index="i" />
 			</div>
 		</div>
 	</div>

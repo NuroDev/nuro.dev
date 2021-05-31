@@ -1,6 +1,6 @@
 <template>
 	<router-link :aria-label="`Read blog post: ${post.title}`" :to="post.url" class="post">
-		<div class="banner" v-if="post.imageUrl">
+		<div class="banner" v-if="post.imageUrl && index <= 3">
 			<img
 				class="h-48 w-full object-cover select-none"
 				draggable="false"
@@ -30,16 +30,12 @@
 <script lang="ts" setup>
 import { defineProps } from "vue";
 
-import type { PropType } from "vue";
+import type { IPost, IPosts } from "../../types/blog";
 
-import type { IPost } from "../../types/blog";
-
-defineProps({
-	post: {
-		required: true,
-		type: Object as PropType<IPost>
-	},
-})
+defineProps<{
+	index: number,
+	post: IPost,
+}>()
 </script>
 
 <style lang="postcss" scoped>
