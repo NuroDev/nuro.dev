@@ -8,6 +8,8 @@ import Pages from 'vite-plugin-pages';
 import Vue from '@vitejs/plugin-vue';
 import WindiCSS from 'vite-plugin-windicss';
 
+import type { ViteSSGOptions } from "vite-ssg"
+
 import WindiPluginAspectRatio from 'windicss/plugin/aspect-ratio';
 import WindiPluginTypography from 'windicss/plugin/typography';
 
@@ -107,5 +109,10 @@ export default defineConfig({
 		alias: {
 			'~': resolve(__dirname, 'src'),
 		},
+	},
+	// @ts-ignore
+	ssgOptions: <ViteSSGOptions>{
+		script: 'async',
+		formatting: 'prettify',
 	},
 });
