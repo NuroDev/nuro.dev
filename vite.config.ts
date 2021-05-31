@@ -32,6 +32,10 @@ export default defineConfig({
 		Icons(),
 		Pages({
 			extensions,
+			pagesDir: [
+				{ dir: 'src/pages', baseRoute: '/' },
+				{ dir: 'src/content/blog/', baseRoute: '/blog/' },
+			],
 		}),
 		Markdown(),
 		PWA({

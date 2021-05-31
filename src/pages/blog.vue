@@ -14,7 +14,7 @@
 <script lang="ts" setup>
 import { useHead } from '@vueuse/head';
 
-import type { IPosts } from "../../types/blog"
+import type { IPosts } from "~/types/blog"
 
 useHead({
 	title: 'nuro ─ blog'
@@ -23,12 +23,12 @@ useHead({
 const posts: IPosts = {
 	latest: {
 		title: '👋🏻 Hello World',
-		url: '#',
+		url: '/blog/2021/hello_world',
 		description:
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
 		date: 'Mar 16, 2020',
 		datetime: '2020-03-16',
-		imageUrl: 'https://via.placeholder.com/1280x720',
+		imageUrl: 'https://cdn.sanity.io/images/f1avhira/production/e0790e1dd7227dc8f8b467e224586922a9787689-1280x700.png',
 		readingTime: '2 min',
 		author: {
 			name: 'Ben',
@@ -37,27 +37,13 @@ const posts: IPosts = {
 	},
 	all: [
 		{
-			title: 'Cras sagittis nibh eget blandit.',
-			url: '#',
-			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
-			date: 'Mar 16, 2020',
-			datetime: '2020-03-16',
-			imageUrl: 'https://via.placeholder.com/1280x720',
-			readingTime: '6 min',
-			author: {
-				name: 'Ben',
-				imageUrl: '/apple-touch-icon-ipad-76x76.png',
-			},
-		},
-		{
 			title: 'Aliquam erat volutpat. Nullam et.',
 			url: '#',
 			description:
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
 			date: 'Mar 10, 2020',
 			datetime: '2020-03-10',
-			imageUrl: 'https://via.placeholder.com/1280x720',
+			imageUrl: 'https://cdn.sanity.io/images/f1avhira/production/ee4f38fdd74f210137bd83d295c0697fc06421b7-1280x700.png',
 			readingTime: '4 min',
 			author: {
 				name: 'Ben',
@@ -71,8 +57,22 @@ const posts: IPosts = {
 				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
 			date: 'Feb 12, 2020',
 			datetime: '2020-02-12',
-			imageUrl: 'https://via.placeholder.com/1280x720',
+			imageUrl: 'https://cdn.sanity.io/images/f1avhira/production/2e005aa129f06b61fb541997504b0248c52c9fb0-1280x700.png',
 			readingTime: '11 min',
+			author: {
+				name: 'Ben',
+				imageUrl: '/apple-touch-icon-ipad-76x76.png',
+			},
+		},
+		{
+			title: 'Cras sagittis nibh eget blandit.',
+			url: '#',
+			description:
+				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
+			date: 'Mar 16, 2020',
+			datetime: '2020-03-16',
+			imageUrl: 'https://cdn.sanity.io/images/f1avhira/production/5bc99f49cdd1c06a3e8699320b6f5a9e026d463f-1280x700.png',
+			readingTime: '6 min',
 			author: {
 				name: 'Ben',
 				imageUrl: '/apple-touch-icon-ipad-76x76.png',
