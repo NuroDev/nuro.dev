@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import { join } from 'path';
+import { resolve } from 'path';
 import { VitePWA as PWA } from 'vite-plugin-pwa';
 import Components from 'vite-plugin-components';
 import Icons, { ViteIconsResolver } from 'vite-plugin-icons';
@@ -105,7 +105,7 @@ export default defineConfig({
 	],
 	resolve: {
 		alias: {
-			'~': join(__dirname, './src/'),
+			'~': resolve(__dirname, 'src'),
 		},
 	},
 });
