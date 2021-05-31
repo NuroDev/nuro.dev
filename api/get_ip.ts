@@ -18,7 +18,7 @@ interface IResponse {
 	zip: string;
 }
 
-export default async function (_req: VercelRequest, res: VercelResponse) {
+export default async function(_req: VercelRequest, res: VercelResponse) {
 	try {
 		const response = await fetch('http://ip-api.com/json');
 		const json: IResponse = await response.json();

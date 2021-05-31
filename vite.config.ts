@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import { VitePWA as PWA } from 'vite-plugin-pwa';
+import { ViteSSGOptions } from 'vite-ssg';
 import Components from 'vite-plugin-components';
 import Icons, { ViteIconsResolver } from 'vite-plugin-icons';
 import Markdown from 'vite-plugin-md';
@@ -112,5 +113,10 @@ export default defineConfig({
 		alias: {
 			'~': resolve(__dirname, 'src'),
 		},
+	},
+	// @ts-ignore
+	ssgOptions: <ViteSSGOptions>{
+		script: 'async',
+		formatting: 'prettify',
 	},
 });
