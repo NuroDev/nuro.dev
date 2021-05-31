@@ -38,16 +38,11 @@
 <script lang="ts" setup>
 import { defineProps } from "vue"
 
-import type {PropType} from "vue"
-
 import type { IPost } from "../../types/blog"
 
-defineProps({
-	post: {
-		required: true,
-		type: Object as PropType<IPost>,
-	}
-})
+defineProps<{
+	post: IPost,
+}>();
 </script>
 
 <style lang="postcss" scoped>
