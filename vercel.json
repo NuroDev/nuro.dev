@@ -8,17 +8,6 @@
 			"includeFiles": "api/renderer/**"
 		}
 	},
-	"headers": [
-		{
-			"source": "/(.*)",
-			"headers": [
-				{
-					"key": "Permissions-Policy",
-					"value": "interest-cohort=()"
-				}
-			]
-		}
-	],
 	"rewrites": [
 		{
 			"source": "/(.*)",

@@ -23,6 +23,7 @@ export default async function(req: VercelRequest, res: VercelResponse) {
 		res.status(200);
 		res.setHeader('Content-Type', 'text/html');
 		res.setHeader('Cache-Control', 'max-age=0, s-maxage=86400, stale-while-revalidate');
+		res.setHeader('Permissions-Policy', 'interest-cohort=()');
 		res.send(html);
 	} catch (error) {
 		console.error(error.stack);
