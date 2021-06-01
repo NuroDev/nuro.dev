@@ -7,10 +7,8 @@ globalThis.fetch = fetch;
 
 export default async function(req: VercelRequest, res: VercelResponse) {
 	try {
-		const manifest = await import(join(__dirname, '..', 'dist', 'client', 'ssr-manifest.json'));
-		const { default: render } = await import(
-			join(__dirname, '..', 'dist', 'server', 'main.js')
-		);
+		const manifest = await import(join(__dirname, 'renderer', 'ssr-manifest.json'));
+		const { default: render } = await import(join(__dirname, 'renderer', 'main.js'));
 
 		// @ts-ignore
 		const protocol = req.protocol || (req.headers.referer || '').split(':')[0] || 'http';
