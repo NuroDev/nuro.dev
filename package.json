@@ -20,8 +20,8 @@
 	"scripts": {
 		"build": "vue-tsc --noEmit && rimraf dist && vite-ssr build && yarn build:post",
 		"build:post": "yarn build:post:client && yarn build:post:server",
-		"build:post:client": "cp -r dist/client/* dist/ && rimraf dist/client/",
-		"build:post:server": "mkdir -p api/renderer/ && mv dist/ssr-manifest.json api/renderer/ && cp dist/server/main.js api/renderer/ && rimraf dist/server",
+		"build:post:client": "mv dist/client/* dist/ && rimraf dist/client/",
+		"build:post:server": "mkdir -p api/renderer/ && mv dist/ssr-manifest.json api/renderer/ && mv dist/server/main.js api/renderer/ && rimraf dist/server/",
 		"dev": "yarn dev:ssr",
 		"dev:spa": "vite",
 		"dev:ssr": "vite-ssr",
