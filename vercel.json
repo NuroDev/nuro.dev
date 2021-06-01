@@ -5,7 +5,7 @@
 	"regions": ["lhr1"],
 	"functions": {
 		"api/index.ts": {
-			"includeFiles": "api/renderer/**"
+			"includeFiles": "renderer/**"
 		}
 	},
 	"rewrites": [
