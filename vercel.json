@@ -1,7 +1,6 @@
 {
 	"version": 2,
 	"alias": "nuro.dev",
-	"cleanUrls": true,
 	"public": true,
 	"regions": ["lhr1"],
 	"functions": {
