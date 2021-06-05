@@ -60,7 +60,7 @@ useHead({
 		@apply sm:max-w-2xl lg:sm:max-w-6xl mx-auto;
 
 		.placeholder {
-			@apply w-6xl h-full h-[16rem] lg:h-lg mb-8 \
+			@apply w-full h-full h-[16rem] lg:h-lg mb-8 \
 				bg-gray-200 dark:bg-gray-600 \
 				rounded-3xl;
 		}
