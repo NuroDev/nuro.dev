@@ -3,7 +3,7 @@
 		<div class="relative max-w-6xl mx-auto">
 			<div class="px-2">
 				<h2 class="title">📕 Blog</h2>
-				<p class="subTitle">Let's talk about games, tech & programming</p>
+				<p class="subtitle">Let's talk about games, tech & programming</p>
 			</div>
 			<PostLatest v-if="posts.latest" :post="posts.latest" />
 			<div class="posts">
@@ -122,9 +122,9 @@ const posts: IPosts = {
 			tracking-tight;
 	}
 
-	.subTitle {
+	.subtitle {
 		@apply mt-3 sm:mt-4 \
-			text-xl\
+			text-md font-medium \
 			text-gray-400;
 	}
 

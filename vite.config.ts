@@ -113,6 +113,15 @@ export default defineConfig({
 								900: '#004ad7',
 							},
 						},
+						typography: (theme) => ({
+							DEFAULT: {
+								css: {
+									a: {
+										color: theme('colors.primary.600'),
+									},
+								},
+							},
+						}),
 					},
 				},
 			},
@@ -124,8 +133,8 @@ export default defineConfig({
 		},
 	},
 	// @ts-ignore
-	ssgOptions: <ViteSSGOptions>{
+	ssgOptions: {
 		script: 'async',
 		formatting: 'prettify',
-	},
+	} as ViteSSGOptions,
 });

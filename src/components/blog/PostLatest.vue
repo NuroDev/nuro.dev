@@ -87,8 +87,7 @@ defineProps<{
 				mt-6 lg:mt-0;
 
 			.avatar {
-				@apply w-10 h-10 \
-					border border-2 border-primary-500 \
+				@apply w-8 h-8 \
 					rounded-full;
 			}
 
