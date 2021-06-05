@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import { remove } from 'diacritics';
 import { resolve } from 'path';
 import { VitePWA as PWA } from 'vite-plugin-pwa';
 import { ViteSSGOptions } from 'vite-ssg';
@@ -10,6 +11,7 @@ import Vue from '@vitejs/plugin-vue';
 import WindiCSS from 'vite-plugin-windicss';
 
 import MarkdownItAnchor from 'markdown-it-anchor';
+import MarkdownItAttributes from 'markdown-it-link-attributes';
 import MarkdownItEmoji from 'markdown-it-emoji';
 
 import WindiPluginAspectRatio from 'windicss/plugin/aspect-ratio';
@@ -17,6 +19,27 @@ import WindiPluginLineClamp from 'windicss/plugin/line-clamp';
 import WindiPluginTypography from 'windicss/plugin/typography';
 
 const extensions: Array<string> = ['md', 'vue'];
+
+const slugify = (str: string): string => {
+	const rControl = /[\u0000-\u001F]/g;
+	const rSpecial = /[\s~`!@#$%^&*()\-_+=[\]{}|\\;:"'<>,.?/]+/g;
+
+	return (
+		remove(str)
+			// Remove control characters
+			.replace(rControl, '')
+			// Replace special characters
+			.replace(rSpecial, '-')
+			// Remove continuos separators
+			.replace(/-{2,}/g, '-')
+			// Remove prefixing and trailing separtors
+			.replace(/^-+|-+$/g, '')
+			// ensure it doesn't start with a number (#121)
+			.replace(/^(\d)/, '_$1')
+			// lowercase
+			.toLowerCase()
+	);
+};
 
 export default defineConfig({
 	define: {
@@ -43,8 +66,31 @@ export default defineConfig({
 		}),
 		Markdown({
 			headEnabled: true,
+			markdownItOptions: {
+				html: true,
+				linkify: true,
+				typographer: true,
+			},
 			markdownItSetup(md) {
-				md.use(MarkdownItAnchor).use(MarkdownItEmoji);
+				md.use(MarkdownItAnchor, {
+					slugify,
+					permalink: true,
+					permalinkBefore: true,
+					permalinkSymbol: '#',
+					permalinkAttrs: () => ({
+						'aria-hidden': true,
+					}),
+				});
+
+				md.use(MarkdownItAttributes, {
+					pattern: /^https?:/,
+					attrs: {
+						target: '_blank',
+						rel: 'noopener',
+					},
+				});
+
+				md.use(MarkdownItEmoji);
 			},
 			wrapperComponent: 'Post',
 		}),
