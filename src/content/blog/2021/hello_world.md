@@ -1,12 +1,8 @@
 ---
-banner: {
-	alt: Some rando image from unsplash.com,
-	url: https://source.unsplash.com/random/1920x1080,
-}
-title: {
-	prefix: Introducing,
-	text: 👋🏻 Hello World,
-}
+banner_alt: Some rando image from unsplash.com
+banner: https://source.unsplash.com/random
+title_prefix: Introducing
+title: 👋🏻 Hello World
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
 date: 2021-06-05T00:00:00.000Z
 ---

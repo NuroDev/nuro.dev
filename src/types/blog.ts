@@ -20,25 +20,13 @@ export interface IPosts {
 }
 
 export interface IFrontmatter {
-	banner:
-		| string
-		| {
-				alt?: string;
-				show?: boolean;
-				url: string | null;
-		  };
+	banner_alt?: string;
+	banner_show?: boolean;
+	banner?: string;
 	date: Date | null;
-	description:
-		| string
-		| {
-				show?: boolean;
-				text: string | null;
-		  };
+	description_show?: boolean;
+	description: string;
 	meta?: Array<HeadAttrs>;
-	title:
-		| string
-		| {
-				prefix?: string;
-				text: string | null;
-		  };
+	title_prefix?: string;
+	title?: string;
 }

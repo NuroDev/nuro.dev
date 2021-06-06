@@ -1,11 +1,11 @@
 <template>
 	<div class="content">
 		<div v-if="frontmatter.banner" class="banner">
-			<div class="relative" v-if="frontmatter.banner.show || true">
+			<div class="relative" v-if="frontmatter.banner_show || true">
 				<div class="placeholder animate-pulse" />
 				<img
-					:src="frontmatter.banner.url ?? frontmatter.banner"
-					:alt="frontmatter.banner.alt ?? frontmatter.title"
+					:src="frontmatter.banner"
+					:alt="frontmatter.banner_alt ?? frontmatter.title"
 					:draggable="false"
 				/>
 			</div>
@@ -14,24 +14,18 @@
 		<div class="body">
 			<h1>
 				<span
-					v-if="frontmatter.title.prefix"
-					class="block text-base text-center text-primary-600 font-semibold tracking-wide uppercase"
-				>
-					{{ frontmatter.title.prefix }}
-				</span>
-				<span
-					class="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
-				>
-					{{ frontmatter.title.text ?? frontmatter.title }}
-				</span>
+					v-if="frontmatter.title_prefix"
+					class="prefix"
+					v-text="frontmatter.title_prefix"
+				/>
+				<span v-if="frontmatter.title" class="title" v-text="frontmatter.title" />
 			</h1>
 
 			<p
-				v-if="(frontmatter.description && frontmatter.description.show) ?? false"
-				class="mt-8 text-xl text-gray-500 leading-8"
-			>
-				{{ frontmatter.description.text || frontmatter.description }}
-			</p>
+				v-if="frontmatter.description_show ?? false"
+				class="description"
+				v-text="frontmatter.description"
+			/>
 		</div>
 		<div class="body">
 			<slot />
@@ -49,10 +43,8 @@ const { frontmatter } = defineProps<{
 	frontmatter: IFrontmatter;
 }>();
 
-console.log(frontmatter);
-
 useHead({
-	title: `nuro ─ ${typeof frontmatter.title === "string" ? frontmatter.title : frontmatter.title.text}`,
+	title: `nuro ─ ${frontmatter.title || 'blog'}`,
 });
 </script>
 
@@ -75,6 +67,22 @@ useHead({
 				mb-8 \
 				rounded-3xl object-cover select-none hover:shadow-xl;
 		}
+	}
+
+	.prefix {
+		@apply block \
+			text-base text-center font-semibold tracking-wide uppercase \
+			text-primary-600;
+	}
+
+	.title {
+		@apply block mt-2 \
+			text-3xl sm:text-4xl text-center leading-8 font-extrabold tracking-tight \
+			text-gray-900 dark:text-white;
+	}
+
+	.description {
+		@apply mt-8 text-xl text-gray-400 leading-8;
 	}
 
 	.body {
