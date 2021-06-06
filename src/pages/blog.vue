@@ -59,8 +59,6 @@ const posts = router.getRoutes()
 	.filter((route) => route !== null)
 	.sort((a, b) => +new Date(b.date.raw) - +new Date(a.date.raw));
 
-console.log(posts)
-
 const latestPost: IPost = [...posts][0];
 posts.shift();
 </script>
