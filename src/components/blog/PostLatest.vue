@@ -8,7 +8,7 @@
 		<div class="banner">
 			<picture>
 				<source :srcset="post.imageUrl" />
-				<img :src="post.imageUrl" :alt="post.title" loading="lazy" />
+				<img :src="post.imageUrl" :alt="post.title" loading="lazy" :draggable="false" />
 			</picture>
 		</div>
 
@@ -18,10 +18,10 @@
 			<div class="footer">
 				<img
 					v-if="post.author"
+					:alt="post.author.name"
+					:src="post.author.imageUrl"
 					class="avatar"
 					loading="lazy"
-					:src="post.author.imageUrl"
-					:alt="post.author.name"
 				/>
 				<div class="text-sm pl-4">
 					<div class="meta">

@@ -2,11 +2,11 @@
 	<router-link :aria-label="`Read blog post: ${post.title}`" :to="post.url" class="post">
 		<div class="banner" v-if="post.imageUrl && index <= 2">
 			<img
-				class="h-48 w-full object-cover select-none"
-				draggable="false"
-				loading="lazy"
-				:src="post.imageUrl"
 				:alt="post.title"
+				:draggable="false"
+				:src="post.imageUrl"
+				class="h-48 w-full object-cover select-none"
+				loading="lazy"
 			/>
 		</div>
 
