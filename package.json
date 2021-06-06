@@ -21,7 +21,7 @@
 		"dev": "yarn dev:local",
 		"dev:local": "cross-env DEBUG=vite-ssg:* vite",
 		"dev:vercel": "vite build && vercel dev",
-		"build": "vue-tsc --noEmit && cross-env DEBUG=vite-ssg:* vite-ssg build",
+		"build": "vue-tsc --noEmit && cross-env NODE_ENV=production vite-ssg build",
 		"preview": "vite preview",
 		"prettier": "prettier --write \"**/*.{css,js,json,jsx,ts,tsx,vue}\""
 	},
