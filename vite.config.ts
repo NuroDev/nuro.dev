@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import { readFileSync } from 'fs';
 import { remove } from 'diacritics';
 import { resolve } from 'path';
 import { VitePWA as PWA } from 'vite-plugin-pwa';
@@ -9,6 +10,8 @@ import Markdown from 'vite-plugin-md';
 import Pages from 'vite-plugin-pages';
 import Vue from '@vitejs/plugin-vue';
 import WindiCSS from 'vite-plugin-windicss';
+
+import Frontmatter from 'front-matter';
 
 import MarkdownItAnchor from 'markdown-it-anchor';
 import MarkdownItAttributes from 'markdown-it-link-attributes';
@@ -63,6 +66,14 @@ export default defineConfig({
 				{ dir: 'src/pages', baseRoute: '/' },
 				{ dir: 'src/content/blog/', baseRoute: '/blog/' },
 			],
+			extendRoute: (route) => ({
+				...route,
+				meta: Object.assign(route.meta || {}, {
+					frontmatter: Frontmatter(
+						readFileSync(resolve(__dirname, route.component.slice(1)), 'utf-8'),
+					).attributes,
+				}),
+			}),
 		}),
 		Markdown({
 			headEnabled: true,

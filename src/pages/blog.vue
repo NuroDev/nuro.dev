@@ -15,134 +15,51 @@
 
 <script lang="ts" setup>
 import { useHead } from '@vueuse/head';
+import { format } from 'date-fns';
+import { useRouter } from 'vue-router';
 
-import type { IPost } from '~/types/blog';
+import type { IFrontmatter, IPost } from '~/types/blog';
 
 useHead({
 	title: 'nuro ─ blog',
 });
 
-const posts: Array<IPost> = [
-	{
-		banner: {
-			url: 'https://source.unsplash.com/random/3840x2160',
-		},
-		date: {
-			raw: new Date('2020-03-16'),
-			readable: 'Mar 16, 2020',
-		},
-		description: {
-			raw: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-		},
-		name: 'hello_world',
-		title: {
-			raw: '👋🏻 Hello World',
-		},
-		url: '/blog/2021/hello_world',
-	},
-	{
-		banner: {
-			url: 'https://source.unsplash.com/random/1920x1080',
-		},
-		date: {
-			raw: new Date('2020-03-10'),
-			readable: 'Mar 10, 2020',
-		},
-		description: {
-			raw: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
-		},
-		name: '#',
-		title: {
-			raw: 'Aliquam erat volutpat. Nullam et.',
-		},
-		url: '#',
-	},
-	{
-		banner: {
-			url: 'https://source.unsplash.com/random/1280x720',
-		},
-		date: {
-			raw: new Date('2020-02-12'),
-			readable: 'Feb 12, 2020',
-		},
-		description: {
-			raw: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
-		},
-		name: '#',
-		title: {
-			raw: 'Nulla dapibus, leo in mollis.',
-		},
-		url: '#',
-	},
-	{
-		banner: {
-			url: 'https://source.unsplash.com/random/',
-		},
-		date: {
-			raw: new Date('2020-03-16'),
-			readable: 'Mar 16, 2020',
-		},
-		description: {
-			raw: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
-		},
-		name: '#',
-		title: {
-			raw: 'Cras sagittis nibh eget blandit.',
-		},
-		url: '#',
-	},
-	{
-		banner: {
-			url: 'https://source.unsplash.com/random/3840x2160',
-		},
-		date: {
-			raw: new Date('2020-03-10'),
-			readable: 'Mar 10, 2020',
-		},
-		description: {
-			raw: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
-		},
-		name: '#',
-		title: {
-			raw: 'Aliquam erat volutpat. Nullam et.',
-		},
-		url: '#',
-	},
-	{
-		banner: {
-			url: 'https://source.unsplash.com/random/1920x1080',
-		},
-		date: {
-			raw: new Date('2020-02-12'),
-			readable: 'Feb 12, 2020',
-		},
-		description: {
-			raw: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
-		},
-		name: '#',
-		title: {
-			raw: 'Nulla dapibus, leo in mollis.',
-		},
-		url: '#',
-	},
-	{
-		banner: {
-			url: 'https://source.unsplash.com/random/1280x720',
-		},
-		date: {
-			raw: new Date('2020-03-16'),
-			readable: 'Mar 16, 2020',
-		},
-		description: {
-			raw: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
-		},
-		name: '#',
-		title: {
-			raw: 'Cras sagittis nibh eget blandit.',
-		},
-		url: '#',
-	}
-]
+const router = useRouter();
+const posts = router.getRoutes()
+	.map((route) => {
+		const frontmatter = route.meta.frontmatter as IFrontmatter;
+
+		if (!route.path.startsWith('/blog/') && !frontmatter.date) return null
+
+		const date = new Date(frontmatter.date);
+
+		const result: IPost = {
+			banner: {
+				alt: frontmatter.banner_alt,
+				show: frontmatter.banner_show || true,
+				url: frontmatter.banner,
+			},
+			date: {
+				raw: date,
+				readable: format(date, 'PPP'),
+			},
+			description: {
+				show: frontmatter.description_show || false,
+				raw: frontmatter.description,
+			},
+			title: {
+				prefix: frontmatter.title_prefix,
+				raw: frontmatter.title,
+			},
+			url: route.path.replaceAll('//', '/'),
+		}
+
+		return result;
+	})
+	.filter((route) => route !== null)
+	.sort((a, b) => +new Date(b.date.raw) - +new Date(a.date.raw));
+
+console.log(posts)
 
 const latestPost: IPost = [...posts][0];
 posts.shift();

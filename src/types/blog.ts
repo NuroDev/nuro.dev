@@ -14,7 +14,6 @@ export interface IPost {
 		show?: boolean;
 		raw?: string;
 	};
-	name: string;
 	title: {
 		prefix?: string;
 		raw: string;
@@ -25,11 +24,11 @@ export interface IPost {
 export interface IFrontmatter {
 	banner_alt?: string;
 	banner_show?: boolean;
-	banner?: string;
-	date: Date | null;
+	banner: string;
+	date: Date;
 	description_show?: boolean;
 	description: string;
 	meta?: Array<HeadAttrs>;
 	title_prefix?: string;
-	title?: string;
+	title: string;
 }
