@@ -26,37 +26,42 @@ useHead({
 
 const router = useRouter();
 const posts = router.getRoutes()
+	.filter((route) => route.path.startsWith('//blog//') && route.meta.frontmatter)
 	.map((route) => {
-		const frontmatter = route.meta.frontmatter as IFrontmatter;
-
-		if (!route.path.startsWith('/blog/') && !frontmatter.date) return null
-
+		const {
+			banner_alt,
+			banner_show = true,
+			banner,
+			description_show = false,
+			description,
+			title_prefix,
+			title,
+			...frontmatter
+		} = route.meta.frontmatter as IFrontmatter;
 		const date = new Date(frontmatter.date);
 
-		const result: IPost = {
+
+		return {
 			banner: {
-				alt: frontmatter.banner_alt,
-				show: frontmatter.banner_show || true,
-				url: frontmatter.banner,
+				alt: banner_alt,
+				show: banner_show,
+				url: banner,
 			},
 			date: {
 				raw: date,
 				readable: format(date, 'PPP'),
 			},
 			description: {
-				show: frontmatter.description_show || false,
-				raw: frontmatter.description,
+				show: description_show,
+				raw: description,
 			},
 			title: {
-				prefix: frontmatter.title_prefix,
-				raw: frontmatter.title,
+				prefix: title_prefix,
+				raw: title,
 			},
 			url: route.path.replaceAll('//', '/'),
-		}
-
-		return result;
+		} as IPost;
 	})
-	.filter((route) => route !== null)
 	.sort((a, b) => +new Date(b.date.raw) - +new Date(a.date.raw));
 
 const latestPost: IPost = [...posts][0];
@@ -66,7 +71,7 @@ posts.shift();
 <style lang="postcss" scoped>
 .content {
 	@apply relative \
-		pt-16 pb-20 px-4 sm:px-6 lg:pb-28 lg:px-8;
+		pt-24 sm:pt-16 pb-20 px-4 sm:px-6 lg:pb-28 lg:px-8;
 
 	.title {
 		@apply text-3xl sm:text-4xl font-extrabold \
