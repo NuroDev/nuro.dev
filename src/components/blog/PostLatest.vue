@@ -68,7 +68,7 @@ defineProps<{
 
 		picture {
 			img {
-				@apply w-full h-auto \
+				@apply w-full h-full \
 					rounded-lg object-cover select-none;
 			}
 		}
