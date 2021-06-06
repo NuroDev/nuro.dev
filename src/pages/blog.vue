@@ -5,9 +5,9 @@
 				<h2 class="title">📕 Blog</h2>
 				<p class="subtitle">Let's talk about games, tech & programming</p>
 			</div>
-			<PostLatest v-if="posts.latest" :post="posts.latest" />
+			<PostLatest v-if="latestPost" :post="latestPost" />
 			<div class="posts">
-				<PostCard v-for="(post, i) in posts.all" :key="i" :post="post" :index="i" />
+				<PostCard v-for="(post, i) in posts" :key="i" :post="post" :index="i" />
 			</div>
 		</div>
 	</div>
@@ -16,99 +16,136 @@
 <script lang="ts" setup>
 import { useHead } from '@vueuse/head';
 
-import type { IPosts } from "~/types/blog"
+import type { IPost } from '~/types/blog';
 
 useHead({
-	title: 'nuro ─ blog'
-})
+	title: 'nuro ─ blog',
+});
 
-const posts: IPosts = {
-	latest: {
-		title: '👋🏻 Hello World',
+const posts: Array<IPost> = [
+	{
+		banner: {
+			url: 'https://source.unsplash.com/random/3840x2160',
+		},
+		date: {
+			raw: new Date('2020-03-16'),
+			readable: 'Mar 16, 2020',
+		},
+		description: {
+			raw: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+		},
+		name: 'hello_world',
+		title: {
+			raw: '👋🏻 Hello World',
+		},
 		url: '/blog/2021/hello_world',
-		description:
-			'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-		date: 'Mar 16, 2020',
-		datetime: '2020-03-16',
-		imageUrl: 'https://via.placeholder.com/1280x720',
-		readingTime: '2 min',
-		author: {
-			name: 'Ben',
-			imageUrl: '/apple-touch-icon-ipad-76x76.png',
-		},
 	},
-	all: [
-		{
-			title: 'Aliquam erat volutpat. Nullam et.',
-			url: '#',
-			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
-			date: 'Mar 10, 2020',
-			datetime: '2020-03-10',
-			imageUrl: 'https://via.placeholder.com/1280x720',
-			readingTime: '4 min',
-			author: {
-				name: 'Ben',
-				imageUrl: '/apple-touch-icon-ipad-76x76.png',
-			},
+	{
+		banner: {
+			url: 'https://source.unsplash.com/random/1920x1080',
 		},
-		{
-			title: 'Nulla dapibus, leo in mollis.',
-			url: '#',
-			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
-			date: 'Feb 12, 2020',
-			datetime: '2020-02-12',
-			imageUrl: 'https://via.placeholder.com/1280x720',
-			readingTime: '11 min',
-			author: {
-				name: 'Ben',
-				imageUrl: '/apple-touch-icon-ipad-76x76.png',
-			},
+		date: {
+			raw: new Date('2020-03-10'),
+			readable: 'Mar 10, 2020',
 		},
-		{
-			title: 'Cras sagittis nibh eget blandit.',
-			url: '#',
-			description:
-				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
-			date: 'Mar 16, 2020',
-			datetime: '2020-03-16',
-			imageUrl: 'https://via.placeholder.com/1280x720',
-			readingTime: '6 min',
-			author: {
-				name: 'Ben',
-				imageUrl: '/apple-touch-icon-ipad-76x76.png',
-			},
+		description: {
+			raw: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
 		},
-		{
-			title: 'Maecenas efficitur ex id nisl.',
-			url: '#',
-			description:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-			date: 'Mar 16, 2020',
-			datetime: '2020-03-16',
-			readingTime: '2 min',
+		name: '#',
+		title: {
+			raw: 'Aliquam erat volutpat. Nullam et.',
 		},
-		{
-			title: 'Donec auctor sem at scelerisque.',
-			url: '#',
-			description:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-			date: 'Mar 16, 2020',
-			datetime: '2020-03-16',
-			readingTime: '2 min',
+		url: '#',
+	},
+	{
+		banner: {
+			url: 'https://source.unsplash.com/random/1280x720',
 		},
-		{
-			title: 'Orci varius natoque penatibus et.',
-			url: '#',
-			description:
-				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-			date: 'Mar 16, 2020',
-			datetime: '2020-03-16',
-			readingTime: '2 min',
+		date: {
+			raw: new Date('2020-02-12'),
+			readable: 'Feb 12, 2020',
 		},
-	],
-};
+		description: {
+			raw: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
+		},
+		name: '#',
+		title: {
+			raw: 'Nulla dapibus, leo in mollis.',
+		},
+		url: '#',
+	},
+	{
+		banner: {
+			url: 'https://source.unsplash.com/random/',
+		},
+		date: {
+			raw: new Date('2020-03-16'),
+			readable: 'Mar 16, 2020',
+		},
+		description: {
+			raw: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
+		},
+		name: '#',
+		title: {
+			raw: 'Cras sagittis nibh eget blandit.',
+		},
+		url: '#',
+	},
+	{
+		banner: {
+			url: 'https://source.unsplash.com/random/3840x2160',
+		},
+		date: {
+			raw: new Date('2020-03-10'),
+			readable: 'Mar 10, 2020',
+		},
+		description: {
+			raw: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
+		},
+		name: '#',
+		title: {
+			raw: 'Aliquam erat volutpat. Nullam et.',
+		},
+		url: '#',
+	},
+	{
+		banner: {
+			url: 'https://source.unsplash.com/random/1920x1080',
+		},
+		date: {
+			raw: new Date('2020-02-12'),
+			readable: 'Feb 12, 2020',
+		},
+		description: {
+			raw: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
+		},
+		name: '#',
+		title: {
+			raw: 'Nulla dapibus, leo in mollis.',
+		},
+		url: '#',
+	},
+	{
+		banner: {
+			url: 'https://source.unsplash.com/random/1280x720',
+		},
+		date: {
+			raw: new Date('2020-03-16'),
+			readable: 'Mar 16, 2020',
+		},
+		description: {
+			raw: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
+		},
+		name: '#',
+		title: {
+			raw: 'Cras sagittis nibh eget blandit.',
+		},
+		url: '#',
+	}
+]
+
+const latestPost: IPost = [...posts][0];
+posts.shift();
 </script>
 
 <style lang="postcss" scoped>

@@ -1,33 +1,40 @@
 <template>
 	<router-link
-		:aria-label="`Read blog post: ${post.title}`"
+		:aria-label="`Read blog post: ${post.title.raw}`"
 		class="post"
 		rel="noopener noreferrer"
 		:to="post.url"
 	>
 		<div class="banner">
 			<picture>
-				<source :srcset="post.imageUrl" />
-				<img :src="post.imageUrl" :alt="post.title" loading="lazy" :draggable="false" />
+				<source :srcset="post.banner.url" />
+				<img
+					:alt="post.banner?.alt || post.title.raw"
+					:draggable="false"
+					loading="lazy"
+					:src="post.banner.url"
+				/>
 			</picture>
 		</div>
 
 		<div class="content">
-			<h2 class="title" v-text="post.title" />
-			<p v-if="post.description" class="description" v-text="post.description" />
+			<h2 class="title" v-text="post.title.raw || post.title" />
+			<p
+				v-if="(post.description && post.description.show) || true"
+				class="description"
+				v-text="post.description.raw || post.description"
+			/>
 			<div class="footer">
 				<img
-					v-if="post.author"
-					:alt="post.author.name"
-					:src="post.author.imageUrl"
+					alt="nuro"
 					class="avatar"
+					:draggable="false"
 					loading="lazy"
+					src="/apple-touch-icon-ipad-76x76.png"
 				/>
-				<div class="text-sm pl-4">
+				<div v-if="post.date" class="text-sm pl-4">
 					<div class="meta">
-						<span>18/05/2021</span>
-						<span class="divider" />
-						<span>2 min read</span>
+						<span v-text="post.date.readable" />
 					</div>
 				</div>
 			</div>
@@ -38,7 +45,7 @@
 <script lang="ts" setup>
 import { defineProps } from "vue"
 
-import type { IPost } from "../../types/blog"
+import type { IPost } from "~/types/blog"
 
 defineProps<{
 	post: IPost,
@@ -55,14 +62,14 @@ defineProps<{
 
 	.banner {
 		@apply flex justify-center my-auto \
-			w-full xl:w-2/4 lg:max-w-xl lg:h-auto \
-			overflow-hidden overflow-hidden \
+			w-full xl:w-2/4 lg:max-w-xl lg:max-h-sm \
+			overflow-hidden overflow-hidden rounded-lg \
 			hover:shadow-xl;
 
 		picture {
 			img {
 				@apply w-full h-auto \
-					rounded-lg object-cover;
+					rounded-lg object-cover select-none;
 			}
 		}
 	}

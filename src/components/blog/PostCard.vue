@@ -1,26 +1,26 @@
 <template>
-	<router-link :aria-label="`Read blog post: ${post.title}`" :to="post.url" class="post">
-		<div class="banner" v-if="post.imageUrl && index <= 2">
+	<router-link :aria-label="`Read blog post: ${post.title.raw}`" :to="post.url" class="post">
+		<div class="banner" v-if="post.banner.url && index <= 2">
 			<img
-				:alt="post.title"
-				:draggable="false"
-				:src="post.imageUrl"
+				:alt="post.title.raw"
 				class="h-48 w-full object-cover select-none"
+				:draggable="false"
 				loading="lazy"
+				:src="post.banner.url"
 			/>
 		</div>
 
 		<div class="content">
 			<div class="text">
-				<p class="title" v-text="post.title" />
-				<p class="description" v-text="post.description" :aria-label="post.description" />
+				<p class="title" v-text="post.title.raw" />
+				<p
+					class="description"
+					v-text="post.description.raw"
+					:aria-label="post.description.raw"
+				/>
 
-				<div class="meta">
-					<time :datetime="post.datetime" v-text="post.date" />
-					<span aria-hidden="true">
-						&middot;
-					</span>
-					<span v-text="`${post.readingTime} read`" />
+				<div v-if="post.date" class="meta">
+					<span v-text="post.date.readable" />
 				</div>
 			</div>
 		</div>
@@ -30,7 +30,7 @@
 <script lang="ts" setup>
 import { defineProps } from "vue";
 
-import type { IPost, IPosts } from "../../types/blog";
+import type { IPost } from "~/types/blog";
 
 defineProps<{
 	index: number,

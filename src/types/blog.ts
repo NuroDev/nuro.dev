@@ -1,22 +1,25 @@
 import { HeadAttrs } from '@vueuse/head';
 
 export interface IPost {
-	author?: {
-		imageUrl: string;
-		name: string;
+	banner: {
+		alt?: string;
+		show?: boolean;
+		url: string;
 	};
-	date: string;
-	datetime: string;
-	description?: string;
+	date: {
+		raw: Date;
+		readable: string;
+	};
+	description: {
+		show?: boolean;
+		raw?: string;
+	};
+	name: string;
+	title: {
+		prefix?: string;
+		raw: string;
+	};
 	url: string;
-	imageUrl?: string;
-	readingTime: string;
-	title: string;
-}
-
-export interface IPosts {
-	all: Array<IPost>;
-	latest: IPost;
 }
 
 export interface IFrontmatter {
