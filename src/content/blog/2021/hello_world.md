@@ -29,7 +29,7 @@ Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat in. Convalli
 
 Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque erat velit.
 
-<Figure src="https://source.unsplash.com/random" caption="Sagittis scelerisque nulla cursus in enim consectetur quam" />
+<X-Figure src="https://source.unsplash.com/random" caption="Sagittis scelerisque nulla cursus in enim consectetur quam" />
 
 ## Everything you need to get up and running
 
