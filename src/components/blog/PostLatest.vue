@@ -54,14 +54,15 @@ defineProps<{
 		focus:outline-none focus:ring-4 focus:ring-primary-500;
 
 	.banner {
-		@apply flex justify-center \
+		@apply flex justify-center my-auto \
 			w-full xl:w-2/4 lg:max-w-xl lg:h-auto \
 			overflow-hidden overflow-hidden \
-			rounded-lg hover:shadow-xl;
+			hover:shadow-xl;
 
 		picture {
 			img {
-				@apply w-full h-full object-cover;
+				@apply w-full h-auto \
+					rounded-lg object-cover;
 			}
 		}
 	}
@@ -73,7 +74,7 @@ defineProps<{
 
 		.title {
 			@apply mt-6 lg:mt-0 \
-				text-3xl sm:text-4xl lg:text-5xl font-bold \
+				text-3xl sm:text-4xl lg:text-5xl font-bold line-clamp-4 \
 				text-gray-500 dark:text-white;
 		}
 
