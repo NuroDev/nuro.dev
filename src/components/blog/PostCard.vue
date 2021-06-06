@@ -20,6 +20,7 @@
 				/>
 
 				<div v-if="post.date" class="meta">
+					<i-feather-calendar class="mt-0.5 mr-2" />
 					<span v-text="post.date.readable" />
 				</div>
 			</div>
