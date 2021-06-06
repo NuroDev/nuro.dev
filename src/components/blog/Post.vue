@@ -1,7 +1,7 @@
 <template>
 	<div class="content">
-		<div class="banner">
-			<div class="relative">
+		<div v-if="frontmatter.banner" class="banner">
+			<div class="relative" v-if="frontmatter.banner.show || true">
 				<div class="placeholder animate-pulse" />
 				<img
 					:src="frontmatter.banner.url ?? frontmatter.banner"
@@ -25,14 +25,15 @@
 					{{ frontmatter.title.text ?? frontmatter.title }}
 				</span>
 			</h1>
-			<p v-if="frontmatter.description" class="mt-8 text-xl text-gray-500 leading-8">
-				{{ frontmatter.description }}
+
+			<p
+				v-if="(frontmatter.description && frontmatter.description.show) ?? false"
+				class="mt-8 text-xl text-gray-500 leading-8"
+			>
+				{{ frontmatter.description.text || frontmatter.description }}
 			</p>
 		</div>
 		<div class="body">
-			<p v-if="frontmatter.description">
-				{{ frontmatter.description }}
-			</p>
 			<slot />
 		</div>
 	</div>
@@ -42,12 +43,16 @@
 import { useHead } from '@vueuse/head';
 import { defineProps } from 'vue';
 
+import type { IFrontmatter } from '~/types/blog';
+
 const { frontmatter } = defineProps<{
-	frontmatter: any;
+	frontmatter: IFrontmatter;
 }>();
 
+console.log(frontmatter);
+
 useHead({
-	title: `nuro ─ ${frontmatter.title.text ?? frontmatter.title}`,
+	title: `nuro ─ ${typeof frontmatter.title === "string" ? frontmatter.title : frontmatter.title.text}`,
 });
 </script>
 
@@ -74,17 +79,81 @@ useHead({
 
 	.body {
 		@apply mt-6 prose prose-primary prose-lg text-gray-500 mx-auto;
+	}
+}
+</style>
 
-		.markdown-body {
-			h1,
-			h2 {
-				@apply text-white;
-			}
+<style lang="postcss">
+.markdown-body {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply dark:text-white !important;
 
-			img {
-				@apply rounded-3xl object-cover select-none hover:shadow-xl;
+		&:hover,
+		&:focus {
+			.header-anchor {
+				@apply opacity-100 no-underline;
 			}
 		}
 	}
+
+	a {
+		@apply no-underline \
+				transition duration-300 ease-in-out;
+	}
+
+	p,
+	ul,
+	li {
+		@apply text-gray-400;
+	}
+
+	strong {
+		@apply dark:text-white !important;
+	}
+
+	img {
+		@apply rounded-3xl object-cover select-none hover:shadow-xl;
+	}
+
+	figcaption {
+		@apply text-gray-200 dark:text-gray-500 \
+			text-center !important;
+	}
+
+	hr {
+		@apply mb-8 dark:border-gray-600 !important;
+	}
+
+	p code {
+		@apply mx-0.5 py-1 px-2 \
+			bg-gray-900 dark:bg-gray-500 \
+			text-gray-200 dark:text-gray-100 \
+			rounded-lg !important;
+
+		&:after,
+		&:before {
+			@apply hidden;
+		}
+	}
+}
+
+a.item {
+	@apply opacity-60 no-underline border-b-0 \
+			transition duration-200 ease-out;
+
+	&:hover {
+		@apply opacity-100;
+	}
+}
+
+a.header-anchor {
+	@apply float-left mt-0.5 -ml-5 pr-2 \
+			border-none \
+			opacity-0 no-underline;
 }
 </style>
