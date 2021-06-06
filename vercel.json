@@ -3,11 +3,6 @@
 	"public": true,
 	"alias": "nuro.dev",
 	"regions": ["lhr1"],
-	"functions": {
-		"api/blog/posts.ts": {
-			"includeFiles": "src/content/blog/**"
-		}
-	},
 	"routes": [
 		{
 			"src": "/(.*)",
