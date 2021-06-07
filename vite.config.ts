@@ -16,6 +16,7 @@ import Frontmatter from 'front-matter';
 import MarkdownItAnchor from 'markdown-it-anchor';
 import MarkdownItAttributes from 'markdown-it-link-attributes';
 import MarkdownItEmoji from 'markdown-it-emoji';
+import MarkdownItPrism from 'markdown-it-prism';
 
 import WindiPluginAspectRatio from 'windicss/plugin/aspect-ratio';
 import WindiPluginLineClamp from 'windicss/plugin/line-clamp';
@@ -82,6 +83,7 @@ export default defineConfig({
 				linkify: true,
 				typographer: true,
 			},
+			markdownItUses: [MarkdownItEmoji, MarkdownItPrism],
 			markdownItSetup(md) {
 				md.use(MarkdownItAnchor, {
 					slugify,
@@ -92,7 +94,6 @@ export default defineConfig({
 						'aria-hidden': true,
 					}),
 				});
-
 				md.use(MarkdownItAttributes, {
 					pattern: /^https?:/,
 					attrs: {
@@ -100,8 +101,6 @@ export default defineConfig({
 						rel: 'noopener',
 					},
 				});
-
-				md.use(MarkdownItEmoji);
 			},
 			wrapperComponent: 'Post',
 		}),

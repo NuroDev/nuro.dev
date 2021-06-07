@@ -30,6 +30,7 @@ html {
 }
 html.dark {
 	@apply bg-gray-900;
+
 	* {
 		--tw-ring-offset-color: #0c0e10;
 	}
@@ -43,5 +44,18 @@ html.dark {
 
 #nprogress .bar {
 	@apply h-1 bg-gray-800 dark:bg-white;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+	text-shadow: none;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	background: none;
 }
 </style>
