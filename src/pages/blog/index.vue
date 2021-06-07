@@ -1,10 +1,6 @@
 <template>
 	<div class="content">
 		<div class="relative max-w-6xl mx-auto">
-			<div class="px-2">
-				<h2 class="title">📕 Blog</h2>
-				<p class="subtitle">Let's talk about games, tech & programming</p>
-			</div>
 			<PostLatest v-if="latestPost" :post="latestPost" />
 			<div class="posts">
 				<PostCard v-for="(post, i) in posts" :key="i" :post="post" :index="i" />
