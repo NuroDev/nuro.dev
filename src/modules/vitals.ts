@@ -1,28 +1,14 @@
 import { getCLS, getFCP, getFID, getLCP, getTTFB, Metric } from 'web-vitals';
-import { RouteLocationNormalized } from 'vue-router';
+import { ViteSSGContext } from 'vite-ssg';
 
-interface IVitalsOptions {
-	debug?: true;
-	route: RouteLocationNormalized;
-}
-
-interface IContext {
-	fullPath: string;
-	href: string;
-}
-
-interface ISendOptions {
-	context: IContext;
-	debug: boolean;
-	metric: Metric;
-}
+import { IVitalsContext, IVitalSendOptions, IVitalsOptions } from '~/types';
 
 const VITALS_URL = 'https://vitals.vercel-analytics.com/v1/vitals';
 
-export function useVitals(options: IVitalsOptions): void {
+function useVitals(options: IVitalsOptions): void {
 	const { debug = import.meta.env.DEV, route } = options;
 
-	const context: IContext = {
+	const context: IVitalsContext = {
 		fullPath: route.fullPath,
 		href: location.href,
 	};
@@ -38,7 +24,7 @@ export function useVitals(options: IVitalsOptions): void {
 	}
 }
 
-function sendMetric({ context, debug, metric }: ISendOptions) {
+function sendMetric({ context, debug, metric }: IVitalSendOptions) {
 	const speed: string =
 		'connection' in navigator &&
 		navigator['connection'] &&
@@ -71,4 +57,17 @@ function sendMetric({ context, debug, metric }: ISendOptions) {
 				keepalive: true,
 				method: 'POST',
 		  });
+}
+
+/**
+ * Install & use vitals before each route change
+ *
+ * @param ctx - SSR Instance context
+ *
+ * @returns {void}
+ */
+export function install({ isClient, router }: ViteSSGContext): void {
+	if (!isClient || !import.meta.env.PROD) return;
+
+	router.beforeEach((to) => useVitals({ route: to }));
 }

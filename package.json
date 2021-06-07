@@ -21,7 +21,7 @@
 		"dev": "yarn dev:local",
 		"dev:local": "cross-env DEBUG=vite-ssg:* vite",
 		"dev:vercel": "vite build && vercel dev",
-		"build": "vue-tsc --noEmit && cross-env DEBUG=vite-ssg:* vite-ssg build",
+		"build": "vue-tsc --noEmit && cross-env NODE_ENV=production vite-ssg build",
 		"preview": "vite preview",
 		"prettier": "prettier --write \"**/*.{css,js,json,jsx,ts,tsx,vue}\""
 	},
@@ -36,6 +36,7 @@
 		"inter-ui": "^3.18.1",
 		"nprogress": "^0.2.0",
 		"ogl-typescript": "^0.1.40",
+		"vite-ssg": "^0.11.2",
 		"vue": "^3.0.11",
 		"web-vitals": "^1.1.2"
 	},
@@ -66,7 +67,6 @@
 		"vite-plugin-pages": "^0.10.0",
 		"vite-plugin-pwa": "^0.7.3",
 		"vite-plugin-windicss": "^0.16.7",
-		"vite-ssg": "^0.11.2",
 		"vue-router": "^4.0.8",
 		"vue-tsc": "^0.1.6",
 		"windicss": "^3.0.12"
