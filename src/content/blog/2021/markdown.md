@@ -144,7 +144,7 @@ function fancyAlert(arg) {
 
 And here's how it looks - nicely colored with styled code titles!
 
-```js:fancyAlert.js
+```js
 function fancyAlert(arg) {
 	if (arg) {
 		$.facebox({ div: '#foo' });
