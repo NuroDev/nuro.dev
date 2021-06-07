@@ -5,16 +5,14 @@
 		rel="noopener noreferrer"
 		:to="post.url"
 	>
-		<div class="banner">
-			<picture>
-				<source :srcset="post.banner.url" />
-				<img
-					:alt="post.banner?.alt || post.title.raw"
-					:draggable="false"
-					loading="lazy"
-					:src="post.banner.url"
-				/>
-			</picture>
+		<div class="banner" v-if="post.banner.show || true">
+			<div class="placeholder animate-pulse" />
+			<img
+				:alt="post.banner.alt ?? post.title.raw"
+				:draggable="false"
+				loading="lazy"
+				:src="post.banner.url"
+			/>
 		</div>
 
 		<div class="content">
@@ -61,16 +59,20 @@ defineProps<{
 		focus:outline-none focus:ring-4 focus:ring-primary-500;
 
 	.banner {
-		@apply flex justify-center my-auto \
-			w-full xl:w-2/4 lg:max-w-xl lg:max-h-sm \
-			overflow-hidden overflow-hidden rounded-lg \
+		@apply relative flex justify-center my-auto \
+			w-full xl:w-2/4 lg:max-w-xl h-[16rem] sm:h-sm lg:max-h-lg \
+			overflow-hidden rounded-lg \
 			hover:shadow-xl;
 
-		picture {
-			img {
-				@apply w-full h-full \
-					rounded-lg object-cover select-none;
-			}
+		.placeholder {
+			@apply w-full h-full lg:h-lg mb-8 \
+				bg-gray-200 dark:bg-gray-600 \
+				rounded-lg;
+		}
+
+		img {
+			@apply absolute top-0 left-0 w-full h-full \
+				rounded-lg object-cover select-none;
 		}
 	}
 

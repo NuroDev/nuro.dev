@@ -1,13 +1,8 @@
 <template>
 	<router-link :aria-label="`Read blog post: ${post.title.raw}`" :to="post.url" class="post">
 		<div class="banner" v-if="post.banner.url && index <= 2">
-			<img
-				:alt="post.title.raw"
-				class="h-48 w-full object-cover select-none"
-				:draggable="false"
-				loading="lazy"
-				:src="post.banner.url"
-			/>
+			<div class="placeholder animate-pulse" />
+			<img :alt="post.title.raw" :draggable="false" loading="lazy" :src="post.banner.url" />
 		</div>
 
 		<div class="content">
@@ -49,11 +44,19 @@ defineProps<{
 		focus:outline-none focus:ring-4 focus:ring-offset-4 focus:ring-primary-500;
 
 	.banner {
-		@apply flex-shrink-0;
+		@apply relative flex justify-center my-auto \
+			w-full max-w-xl lg:max-h-sm \
+			overflow-hidden \
+			hover:shadow-xl;
+
+		.placeholder {
+			@apply w-full h-full lg:h-48 \
+				bg-gray-200 dark:bg-gray-600;
+		}
 
 		img {
-			@apply w-full h-48 \
-				select-none;
+			@apply absolute top-0 left-0 w-full h-48 \
+				object-cover select-none;
 		}
 	}
 
