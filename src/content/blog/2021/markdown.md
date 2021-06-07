@@ -1,6 +1,6 @@
 ---
 banner: https://source.unsplash.com/random/1920x1080
-title: markdown guide
+title: Markdown
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
 date: 2021-03-02
 ---
