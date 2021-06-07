@@ -56,12 +56,14 @@ defineProps<{
 		mt-12 p-4 \
 		rounded-lg \
 		border-2 border-gray-100 dark:border-gray-500 lg:border-none \
+		transition ease-in-out duration-300 \
 		focus:outline-none focus:ring-4 focus:ring-primary-500;
 
 	.banner {
 		@apply relative flex justify-center my-auto \
 			w-full xl:w-2/4 lg:max-w-xl h-[16rem] sm:h-sm lg:max-h-lg \
 			overflow-hidden rounded-lg \
+			transition ease-in-out duration-300 \
 			hover:shadow-xl;
 
 		.placeholder {

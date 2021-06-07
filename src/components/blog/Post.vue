@@ -65,7 +65,8 @@ useHead({
 		img {
 			@apply absolute top-0 left-0 w-full h-auto max-h-[16rem] lg:max-h-lg \
 				mb-8 \
-				rounded-3xl object-cover select-none hover:shadow-xl;
+				rounded-3xl object-cover select-none hover:shadow-xl \
+				transition ease-in-out duration-300;
 		}
 	}
 
@@ -126,7 +127,8 @@ useHead({
 	}
 
 	img {
-		@apply rounded-3xl object-cover select-none hover:shadow-xl;
+		@apply rounded-3xl object-cover select-none hover:shadow-xl \
+			transition ease-in-out duration-300;
 	}
 
 	figcaption {

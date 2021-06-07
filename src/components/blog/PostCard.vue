@@ -41,13 +41,13 @@ defineProps<{
 		rounded-lg overflow-hidden \
 		hover:shadow-xl \
 		transform hover:-translate-y-1 \
-		focus:outline-none focus:ring-4 focus:ring-offset-4 focus:ring-primary-500;
+		transition ease-in-out duration-300 \
+		focus:outline-none focus:ring-4 focus:ring-offset-8 focus:ring-primary-500;
 
 	.banner {
 		@apply relative flex justify-center my-auto \
 			w-full max-w-xl lg:max-h-sm \
-			overflow-hidden \
-			hover:shadow-xl;
+			overflow-hidden;
 
 		.placeholder {
 			@apply w-full h-full lg:h-48 \
