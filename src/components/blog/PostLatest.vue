@@ -7,12 +7,25 @@
 	>
 		<div class="banner" v-if="post.banner.show || true">
 			<div class="placeholder animate-pulse" />
-			<img
-				:alt="post.banner.alt ?? post.title.raw"
-				:draggable="false"
-				loading="lazy"
-				:src="post.banner.url"
-			/>
+
+			<template v-if="Array.isArray(post.banner.url)">
+				<picture>
+					<img
+						v-for="(src, i) in post.banner.url.reverse()"
+						:key="i"
+						:alt="post.banner.alt ?? post.banner.title"
+						:draggable="false"
+						:src="src"
+					/>
+				</picture>
+			</template>
+			<template v-else>
+				<img
+					:alt="post.banner.alt ?? post.banner.title"
+					:draggable="false"
+					:src="post.banner.url"
+				/>
+			</template>
 		</div>
 
 		<div class="content">

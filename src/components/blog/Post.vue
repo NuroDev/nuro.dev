@@ -2,8 +2,9 @@
 	<div class="content">
 		<div v-if="frontmatter.banner" class="banner">
 			<div class="relative" v-if="frontmatter.banner_show || true">
+				<div class="placeholder animate-pulse" />
+
 				<template v-if="Array.isArray(frontmatter.banner)">
-					<div class="placeholder animate-pulse" />
 					<picture>
 						<img
 							v-for="(src, i) in frontmatter.banner.reverse()"
@@ -14,9 +15,7 @@
 						/>
 					</picture>
 				</template>
-
 				<template v-else>
-					<div class="placeholder animate-pulse" />
 					<img
 						:src="frontmatter.banner"
 						:alt="frontmatter.banner_alt ?? frontmatter.title"
