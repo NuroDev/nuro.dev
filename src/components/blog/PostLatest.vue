@@ -13,7 +13,7 @@
 					<img
 						v-for="(src, i) in post.banner.url.reverse()"
 						:key="i"
-						:alt="post.banner.alt ?? post.banner.title"
+						:alt="post.banner.alt ?? post.title.raw"
 						:draggable="false"
 						:src="src"
 					/>
@@ -21,7 +21,7 @@
 			</template>
 			<template v-else>
 				<img
-					:alt="post.banner.alt ?? post.banner.title"
+					:alt="post.banner.alt ?? post.title.raw"
 					:draggable="false"
 					:src="post.banner.url"
 				/>
