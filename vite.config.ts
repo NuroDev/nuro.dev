@@ -8,6 +8,7 @@ import Components from 'vite-plugin-components';
 import Icons, { ViteIconsResolver } from 'vite-plugin-icons';
 import Markdown from 'vite-plugin-md';
 import Pages from 'vite-plugin-pages';
+import Restart from 'vite-plugin-restart';
 import Vue from '@vitejs/plugin-vue';
 import WindiCSS from 'vite-plugin-windicss';
 
@@ -23,6 +24,8 @@ import WindiPluginLineClamp from 'windicss/plugin/line-clamp';
 import WindiPluginTypography from 'windicss/plugin/typography';
 
 const extensions: Array<string> = ['md', 'vue'];
+
+const isProd = process.env.NODE_ENV === 'production';
 
 const slugify = (str: string): string => {
 	const rControl = /[\u0000-\u001F]/g;
@@ -49,11 +52,13 @@ export default defineConfig({
 	define: {
 		'import.meta.env.VERCEL_ANALYTICS_ID': JSON.stringify(process.env.VERCEL_ANALYTICS_ID),
 	},
+	optimizeDeps: {
+		include: ['@vueuse/core', 'vue-router', 'vue'],
+	},
 	plugins: [
 		Components({
 			customComponentResolvers: [
 				ViteIconsResolver({
-					componentPrefix: 'i',
 					enabledCollections: ['feather', 'heroicons-outline'],
 				}),
 			],
@@ -135,6 +140,9 @@ export default defineConfig({
 				theme_color: '#0072ff',
 			},
 		}),
+		Restart({
+			restart: ['src/content/**/*.md'],
+		}),
 		Vue({
 			include: [/\.vue$/, /\.md$/],
 		}),
@@ -191,6 +199,6 @@ export default defineConfig({
 	// @ts-ignore
 	ssgOptions: {
 		script: 'async',
-		formatting: 'prettify',
+		formatting: isProd ? 'minify' : 'prettify',
 	} as ViteSSGOptions,
 });

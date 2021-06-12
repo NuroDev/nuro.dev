@@ -66,6 +66,7 @@
 		"vite-plugin-md": "^0.6.7",
 		"vite-plugin-pages": "^0.10.0",
 		"vite-plugin-pwa": "^0.7.3",
+		"vite-plugin-restart": "^0.0.2",
 		"vite-plugin-windicss": "^0.16.7",
 		"vue-router": "^4.0.8",
 		"vue-tsc": "^0.1.6",
