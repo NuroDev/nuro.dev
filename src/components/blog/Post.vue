@@ -151,6 +151,18 @@ useHead({
 			@apply hidden;
 		}
 	}
+
+	th {
+		@apply dark:text-white;
+	}
+
+	td {
+		@apply dark:text-gray-400;
+	}
+
+	ol li::before {
+		@apply dark:text-gray-300 !important;
+	}
 }
 
 a.item {
