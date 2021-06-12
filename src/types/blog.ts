@@ -24,7 +24,7 @@ export interface IPost {
 export interface IFrontmatter {
 	banner_alt?: string;
 	banner_show?: boolean;
-	banner: string;
+	banner?: Array<string> | string;
 	date: Date;
 	description_show?: boolean;
 	description: string;

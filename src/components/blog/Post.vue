@@ -2,12 +2,27 @@
 	<div class="content">
 		<div v-if="frontmatter.banner" class="banner">
 			<div class="relative" v-if="frontmatter.banner_show || true">
-				<div class="placeholder animate-pulse" />
-				<img
-					:src="frontmatter.banner"
-					:alt="frontmatter.banner_alt ?? frontmatter.title"
-					:draggable="false"
-				/>
+				<template v-if="isBannerSrcArray">
+					<div class="placeholder animate-pulse" />
+					<picture>
+						<img
+							v-for="(src, i) in frontmatter.banner"
+							:key="i"
+							:src="src"
+							:alt="frontmatter.banner_alt ?? frontmatter.title"
+							:draggable="false"
+						/>
+					</picture>
+				</template>
+
+				<template v-else>
+					<div class="placeholder animate-pulse" />
+					<img
+						:src="frontmatter.banner"
+						:alt="frontmatter.banner_alt ?? frontmatter.title"
+						:draggable="false"
+					/>
+				</template>
 			</div>
 		</div>
 
@@ -46,6 +61,9 @@ const { frontmatter } = defineProps<{
 useHead({
 	title: `nuro ─ ${frontmatter.title || 'blog'}`,
 });
+
+const isBannerSrcArray = Array.isArray(frontmatter.banner);
+if (isBannerSrcArray) (frontmatter.banner as Array<string>).reverse();
 </script>
 
 <style lang="postcss" scoped>

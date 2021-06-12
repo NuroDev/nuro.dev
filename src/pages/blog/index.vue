@@ -36,7 +36,6 @@ const posts = router.getRoutes()
 		} = route.meta.frontmatter as IFrontmatter;
 		const date = new Date(frontmatter.date);
 
-
 		return {
 			banner: {
 				alt: banner_alt,
