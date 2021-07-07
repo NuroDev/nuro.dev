@@ -37,7 +37,6 @@ defineProps<{
 <style lang="postcss" scoped>
 .post {
 	@apply flex flex-col \
-		border-2 border-gray-100 dark:border-gray-500 \
 		rounded-lg overflow-hidden \
 		hover:shadow-xl \
 		transform hover:-translate-y-1 \
@@ -63,10 +62,12 @@ defineProps<{
 	.content {
 		@apply flex-1 flex flex-col justify-between \
 			p-6 \
+			rounded-lg rounded-tr-none rounded-tl-none \
+			border-2 border-t-0 border-gray-100 dark:border-gray-500 \
 			bg-transparent;
 
 		.text {
-			@apply flex flex-col flex-1 justify-around mt-2 \
+			@apply flex flex-col flex-1 justify-around \
 				rounded-lg \
 				text-gray-300 dark:text-gray-400 \
 				focus:outline-none focus:ring-4 focus:border-none focus:ring-primary-500;
