@@ -1,17 +1,23 @@
 import { defineConfig } from 'vite';
-import { join } from 'path';
-import Colors from 'windicss/colors';
+import { resolve } from 'path';
+import { VitePWA as PWA } from 'vite-plugin-pwa';
+import { ViteSSGOptions } from 'vite-ssg';
 import Components from 'vite-plugin-components';
 import Icons, { ViteIconsResolver } from 'vite-plugin-icons';
 import Markdown from 'vite-plugin-md';
 import Pages from 'vite-plugin-pages';
-import { VitePWA as PWA } from 'vite-plugin-pwa';
 import Vue from '@vitejs/plugin-vue';
 import WindiCSS from 'vite-plugin-windicss';
+
+import WindiPluginAspectRatio from 'windicss/plugin/aspect-ratio';
+import WindiPluginTypography from 'windicss/plugin/typography';
 
 const extensions: Array<string> = ['md', 'vue'];
 
 export default defineConfig({
+	define: {
+		'import.meta.env.VERCEL_ANALYTICS_ID': JSON.stringify(process.env.VERCEL_ANALYTICS_ID),
+	},
 	plugins: [
 		Components({
 			customComponentResolvers: [
@@ -65,10 +71,7 @@ export default defineConfig({
 		WindiCSS({
 			config: {
 				darkMode: 'class',
-				plugins: [
-					require('windicss/plugin/aspect-ratio'),
-					require('windicss/plugin/typography'),
-				],
+				plugins: [WindiPluginAspectRatio, WindiPluginTypography],
 				theme: {
 					extend: {
 						colors: {
@@ -103,7 +106,21 @@ export default defineConfig({
 	],
 	resolve: {
 		alias: {
-			'~': join(__dirname, './src/'),
+			'~': resolve(__dirname, 'src'),
 		},
+	},
+	server: {
+		proxy: {
+			'/api': {
+				target: 'http://localhost:3000',
+				changeOrigin: true,
+				rewrite: (path) => path.replace(/^\/api/, ''),
+			},
+		},
+	},
+	// @ts-ignore
+	ssgOptions: <ViteSSGOptions>{
+		script: 'async',
+		formatting: 'prettify',
 	},
 });

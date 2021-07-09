@@ -38,4 +38,8 @@ html.dark {
 		font-family: 'Inter var', 'system-ui';
 	}
 }
+
+#nprogress .bar {
+	@apply h-0.5 bg-gray-800 dark:bg-white;
+}
 </style>

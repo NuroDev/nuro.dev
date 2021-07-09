@@ -30,7 +30,9 @@
 		leave-from-class="transform opacity-100"
 		leave-to-class="transform opacity-0"
 	>
-		<Background v-if="enabled" />
+		<client-only>
+			<Background v-show="enabled" />
+		</client-only>
 	</transition>
 </template>
 

@@ -1,7 +1,8 @@
 {
 	"version": 2,
-	"public": true,
 	"alias": "nuro.dev",
+	"cleanUrls": true,
+	"public": true,
 	"regions": ["lhr1"],
 	"headers": [
 		{
@@ -12,6 +13,20 @@
 					"value": "interest-cohort=()"
 				}
 			]
+		}
+	],
+	"redirects": [
+		{
+			"source": "/github",
+			"destination": "https://github.com/nurodev"
+		},
+		{
+			"source": "/linkedin",
+			"destination": "https://www.linkedin.com/in/nurodev"
+		},
+		{
+			"source": "/twitter",
+			"destination": "https://twitter.com/nurodev"
 		}
 	]
 }
