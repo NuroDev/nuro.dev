@@ -18,9 +18,9 @@
 		"useTabs": true
 	},
 	"scripts": {
-		"dev": "yarn dev:local",
-		"dev:local": "cross-env DEBUG=vite-ssg:* vite",
-		"dev:vercel": "vercel dev --listen 3030",
+		"dev": "concurrently -n client,server \"yarn dev:client\" \"yarn dev:server\"",
+		"dev:client": "cross-env DEBUG=vite-ssg:* vite",
+		"dev:server": "vercel dev --listen 3030",
 		"build": "vue-tsc --noEmit && cross-env NODE_ENV=production vite-ssg build",
 		"preview": "vite preview",
 		"prettier": "prettier --write \"**/*.{css,js,json,jsx,ts,tsx,vue}\""
@@ -49,6 +49,7 @@
 		"@vitejs/plugin-vue": "^1.2.2",
 		"@vue/compiler-sfc": "^3.0.11",
 		"@vue/server-renderer": "^3.0.11",
+		"concurrently": "^6.2.0",
 		"cross-env": "^7.0.3",
 		"node-fetch": "^2.6.1",
 		"typescript": "^4.3.2",
