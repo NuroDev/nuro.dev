@@ -20,7 +20,7 @@
 	"scripts": {
 		"dev": "yarn dev:local",
 		"dev:local": "cross-env DEBUG=vite-ssg:* vite",
-		"dev:vercel": "vercel dev",
+		"dev:vercel": "vercel dev --listen 3030",
 		"build": "vue-tsc --noEmit && cross-env NODE_ENV=production vite-ssg build",
 		"preview": "vite preview",
 		"prettier": "prettier --write \"**/*.{css,js,json,jsx,ts,tsx,vue}\""
