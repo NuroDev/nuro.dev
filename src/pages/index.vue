@@ -24,10 +24,10 @@
 
 	<client-only>
 		<transition
-			enter-active-class="transition duration-500 ease-in-out"
+			enter-active-class="transition duration-1000 delay-250 ease-in-out"
 			enter-from-class="transform opacity-0"
 			enter-to-class="transform opacity-100"
-			leave-active-class="transition duration-500 ease-in-out"
+			leave-active-class="transition duration-500 delay-250 ease-in-out"
 			leave-from-class="transform opacity-100"
 			leave-to-class="transform opacity-0"
 		>
