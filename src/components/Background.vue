@@ -99,8 +99,8 @@ onMounted(() => {
 		if (!camera.value) throw new Error(`Update loop failed. Camera instance is null`);
 
 		request_id = requestAnimationFrame(update);
-		particles.rotation.z += 0.01;
-		program.uniforms.uTime.value = t * 0.001;
+		particles.rotation.z += 0.0025;
+		program.uniforms.uTime.value = t * 0.00025;
 		renderer.value.render({
 			scene: particles,
 			camera: camera.value,
