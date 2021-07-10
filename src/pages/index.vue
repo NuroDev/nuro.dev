@@ -22,18 +22,18 @@
 		</div>
 	</div>
 
-	<transition
-		enter-active-class="transition duration-500 ease-in-out"
-		enter-from-class="transform opacity-0"
-		enter-to-class="transform opacity-100"
-		leave-active-class="transition duration-500 ease-in-out"
-		leave-from-class="transform opacity-100"
-		leave-to-class="transform opacity-0"
-	>
-		<client-only>
+	<client-only>
+		<transition
+			enter-active-class="transition duration-500 ease-in-out"
+			enter-from-class="transform opacity-0"
+			enter-to-class="transform opacity-100"
+			leave-active-class="transition duration-500 ease-in-out"
+			leave-from-class="transform opacity-100"
+			leave-to-class="transform opacity-0"
+		>
 			<Background v-show="enabled" />
-		</client-only>
-	</transition>
+		</transition>
+	</client-only>
 </template>
 
 <script lang="ts" setup>
