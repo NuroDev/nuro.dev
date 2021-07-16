@@ -51,7 +51,7 @@ onMounted(() => {
 
 	try {
 		if (background.value) background.value.appendChild(gl.canvas);
-		gl.clearColor(1, 1, 1, 0);
+		gl.clearColor(0, 0, 0, 0);
 		useEventListener('resize', handleResize);
 		handleResize();
 	} catch (error) {
