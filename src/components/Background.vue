@@ -3,19 +3,35 @@
 </template>
 
 <script lang="ts" setup>
-import { useEventListener } from '@vueuse/core';
+import { useEventListener, useCounter } from '@vueuse/core';
 import { Camera, Color, Geometry, Mesh, Program, Renderer } from 'ogl-typescript';
 import { onBeforeUnmount, onMounted, ref } from 'vue';
-
-import type { Ref } from 'vue';
 
 import VertexShader from '../assets/shaders/background.vs?raw';
 import FragmentShader from '../assets/shaders/background.fs?raw';
 
+import type { Ref } from 'vue';
+
 const background = ref<HTMLDivElement | null>(null);
 const camera: Ref<Camera | null> = ref(null);
 const renderer: Ref<Renderer | null> = ref(null);
-let request_id: number = 0;
+const { count: animationId, inc: incrementAnimationId } = useCounter();
+
+function handleResize (): void {
+	if (!renderer.value)
+		throw new Error(`Failed to resize renderer. Renderer instance is null`);
+
+	const gl = renderer.value.gl;
+
+	renderer.value.setSize(window.innerWidth, window.innerHeight);
+
+	if (!camera.value)
+		throw new Error(`Failed to resize renderer. Camera instance is null`);
+
+	camera.value.perspective({
+		aspect: gl.canvas.width / gl.canvas.height
+	});
+};
 
 onMounted(() => {
 	if (!renderer.value)
@@ -32,18 +48,6 @@ onMounted(() => {
 			fov: 15,
 		})
 	camera.value.position.z = 15;
-
-	function handleResize () {
-		if (!renderer.value)
-			throw new Error(`Failed to resize renderer. Renderer instance is null`);
-		renderer.value.setSize(window.innerWidth, window.innerHeight);
-
-		if (!camera.value)
-			throw new Error(`Failed to resize renderer. Camera instance is null`);
-		camera.value.perspective({
-			aspect: gl.canvas.width / gl.canvas.height
-		});
-	};
 
 	try {
 		if (background.value) background.value.appendChild(gl.canvas);
@@ -94,23 +98,26 @@ onMounted(() => {
 		program,
 	});
 
-	const update = (t: number) => {
+	function update (t: number): void {
 		if (!renderer.value) throw new Error(`Update loop failed. Renderer instance is null`);
 		if (!camera.value) throw new Error(`Update loop failed. Camera instance is null`);
 
-		request_id = requestAnimationFrame(update);
+		incrementAnimationId(requestAnimationFrame(update))
+
 		particles.rotation.z += 0.0025;
 		program.uniforms.uTime.value = t * 0.00025;
+
 		renderer.value.render({
 			scene: particles,
 			camera: camera.value,
 		});
 	};
-	request_id = requestAnimationFrame(update);
+
+	incrementAnimationId(requestAnimationFrame(update))
 });
 
 onBeforeUnmount(() => {
-	cancelAnimationFrame(request_id);
+	cancelAnimationFrame(animationId.value);
 	renderer.value = null;
 	camera.value = null;
 });
