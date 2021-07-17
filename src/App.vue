@@ -3,7 +3,25 @@
 </template>
 
 <script lang="ts" setup>
+import { computed } from 'vue';
+import { useDark } from '@vueuse/core';
+import { useHead } from '@vueuse/head';
+import defaultColors from 'windicss/colors';
 import splitbee from '@splitbee/web';
+
+import { colors } from '~/utils';
+
+const isDark = useDark();
+
+useHead({
+	title: computed(() => (isDark.value ? 'Dark' : 'light')),
+	meta: [
+		{
+			name: 'theme-color',
+			content: computed(() => (isDark.value ? colors.gray[900] : defaultColors.gray[50])),
+		},
+	],
+});
 
 if (import.meta.env.PROD)
 	splitbee.init({

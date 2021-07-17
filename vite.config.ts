@@ -12,6 +12,8 @@ import WindiCSS from 'vite-plugin-windicss';
 import WindiPluginAspectRatio from 'windicss/plugin/aspect-ratio';
 import WindiPluginTypography from 'windicss/plugin/typography';
 
+import { colors } from './src/utils';
+
 const extensions: Array<string> = ['md', 'vue'];
 
 export default defineConfig({
@@ -36,7 +38,6 @@ export default defineConfig({
 		Markdown(),
 		PWA({
 			manifest: {
-				background_color: '#0d0f11',
 				description: 'developer',
 				display: 'standalone',
 				icons: [
@@ -62,7 +63,6 @@ export default defineConfig({
 				],
 				name: 'nuro',
 				short_name: 'nuro',
-				theme_color: '#0072ff',
 			},
 		}),
 		Vue({
@@ -74,31 +74,7 @@ export default defineConfig({
 				plugins: [WindiPluginAspectRatio, WindiPluginTypography],
 				theme: {
 					extend: {
-						colors: {
-							gray: {
-								100: '#eaeaeb',
-								200: '#cacbcd',
-								300: '#a7a9ac',
-								400: '#696c71',
-								500: '#282d34',
-								600: '#24292f',
-								700: '#181b20',
-								800: '#121518',
-								900: '#0c0e10',
-							},
-							primary: {
-								50: '#32a4ff',
-								100: '#289aff',
-								200: '#1e90ff',
-								300: '#1486ff',
-								400: '#0a7cff',
-								500: '#0072ff',
-								600: '#0068f5',
-								700: '#005eeb',
-								800: '#0054e1',
-								900: '#004ad7',
-							},
-						},
+						colors,
 					},
 				},
 			},
