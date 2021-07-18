@@ -36,13 +36,7 @@
 				v-text="post.description.raw || post.description"
 			/>
 			<div class="footer">
-				<img
-					alt="nuro"
-					class="avatar"
-					:draggable="false"
-					loading="lazy"
-					src="/apple-touch-icon-ipad-76x76.png"
-				/>
+				<i-feather-calendar />
 				<div v-if="post.date" class="text-sm pl-4">
 					<div class="meta">
 						<span v-text="post.date.readable" />
@@ -110,11 +104,6 @@ defineProps<{
 		.footer {
 			@apply flex items-center \
 				mt-6 lg:mt-0;
-
-			.avatar {
-				@apply w-8 h-8 \
-					rounded-full;
-			}
 
 			.meta {
 				@apply flex items-center;
