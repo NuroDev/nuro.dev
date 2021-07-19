@@ -1,8 +1,8 @@
 <template>
-	<template v-if="!posts">
+	<div v-if="!posts" class="content h-screen">
 		<NoPosts />
-	</template>
-	<div v-else class="content">
+	</div>
+	<div v-else class="content" :class="!posts && ''">
 		<div class="relative max-w-6xl mx-auto">
 			<PostLatest v-if="posts.latestPost" :post="posts.latestPost" />
 			<div class="posts">
@@ -14,14 +14,19 @@
 
 <script lang="ts" setup>
 import { useHead } from '@vueuse/head';
+import { defineProps } from 'vue';
 
 import { usePosts } from '~/consumables';
 
+const { year = new Date().getFullYear() } = defineProps<{
+	year: string;
+}>();
+
 useHead({
-	title: 'nuro ─ blog',
+	title: `nuro ─ blog ─ ${year}`,
 });
 
-const posts = usePosts();
+const posts = usePosts(year);
 </script>
 
 <style lang="postcss" scoped>

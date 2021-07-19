@@ -3,17 +3,24 @@ import { useRouter } from "vue-router";
 
 import type { IFrontmatter, IPost } from "~/types";
 
-export function usePosts() {
+export function usePosts(year?: string | number) {
 	const router = useRouter();
 
-	const routes = router.getRoutes();
+	const routes = router.getRoutes().map((route) => ({
+		...route,
+		path: route.path.replaceAll('//', '/'),
+	}));
 
 	const filteredRoutes = routes.filter(({ meta, path }) => {
-		if (!path.startsWith('//blog//') || !meta.frontmatter) return false;
+		if (!path.startsWith('/blog/') || !meta.frontmatter) return false;
+
+		// If a year is provided, get the year from the route path
+		// and make sure it matches the year parameter provided
+		// (Always assumes that the 2nd element will be the year)
+		if (year && year !== path.split('/').filter((el) => el)[1]) return false;
 
 		return true;
 	});
-	console.log(filteredRoutes);
 
 	const posts = filteredRoutes.map(({ meta, path }) => {
 		const {
@@ -48,8 +55,12 @@ export function usePosts() {
 
 	const sortedPosts = posts.sort((a, b) => +new Date(b.date.raw) - +new Date(a.date.raw));
 
+	const latestPost = posts.shift();
+
+	if (!latestPost && sortedPosts.length === 0) return null
+
 	return {
-		latestPost: posts.shift(),
+		latestPost,
 		posts: sortedPosts,
 	}
 }
