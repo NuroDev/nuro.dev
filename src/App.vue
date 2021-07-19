@@ -15,7 +15,6 @@ import { colors } from '~/utils';
 const isDark = useDark();
 
 useHead({
-	title: computed(() => (isDark.value ? 'Dark' : 'light')),
 	meta: [
 		{
 			name: 'theme-color',
