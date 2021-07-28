@@ -1165,7 +1165,7 @@
     "@vue/compiler-core" "3.2.0-beta.6"
     "@vue/shared" "3.2.0-beta.6"
 
-"@vue/compiler-sfc@^3.0.11":
+"@vue/compiler-sfc@^3.1.5":
   version "3.1.5"
   resolved "https://registry.yarnpkg.com/@vue/compiler-sfc/-/compiler-sfc-3.1.5.tgz#e61e54f3a963b0f4a8e523fbb8632390dc52b0d6"
   integrity sha512-mtMY6xMvZeSRx9MTa1+NgJWndrkzVTdJ1pQAmAKQuxyb5LsHVvrgP7kcQFvxPHVpLVTORbTJWHaiqoKrJvi1iA==
@@ -1270,7 +1270,7 @@
     "@vue/shared" "3.1.5"
     csstype "^2.6.8"
 
-"@vue/server-renderer@^3.0.11":
+"@vue/server-renderer@^3.1.5":
   version "3.1.5"
   resolved "https://registry.yarnpkg.com/@vue/server-renderer/-/server-renderer-3.1.5.tgz#905454eccbb97bb8daafc5db6eec83c452062648"
   integrity sha512-b0LLsxwsVIFGNgAHXVT/1iHbPf+uNMdFOz7xUT2tKKIkHN4ps8fAaj1GTSYLhxaPi9ALjxRmWRdvMC69fAW1/A==
@@ -2989,7 +2989,7 @@ prelude-ls@~1.1.2:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
   integrity sha1-IZMqVJ9eUv/ZqCf1cOBL5iqX2lQ=
 
-prettier@^2.3.1:
+prettier@^2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.3.2.tgz#ef280a05ec253712e486233db5c6f23441e7342d"
   integrity sha512-lnJzDfJ66zkMy58OL5/NY5zp70S7Nz6KqcKkXYzn2tMVrNxvbqaBpg7H3qHaLxCJ5lNMsGuM8+ohS7cZrthdLQ==
@@ -3731,18 +3731,16 @@ vite-plugin-md@^0.9.0:
     gray-matter "^4.0.3"
     markdown-it "^12.1.0"
 
-vite-plugin-pages@^0.10.0:
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/vite-plugin-pages/-/vite-plugin-pages-0.10.0.tgz#6af6cc17cc59259043048219ffad01f5c708883b"
-  integrity sha512-vAxH0RBaIoBEbJLT+YP9TjWK//aPb8w2r2fk+TLmvrKjDT/Y7F9ne/VYlay+U6jJNM9pHTOJldTamgbDgkSsCg==
+vite-plugin-pages@^0.15.1:
+  version "0.15.1"
+  resolved "https://registry.yarnpkg.com/vite-plugin-pages/-/vite-plugin-pages-0.15.1.tgz#7f8213e399e37c7d059d4392f48608bbda56849a"
+  integrity sha512-So6QJtTeecuE2PU50Qhcbpj9dDraoDS1Qrl9eOE6kKTlqHHLTH/eH0DdI4GTSAZHa2Ucq8zTwIZlkEnMvKu1eA==
   dependencies:
-    "@vue/compiler-sfc" "^3.0.11"
-    chalk "^4.1.1"
-    debug "^4.3.2"
+    "@antfu/utils" "^0.2.4"
     deep-equal "^2.0.5"
-    fast-glob "^3.2.5"
+    fast-glob "^3.2.7"
     json5 "^2.2.0"
-    yaml "^2.0.0-5"
+    yaml "^2.0.0-7"
 
 vite-plugin-pwa@^0.8.2:
   version "0.8.2"
@@ -3766,16 +3764,16 @@ vite-plugin-windicss@^1.2.7:
     debug "^4.3.2"
     windicss "^3.1.6"
 
-vite-ssg@^0.11.2:
-  version "0.11.4"
-  resolved "https://registry.yarnpkg.com/vite-ssg/-/vite-ssg-0.11.4.tgz#e38fdeb6531063b1172cb43111e7b3e6bf3acf0b"
-  integrity sha512-JVq45h5IRGxYpHu2yjLdWKAUaTISXrWKjPPDHetNVhP8wp/MGZ1gYhns9XOSfYfLbWSMQgDIjbANAS9XzE/X3Q==
+vite-ssg@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/vite-ssg/-/vite-ssg-0.12.0.tgz#9eec77ea7b20df6ac43df9bc20bea0abe5236970"
+  integrity sha512-r2cOxkA6b7mCago3Sn6n+8RsBpB/2UU6w3svJdlb3MtXtfmN3ueWZwXCPN8UmOnM4lfnfSL1XKNP92CNg+MWHg==
   dependencies:
     chalk "^4.1.1"
     fs-extra "^10.0.0"
     html-minifier "^4.0.0"
     jsdom "^16.6.0"
-    prettier "^2.3.1"
+    prettier "^2.3.2"
     yargs "^17.0.1"
 
 vite@^2.4.4:
@@ -4289,7 +4287,7 @@ yallist@^3.0.2:
   resolved "https://registry.yarnpkg.com/yallist/-/yallist-3.1.1.tgz#dbb7daf9bfd8bac9ab45ebf602b8cbad0d5d08fd"
   integrity sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==
 
-yaml@^2.0.0-5:
+yaml@^2.0.0-7:
   version "2.0.0-7"
   resolved "https://registry.yarnpkg.com/yaml/-/yaml-2.0.0-7.tgz#9799d9d85dfc8f01e4cc425e18e09215364beef1"
   integrity sha512-RbI2Tm3hl9AoHY4wWyWvGvJfFIbHOzuzaxum6ez1A0vve+uXgNor03Wys4t+2sgjJSVSe+B2xerd1/dnvqHlOA==
