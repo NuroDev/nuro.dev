@@ -2,7 +2,7 @@
 	<div class="fixed top-0 left-0 m-8">
 		<Clickable>
 			<button
-				@click="toggleDark"
+				@click="() => toggleDark()"
 				class="themeButton"
 				aria-label="Theme Toggle"
 				:alt="isDark ? 'Dark' : 'Light'"

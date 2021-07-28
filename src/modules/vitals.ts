@@ -25,12 +25,8 @@ function useVitals(options: IVitalsOptions): void {
 }
 
 function sendMetric({ context, debug, metric }: IVitalSendOptions) {
-	const speed: string =
-		'connection' in navigator &&
-		navigator['connection'] &&
-		'effectiveType' in navigator['connection']
-			? navigator['connection']['effectiveType']
-			: '';
+	// @ts-ignore
+	const speed: string = 'connection' in navigator && navigator['connection'] && 'effectiveType' in navigator['connection'] ? navigator['connection']['effectiveType'] : '';
 
 	const body = {
 		dsn: import.meta.env.VERCEL_ANALYTICS_ID as string,
