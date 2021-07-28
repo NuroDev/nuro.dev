@@ -71,8 +71,8 @@ export default defineConfig({
 		Pages({
 			extensions,
 			pagesDir: [
-				{ dir: 'src/pages', baseRoute: '/' },
-				{ dir: 'src/content/blog/', baseRoute: '/blog/' },
+				{ dir: 'src/pages', baseRoute: '' },
+				{ dir: 'src/content/blog/', baseRoute: 'blog' },
 			],
 			extendRoute: (route) => ({
 				...route,

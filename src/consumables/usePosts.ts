@@ -6,13 +6,10 @@ import type { IFrontmatter, IPost } from "~/types";
 export function usePosts(year?: string | number) {
 	const router = useRouter();
 
-	const routes = router.getRoutes().map((route) => ({
-		...route,
-		path: route.path.replaceAll('//', '/'),
-	}));
+	const routes = router.getRoutes();
 
 	const filteredRoutes = routes.filter(({ meta, path }) => {
-		if (!path.startsWith('/blog/') || !meta.frontmatter) return false;
+		if (!path.startsWith('/blog/') || '/blog/:year'.includes(path) || !meta.frontmatter) return false;
 
 		// If a year is provided, get the year from the route path
 		// and make sure it matches the year parameter provided
@@ -49,7 +46,7 @@ export function usePosts(year?: string | number) {
 				prefix: frontmatter.title_prefix,
 				raw: frontmatter.title,
 			},
-			url: path.replaceAll('//', '/'),
+			url: path,
 		} as IPost;
 	});
 

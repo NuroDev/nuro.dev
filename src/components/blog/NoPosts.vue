@@ -13,7 +13,7 @@
 						Sorry, we couldn’t find any blog posts ¯\_(ツ)_/¯
 					</p>
 					<div class="actions">
-						<button @click="router.back()" class="button">
+						<button @click="back" class="button">
 							<i-feather-arrow-left class="mr-2" />
 							<span>Back</span>
 						</button>
@@ -31,7 +31,7 @@
 <script lang="ts" setup>
 import { useRouter } from 'vue-router';
 
-const router = useRouter();
+const { back } = useRouter();
 </script>
 
 <style lang="postcss" scoped>
