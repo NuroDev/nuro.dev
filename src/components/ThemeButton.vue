@@ -1,5 +1,5 @@
 <template>
-	<div class="fixed top-0 right-0 m-8">
+	<div class="fixed top-0 left-0 m-8">
 		<Clickable>
 			<button
 				@click="toggleDark"
