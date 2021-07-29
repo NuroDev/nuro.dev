@@ -21,7 +21,7 @@ import { useDark, useToggle } from '@vueuse/core';
 const isDark = useDark({
 	storageKey: 'theme',
 });
-const toggleDark = () => useToggle(isDark);
+const toggleDark = useToggle(isDark);
 </script>
 
 <style lang="postcss" scoped>
