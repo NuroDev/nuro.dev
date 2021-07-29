@@ -1,6 +1,6 @@
 <template>
-	<router-view />
 	<ThemeButton />
+	<router-view />
 </template>
 
 <script lang="ts" setup>
@@ -32,6 +32,10 @@ html {
 }
 html.dark {
 	@apply bg-gray-900;
+
+	* {
+		--tw-ring-offset-color: #0c0e10;
+	}
 }
 
 @supports (font-variation-settings: normal) {
@@ -41,6 +45,19 @@ html.dark {
 }
 
 #nprogress .bar {
-	@apply h-0.5 bg-gray-800 dark:bg-white;
+	@apply h-1 bg-gray-800 dark:bg-white;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+	text-shadow: none;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	background: none;
 }
 </style>

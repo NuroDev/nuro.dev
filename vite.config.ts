@@ -1,4 +1,6 @@
 import { defineConfig } from 'vite';
+import { readFileSync } from 'fs';
+import { remove } from 'diacritics';
 import { resolve } from 'path';
 import { VitePWA as PWA } from 'vite-plugin-pwa';
 import { ViteSSGOptions } from 'vite-ssg';
@@ -6,19 +8,54 @@ import Components from 'vite-plugin-components';
 import Icons, { ViteIconsResolver } from 'vite-plugin-icons';
 import Markdown from 'vite-plugin-md';
 import Pages from 'vite-plugin-pages';
+import Restart from 'vite-plugin-restart';
 import Vue from '@vitejs/plugin-vue';
 import WindiCSS from 'vite-plugin-windicss';
 
+import Frontmatter from 'front-matter';
+
+import MarkdownItAnchor from 'markdown-it-anchor';
+import MarkdownItAttributes from 'markdown-it-link-attributes';
+import MarkdownItEmoji from 'markdown-it-emoji';
+import MarkdownItPrism from 'markdown-it-prism';
+
 import WindiPluginAspectRatio from 'windicss/plugin/aspect-ratio';
+import WindiPluginLineClamp from 'windicss/plugin/line-clamp';
 import WindiPluginTypography from 'windicss/plugin/typography';
 
 import { colors } from './src/utils';
 
 const extensions: Array<string> = ['md', 'vue'];
 
+const isProd = process.env.NODE_ENV === 'production';
+
+const slugify = (str: string): string => {
+	const rControl = /[\u0000-\u001F]/g;
+	const rSpecial = /[\s~`!@#$%^&*()\-_+=[\]{}|\\;:"'<>,.?/]+/g;
+
+	return (
+		remove(str)
+			// Remove control characters
+			.replace(rControl, '')
+			// Replace special characters
+			.replace(rSpecial, '-')
+			// Remove continuos separators
+			.replace(/-{2,}/g, '-')
+			// Remove prefixing and trailing separtors
+			.replace(/^-+|-+$/g, '')
+			// ensure it doesn't start with a number (#121)
+			.replace(/^(\d)/, '_$1')
+			// lowercase
+			.toLowerCase()
+	);
+};
+
 export default defineConfig({
 	define: {
 		'import.meta.env.VERCEL_ANALYTICS_ID': JSON.stringify(process.env.VERCEL_ANALYTICS_ID),
+	},
+	optimizeDeps: {
+		include: ['@vueuse/core', 'vue-router', 'vue'],
 	},
 	plugins: [
 		Components({
@@ -34,8 +71,47 @@ export default defineConfig({
 		Icons(),
 		Pages({
 			extensions,
+			pagesDir: [
+				{ dir: 'src/pages', baseRoute: '' },
+				{ dir: 'src/content/blog/', baseRoute: 'blog' },
+			],
+			extendRoute: (route) => ({
+				...route,
+				meta: Object.assign(route.meta || {}, {
+					frontmatter: Frontmatter(
+						readFileSync(resolve(__dirname, route.component.slice(1)), 'utf-8'),
+					).attributes,
+				}),
+			}),
 		}),
-		Markdown(),
+		Markdown({
+			headEnabled: true,
+			markdownItOptions: {
+				html: true,
+				linkify: true,
+				typographer: true,
+			},
+			markdownItUses: [MarkdownItEmoji, MarkdownItPrism],
+			markdownItSetup(md) {
+				md.use(MarkdownItAnchor, {
+					slugify,
+					permalink: true,
+					permalinkBefore: true,
+					permalinkSymbol: '#',
+					permalinkAttrs: () => ({
+						'aria-hidden': true,
+					}),
+				});
+				md.use(MarkdownItAttributes, {
+					pattern: /^https?:/,
+					attrs: {
+						target: '_blank',
+						rel: 'noopener',
+					},
+				});
+			},
+			wrapperComponent: 'Post',
+		}),
 		PWA({
 			manifest: {
 				name: 'nuro',
@@ -64,13 +140,16 @@ export default defineConfig({
 				],
 			},
 		}),
+		Restart({
+			restart: ['src/content/**/*.md'],
+		}),
 		Vue({
 			include: [/\.vue$/, /\.md$/],
 		}),
 		WindiCSS({
 			config: {
 				darkMode: 'class',
-				plugins: [WindiPluginAspectRatio, WindiPluginTypography],
+				plugins: [WindiPluginAspectRatio, WindiPluginLineClamp, WindiPluginTypography],
 				theme: {
 					extend: {
 						colors,
@@ -94,8 +173,8 @@ export default defineConfig({
 		},
 	},
 	// @ts-ignore
-	ssgOptions: <ViteSSGOptions>{
+	ssgOptions: {
 		script: 'async',
-		formatting: 'prettify',
-	},
+		formatting: isProd ? 'minify' : 'prettify',
+	} as ViteSSGOptions,
 });

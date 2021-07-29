@@ -2,6 +2,7 @@ import { ViteSSG } from 'vite-ssg';
 import routes from 'virtual:generated-pages';
 
 import 'nprogress/nprogress.css';
+import 'prismjs/themes/prism.css';
 import 'virtual:windi.css';
 
 import App from './App.vue';
