@@ -9,7 +9,7 @@
 			>
 				<i-feather-moon v-if="isDark" />
 				<i-feather-sun v-else-if="!isDark" />
-				<i-heroicons-outline-color-swatch v-else />
+				<i-feather-droplet v-else />
 			</button>
 		</Clickable>
 	</div>
@@ -21,7 +21,7 @@ import { useDark, useToggle } from '@vueuse/core';
 const isDark = useDark({
 	storageKey: 'theme',
 });
-const toggleDark = useToggle(isDark);
+const toggleDark = () => useToggle(isDark);
 </script>
 
 <style lang="postcss" scoped>
