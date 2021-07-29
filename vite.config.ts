@@ -25,7 +25,7 @@ export default defineConfig({
 			customComponentResolvers: [
 				ViteIconsResolver({
 					componentPrefix: 'i',
-					enabledCollections: ['feather', 'heroicons-outline'],
+					enabledCollections: ['feather'],
 				}),
 			],
 			customLoaderMatcher: (id: string) => id.endsWith('.md'),

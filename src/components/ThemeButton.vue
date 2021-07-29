@@ -9,7 +9,7 @@
 			>
 				<i-feather-moon v-if="isDark" />
 				<i-feather-sun v-else-if="!isDark" />
-				<i-heroicons-outline-color-swatch v-else />
+				<i-feather-droplet v-else />
 			</button>
 		</Clickable>
 	</div>
