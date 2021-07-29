@@ -7,7 +7,7 @@ import 'virtual:windi.css';
 import App from './App.vue';
 
 export const createApp = ViteSSG(App, { routes }, (ctx) => {
-	// Load/install all modules
-	const modules = import.meta.globEager('./modules/*.ts');
-	Object.values(modules).map((module) => module.install?.(ctx));
+	Object.values(import.meta.globEager('./modules/*.ts')).map(
+		async (module) => await module.install?.(ctx),
+	);
 });
