@@ -28,5 +28,11 @@
 			"source": "/twitter",
 			"destination": "https://twitter.com/nurodev"
 		}
+	],
+	"rewrites": [
+		{
+			"source": "/(.*)",
+			"destination": "/index.html"
+		}
 	]
 }
