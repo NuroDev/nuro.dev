@@ -6,7 +6,6 @@
 
 <script lang="ts" setup>
 import { useSound } from '@vueuse/sound';
-import { defineProps } from 'vue';
 
 import soundClick from '../assets/click.ogg';
 

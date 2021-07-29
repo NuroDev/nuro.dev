@@ -1,15 +1,15 @@
 <template>
-	<div class="fixed top-0 right-0 m-8">
+	<div class="fixed top-0 left-0 m-8">
 		<Clickable>
 			<button
-				@click="toggleDark"
+				@click="() => toggleDark()"
 				class="themeButton"
 				aria-label="Theme Toggle"
 				:alt="isDark ? 'Dark' : 'Light'"
 			>
 				<i-feather-moon v-if="isDark" />
 				<i-feather-sun v-else-if="!isDark" />
-				<i-heroicons-outline-color-swatch v-else />
+				<i-feather-droplet v-else />
 			</button>
 		</Clickable>
 	</div>
