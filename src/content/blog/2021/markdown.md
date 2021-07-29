@@ -183,3 +183,7 @@ You can create tables by assembling a list of words and dividing them with hyphe
 ## Strikethrough
 
 Any word wrapped with two tildes (like `~~this~~`) will appear ~~crossed out~~.
+
+## Sandbox
+
+<X-Sandbox src="https://codesandbox.io/embed/new?codemirror=1" />
