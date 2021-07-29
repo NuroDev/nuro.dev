@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps } from 'vue-demi';
+import { defineProps } from 'vue';
 
 defineProps<{
 	alt?: string;
