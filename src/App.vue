@@ -6,6 +6,9 @@
 <script lang="ts" setup>
 import splitbee from '@splitbee/web';
 
+// Need to load/apply theme local storage
+import { isDark as _isDark } from '~/hooks';
+
 if (import.meta.env.PROD)
 	splitbee.init({
 		disableCookie: true,

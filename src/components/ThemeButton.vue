@@ -2,7 +2,7 @@
 	<div class="content">
 		<Clickable>
 			<button
-				@click="toggle()"
+				@click="toggleTheme()"
 				class="button"
 				aria-label="Toggle Theme"
 				:alt="isDark ? 'Dark' : 'Light'"
@@ -16,12 +16,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useDark, useToggle } from '@vueuse/core';
-
-const isDark = useDark({
-	storageKey: 'theme',
-});
-const toggle = useToggle(isDark);
+import { toggleTheme } from '~/hooks';
 </script>
 
 <style lang="postcss" scoped>
