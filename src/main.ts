@@ -1,16 +1,14 @@
-import { createApp } from 'vue';
-import { createHead } from '@vueuse/head';
-import { createRouter, createWebHistory } from 'vue-router';
+import { ViteSSG } from 'vite-ssg';
 import routes from 'virtual:generated-pages';
 
+import 'nprogress/nprogress.css';
+import 'prismjs/themes/prism.css';
 import 'virtual:windi.css';
 
 import App from './App.vue';
 
-const head = createHead();
-const router = createRouter({
-	history: createWebHistory(),
-	routes,
+export const createApp = ViteSSG(App, { routes }, (ctx) => {
+	Object.values(import.meta.globEager('./modules/*.ts')).map(
+		async (module) => await module.install?.(ctx),
+	);
 });
-
-createApp(App).use(head).use(router).mount('#app');

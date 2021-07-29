@@ -1,11 +1,10 @@
 <template>
-	<ThemeButton />
 	<div class="content">
 		<div class="my-8">
 			<Clickable>
 				<Switch
 					role="button"
-					@click="toggle"
+					@click="() => toggle()"
 					:class="enabled ? 'bg-primary-500' : 'bg-gray-200 dark:bg-gray-700'"
 					class="switch"
 				>
@@ -21,14 +20,26 @@
 			</Clickable>
 		</div>
 	</div>
-	<Background v-show="enabled" />
+
+	<client-only>
+		<transition
+			enter-active-class="transition duration-1000 delay-250 ease-in-out"
+			enter-from-class="transform opacity-0"
+			enter-to-class="transform opacity-100"
+			leave-active-class="transition duration-500 delay-250 ease-in-out"
+			leave-from-class="transform opacity-100"
+			leave-to-class="transform opacity-0"
+		>
+			<Background v-show="enabled" />
+		</transition>
+	</client-only>
 </template>
 
 <script lang="ts" setup>
 import { Switch } from '@headlessui/vue';
 import { useStorage, useToggle } from '@vueuse/core';
 
-const enabled = useStorage('show-hello-world', true);
+const enabled = useStorage('render-gl-header', true);
 const toggle = useToggle(enabled);
 </script>
 
