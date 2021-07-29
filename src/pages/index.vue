@@ -20,8 +20,18 @@
 			</Clickable>
 		</div>
 	</div>
+
 	<client-only>
-		<Background v-show="enabled" />
+		<transition
+			enter-active-class="transition duration-1000 delay-250 ease-in-out"
+			enter-from-class="transform opacity-0"
+			enter-to-class="transform opacity-100"
+			leave-active-class="transition duration-500 delay-250 ease-in-out"
+			leave-from-class="transform opacity-100"
+			leave-to-class="transform opacity-0"
+		>
+			<Background v-show="enabled" />
+		</transition>
 	</client-only>
 </template>
 
@@ -29,7 +39,7 @@
 import { Switch } from '@headlessui/vue';
 import { useStorage, useToggle } from '@vueuse/core';
 
-const enabled = useStorage('show-hello-world', true);
+const enabled = useStorage('render-gl-header', true);
 const toggle = useToggle(enabled);
 </script>
 
