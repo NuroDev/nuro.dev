@@ -27,7 +27,7 @@ const toggleDark = useToggle(isDark);
 <style lang="postcss" scoped>
 .content {
 	@apply fixed top-0 left-0 \
-		m-8;
+		m-8 z-10;
 
 	.button {
 		@apply flex justify-center items-center \

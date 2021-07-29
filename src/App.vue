@@ -1,6 +1,6 @@
 <template>
-	<router-view />
 	<ThemeButton />
+	<router-view />
 </template>
 
 <script lang="ts" setup>
