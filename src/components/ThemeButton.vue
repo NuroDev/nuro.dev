@@ -2,7 +2,7 @@
 	<div class="content">
 		<Clickable>
 			<button
-				@click="toggleDark"
+				@click="toggle()"
 				class="button"
 				aria-label="Toggle Theme"
 				:alt="isDark ? 'Dark' : 'Light'"
@@ -21,7 +21,7 @@ import { useDark, useToggle } from '@vueuse/core';
 const isDark = useDark({
 	storageKey: 'theme',
 });
-const toggleDark = useToggle(isDark);
+const toggle = useToggle(isDark);
 </script>
 
 <style lang="postcss" scoped>
