@@ -61,7 +61,7 @@ defineProps<{
 .post {
 	@apply flex flex-col lg:flex-row \
 		mt-12 p-4 \
-		rounded-lg \
+		rounded-2xl \
 		border-2 border-gray-100 dark:border-gray-500 lg:border-none \
 		transition ease-in-out duration-300 \
 		focus:outline-none focus:ring-4 focus:ring-primary-500;
@@ -69,7 +69,7 @@ defineProps<{
 	.banner {
 		@apply relative flex justify-center my-auto \
 			w-full xl:w-2/4 lg:max-w-xl h-[16rem] sm:h-sm lg:max-h-lg \
-			overflow-hidden rounded-lg \
+			overflow-hidden rounded-2xl \
 			transition ease-in-out duration-300 \
 			hover:shadow-xl;
 

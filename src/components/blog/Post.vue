@@ -73,13 +73,13 @@ useHead({
 		.placeholder {
 			@apply w-full h-full h-[16rem] lg:h-lg mb-8 \
 				bg-gray-200 dark:bg-gray-600 \
-				rounded-3xl;
+				rounded-4xl lg:rounded-6xl;
 		}
 
 		img {
 			@apply absolute top-0 left-0 w-full h-auto max-h-[16rem] lg:max-h-lg \
 				mb-8 \
-				rounded-3xl object-cover select-none hover:shadow-xl \
+				rounded-4xl lg:rounded-6xl object-cover select-none hover:shadow-xl \
 				transition ease-in-out duration-300;
 		}
 	}
@@ -126,8 +126,9 @@ useHead({
 
 	a {
 		@apply no-underline rounded \
+				dark:text-white \
 				transition duration-300 ease-in-out \
-				focus:outline-none focus:ring-4 focus:ring-primary-500 focus:ring-offset-2;
+				focus:outline-none focus:ring-4 focus:ring-primary-500 focus:ring-offset-2 !important;
 	}
 
 	p,
@@ -146,7 +147,7 @@ useHead({
 	}
 
 	figcaption {
-		@apply text-gray-200 dark:text-gray-500 \
+		@apply text-gray-200 dark:text-gray-400 \
 			text-center !important;
 	}
 
