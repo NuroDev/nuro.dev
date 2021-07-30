@@ -1,0 +1,34 @@
+<template>
+	<div class="content">
+		<Clickable>
+			<button @click="open()" class="button" aria-label="Command Modal" alt="Command Modal">
+				<i-feather-command />
+			</button>
+		</Clickable>
+	</div>
+</template>
+
+<script lang="ts" setup>
+import { useCommanderStore } from '~/store';
+
+const { open } = useCommanderStore();
+</script>
+
+<style lang="postcss" scoped>
+.content {
+	@apply fixed top-0 left-0 \
+		m-8;
+
+	.button {
+		@apply flex justify-center items-center w-12 h-12 p-2 rounded-lg \
+			text-gray-300 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-300 \
+			bg-gray-50 hover:bg-gray-100 hover:bg-opacity-50 dark:bg-gray-900 dark:hover:bg-gray-800 \
+			transition ease-in-out duration-300 \
+			focus:outline-none focus:ring-4 focus:ring-primary-200;
+
+		svg {
+			@apply w-6 h-6;
+		}
+	}
+}
+</style>

@@ -20,6 +20,7 @@ import MarkdownItEmoji from 'markdown-it-emoji';
 import MarkdownItPrism from 'markdown-it-prism';
 
 import WindiPluginAspectRatio from 'windicss/plugin/aspect-ratio';
+import WindiPluginForms from 'windicss/plugin/forms';
 import WindiPluginLineClamp from 'windicss/plugin/line-clamp';
 import WindiPluginTypography from 'windicss/plugin/typography';
 
@@ -149,7 +150,12 @@ export default defineConfig({
 		WindiCSS({
 			config: {
 				darkMode: 'class',
-				plugins: [WindiPluginAspectRatio, WindiPluginLineClamp, WindiPluginTypography],
+				plugins: [
+					WindiPluginAspectRatio,
+					WindiPluginForms,
+					WindiPluginLineClamp,
+					WindiPluginTypography,
+				],
 				theme: {
 					extend: {
 						colors,
