@@ -5,9 +5,10 @@
 
 <script lang="ts" setup>
 import splitbee from '@splitbee/web';
+import { onKeyDown } from '@vueuse/core';
 
-// Need to load/apply theme local storage
-import { isDark as _isDark } from '~/hooks';
+import { toggleTheme } from '~/hooks';
+onKeyDown('t', () => toggleTheme());
 
 if (import.meta.env.PROD)
 	splitbee.init({
