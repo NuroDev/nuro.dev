@@ -2,7 +2,7 @@
 	<div class="fixed top-0 left-0 m-8">
 		<Clickable>
 			<button
-				@click="openModal"
+				@click="commander.open()"
 				class="commandModalButton"
 				aria-label="Theme Toggle"
 				alt="Command Modal"
@@ -13,13 +13,13 @@
 	</div>
 
 	<div
-		v-if="isOpen"
+		v-if="commander.isOpen"
 		class="fixed inset-0 bg-black bg-opacity-25 transition ease-in-out duration-300"
 		aria-hidden="true"
 	/>
 
-	<TransitionRoot appear :show="isOpen" as="template">
-		<Dialog as="div" static :open="isOpen" @close="closeModal">
+	<TransitionRoot appear :show="commander.isOpen" as="template">
+		<Dialog as="div" static :open="commander.isOpen" @close="commander.close()">
 			<div class="fixed inset-0 z-10 overflow-y-auto">
 				<div class="min-h-screen px-4 text-center">
 					<TransitionChild
@@ -48,11 +48,32 @@
 						leave-to="opacity-0 scale-95"
 					>
 						<div
-							class="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white dark:bg-gray-800 shadow-xl rounded-2xl"
+							class="
+								inline-block
+								w-full
+								max-w-md
+								p-6
+								my-8
+								overflow-hidden
+								text-left
+								align-middle
+								transition-all
+								transform
+								bg-white
+								dark:bg-gray-800
+								shadow-xl
+								rounded-2xl
+							"
 						>
 							<DialogTitle
 								as="h3"
-								class="text-lg font-medium leading-6 text-gray-900 dark:text-gray-100"
+								class="
+									text-lg
+									font-medium
+									leading-6
+									text-gray-900
+									dark:text-gray-100
+								"
 							>
 								Payment successful
 							</DialogTitle>
@@ -66,8 +87,28 @@
 							<div class="mt-4">
 								<button
 									type="button"
-									class="w-full inline-flex justify-center px-4 py-2 text-sm font-medium text-gray-900 bg-gray-100 border border-transparent rounded-md hover:bg-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-500 transition ease-in-out duration-300"
-									@click="closeModal"
+									class="
+										w-full
+										inline-flex
+										justify-center
+										px-4
+										py-2
+										text-sm
+										font-medium
+										text-gray-900
+										bg-gray-100
+										border border-transparent
+										rounded-md
+										hover:bg-gray-200
+										focus:outline-none
+										focus-visible:ring-2
+										focus-visible:ring-offset-2
+										focus-visible:ring-gray-500
+										transition
+										ease-in-out
+										duration-300
+									"
+									@click="commander.close()"
 								>
 									<i-feather-check class="w-5 h-5 mr-4" />
 									<span>Got it, thanks!</span>
@@ -82,7 +123,6 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
 import {
 	TransitionRoot,
 	TransitionChild,
@@ -91,9 +131,9 @@ import {
 	DialogTitle,
 } from '@headlessui/vue';
 
-const isOpen = ref(false);
-const closeModal = () => (isOpen.value = false);
-const openModal = () => (isOpen.value = true);
+import { useCommanderStore } from '~/store';
+
+const commander = useCommanderStore();
 </script>
 
 <style lang="postcss" scoped>

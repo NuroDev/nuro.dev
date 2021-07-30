@@ -36,6 +36,7 @@
 		"inter-ui": "^3.19.2",
 		"nprogress": "^0.2.0",
 		"ogl-typescript": "^0.1.40",
+		"pinia": "^2.0.0-beta.5",
 		"vite-ssg": "^0.12.0",
 		"vue": "^3.1.5",
 		"web-vitals": "^2.1.0"
