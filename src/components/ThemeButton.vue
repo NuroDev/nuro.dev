@@ -16,7 +16,7 @@
 </template>
 
 <script lang="ts" setup>
-import { toggleTheme } from '~/hooks';
+import { isDark, toggleTheme } from '~/hooks';
 </script>
 
 <style lang="postcss" scoped>
