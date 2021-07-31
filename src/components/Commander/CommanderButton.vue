@@ -17,10 +17,12 @@ const { open } = useCommanderStore();
 <style lang="postcss" scoped>
 .content {
 	@apply fixed top-0 left-0 \
-		m-8;
+		m-8 z-10;
 
 	.button {
-		@apply flex justify-center items-center w-12 h-12 p-2 rounded-lg \
+		@apply flex justify-center items-center w-12 h-12 \
+			p-2 \
+			rounded-lg \
 			text-gray-300 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-300 \
 			bg-gray-50 hover:bg-gray-100 hover:bg-opacity-50 dark:bg-gray-900 dark:hover:bg-gray-800 \
 			transition ease-in-out duration-300 \
