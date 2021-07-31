@@ -64,7 +64,8 @@ useHead({
 
 <style lang="postcss" scoped>
 .content {
-	@apply relative px-4 py-16 sm:px-6 lg:px-8 \
+	@apply relative mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 \
+		bg-gray-50 dark:bg-gray-900 bg-opacity-50 dark:bg-opacity-50 backdrop-filter backdrop-blur-sm \
 		overflow-hidden;
 
 	.banner {

@@ -48,40 +48,41 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps } from "vue"
+import { defineProps } from 'vue';
 
-import type { IPost } from "~/types/blog"
+import type { IPost } from '~/types/blog';
 
 defineProps<{
-	post: IPost,
+	post: IPost;
 }>();
 </script>
 
 <style lang="postcss" scoped>
 .post {
 	@apply flex flex-col lg:flex-row \
-		mt-12 p-4 \
-		rounded-2xl \
-		border-2 border-gray-100 dark:border-gray-500 lg:border-none \
+		mt-12 \
+		bg-gray-50 dark:bg-gray-900 bg-opacity-25 dark:bg-opacity-25 backdrop-filter backdrop-blur-sm \
+		rounded-2xl hover:shadow-xl \
+		border-2 border-gray-100 dark:border-gray-500 \
 		transition ease-in-out duration-300 \
+		transform hover:-translate-y-1 \
 		focus:outline-none focus:ring-4 focus:ring-primary-500;
 
 	.banner {
 		@apply relative flex justify-center my-auto \
 			w-full xl:w-2/4 lg:max-w-xl h-[16rem] sm:h-sm lg:max-h-lg \
-			overflow-hidden rounded-2xl \
-			transition ease-in-out duration-300 \
-			hover:shadow-xl;
+			overflow-hidden rounded-2xl lg:rounded-tr-none lg:rounded-br-none \
+			transition ease-in-out duration-300;
 
 		.placeholder {
 			@apply w-full h-full lg:h-lg mb-8 \
 				bg-gray-200 dark:bg-gray-600 \
-				rounded-lg;
+				rounded-lg lg:rounded-tr-none lg:rounded-br-none;
 		}
 
 		img {
 			@apply absolute top-0 left-0 w-full h-full \
-				rounded-lg object-cover select-none;
+				rounded-lg lg:rounded-tr-none lg:rounded-br-none object-cover select-none;
 		}
 	}
 

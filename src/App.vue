@@ -1,13 +1,27 @@
 <template>
 	<router-view />
+	<client-only>
+		<Background v-show="enabled" />
+	</client-only>
 </template>
 
 <script lang="ts" setup>
-import { onKeyDown } from '@vueuse/core';
+import { onMounted, ref } from 'vue';
+import { onKeyDown, useStorage } from '@vueuse/core';
 
 import { toggleTheme } from '~/hooks';
 
 onKeyDown('t', () => toggleTheme());
+
+const enabled = ref(false);
+const isAnimated = useStorage('animated-background', true);
+onKeyDown('b', () => (enabled.value = !enabled.value));
+
+onMounted(() =>
+	setTimeout(() => {
+		if (isAnimated) enabled.value = true;
+	}, 1000),
+);
 </script>
 
 <style lang="postcss">

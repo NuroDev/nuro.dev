@@ -24,14 +24,14 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps } from "vue";
+import { defineProps } from 'vue';
 
-import type { IPost } from "~/types/blog";
+import type { IPost } from '~/types/blog';
 
 defineProps<{
-	index: number,
-	post: IPost,
-}>()
+	index: number;
+	post: IPost;
+}>();
 </script>
 
 <style lang="postcss" scoped>
@@ -64,7 +64,7 @@ defineProps<{
 			p-6 \
 			rounded-2xl lg:rounded-tr-none lg:rounded-tl-none \
 			border-2 lg:border-t-0 border-gray-100 dark:border-gray-500 \
-			bg-transparent;
+			bg-gray-50 dark:bg-gray-900 bg-opacity-75 dark:bg-opacity-75 backdrop-filter backdrop-blur-sm;
 
 		.text {
 			@apply flex flex-col flex-1 justify-around \
