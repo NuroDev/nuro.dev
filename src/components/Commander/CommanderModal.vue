@@ -8,11 +8,11 @@
 						enter="duration-300 ease-out"
 						enter-from="opacity-0"
 						enter-to="opacity-100"
-						leave="duration-200 ease-in"
+						leave="duration-300 ease-in"
 						leave-from="opacity-100"
 						leave-to="opacity-0"
 					>
-						<DialogOverlay class="fixed inset-0" />
+						<DialogOverlay class="overlay" />
 					</TransitionChild>
 
 					<TransitionChild
@@ -20,7 +20,7 @@
 						enter="duration-300 ease-out"
 						enter-from="opacity-0 scale-95"
 						enter-to="opacity-100 scale-100"
-						leave="duration-200 ease-in"
+						leave="duration-300 ease-in"
 						leave-from="opacity-100 scale-100"
 						leave-to="opacity-0 scale-95"
 					>
@@ -105,6 +105,11 @@ const commander = useCommanderStore();
 					}
 				}
 			}
+		}
+
+		.overlay {
+			@apply fixed inset-0 \
+				bg-black bg-opacity-50;
 		}
 	}
 }
