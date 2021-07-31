@@ -1,15 +1,22 @@
-import { format } from "date-fns";
-import { useRouter } from "vue-router";
+import { format } from 'date-fns';
+import { useRouter } from 'vue-router';
 
-import type { IFrontmatter, IPost } from "~/types";
+import type { IFrontmatter, IPost } from '~/types';
 
-export function usePosts(year?: string | number) {
+/**
+ * Fetch posts either from the beginning of time or from a select year if a year is provided.
+ * Posts are fetched from the SSG routes.
+ *
+ * @param {string} [year] - The year to fetch posts from
+ */
+export function usePosts(year?: string) {
 	const router = useRouter();
 
 	const routes = router.getRoutes();
 
 	const filteredRoutes = routes.filter(({ meta, path }) => {
-		if (!path.startsWith('/blog/') || '/blog/:year'.includes(path) || !meta.frontmatter) return false;
+		if (!path.startsWith('/blog/') || '/blog/:year'.includes(path) || !meta.frontmatter)
+			return false;
 
 		// If a year is provided, get the year from the route path
 		// and make sure it matches the year parameter provided
@@ -25,7 +32,7 @@ export function usePosts(year?: string | number) {
 			description_show = false,
 			...frontmatter
 		} = meta.frontmatter as IFrontmatter;
-		
+
 		const date = new Date(frontmatter.date);
 
 		return {
@@ -54,10 +61,10 @@ export function usePosts(year?: string | number) {
 
 	const latestPost = posts.shift();
 
-	if (!latestPost && sortedPosts.length === 0) return null
+	if (!latestPost && sortedPosts.length === 0) return null;
 
 	return {
 		latestPost,
 		posts: sortedPosts,
-	}
+	};
 }
