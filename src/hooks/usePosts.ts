@@ -7,9 +7,9 @@ import type { IFrontmatter, IPost } from '~/types';
  * Fetch posts either from the beginning of time or from a select year if a year is provided.
  * Posts are fetched from the SSG routes.
  *
- * @param {string} [year] - The year to fetch posts from
+ * @param {string | number} [year] - The year to fetch posts from
  */
-export function usePosts(year?: string) {
+export function usePosts(year?: string | number) {
 	const router = useRouter();
 
 	const routes = router.getRoutes();
