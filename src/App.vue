@@ -4,16 +4,11 @@
 </template>
 
 <script lang="ts" setup>
-import splitbee from '@splitbee/web';
 import { onKeyDown } from '@vueuse/core';
 
 import { toggleTheme } from '~/hooks';
-onKeyDown('t', () => toggleTheme());
 
-if (import.meta.env.PROD)
-	splitbee.init({
-		disableCookie: true,
-	});
+onKeyDown('t', () => toggleTheme());
 </script>
 
 <style lang="postcss">
