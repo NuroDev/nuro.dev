@@ -62,7 +62,8 @@ const commander = useCommanderStore();
 	@apply fixed inset-0 z-10 overflow-y-auto;
 
 	.container {
-		@apply min-h-screen px-4 \
+		@apply min-h-screen flex items-center justify-center \
+			px-4 \
 			text-center;
 
 		.modal {
