@@ -20,4 +20,4 @@ export interface FullTimeline {
 	[year: string]: Array<TimelineEvent>;
 }
 
-export type CustomTimeline = Array<TimelineEvent>;
+export type Timeline = Array<TimelineEvent>;

@@ -1,6 +1,7 @@
 <template>
 	<div class="content">
 		<h1>Hello World</h1>
+		<pre class="text-left" v-text="timeline" />
 	</div>
 
 	<client-only>
@@ -18,21 +19,15 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted } from 'vue';
 import { useTimeline } from '~/hooks';
 
-const { year } = defineProps<{
-	year: string;
-}>();
-
-onMounted(async () => {
-	const events = await useTimeline(year);
-	console.log(events);
-});
+const timeline = useTimeline();
+console.log(timeline);
 </script>
 
 <style lang="postcss" scoped>
 .content {
-	@apply h-screen flex flex-col justify-center items-center text-center;
+	@apply h-screen flex flex-col justify-center items-center \
+		text-center;
 }
 </style>

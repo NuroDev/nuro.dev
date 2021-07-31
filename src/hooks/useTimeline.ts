@@ -1,30 +1,25 @@
-import type { CustomTimeline, FullTimeline, TimelineEvent } from '~/types';
+import type { Timeline, FullTimeline, TimelineEvent } from '~/types';
 
-export async function useTimeline(
-	customYear?: string,
-): Promise<FullTimeline | CustomTimeline | null> {
-	if (customYear) {
-		try {
-			const { default: json } = await import(`../content/timeline/${customYear}.json`);
+/**
+ * Fetch all timeline events as a concatenated object of all `.json` files inside the `src/content/timeline/` directory.
+ */
+export function useTimeline(): FullTimeline {
+	const years = import.meta.globEager(`../content/timeline/*.json`);
 
-			return json as CustomTimeline;
-		} catch (error) {
-			return null;
-		}
-	}
-
-	const years = import.meta.glob('../content/timeline/*.json');
-
-	const entries = Object.keys(years).map(async (year) => {
+	const entries = Object.keys(years).map((year) => {
 		const splitPath = year.split('/');
 		const readableYear = splitPath[splitPath.length - 1].split('.')[0];
 
-		const { default: json } = await years[year]();
+		const { default: data } = years[year] as {
+			default: Array<TimelineEvent>;
+		};
+		const json: Timeline = data.map((event) => ({
+			...event,
+			date: new Date(event.date),
+		}));
 
 		return [readableYear, json];
 	});
-	const loadedEntries = await Promise.all(entries);
-	const data = Object.fromEntries(loadedEntries);
 
-	return data;
+	return Object.fromEntries(entries);
 }
