@@ -32,7 +32,7 @@
 									type="text"
 								/>
 								<div class="shortcut">
-									<kbd>⌘K</kbd>
+									<kbd>/</kbd>
 								</div>
 							</div>
 						</div>
