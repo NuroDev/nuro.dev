@@ -1,0 +1,22 @@
+[
+	{
+		"title": "Joining Aiming.pro",
+		"description": "Started my new job at Aiming.pro as a JavaScript game developer",
+		"date": "2020-11-16",
+		"icon": {
+			"name": "briefcase"
+		},
+		"action": {
+			"text": "Visit Aiming.pro",
+			"url": "https://aiming.pro"
+		}
+	},
+	{
+		"title": "Graduated University",
+		"description": "Successfully graduated University & received my bachalors degree in computer games programming",
+		"date": "2020-07-15",
+		"icon": {
+			"name": "award"
+		}
+	}
+]

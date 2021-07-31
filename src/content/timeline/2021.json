@@ -1,0 +1,14 @@
+[
+	{
+		"title": "Joining Attio",
+		"description": "Started my new job at Attio as a junior software engineer",
+		"date": "2021-03-14",
+		"icon": {
+			"name": "briefcase"
+		},
+		"action": {
+			"text": "Visit Attio",
+			"url": "https://attio.com"
+		}
+	}
+]

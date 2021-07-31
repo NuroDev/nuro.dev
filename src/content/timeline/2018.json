@@ -1,0 +1,14 @@
+[
+	{
+		"title": "Joining Stink Studios",
+		"description": "Started my internship at Stink Studios as a junior developer",
+		"date": "2018-09",
+		"icon": {
+			"name": "briefcase"
+		},
+		"action": {
+			"text": "Visit Stink Studios",
+			"url": "https://stinkstudios.com/"
+		}
+	}
+]

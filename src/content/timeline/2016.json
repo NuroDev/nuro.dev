@@ -1,0 +1,22 @@
+[
+	{
+		"title": "Starting University",
+		"description": "Beginning my studies for my bachalors degree in computer games programming",
+		"date": "2016-09",
+		"icon": {
+			"name": "book"
+		}
+	},
+	{
+		"title": "Joining CreeperHost",
+		"description": "Started my first job at CreeperHost as a service desk analyst",
+		"date": "2016-10",
+		"icon": {
+			"name": "briefcase"
+		},
+		"action": {
+			"text": "Visit Stink Studios",
+			"url": "https://stinkstudios.com/"
+		}
+	}
+]
