@@ -29,7 +29,6 @@
 								<input
 									name="commander"
 									placeholder="Type a command or search"
-									ref="commanderInput"
 									type="text"
 								/>
 								<div class="shortcut">
