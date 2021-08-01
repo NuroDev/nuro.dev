@@ -11,27 +11,26 @@ import VertexShader from '../assets/shaders/background.vs?raw';
 import FragmentShader from '../assets/shaders/background.fs?raw';
 
 import type { Ref } from 'vue';
+import { colors } from '~/utils';
 
 const background = ref<HTMLDivElement | null>(null);
 const camera: Ref<Camera | null> = ref(null);
 const renderer: Ref<Renderer | null> = ref(null);
 const { count: animationId, inc: incrementAnimationId } = useCounter();
 
-function handleResize (): void {
-	if (!renderer.value)
-		throw new Error(`Failed to resize renderer. Renderer instance is null`);
+function handleResize(): void {
+	if (!renderer.value) throw new Error(`Failed to resize renderer. Renderer instance is null`);
 
 	const gl = renderer.value.gl;
 
 	renderer.value.setSize(window.innerWidth, window.innerHeight);
 
-	if (!camera.value)
-		throw new Error(`Failed to resize renderer. Camera instance is null`);
+	if (!camera.value) throw new Error(`Failed to resize renderer. Camera instance is null`);
 
 	camera.value.perspective({
-		aspect: gl.canvas.width / gl.canvas.height
+		aspect: gl.canvas.width / gl.canvas.height,
 	});
-};
+}
 
 onMounted(() => {
 	if (!renderer.value)
@@ -46,7 +45,7 @@ onMounted(() => {
 	if (!camera.value)
 		camera.value = new Camera(gl, {
 			fov: 15,
-		})
+		});
 	camera.value.position.z = 15;
 
 	try {
@@ -85,8 +84,8 @@ onMounted(() => {
 				value: 0,
 			},
 			uColor: {
-				value: new Color("#0072ff")
-			}
+				value: new Color(colors.primary[500]),
+			},
 		},
 		transparent: true,
 		depthTest: false,
@@ -98,11 +97,11 @@ onMounted(() => {
 		program,
 	});
 
-	function update (t: number): void {
+	function update(t: number): void {
 		if (!renderer.value) throw new Error(`Update loop failed. Renderer instance is null`);
 		if (!camera.value) throw new Error(`Update loop failed. Camera instance is null`);
 
-		incrementAnimationId(requestAnimationFrame(update))
+		incrementAnimationId(requestAnimationFrame(update));
 
 		particles.rotation.z += 0.0025;
 		program.uniforms.uTime.value = t * 0.00025;
@@ -111,9 +110,9 @@ onMounted(() => {
 			scene: particles,
 			camera: camera.value,
 		});
-	};
+	}
 
-	incrementAnimationId(requestAnimationFrame(update))
+	incrementAnimationId(requestAnimationFrame(update));
 });
 
 onBeforeUnmount(() => {
