@@ -26,10 +26,10 @@
 
 	<client-only>
 		<transition
-			enter-active-class="transition duration-2000 delay-1000 ease-in-out"
+			enter-active-class="transition duration-2000 ease-in-out"
 			enter-from-class="transform opacity-0"
 			enter-to-class="transform opacity-100"
-			leave-active-class="transition duration-2000 delay-1000 ease-in-out"
+			leave-active-class="transition duration-1000 ease-in-out"
 			leave-from-class="transform opacity-100"
 			leave-to-class="transform opacity-0"
 		>
@@ -49,7 +49,9 @@ onKeyDown('b', () => (background.value = !background.value));
 
 onMounted(() => {
 	title.value = true;
-	if (isAnimated) background.value = true;
+	setTimeout(() => {
+		if (isAnimated) background.value = true;
+	}, 1000);
 });
 </script>
 
