@@ -1,10 +1,10 @@
 <template>
 	<div class="content">
 		<transition
-			enter-active-class="transition duration-1000 ease-in-out"
+			enter-active-class="transition duration-1000 delay-500 ease-in-out"
 			enter-from-class="transform opacity-0"
 			enter-to-class="transform opacity-100"
-			leave-active-class="transition duration-1000 ease-in-out"
+			leave-active-class="transition duration-1000 delay-500 ease-in-out"
 			leave-from-class="transform opacity-100"
 			leave-to-class="transform opacity-0"
 		>
@@ -47,12 +47,10 @@ const background = ref(false);
 const isAnimated = useStorage('animated-background', true);
 onKeyDown('b', () => (background.value = !background.value));
 
-onMounted(() =>
-	setTimeout(() => {
-		title.value = true;
-		if (isAnimated) background.value = true;
-	}, 500),
-);
+onMounted(() => {
+	title.value = true;
+	if (isAnimated) background.value = true;
+});
 </script>
 
 <style lang="postcss" scoped>
