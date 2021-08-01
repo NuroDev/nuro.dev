@@ -83,7 +83,7 @@ defineProps<{
 
 	.content {
 		@apply flex flex-col flex-1 justify-evenly \
-			m-auto sm:m-0 pb-3 sm:p-1 sm:pt-0 lg:pl-12 \
+			m-auto sm:m-0 pb-3 sm:p-1 sm:pt-0 lg:px-12 \
 			text-gray-300 dark:text-gray-400;
 
 		.title {
