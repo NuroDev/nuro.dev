@@ -56,6 +56,7 @@ defineProps<{
 .post {
 	@apply flex flex-col lg:flex-row \
 		mt-12 \
+		bg-gray-50 dark:bg-gray-900 bg-opacity-5 dark:bg-opacity-5 backdrop-filter backdrop-blur backdrop-saturate-200 \
 		rounded-2xl hover:shadow-xl \
 		border-2 border-gray-100 dark:border-gray-500 \
 		transform hover:-translate-y-1 \
