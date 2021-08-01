@@ -61,7 +61,7 @@ defineProps<{
 	.content {
 		@apply flex-1 flex flex-col justify-between \
 			p-6 \
-			bg-gray-50 dark:bg-gray-900 bg-opacity-5 dark:bg-opacity-5 backdrop-filter backdrop-blur backdrop-saturate-200 \
+			bg-transparent \
 			rounded-2xl lg:rounded-tr-none lg:rounded-tl-none \
 			border-2 lg:border-t-0 border-gray-100 dark:border-gray-500 \
 			bg-transparent;
