@@ -76,14 +76,7 @@ onMounted(() => {
 				bg-primary-500 bg-opacity-15 \
 				backdrop-filter backdrop-blur-sm saturate-200 \
 				text-primary-200 \
-				rounded-2xl cursor-pointer;
-		}
-
-		* {
-			&::selection {
-				@apply bg-white \
-					text-primary-500;
-			}
+				rounded-2xl;
 		}
 	}
 
@@ -91,6 +84,13 @@ onMounted(() => {
 		@apply max-w-md \
 			mt-4 md:mt-8 mx-auto \
 			text-base text-gray-300 dark:text-gray-400 sm:text-lg md:text-xl md:max-w-3xl;
+	}
+
+	* {
+		&::selection {
+			@apply bg-white \
+					text-primary-500;
+		}
 	}
 }
 
