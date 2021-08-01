@@ -36,24 +36,19 @@
 				v-text="post.description.raw || post.description"
 			/>
 			<div class="footer">
-				<i-feather-calendar />
-				<div v-if="post.date" class="text-sm pl-4">
-					<div class="meta">
-						<span v-text="post.date.readable" />
-					</div>
-				</div>
+				<PostDatePill :date="post.date.raw" />
 			</div>
 		</div>
 	</router-link>
 </template>
 
 <script lang="ts" setup>
-import { defineProps } from "vue"
+import { defineProps } from 'vue';
 
-import type { IPost } from "~/types/blog"
+import type { IPost } from '~/types/blog';
 
 defineProps<{
-	post: IPost,
+	post: IPost;
 }>();
 </script>
 

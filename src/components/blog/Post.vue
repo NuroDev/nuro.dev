@@ -26,14 +26,18 @@
 		</div>
 
 		<div class="body">
-			<h1>
+			<div class="title">
 				<span
 					v-if="frontmatter.title_prefix"
 					class="prefix"
 					v-text="frontmatter.title_prefix"
 				/>
-				<span v-if="frontmatter.title" class="title" v-text="frontmatter.title" />
-			</h1>
+				<h1 v-if="frontmatter.title" v-text="frontmatter.title" />
+			</div>
+
+			<span v-if="frontmatter.date" class="date">
+				<PostDatePill :date="frontmatter.date" />
+			</span>
 
 			<p
 				v-if="frontmatter.description_show ?? false"
@@ -48,8 +52,8 @@
 </template>
 
 <script setup lang="ts">
-import { useHead } from '@vueuse/head';
 import { defineProps } from 'vue';
+import { useHead } from '@vueuse/head';
 
 import type { IFrontmatter } from '~/types/blog';
 
@@ -91,9 +95,16 @@ useHead({
 	}
 
 	.title {
-		@apply block mt-2 \
+		h1 {
+			@apply block mb-0 \
 			text-3xl sm:text-4xl text-center leading-8 font-extrabold tracking-tight \
 			text-gray-900 dark:text-white;
+		}
+	}
+
+	.date {
+		@apply flex justify-center items-center \
+			mt-4;
 	}
 
 	.description {

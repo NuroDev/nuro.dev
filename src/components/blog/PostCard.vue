@@ -15,8 +15,7 @@
 				/>
 
 				<div v-if="post.date" class="meta">
-					<i-feather-calendar class="mt-0.5 mr-2" />
-					<span v-text="post.date.readable" />
+					<PostDatePill :date="post.date.raw" />
 				</div>
 			</div>
 		</div>
@@ -24,14 +23,14 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps } from "vue";
+import { defineProps } from 'vue';
 
-import type { IPost } from "~/types/blog";
+import type { IPost } from '~/types/blog';
 
 defineProps<{
-	index: number,
-	post: IPost,
-}>()
+	index: number;
+	post: IPost;
+}>();
 </script>
 
 <style lang="postcss" scoped>
