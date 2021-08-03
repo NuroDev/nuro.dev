@@ -13,7 +13,15 @@
 					<span class="text">
 						Hey <span class="wave">👋</span> I'm Ben,
 						<br />
-						a <span class="pill"> developer </span>
+						a
+						<a
+							class="pill"
+							href="https://twitter.com/nurodev"
+							target="_blank"
+							rel="noreferrer noopener"
+						>
+							developer
+						</a>
 					</span>
 				</h1>
 				<p class="description">
@@ -78,9 +86,10 @@ const age = differenceInYears(new Date(), new Date('1997-08-09'));
 		.pill {
 			@apply inline-flex \
 				mt-8 lg:ml-2 lg:px-5 py-2 -pb-4 \
-				bg-primary-500 bg-opacity-15 \
+				bg-primary-500 bg-opacity-15 hover:bg-primary-800 hover:bg-opacity-15 \
 				backdrop-filter backdrop-blur-sm saturate-200 \
-				text-primary-200 \
+				transition ease-in-out duration-300 \
+				text-primary-200 hover:text-primary-400 \
 				rounded-2xl;
 		}
 	}
