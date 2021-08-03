@@ -17,8 +17,10 @@
 					</span>
 				</h1>
 				<p class="description">
-					Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat
-					commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.
+					I am a {{ age }} year old full-stack developer, games developer & enthusiast.
+					<br />
+					Working @ <BusinessPill url="https://attio.com">Attio</BusinessPill> to help
+					build the next-generation CRM.
 				</p>
 			</div>
 		</transition>
@@ -39,6 +41,7 @@
 </template>
 
 <script lang="ts" setup>
+import { differenceInYears } from 'date-fns';
 import { onMounted, ref } from 'vue';
 import { onKeyDown, useStorage } from '@vueuse/core';
 
@@ -53,6 +56,8 @@ onMounted(() => {
 		if (isAnimated) background.value = true;
 	}, 1000);
 });
+
+const age = differenceInYears(new Date(), new Date('1997-08-09'));
 </script>
 
 <style lang="postcss" scoped>
@@ -83,7 +88,7 @@ onMounted(() => {
 	.description {
 		@apply max-w-md \
 			mt-4 md:mt-8 mx-auto \
-			text-base text-gray-300 dark:text-gray-400 sm:text-lg md:text-xl md:max-w-3xl;
+			text-base text-gray-300 sm:text-lg md:text-xl md:max-w-3xl;
 	}
 
 	* {
