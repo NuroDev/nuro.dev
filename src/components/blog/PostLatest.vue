@@ -66,18 +66,18 @@ defineProps<{
 	.banner {
 		@apply relative flex justify-center my-auto \
 			w-full xl:w-2/4 lg:max-w-xl h-[16rem] sm:h-sm lg:max-h-lg \
-			overflow-hidden rounded-2xl rounded-tr-none rounded-br-none \
+			overflow-hidden rounded-2xl rounded-bl-none lg:rounded-bl-2xl rounded-br-none lg:rounded-br-2xl lg:rounded-tr-none lg:rounded-br-none \
 			transition ease-in-out duration-300;
 
 		.placeholder {
 			@apply w-full h-full lg:h-lg mb-8 \
 				bg-gray-200 dark:bg-gray-600 \
-				rounded-lg rounded-tr-none rounded-br-none;
+				rounded-lg rounded-bl-none lg:rounded-bl-lg rounded-br-none lg:rounded-br-lg lg:rounded-tr-none lg:rounded-br-none;
 		}
 
 		img {
 			@apply absolute top-0 left-0 w-full h-full \
-				rounded-lg rounded-tr-none rounded-br-none \
+				rounded-lg rounded-bl-none lg:rounded-bl-lg rounded-br-none lg:rounded-br-lg lg:rounded-tr-none lg:rounded-br-none \
 				object-cover select-none;
 		}
 	}
@@ -88,19 +88,19 @@ defineProps<{
 			text-gray-300 dark:text-gray-400;
 
 		.title {
-			@apply mt-6 lg:mt-0 \
+			@apply mt-6 lg:mt-0 mx-4 lg:mx-0 \
 				text-3xl sm:text-4xl lg:text-5xl font-bold line-clamp-4 \
 				text-gray-500 dark:text-white;
 		}
 
 		.description {
-			@apply mt-6 lg:mt-0 \
+			@apply mt-6 lg:mt-0 mx-4 lg:mx-0 \
 				text-lg;
 		}
 
 		.footer {
 			@apply flex items-center \
-				mt-6 lg:mt-0;
+				mt-6 lg:mt-0 mx-4 lg:mx-0 pb-4 lg:pb-0;
 
 			.meta {
 				@apply flex items-center;
