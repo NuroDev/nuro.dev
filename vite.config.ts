@@ -8,7 +8,6 @@ import Components from 'vite-plugin-components';
 import Icons, { ViteIconsResolver } from 'vite-plugin-icons';
 import Markdown from 'vite-plugin-md';
 import Pages from 'vite-plugin-pages';
-import Restart from 'vite-plugin-restart';
 import Vue from '@vitejs/plugin-vue';
 import WindiCSS from 'vite-plugin-windicss';
 
@@ -139,9 +138,6 @@ export default defineConfig({
 					{ src: '/firefox/marketplace-512.png', sizes: '512x512' },
 				],
 			},
-		}),
-		Restart({
-			restart: ['src/content/**/*.md'],
 		}),
 		Vue({
 			include: [/\.vue$/, /\.md$/],
