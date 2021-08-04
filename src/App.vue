@@ -14,16 +14,6 @@ onKeyDown('t', () => toggleTheme());
 
 useHead({
 	meta: [
-		// {
-		// 	name: 'theme-color',
-		// 	media: '(prefers-color-scheme: light)',
-		// 	content: colors.gray[50],
-		// },
-		// {
-		// 	name: 'theme-color',
-		// 	media: '(prefers-color-scheme: dark)',
-		// 	content: colors.gray[900],
-		// },
 		{
 			name: 'theme-color',
 			content: computed(() => (isDark.value ? colors.gray[900] : colors.gray[50])),
