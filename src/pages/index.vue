@@ -99,13 +99,6 @@ const age = differenceInYears(new Date(), new Date('1997-08-09'));
 			mt-4 md:mt-8 mx-auto \
 			text-base text-gray-300 sm:text-lg md:text-xl md:max-w-3xl;
 	}
-
-	* {
-		&::selection {
-			@apply bg-white \
-					text-primary-500;
-		}
-	}
 }
 
 /* Credit to: https://jarv.is/notes/css-waving-hand-emoji/ */

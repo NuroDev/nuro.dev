@@ -48,6 +48,11 @@ html.dark {
 	}
 }
 
+*::selection {
+	@apply bg-white \
+		text-primary-500;
+}
+
 @supports (font-variation-settings: normal) {
 	html {
 		font-family: 'Inter var', 'system-ui';
