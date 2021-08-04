@@ -3,11 +3,33 @@
 </template>
 
 <script lang="ts" setup>
+import { computed } from 'vue-demi';
 import { onKeyDown } from '@vueuse/core';
+import { useHead } from '@vueuse/head';
 
-import { toggleTheme } from '~/hooks';
+import { colors } from '~/utils';
+import { isDark, toggleTheme } from '~/hooks';
 
 onKeyDown('t', () => toggleTheme());
+
+useHead({
+	meta: [
+		// {
+		// 	name: 'theme-color',
+		// 	media: '(prefers-color-scheme: light)',
+		// 	content: colors.gray[50],
+		// },
+		// {
+		// 	name: 'theme-color',
+		// 	media: '(prefers-color-scheme: dark)',
+		// 	content: colors.gray[900],
+		// },
+		{
+			name: 'theme-color',
+			content: computed(() => (isDark.value ? colors.gray[900] : colors.gray[50])),
+		},
+	],
+});
 </script>
 
 <style lang="postcss">
