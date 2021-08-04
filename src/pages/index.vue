@@ -85,7 +85,7 @@ const age = differenceInYears(new Date(), new Date('1997-08-09'));
 
 		.pill {
 			@apply inline-flex \
-				mt-8 lg:ml-2 lg:px-5 py-2 -pb-4 \
+				mt-8 lg:ml-2 px-3 lg:px-5 py-2 md:-pb-4 \
 				bg-primary-500 bg-opacity-15 hover:bg-primary-800 hover:bg-opacity-15 \
 				backdrop-filter backdrop-blur-sm saturate-200 \
 				transition ease-in-out duration-300 \
@@ -95,7 +95,7 @@ const age = differenceInYears(new Date(), new Date('1997-08-09'));
 	}
 
 	.description {
-		@apply max-w-md \
+		@apply max-w-xs \
 			mt-4 md:mt-8 mx-auto \
 			text-base text-gray-300 sm:text-lg md:text-xl md:max-w-3xl;
 	}
