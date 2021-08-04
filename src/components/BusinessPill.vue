@@ -19,7 +19,7 @@ defineProps<{
 	@apply inline-flex justify-center items-center \
 		mt-0 my-2 px-3 \
 		hover:bg-gray-500 hover:bg-opacity-15 \
-		backdrop-filter backdrop-blur-sm saturate-200 \
+		hover:backdrop-filter hover:backdrop-blur-sm hover:saturate-200 \
 		hover:text-white \
 		rounded-lg cursor-pointer \
 		transition ease-in-out duration-300;
