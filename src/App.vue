@@ -45,12 +45,17 @@ html.dark {
 
 	* {
 		--tw-ring-offset-color: #0c0e10;
+
+		&::selection {
+			@apply bg-white \
+				text-primary-500;
+		}
 	}
 }
 
 *::selection {
-	@apply bg-white \
-		text-primary-500;
+	@apply bg-gray-900 \
+			text-white;
 }
 
 @supports (font-variation-settings: normal) {

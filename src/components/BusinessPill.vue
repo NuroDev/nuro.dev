@@ -23,12 +23,5 @@ defineProps<{
 		hover:text-white \
 		rounded-lg cursor-pointer \
 		transition ease-in-out duration-300;
-
-	.content {
-		&::selection {
-			@apply bg-white \
-					text-primary-500;
-		}
-	}
 }
 </style>
