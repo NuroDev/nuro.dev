@@ -37,7 +37,7 @@
 		"nprogress": "^0.2.0",
 		"ogl-typescript": "^0.1.40",
 		"vite-ssg": "^0.12.0",
-		"vue": "^3.1.5",
+		"vue": "^3.2.1",
 		"web-vitals": "^2.1.0"
 	},
 	"devDependencies": {
@@ -49,7 +49,7 @@
 		"@types/nprogress": "^0.2.0",
 		"@vercel/node": "^1.11.1",
 		"@vitejs/plugin-vue": "^1.3.0",
-		"@vue/compiler-sfc": "^3.1.5",
+		"@vue/compiler-sfc": "^3.2.1",
 		"@vue/server-renderer": "^3.1.5",
 		"concurrently": "^6.2.0",
 		"cross-env": "^7.0.3",
