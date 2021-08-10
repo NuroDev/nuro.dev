@@ -15,7 +15,7 @@
 <script lang="ts" setup>
 import { useHead } from '@vueuse/head';
 
-import { usePosts } from '~/hooks';
+import { usePosts } from '~/composables';
 
 useHead({
 	title: 'nuro ─ blog',

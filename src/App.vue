@@ -8,7 +8,7 @@ import { onKeyDown } from '@vueuse/core';
 import { useHead } from '@vueuse/head';
 
 import { colors } from '~/utils';
-import { isDark, toggleTheme } from '~/hooks';
+import { isDark, toggleTheme } from '~/composables';
 
 onKeyDown('t', () => toggleTheme());
 

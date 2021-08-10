@@ -16,7 +16,7 @@
 import { useHead } from '@vueuse/head';
 import { defineProps } from 'vue';
 
-import { usePosts } from '~/hooks';
+import { usePosts } from '~/composables';
 
 const { year = new Date().getFullYear() } = defineProps<{
 	year: string;
