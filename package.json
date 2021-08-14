@@ -18,7 +18,7 @@
 		"useTabs": true
 	},
 	"scripts": {
-		"dev": "concurrently -n client,server \"yarn dev:client\" \"yarn dev:server\"",
+		"dev": "cross-env DEBUG=vite-ssg:* vite",
 		"dev:client": "cross-env DEBUG=vite-ssg:* vite",
 		"dev:server": "vercel dev --listen 3030",
 		"build": "vue-tsc --noEmit && cross-env NODE_ENV=production vite-ssg build",
