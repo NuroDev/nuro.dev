@@ -22,8 +22,20 @@ const { year = new Date().getFullYear() } = defineProps<{
 	year: string;
 }>();
 
+const title = `nuro ─ blog ─ ${year}`;
 useHead({
-	title: `nuro ─ blog ─ ${year}`,
+	title,
+	meta: [
+		{ itemprop: 'description', content: "Hey 👋 I'm Ben, a developer" },
+		{ itemprop: 'image', content: '/og_banner.png' },
+		{ itemprop: 'name', content: title },
+		{ name: 'og:description', content: "Hey 👋 I'm Ben, a developer" },
+		{ name: 'og:image', content: '/og_banner.png' },
+		{ name: 'og:title', content: title },
+		{ name: 'twitter:description', content: "Hey 👋 I'm Ben, a developer" },
+		{ name: 'twitter:image:src', content: '/og_banner.png' },
+		{ name: 'twitter:title', content: title },
+	],
 });
 
 const posts = usePosts(year);

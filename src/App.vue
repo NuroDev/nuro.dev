@@ -18,6 +18,13 @@ useHead({
 			name: 'theme-color',
 			content: computed(() => (isDark.value ? colors.gray[900] : colors.gray[50])),
 		},
+		{ name: 'og:image:type', content: 'image/png' },
+		{ name: 'og:image:height', content: '630' },
+		{ name: 'og:image:width', content: '1200' },
+		{ name: 'og:site_name', content: 'nuro.dev' },
+		{ name: 'og:type', content: 'website' },
+		{ name: 'twitter:card', content: 'summary' },
+		{ name: 'twitter:creator', content: '@nurodev' },
 	],
 });
 </script>

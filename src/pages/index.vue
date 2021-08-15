@@ -52,6 +52,21 @@
 import { differenceInYears } from 'date-fns';
 import { onMounted, ref } from 'vue';
 import { onKeyDown, useStorage } from '@vueuse/core';
+import { useHead } from '@vueuse/head';
+
+useHead({
+	meta: [
+		{ itemprop: 'description', content: "Hey 👋 I'm Ben, a developer" },
+		{ itemprop: 'image', content: '/og_banner.png' },
+		{ itemprop: 'name', content: 'nuro ─ developer' },
+		{ name: 'og:description', content: "Hey 👋 I'm Ben, a developer" },
+		{ name: 'og:image', content: '/og_banner.png' },
+		{ name: 'og:title', content: 'nuro ─ developer' },
+		{ name: 'twitter:description', content: "Hey 👋 I'm Ben, a developer" },
+		{ name: 'twitter:image:src', content: '/og_banner.png' },
+		{ name: 'twitter:title', content: 'nuro ─ developer' },
+	],
+});
 
 const title = ref(false);
 const background = ref(false);

@@ -63,6 +63,18 @@ const { frontmatter } = defineProps<{
 
 useHead({
 	title: `nuro ─ ${frontmatter.title || 'blog'}`,
+	meta: [
+		{ itemprop: 'description', content: frontmatter.description },
+		{ itemprop: 'image', content: frontmatter.banner },
+		{ itemprop: 'name', content: frontmatter.title },
+		{ name: 'og:description', content: frontmatter.description },
+		{ name: 'og:image:alt', content: frontmatter.banner_alt },
+		{ name: 'og:image', content: frontmatter.banner },
+		{ name: 'og:title', content: frontmatter.title },
+		{ name: 'twitter:description', content: frontmatter.description },
+		{ name: 'twitter:image:src', content: frontmatter.banner },
+		{ name: 'twitter:title', content: frontmatter.title },
+	],
 });
 </script>
 

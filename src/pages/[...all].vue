@@ -7,9 +7,7 @@
 				</div>
 				<div class="py-4">
 					<div class="text-center">
-						<h1 class="title">
-							Whoops!
-						</h1>
+						<h1 class="title">Whoops!</h1>
 						<p class="subtitle">
 							Looks like you took a wrong turn.<br />
 							The page you're looking for couldn't be found.
@@ -43,6 +41,17 @@ const { back } = useRouter();
 
 useHead({
 	title: `nuro ─ whoops!`,
+	meta: [
+		{ itemprop: 'description', content: "🥴 Whoops! Looks like that page can't be found" },
+		{ itemprop: 'image', content: '/og_banner.png' },
+		{ itemprop: 'name', content: 'nuro ─ whoops!' },
+		{ name: 'og:description', content: "🥴 Whoops! Looks like that page can't be found" },
+		{ name: 'og:image', content: '/og_banner.png' },
+		{ name: 'og:title', content: 'nuro ─ whoops!' },
+		{ name: 'twitter:description', content: "🥴 Whoops! Looks like that page can't be found" },
+		{ name: 'twitter:image:src', content: '/og_banner.png' },
+		{ name: 'twitter:title', content: 'nuro ─ whoops!' },
+	],
 });
 </script>
 
