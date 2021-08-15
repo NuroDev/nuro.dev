@@ -25,7 +25,7 @@
 					</span>
 				</h1>
 				<p class="description">
-					I am a {{ age }} year old full-stack developer & games developer.
+					I am a {{ age }} year old full-stack engineer & games developer/enthusiast.
 					<br />
 					Working @ <BusinessPill url="https://attio.com">Attio</BusinessPill> to help
 					build the next-generation CRM.
