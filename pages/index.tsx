@@ -3,7 +3,7 @@ import tw from 'twin.macro';
 import { Icon } from '@iconify/react';
 import { NextSeo } from 'next-seo';
 
-import { useSeoProps } from '../lib/seo';
+import { useSeoProps } from '~/lib/seo';
 
 const Container = styled.div(
 	tw`min-h-screen h-screen flex flex-col justify-center items-center py-0 px-2`,
