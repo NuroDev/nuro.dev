@@ -4,17 +4,6 @@
 	"cleanUrls": true,
 	"public": true,
 	"regions": ["lhr1"],
-	"headers": [
-		{
-			"source": "/(.*)",
-			"headers": [
-				{
-					"key": "Permissions-Policy",
-					"value": "interest-cohort=()"
-				}
-			]
-		}
-	],
 	"redirects": [
 		{
 			"source": "/github",
@@ -27,12 +16,6 @@
 		{
 			"source": "/twitter",
 			"destination": "https://twitter.com/nurodev"
-		}
-	],
-	"rewrites": [
-		{
-			"source": "/(.*)",
-			"destination": "/index.html"
 		}
 	]
 }
