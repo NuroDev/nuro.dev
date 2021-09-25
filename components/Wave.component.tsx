@@ -35,3 +35,5 @@ export const Wave = styled.span`
 		}
 	}
 `;
+
+export default Wave;
