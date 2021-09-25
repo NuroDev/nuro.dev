@@ -1,93 +1,37 @@
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
-import { Icon } from '@iconify/react';
-import { NextSeo } from 'next-seo';
+import { differenceInYears } from 'date-fns';
 
-import { useSeoProps } from '../lib';
+import { Layout } from '../layouts';
+import { Wave } from '../components';
 
-const Container = styled.div(
-	tw`min-h-screen h-screen flex flex-col justify-center items-center py-0 px-2`,
-);
-
-const Content = styled.main(tw`flex flex-1 flex-col justify-center items-center py-20 px-0`);
-
-const StyledIcon = styled(Icon)`
-	${tw`m-4 text-7xl`}
-`;
+const Content = styled.div(tw`h-screen flex flex-col justify-center items-center \
+	text-center`);
 
 const Title = styled.h1`
-	${tw`m-0 text-6xl font-bold leading-tight text-center hover:no-underline active:no-underline focus:no-underline`}
-
-	a {
-		${tw`text-primary-600 no-underline`}
-	}
+	${tw`text-gray-500 dark:text-white \
+		text-5xl sm:text-6xl md:text-6xl lg:text-8xl \
+		tracking-tight font-extrabold`}
 `;
 
-const Description = styled.p(tw`text-2xl leading-normal text-center`);
-
-const Code = styled.code`
-	${tw`bg-gray-100 dark:bg-gray-700 p-1 rounded-md text-lg`}
-	font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-`;
-
-const Grid = styled.div`
-	${tw`max-w-[800px] flex flex-wrap justify-center items-center mt-12`}
-
-	@media (max-width: 600px) {
-		${tw`w-full flex-col`}
-	}
-`;
-
-const Card = styled.a`
-	${tw`w-[45%] m-4 p-6 text-left hover:text-primary-600 hover:border-primary-600 no-underline border border-gray-200 rounded-lg transition ease-in-out duration-300`}
-
-	h2 {
-		${tw`m-0 mb-4 font-bold text-2xl`}
-	}
-
-	p {
-		${tw`m-0 text-xl leading-normal`}
-	}
-`;
+const Description = styled.p(
+	tw`max-w-xs mt-4 md:mt-8 mx-auto \
+		text-base text-gray-300 sm:text-lg md:text-xl md:max-w-3xl`,
+);
 
 export default function HomePage() {
-	const defaultSeoProps = useSeoProps();
+	const age = differenceInYears(new Date(), new Date('1997-08-09'));
 
 	return (
-		<Container>
-			<NextSeo {...defaultSeoProps} />
+		<Layout.Default>
 			<Content>
-				<StyledIcon icon="feather:feather" />
 				<Title>
-					Welcome to <a href="https://nextjs.org">Next.js!</a>
+					Hey <Wave>👋</Wave> I'm Ben
 				</Title>
 				<Description>
-					Get started by editing <Code>pages/index.tsx</Code>
+					I am a {age} year old full-stack developer & games developer.
 				</Description>
-
-				<Grid>
-					<Card href="https://nextjs.org/docs">
-						<h2>Documentation &rarr;</h2>
-						<p>Find in-depth information about Next.js features and API.</p>
-					</Card>
-
-					<Card href="https://nextjs.org/learn">
-						<h2>Learn &rarr;</h2>
-						<p>Learn about Next.js in an interactive course with quizzes!</p>
-					</Card>
-
-					<Card href="https://github.com/vercel/next.js/tree/master/examples">
-						<h2>Examples &rarr;</h2>
-						<p>Discover and deploy boilerplate example Next.js projects.</p>
-					</Card>
-
-					<Card href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app">
-						<h2>Deploy &rarr;</h2>
-						<p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
-					</Card>
-				</Grid>
 			</Content>
-		</Container>
+		</Layout.Default>
 	);
 }
