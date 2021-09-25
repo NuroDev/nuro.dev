@@ -56,7 +56,6 @@ export default function Home() {
 				<Title>
 					Welcome to <a href="https://nextjs.org">Next.js!</a>
 				</Title>
-
 				<Description>
 					Get started by editing <Code>pages/index.tsx</Code>
 				</Description>
