@@ -9,10 +9,7 @@ interface TimelineProps {
 }
 
 export async function getStaticProps() {
-	const rawTimeline = readFileSync(
-		join(__dirname, '..', '..', '..', 'public', 'timeline.json'),
-		'utf-8',
-	);
+	const rawTimeline = readFileSync(join(process.cwd(), 'data', 'timeline.json'), 'utf-8');
 	const timeline = JSON.parse(rawTimeline);
 
 	return {
