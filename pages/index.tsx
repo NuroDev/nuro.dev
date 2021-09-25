@@ -1,11 +1,16 @@
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
+import { Icon } from '@iconify/react';
 
 const Container = styled.div(
 	tw`min-h-screen h-screen flex flex-col justify-center items-center py-0 px-2`,
 );
 
 const Content = styled.main(tw`flex flex-1 flex-col justify-center items-center py-20 px-0`);
+
+const StyledIcon = styled(Icon)`
+	${tw`m-4 text-7xl`}
+`;
 
 const Title = styled.h1`
 	${tw`m-0 text-6xl font-bold leading-tight text-center hover:no-underline active:no-underline focus:no-underline`}
@@ -47,6 +52,7 @@ export default function Home() {
 	return (
 		<Container>
 			<Content>
+				<StyledIcon icon="feather:feather" />
 				<Title>
 					Welcome to <a href="https://nextjs.org">Next.js!</a>
 				</Title>
