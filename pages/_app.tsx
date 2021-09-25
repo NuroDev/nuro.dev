@@ -5,7 +5,11 @@ import { ThemeProvider } from 'next-themes';
 
 const GlobalStyles = css`
 	body {
-		${tw`antialiased`}
+		${tw`antialiased bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-100`}
+	}
+
+	&::selection {
+		${tw`dark:bg-white dark:text-primary-500`}
 	}
 `;
 

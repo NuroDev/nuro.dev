@@ -16,7 +16,7 @@ const Title = styled.h1`
 	${tw`m-0 text-6xl font-bold leading-tight text-center hover:no-underline active:no-underline focus:no-underline`}
 
 	a {
-		${tw`text-blue-600 no-underline`}
+		${tw`text-primary-600 no-underline`}
 	}
 `;
 
@@ -37,7 +37,7 @@ const Grid = styled.div`
 `;
 
 const Card = styled.a`
-	${tw`w-[45%] m-4 p-6 text-left hover:text-blue-600 hover:border-blue-600 no-underline border border-gray-200 rounded-lg transition ease-in-out duration-300`}
+	${tw`w-[45%] m-4 p-6 text-left hover:text-primary-600 hover:border-primary-600 no-underline border border-gray-200 rounded-lg transition ease-in-out duration-300`}
 
 	h2 {
 		${tw`m-0 mb-4 font-bold text-2xl`}
