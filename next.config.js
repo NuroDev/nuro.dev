@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
 	experimental: {
-		esmExternals: true
+		esmExternals: true,
 	},
 	// Inspired by: https://github.com/leerob/leerob.io/blob/main/next.config.js#L44-L81
 	async headers() {
@@ -12,30 +12,30 @@ module.exports = {
 					// https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
 					{
 						key: 'Content-Security-Policy',
-						value: ContentSecurityPolicy.replace(/\n/g, '')
+						value: ContentSecurityPolicy.replace(/\n/g, ''),
 					},
 					// https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
 					{
 						key: 'Referrer-Policy',
-						value: 'origin-when-cross-origin'
+						value: 'origin-when-cross-origin',
 					},
 					// https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
 					{
 						key: 'Strict-Transport-Security',
-						value: 'max-age=31536000; includeSubDomains; preload'
+						value: 'max-age=31536000; includeSubDomains; preload',
 					},
 					// https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy
 					// Opt-out of Google FLoC: https://amifloced.org/
 					{
 						key: 'Permissions-Policy',
-						value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()'
-					}
-				]
-			}
+						value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
+					},
+				],
+			},
 		];
 	},
 	reactStrictMode: true,
-}
+};
 
 const ContentSecurityPolicy = `
   default-src 'self';
