@@ -9,7 +9,7 @@ const GlobalStyles = css`
 	}
 
 	&::selection {
-		${tw`dark:bg-white dark:text-primary-500`}
+		${tw`bg-gray-900 dark:bg-white text-white dark:text-primary-500`}
 	}
 `;
 
