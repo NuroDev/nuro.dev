@@ -1,5 +1,5 @@
 export interface TimelineEvent {
-	date: Date;
+	date: Date | string;
 	title: string;
 	description?: string;
 	icon: string;
@@ -9,6 +9,4 @@ export interface TimelineEvent {
 	};
 }
 
-export type Timeline = {
-	[year in number]: Array<TimelineEvent>;
-};
+export type Timeline = Array<TimelineEvent>;

@@ -1,36 +1,39 @@
 import { Icon } from '@iconify/react';
-import { join } from 'path';
-import { readFileSync } from 'fs';
 
 import { Timeline } from '../types';
+import { GetStaticProps } from 'next';
 
 interface TimelineProps {
-	timeline: Timeline;
+	timeline?: Timeline;
 }
 
-export async function getStaticProps() {
-	const rawTimeline = readFileSync(join(process.cwd(), 'data', 'timeline.json'), 'utf-8');
-	const timeline = JSON.parse(rawTimeline);
+export const getStaticProps: GetStaticProps<TimelineProps> = async () => {
+	const timeline = await (await import('../data/timeline.json')).default;
 
 	return {
 		props: {
 			timeline,
 		},
 	};
-}
+};
 
 export default function TimelinePage({ timeline }: TimelineProps) {
+	const sortedTimeline = timeline
+		.map((event) => ({
+			...event,
+			date: new Date(event.date),
+		}))
+		.sort((a, b) => +new Date(b.date) - +new Date(a.date));
+
 	return (
 		<div>
-			{Object.entries(timeline).map(([year, events], index) => {
-				return events.map((event) => (
-					<div key={index}>
-						<h1>{year}</h1>
-						<h1>{event.title}</h1>
-						<Icon icon={event.icon} />
-					</div>
-				));
-			})}
+			{sortedTimeline.map((event, index) => (
+				<div key={index}>
+					<h1>{event.date.getFullYear()}</h1>
+					<h1>{event.title}</h1>
+					<Icon icon={event.icon} />
+				</div>
+			))}
 		</div>
 	);
 }
