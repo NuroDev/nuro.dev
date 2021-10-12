@@ -14,7 +14,7 @@ export const Container = styled.div(tw`
 	text-gray-400 dark:text-white text-center text-xs \
 	rounded-lg pointer-events-none select-none \
 	opacity-0 group-hover:opacity-100 \
-	transition ease-in-out delay-300 duration-300
+	transition ease-in-out delay-200 duration-300
 `);
 
 const StyledIcon = styled(Icon)`
