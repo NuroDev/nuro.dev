@@ -1,13 +1,13 @@
+import Link from 'next/link';
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { Icon } from '@iconify/react';
 
 import { Navbar } from '..';
-import { WithChildren } from '~/types';
+import { NavigationItem } from '~/types';
 
-interface ItemProps extends WithChildren {
+interface ItemProps extends NavigationItem {
 	active: boolean;
-	href: string;
 	tooltip?: string;
 }
 
@@ -30,11 +30,13 @@ const ItemContainer = styled.a<Pick<ItemProps, 'active'>>`
 		text-gray-400 hover:text-gray-500 dark:text-white dark:hover:text-gray-100`}
 `;
 
-export function Item({ active, children, tooltip }: ItemProps) {
+export function Item({ active, name, icon, path, tooltip }: ItemProps) {
 	return (
-		<ItemContainer className="group" active={active}>
-			{children}
-			{tooltip && <Navbar.Tooltip>{tooltip}</Navbar.Tooltip>}
-		</ItemContainer>
+		<Link aria-current={active ? 'page' : undefined} aria-label={name} href={path} key={name}>
+			<ItemContainer className="group" active={active}>
+				<Navbar.Icon icon={icon} />
+				{tooltip && <Navbar.Tooltip>{tooltip}</Navbar.Tooltip>}
+			</ItemContainer>
+		</Link>
 	);
 }

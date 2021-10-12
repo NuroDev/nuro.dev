@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { Disclosure } from '@headlessui/react';
@@ -8,7 +7,24 @@ import { Mobile } from '.';
 import { Navbar } from '..';
 
 import type { NavigationItems } from '~/types';
-import { Icon } from '@iconify/react';
+
+const navigation: NavigationItems = [
+	{
+		name: 'Home',
+		icon: 'feather:home',
+		path: '/',
+	},
+	{
+		name: 'Blog',
+		icon: 'feather:book',
+		path: '/blog',
+	},
+	{
+		name: 'Projects',
+		icon: 'feather:copy',
+		path: '/projects',
+	},
+];
 
 const StyledDisclosure = styled(Disclosure)(tw`fixed inset-0`);
 
@@ -29,24 +45,6 @@ const Spacer = styled.span(tw`flex flex-1`);
 export function Standard() {
 	const router = useRouter();
 
-	const navigation: NavigationItems = [
-		{
-			name: 'Home',
-			icon: 'feather:home',
-			path: '/',
-		},
-		{
-			name: 'Blog',
-			icon: 'feather:book',
-			path: '/blog',
-		},
-		{
-			name: 'Projects',
-			icon: 'feather:copy',
-			path: '/projects',
-		},
-	];
-
 	return (
 		<StyledDisclosure as="nav">
 			{({ open }) => (
@@ -58,22 +56,18 @@ export function Standard() {
 							<ItemsContainer>
 								<div tw="hidden sm:block">
 									<div tw="flex space-x-4">
-										{navigation.map(({ path, icon, name }) => {
+										{navigation.map(({ path, name, ...rest }) => {
 											const active = router.pathname.includes(path);
 
 											return (
-												<Link
-													aria-current={active ? 'page' : undefined}
-													aria-label={name}
-													href={path}
-													key={name}>
-													<Navbar.Item
-														active={active}
-														href={path}
-														tooltip={name}>
-														<Navbar.Icon icon={icon} />
-													</Navbar.Item>
-												</Link>
+												<Navbar.Item
+													active={active}
+													key={name}
+													name={name}
+													path={path}
+													tooltip={name}
+													{...rest}
+												/>
 											);
 										})}
 									</div>
