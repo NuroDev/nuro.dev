@@ -41,6 +41,7 @@ export async function getPost(slug: string): Promise<Post> {
 			raw: data.title,
 		},
 		slug,
+		url: `blog/${slug}`,
 	} as Post;
 
 	return post;
@@ -65,6 +66,7 @@ export async function getPosts(sort: boolean = true) {
 				readable: format(typedDate.date, 'PPP'),
 			},
 			slug: slug.replace('.md', ''),
+			url: `blog/${slug}`,
 		} as Post;
 
 		return [post, ...posts];

@@ -29,6 +29,7 @@
 		"@emotion/styled": "^11.3.0",
 		"@headlessui/react": "^1.4.1",
 		"@splitbee/web": "^0.3.0",
+		"@tailwindcss/line-clamp": "^0.2.2",
 		"date-fns": "^2.24.0",
 		"inter-ui": "^3.19.3",
 		"next": "^11.1.2",
