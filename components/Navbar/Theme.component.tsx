@@ -7,7 +7,7 @@ import { Navbar } from '..';
 import { Theme as ThemeTypes } from '~/types';
 
 const Button = styled.button(tw`
-	inline-flex \
+	relative inline-block \
 	px-3 py-2 \
 	bg-transparent hover:bg-gray-100 dark:hover:bg-gray-700 \
 	text-gray-300 hover:text-gray-700 dark:hover:text-white \
@@ -31,8 +31,9 @@ export function Theme() {
 	}
 
 	return (
-		<Button aria-label="Toggle Theme" onClick={toggle}>
+		<Button aria-label="Toggle Theme" className="group" onClick={toggle}>
 			<Navbar.Icon icon={isDark ? 'feather:moon' : 'feather:sun'} />
+			<Navbar.Tooltip.Container>Theme</Navbar.Tooltip.Container>
 		</Button>
 	);
 }
