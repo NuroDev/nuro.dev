@@ -65,6 +65,12 @@ const Description = styled.p(tw`
 	text-base line-clamp-2
 `);
 
+const Footer = styled.div(tw`
+	flex items-start space-x-1 \
+	mt-4 \
+	text-sm
+`);
+
 export function _Post({ index, post }: PostProps) {
 	return (
 		<Link aria-label={`Read blog post: ${post.title.raw}`} href={post.url}>
@@ -89,7 +95,9 @@ export function _Post({ index, post }: PostProps) {
 								{post.description.raw}
 							</Description>
 						)}
-						{post.date && <Blog.Date date={new Date(post.date.raw)} />}
+						<Footer>
+							<Blog.Date date={post.date.raw} />
+						</Footer>
 					</ContextText>
 				</Content>
 			</Container>

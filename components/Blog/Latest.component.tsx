@@ -102,7 +102,7 @@ export function Latest({ post }: LatestProps) {
 						<Description>{post.description.raw || post.description}</Description>
 					)}
 					<Footer>
-						<Blog.Date date={new Date(post.date.raw)} />
+						<Blog.Date tw="mt-2 mb-4" date={new Date(post.date.raw)} />
 					</Footer>
 				</Content>
 			</Container>

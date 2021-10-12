@@ -4,12 +4,15 @@ import { format } from 'date-fns';
 import { Icon } from '@iconify/react';
 import { useMemo } from 'react';
 
-interface DateProps {
+import type { WithClassName } from '~/types';
+
+interface DateProps extends WithClassName {
 	date: Date;
 	format?: string;
 }
 
 const Container = styled.div(tw`
+	inline-flex \
 	px-4 py-2 \
 	bg-primary-500 bg-opacity-15 \
 	rounded-lg \
@@ -17,14 +20,14 @@ const Container = styled.div(tw`
 `);
 
 const StyledIcon = styled(Icon)(tw`
-	-mb-1 mr-3
+	mt-0.5 mr-3
 `);
 
-export function Date({ date, format: dateFormat = 'PPP' }: DateProps) {
+export function Date({ className, date, format: dateFormat = 'PPP' }: DateProps) {
 	const formattedDate = useMemo(() => format(date, dateFormat), []);
 
 	return (
-		<Container>
+		<Container className={className}>
 			<StyledIcon icon="feather:calendar" />
 			{formattedDate}
 		</Container>

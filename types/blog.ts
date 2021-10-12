@@ -16,7 +16,7 @@ export interface Post {
 		url: string;
 	};
 	date: {
-		raw: Date | string;
+		raw: Date;
 		readable?: string;
 	};
 	description: {
