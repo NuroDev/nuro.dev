@@ -13,7 +13,7 @@ interface DefaultLayoutProps extends WithChildren {
 
 const Main = styled.main(tw`flex flex-col justify-center px-8`);
 
-export default function DefaultLayout({ children, seo }: DefaultLayoutProps) {
+export function DefaultLayout({ children, seo }: DefaultLayoutProps) {
 	const defaultSeoProps = useSeoProps();
 
 	return (
