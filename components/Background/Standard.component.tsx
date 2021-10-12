@@ -13,6 +13,10 @@ interface BackgroundProps {}
 const Container = styled.div`
 	${tw`fixed inset-0`}
 	z-index: -10;
+
+	canvas {
+		${tw`animate-pulse`}
+	}
 `;
 
 export function Standard({}: BackgroundProps) {
