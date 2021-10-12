@@ -8,6 +8,7 @@ import { Mobile } from '.';
 import { Navbar } from '..';
 
 import type { NavigationItems } from '~/types';
+import { Icon } from '@iconify/react';
 
 const StyledDisclosure = styled(Disclosure)(tw`fixed inset-0`);
 
@@ -70,7 +71,10 @@ export function Standard() {
 												aria-label={name}
 												href={href}
 												key={name}>
-												<Navbar.Item $current={current} href={href}>
+												<Navbar.Item
+													$current={current}
+													href={href}
+													tooltip={name}>
 													<Navbar.Icon icon={icon} />
 												</Navbar.Item>
 											</Link>
