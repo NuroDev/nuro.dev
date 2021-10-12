@@ -7,14 +7,31 @@ import { useAnalytics } from '~/lib';
 import { Theme } from '~/types';
 
 const GlobalStyles = css`
-	&::selection {
-		${tw`bg-gray-900 dark:bg-white text-white dark:text-primary-500`}
+	html {
+		${tw`
+			antialiased \
+			bg-gray-50 text-gray-500 dark:text-gray-400 \
+			transition ease-in-out duration-300
+		`}
 	}
 
 	html.dark {
+		${tw`bg-gray-900`}
+
 		* {
 			--tw-ring-offset-color: #0c0e10;
+
+			&::selection {
+				${tw`
+						bg-white \
+						text-primary-500
+					`}
+			}
 		}
+	}
+
+	*::selection {
+		${tw`bg-gray-900 dark:bg-white text-white dark:text-primary-500`}
 	}
 `;
 

@@ -33,9 +33,11 @@
 		"next": "^11.1.2",
 		"next-seo": "^4.28.1",
 		"next-themes": "^0.0.15",
+		"ogl-typescript": "^0.1.40",
 		"preact": "^10.5.14",
 		"react": "^17.0.2",
-		"react-dom": "^17.0.2"
+		"react-dom": "^17.0.2",
+		"react-use": "^17.3.1"
 	},
 	"devDependencies": {
 		"@emotion/babel-plugin": "^11.3.0",
