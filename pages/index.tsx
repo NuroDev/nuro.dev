@@ -30,9 +30,7 @@ export default function HomePage() {
 					Hey <Wave>👋</Wave> I'm Ben,
 					<br />a <Pill href="https://twitter.com/nurodev">developer</Pill>
 				</Title>
-				<Description>
-					I am a {age} year old full-stack developer & games developer.
-				</Description>
+				<Description>I am a {age} year old software engineer & games developer</Description>
 			</Content>
 		</Layout.Default>
 	);
