@@ -1,4 +1,4 @@
-export { NavbarItem as Item, NavbarItemIcon as Icon } from './NavbarItem.component';
-export { NavbarThemeButton as Theme } from './NavbarThemeButton.component';
-export { Standard } from './Navbar.component';
+export { Item, NavbarIcon as Icon } from './Item.component';
+export { Standard } from './Standard.component';
+export { Theme } from './Theme.component';
 export * as Mobile from './Mobile';

@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 import { useTheme } from 'next-themes';
 
 import { Navbar } from '..';
-import { Theme } from '~/types';
+import { Theme as ThemeTypes } from '~/types';
 
 const Button = styled.button(tw`
 	inline-flex \
@@ -16,14 +16,14 @@ const Button = styled.button(tw`
 	transition ease-in-out duration-300
 `);
 
-export function NavbarThemeButton() {
+export function Theme() {
 	const { theme, setTheme } = useTheme();
 
 	const isDark = useMemo(() => {
-		if (theme === Theme.SYSTEM)
+		if (theme === ThemeTypes.SYSTEM)
 			return window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-		return theme === Theme.DARK;
+		return theme === ThemeTypes.DARK;
 	}, [theme]);
 
 	function toggle() {

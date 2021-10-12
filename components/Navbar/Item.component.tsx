@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { Icon } from '@iconify/react';
 
-export const NavbarItem = styled.a<{ $current: boolean }>`
+export const Item = styled.a<{ $current: boolean }>`
 	${tw`
 		inline-flex \
 		px-3 py-2 \
@@ -19,4 +19,4 @@ export const NavbarItem = styled.a<{ $current: boolean }>`
 		text-gray-400 hover:text-gray-500 dark:text-white dark:hover:text-gray-100`}
 `;
 
-export const NavbarItemIcon = styled(Icon)(tw`w-4 h-4 my-1`);
+export const NavbarIcon = styled(Icon)(tw`w-4 h-4 my-1`);
