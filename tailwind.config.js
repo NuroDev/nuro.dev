@@ -4,6 +4,9 @@ module.exports = {
 	darkMode: 'class',
 	theme: {
 		extend: {
+			backgroundOpacity: {
+				'15': '0.15',
+			},
 			colors: {
 				gray: {
 					50: '#f9fafb',

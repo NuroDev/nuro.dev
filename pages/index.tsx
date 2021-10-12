@@ -3,7 +3,7 @@ import tw from 'twin.macro';
 import { differenceInYears } from 'date-fns';
 
 import { Layout } from '~/layouts';
-import { Background, Wave } from '~/components';
+import { Background, Pill, Wave } from '~/components';
 
 const Content = styled.div(tw`h-screen flex flex-col justify-center items-center \
 	text-center`);
@@ -27,7 +27,8 @@ export default function HomePage() {
 			<Background.Standard />
 			<Content>
 				<Title>
-					Hey <Wave>👋</Wave> I'm Ben
+					Hey <Wave>👋</Wave> I'm Ben,
+					<br />a <Pill href="https://twitter.com/nurodev">developer</Pill>
 				</Title>
 				<Description>
 					I am a {age} year old full-stack developer & games developer.
