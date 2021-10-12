@@ -1,6 +1,6 @@
 import { Layout } from '~/layouts';
 
-import { getPost, getPostSlugs } from '~/lib/getPost';
+import { getPost, getPostSlugs } from '~/lib/build';
 
 import type { GetStaticPaths, GetStaticPropsContext, GetStaticPropsResult } from 'next';
 

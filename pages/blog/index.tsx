@@ -4,7 +4,7 @@ import tw from 'twin.macro';
 import { Blog } from '~/components';
 import { Layout } from '~/layouts';
 import { deserialisePost } from '~/lib';
-import { getPosts } from '~/lib/getPost';
+import { getPosts } from '~/lib/build';
 
 import type { GetStaticPropsResult } from 'next';
 
