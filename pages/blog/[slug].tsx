@@ -41,10 +41,14 @@ export async function getStaticProps({
 	};
 }
 
-export default function BlogPost({ post: meta }: BlogPostProps) {
+export default function BlogPost({ post }: BlogPostProps) {
 	return (
-		<Layout.Blog>
-			<pre>{JSON.stringify(meta, null, 4)}</pre>
+		<Layout.Blog
+			seo={{
+				title: `nuro ─ blog ─ ${post.title.raw}`,
+				description: post.description.raw ?? undefined,
+			}}>
+			<pre>{JSON.stringify(post, null, 4)}</pre>
 		</Layout.Blog>
 	);
 }
