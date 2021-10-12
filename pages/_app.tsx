@@ -3,6 +3,8 @@ import { AppProps } from 'next/app';
 import { css, Global as EmotionStyles } from '@emotion/react';
 import { ThemeProvider } from 'next-themes';
 
+import 'inter-ui/inter.css';
+
 import { useAnalytics } from '~/lib';
 import { Theme } from '~/types';
 
@@ -13,6 +15,7 @@ const GlobalStyles = css`
 			bg-gray-50 text-gray-500 dark:text-gray-400 \
 			transition ease-in-out duration-300
 		`}
+		font-family: "Inter", "system-ui";
 	}
 
 	html.dark {
@@ -32,6 +35,12 @@ const GlobalStyles = css`
 
 	*::selection {
 		${tw`bg-gray-900 dark:bg-white text-white dark:text-primary-500`}
+	}
+
+	@supports (font-variation-settings: normal) {
+		html {
+			font-family: 'Inter', 'system-ui';
+		}
 	}
 `;
 

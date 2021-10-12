@@ -30,6 +30,7 @@
 		"@headlessui/react": "^1.4.1",
 		"@splitbee/web": "^0.3.0",
 		"date-fns": "^2.24.0",
+		"inter-ui": "^3.19.3",
 		"next": "^11.1.2",
 		"next-seo": "^4.28.1",
 		"next-themes": "^0.0.15",
