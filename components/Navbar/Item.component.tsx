@@ -22,7 +22,8 @@ const ItemContainer = styled.a<Pick<ItemProps, 'active'>>`
 		text-gray-300 hover:text-gray-700 dark:hover:text-white \
 		rounded-lg cursor-pointer \
 		text-sm font-medium \
-		transition ease-in-out duration-300
+		transition ease-in-out duration-300 \
+		focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-100 dark:focus:ring-gray-500
 	`}
 
 	${({ active }) =>

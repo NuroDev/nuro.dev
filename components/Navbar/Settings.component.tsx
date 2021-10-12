@@ -15,6 +15,7 @@ const Button = styled.button(tw`
 	rounded-lg \
 	text-sm font-medium \
 	transition ease-in-out duration-300
+	focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-100 dark:focus:ring-gray-500
 `);
 
 export function Settings() {

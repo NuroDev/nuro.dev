@@ -13,6 +13,8 @@ interface PostProps {
 
 const Container = styled.a(tw`
 	flex flex-col \
+	bg-white bg-opacity-50 dark:bg-gray-900 dark:bg-opacity-15 \
+	backdrop-filter backdrop-blur-sm \
 	rounded-2xl overflow-hidden hover:shadow-xl cursor-pointer \
 	transform hover:-translate-y-1 \
 	transition ease-in-out duration-300 \

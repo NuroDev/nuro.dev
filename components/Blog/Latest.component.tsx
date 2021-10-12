@@ -13,7 +13,8 @@ interface LatestProps {
 const Container = styled.a(tw`
 	flex flex-col lg:flex-row \
 	mt-12 \
-	bg-transparent \
+	bg-white bg-opacity-50 dark:bg-gray-900 dark:bg-opacity-15 \
+	backdrop-filter backdrop-blur-sm \
 	rounded-2xl hover:shadow-xl cursor-pointer \
 	border-2 border-gray-100 dark:border-gray-500 \
 	transform hover:-translate-y-1 \
