@@ -1,19 +1,19 @@
 import { Layout } from '~/layouts';
 
-import { getPost, getPostSlugs } from '~/lib/usePost';
+import { getPost, getPostSlugs } from '~/lib/getPost';
 
 import type { GetStaticPaths, GetStaticPropsContext, GetStaticPropsResult } from 'next';
 
 import type { ParsedUrlQuery } from 'querystring';
 
-import type { Post } from '~/types';
+import type { SerialisedPost } from '~/types';
 
 interface PathProps extends ParsedUrlQuery {
 	slug: string;
 }
 
 interface BlogPostProps {
-	post?: Post;
+	post?: SerialisedPost;
 }
 
 export const getStaticPaths: GetStaticPaths<PathProps> = async () => {

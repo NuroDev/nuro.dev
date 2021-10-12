@@ -4,10 +4,10 @@ import tw from 'twin.macro';
 
 import { Blog } from '..';
 
-import type { Post } from '~/types';
+import type { DeserialisedPost } from '~/types';
 
 interface LatestProps {
-	post: Post;
+	post: DeserialisedPost;
 }
 
 const Container = styled.a(tw`
@@ -102,7 +102,10 @@ export function Latest({ post }: LatestProps) {
 						<Description>{post.description.raw || post.description}</Description>
 					)}
 					<Footer>
-						<Blog.Date tw="mt-2 mb-4" date={new Date(post.date.raw)} />
+						<Blog.Date
+							tw="mt-2 mb-4"
+							date={post.date.value ?? new Date(post.date.raw)}
+						/>
 					</Footer>
 				</Content>
 			</Container>

@@ -4,11 +4,11 @@ import tw from 'twin.macro';
 
 import { Blog } from '..';
 
-import type { Post } from '~/types';
+import type { DeserialisedPost } from '~/types';
 
 interface PostProps {
 	index: number;
-	post: Post;
+	post: DeserialisedPost;
 }
 
 const Container = styled.a(tw`
@@ -96,7 +96,7 @@ export function _Post({ index, post }: PostProps) {
 							</Description>
 						)}
 						<Footer>
-							<Blog.Date date={post.date.raw} />
+							<Blog.Date date={post.date.value ?? new Date(post.date.raw)} />
 						</Footer>
 					</ContextText>
 				</Content>

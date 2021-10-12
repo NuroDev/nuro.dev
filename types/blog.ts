@@ -9,14 +9,38 @@ export interface RawPost {
 	title: string;
 }
 
-export interface Post {
+export interface SerialisedPost {
 	banner: {
-		alt?: string | null;
+		alt: string | null;
 		show?: boolean;
 		url: string;
 	};
 	date: {
-		raw: Date;
+		raw: string;
+		value: Date | null;
+		readable?: string;
+	};
+	description: {
+		show?: boolean;
+		raw: string | null;
+	};
+	title: {
+		prefix: string | null;
+		raw: string;
+	};
+	url: string;
+	slug: string;
+}
+
+export interface DeserialisedPost {
+	banner: {
+		alt: string | null;
+		show?: boolean;
+		url: string;
+	};
+	date: {
+		raw: string;
+		value?: Date;
 		readable?: string;
 	};
 	description: {
@@ -31,7 +55,7 @@ export interface Post {
 	slug: string;
 }
 
-export type Posts = Array<Post>;
+export type Posts = Array<SerialisedPost>;
 
 export interface Frontmatter {
 	banner_alt?: string;

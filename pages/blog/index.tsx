@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
-import { format } from 'date-fns';
 
 import { Blog } from '~/components';
 import { Layout } from '~/layouts';
-import { getPosts } from '~/lib/usePost';
+import { deserialisePost } from '~/lib';
+import { getPosts } from '~/lib/getPost';
 
 import type { GetStaticPropsResult } from 'next';
 
@@ -42,18 +42,7 @@ export default function _Blog({ posts }: BlogProps) {
 	// @TODO: Update to use blog error page component
 	if (!posts || posts.length <= 0) return null;
 
-	const deserialisedPosts = [...posts].map((post) => {
-		const date = new Date(post.date.raw);
-
-		return {
-			...post,
-			date: {
-				raw: date,
-				readable: format(date, 'PPP'),
-			},
-		};
-	});
-
+	const deserialisedPosts = posts.map((post) => deserialisePost(post));
 	const latestPost = deserialisedPosts.shift();
 
 	return (
