@@ -1,5 +1,5 @@
 export interface RawPost {
-	banner_alt: string;
+	banner_alt?: string;
 	banner_show?: boolean;
 	banner: string;
 	date: Date;
@@ -11,7 +11,7 @@ export interface RawPost {
 
 export interface Post {
 	banner: {
-		alt?: string;
+		alt?: string | null;
 		show?: boolean;
 		url: string;
 	};
@@ -24,7 +24,7 @@ export interface Post {
 		raw?: string;
 	};
 	title: {
-		prefix?: string;
+		prefix?: string | null;
 		raw: string;
 	};
 	url: string;

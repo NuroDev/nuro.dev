@@ -22,26 +22,28 @@ export async function getPostSlugs(): Promise<Array<string>> {
 export async function getPost(slug: string): Promise<Post> {
 	const raw = readFileSync(join(BLOG_POSTS_DIR, `${slug}.md`), 'utf8');
 	const { data } = matter(raw);
+	const typedDate = data as RawPost;
 
+	const formattedSlug = slug.replace('.md', '');
 	const post = {
 		banner: {
-			alt: data.banner_alt,
-			show: data.banner_show ?? false,
-			url: data.banner,
+			alt: typedDate.banner_alt ?? null,
+			show: typedDate.banner_show ?? false,
+			url: typedDate.banner,
 		},
 		date: {
-			raw: data.date.toString(),
+			raw: typedDate.date.toString(),
 		},
 		description: {
-			raw: data.description,
-			show: data.description_show ?? false,
+			raw: typedDate.description,
+			show: typedDate.description_show ?? false,
 		},
 		title: {
-			prefix: data.title_prefix,
-			raw: data.title,
+			prefix: typedDate.title_prefix ?? null,
+			raw: typedDate.title,
 		},
-		slug,
-		url: `blog/${slug}`,
+		slug: formattedSlug,
+		url: `blog/${formattedSlug}`,
 	} as Post;
 
 	return post;
@@ -53,24 +55,35 @@ export async function getPost(slug: string): Promise<Post> {
 export async function getPosts(sort: boolean = true) {
 	const files = await getPostSlugs();
 
-	// @TODO: Simplify by using the `getPost` function above
-	const posts: Posts = files.reduce((posts, slug) => {
+	const posts = files.map((slug) => {
 		const source = readFileSync(join(process.cwd(), 'data', 'blog', slug), 'utf8');
 		const { data } = matter(source);
 		const typedDate = data as RawPost;
 
+		const formattedSlug = slug.replace('.md', '');
 		const post = {
-			...data,
+			banner: {
+				alt: typedDate.banner_alt ?? null,
+				show: typedDate.banner_show ?? false,
+				url: typedDate.banner,
+			},
 			date: {
 				raw: typedDate.date.toString(),
-				readable: format(typedDate.date, 'PPP'),
 			},
-			slug: slug.replace('.md', ''),
-			url: `blog/${slug}`,
+			description: {
+				raw: typedDate.description,
+				show: typedDate.description_show ?? false,
+			},
+			title: {
+				prefix: typedDate.title_prefix ?? null,
+				raw: typedDate.title,
+			},
+			slug: formattedSlug,
+			url: `blog/${formattedSlug}`,
 		} as Post;
 
-		return [post, ...posts];
-	}, []);
+		return post;
+	});
 
 	if (sort) return posts.sort((a, b) => +new Date(b.date.raw) - +new Date(a.date.raw));
 

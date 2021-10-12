@@ -13,7 +13,7 @@ interface PathProps extends ParsedUrlQuery {
 }
 
 interface BlogPostProps {
-	meta?: Post;
+	post?: Post;
 }
 
 export const getStaticPaths: GetStaticPaths<PathProps> = async () => {
@@ -36,12 +36,12 @@ export async function getStaticProps({
 
 	return {
 		props: {
-			meta: post,
+			post: post,
 		},
 	};
 }
 
-export default function BlogPost({ meta }: BlogPostProps) {
+export default function BlogPost({ post: meta }: BlogPostProps) {
 	return (
 		<Layout.Blog>
 			<pre>{JSON.stringify(meta, null, 4)}</pre>
