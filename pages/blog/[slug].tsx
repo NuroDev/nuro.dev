@@ -43,12 +43,12 @@ export async function getStaticProps({
 
 export default function BlogPost({ post }: BlogPostProps) {
 	return (
-		<Layout.Blog
+		<Layout.Default
 			seo={{
 				title: `nuro ─ blog ─ ${post.title.raw}`,
 				description: post.description.raw ?? undefined,
 			}}>
 			<pre>{JSON.stringify(post, null, 4)}</pre>
-		</Layout.Blog>
+		</Layout.Default>
 	);
 }
