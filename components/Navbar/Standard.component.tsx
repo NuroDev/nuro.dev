@@ -33,26 +33,19 @@ export function Standard() {
 		{
 			name: 'Home',
 			icon: 'feather:home',
-			href: '/',
-			current: false,
+			path: '/',
 		},
 		{
 			name: 'Blog',
 			icon: 'feather:book',
-			href: '/blog',
-			current: false,
+			path: '/blog',
 		},
 		{
 			name: 'Projects',
 			icon: 'feather:copy',
-			href: '/projects',
-			current: false,
+			path: '/projects',
 		},
-	].map((item) => {
-		if (item.href === router.asPath) item.current = true;
-
-		return item;
-	});
+	];
 
 	return (
 		<StyledDisclosure as="nav">
@@ -65,20 +58,24 @@ export function Standard() {
 							<ItemsContainer>
 								<div tw="hidden sm:block">
 									<div tw="flex space-x-4">
-										{navigation.map(({ current, href, icon, name }) => (
-											<Link
-												aria-current={current ? 'page' : undefined}
-												aria-label={name}
-												href={href}
-												key={name}>
-												<Navbar.Item
-													$current={current}
-													href={href}
-													tooltip={name}>
-													<Navbar.Icon icon={icon} />
-												</Navbar.Item>
-											</Link>
-										))}
+										{navigation.map(({ path, icon, name }) => {
+											const active = router.pathname.includes(path);
+
+											return (
+												<Link
+													aria-current={active ? 'page' : undefined}
+													aria-label={name}
+													href={path}
+													key={name}>
+													<Navbar.Item
+														active={active}
+														href={path}
+														tooltip={name}>
+														<Navbar.Icon icon={icon} />
+													</Navbar.Item>
+												</Link>
+											);
+										})}
 									</div>
 								</div>
 

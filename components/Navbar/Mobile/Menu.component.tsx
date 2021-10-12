@@ -36,7 +36,7 @@ export function Menu({ items }: MenuProps) {
 	return (
 		<StyledDisclosurePanel>
 			<div tw="px-2 pt-2 pb-3 space-y-1">
-				{items.map(({ current, href, icon, name }) => (
+				{items.map(({ current, path: href, icon, name }) => (
 					<Link key={name} href={href} aria-current={current ? 'page' : undefined}>
 						<Item $current={current}>
 							<StyledIcon icon={icon} />

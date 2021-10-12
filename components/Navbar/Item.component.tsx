@@ -6,14 +6,14 @@ import { Navbar } from '..';
 import { WithChildren } from '~/types';
 
 interface ItemProps extends WithChildren {
-	$current: boolean;
+	active: boolean;
 	href: string;
 	tooltip?: string;
 }
 
 export const NavbarIcon = styled(Icon)(tw`w-4 h-4 my-1`);
 
-const ItemContainer = styled.a<Pick<ItemProps, '$current'>>`
+const ItemContainer = styled.a<Pick<ItemProps, 'active'>>`
 	${tw`
 		relative inline-block \
 		px-3 py-2 \
@@ -24,15 +24,15 @@ const ItemContainer = styled.a<Pick<ItemProps, '$current'>>`
 		transition ease-in-out duration-300
 	`}
 
-	${({ $current }) =>
-		$current &&
+	${({ active }) =>
+		active &&
 		tw`bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 \
 		text-gray-400 hover:text-gray-500 dark:text-white dark:hover:text-gray-100`}
 `;
 
-export function Item({ $current, children, tooltip }: ItemProps) {
+export function Item({ active, children, tooltip }: ItemProps) {
 	return (
-		<ItemContainer className="group" $current={$current}>
+		<ItemContainer className="group" active={active}>
 			{children}
 			{tooltip && <Navbar.Tooltip.Container>{tooltip}</Navbar.Tooltip.Container>}
 		</ItemContainer>

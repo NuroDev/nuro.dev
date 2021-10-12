@@ -1,8 +1,7 @@
 export interface NavigationItem {
 	name: string;
 	icon: string;
-	href: string;
-	current: boolean;
+	path: string;
 }
 
 export type NavigationItems = Array<NavigationItem>;
