@@ -27,7 +27,7 @@ export interface Post {
 		prefix?: string;
 		raw: string;
 	};
-	url: string;
+	url?: string;
 	slug: string;
 }
 
