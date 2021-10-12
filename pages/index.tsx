@@ -19,6 +19,8 @@ const Description = styled.p(
 		text-base text-gray-300 sm:text-lg md:text-xl md:max-w-3xl`,
 );
 
+const StyledLineBreak = styled.br(tw`hidden sm:block`);
+
 export default function HomePage() {
 	const age = differenceInYears(new Date(), new Date('1997-08-09'));
 
@@ -28,7 +30,7 @@ export default function HomePage() {
 			<Content>
 				<Title>
 					Hey <Wave>👋</Wave> I'm Ben,
-					<br />a <Pill href="https://twitter.com/nurodev">developer</Pill>
+					<StyledLineBreak /> a <Pill href="https://twitter.com/nurodev">developer</Pill>
 				</Title>
 				<Description>I am a {age} year old software engineer & games developer</Description>
 			</Content>

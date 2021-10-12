@@ -9,7 +9,7 @@ interface PillProps extends WithClassName, WithChildren {
 
 const Container = styled.a(tw`
 	inline-flex \
-	mt-8 lg:ml-2 px-3 lg:px-5 py-2 md:pb-4 \
+	mt-4 sm:mt-8 lg:ml-2 px-3 lg:px-5 py-2 md:pb-4 \
 	bg-primary-500 bg-opacity-15 hover:bg-primary-800 hover:bg-opacity-15 \
 	backdrop-filter backdrop-blur-sm saturate-200 \
 	text-primary-200 hover:text-primary-400 \
