@@ -6,6 +6,7 @@ import { Layout } from '~/layouts';
 import { Background, Pill, Wave } from '~/components';
 
 const Content = styled.div(tw`h-screen flex flex-col justify-center items-center \
+	px-4 \
 	text-center`);
 
 const Title = styled.h1`

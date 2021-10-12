@@ -8,7 +8,7 @@ interface MobileButtonProps {
 }
 
 const Container = styled.div(tw`
-	absolute inset-y-0 left-0 \
+	absolute inset-y-0 left-0 z-20 \
 	flex items-center sm:hidden
 `);
 
@@ -16,10 +16,11 @@ const StyledButton = styled(Disclosure.Button)`
 	${tw`
 		inline-flex items-center justify-center \
 		p-2 \
-		hover:bg-gray-700 \
-		text-gray-400 hover:text-white \
-		rounded-md \
-		focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white
+		bg-gray-50 hover:bg-gray-100 dark:bg-gray-900 dark:hover:bg-gray-800 \
+		text-gray-400 hover:text-gray-300 \
+		rounded-lg \
+		focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200 dark:focus:ring-gray-500
+		transition ease-in-out duration-300
 	`}
 `;
 

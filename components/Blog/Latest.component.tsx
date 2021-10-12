@@ -24,12 +24,10 @@ const Container = styled.a(tw`
 const Banner = styled.div`
 	${tw`
 		relative flex justify-center my-auto \
-		w-full xl:w-2/4 lg:max-w-xl sm:h-full \
+		w-full xl:w-2/4 lg:max-w-xl h-64 sm:h-72 lg:h-96 \
 		overflow-hidden rounded-2xl rounded-bl-none lg:rounded-bl-2xl rounded-br-none lg:rounded-br-2xl lg:rounded-tr-none lg:rounded-br-none \
 		transition ease-in-out duration-300
 	`}
-
-	height: 16rem
 
 	img {
 		${tw`
@@ -41,9 +39,10 @@ const Banner = styled.div`
 `;
 
 const BannerPlaceholder = styled.div(tw`
-	w-full h-full lg:h-full mb-8 \
+	w-full h-full mb-8 \
 	bg-gray-200 dark:bg-gray-600 \
 	rounded-lg rounded-bl-none lg:rounded-bl-lg rounded-br-none lg:rounded-br-lg lg:rounded-tr-none lg:rounded-br-none
+	animate-pulse
 `);
 
 const Content = styled.div(tw`
@@ -74,7 +73,7 @@ export function Latest({ post }: LatestProps) {
 			<Container>
 				{post.banner.show && (
 					<Banner>
-						<BannerPlaceholder tw="animate-pulse" />
+						<BannerPlaceholder />
 
 						{Array.isArray(post.banner.url) ? (
 							<picture>

@@ -11,7 +11,7 @@ interface DefaultLayoutProps extends WithChildren {
 	seo?: Partial<WithProps<typeof NextSeo>>;
 }
 
-const Main = styled.main(tw`flex flex-col justify-center px-8`);
+const Main = styled.main(tw`flex flex-col justify-center px-1 sm:px-8`);
 
 export function DefaultLayout({ children, seo }: DefaultLayoutProps) {
 	const defaultSeoProps = useSeoProps();

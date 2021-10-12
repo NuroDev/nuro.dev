@@ -11,23 +11,24 @@ interface MenuProps {
 	items: NavigationItems;
 }
 
-const StyledDisclosurePanel = styled(Disclosure.Panel)(tw`sm:hidden`);
+const StyledDisclosurePanel = styled(Disclosure.Panel)(tw`sm:hidden px-3`);
 
 const Item = styled.a<{ $current: boolean }>`
 	${tw`
 		block \
-		px-3 py-2 \
-		bg-gray-100 bg-opacity-15 hover:bg-gray-100 dark:bg-gray-800 dark:bg-opacity-15 dark:hover:bg-gray-700 \
+		px-3 py-3 \
+		bg-gray-100 bg-opacity-25 hover:bg-gray-100 dark:bg-gray-800 dark:bg-opacity-25 dark:hover:bg-gray-700 \
 		backdrop-filter backdrop-blur-sm saturate-200 \
-		text-gray-300 hover:text-gray-700 dark:hover:text-white \
-		rounded-md \
+		text-gray-600 hover:text-gray-700 dark:text-gray-300 dark:hover:text-gray-200 \
+		border border-gray-100 dark:border-gray-500 \
+		rounded-lg \
 		text-base text-center font-medium
 	`}
 
 	${({ $current }) =>
 		$current &&
-		tw`bg-gray-100 bg-opacity-50 hover:bg-gray-200 dark:bg-gray-700 dark:bg-opacity-50 dark:hover:bg-gray-600 \
-		text-gray-400 hover:text-gray-500 dark:text-white dark:hover:text-gray-100`}
+		tw`bg-gray-100 bg-opacity-75 hover:bg-gray-200 dark:bg-gray-700 dark:bg-opacity-75 dark:hover:bg-gray-600 \
+		text-gray-700 hover:text-gray-800 dark:text-white dark:hover:text-gray-100`}
 `;
 
 const StyledIcon = styled(Icon)(tw`
