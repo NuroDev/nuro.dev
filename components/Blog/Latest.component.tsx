@@ -10,11 +10,11 @@ interface LatestProps {
 	post: Post;
 }
 
-const Container = styled.div(tw`
+const Container = styled.a(tw`
 	flex flex-col lg:flex-row \
 	mt-12 \
 	bg-transparent \
-	rounded-2xl hover:shadow-xl \
+	rounded-2xl hover:shadow-xl cursor-pointer \
 	border-2 border-gray-100 dark:border-gray-500 \
 	transform hover:-translate-y-1 \
 	transition ease-in-out duration-300 \

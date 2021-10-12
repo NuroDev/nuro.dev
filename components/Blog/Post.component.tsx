@@ -11,10 +11,9 @@ interface PostProps {
 	post: Post;
 }
 
-const Container = styled.div(tw`
+const Container = styled.a(tw`
 	flex flex-col \
-	rounded-2xl overflow-hidden \
-	hover:shadow-xl \
+	rounded-2xl overflow-hidden hover:shadow-xl cursor-pointer \
 	transform hover:-translate-y-1 \
 	transition ease-in-out duration-300 \
 	focus:outline-none focus:ring-4 focus:ring-offset-8 focus:ring-primary-500
