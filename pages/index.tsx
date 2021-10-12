@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { differenceInYears } from 'date-fns';
 
-import { Layout } from '../layouts';
-import { Wave } from '../components';
+import { Layout } from '~/layouts';
+import { Wave } from '~/components';
 
 const Content = styled.div(tw`h-screen flex flex-col justify-center items-center \
 	text-center`);

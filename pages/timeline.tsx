@@ -1,14 +1,15 @@
 import { Icon } from '@iconify/react';
 
-import { Timeline } from '../types';
-import { GetStaticProps } from 'next';
+import type { GetStaticProps } from 'next';
+
+import type { Timeline } from '~/types';
 
 interface TimelineProps {
 	timeline?: Timeline;
 }
 
 export const getStaticProps: GetStaticProps<TimelineProps> = async () => {
-	const timeline = await (await import('../data/timeline.json')).default;
+	const { default: timeline } = await import('~/data/timeline.json');
 
 	return {
 		props: {

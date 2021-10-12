@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { NextSeo } from 'next-seo';
 
-import { useSeoProps } from '../lib';
-import { ThemeButton } from '../components';
+import { useSeoProps } from '~/lib';
+import { ThemeButton } from '~/components';
 
 import type { ComponentProps, PropsWithChildren } from 'react';
 

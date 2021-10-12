@@ -3,7 +3,7 @@ import { AppProps } from 'next/app';
 import { css, Global as EmotionStyles } from '@emotion/react';
 import { ThemeProvider } from 'next-themes';
 
-import { useAnalytics } from '../lib';
+import { useAnalytics } from '~/lib';
 
 const GlobalStyles = css`
 	&::selection {
