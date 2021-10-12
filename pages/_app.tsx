@@ -4,6 +4,7 @@ import { css, Global as EmotionStyles } from '@emotion/react';
 import { ThemeProvider } from 'next-themes';
 
 import { useAnalytics } from '~/lib';
+import { Theme } from '~/types';
 
 const GlobalStyles = css`
 	&::selection {
@@ -15,7 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
 	useAnalytics();
 
 	return (
-		<ThemeProvider attribute="class" enableSystem={true} defaultTheme="system">
+		<ThemeProvider attribute="class" defaultTheme={Theme.SYSTEM} themes={Object.values(Theme)}>
 			<EmotionStyles styles={GlobalStyles} />
 			<TailwindStyles />
 			<Component {...pageProps} />
