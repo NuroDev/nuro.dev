@@ -5,10 +5,10 @@ import { NextSeo } from 'next-seo';
 import { useSeoProps } from '~/lib';
 import { ThemeButton } from '~/components';
 
-import type { ComponentProps, PropsWithChildren } from 'react';
+import type { WithChildren, WithProps } from '~/types';
 
-interface DefaultLayoutProps {
-	seo?: Partial<ComponentProps<typeof NextSeo>>;
+interface DefaultLayoutProps extends WithChildren {
+	seo?: Partial<WithProps<typeof NextSeo>>;
 }
 
 const Body = styled.div`
@@ -17,7 +17,7 @@ const Body = styled.div`
 
 const Main = styled.main(tw`flex flex-col justify-center px-8`);
 
-export default function DefaultLayout({ children, seo }: PropsWithChildren<DefaultLayoutProps>) {
+export default function DefaultLayout({ children, seo }: DefaultLayoutProps) {
 	const defaultSeoProps = useSeoProps();
 
 	return (
