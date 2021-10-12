@@ -1,3 +1,3 @@
-export * from './useAnalytics';
-export * from './useSeo';
-export * from './usePost';
+export * from './analytics';
+export * from './post';
+export * from './seo';
