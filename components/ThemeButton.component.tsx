@@ -5,6 +5,7 @@ import { useMemo } from 'react';
 import { useTheme } from 'next-themes';
 
 import { Button } from './Button';
+import { Theme } from '~/types';
 
 const Container = styled.div(tw`fixed top-0 right-0 m-8 z-10`);
 
@@ -15,7 +16,12 @@ const StyledIcon = styled(Icon)`
 export function ThemeButton() {
 	const { theme, setTheme } = useTheme();
 
-	const isDark = useMemo(() => (theme === 'dark' ? true : false), [theme]);
+	const isDark = useMemo(() => {
+		if (theme === Theme.SYSTEM)
+			return window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+		return theme === Theme.DARK;
+	}, [theme]);
 
 	function toggle() {
 		setTheme(isDark ? 'light' : 'dark');
@@ -29,5 +35,3 @@ export function ThemeButton() {
 		</Container>
 	);
 }
-
-export default ThemeButton;
