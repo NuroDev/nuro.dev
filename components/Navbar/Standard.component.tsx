@@ -26,7 +26,7 @@ const navigation: NavigationItems = [
 	},
 ];
 
-const StyledDisclosure = styled(Disclosure)(tw`fixed inset-0`);
+const StyledDisclosure = styled(Disclosure)(tw`fixed inset-0 h-24`);
 
 const Container = styled.div(tw`
 	max-w-4xl mx-auto px-2 sm:px-6 lg:px-8
