@@ -57,7 +57,7 @@ export default function _Blog({ posts }: BlogProps) {
 	const latestPost = deserialisedPosts.shift();
 
 	return (
-		<Layout.Blog>
+		<Layout.Blog seo={{ title: 'nuro ─ blog ─ all' }}>
 			<Container>
 				<Content>
 					<Blog.Latest post={latestPost} />
