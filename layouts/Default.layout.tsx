@@ -3,7 +3,7 @@ import tw from 'twin.macro';
 import { NextSeo } from 'next-seo';
 
 import { useSeoProps } from '~/lib';
-import { ThemeButton } from '~/components';
+import { Navbar } from '~/components';
 
 import type { WithChildren, WithProps } from '~/types';
 
@@ -23,10 +23,8 @@ export default function DefaultLayout({ children, seo }: DefaultLayoutProps) {
 	return (
 		<Body>
 			<NextSeo {...defaultSeoProps} {...seo} />
-			<Main>
-				<ThemeButton />
-				{children}
-			</Main>
+			<Navbar.Standard />
+			<Main>{children}</Main>
 		</Body>
 	);
 }

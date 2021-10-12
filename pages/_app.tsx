@@ -10,6 +10,12 @@ const GlobalStyles = css`
 	&::selection {
 		${tw`bg-gray-900 dark:bg-white text-white dark:text-primary-500`}
 	}
+
+	html.dark {
+		* {
+			--tw-ring-offset-color: #0c0e10;
+		}
+	}
 `;
 
 export default function App({ Component, pageProps }: AppProps) {
