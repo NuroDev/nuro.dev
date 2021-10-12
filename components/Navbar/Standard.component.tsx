@@ -59,7 +59,7 @@ export function Standard() {
 								<div tw="hidden sm:block">
 									<div tw="flex space-x-4">
 										{navigation.map(({ path, name, ...rest }) => {
-											const active = router.pathname.includes(path);
+											const active = router.pathname === path;
 
 											return (
 												<Navbar.Item

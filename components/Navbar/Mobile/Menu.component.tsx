@@ -41,7 +41,7 @@ export function Menu({ items }: MenuProps) {
 		<StyledDisclosurePanel>
 			<div tw="px-2 pt-2 pb-3 space-y-1">
 				{items.map(({ path, icon, name }) => {
-					const active = router.pathname.includes(path);
+					const active = router.pathname === path;
 
 					return (
 						<Link key={name} href={path} aria-current={active ? 'page' : undefined}>
