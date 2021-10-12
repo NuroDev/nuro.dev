@@ -52,7 +52,7 @@ const Content = styled.div(tw`
 `);
 
 const Title = styled.h2(tw`
-	mt-6 lg:mt-0 mx-4 lg:mx-0 \
+	mt-6 lg:mt-0 mx-4 lg:mx-0 py-4 \
 	text-3xl sm:text-4xl lg:text-5xl font-bold line-clamp-4 \
 	text-gray-500 dark:text-white
 `);
