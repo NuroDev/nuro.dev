@@ -12,7 +12,7 @@ export const Container = styled.div(tw`
 	bg-gray-100 bg-opacity-50 dark:bg-gray-900 dark:bg-opacity-50 backdrop-filter backdrop-blur-sm \
 	border border-gray-100 dark:border-gray-500 \
 	text-gray-400 dark:text-white text-center text-xs \
-	rounded-lg pointer-events-none \
+	rounded-lg pointer-events-none select-none \
 	opacity-0 group-hover:opacity-100 \
 	transition ease-in-out delay-300 duration-300
 `);
