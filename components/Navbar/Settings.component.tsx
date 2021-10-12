@@ -16,7 +16,7 @@ const Button = styled.button(tw`
 	transition ease-in-out duration-300
 `);
 
-export function Theme() {
+export function Settings() {
 	const { theme, setTheme } = useTheme();
 
 	const isDark = useMemo(() => {
@@ -26,14 +26,16 @@ export function Theme() {
 		return theme === ThemeTypes.DARK;
 	}, [theme]);
 
-	function toggle() {
+	function toggleTheme() {
 		setTheme(isDark ? 'light' : 'dark');
 	}
 
 	return (
-		<Button aria-label="Toggle Theme" className="group" onClick={toggle}>
-			<Navbar.Icon icon={isDark ? 'feather:moon' : 'feather:sun'} />
-			<Navbar.Tooltip>Theme</Navbar.Tooltip>
-		</Button>
+		<>
+			<Button aria-label="Toggle Theme" className="group" onClick={toggleTheme}>
+				<Navbar.Icon icon={isDark ? 'feather:moon' : 'feather:sun'} />
+				<Navbar.Tooltip>Theme</Navbar.Tooltip>
+			</Button>
+		</>
 	);
 }

@@ -16,7 +16,7 @@ const navigation: NavigationItems = [
 	},
 	{
 		name: 'Blog',
-		icon: 'feather:book',
+		icon: 'feather:edit-3',
 		path: '/blog',
 	},
 	{
