@@ -35,6 +35,7 @@
 		"next": "^11.1.2",
 		"next-seo": "^4.28.1",
 		"next-themes": "^0.0.15",
+		"nprogress": "^0.2.0",
 		"ogl-typescript": "^0.1.40",
 		"preact": "^10.5.14",
 		"react": "^17.0.2",
