@@ -2,6 +2,7 @@ import Link from 'next/link';
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { Icon } from '@iconify/react';
+import { useSound } from 'use-sound';
 
 import { Navbar } from '..';
 import { NavigationItem } from '~/types';
@@ -31,9 +32,13 @@ const ItemContainer = styled.a<Pick<ItemProps, 'active'>>`
 `;
 
 export function Item({ active, name, icon, path, tooltip }: ItemProps) {
+	const [play] = useSound('/sounds/click.ogg', {
+		volume: 0.25,
+	});
+
 	return (
 		<Link aria-current={active ? 'page' : undefined} aria-label={name} href={path} key={name}>
-			<ItemContainer className="group" active={active}>
+			<ItemContainer className="group" active={active} onClick={() => play()}>
 				<Navbar.Icon icon={icon} />
 				{tooltip && <Navbar.Tooltip>{tooltip}</Navbar.Tooltip>}
 			</ItemContainer>

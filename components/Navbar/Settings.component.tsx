@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { useMemo } from 'react';
+import { useSound } from 'use-sound';
 import { useTheme } from 'next-themes';
 
 import { Navbar } from '..';
@@ -18,6 +19,9 @@ const Button = styled.button(tw`
 
 export function Settings() {
 	const { theme, setTheme } = useTheme();
+	const [play] = useSound('/sounds/click.ogg', {
+		volume: 0.25,
+	});
 
 	const isDark = useMemo(() => {
 		if (theme === ThemeTypes.SYSTEM)
@@ -27,6 +31,7 @@ export function Settings() {
 	}, [theme]);
 
 	function toggleTheme() {
+		play();
 		setTheme(isDark ? 'light' : 'dark');
 	}
 

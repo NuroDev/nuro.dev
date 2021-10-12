@@ -38,7 +38,8 @@
 		"preact": "^10.5.14",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
-		"react-use": "^17.3.1"
+		"react-use": "^17.3.1",
+		"use-sound": "^4.0.1"
 	},
 	"devDependencies": {
 		"@emotion/babel-plugin": "^11.3.0",
