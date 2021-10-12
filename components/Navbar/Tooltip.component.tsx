@@ -1,5 +1,10 @@
 import styled from '@emotion/styled';
+import { Icon } from '@iconify/react';
 import tw from 'twin.macro';
+
+import type { WithChildren, WithClassName } from '~/types';
+
+interface TooltipProps extends WithClassName, WithChildren {}
 
 export const Container = styled.div(tw`
 	absolute top-full -left-1/2 z-10 \
@@ -11,3 +16,21 @@ export const Container = styled.div(tw`
 	opacity-0 group-hover:opacity-100 \
 	transition ease-in-out delay-300 duration-300
 `);
+
+const StyledIcon = styled(Icon)`
+	${tw`
+		absolute left-0 bottom-full w-full h-4 \
+		text-gray-100 dark:text-gray-500
+	`}
+
+	margin-bottom: -0.325rem;
+`;
+
+export function Tooltip({ children, className }: TooltipProps) {
+	return (
+		<Container className={className}>
+			<StyledIcon icon="feather:chevron-up" />
+			{children}
+		</Container>
+	);
+}

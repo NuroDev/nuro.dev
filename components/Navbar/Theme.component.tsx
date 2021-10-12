@@ -33,7 +33,7 @@ export function Theme() {
 	return (
 		<Button aria-label="Toggle Theme" className="group" onClick={toggle}>
 			<Navbar.Icon icon={isDark ? 'feather:moon' : 'feather:sun'} />
-			<Navbar.Tooltip.Container>Theme</Navbar.Tooltip.Container>
+			<Navbar.Tooltip>Theme</Navbar.Tooltip>
 		</Button>
 	);
 }

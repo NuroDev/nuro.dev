@@ -34,7 +34,7 @@ export function Item({ active, children, tooltip }: ItemProps) {
 	return (
 		<ItemContainer className="group" active={active}>
 			{children}
-			{tooltip && <Navbar.Tooltip.Container>{tooltip}</Navbar.Tooltip.Container>}
+			{tooltip && <Navbar.Tooltip>{tooltip}</Navbar.Tooltip>}
 		</ItemContainer>
 	);
 }
