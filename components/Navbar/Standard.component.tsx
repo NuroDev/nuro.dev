@@ -29,7 +29,7 @@ const navigation: NavigationItems = [
 const StyledDisclosure = styled(Disclosure)(tw`fixed inset-0 h-24`);
 
 const Container = styled.div(tw`
-	max-w-4xl mx-auto px-2 sm:px-6 lg:px-8
+	mx-auto px-3
 `);
 
 const Content = styled.div(tw`
@@ -37,7 +37,7 @@ const Content = styled.div(tw`
 `);
 
 const ItemsContainer = styled.div(tw`
-	flex flex-1 items-center justify-center sm:items-stretch sm:justify-start
+	flex flex-1 items-center justify-center
 `);
 
 const Spacer = styled.span(tw`flex flex-1`);
@@ -54,6 +54,8 @@ export function Standard() {
 							<Mobile.Button open={open} />
 
 							<ItemsContainer>
+								<Spacer />
+
 								<div tw="hidden sm:block">
 									<div tw="flex space-x-4">
 										{navigation.map(({ path, name, ...rest }) => {
@@ -77,7 +79,7 @@ export function Standard() {
 
 								<div tw="hidden sm:block">
 									<div tw="flex space-x-4">
-										<Navbar.Theme />
+										<Navbar.Settings />
 									</div>
 								</div>
 							</ItemsContainer>
