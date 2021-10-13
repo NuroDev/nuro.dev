@@ -116,18 +116,17 @@ export function Settings() {
 				enterTo="transform opacity-100 scale-100"
 				leave="transition ease-in duration-75"
 				leaveFrom="transform opacity-100 scale-100"
-				leaveTo="transform opacity-0 scale-95"
-			>
+				leaveTo="transform opacity-0 scale-95">
 				<StyledItems>
-					{items.map((section) => (
-						<MenuSection>
+					{items.map((section, index) => (
+						<MenuSection key={index}>
 							{section.map((item) => (
 								<Menu.Item key={item.text}>
 									{({ active }) => {
 										if ('href' in item)
 											return (
-												<Link href={item.href}>
-													<MenuButton className="group" $active={active}>
+												<MenuButton className="group" $active={active}>
+													<Link href={item.href}>
 														{item.type === SettingsItemType.ITEM ? (
 															<MenuButtonIcon
 																icon={item.icon}
@@ -137,8 +136,8 @@ export function Settings() {
 															item.icon
 														)}
 														{item.text}
-													</MenuButton>
-												</Link>
+													</Link>
+												</MenuButton>
 											);
 
 										return (
@@ -148,8 +147,7 @@ export function Settings() {
 												onClick={() => {
 													play();
 													item.onClick();
-												}}
-											>
+												}}>
 												{item.type === SettingsItemType.ITEM ? (
 													<MenuButtonIcon
 														icon={item.icon}
@@ -166,56 +164,6 @@ export function Settings() {
 							))}
 						</MenuSection>
 					))}
-
-					{/* <MenuSection>
-						<Menu.Item>
-							{({ active }) => (
-								<Link href="/timeline">
-									<MenuButton className="group" $active={active}>
-										<MenuButtonIcon icon="feather:clock" aria-hidden="true" />
-										Timeline
-									</MenuButton>
-								</Link>
-							)}
-						</Menu.Item>
-					</MenuSection>
-					<MenuSection>
-						<Menu.Item>
-							{({ active }) => (
-								<MenuButton
-									className="group"
-									$active={active}
-									onClick={toggleTheme}>
-									<MenuButtonIcon
-										icon={isDark ? 'feather:sun' : 'feather:moon'}
-										aria-hidden="true"
-									/>
-									{isDark ? 'Light Mode' : 'Dark Mode'}
-								</MenuButton>
-							)}
-						</Menu.Item>
-						<Menu.Item>
-							{({ active }) => (
-								<MenuButton className="group" $active={active}>
-									<MenuButtonIcon icon="feather:image" aria-hidden="true" />
-									Animations
-								</MenuButton>
-							)}
-						</Menu.Item>
-					</MenuSection>
-
-					<MenuSection>
-						<Menu.Item>
-							{({ active }) => (
-								<Link href="/status">
-									<MenuButton className="group" $active={active}>
-										<Status.Indicator />
-										Status
-									</MenuButton>
-								</Link>
-							)}
-						</Menu.Item>
-					</MenuSection> */}
 				</StyledItems>
 			</Transition>
 		</StyledMenu>
