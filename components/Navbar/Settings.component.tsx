@@ -116,7 +116,8 @@ export function Settings() {
 				enterTo="transform opacity-100 scale-100"
 				leave="transition ease-in duration-75"
 				leaveFrom="transform opacity-100 scale-100"
-				leaveTo="transform opacity-0 scale-95">
+				leaveTo="transform opacity-0 scale-95"
+			>
 				<StyledItems>
 					{items.map((section) => (
 						<MenuSection>
@@ -147,7 +148,8 @@ export function Settings() {
 												onClick={() => {
 													play();
 													item.onClick();
-												}}>
+												}}
+											>
 												{item.type === SettingsItemType.ITEM ? (
 													<MenuButtonIcon
 														icon={item.icon}

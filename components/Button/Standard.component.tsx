@@ -31,7 +31,8 @@ export function Standard({ children, icon, onClick, ...rest }: StandardProps) {
 			onClick={(...args) => {
 				play();
 				onClick(...args);
-			}}>
+			}}
+		>
 			{icon && <StyledIcon icon={icon} />}
 			{children}
 		</Container>
