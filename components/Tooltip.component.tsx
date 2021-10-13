@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
-import { createRef } from 'react';
 
 import type { ReactNode } from 'react';
 
@@ -8,16 +7,11 @@ import type { WithChildren } from '~/types';
 
 type Direction = 'top' | 'bottom' | 'left' | 'right';
 
-type TooltipProps = WithChildren & {
+interface TooltipProps extends WithChildren {
 	direction?: Direction;
-} & (
-		| {
-				text: string;
-		  }
-		| {
-				element: ReactNode;
-		  }
-	);
+	element?: () => ReactNode;
+	text?: string;
+}
 
 const Container = styled.div(tw`
 	relative flex items-center
@@ -48,18 +42,16 @@ function flipDirectionStyle(direction: Direction): Direction {
 	}
 }
 
-export function Tooltip({ children, direction = 'bottom', ...rest }: TooltipProps) {
-	const tooltipRef = createRef<HTMLDivElement | null>();
+export function Tooltip({ children, direction = 'bottom', element, text }: TooltipProps) {
+	if (!element && !text) return null;
 
 	return (
 		<Container className="group">
 			<TextContainer
 				style={{
 					[flipDirectionStyle(direction)]: '100%',
-				}}
-				ref={tooltipRef}
-			>
-				{'text' in rest ? rest.text : rest.element}
+				}}>
+				{element ? element() : text ?? null}
 			</TextContainer>
 			{children}
 		</Container>
