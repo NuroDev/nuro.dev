@@ -44,8 +44,6 @@ const ItemsContainer = styled.div(tw`
 	flex flex-1 items-center justify-center
 `);
 
-const Spacer = styled.span(tw`flex flex-1`);
-
 const BackContainer = styled.div(tw`
 	absolute inset-0 hidden sm:block \
 	m-4
@@ -64,7 +62,7 @@ export function Standard({ back = false }: StandardProps) {
 
 							{back && (
 								<BackContainer>
-									<div tw="flex space-x-4">
+									<div tw="flex space-x-6">
 										<Navbar.Back />
 									</div>
 								</BackContainer>
@@ -72,7 +70,7 @@ export function Standard({ back = false }: StandardProps) {
 
 							<ItemsContainer>
 								<div tw="hidden sm:block">
-									<div tw="flex space-x-4">
+									<div tw="flex space-x-6">
 										{navigation.map(({ path, name, ...rest }) => {
 											const active = router.pathname === path;
 
