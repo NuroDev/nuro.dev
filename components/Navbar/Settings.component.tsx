@@ -10,7 +10,13 @@ import { useTheme } from 'next-themes';
 import { Button, Navbar, Status } from '..';
 import { SettingsItemType, Theme as ThemeTypes } from '~/types';
 
+import type { AnchorHTMLAttributes } from 'react';
+
 import type { SettingsItem } from '~/types';
+
+interface MenuLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+	$active: boolean;
+}
 
 const StyledMenu = styled(Menu)(tw`
 	relative inline-block \
@@ -33,7 +39,7 @@ const MenuSection = styled.div(tw`
 	py-2
 `);
 
-const MenuButton = styled.a<{ $active: boolean }>`
+const MenuButton = styled.a<Pick<MenuLinkProps, '$active'>>`
 	${tw`flex items-center \
 		px-4 py-3 \
 		text-sm \
@@ -50,9 +56,20 @@ const MenuButtonIcon = styled(Icon)(tw`
 	mr-3
 `);
 
+/**
+ * Menu Link
+ *
+ * @see https://headlessui.dev/react/menu#integrating-with-next-js
+ */
+const MenuLink = ({ children, href, ...rest }: MenuLinkProps) => (
+	<Link href={href}>
+		<MenuButton {...rest}>{children}</MenuButton>
+	</Link>
+);
+
 export function Settings() {
 	const { theme, setTheme } = useTheme();
-	const [play] = useSound('/sounds/click.ogg', {
+	const [playClick] = useSound('/sounds/click.ogg', {
 		volume: 0.25,
 	});
 
@@ -62,11 +79,6 @@ export function Settings() {
 
 		return theme === ThemeTypes.DARK;
 	}, [theme]);
-
-	function toggleTheme() {
-		play();
-		setTheme(isDark ? 'light' : 'dark');
-	}
 
 	const items: Array<Array<SettingsItem>> = [
 		[
@@ -103,7 +115,7 @@ export function Settings() {
 
 	return (
 		<StyledMenu as="div">
-			<Menu.Button>
+			<Menu.Button as={Fragment}>
 				<Button.Icon aria-label="More" className="group">
 					<Navbar.Icon icon={'feather:more-horizontal'} />
 				</Button.Icon>
@@ -125,19 +137,17 @@ export function Settings() {
 									{({ active }) => {
 										if ('href' in item)
 											return (
-												<MenuButton className="group" $active={active}>
-													<Link href={item.href}>
-														{item.type === SettingsItemType.ITEM ? (
-															<MenuButtonIcon
-																icon={item.icon}
-																aria-hidden="true"
-															/>
-														) : (
-															item.icon
-														)}
-														{item.text}
-													</Link>
-												</MenuButton>
+												<MenuLink $active={active} href={item.href}>
+													{item.type === SettingsItemType.ITEM ? (
+														<MenuButtonIcon
+															icon={item.icon}
+															aria-hidden="true"
+														/>
+													) : (
+														item.icon
+													)}
+													{item.text}
+												</MenuLink>
 											);
 
 										return (
@@ -145,7 +155,7 @@ export function Settings() {
 												className="group"
 												$active={active}
 												onClick={() => {
-													play();
+													playClick();
 													item.onClick();
 												}}>
 												{item.type === SettingsItemType.ITEM ? (
