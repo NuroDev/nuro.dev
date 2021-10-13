@@ -10,6 +10,7 @@ import type { NavigationItems } from '~/types';
 
 interface StandardProps {
 	back?: boolean;
+	status?: boolean;
 }
 
 const navigation: NavigationItems = [
@@ -54,7 +55,7 @@ const StatusContainer = styled.div(tw`
 	-ml-10
 `);
 
-export function Standard({ back = false }: StandardProps) {
+export function Standard({ back = false, status = true }: StandardProps) {
 	const router = useRouter();
 
 	const goBack = () => router.back();
@@ -86,9 +87,11 @@ export function Standard({ back = false }: StandardProps) {
 							<ItemsContainer>
 								<div tw="hidden sm:block">
 									<div tw="flex space-x-6">
-										<StatusContainer>
-											<Navbar.Status />
-										</StatusContainer>
+										{status && (
+											<StatusContainer>
+												<Navbar.Status />
+											</StatusContainer>
+										)}
 
 										{navigation.map(({ path, name, ...rest }) => {
 											const active = router.pathname === path;

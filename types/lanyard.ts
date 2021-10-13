@@ -25,3 +25,8 @@ export const READABLE_DISCORD_STATUS: {
 	[DiscordStatus.OFFLINE]: 'Offline',
 	[DiscordStatus.ONLINE]: 'Online',
 };
+
+export enum LanyardAvatarType {
+	USER = 'user',
+	MUSIC = 'music',
+}

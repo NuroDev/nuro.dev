@@ -11,6 +11,7 @@ interface DefaultLayoutProps extends WithChildren {
 	back?: boolean;
 	background?: boolean;
 	seo?: Partial<WithProps<typeof NextSeo>>;
+	status?: boolean;
 }
 
 const Main = styled.main(tw`flex flex-col justify-center px-8`);
@@ -20,13 +21,14 @@ export function DefaultLayout({
 	background = true,
 	children,
 	seo,
+	status = true,
 }: DefaultLayoutProps) {
 	const defaultSeoProps = useSeoProps();
 
 	return (
 		<>
 			<NextSeo {...defaultSeoProps} {...seo} />
-			<Navbar.Standard back={back} />
+			<Navbar.Standard back={back} status={status} />
 			<Main>
 				{background && <Background.Standard />}
 				{children}
