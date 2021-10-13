@@ -60,7 +60,7 @@ const Title = styled.h2(tw`
 
 const Description = styled.p(tw`
 	mt-6 lg:mt-0 mx-4 lg:mx-0 \
-	text-lg
+	text-lg line-clamp-3
 `);
 
 const Footer = styled.div(tw`
