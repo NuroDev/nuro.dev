@@ -4,7 +4,7 @@ import { Disclosure } from '@headlessui/react';
 import { useRouter } from 'next/router';
 
 import { Mobile } from '.';
-import { Navbar } from '..';
+import { Button, Navbar, Tooltip } from '..';
 
 import type { NavigationItems } from '~/types';
 
@@ -49,8 +49,15 @@ const BackContainer = styled.div(tw`
 	m-4
 `);
 
+const StatusContainer = styled.div(tw`
+	absolute hidden sm:block \
+	-ml-10
+`);
+
 export function Standard({ back = false }: StandardProps) {
 	const router = useRouter();
+
+	const goBack = () => router.back();
 
 	return (
 		<StyledDisclosure as="nav">
@@ -63,7 +70,14 @@ export function Standard({ back = false }: StandardProps) {
 							{back && (
 								<BackContainer>
 									<div tw="flex space-x-6">
-										<Navbar.Back />
+										<Tooltip text="Back">
+											<Button.Icon
+												aria-label="Back"
+												className="group"
+												onClick={goBack}>
+												<Navbar.Icon icon={'feather:arrow-left'} />
+											</Button.Icon>
+										</Tooltip>
 									</div>
 								</BackContainer>
 							)}
@@ -71,6 +85,10 @@ export function Standard({ back = false }: StandardProps) {
 							<ItemsContainer>
 								<div tw="hidden sm:block">
 									<div tw="flex space-x-6">
+										<StatusContainer>
+											<Navbar.Status />
+										</StatusContainer>
+
 										{navigation.map(({ path, name, ...rest }) => {
 											const active = router.pathname === path;
 
@@ -85,6 +103,7 @@ export function Standard({ back = false }: StandardProps) {
 												/>
 											);
 										})}
+
 										<Navbar.Settings />
 									</div>
 								</div>

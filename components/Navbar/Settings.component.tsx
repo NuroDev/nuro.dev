@@ -1,16 +1,18 @@
 import Link from 'next/link';
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
+import { Fragment, useMemo } from 'react';
 import { Icon } from '@iconify/react';
 import { Menu, Transition } from '@headlessui/react';
-import { Fragment, useMemo } from 'react';
+import { useLanyard } from 'use-lanyard';
 import { useSound } from 'use-sound';
 import { useTheme } from 'next-themes';
 
 import { Button, Navbar, Status } from '..';
-import { SettingsItemType, Theme as ThemeTypes } from '~/types';
+import { DiscordStatus, SettingsItemType, Theme as ThemeTypes } from '~/types';
 
 import type { AnchorHTMLAttributes } from 'react';
+import type { Data } from 'use-lanyard';
 
 import type { SettingsItem } from '~/types';
 
@@ -101,14 +103,6 @@ export function Settings() {
 				icon: 'feather:image',
 				text: 'Animations',
 				onClick: () => {},
-			},
-		],
-		[
-			{
-				type: SettingsItemType.CUSTOM_ITEM,
-				icon: <Status.Indicator />,
-				text: 'Status',
-				href: '/status',
 			},
 		],
 	];
