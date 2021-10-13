@@ -8,19 +8,15 @@ import { DiscordStatus } from '~/types';
 
 import type { Data } from 'use-lanyard';
 
-interface StatusWrapperProps {
-	userId?: string;
-}
-
 const StatusContainer = styled.div(tw`
 	ml-3 mt-3 \
 	cursor-pointer
 `);
 
-export function StatusWrapper({ userId }: StatusWrapperProps) {
+export function StatusWrapper() {
 	const { data: status } = useLanyard(process.env.NEXT_DISCORD_ID);
 
-	if (!userId || !status || status.discord_status === DiscordStatus.OFFLINE) return null;
+	if (!status || status.discord_status === DiscordStatus.OFFLINE) return null;
 
 	function statusColor(status: Data) {
 		switch (status.discord_status as DiscordStatus) {
