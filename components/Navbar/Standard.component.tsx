@@ -37,7 +37,7 @@ const Container = styled.div(tw`
 `);
 
 const Content = styled.div(tw`
-	relative flex items-center justify-between h-16
+	relative flex items-center justify-center h-16
 `);
 
 const ItemsContainer = styled.div(tw`
@@ -45,6 +45,11 @@ const ItemsContainer = styled.div(tw`
 `);
 
 const Spacer = styled.span(tw`flex flex-1`);
+
+const BackContainer = styled.div(tw`
+	absolute inset-0 hidden sm:block \
+	m-4
+`);
 
 export function Standard({ back = false }: StandardProps) {
 	const router = useRouter();
@@ -57,17 +62,15 @@ export function Standard({ back = false }: StandardProps) {
 						<Content>
 							<Mobile.Button open={open} />
 
-							<ItemsContainer>
-								{back && (
-									<div tw="hidden sm:block">
-										<div tw="flex space-x-4">
-											<Navbar.Back />
-										</div>
+							{back && (
+								<BackContainer>
+									<div tw="flex space-x-4">
+										<Navbar.Back />
 									</div>
-								)}
+								</BackContainer>
+							)}
 
-								<Spacer />
-
+							<ItemsContainer>
 								<div tw="hidden sm:block">
 									<div tw="flex space-x-4">
 										{navigation.map(({ path, name, ...rest }) => {
@@ -84,13 +87,6 @@ export function Standard({ back = false }: StandardProps) {
 												/>
 											);
 										})}
-									</div>
-								</div>
-
-								<Spacer />
-
-								<div tw="hidden sm:block">
-									<div tw="flex space-x-4">
 										<Navbar.Settings />
 									</div>
 								</div>
