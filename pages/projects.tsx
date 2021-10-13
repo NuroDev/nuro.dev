@@ -4,7 +4,7 @@ import tw from 'twin.macro';
 import { Layout } from '~/layouts';
 
 const Container = styled.div(tw`
-	mt-24 mb-20 mx-4 sm:mx-6 lg:mb-28 lg:mx-8
+	mt-24 mb-20 mx-2 sm:mx-6 lg:mb-28 lg:mx-8
 `);
 
 const Content = styled.div(tw`
