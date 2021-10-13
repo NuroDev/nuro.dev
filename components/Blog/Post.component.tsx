@@ -39,6 +39,7 @@ const Banner = styled.div`
 const BannerPlaceholder = styled.div(tw`
 	w-full h-full lg:h-48 \
 	bg-gray-200 dark:bg-gray-600
+	animate-pulse
 `);
 
 const Content = styled.div(tw`
@@ -79,7 +80,7 @@ export function _Post({ index, post }: PostProps) {
 			<Container>
 				{post.banner.url && index <= 2 && (
 					<Banner>
-						<BannerPlaceholder className="animate-pulse" />
+						<BannerPlaceholder />
 						<img
 							alt={post.title.raw}
 							draggable={false}
