@@ -39,8 +39,7 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<BlogProps>>
 }
 
 export default function _Blog({ posts }: BlogProps) {
-	// @TODO: Update to use blog error page component
-	if (!posts || posts.length <= 0) return null;
+	if (!posts || posts.length <= 0) return <Blog.Error />;
 
 	const deserialisedPosts = posts.map((post) => deserialisePost(post));
 	const latestPost = deserialisedPosts.shift();

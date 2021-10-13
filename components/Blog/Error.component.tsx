@@ -3,6 +3,8 @@ import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { Icon } from '@iconify/react';
 import { useRouter } from 'next/router';
+import { Layout } from '~/layouts';
+import { Button } from '..';
 
 const Container = styled.div(tw`
 	flex flex-grow min-h-full \
@@ -38,45 +40,29 @@ const Actions = styled.div(tw`
 	mt-6 flex justify-center items-center space-x-4
 `);
 
-const ActionButton = styled.button(tw`
-	flex justify-center items-center h-12 px-8 py-4 \
-	rounded-lg \
-	text-base font-bold text-primary-300 hover:text-primary-400 \
-	bg-gray-50 hover:bg-gray-100 hover:bg-opacity-50 dark:bg-gray-900 dark:hover:bg-gray-800 \
-	transition ease-in-out duration-300 \
-	focus:outline-none focus:ring-4 focus:ring-primary-500
-`);
-
-const ActionIcon = styled(Icon)(tw`mr-2`);
-
+// @TODO: Add back button
 export function Error() {
-	const router = useRouter();
-
-	const goBack = router.back();
-
 	return (
-		<Container>
-			<Content>
-				<IconContainer>
-					<StyledIcon icon="feather:alert-circle" />
-				</IconContainer>
-				<Body>
-					<Title>No Posts Found</Title>
-					<SubTitle>Sorry, we couldn’t find any blog posts ¯\_(ツ)_/¯</SubTitle>
-					<Actions>
-						<ActionButton onClick={() => goBack}>
-							<ActionIcon icon="feather:arrow-left" />
-							<span>Back</span>
-						</ActionButton>
-						<Link href="/blog">
-							<ActionButton>
-								<ActionIcon icon="feather:book" />
-								<span>Blog</span>
-							</ActionButton>
-						</Link>
-					</Actions>
-				</Body>
-			</Content>
-		</Container>
+		<Layout.Error>
+			<Container>
+				<Content>
+					<IconContainer>
+						<StyledIcon icon="feather:alert-circle" />
+					</IconContainer>
+					<Body>
+						<Title>No Posts Found</Title>
+						<SubTitle>Sorry, we couldn’t find any blog posts ¯\_(ツ)_/¯</SubTitle>
+						<Actions>
+							<Link href="/">
+								<Button.Standard icon="feather:home">Home</Button.Standard>
+							</Link>
+							<Link href="/blog">
+								<Button.Standard icon="feather:book">Blog</Button.Standard>
+							</Link>
+						</Actions>
+					</Body>
+				</Content>
+			</Container>
+		</Layout.Error>
 	);
 }
