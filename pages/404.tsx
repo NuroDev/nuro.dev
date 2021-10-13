@@ -12,7 +12,8 @@ const Container = styled.div(tw`
 `);
 
 const Content = styled.div(tw`
-	flex-grow flex flex-col justify-center max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8
+	flex-grow flex flex-col justify-center max-w-7xl w-full \
+	mx-auto px-4 sm:px-6 lg:px-8
 `);
 
 const IconContainer = styled.div(tw`
@@ -37,17 +38,6 @@ const Description = styled.p(tw`
 const Actions = styled.div(tw`
 	mt-6 flex justify-center items-center space-x-4
 `);
-
-const ActionButton = styled.button(tw`
-	flex justify-center items-center h-12 px-8 py-4 \
-	rounded-lg \
-	text-base font-bold text-primary-300 hover:text-primary-400 \
-	bg-gray-50 hover:bg-gray-100 hover:bg-opacity-50 dark:bg-gray-900 dark:hover:bg-gray-800 \
-	transition ease-in-out duration-300 \
-	focus:outline-none focus:ring-4 focus:ring-primary-500
-`);
-
-const ActionIcon = styled(Icon)(tw`mr-2`);
 
 // @TODO: Add back button
 export default function Error() {

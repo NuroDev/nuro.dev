@@ -45,12 +45,13 @@ const MenuButton = styled.a<Pick<MenuLinkProps, '$active'>>`
 	${tw`flex items-center \
 		px-4 py-3 \
 		text-sm font-medium tracking-wide \
-		cursor-pointer
+		cursor-pointer \
+		transition ease-in-out duration-300
 	`}
 	${({ $active }) =>
 		$active
 			? tw`bg-gray-100 bg-opacity-50 dark:bg-gray-700 dark:bg-opacity-50 text-gray-900 dark:text-white`
-			: tw`text-gray-700 dark:text-gray-400`}
+			: tw`text-gray-300 dark:text-gray-400`}
 `;
 
 const MenuButtonIcon = styled(Icon)(tw`

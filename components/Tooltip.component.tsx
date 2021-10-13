@@ -20,7 +20,8 @@ const Container = styled.div(tw`
 const TextContainer = styled.div(tw`
 	absolute z-10 \
 	mt-2 -ml-2.5 px-4 py-2 \
-	bg-gray-100 bg-opacity-50 dark:bg-gray-900 dark:bg-opacity-50 backdrop-filter backdrop-blur-sm \
+	bg-gray-100 bg-opacity-50 dark:bg-gray-900 dark:bg-opacity-50 \
+	backdrop-filter backdrop-blur-sm \
 	border border-gray-100 dark:border-gray-500 \
 	text-gray-400 dark:text-white \
 	text-center text-xs font-medium tracking-wide whitespace-nowrap \
