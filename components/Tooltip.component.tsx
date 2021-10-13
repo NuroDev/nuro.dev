@@ -28,7 +28,8 @@ const TextContainer = styled.div(tw`
 	mt-2 -ml-2.5 px-4 py-2 \
 	bg-gray-100 bg-opacity-50 dark:bg-gray-900 dark:bg-opacity-50 backdrop-filter backdrop-blur-sm \
 	border border-gray-100 dark:border-gray-500 \
-	text-gray-400 dark:text-white text-center text-xs \
+	text-gray-400 dark:text-white \
+	text-center text-xs font-medium tracking-wide \
 	rounded-lg pointer-events-none select-none \
 	opacity-0 group-hover:opacity-100 \
 	transition ease-in-out delay-200 duration-300

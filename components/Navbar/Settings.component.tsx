@@ -44,7 +44,7 @@ const MenuSection = styled.div(tw`
 const MenuButton = styled.a<Pick<MenuLinkProps, '$active'>>`
 	${tw`flex items-center \
 		px-4 py-3 \
-		text-sm \
+		text-sm font-medium tracking-wide \
 		cursor-pointer
 	`}
 	${({ $active }) =>
@@ -86,7 +86,7 @@ export function Settings() {
 		[
 			{
 				type: SettingsItemType.ITEM,
-				icon: 'feather:clock',
+				icon: 'feather:star',
 				text: 'Timeline',
 				href: '/timeline',
 			},
