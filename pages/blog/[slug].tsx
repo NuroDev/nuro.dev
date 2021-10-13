@@ -44,6 +44,7 @@ export async function getStaticProps({
 export default function BlogPost({ post }: BlogPostProps) {
 	return (
 		<Layout.Default
+			back={true}
 			seo={{
 				title: `nuro ─ blog ─ ${post.title.raw}`,
 				description: post.description.raw ?? undefined,

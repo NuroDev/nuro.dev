@@ -8,6 +8,10 @@ import { Navbar } from '..';
 
 import type { NavigationItems } from '~/types';
 
+interface StandardProps {
+	back: boolean;
+}
+
 const navigation: NavigationItems = [
 	{
 		name: 'Home',
@@ -42,7 +46,7 @@ const ItemsContainer = styled.div(tw`
 
 const Spacer = styled.span(tw`flex flex-1`);
 
-export function Standard() {
+export function Standard({ back }: StandardProps) {
 	const router = useRouter();
 
 	return (
@@ -54,6 +58,14 @@ export function Standard() {
 							<Mobile.Button open={open} />
 
 							<ItemsContainer>
+								{back && (
+									<div tw="hidden sm:block">
+										<div tw="flex space-x-4">
+											<Navbar.Back />
+										</div>
+									</div>
+								)}
+
 								<Spacer />
 
 								<div tw="hidden sm:block">

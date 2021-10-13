@@ -8,19 +8,25 @@ import { Background, Navbar } from '~/components';
 import type { WithChildren, WithProps } from '~/types';
 
 interface DefaultLayoutProps extends WithChildren {
+	back?: boolean;
 	background?: boolean;
 	seo?: Partial<WithProps<typeof NextSeo>>;
 }
 
 const Main = styled.main(tw`flex flex-col justify-center px-8`);
 
-export function DefaultLayout({ background = true, children, seo }: DefaultLayoutProps) {
+export function DefaultLayout({
+	back = false,
+	background = true,
+	children,
+	seo,
+}: DefaultLayoutProps) {
 	const defaultSeoProps = useSeoProps();
 
 	return (
 		<>
 			<NextSeo {...defaultSeoProps} {...seo} />
-			<Navbar.Standard />
+			<Navbar.Standard back={back} />
 			<Main>
 				{background && <Background.Standard />}
 				{children}
