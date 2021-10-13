@@ -29,7 +29,8 @@ export function Icon({ children, className, onClick, ...rest }: IconProps) {
 				play();
 				onClick(e);
 			}}
-			{...rest}>
+			{...rest}
+		>
 			{children}
 		</Button>
 	);

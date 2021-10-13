@@ -5,7 +5,7 @@ module.exports = {
 	theme: {
 		extend: {
 			backgroundOpacity: {
-				'15': '0.15',
+				15: '0.15',
 			},
 			colors: {
 				gray: {
@@ -36,7 +36,5 @@ module.exports = {
 		},
 	},
 	variants: {},
-	plugins: [
-		require('@tailwindcss/line-clamp')
-	],
+	plugins: [require('@tailwindcss/line-clamp')],
 };

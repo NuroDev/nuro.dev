@@ -48,7 +48,8 @@ export default function BlogPost({ post }: BlogPostProps) {
 			seo={{
 				title: `nuro ─ blog ─ ${post.title.raw}`,
 				description: post.description.raw ?? undefined,
-			}}>
+			}}
+		>
 			<pre>{JSON.stringify(post, null, 4)}</pre>
 		</Layout.Default>
 	);
