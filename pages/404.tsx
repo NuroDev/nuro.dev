@@ -4,13 +4,9 @@ import tw from 'twin.macro';
 import { Icon } from '@iconify/react';
 
 import { Button } from '~/components';
+import { Layout } from '~/layouts';
 
 const Container = styled.div(tw`
-	relative h-screen \
-	pt-24 sm:pt-16 pb-20 px-4 sm:px-6 lg:pb-28 lg:px-8
-`);
-
-const ErrorContainer = styled.div(tw`
 	flex flex-grow min-h-full \
 	pt-16 pb-12
 `);
@@ -56,8 +52,8 @@ const ActionIcon = styled(Icon)(tw`mr-2`);
 // @TODO: Add back button
 export default function Error() {
 	return (
-		<Container>
-			<ErrorContainer>
+		<Layout.Error>
+			<Container>
 				<Content>
 					<IconContainer>
 						<Icon icon="feather:alert-triangle" tw="h-12 text-primary-500 w-auto" />
@@ -76,7 +72,7 @@ export default function Error() {
 						</Actions>
 					</Text>
 				</Content>
-			</ErrorContainer>
-		</Container>
+			</Container>
+		</Layout.Error>
 	);
 }
