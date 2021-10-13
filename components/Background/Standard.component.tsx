@@ -4,22 +4,15 @@ import { Camera, Color, Geometry, Mesh, Program, Renderer } from 'ogl-typescript
 import { useEffect, useRef } from 'react';
 import { useCounter } from 'react-use';
 
-import { Shaders } from '.';
 import TailwindCSS from '~/tailwind.config';
-import { WithProps } from '~/types';
-
-interface BackgroundProps {}
+import { Shaders } from '.';
 
 const Container = styled.div`
 	${tw`fixed inset-0`}
 	z-index: -10;
-
-	canvas {
-		${tw`animate-pulse`}
-	}
 `;
 
-export function Standard({}: BackgroundProps) {
+export function Standard() {
 	const containerRef = useRef<HTMLDivElement | null>(null);
 	const [animationId, { inc: incrementAnimationId }] = useCounter(1);
 
