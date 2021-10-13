@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 
-import { Button, Navbar } from '..';
+import { Button, Navbar, Tooltip } from '..';
 
 export function Back() {
 	const router = useRouter();
@@ -8,11 +8,10 @@ export function Back() {
 	const goBack = () => router.back();
 
 	return (
-		<>
+		<Tooltip text="Back">
 			<Button.Icon aria-label="Back" className="group" onClick={goBack}>
 				<Navbar.Icon icon={'feather:arrow-left'} />
-				<Navbar.Tooltip>Back</Navbar.Tooltip>
 			</Button.Icon>
-		</>
+		</Tooltip>
 	);
 }

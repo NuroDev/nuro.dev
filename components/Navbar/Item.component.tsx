@@ -2,9 +2,8 @@ import Link from 'next/link';
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { Icon } from '@iconify/react';
-import { useSound } from 'use-sound';
 
-import { Button, Navbar } from '..';
+import { Button, Navbar, Tooltip } from '..';
 import { NavigationItem } from '~/types';
 
 interface ItemProps extends NavigationItem {
@@ -23,11 +22,16 @@ const StyledButton = styled(Button.Icon)<Pick<ItemProps, 'active'>>`
 
 export function Item({ active, name, icon, path, tooltip }: ItemProps) {
 	return (
-		<Link aria-current={active ? 'page' : undefined} aria-label={name} href={path} key={name}>
-			<StyledButton className="group" active={active}>
-				<Navbar.Icon icon={icon} />
-				{tooltip && <Navbar.Tooltip>{tooltip}</Navbar.Tooltip>}
-			</StyledButton>
-		</Link>
+		<Tooltip text={tooltip}>
+			<Link
+				aria-current={active ? 'page' : undefined}
+				aria-label={name}
+				href={path}
+				key={name}>
+				<StyledButton className="group" active={active}>
+					<Navbar.Icon icon={icon} />
+				</StyledButton>
+			</Link>
+		</Tooltip>
 	);
 }
