@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
+import { forwardRef } from 'react';
 import { useSound } from 'use-sound';
 
 import type { ButtonHTMLAttributes } from 'react';
@@ -17,21 +18,23 @@ const Button = styled.button(tw`
 	focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-100 dark:focus:ring-gray-500
 `);
 
-export function Icon({ children, className, onClick, ...rest }: IconProps) {
-	const [play] = useSound('/sounds/click.ogg', {
-		volume: 0.25,
-	});
+export const Icon = forwardRef<HTMLButtonElement, IconProps>(
+	({ children, className, onClick, ...rest }, ref) => {
+		const [play] = useSound('/sounds/click.ogg', {
+			volume: 0.25,
+		});
 
-	return (
-		<Button
-			className={`group ${className}`}
-			onClick={(e) => {
-				play();
-				if (onClick) onClick(e);
-			}}
-			{...rest}
-		>
-			{children}
-		</Button>
-	);
-}
+		return (
+			<Button
+				ref={ref}
+				className={`group ${className}`}
+				onClick={(e) => {
+					play();
+					if (onClick) onClick(e);
+				}}
+				{...rest}>
+				{children}
+			</Button>
+		);
+	},
+);
