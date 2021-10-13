@@ -27,10 +27,9 @@ export function Icon({ children, className, onClick, ...rest }: IconProps) {
 			className={`group ${className}`}
 			onClick={(e) => {
 				play();
-				onClick(e);
+				if (onClick) onClick(e);
 			}}
-			{...rest}
-		>
+			{...rest}>
 			{children}
 		</Button>
 	);

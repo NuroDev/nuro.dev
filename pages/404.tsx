@@ -2,7 +2,8 @@ import Link from 'next/link';
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { Icon } from '@iconify/react';
-// import { useRouter } from 'next/router';
+
+import { Button } from '~/components';
 
 const Container = styled.div(tw`
 	relative h-screen \
@@ -70,10 +71,7 @@ export default function Error() {
 						</Description>
 						<Actions>
 							<Link href="/">
-								<ActionButton>
-									<ActionIcon icon="feather:home" />
-									<span>Home</span>
-								</ActionButton>
+								<Button.Standard icon="feather:home">Home</Button.Standard>
 							</Link>
 						</Actions>
 					</Text>
