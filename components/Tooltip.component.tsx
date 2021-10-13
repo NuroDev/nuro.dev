@@ -56,7 +56,8 @@ export function Tooltip({ children, direction = 'bottom', ...rest }: TooltipProp
 				style={{
 					[flipDirectionStyle(direction)]: '100%',
 				}}
-				ref={tooltipRef}>
+				ref={tooltipRef}
+			>
 				{'text' in rest ? rest.text : rest.element}
 			</TextContainer>
 			{children}

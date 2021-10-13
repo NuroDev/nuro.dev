@@ -27,7 +27,8 @@ export function Item({ active, name, icon, path, tooltip }: ItemProps) {
 				aria-current={active ? 'page' : undefined}
 				aria-label={name}
 				href={path}
-				key={name}>
+				key={name}
+			>
 				<StyledButton className="group" active={active}>
 					<Navbar.Icon icon={icon} />
 				</StyledButton>
