@@ -85,7 +85,7 @@ const people = [
 
 export default function Projects() {
 	return (
-		<Layout.Default>
+		<Layout.Default seo={{ title: 'nuro ─ projects' }}>
 			<Container>
 				<Content>
 					<ProjectsList>
