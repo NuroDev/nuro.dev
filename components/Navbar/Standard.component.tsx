@@ -9,7 +9,7 @@ import { Navbar } from '..';
 import type { NavigationItems } from '~/types';
 
 interface StandardProps {
-	back: boolean;
+	back?: boolean;
 }
 
 const navigation: NavigationItems = [
@@ -46,7 +46,7 @@ const ItemsContainer = styled.div(tw`
 
 const Spacer = styled.span(tw`flex flex-1`);
 
-export function Standard({ back }: StandardProps) {
+export function Standard({ back = false }: StandardProps) {
 	const router = useRouter();
 
 	return (
