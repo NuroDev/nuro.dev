@@ -23,7 +23,7 @@ const TextContainer = styled.div(tw`
 	bg-gray-100 bg-opacity-50 dark:bg-gray-900 dark:bg-opacity-50 backdrop-filter backdrop-blur-sm \
 	border border-gray-100 dark:border-gray-500 \
 	text-gray-400 dark:text-white \
-	text-center text-xs font-medium tracking-wide \
+	text-center text-xs font-medium tracking-wide whitespace-nowrap \
 	rounded-lg pointer-events-none select-none \
 	opacity-0 group-hover:opacity-100 \
 	transition ease-in-out delay-200 duration-300
@@ -50,7 +50,8 @@ export function Tooltip({ children, direction = 'bottom', element, text }: Toolt
 			<TextContainer
 				style={{
 					[flipDirectionStyle(direction)]: '100%',
-				}}>
+				}}
+			>
 				{element ? element() : text ?? null}
 			</TextContainer>
 			{children}

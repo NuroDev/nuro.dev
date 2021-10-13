@@ -3,8 +3,8 @@ import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { useLanyard } from 'react-use-lanyard';
 
-import { Status } from '..';
-import { DiscordStatus } from '~/types';
+import { Status, Tooltip } from '..';
+import { DiscordStatus, READABLE_DISCORD_STATUS } from '~/types';
 
 import type { LanyardData } from 'react-use-lanyard';
 
@@ -39,10 +39,12 @@ export function StatusWrapper() {
 	return (
 		<Link href="/status">
 			<Container>
-				<Status.Indicator
-					color={statusColor(status)}
-					pulse={status.discord_status !== DiscordStatus.OFFLINE}
-				/>
+				<Tooltip text={READABLE_DISCORD_STATUS[status.discord_status]}>
+					<Status.Indicator
+						color={statusColor(status)}
+						pulse={status.discord_status !== DiscordStatus.OFFLINE}
+					/>
+				</Tooltip>
 			</Container>
 		</Link>
 	);

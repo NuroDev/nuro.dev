@@ -16,3 +16,12 @@ export enum DiscordStatus {
 	 */
 	ONLINE = 'online',
 }
+
+export const READABLE_DISCORD_STATUS: {
+	[S in DiscordStatus]: string;
+} = {
+	[DiscordStatus.DND]: 'Do Not Disturb',
+	[DiscordStatus.IDLE]: 'Away',
+	[DiscordStatus.OFFLINE]: 'Offline',
+	[DiscordStatus.ONLINE]: 'Online',
+};
