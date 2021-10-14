@@ -33,7 +33,7 @@ const StyledItems = styled(Menu.Items)(tw`
 	border border-gray-100 dark:border-gray-500 \
 	rounded-md shadow-lg \
 	ring-1 ring-black ring-opacity-5 \
-	divide-y divide-gray-100 dark:divide-gray-600 \
+	divide-y divide-gray-100 dark:divide-gray-500 \
 	focus:outline-none
 `);
 
@@ -51,7 +51,7 @@ const MenuButton = styled.a<Pick<MenuLinkProps, '$active'>>`
 	${({ $active }) =>
 		$active
 			? tw`bg-gray-100 bg-opacity-50 dark:bg-gray-700 dark:bg-opacity-50 text-gray-900 dark:text-white`
-			: tw`text-gray-300 dark:text-gray-400`}
+			: tw`text-gray-300`}
 `;
 
 const MenuButtonIcon = styled(Icon)(tw`
@@ -123,8 +123,7 @@ export function Settings() {
 				enterTo="transform opacity-100 scale-100"
 				leave="transition ease-in duration-75"
 				leaveFrom="transform opacity-100 scale-100"
-				leaveTo="transform opacity-0 scale-95"
-			>
+				leaveTo="transform opacity-0 scale-95">
 				<StyledItems>
 					{items.map((section, index) => (
 						<MenuSection key={index}>
@@ -153,8 +152,7 @@ export function Settings() {
 												onClick={() => {
 													playClick();
 													item.onClick();
-												}}
-											>
+												}}>
 												{item.type === SettingsItemType.ITEM ? (
 													<MenuButtonIcon
 														icon={item.icon}
