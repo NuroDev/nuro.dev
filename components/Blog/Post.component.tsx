@@ -76,32 +76,32 @@ const Footer = styled.div(tw`
 
 export function _Post({ index, frontmatter }: PostProps) {
 	return (
-		<Link aria-label={`Read blog post: ${frontmatter.title.value}`} href={frontmatter.url}>
+		<Link
+			aria-label={`Read blog post: ${frontmatter.title}`}
+			href={`/blog/${frontmatter.slug}`}>
 			<Container>
-				{frontmatter.banner.url && index <= 2 && (
+				{frontmatter.banner && index <= 2 && (
 					<Banner>
 						<BannerPlaceholder />
 						<img
-							alt={frontmatter.title.value}
+							alt={frontmatter.title}
 							draggable={false}
 							loading="lazy"
-							src={frontmatter.banner.url}
+							src={frontmatter.banner}
 						/>
 					</Banner>
 				)}
 
 				<Content>
 					<ContextText>
-						<Title>{frontmatter.title.value}</Title>
-						{((frontmatter.description && frontmatter.description.show) || true) && (
-							<Description aria-label={frontmatter.description.value}>
-								{frontmatter.description.value}
+						<Title>{frontmatter.title}</Title>
+						{((frontmatter.description && frontmatter.description_show) || true) && (
+							<Description aria-label={frontmatter.description}>
+								{frontmatter.description}
 							</Description>
 						)}
 						<Footer>
-							<Blog.Date
-								date={frontmatter.date.value ?? new Date(frontmatter.date.value)}
-							/>
+							<Blog.Date>{frontmatter.date}</Blog.Date>
 						</Footer>
 					</ContextText>
 				</Content>

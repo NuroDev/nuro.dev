@@ -70,17 +70,19 @@ const Footer = styled.div(tw`
 
 export function Latest({ frontmatter }: LatestProps) {
 	return (
-		<Link aria-label={`Read blog post: ${frontmatter.title.value}`} href={frontmatter.url}>
+		<Link
+			aria-label={`Read blog post: ${frontmatter.title}`}
+			href={`/blog/${frontmatter.slug}`}>
 			<Container>
-				{frontmatter.banner.show && (
+				{frontmatter.banner_show && (
 					<Banner>
 						<BannerPlaceholder />
 
-						{Array.isArray(frontmatter.banner.url) ? (
+						{Array.isArray(frontmatter.banner) ? (
 							<picture>
-								{frontmatter.banner.url.reverse().map((src, i) => (
+								{frontmatter.banner.reverse().map((src, i) => (
 									<img
-										alt={frontmatter.banner.alt ?? frontmatter.title.value}
+										alt={frontmatter.banner_alt ?? frontmatter.title}
 										draggable={false}
 										key={i}
 										src={src}
@@ -89,24 +91,22 @@ export function Latest({ frontmatter }: LatestProps) {
 							</picture>
 						) : (
 							<img
-								alt={frontmatter.banner.alt ?? frontmatter.title.value}
+								alt={frontmatter.banner_alt ?? frontmatter.title}
 								draggable={false}
-								src={frontmatter.banner.url}
+								src={frontmatter.banner}
 							/>
 						)}
 					</Banner>
 				)}
 				<Content>
-					<Title>{frontmatter.title.value || frontmatter.title}</Title>
-					{((frontmatter.description && frontmatter.description.show) || true) && (
+					<Title>{frontmatter.title || frontmatter.title}</Title>
+					{((frontmatter.description && frontmatter.description_show) || true) && (
 						<Description>
-							{frontmatter.description.value || frontmatter.description}
+							{frontmatter.description || frontmatter.description}
 						</Description>
 					)}
 					<Footer>
-						<Blog.Date
-							date={frontmatter.date.value ?? new Date(frontmatter.date.value)}
-						/>
+						<Blog.Date>{frontmatter.date}</Blog.Date>
 					</Footer>
 				</Content>
 			</Container>

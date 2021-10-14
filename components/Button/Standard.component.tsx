@@ -15,7 +15,7 @@ const Container = styled.button(tw`
 	text-base font-bold text-primary-300 hover:text-primary-400 \
 	rounded-lg \
 	transition ease-in-out duration-300 \
-	focus:outline-none focus:ring-4 focus:ring-primary-500
+	focus:outline-none focus:ring-2 focus:ring-primary-500
 `);
 
 const StyledIcon = styled(Icon)(tw`mr-2`);
@@ -31,8 +31,7 @@ export function Standard({ children, icon, onClick, ...rest }: StandardProps) {
 			onClick={(...args) => {
 				play();
 				onClick(...args);
-			}}
-		>
+			}}>
 			{icon && <StyledIcon icon={icon} />}
 			{children}
 		</Container>

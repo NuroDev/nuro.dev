@@ -2,16 +2,15 @@ import styled from '@emotion/styled';
 import tw from 'twin.macro';
 
 import { Blog } from '~/components';
-import { deserialiseFrontmatter } from '~/lib';
-import { getPostsFrontMatter } from '~/lib/build';
+import { getAllPostsFrontMatter } from '~/lib/post';
 import { Layout } from '~/layouts';
 
-import type { GetStaticPropsResult } from 'next';
+import type { GetStaticProps } from 'next';
 
-import type { FrontMatters } from '~/types';
+import type { FrontMatter } from '~/types';
 
 interface BlogProps {
-	serialisedPosts?: string;
+	frontmatters?: Array<FrontMatter>;
 }
 
 const Container = styled.div(tw`
@@ -28,21 +27,21 @@ const PostsContainer = styled.p(tw`
 		grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:max-w-none
 `);
 
-export async function getStaticProps(): Promise<GetStaticPropsResult<BlogProps>> {
-	const posts = await getPostsFrontMatter();
+export const getStaticProps: GetStaticProps<BlogProps> = async () => {
+	const frontmatters = await getAllPostsFrontMatter();
 
 	return {
 		props: {
-			serialisedPosts: JSON.stringify(posts),
+			frontmatters,
 		},
 	};
-}
+};
 
-export default function _Blog({ serialisedPosts }: BlogProps) {
-	const deserialisedPosts = JSON.parse(serialisedPosts) as FrontMatters;
-	if (deserialisedPosts.length <= 0) return <Blog.Error />;
+export default function BlogPage(props: BlogProps) {
+	const { frontmatters } = props;
 
-	const frontmatters = deserialisedPosts.map((post) => deserialiseFrontmatter(post));
+	if (frontmatters.length <= 0) return <Blog.Error routeBlog={false} />;
+
 	const latestPost = frontmatters.shift();
 
 	return (
@@ -51,8 +50,8 @@ export default function _Blog({ serialisedPosts }: BlogProps) {
 				<Content>
 					<Blog.Latest frontmatter={latestPost} />
 					<PostsContainer>
-						{frontmatters.map((post, i) => (
-							<Blog.Post key={i} frontmatter={post} index={i} />
+						{frontmatters.map((frontmatter, i) => (
+							<Blog.Post key={i} frontmatter={frontmatter} index={i} />
 						))}
 					</PostsContainer>
 				</Content>

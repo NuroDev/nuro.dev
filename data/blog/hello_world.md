@@ -4,7 +4,7 @@ banner: https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixid=MnwxMj
 title_prefix: Introducing
 title: 👋🏻 Hello World
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-date: 2021-06-05
+date: '2021-06-05'
 ---
 
 ## What is this?
@@ -29,7 +29,7 @@ Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat in. Convalli
 
 Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget risus enim. Mattis mauris semper sed amet vitae sed turpis id. Id dolor praesent donec est. Odio penatibus risus viverra tellus varius sit neque erat velit.
 
-<X-Figure src="https://source.unsplash.com/random" caption="Sagittis scelerisque nulla cursus in enim consectetur quam" />
+<XFigure src="https://source.unsplash.com/random" caption="Sagittis scelerisque nulla cursus in enim consectetur quam" />
 
 ## Everything you need to get up and running
 

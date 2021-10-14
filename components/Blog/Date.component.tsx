@@ -1,15 +1,10 @@
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
-import { format } from 'date-fns';
 import { Icon } from '@iconify/react';
-import { useMemo } from 'react';
 
-import type { WithClassName } from '~/types';
+import type { WithChildren, WithClassName } from '~/types';
 
-interface DateProps extends WithClassName {
-	date: Date;
-	format?: string;
-}
+interface DateProps extends WithClassName, WithChildren {}
 
 const Container = styled.div(tw`
 	inline-flex \
@@ -23,13 +18,11 @@ const StyledIcon = styled(Icon)(tw`
 	mt-0.5 mr-3
 `);
 
-export function Date({ className, date, format: dateFormat = 'PPP' }: DateProps) {
-	const formattedDate = useMemo(() => format(date, dateFormat), []);
-
+export function Date({ children, className }: DateProps) {
 	return (
 		<Container className={className}>
 			<StyledIcon icon="feather:calendar" />
-			{formattedDate}
+			{children}
 		</Container>
 	);
 }

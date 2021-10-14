@@ -2,9 +2,12 @@ import Link from 'next/link';
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { Icon } from '@iconify/react';
-import { useRouter } from 'next/router';
 import { Layout } from '~/layouts';
 import { Button } from '..';
+
+interface ErrorProps {
+	routeBlog?: boolean;
+}
 
 const Container = styled.div(tw`
 	flex flex-grow min-h-full \
@@ -41,7 +44,7 @@ const Actions = styled.div(tw`
 `);
 
 // @TODO: Add back button
-export function Error() {
+export function Error({ routeBlog = true }: ErrorProps) {
 	return (
 		<Layout.Error>
 			<Container>
@@ -56,9 +59,11 @@ export function Error() {
 							<Link href="/">
 								<Button.Standard icon="feather:home">Home</Button.Standard>
 							</Link>
-							<Link href="/blog">
-								<Button.Standard icon="feather:book">Blog</Button.Standard>
-							</Link>
+							{routeBlog && (
+								<Link href="/blog">
+									<Button.Standard icon="feather:book">Blog</Button.Standard>
+								</Link>
+							)}
 						</Actions>
 					</Body>
 				</Content>
