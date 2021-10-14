@@ -29,7 +29,7 @@ export async function getPost(slug: string): Promise<Post> {
 		banner: rawPost.banner
 			? {
 					alt: rawPost.banner_alt ?? null,
-					show: rawPost.banner_show ?? false,
+					show: rawPost.banner_show ?? true,
 					url: rawPost.banner,
 			  }
 			: undefined,
