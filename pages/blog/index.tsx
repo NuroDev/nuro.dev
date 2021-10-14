@@ -11,7 +11,7 @@ import type { GetStaticPropsResult } from 'next';
 import type { Posts } from '~/types';
 
 interface BlogProps {
-	posts?: Posts;
+	serialisedPosts?: string;
 }
 
 const Container = styled.div(tw`
@@ -33,24 +33,25 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<BlogProps>>
 
 	return {
 		props: {
-			posts,
+			serialisedPosts: JSON.stringify(posts),
 		},
 	};
 }
 
-export default function _Blog({ posts }: BlogProps) {
-	if (!posts || posts.length <= 0) return <Blog.Error />;
+export default function _Blog({ serialisedPosts }: BlogProps) {
+	const deserialisedPosts = JSON.parse(serialisedPosts) as Posts;
+	if (deserialisedPosts.length <= 0) return <Blog.Error />;
 
-	const deserialisedPosts = posts.map((post) => deserialisePost(post));
-	const latestPost = deserialisedPosts.shift();
+	const posts = deserialisedPosts.map((post) => deserialisePost(post));
+	const latestPost = posts.shift();
 
 	return (
-		<Layout.Default seo={{ title: 'nuro ─ blog ─ all' }}>
+		<Layout.Default seo={{ title: 'nuro ─ blog' }}>
 			<Container>
 				<Content>
 					<Blog.Latest post={latestPost} />
 					<PostsContainer>
-						{deserialisedPosts.map((post, i) => (
+						{posts.map((post, i) => (
 							<Blog.Post key={i} post={post} index={i} />
 						))}
 					</PostsContainer>

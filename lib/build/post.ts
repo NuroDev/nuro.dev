@@ -1,9 +1,9 @@
 import matter from 'gray-matter';
-import { readdirSync, readFileSync } from 'fs';
-import { join } from 'path';
-
-import type { SerialisedPost, RawPost, DeserialisedPost } from '~/types';
 import { format } from 'date-fns';
+import { join } from 'path';
+import { readdirSync, readFileSync } from 'fs';
+
+import type { Post, RawPost } from '~/types';
 
 const BLOG_POSTS_DIR = join(process.cwd(), 'data', 'blog');
 
@@ -19,32 +19,37 @@ export async function getPostSlugs(): Promise<Array<string>> {
  *
  * @param {string} slug - The file name / slug for the post
  */
-export async function getPost(slug: string): Promise<SerialisedPost> {
+export async function getPost(slug: string): Promise<Post> {
 	const raw = readFileSync(join(BLOG_POSTS_DIR, `${slug}.md`), 'utf8');
 	const { data } = matter(raw);
-	const typedDate = data as RawPost;
+	const rawPost = data as RawPost;
 
 	const formattedSlug = slug.replace('.md', '');
 	const post = {
-		banner: {
-			alt: typedDate.banner_alt ?? null,
-			show: typedDate.banner_show ?? false,
-			url: typedDate.banner,
-		},
+		banner: rawPost.banner
+			? {
+					alt: rawPost.banner_alt ?? null,
+					show: rawPost.banner_show ?? false,
+					url: rawPost.banner,
+			  }
+			: undefined,
 		date: {
-			raw: typedDate.date.toString(),
+			value: rawPost.date,
+			readable: format(rawPost.date, 'PPP'),
 		},
-		description: {
-			raw: typedDate.description,
-			show: typedDate.description_show ?? false,
-		},
+		description: rawPost.description
+			? {
+					value: rawPost.description,
+					show: rawPost.description_show ?? false,
+			  }
+			: undefined,
 		title: {
-			prefix: typedDate.title_prefix ?? null,
-			raw: typedDate.title,
+			prefix: rawPost.title_prefix ?? null,
+			value: rawPost.title,
 		},
 		slug: formattedSlug,
 		url: `blog/${formattedSlug}`,
-	} as SerialisedPost;
+	} as Post;
 
 	return post;
 }
@@ -68,26 +73,25 @@ export async function getPosts(sort: boolean = true) {
 				url: typedDate.banner,
 			},
 			date: {
-				raw: typedDate.date.toString(),
-				value: null,
+				value: typedDate.date,
 				readable: format(typedDate.date, 'PPP'),
 			},
 			description: {
-				raw: typedDate.description,
+				value: typedDate.description,
 				show: typedDate.description_show ?? false,
 			},
 			title: {
 				prefix: typedDate.title_prefix ?? null,
-				raw: typedDate.title,
+				value: typedDate.title,
 			},
 			slug: formattedSlug,
 			url: `blog/${formattedSlug}`,
-		} as SerialisedPost;
+		} as Post;
 
 		return post;
 	});
 
-	if (sort) return posts.sort((a, b) => +new Date(b.date.raw) - +new Date(a.date.raw));
+	if (sort) return posts.sort((a, b) => +new Date(b.date.value) - +new Date(a.date.value));
 
 	return posts;
 }

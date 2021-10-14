@@ -1,19 +1,21 @@
+import styled from '@emotion/styled';
+import tw from 'twin.macro';
 import { Layout } from '~/layouts';
 
+import { Blog } from '~/components';
+import { deserialisePost } from '~/lib';
 import { getPost, getPostSlugs } from '~/lib/build';
 
 import type { GetStaticPaths, GetStaticPropsContext, GetStaticPropsResult } from 'next';
 
 import type { ParsedUrlQuery } from 'querystring';
 
-import type { SerialisedPost } from '~/types';
-
 interface PathProps extends ParsedUrlQuery {
 	slug: string;
 }
 
 interface BlogPostProps {
-	post?: SerialisedPost;
+	serialisedPost?: string;
 }
 
 export const getStaticPaths: GetStaticPaths<PathProps> = async () => {
@@ -36,20 +38,22 @@ export async function getStaticProps({
 
 	return {
 		props: {
-			post: post,
+			serialisedPost: JSON.stringify(post),
 		},
 	};
 }
 
-export default function BlogPost({ post }: BlogPostProps) {
+export default function BlogPost({ serialisedPost }: BlogPostProps) {
+	const post = deserialisePost(serialisedPost);
+
 	return (
 		<Layout.Default
 			back={true}
+			background={false}
 			seo={{
-				title: `nuro ─ blog ─ ${post.title.raw}`,
-				description: post.description.raw ?? undefined,
-			}}
-		>
+				title: `nuro ─ blog ─ ${post.title.value}`,
+				description: post.description.value ?? undefined,
+			}}>
 			<pre>{JSON.stringify(post, null, 4)}</pre>
 		</Layout.Default>
 	);

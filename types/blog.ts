@@ -1,61 +1,37 @@
 export interface RawPost {
 	banner_alt?: string;
 	banner_show?: boolean;
-	banner: string;
+	banner?: string;
 	date: Date;
 	description_show?: boolean;
-	description: string;
+	description?: string;
 	title_prefix?: string;
 	title: string;
 }
 
-export interface SerialisedPost {
-	banner: {
-		alt: string | null;
+export interface Post {
+	banner?: {
+		alt?: string;
 		show?: boolean;
 		url: string;
 	};
 	date: {
-		raw: string;
-		value: Date | null;
-		readable?: string;
+		value: Date;
+		readable: string;
 	};
-	description: {
+	description?: {
 		show?: boolean;
-		raw: string | null;
+		value?: string;
 	};
+	slug: string;
 	title: {
-		prefix: string | null;
-		raw: string;
+		prefix?: string;
+		value: string;
 	};
 	url: string;
-	slug: string;
 }
 
-export interface DeserialisedPost {
-	banner: {
-		alt: string | null;
-		show?: boolean;
-		url: string;
-	};
-	date: {
-		raw: string;
-		value?: Date;
-		readable?: string;
-	};
-	description: {
-		show?: boolean;
-		raw?: string;
-	};
-	title: {
-		prefix?: string | null;
-		raw: string;
-	};
-	url: string;
-	slug: string;
-}
-
-export type Posts = Array<SerialisedPost>;
+export type Posts = Array<Post>;
 
 export interface Frontmatter {
 	banner_alt?: string;

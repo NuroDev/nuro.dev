@@ -4,11 +4,11 @@ import tw from 'twin.macro';
 
 import { Blog } from '..';
 
-import type { DeserialisedPost } from '~/types';
+import type { Post } from '~/types';
 
 interface PostProps {
 	index: number;
-	post: DeserialisedPost;
+	post: Post;
 }
 
 const Container = styled.a(tw`
@@ -76,13 +76,13 @@ const Footer = styled.div(tw`
 
 export function _Post({ index, post }: PostProps) {
 	return (
-		<Link aria-label={`Read blog post: ${post.title.raw}`} href={post.url}>
+		<Link aria-label={`Read blog post: ${post.title.value}`} href={post.url}>
 			<Container>
 				{post.banner.url && index <= 2 && (
 					<Banner>
 						<BannerPlaceholder />
 						<img
-							alt={post.title.raw}
+							alt={post.title.value}
 							draggable={false}
 							loading="lazy"
 							src={post.banner.url}
@@ -92,14 +92,14 @@ export function _Post({ index, post }: PostProps) {
 
 				<Content>
 					<ContextText>
-						<Title>{post.title.raw}</Title>
+						<Title>{post.title.value}</Title>
 						{((post.description && post.description.show) || true) && (
-							<Description aria-label={post.description.raw}>
-								{post.description.raw}
+							<Description aria-label={post.description.value}>
+								{post.description.value}
 							</Description>
 						)}
 						<Footer>
-							<Blog.Date date={post.date.value ?? new Date(post.date.raw)} />
+							<Blog.Date date={post.date.value ?? new Date(post.date.value)} />
 						</Footer>
 					</ContextText>
 				</Content>

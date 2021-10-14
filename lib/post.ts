@@ -1,13 +1,17 @@
-import type { DeserialisedPost, SerialisedPost } from '~/types';
+import { format } from 'date-fns';
 
-export function deserialisePost(post: SerialisedPost): DeserialisedPost {
-	const date = new Date(post.date.raw);
+import type { Post } from '~/types';
+
+export function deserialisePost(post: string | Post): Post {
+	const input = (typeof post === 'string' ? JSON.parse(post) : post) as Post;
+	const date = new Date(input.date.value);
 
 	return {
-		...post,
+		...input,
 		date: {
-			...post.date,
+			...input.date,
 			value: date,
+			readable: format(date, 'PPP'),
 		},
 	};
 }

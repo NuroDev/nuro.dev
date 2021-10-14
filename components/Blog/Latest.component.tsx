@@ -4,10 +4,10 @@ import tw from 'twin.macro';
 
 import { Blog } from '..';
 
-import type { DeserialisedPost } from '~/types';
+import type { Post } from '~/types';
 
 interface LatestProps {
-	post: DeserialisedPost;
+	post: Post;
 }
 
 const Container = styled.a(tw`
@@ -70,7 +70,7 @@ const Footer = styled.div(tw`
 
 export function Latest({ post }: LatestProps) {
 	return (
-		<Link aria-label={`Read blog post: ${post.title.raw}`} href={post.url}>
+		<Link aria-label={`Read blog post: ${post.title.value}`} href={post.url}>
 			<Container>
 				{post.banner.show && (
 					<Banner>
@@ -80,7 +80,7 @@ export function Latest({ post }: LatestProps) {
 							<picture>
 								{post.banner.url.reverse().map((src, i) => (
 									<img
-										alt={post.banner.alt ?? post.title.raw}
+										alt={post.banner.alt ?? post.title.value}
 										draggable={false}
 										key={i}
 										src={src}
@@ -89,7 +89,7 @@ export function Latest({ post }: LatestProps) {
 							</picture>
 						) : (
 							<img
-								alt={post.banner.alt ?? post.title.raw}
+								alt={post.banner.alt ?? post.title.value}
 								draggable={false}
 								src={post.banner.url}
 							/>
@@ -97,12 +97,12 @@ export function Latest({ post }: LatestProps) {
 					</Banner>
 				)}
 				<Content>
-					<Title>{post.title.raw || post.title}</Title>
+					<Title>{post.title.value || post.title}</Title>
 					{((post.description && post.description.show) || true) && (
-						<Description>{post.description.raw || post.description}</Description>
+						<Description>{post.description.value || post.description}</Description>
 					)}
 					<Footer>
-						<Blog.Date date={post.date.value ?? new Date(post.date.raw)} />
+						<Blog.Date date={post.date.value ?? new Date(post.date.value)} />
 					</Footer>
 				</Content>
 			</Container>
