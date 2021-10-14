@@ -838,6 +838,13 @@ constants-browserify@1.0.0, constants-browserify@^1.0.0:
   resolved "https://registry.yarnpkg.com/constants-browserify/-/constants-browserify-1.0.0.tgz#c20b96d8c617748aaf1c16021760cd27fcb8cb75"
   integrity sha1-wguW2MYXdIqvHBYCF2DNJ/y4y3U=
 
+contains-emoji@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/contains-emoji/-/contains-emoji-1.1.0.tgz#bf4b46f4419401d9fd9a9215c66f2281df88e7d3"
+  integrity sha512-D055TmDbbq01Q0OjKD90R3+Cs5Hgw+AhwrNQc5uqW9hIkWEFVtaMvFQcE6lOa61k2wUX0l4T6aL5wvwrxXmMSQ==
+  dependencies:
+    emoji-regex "^9.0.0"
+
 convert-source-map@1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/convert-source-map/-/convert-source-map-1.7.0.tgz#17a2cb882d7f77d3490585e2ce6c524424a3a442"
@@ -1096,6 +1103,11 @@ elliptic@^6.5.3:
     inherits "^2.0.4"
     minimalistic-assert "^1.0.1"
     minimalistic-crypto-utils "^1.0.1"
+
+emoji-regex@^9.0.0:
+  version "9.2.2"
+  resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-9.2.2.tgz#840c8803b0d8047f4ff0cf963176b32d4ef3ed72"
+  integrity sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==
 
 emojis-list@^2.0.0:
   version "2.1.0"
