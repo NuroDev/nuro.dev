@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import containsEmoji from 'contains-emoji';
 import tw from 'twin.macro';
+import GithubColors from 'github-colors';
 
 import { Layout } from '~/layouts';
 
@@ -24,17 +25,21 @@ const ProjectsList = styled.ul(tw`
 	grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3
 `);
 
-const ProjectCard = styled.li`
+const ProjectCard = styled.li<{
+	$color: string;
+}>`
 	${tw`
 		flex flex-col col-span-1 \
 		bg-white bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-15 \
 		backdrop-filter backdrop-blur-sm \
-		border border-gray-100 dark:border-gray-500 \
+		border \
 		text-center \
 		rounded-lg hover:shadow-lg divide-y divide-gray-200 cursor-pointer \
 		transform hover:-translate-y-1 \
 		transition ease-in-out duration-300
 	`}
+
+	border-color: ${({ $color }) => $color};
 `;
 
 export const getServerSideProps: GetServerSideProps<ProjectProps> = async (context) => {
@@ -42,7 +47,7 @@ export const getServerSideProps: GetServerSideProps<ProjectProps> = async (conte
 	const json = (await response.json()) as GitHubRepos;
 
 	const projects: Projects = json
-		.map((repo, index) => {
+		.map((repo) => {
 			// @TODO: Check if the repo tags include portfolio tag
 			// if (!repo.tags.includes("portfolio")) return
 
@@ -62,7 +67,7 @@ export const getServerSideProps: GetServerSideProps<ProjectProps> = async (conte
 				name: repo.name,
 				description: repo.description,
 				url: repo.html_url.toLowerCase(),
-				language: repo.language ?? undefined,
+				language: repo.language ? GithubColors.get(repo.language).color : undefined,
 			};
 		})
 		.filter((project) => project !== null);
@@ -91,7 +96,7 @@ export default function ProjectsPage({ serialisedProjects }: ProjectProps) {
 
 							return (
 								<a href={project.url} rel="noreferrer noopener" target="_blank">
-									<ProjectCard key={project.name}>
+									<ProjectCard $color={project.language} key={project.name}>
 										<div tw="flex-1 flex flex-col px-2 py-8">
 											<h1 tw="w-8 h-8 mx-auto text-2xl">{project.icon}</h1>
 											<h3 tw="mt-6 text-gray-900 dark:text-white text-sm font-medium">
