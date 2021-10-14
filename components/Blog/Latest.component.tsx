@@ -74,28 +74,14 @@ export function Latest({ frontmatter }: LatestProps) {
 			aria-label={`Read blog post: ${frontmatter.title}`}
 			href={`/blog/${frontmatter.slug}`}>
 			<Container>
-				{frontmatter.banner_show && (
+				{(frontmatter.banner_show ?? true) && (
 					<Banner>
 						<BannerPlaceholder />
-
-						{Array.isArray(frontmatter.banner) ? (
-							<picture>
-								{frontmatter.banner.reverse().map((src, i) => (
-									<img
-										alt={frontmatter.banner_alt ?? frontmatter.title}
-										draggable={false}
-										key={i}
-										src={src}
-									/>
-								))}
-							</picture>
-						) : (
-							<img
-								alt={frontmatter.banner_alt ?? frontmatter.title}
-								draggable={false}
-								src={frontmatter.banner}
-							/>
-						)}
+						<img
+							alt={frontmatter.banner_alt ?? frontmatter.title}
+							draggable={false}
+							src={frontmatter.banner}
+						/>
 					</Banner>
 				)}
 				<Content>

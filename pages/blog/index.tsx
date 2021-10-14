@@ -10,7 +10,7 @@ import type { GetStaticProps } from 'next';
 import type { FrontMatter } from '~/types';
 
 interface BlogProps {
-	frontmatters?: Array<FrontMatter>;
+	serialisedFrontmatters: string;
 }
 
 const Container = styled.div(tw`
@@ -32,13 +32,13 @@ export const getStaticProps: GetStaticProps<BlogProps> = async () => {
 
 	return {
 		props: {
-			frontmatters,
+			serialisedFrontmatters: JSON.stringify(frontmatters),
 		},
 	};
 };
 
-export default function BlogPage(props: BlogProps) {
-	const { frontmatters } = props;
+export default function BlogPage({ serialisedFrontmatters }: BlogProps) {
+	const frontmatters = JSON.parse(serialisedFrontmatters) as Array<FrontMatter>;
 
 	if (frontmatters.length <= 0) return <Blog.Error routeBlog={false} />;
 
