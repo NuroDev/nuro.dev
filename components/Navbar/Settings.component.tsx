@@ -28,8 +28,7 @@ const StyledMenu = styled(Menu)(tw`
 const StyledItems = styled(Menu.Items)(tw`
 	origin-top-right absolute right-0 w-56 \
 	mt-4 \
-	bg-white bg-opacity-75 dark:bg-gray-800 dark:bg-opacity-75 \
-	backdrop-filter backdrop-blur-sm \
+	bg-white dark:bg-gray-800 \
 	border border-gray-100 dark:border-gray-500 \
 	rounded-md shadow-lg \
 	ring-1 ring-black ring-opacity-5 \
@@ -51,7 +50,7 @@ const MenuButton = styled.a<Pick<MenuLinkProps, '$active'>>`
 	${({ $active }) =>
 		$active
 			? tw`bg-gray-100 bg-opacity-50 dark:bg-gray-700 dark:bg-opacity-50 text-gray-900 dark:text-white`
-			: tw`text-gray-300`}
+			: tw`text-gray-300 hover:text-gray-700 dark:hover:text-white`}
 `;
 
 const MenuButtonIcon = styled(Icon)(tw`
