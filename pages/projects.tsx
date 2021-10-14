@@ -95,10 +95,14 @@ export default function ProjectsPage({ serialisedProjects }: ProjectProps) {
 							const description = trimmedDescription.join(' ');
 
 							return (
-								<a href={project.url} rel="noreferrer noopener" target="_blank">
+								<a
+									href={project.url}
+									key={index}
+									rel="noreferrer noopener"
+									target="_blank">
 									<ProjectCard $color={project.language} key={project.name}>
 										<div tw="flex-1 flex flex-col px-2 py-8">
-											<h1 tw="w-8 h-8 mx-auto text-2xl">{project.icon}</h1>
+											<h1 tw="mx-auto text-4xl">{project.icon}</h1>
 											<h3 tw="mt-6 text-gray-900 dark:text-white text-sm font-medium">
 												{project.name}
 											</h3>
