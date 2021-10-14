@@ -10,7 +10,7 @@ interface IconProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
 const Button = styled.button(tw`
 	relative inline-block \
 	px-3 py-2 \
-	bg-transparent hover:bg-gray-100 dark:hover:bg-gray-700 \
+	bg-gray-50 bg-opacity-75 hover:bg-gray-100 hover:bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 dark:hover:bg-gray-700 dark:hover:bg-opacity-75 \
 	text-gray-300 hover:text-gray-700 dark:hover:text-white \
 	rounded-lg \
 	text-sm font-medium \
@@ -32,8 +32,7 @@ export const Icon = forwardRef<HTMLButtonElement, IconProps>(
 					play();
 					if (onClick) onClick(e);
 				}}
-				{...rest}
-			>
+				{...rest}>
 				{children}
 			</Button>
 		);
