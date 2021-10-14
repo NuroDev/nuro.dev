@@ -3,7 +3,7 @@ import { format } from 'date-fns';
 import { join } from 'path';
 import { readdirSync, readFileSync } from 'fs';
 
-import type { Post, RawPost } from '~/types';
+import type { Post, RawFrontMatter } from '~/types';
 
 const BLOG_POSTS_DIR = join(process.cwd(), 'data', 'blog');
 
@@ -22,33 +22,36 @@ export async function getPostSlugs(): Promise<Array<string>> {
 export async function getPost(slug: string): Promise<Post> {
 	const raw = readFileSync(join(BLOG_POSTS_DIR, `${slug}.md`), 'utf8');
 	const { data } = matter(raw);
-	const rawPost = data as RawPost;
+	const rawPost = data as RawFrontMatter;
 
 	const formattedSlug = slug.replace('.md', '');
 	const post = {
-		banner: rawPost.banner
-			? {
-					alt: rawPost.banner_alt ?? null,
-					show: rawPost.banner_show ?? true,
-					url: rawPost.banner,
-			  }
-			: undefined,
-		date: {
-			value: rawPost.date,
-			readable: format(rawPost.date, 'PPP'),
+		code: '',
+		frontmatter: {
+			banner: rawPost.banner
+				? {
+						alt: rawPost.banner_alt ?? null,
+						show: rawPost.banner_show ?? true,
+						url: rawPost.banner,
+				  }
+				: undefined,
+			date: {
+				value: rawPost.date,
+				readable: format(rawPost.date, 'PPP'),
+			},
+			description: rawPost.description
+				? {
+						value: rawPost.description,
+						show: rawPost.description_show ?? false,
+				  }
+				: undefined,
+			title: {
+				prefix: rawPost.title_prefix ?? null,
+				value: rawPost.title,
+			},
+			slug: formattedSlug,
+			url: `blog/${formattedSlug}`,
 		},
-		description: rawPost.description
-			? {
-					value: rawPost.description,
-					show: rawPost.description_show ?? false,
-			  }
-			: undefined,
-		title: {
-			prefix: rawPost.title_prefix ?? null,
-			value: rawPost.title,
-		},
-		slug: formattedSlug,
-		url: `blog/${formattedSlug}`,
 	} as Post;
 
 	return post;
@@ -57,41 +60,46 @@ export async function getPost(slug: string): Promise<Post> {
 /**
  * Get the frontmatter / metadata for all blog posts
  */
-export async function getPosts(sort: boolean = true) {
+export async function getPostsFrontMatter(sort: boolean = true) {
 	const files = await getPostSlugs();
 
 	const posts = files.map((slug) => {
 		const source = readFileSync(join(process.cwd(), 'data', 'blog', slug), 'utf8');
 		const { data } = matter(source);
-		const typedDate = data as RawPost;
+		const typedDate = data as RawFrontMatter;
 
 		const formattedSlug = slug.replace('.md', '');
 		const post = {
-			banner: {
-				alt: typedDate.banner_alt ?? null,
-				show: typedDate.banner_show ?? true,
-				url: typedDate.banner,
+			frontmatter: {
+				banner: {
+					alt: typedDate.banner_alt ?? null,
+					show: typedDate.banner_show ?? true,
+					url: typedDate.banner,
+				},
+				date: {
+					value: typedDate.date,
+					readable: format(typedDate.date, 'PPP'),
+				},
+				description: {
+					value: typedDate.description,
+					show: typedDate.description_show ?? false,
+				},
+				title: {
+					prefix: typedDate.title_prefix ?? null,
+					value: typedDate.title,
+				},
+				slug: formattedSlug,
+				url: `blog/${formattedSlug}`,
 			},
-			date: {
-				value: typedDate.date,
-				readable: format(typedDate.date, 'PPP'),
-			},
-			description: {
-				value: typedDate.description,
-				show: typedDate.description_show ?? false,
-			},
-			title: {
-				prefix: typedDate.title_prefix ?? null,
-				value: typedDate.title,
-			},
-			slug: formattedSlug,
-			url: `blog/${formattedSlug}`,
 		} as Post;
 
 		return post;
 	});
 
-	if (sort) return posts.sort((a, b) => +new Date(b.date.value) - +new Date(a.date.value));
+	if (sort)
+		return posts.sort(
+			(a, b) => +new Date(b.frontmatter.date.value) - +new Date(a.frontmatter.date.value),
+		);
 
 	return posts;
 }

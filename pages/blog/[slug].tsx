@@ -3,7 +3,7 @@ import tw from 'twin.macro';
 import { Layout } from '~/layouts';
 
 import { Blog } from '~/components';
-import { deserialisePost } from '~/lib';
+import { deserialiseFrontmatter } from '~/lib';
 import { getPost, getPostSlugs } from '~/lib/build';
 
 import type { GetStaticPaths, GetStaticPropsContext, GetStaticPropsResult } from 'next';
@@ -15,7 +15,8 @@ interface PathProps extends ParsedUrlQuery {
 }
 
 interface BlogPostProps {
-	serialisedPost?: string;
+	code: string;
+	serialisedFrontMatter?: string;
 }
 
 export const getStaticPaths: GetStaticPaths<PathProps> = async () => {
@@ -34,11 +35,12 @@ export const getStaticPaths: GetStaticPaths<PathProps> = async () => {
 export async function getStaticProps({
 	params,
 }: GetStaticPropsContext<PathProps>): Promise<GetStaticPropsResult<BlogPostProps>> {
-	const post = await getPost(params.slug);
+	const { code, frontmatter } = await getPost(params.slug);
 
 	return {
 		props: {
-			serialisedPost: JSON.stringify(post),
+			code,
+			serialisedFrontMatter: JSON.stringify(frontmatter),
 		},
 	};
 }
@@ -106,25 +108,25 @@ const Description = styled.p(tw`
 	text-xl text-gray-400 leading-8
 `);
 
-export default function BlogPost({ serialisedPost }: BlogPostProps) {
-	const post = deserialisePost(serialisedPost);
+export default function BlogPost({ serialisedFrontMatter: serialisedPost }: BlogPostProps) {
+	const frontmatter = deserialiseFrontmatter(serialisedPost);
 
 	return (
 		<Layout.Default
 			back={true}
 			background={false}
 			seo={{
-				title: `nuro ─ blog ─ ${post.title.value}`,
-				description: post.description.value ?? undefined,
+				title: `nuro ─ blog ─ ${frontmatter.title.value}`,
+				description: frontmatter.description.value ?? undefined,
 			}}>
 			<Container>
 				<Content>
-					{post.banner && post.banner.show && (
+					{frontmatter.banner && frontmatter.banner.show && (
 						<Banner>
 							<BannerPlaceholder />
 							<img
-								src={post.banner.url}
-								alt={post.banner.alt ?? post.title.value}
+								src={frontmatter.banner.url}
+								alt={frontmatter.banner.alt ?? frontmatter.title.value}
 								draggable={false}
 							/>
 						</Banner>
@@ -132,16 +134,18 @@ export default function BlogPost({ serialisedPost }: BlogPostProps) {
 
 					<Meta>
 						<h1>
-							{post.title.prefix && <TitlePrefix>{post.title.prefix}</TitlePrefix>}
-							<Title>{post.title.value}</Title>
+							{frontmatter.title.prefix && (
+								<TitlePrefix>{frontmatter.title.prefix}</TitlePrefix>
+							)}
+							<Title>{frontmatter.title.value}</Title>
 						</h1>
 
 						<Date>
-							<Blog.Date date={post.date.value} />
+							<Blog.Date date={frontmatter.date.value} />
 						</Date>
 
-						{post.description && post.description.show && (
-							<Description>{post.description.value}</Description>
+						{frontmatter.description && frontmatter.description.show && (
+							<Description>{frontmatter.description.value}</Description>
 						)}
 					</Meta>
 

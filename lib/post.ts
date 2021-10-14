@@ -1,9 +1,9 @@
 import { format } from 'date-fns';
 
-import type { Post } from '~/types';
+import type { FrontMatter } from '~/types';
 
-export function deserialisePost(post: string | Post): Post {
-	const input = (typeof post === 'string' ? JSON.parse(post) : post) as Post;
+export function deserialiseFrontmatter(post: string | FrontMatter): FrontMatter {
+	const input = (typeof post === 'string' ? JSON.parse(post) : post) as FrontMatter;
 	const date = new Date(input.date.value);
 
 	return {

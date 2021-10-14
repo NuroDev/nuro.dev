@@ -4,11 +4,11 @@ import tw from 'twin.macro';
 
 import { Blog } from '..';
 
-import type { Post } from '~/types';
+import type { FrontMatter } from '~/types';
 
 interface PostProps {
 	index: number;
-	post: Post;
+	frontmatter: FrontMatter;
 }
 
 const Container = styled.a(tw`
@@ -74,32 +74,34 @@ const Footer = styled.div(tw`
 	text-sm
 `);
 
-export function _Post({ index, post }: PostProps) {
+export function _Post({ index, frontmatter }: PostProps) {
 	return (
-		<Link aria-label={`Read blog post: ${post.title.value}`} href={post.url}>
+		<Link aria-label={`Read blog post: ${frontmatter.title.value}`} href={frontmatter.url}>
 			<Container>
-				{post.banner.url && index <= 2 && (
+				{frontmatter.banner.url && index <= 2 && (
 					<Banner>
 						<BannerPlaceholder />
 						<img
-							alt={post.title.value}
+							alt={frontmatter.title.value}
 							draggable={false}
 							loading="lazy"
-							src={post.banner.url}
+							src={frontmatter.banner.url}
 						/>
 					</Banner>
 				)}
 
 				<Content>
 					<ContextText>
-						<Title>{post.title.value}</Title>
-						{((post.description && post.description.show) || true) && (
-							<Description aria-label={post.description.value}>
-								{post.description.value}
+						<Title>{frontmatter.title.value}</Title>
+						{((frontmatter.description && frontmatter.description.show) || true) && (
+							<Description aria-label={frontmatter.description.value}>
+								{frontmatter.description.value}
 							</Description>
 						)}
 						<Footer>
-							<Blog.Date date={post.date.value ?? new Date(post.date.value)} />
+							<Blog.Date
+								date={frontmatter.date.value ?? new Date(frontmatter.date.value)}
+							/>
 						</Footer>
 					</ContextText>
 				</Content>

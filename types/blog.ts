@@ -1,4 +1,4 @@
-export interface RawPost {
+export interface RawFrontMatter {
 	banner_alt?: string;
 	banner_show?: boolean;
 	banner?: string;
@@ -9,7 +9,7 @@ export interface RawPost {
 	title: string;
 }
 
-export interface Post {
+export interface FrontMatter {
 	banner?: {
 		alt?: string;
 		show?: boolean;
@@ -31,16 +31,11 @@ export interface Post {
 	url: string;
 }
 
-export type Posts = Array<Post>;
+export type FrontMatters = Array<FrontMatter>;
 
-export interface Frontmatter {
-	banner_alt?: string;
-	banner_show?: boolean;
-	banner?: Array<string> | string;
-	date: Date;
-	description_show?: boolean;
-	description: string;
-	// meta?: Array<HeadAttrs>;
-	title_prefix?: string;
-	title: string;
+export interface Post {
+	code: string;
+	frontmatter: FrontMatter;
 }
+
+export type Posts = Array<Post>;

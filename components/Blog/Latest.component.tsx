@@ -4,10 +4,10 @@ import tw from 'twin.macro';
 
 import { Blog } from '..';
 
-import type { Post } from '~/types';
+import type { FrontMatter } from '~/types';
 
 interface LatestProps {
-	post: Post;
+	frontmatter: FrontMatter;
 }
 
 const Container = styled.a(tw`
@@ -68,19 +68,19 @@ const Footer = styled.div(tw`
 	mt-6 lg:mt-0 mx-4 lg:mx-0 pb-4 lg:pb-0
 `);
 
-export function Latest({ post }: LatestProps) {
+export function Latest({ frontmatter }: LatestProps) {
 	return (
-		<Link aria-label={`Read blog post: ${post.title.value}`} href={post.url}>
+		<Link aria-label={`Read blog post: ${frontmatter.title.value}`} href={frontmatter.url}>
 			<Container>
-				{post.banner.show && (
+				{frontmatter.banner.show && (
 					<Banner>
 						<BannerPlaceholder />
 
-						{Array.isArray(post.banner.url) ? (
+						{Array.isArray(frontmatter.banner.url) ? (
 							<picture>
-								{post.banner.url.reverse().map((src, i) => (
+								{frontmatter.banner.url.reverse().map((src, i) => (
 									<img
-										alt={post.banner.alt ?? post.title.value}
+										alt={frontmatter.banner.alt ?? frontmatter.title.value}
 										draggable={false}
 										key={i}
 										src={src}
@@ -89,20 +89,24 @@ export function Latest({ post }: LatestProps) {
 							</picture>
 						) : (
 							<img
-								alt={post.banner.alt ?? post.title.value}
+								alt={frontmatter.banner.alt ?? frontmatter.title.value}
 								draggable={false}
-								src={post.banner.url}
+								src={frontmatter.banner.url}
 							/>
 						)}
 					</Banner>
 				)}
 				<Content>
-					<Title>{post.title.value || post.title}</Title>
-					{((post.description && post.description.show) || true) && (
-						<Description>{post.description.value || post.description}</Description>
+					<Title>{frontmatter.title.value || frontmatter.title}</Title>
+					{((frontmatter.description && frontmatter.description.show) || true) && (
+						<Description>
+							{frontmatter.description.value || frontmatter.description}
+						</Description>
 					)}
 					<Footer>
-						<Blog.Date date={post.date.value ?? new Date(post.date.value)} />
+						<Blog.Date
+							date={frontmatter.date.value ?? new Date(frontmatter.date.value)}
+						/>
 					</Footer>
 				</Content>
 			</Container>
