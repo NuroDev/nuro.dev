@@ -8,6 +8,7 @@
 		"url": "https://cuvva.insure/CQ5psRocnkb"
 	},
 	{
+		"aliases": ["food", "roo"],
 		"bonus": "£10 off",
 		"code": "bend1044",
 		"description": "Your favourite restaurants, shops & supermarkets delivered to your door",
@@ -16,6 +17,7 @@
 		"url": "https://roo.it/bend1044"
 	},
 	{
+		"aliases": ["cloud", "do"],
 		"code": "81fa220bbbe0",
 		"description": "Cloud platform to deploy, manage & scale applications of any size",
 		"icon": "digitalocean",
@@ -23,6 +25,7 @@
 		"url": "https://m.do.co/c/81fa220bbbe0"
 	},
 	{
+		"aliases": ["investing", "stocks", "stonks"],
 		"bonus": "Free share between £3-200",
 		"code": "3e2d5864",
 		"description": "",
@@ -31,6 +34,7 @@
 		"url": "https://magic.freetrade.io/join/ben/3e2d5864"
 	},
 	{
+		"aliases": ["climate", "🌍", "💚"],
 		"bonus": "🌍💚",
 		"code": "xtb2dx",
 		"description": "Help offset your carbon footprint with a small monthly subscription",

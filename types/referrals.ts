@@ -1,4 +1,5 @@
 export interface Referral {
+	aliases?: Array<string>;
 	bonus?: string;
 	code?: string;
 	description: string;
