@@ -32,7 +32,7 @@ export default function HomePage() {
 		today.getDate() === birthday.getDate() && today.getMonth() === birthday.getMonth();
 
 	return (
-		<Layout.Default background={false}>
+		<Layout.Default>
 			{isBirthday && <Event event={EventType.BIRTHDAY} />}
 			<Content>
 				<Title>
