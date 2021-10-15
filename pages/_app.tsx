@@ -4,6 +4,7 @@ import tw, { GlobalStyles as TailwindStyles } from 'twin.macro';
 import { AppProps } from 'next/app';
 import { css, Global as EmotionStyles } from '@emotion/react';
 import { ThemeProvider } from 'next-themes';
+import { Toaster } from 'react-hot-toast';
 
 import 'inter-ui/inter.css';
 import 'nprogress/nprogress.css';
@@ -67,6 +68,7 @@ export default function App({ Component, pageProps }: AppProps) {
 		<ThemeProvider attribute="class" defaultTheme={Theme.SYSTEM} themes={Object.values(Theme)}>
 			<EmotionStyles styles={GlobalStyles} />
 			<TailwindStyles />
+			<Toaster position="top-right" />
 			<Component {...pageProps} />
 		</ThemeProvider>
 	);

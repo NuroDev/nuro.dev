@@ -1,12 +1,16 @@
-import dynamic from 'next/dynamic';
 import styled from '@emotion/styled';
+import toast from 'react-hot-toast';
 import tw from 'twin.macro';
 import { Icon } from '@iconify/react';
 import { useCopyToClipboard } from 'react-use';
+import { useTheme } from 'next-themes';
 
-import { Button, Pill } from '~/components';
+import TailwindCSS from '~/tailwind.config';
+import { Button } from '~/components';
 import { Layout } from '~/layouts';
+import { Theme } from '~/types';
 
+import type { CSSProperties } from 'react';
 import type { GetStaticProps } from 'next';
 
 import type { Referral, Referrals } from '~/types';
@@ -99,7 +103,30 @@ export const getStaticProps: GetStaticProps<ReferralsProps> = async () => {
 };
 
 function ReferralCard({ referral }: ReferralCardProps) {
+	const { theme } = useTheme();
 	const [state, copyToClipboard] = useCopyToClipboard();
+
+	const grayColors = TailwindCSS.theme.extend.colors.gray;
+	const isDark = theme === Theme.DARK;
+	const toastOptions = {
+		style: {
+			background: isDark ? grayColors[800] : grayColors[50],
+			color: isDark ? grayColors[400] : grayColors[700],
+			borderWidth: '1px',
+			borderColor: isDark ? grayColors[500] : grayColors[100],
+		} as CSSProperties,
+	};
+
+	function onCopy() {
+		copyToClipboard(referral.code);
+
+		if (state.error) {
+			toast.error('Failed to copy code', toastOptions);
+			return;
+		}
+
+		toast.success('Copied code', toastOptions);
+	}
 
 	return (
 		<ListItem>
@@ -126,7 +153,7 @@ function ReferralCard({ referral }: ReferralCardProps) {
 						</ActionButton>
 					</a>
 					{referral.code && (
-						<ActionButton aria-label="Referral code">
+						<ActionButton aria-label="Referral code" onClick={onCopy}>
 							<span tw="sr-only">Code</span>
 							<Icon icon="feather:hash" />
 						</ActionButton>
