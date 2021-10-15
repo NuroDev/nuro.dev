@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { differenceInYears } from 'date-fns';
@@ -58,16 +59,24 @@ export default function HomePage() {
 				<Title>
 					Hey <Wave>👋</Wave> I'm Ben,
 					<LineBreak /> a{' '}
-					<StyledPill href="https://twitter.com/nurodev">developer</StyledPill>
+					<StyledPill href="https://github.com/nurodev">developer</StyledPill>
 				</Title>
 				<Description>I am a {age} year old software engineer & games developer</Description>
 
 				<Actions>
-					<Button.Outline href="https://twitter.com/nurodev">
-						<ActionIcon icon="feather:twitter" />
-						<ActionText>Twitter</ActionText>
-					</Button.Outline>
-					<Button.Outline href="https://github.com/nurodev">
+					<Link href="/blog">
+						<Button.Outline href="/blog">
+							<ActionIcon icon="feather:edit-3" />
+							<ActionText>Blog</ActionText>
+						</Button.Outline>
+					</Link>
+					<Link href="/projects">
+						<Button.Outline href="/projects">
+							<ActionIcon icon="feather:copy" />
+							<ActionText>Projects</ActionText>
+						</Button.Outline>
+					</Link>
+					<Button.Outline external href="https://github.com/nurodev">
 						<ActionIcon icon="feather:github" />
 						<ActionText>GitHub</ActionText>
 					</Button.Outline>

@@ -9,6 +9,7 @@ import type { AnchorHTMLAttributes } from 'react';
 import type { WithClassName } from '~/types';
 
 interface OutlineProps extends AnchorHTMLAttributes<HTMLAnchorElement>, WithClassName {
+	external?: boolean;
 	icon?: string;
 }
 
@@ -19,21 +20,28 @@ const Container = styled.a(tw`
 	backdrop-filter backdrop-blur-sm \
 	text-gray-500 dark:text-gray-200 \
 	text-base font-medium \
-	border border-gray-200 dark:border-gray-500 \
-	rounded-lg \
+	border-2 border-gray-200 dark:border-gray-500 \
+	rounded-lg cursor-pointer \
 	transition ease-in-out duration-300 \
-	focus:outline-none focus:ring-2 focus:ring-primary-500
+	focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500
 `);
 
 const StyledIcon = styled(Icon)(tw`mt-1 mr-3`);
 
-export function Outline({ children, className, icon, onClick, ...rest }: OutlineProps) {
+export function Outline({
+	children,
+	className,
+	external = false,
+	icon,
+	onClick,
+	...rest
+}: OutlineProps) {
 	const [play] = useClick();
 
 	return (
 		<Container
 			rel="noopener noreferrer"
-			target="_blank"
+			target={external ? '_blank' : undefined}
 			{...rest}
 			className={className}
 			onClick={(...args) => {
