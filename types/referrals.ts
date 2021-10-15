@@ -3,6 +3,7 @@ export interface Referral {
 	bonus?: string;
 	code?: string;
 	description: string;
+	homepage: string;
 	icon: string;
 	name: string;
 	url: string;

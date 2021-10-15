@@ -26,6 +26,10 @@ const LineBreak = styled.br(tw`
 	hidden sm:block
 `);
 
+const StyledPill = styled(Pill)(tw`
+	mt-4 sm:mt-8 lg:ml-2 md:pb-4
+`);
+
 const Actions = styled.div(tw`
 	flex flex-col sm:flex-row items-center justify-center sm:space-x-4 space-y-4 sm:space-y-0 w-full \
 	mt-8 sm:mt-4
@@ -49,7 +53,8 @@ export default function HomePage() {
 			<Content>
 				<Title>
 					Hey <Wave>👋</Wave> I'm Ben,
-					<LineBreak /> a <Pill href="https://twitter.com/nurodev">developer</Pill>
+					<LineBreak /> a{' '}
+					<StyledPill href="https://twitter.com/nurodev">developer</StyledPill>
 				</Title>
 				<Description>I am a {age} year old software engineer & games developer</Description>
 

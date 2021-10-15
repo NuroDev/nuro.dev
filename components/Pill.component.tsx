@@ -1,15 +1,12 @@
 import styled from '@emotion/styled';
+import { AnchorHTMLAttributes } from 'react';
 import tw from 'twin.macro';
 
-import type { WithChildren, WithClassName } from '~/types';
-
-interface PillProps extends WithClassName, WithChildren {
-	href: string;
-}
+interface PillProps extends AnchorHTMLAttributes<HTMLAnchorElement> {}
 
 const Container = styled.a(tw`
 	inline-flex \
-	mt-4 sm:mt-8 lg:ml-2 px-3 lg:px-5 py-2 md:pb-4 \
+	px-3 lg:px-5 py-2 md:pb-4 \
 	bg-primary-500 bg-opacity-15 hover:bg-primary-800 hover:bg-opacity-15 \
 	backdrop-filter backdrop-blur-sm saturate-200 \
 	text-primary-200 hover:text-primary-400 \
@@ -18,9 +15,9 @@ const Container = styled.a(tw`
 	focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500
 `);
 
-export function Pill({ children, className, href }: PillProps) {
+export function Pill({ children, ...rest }: PillProps) {
 	return (
-		<Container className={className} href={href} target="_blank" rel="noreferrer noopener">
+		<Container target="_blank" rel="noreferrer noopener" {...rest}>
 			{children}
 		</Container>
 	);
