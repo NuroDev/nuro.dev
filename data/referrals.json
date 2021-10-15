@@ -4,7 +4,7 @@
 		"code": "CQ5psRocnkb",
 		"description": "Radically better & smarter car insurance",
 		"homepage": "https://www.cuvva.com/",
-		"icon": "cuvva",
+		"icon": "truck",
 		"name": "Cuvva",
 		"url": "https://cuvva.insure/CQ5psRocnkb"
 	},
@@ -14,16 +14,16 @@
 		"code": "bend1044",
 		"description": "Your favourite restaurants, shops & supermarkets delivered to your door",
 		"homepage": "https://deliveroo.co.uk/",
-		"icon": "deliveroo",
+		"icon": "shopping-cart",
 		"name": "Deliveroo",
 		"url": "https://roo.it/bend1044"
 	},
 	{
 		"aliases": ["cloud", "do"],
 		"code": "81fa220bbbe0",
-		"description": "Cloud platform to deploy, manage & scale applications of any size",
+		"description": "Cloud platform to deploy, manage & scale applications",
 		"homepage": "https://www.digitalocean.com/",
-		"icon": "digitalocean",
+		"icon": "cloud",
 		"name": "DigitalOcean",
 		"url": "https://m.do.co/c/81fa220bbbe0"
 	},
@@ -33,7 +33,7 @@
 		"code": "3e2d5864",
 		"description": "Smart & simple personal investing",
 		"homepage": "https://freetrade.io",
-		"icon": "freetrade",
+		"icon": "dollar-sign",
 		"name": "FreeTrade",
 		"url": "https://magic.freetrade.io/join/ben/3e2d5864"
 	},
@@ -41,24 +41,24 @@
 		"aliases": ["climate", "🌍", "💚"],
 		"bonus": "🌍💚",
 		"code": "xtb2dx",
-		"description": "Help offset your carbon footprint with a small monthly subscription",
+		"description": "Help offset your carbon footprint",
 		"homepage": "https://klima.com",
-		"icon": "klima",
+		"icon": "thermometer",
 		"name": "Klima",
 		"url": "https://klima.com/multiply/join/"
 	},
 	{
 		"description": "Develop. Preview. Ship.",
 		"homepage": "https://vercel.com/home",
-		"icon": "vercel",
+		"icon": "cloud",
 		"name": "Vercel",
 		"url": "https://vercel.com/home?utm_source=nuro&utm_campaign=oss"
 	},
 	{
 		"code": "7299996",
-		"description": "Frictionless provisioning of public cloud, storage & single tenant bare metal",
+		"description": "Deploy public cloud, storage & single tenant bare metal services",
 		"homepage": "https://vultr.com",
-		"icon": "vultr",
+		"icon": "cloud",
 		"name": "Vultr",
 		"url": "https://www.vultr.com/?ref=7299996"
 	}
