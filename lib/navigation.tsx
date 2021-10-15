@@ -76,15 +76,21 @@ export function useNavigation() {
 		[
 			{
 				type: NavigationItemType.ACTION,
-				icon: isDark ? 'feather:sun' : 'feather:moon',
-				text: isDark ? 'Light Mode' : 'Dark Mode',
-				onClick: () => setTheme(isDark ? 'light' : 'dark'),
-			},
-			{
-				type: NavigationItemType.ACTION,
 				icon: 'feather:image',
 				text: 'Animations',
 				onClick: () => {},
+			},
+			{
+				type: NavigationItemType.ACTION,
+				icon: 'feather:volume-2',
+				text: 'Sounds',
+				onClick: () => {},
+			},
+			{
+				type: NavigationItemType.ACTION,
+				icon: isDark ? 'feather:sun' : 'feather:moon',
+				text: isDark ? 'Light Mode' : 'Dark Mode',
+				onClick: () => setTheme(isDark ? 'light' : 'dark'),
 			},
 		],
 	];
