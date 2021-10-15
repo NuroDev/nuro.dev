@@ -1,0 +1,54 @@
+[
+	{
+		"bonus": "£10-60 off",
+		"code": "CQ5psRocnkb",
+		"description": "Radically better insurance",
+		"icon": "cuvva",
+		"name": "Cuvva",
+		"url": "https://cuvva.insure/CQ5psRocnkb"
+	},
+	{
+		"bonus": "£10 off",
+		"code": "bend1044",
+		"description": "Your favourite restaurants, shops & supermarkets delivered to your door",
+		"icon": "deliveroo",
+		"name": "Deliveroo",
+		"url": "https://roo.it/bend1044"
+	},
+	{
+		"code": "81fa220bbbe0",
+		"description": "Cloud platform to deploy, manage & scale applications of any size",
+		"icon": "digitalocean",
+		"name": "DigitalOcean",
+		"url": "https://m.do.co/c/81fa220bbbe0"
+	},
+	{
+		"bonus": "Free share between £3-200",
+		"code": "3e2d5864",
+		"description": "",
+		"icon": "freetrade",
+		"name": "FreeTrade",
+		"url": "https://magic.freetrade.io/join/ben/3e2d5864"
+	},
+	{
+		"bonus": "🌍💚",
+		"code": "xtb2dx",
+		"description": "Help offset your carbon footprint with a small monthly subscription",
+		"icon": "klima",
+		"name": "Klima",
+		"url": "https://klima.com/multiply/join/"
+	},
+	{
+		"description": "Develop. Preview. Ship.",
+		"icon": "vercel",
+		"name": "Vercel",
+		"url": "https://vercel.com/home?utm_source=nuro&utm_campaign=oss"
+	},
+	{
+		"code": "7299996",
+		"description": "Frictionless provisioning of public cloud, storage & single tenant bare metal",
+		"icon": "vultr",
+		"name": "Vultr",
+		"url": "https://www.vultr.com/?ref=7299996"
+	}
+]
