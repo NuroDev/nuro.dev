@@ -41,11 +41,11 @@ const ItemStyles = css`
 	`}
 `;
 
-const ItemLink = styled.a<{ $active: boolean }>`
+const ItemLink = styled.a<{ $active?: boolean }>`
 	${ItemStyles}
 
 	${({ $active }) =>
-		$active &&
+		($active ?? false) &&
 		tw`
 				bg-gray-100 bg-opacity-75 hover:bg-gray-200 dark:bg-gray-700 dark:bg-opacity-75 dark:hover:bg-gray-600 \
 				text-gray-700 hover:text-gray-800 dark:text-white dark:hover:text-gray-100 \
@@ -92,7 +92,10 @@ export function Menu({ items }: MenuProps) {
 
 								if (external)
 									return (
-										<ItemLink $active={active}>
+										<ItemLink
+											href={item.href}
+											rel="noopener noreferrer"
+											target="_blank">
 											<MenuIcon icon={item.icon} />
 											{item.text}
 										</ItemLink>
@@ -102,8 +105,7 @@ export function Menu({ items }: MenuProps) {
 									<Link
 										aria-current={active ? 'page' : undefined}
 										href={item.href}
-										key={item.text}
-									>
+										key={item.text}>
 										<ItemLink $active={active}>
 											<MenuIcon icon={item.icon} />
 											{item.text}
