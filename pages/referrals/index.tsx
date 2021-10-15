@@ -20,11 +20,12 @@ interface ReferralCardProps {
 }
 
 const Container = styled.div(tw`
-	flex items-center justify-center w-full h-screen
+	flex items-start sm:items-center justify-center w-full h-screen
 `);
 
 const Content = styled.div(tw`
-	max-w-3xl overflow-hidden
+	max-w-3xl overflow-hidden \
+	py-16 sm:py-0
 `);
 
 const List = styled.ul(tw`
@@ -63,14 +64,14 @@ function ReferralCard({ referral }: ReferralCardProps) {
 
 	return (
 		<ListItem>
-			<div tw="flex items-center px-4 py-4 sm:px-6">
-				<div tw="min-w-0 flex flex-1 items-center">
+			<div tw="flex flex-col sm:flex-row items-start px-4 py-4 sm:px-6">
+				<div tw="flex flex-1 items-center">
 					<div tw="flex-shrink-0">
 						<Icon icon={`feather:${referral.icon}`} tw="w-6 h-6 dark:text-gray-400" />
 					</div>
 					<div tw="min-w-0 flex-1 px-4">
 						<div>
-							<p tw="text-lg font-bold text-gray-700 dark:text-white truncate">
+							<p tw="text-lg font-bold text-gray-700 dark:text-white">
 								{referral.name}
 							</p>
 							<p tw="mt-1 flex items-center text-xs text-gray-500 dark:text-gray-400">
@@ -79,12 +80,13 @@ function ReferralCard({ referral }: ReferralCardProps) {
 						</div>
 					</div>
 				</div>
-				<div tw="flex items-center space-x-2">
+				<div tw="flex items-center space-x-2 mt-4 sm:mt-0">
 					<Button.Icon
 						tw="w-10 h-10 border border-gray-100 dark:border-gray-500"
 						href={referral.url}
 						// onClick={() => click}
 					>
+						<span tw="sr-only">Homepage</span>
 						<Icon icon="feather:home" />
 					</Button.Icon>
 					{referral.code && (
@@ -93,6 +95,7 @@ function ReferralCard({ referral }: ReferralCardProps) {
 							type="button"
 							// onClick={() => copyToClipboard(referral.code)}
 						>
+							<span tw="sr-only">Code</span>
 							<Icon icon="feather:hash" />
 						</Button.Icon>
 					)}
@@ -101,6 +104,7 @@ function ReferralCard({ referral }: ReferralCardProps) {
 						href={referral.url}
 						// onClick={() => click}
 					>
+						<span tw="sr-only">Referral Link</span>
 						<Icon icon="feather:external-link" />
 					</Button.Icon>
 				</div>
@@ -112,12 +116,6 @@ function ReferralCard({ referral }: ReferralCardProps) {
 export default function ReferralsPage({ referrals }: ReferralsProps) {
 	return (
 		<Layout.Default>
-			{/* <Container>
-				{referrals.map((referral, index) => (
-					<ReferralCard key={index} referral={referral} />
-				))}
-			</Container> */}
-
 			<Container>
 				<Content>
 					<List role="list">
