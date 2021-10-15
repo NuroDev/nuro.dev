@@ -125,9 +125,10 @@ export default function BlogPost({ post }: BlogPostProps) {
 						<Banner>
 							<BannerPlaceholder />
 							<Image
-								src={post.frontmatter.banner}
 								alt={post.frontmatter.banner_alt ?? post.frontmatter.title}
 								draggable={false}
+								layout="fill"
+								src={post.frontmatter.banner}
 							/>
 						</Banner>
 					)}

@@ -87,6 +87,7 @@ export function _Post({ index, frontmatter }: PostProps) {
 						<Image
 							alt={frontmatter.title}
 							draggable={false}
+							layout="fill"
 							loading="lazy"
 							src={frontmatter.banner}
 						/>

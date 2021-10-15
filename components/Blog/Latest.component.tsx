@@ -81,6 +81,7 @@ export function Latest({ frontmatter }: LatestProps) {
 						<Image
 							alt={frontmatter.banner_alt ?? frontmatter.title}
 							draggable={false}
+							layout="fill"
 							src={frontmatter.banner}
 						/>
 					</Banner>

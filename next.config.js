@@ -3,6 +3,16 @@ module.exports = {
 	experimental: {
 		esmExternals: true,
 	},
+	images: {
+		domains: [
+			// Unsplash
+			'source.unsplash.com',
+			'images.unsplash.com',
+
+			// Spotify Album Art
+			'i.scdn.co',
+		]
+	},
 	// Inspired by: https://github.com/leerob/leerob.io/blob/main/next.config.js#L44-L81
 	async headers() {
 		return [
