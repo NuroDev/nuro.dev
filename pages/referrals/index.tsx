@@ -40,6 +40,45 @@ const ListItem = styled.li(tw`
 	transition ease-in-out duration-300
 `);
 
+const ListItemContainer = styled.div(tw`
+	flex flex-col sm:flex-row items-start \
+	px-4 py-4 sm:px-6
+`);
+
+const MetaContainer = styled.div(tw`
+	flex flex-1 items-center
+`);
+
+const IconContainer = styled.div(tw`
+	flex-shrink-0
+`);
+
+const Meta = styled.div(tw`
+	min-w-0 flex-1 \
+	px-4
+`);
+
+const Title = styled.h1(tw`
+	text-gray-700 dark:text-white \
+	text-lg font-bold
+`);
+
+const Description = styled.p(tw`
+	flex items-center \
+	mt-1 \
+	text-gray-500 dark:text-gray-400 \
+	text-xs
+`);
+
+const Actions = styled.div(tw`
+	flex items-center space-x-2 mt-4 sm:mt-0 sm:pl-4
+`);
+
+const ActionButton = styled(Button.Icon)(tw`
+	w-10 h-10 \
+	border border-gray-100 dark:border-gray-500
+`);
+
 export const getStaticProps: GetStaticProps<ReferralsProps> = async () => {
 	const { default: rawReferrals } = await import('~/data/referrals.json');
 
@@ -64,51 +103,46 @@ function ReferralCard({ referral }: ReferralCardProps) {
 
 	return (
 		<ListItem>
-			<div tw="flex flex-col sm:flex-row items-start px-4 py-4 sm:px-6">
-				<div tw="flex flex-1 items-center">
-					<div tw="flex-shrink-0">
+			<ListItemContainer>
+				<MetaContainer>
+					<IconContainer>
 						<Icon icon={`feather:${referral.icon}`} tw="w-6 h-6 dark:text-gray-400" />
-					</div>
-					<div tw="min-w-0 flex-1 px-4">
-						<div>
-							<p tw="text-lg font-bold text-gray-700 dark:text-white">
-								{referral.name}
-							</p>
-							<p tw="mt-1 flex items-center text-xs text-gray-500 dark:text-gray-400">
-								<span>{referral.description}</span>
-							</p>
-						</div>
-					</div>
-				</div>
-				<div tw="flex items-center space-x-2 mt-4 sm:mt-0">
-					<Button.Icon
-						tw="w-10 h-10 border border-gray-100 dark:border-gray-500"
+					</IconContainer>
+					<Meta>
+						<Title>{referral.name}</Title>
+						<Description>{referral.description}</Description>
+					</Meta>
+				</MetaContainer>
+
+				<Actions>
+					<a
 						href={referral.url}
-						// onClick={() => click}
-					>
-						<span tw="sr-only">Homepage</span>
-						<Icon icon="feather:home" />
-					</Button.Icon>
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label={`${referral.name} homepage`}>
+						<ActionButton>
+							<span tw="sr-only">Homepage</span>
+							<Icon icon="feather:home" />
+						</ActionButton>
+					</a>
 					{referral.code && (
-						<Button.Icon
-							tw="w-10 h-10 border border-gray-100 dark:border-gray-500"
-							type="button"
-							// onClick={() => copyToClipboard(referral.code)}
-						>
+						<ActionButton aria-label="Referral code">
 							<span tw="sr-only">Code</span>
 							<Icon icon="feather:hash" />
-						</Button.Icon>
+						</ActionButton>
 					)}
-					<Button.Icon
-						tw="w-10 h-10 border border-gray-100 dark:border-gray-500"
+					<a
 						href={referral.url}
-						// onClick={() => click}
-					>
-						<span tw="sr-only">Referral Link</span>
-						<Icon icon="feather:external-link" />
-					</Button.Icon>
-				</div>
-			</div>
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="Referral link">
+						<ActionButton>
+							<span tw="sr-only">Referral Link</span>
+							<Icon icon="feather:external-link" />
+						</ActionButton>
+					</a>
+				</Actions>
+			</ListItemContainer>
 		</ListItem>
 	);
 }
