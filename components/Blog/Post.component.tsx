@@ -13,7 +13,7 @@ interface PostProps {
 
 const Container = styled.a(tw`
 	flex flex-col \
-	bg-white bg-opacity-50 dark:bg-gray-900 dark:bg-opacity-15 \
+	bg-white bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 \
 	backdrop-filter backdrop-blur-sm \
 	rounded-2xl overflow-hidden hover:shadow-xl cursor-pointer \
 	transform hover:-translate-y-1 \
@@ -78,8 +78,7 @@ export function _Post({ index, frontmatter }: PostProps) {
 	return (
 		<Link
 			aria-label={`Read blog post: ${frontmatter.title}`}
-			href={`/blog/${frontmatter.slug}`}
-		>
+			href={`/blog/${frontmatter.slug}`}>
 			<Container>
 				{frontmatter.banner && index <= 2 && (
 					<Banner>
