@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { NextSeo } from 'next-seo';
 
-import { useSeoProps } from '~/lib';
+import { usePersistantState, useSeoProps } from '~/lib';
 import { Background, Navbar } from '~/components';
 
 import type { WithChildren, WithProps } from '~/types';
@@ -18,11 +18,12 @@ const Main = styled.main(tw`flex flex-col justify-center px-8`);
 
 export function DefaultLayout({
 	back = false,
-	background = true,
+	background: overrideBackground,
 	children,
 	seo,
 	status = true,
 }: DefaultLayoutProps) {
+	const { background } = usePersistantState().get();
 	const defaultSeoProps = useSeoProps();
 
 	return (
@@ -30,7 +31,7 @@ export function DefaultLayout({
 			<NextSeo {...defaultSeoProps} {...seo} />
 			<Navbar.Standard back={back} status={status} />
 			<Main>
-				{background && <Background.Standard />}
+				{(overrideBackground ?? background) && <Background.Standard />}
 				{children}
 			</Main>
 		</>
