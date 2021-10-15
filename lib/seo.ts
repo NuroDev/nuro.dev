@@ -19,6 +19,14 @@ export function useSeoProps(): Partial<ComponentProps<typeof NextSeo>> {
 			site_name: 'nuro',
 			url: `https://nuro.dev/${router.asPath}`,
 			type: 'website',
+			images: [
+				{
+					url: 'https://nuro.dev/banner.png',
+					alt: description,
+					width: 1280,
+					height: 720,
+				},
+			],
 		},
 		twitter: {
 			cardType: 'summary_large_image',
