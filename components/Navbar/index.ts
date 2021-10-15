@@ -1,5 +1,4 @@
-export { Item, NavbarIcon as Icon } from './Item.component';
-export { Settings } from './Settings.component';
-export { Standard } from './Standard.component';
-export { StatusWrapper as Status } from './Status.component';
+export * as Desktop from './Desktop';
 export * as Mobile from './Mobile';
+export * from './Icon.component';
+export * from './Standard.component';

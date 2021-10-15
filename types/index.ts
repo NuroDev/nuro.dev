@@ -3,6 +3,6 @@ export * from './common';
 export * from './lanyard';
 export * from './navigation';
 export * from './projects';
-export * from './settings';
+export * from './navigation';
 export * from './theme';
 export * from './timeline';

@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
-import { useLanyard } from 'react-use-lanyard';
 
 import { Error, Loading } from '..';
+import { useStatus } from '~/lib';
 
 const Container = styled.div(tw`
 	flex flex-col space-y-5 w-full max-w-sm \
@@ -75,15 +75,11 @@ const Artist = styled.div(tw`
 `);
 
 export function Widget() {
-	const userId = process.env.NEXT_PUBLIC_DISCORD_ID;
-	const { loading, status } = useLanyard({
-		userId,
-		socket: true,
-	});
+	const status = useStatus();
 
-	if (loading) return <Loading />;
+	if (status.loading) return <Loading />;
 
-	if (!status) return <Error />;
+	if (!status || !status.data) return <Error />;
 
 	return (
 		<Container>
@@ -101,24 +97,24 @@ export function Widget() {
 				</TextContainer>
 			</ActivityContainer>
 
-			{status.spotify && status.listening_to_spotify && (
+			{status.data.spotify && status.data.listening_to_spotify && (
 				<>
 					<Divider />
 					<ActivityContainer>
 						<ArtworkContainer>
 							<Artwork
-								src={status.spotify.album_art_url}
-								alt={`${status.spotify.song} - ${status.spotify.artist}`}
+								src={status.data.spotify.album_art_url}
+								alt={`${status.data.spotify.song} - ${status.data.spotify.artist}`}
 							/>
 						</ArtworkContainer>
 
 						<Song>
-							<Title>{status.spotify.song}</Title>
+							<Title>{status.data.spotify.song}</Title>
 							<Artist>
-								{status.spotify.album === status.spotify.artist && (
-									<p>{status.spotify.album}</p>
+								{status.data.spotify.album === status.data.spotify.artist && (
+									<p>{status.data.spotify.album}</p>
 								)}
-								<p tw="tracking-wide">{status.spotify.artist}</p>
+								<p tw="tracking-wide">{status.data.spotify.artist}</p>
 							</Artist>
 						</Song>
 					</ActivityContainer>

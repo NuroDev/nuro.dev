@@ -21,10 +21,9 @@ const Content = styled.div(tw`
 	relative max-w-6xl mx-auto
 `);
 
-const PostsContainer = styled.p(tw`
-	max-w-lg \
-		mt-4 lg:mt-12 mx-auto \
-		grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:max-w-none
+const PostsContainer = styled.div(tw`
+	mt-4 lg:mt-12 \
+	grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:max-w-none
 `);
 
 export const getStaticProps: GetStaticProps<BlogProps> = async () => {
