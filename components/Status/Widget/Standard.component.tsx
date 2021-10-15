@@ -77,9 +77,9 @@ const Artist = styled.div(tw`
 export function Widget() {
 	const status = useStatus();
 
-	if (status.loading) return <Loading />;
-
 	if (!status || !status.data) return <Error />;
+
+	if (status.loading) return <Loading />;
 
 	return (
 		<Container>
