@@ -16,7 +16,7 @@ const Container = styled.a(tw`
 	bg-white bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 \
 	backdrop-filter backdrop-blur-sm \
 	rounded-2xl overflow-hidden hover:shadow-xl cursor-pointer \
-	transform hover:-translate-y-1 \
+	transform motion-safe:hover:-translate-y-1 \
 	transition ease-in-out duration-300 \
 	focus:outline-none focus:ring-4 focus:ring-offset-8 focus:ring-primary-500
 `);
@@ -39,7 +39,7 @@ const Banner = styled.div`
 const BannerPlaceholder = styled.div(tw`
 	w-full h-full lg:h-48 \
 	bg-gray-200 dark:bg-gray-600
-	animate-pulse
+	motion-safe:animate-pulse
 `);
 
 const Content = styled.div(tw`

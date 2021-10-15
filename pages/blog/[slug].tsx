@@ -78,7 +78,7 @@ const BannerPlaceholder = styled.div(tw`
 	mb-8 \
 	bg-gray-200 dark:bg-gray-600 \
 	rounded-3xl \
-	animate-pulse
+	motion-safe:animate-pulse
 `);
 
 const Meta = styled.div(tw`

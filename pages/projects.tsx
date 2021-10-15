@@ -35,7 +35,7 @@ const ProjectCard = styled.li<{
 		border \
 		text-center \
 		rounded-lg hover:shadow-lg divide-y divide-gray-200 cursor-pointer \
-		transform hover:-translate-y-1 \
+		transform motion-safe:hover:-translate-y-1 \
 		transition ease-in-out duration-300
 	`}
 

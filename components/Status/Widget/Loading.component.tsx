@@ -15,7 +15,7 @@ const Container = styled.div(tw`
 	border-2 border-gray-200 dark:border-gray-600 \
 	rounded-lg hover:shadow-lg \
 	transition ease-in-out duration-300 \
-	animate-pulse
+	motion-safe:animate-pulse
 `);
 
 const Avatar = styled.div<{ $rounded: boolean }>`

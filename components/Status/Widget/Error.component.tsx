@@ -10,7 +10,7 @@ const ErrorContainer = styled.div(tw`
 	border-2 border-red-500 \
 	rounded-lg hover:shadow-lg \
 	transition ease-in-out duration-300 \
-	animate-pulse
+	motion-safe:animate-pulse
 `);
 
 const ErrorIconContainer = styled.div(tw`
