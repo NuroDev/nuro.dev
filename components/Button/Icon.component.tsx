@@ -1,16 +1,16 @@
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { forwardRef } from 'react';
-import { useSound } from 'use-sound';
+
+import { useClick } from '~/lib';
 
 import type { ButtonHTMLAttributes } from 'react';
-import { useClick } from '~/lib';
 
 interface IconProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
 
 const Button = styled.button(tw`
 	relative inline-block \
-	p-3 \
+	px-3 py-2 \
 	bg-gray-50 hover:bg-gray-100 dark:bg-gray-900 dark:hover:bg-gray-700 \
 	text-gray-400 hover:text-gray-700 dark:hover:text-white \
 	rounded-lg \
