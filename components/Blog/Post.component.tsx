@@ -78,7 +78,8 @@ export function _Post({ index, frontmatter }: PostProps) {
 	return (
 		<Link
 			aria-label={`Read blog post: ${frontmatter.title}`}
-			href={`/blog/${frontmatter.slug}`}>
+			href={`/blog/${frontmatter.slug}`}
+		>
 			<Container>
 				{frontmatter.banner && index <= 2 && (
 					<Banner>

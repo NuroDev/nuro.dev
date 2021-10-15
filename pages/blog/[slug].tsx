@@ -148,6 +148,7 @@ export default function BlogPost({ post }: BlogPostProps) {
 							<Description>{post.frontmatter.description}</Description>
 						)}
 					</Meta>
+
 					<MDXRemote {...post.source} components={Blog.X} />
 				</Content>
 			</Container>
