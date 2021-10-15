@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
@@ -78,13 +79,12 @@ export function _Post({ index, frontmatter }: PostProps) {
 	return (
 		<Link
 			aria-label={`Read blog post: ${frontmatter.title}`}
-			href={`/blog/${frontmatter.slug}`}
-		>
+			href={`/blog/${frontmatter.slug}`}>
 			<Container>
 				{frontmatter.banner && index <= 2 && (
 					<Banner>
 						<BannerPlaceholder />
-						<img
+						<Image
 							alt={frontmatter.title}
 							draggable={false}
 							loading="lazy"

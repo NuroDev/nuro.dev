@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
@@ -72,13 +73,12 @@ export function Latest({ frontmatter }: LatestProps) {
 	return (
 		<Link
 			aria-label={`Read blog post: ${frontmatter.title}`}
-			href={`/blog/${frontmatter.slug}`}
-		>
+			href={`/blog/${frontmatter.slug}`}>
 			<Container>
 				{(frontmatter.banner_show ?? true) && (
 					<Banner>
 						<BannerPlaceholder />
-						<img
+						<Image
 							alt={frontmatter.banner_alt ?? frontmatter.title}
 							draggable={false}
 							src={frontmatter.banner}

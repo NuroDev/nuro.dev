@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { MDXRemote } from 'next-mdx-remote';
@@ -117,14 +118,13 @@ export default function BlogPost({ post }: BlogPostProps) {
 			seo={{
 				title: `nuro ─ blog ─ ${post.frontmatter.title}`,
 				description: post.frontmatter.description ?? undefined,
-			}}
-		>
+			}}>
 			<Container>
 				<Content>
 					{post.frontmatter.banner && (post.frontmatter.banner_show ?? true) && (
 						<Banner>
 							<BannerPlaceholder />
-							<img
+							<Image
 								src={post.frontmatter.banner}
 								alt={post.frontmatter.banner_alt ?? post.frontmatter.title}
 								draggable={false}
