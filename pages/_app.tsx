@@ -56,7 +56,7 @@ const GlobalStyles = css`
 	}
 
 	#nprogress .bar {
-		${tw`h-1 bg-gray-800 dark:bg-white`}
+		${tw`h-1 bg-primary-500`}
 	}
 `;
 
