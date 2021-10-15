@@ -36,7 +36,11 @@ const Actions = styled.div(tw`
 `);
 
 const ActionIcon = styled(Icon)(tw`
-	mt-1 mr-3
+	mr-3
+`);
+
+const ActionText = styled.span(tw`
+	-mt-1 py-1
 `);
 
 export default function HomePage() {
@@ -61,11 +65,11 @@ export default function HomePage() {
 				<Actions>
 					<Button.Outline href="https://twitter.com/nurodev">
 						<ActionIcon icon="feather:twitter" />
-						Twitter
+						<ActionText>Twitter</ActionText>
 					</Button.Outline>
 					<Button.Outline href="https://github.com/nurodev">
 						<ActionIcon icon="feather:github" />
-						GitHub
+						<ActionText>GitHub</ActionText>
 					</Button.Outline>
 				</Actions>
 			</Content>
