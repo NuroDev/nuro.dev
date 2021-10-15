@@ -50,7 +50,8 @@ export function Tooltip({ children, direction = 'bottom', element, text }: Toolt
 			<TextContainer
 				style={{
 					[flipDirectionStyle(direction)]: '100%',
-				}}>
+				}}
+			>
 				{element ? element() : text ?? null}
 			</TextContainer>
 			{children}

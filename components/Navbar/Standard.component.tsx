@@ -44,7 +44,8 @@ export function Standard({ back = false, status = true }: StandardProps) {
 										<Button.Icon
 											aria-label="Back"
 											className="group"
-											onClick={goBack}>
+											onClick={goBack}
+										>
 											<Navbar.Icon icon={'feather:arrow-left'} />
 										</Button.Icon>
 									</Tooltip>

@@ -86,7 +86,8 @@ function MenuLink({ children, href, onClick, playSound, ...rest }: MenuLinkProps
 					playSound();
 					onClick(...args);
 				}}
-				{...rest}>
+				{...rest}
+			>
 				{children}
 			</StyledMenuItem>
 		</Link>
@@ -111,7 +112,8 @@ export function MenuDropdown({ items }: MenuDropdownProps) {
 				enterTo="transform opacity-100 scale-100"
 				leave="transition ease-in duration-75"
 				leaveFrom="transform opacity-100 scale-100"
-				leaveTo="transform opacity-0 scale-95">
+				leaveTo="transform opacity-0 scale-95"
+			>
 				<StyledItems>
 					{items.map((section, index) => (
 						<MenuSection key={index}>
@@ -127,7 +129,8 @@ export function MenuDropdown({ items }: MenuDropdownProps) {
 														onClick={() => {
 															playClick();
 															item.onClick();
-														}}>
+														}}
+													>
 														<MenuButtonIcon icon={item.icon} />
 														{item.text}
 													</StyledMenuItem>
@@ -140,7 +143,8 @@ export function MenuDropdown({ items }: MenuDropdownProps) {
 															className="group"
 															$active={active}
 															onClick={() => playClick}
-															href={item.href}>
+															href={item.href}
+														>
 															<MenuButtonIcon icon={item.icon} />
 															{item.text}
 														</StyledMenuItem>
@@ -150,7 +154,8 @@ export function MenuDropdown({ items }: MenuDropdownProps) {
 													<MenuLink
 														$active={active}
 														playSound={playClick}
-														href={item.href}>
+														href={item.href}
+													>
 														<MenuButtonIcon icon={item.icon} />
 														{item.text}
 													</MenuLink>

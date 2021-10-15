@@ -32,7 +32,8 @@ export const Icon = forwardRef<HTMLButtonElement, IconProps>(
 					play();
 					if (onClick) onClick(e);
 				}}
-				{...rest}>
+				{...rest}
+			>
 				{children}
 			</Button>
 		);

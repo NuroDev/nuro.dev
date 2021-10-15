@@ -99,7 +99,8 @@ export default function ProjectsPage({ serialisedProjects }: ProjectProps) {
 									href={project.url}
 									key={index}
 									rel="noreferrer noopener"
-									target="_blank">
+									target="_blank"
+								>
 									<ProjectCard $color={project.language} key={project.name}>
 										<div tw="flex-1 flex flex-col px-2 py-8">
 											<h1 tw="mx-auto text-4xl">{project.icon}</h1>

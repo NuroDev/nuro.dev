@@ -102,7 +102,8 @@ export function Menu({ items }: MenuProps) {
 									<Link
 										aria-current={active ? 'page' : undefined}
 										href={item.href}
-										key={item.text}>
+										key={item.text}
+									>
 										<ItemLink $active={active}>
 											<MenuIcon icon={item.icon} />
 											{item.text}
