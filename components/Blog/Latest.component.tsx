@@ -59,13 +59,13 @@ const Title = styled.h2(tw`
 `);
 
 const Description = styled.p(tw`
-	mt-6 lg:mt-0 mx-4 lg:mx-0 \
+	mt-6 lg:mt-0 mx-6 lg:mx-0 \
 	text-lg line-clamp-3
 `);
 
 const Footer = styled.div(tw`
 	flex items-center \
-	mt-6 lg:mt-0 mx-4 lg:mx-0 pb-4 lg:pb-0
+	mt-6 lg:mt-0 mx-6 lg:mx-0 pb-4 lg:pb-0
 `);
 
 export function Latest({ frontmatter }: LatestProps) {

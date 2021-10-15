@@ -59,8 +59,8 @@ const ContextText = styled.div(tw`
 `);
 
 const Title = styled.p(tw`
-text-xl font-bold \
-text-gray-900 dark:text-gray-100
+	text-xl font-bold \
+	text-gray-900 dark:text-gray-100
 `);
 
 const Description = styled.p(tw`
