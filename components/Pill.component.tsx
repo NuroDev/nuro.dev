@@ -14,7 +14,8 @@ const Container = styled.a(tw`
 	backdrop-filter backdrop-blur-sm saturate-200 \
 	text-primary-200 hover:text-primary-400 \
 	rounded-2xl \
-	transition ease-in-out duration-300
+	transition ease-in-out duration-300 \
+	focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500
 `);
 
 export function Pill({ children, className, href }: PillProps) {
