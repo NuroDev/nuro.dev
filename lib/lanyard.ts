@@ -20,18 +20,13 @@ function getColorFromStatus(status: LanyardData) {
 
 export function useStatus() {
 	const userId = process.env.NEXT_PUBLIC_DISCORD_ID;
-	const { loading, status } = useLanyard({
+	const result = useLanyard({
 		userId,
 		socket: true,
 	});
 
-	if (!userId || !status) return null;
-
-	const color = getColorFromStatus(status);
-
 	return {
-		color,
-		loading,
-		data: status,
+		...result,
+		color: result.status && !result.loading ? getColorFromStatus(result.status) : null,
 	};
 }

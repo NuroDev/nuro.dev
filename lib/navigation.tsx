@@ -62,7 +62,7 @@ const staticItems: Array<Array<NavigationItem>> = [
 
 export function useNavigation() {
 	const { theme, setTheme } = useTheme();
-	const status = useStatus();
+	const { color, loading, status } = useStatus();
 
 	const isDark = useMemo(() => {
 		if (theme === Theme.SYSTEM)
@@ -89,14 +89,14 @@ export function useNavigation() {
 		],
 	];
 
-	if (status && status.loading && status.data.discord_status !== DiscordStatus.OFFLINE) {
+	if (status && !loading && status.discord_status !== DiscordStatus.OFFLINE) {
 		items.push([
 			{
 				type: NavigationItemType.LINK,
 				icon: (
 					<Status.Indicator
-						color={status.color}
-						pulse={status.data.discord_status !== DiscordStatus.OFFLINE}
+						color={color}
+						pulse={status.discord_status !== DiscordStatus.OFFLINE}
 					/>
 				),
 				text: 'Status',

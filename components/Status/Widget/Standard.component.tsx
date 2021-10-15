@@ -75,11 +75,11 @@ const Artist = styled.div(tw`
 `);
 
 export function Widget() {
-	const status = useStatus();
+	const { loading, status } = useStatus();
 
-	if (!status || !status.data) return <Error />;
+	if (loading) return <Loading />;
 
-	if (status.loading) return <Loading />;
+	if (!status || !status) return <Error />;
 
 	return (
 		<Container>
@@ -97,24 +97,24 @@ export function Widget() {
 				</TextContainer>
 			</ActivityContainer>
 
-			{status.data.spotify && status.data.listening_to_spotify && (
+			{status.spotify && status.listening_to_spotify && (
 				<>
 					<Divider />
 					<ActivityContainer>
 						<ArtworkContainer>
 							<Artwork
-								src={status.data.spotify.album_art_url}
-								alt={`${status.data.spotify.song} - ${status.data.spotify.artist}`}
+								src={status.spotify.album_art_url}
+								alt={`${status.spotify.song} - ${status.spotify.artist}`}
 							/>
 						</ArtworkContainer>
 
 						<Song>
-							<Title>{status.data.spotify.song}</Title>
+							<Title>{status.spotify.song}</Title>
 							<Artist>
-								{status.data.spotify.album === status.data.spotify.artist && (
-									<p>{status.data.spotify.album}</p>
+								{status.spotify.album === status.spotify.artist && (
+									<p>{status.spotify.album}</p>
 								)}
-								<p tw="tracking-wide">{status.data.spotify.artist}</p>
+								<p tw="tracking-wide">{status.spotify.artist}</p>
 							</Artist>
 						</Song>
 					</ActivityContainer>
