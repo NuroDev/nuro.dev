@@ -50,12 +50,13 @@ module.exports = {
 };
 
 const ContentSecurityPolicy = `
+  child-src *.google.com;
+  connect-src *;
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.twitter.com;
-  child-src *.youtube.com *.google.com *.twitter.com;
-  style-src 'self' 'unsafe-inline' *.googleapis.com;
+  font-src 'self';
   img-src * blob: data:;
   media-src 'none';
-  connect-src *;
-  font-src 'self';
+  script-src 'self' 'unsafe-eval' 'unsafe-inline';
+  style-src 'self' 'unsafe-inline' *.googleapis.com;
+  worker-src 'self' 'unsafe-inline' blob:;
 `;
