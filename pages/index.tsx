@@ -2,8 +2,9 @@ import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { differenceInYears } from 'date-fns';
 
+import { Event, Pill, Wave } from '~/components';
 import { Layout } from '~/layouts';
-import { Pill, Wave } from '~/components';
+import { EventType } from '~/types';
 
 const Content = styled.div(tw`h-screen flex flex-col justify-center items-center \
 	px-4 \
@@ -25,8 +26,14 @@ const StyledLineBreak = styled.br(tw`hidden sm:block`);
 export default function HomePage() {
 	const age = differenceInYears(new Date(), new Date('1997-08-09'));
 
+	const today = new Date();
+	const birthday = new Date('1997-08-09');
+	const isBirthday =
+		today.getDate() === birthday.getDate() && today.getMonth() === birthday.getMonth();
+
 	return (
-		<Layout.Default>
+		<Layout.Default background={false}>
+			{isBirthday && <Event event={EventType.BIRTHDAY} />}
 			<Content>
 				<Title>
 					Hey <Wave>👋</Wave> I'm Ben,

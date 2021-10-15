@@ -6,3 +6,4 @@ export * from './projects';
 export * from './navigation';
 export * from './theme';
 export * from './timeline';
+export * from './events';
