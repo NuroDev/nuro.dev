@@ -21,24 +21,26 @@ export function Event({ event }: EventProps) {
 	useEffect(() => {
 		switch (event) {
 			case EventType.BIRTHDAY: {
-				Promise.all([
-					// Left Edge
-					confetti({
-						particleCount: 100,
-						startVelocity: 75,
-						angle: 60,
-						spread: 70,
-						origin: { x: 0, y: 1 },
-					}),
-					// Right Edge
-					confetti({
-						particleCount: 100,
-						startVelocity: 75,
-						angle: 120,
-						spread: 70,
-						origin: { x: 1, y: 1 },
-					}),
-				]);
+				setTimeout(() => {
+					Promise.all([
+						// Left Edge
+						confetti({
+							particleCount: 100,
+							startVelocity: 100,
+							angle: 60,
+							spread: 70,
+							origin: { x: 0, y: 1 },
+						}),
+						// Right Edge
+						confetti({
+							particleCount: 100,
+							startVelocity: 100,
+							angle: 120,
+							spread: 70,
+							origin: { x: 1, y: 1 },
+						}),
+					]);
+				}, 1000);
 			}
 		}
 	}, [confetti, event]);
