@@ -2,9 +2,10 @@ import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { differenceInYears } from 'date-fns';
 
-import { Event, Pill, Wave } from '~/components';
+import { Button, Event, Pill, Wave } from '~/components';
 import { Layout } from '~/layouts';
 import { EventType } from '~/types';
+import { Icon } from '@iconify/react';
 
 const Content = styled.div(tw`h-screen flex flex-col justify-center items-center \
 	px-4 \
@@ -21,7 +22,18 @@ const Description = styled.p(
 		text-base text-gray-300 sm:text-lg md:text-xl md:max-w-3xl`,
 );
 
-const StyledLineBreak = styled.br(tw`hidden sm:block`);
+const LineBreak = styled.br(tw`
+	hidden sm:block
+`);
+
+const Actions = styled.div(tw`
+	flex flex-col sm:flex-row items-center justify-center sm:space-x-4 space-y-4 sm:space-y-0 w-full \
+	mt-8 sm:mt-4
+`);
+
+const ActionIcon = styled(Icon)(tw`
+	mt-1 mr-3
+`);
 
 export default function HomePage() {
 	const age = differenceInYears(new Date(), new Date('1997-08-09'));
@@ -37,9 +49,20 @@ export default function HomePage() {
 			<Content>
 				<Title>
 					Hey <Wave>👋</Wave> I'm Ben,
-					<StyledLineBreak /> a <Pill href="https://twitter.com/nurodev">developer</Pill>
+					<LineBreak /> a <Pill href="https://twitter.com/nurodev">developer</Pill>
 				</Title>
 				<Description>I am a {age} year old software engineer & games developer</Description>
+
+				<Actions>
+					<Button.Outline href="https://twitter.com/nurodev">
+						<ActionIcon icon="feather:twitter" />
+						Twitter
+					</Button.Outline>
+					<Button.Outline href="https://github.com/nurodev">
+						<ActionIcon icon="feather:github" />
+						GitHub
+					</Button.Outline>
+				</Actions>
 			</Content>
 		</Layout.Default>
 	);

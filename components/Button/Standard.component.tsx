@@ -1,11 +1,14 @@
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { Icon } from '@iconify/react';
-import { useSound } from 'use-sound';
+
+import { useClick } from '~/lib';
 
 import type { ButtonHTMLAttributes } from 'react';
 
-interface StandardProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+import type { WithClassName } from '~/types';
+
+interface StandardProps extends ButtonHTMLAttributes<HTMLButtonElement>, WithClassName {
 	icon?: string;
 }
 
@@ -20,19 +23,17 @@ const Container = styled.button(tw`
 
 const StyledIcon = styled(Icon)(tw`mr-2`);
 
-export function Standard({ children, icon, onClick, ...rest }: StandardProps) {
-	const [play] = useSound('/sounds/click.ogg', {
-		volume: 0.25,
-	});
+export function Standard({ children, className, icon, onClick, ...rest }: StandardProps) {
+	const [play] = useClick();
 
 	return (
 		<Container
 			{...rest}
+			className={className}
 			onClick={(...args) => {
 				play();
 				onClick(...args);
-			}}
-		>
+			}}>
 			{icon && <StyledIcon icon={icon} />}
 			{children}
 		</Container>
