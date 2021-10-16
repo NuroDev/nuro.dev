@@ -56,18 +56,12 @@ const staticItems: Array<Array<NavigationItem>> = [
 			href: 'https://github.com/nurodev',
 			external: true,
 		},
-		{
-			type: NavigationItemType.LINK,
-			icon: 'feather:linkedin',
-			text: 'LinkedIn',
-			href: 'https://linkedin.com/in/nurodev',
-			external: true,
-		},
 	],
 ];
 
 export function useNavigation() {
 	const state = usePersistantState();
+	const { background, sound } = state.get();
 	const { theme, setTheme } = useTheme();
 	const { color, loading, status } = useStatus();
 
