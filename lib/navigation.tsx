@@ -77,7 +77,13 @@ export function useNavigation() {
 		[
 			{
 				type: NavigationItemType.ACTION,
-				icon: 'feather:image',
+				icon: isDark ? 'feather:check-square' : 'feather:square',
+				text: 'Dark Theme',
+				onClick: () => setTheme(isDark ? 'light' : 'dark'),
+			},
+			{
+				type: NavigationItemType.ACTION,
+				icon: background ? 'feather:check-square' : 'feather:square',
 				text: 'Graphics',
 				onClick: () =>
 					state.set((settings) => ({
@@ -87,19 +93,13 @@ export function useNavigation() {
 			},
 			{
 				type: NavigationItemType.ACTION,
-				icon: state.get().sound ? 'feather:volume-2' : 'feather:volume-x',
+				icon: sound ? 'feather:check-square' : 'feather:square',
 				text: 'Sounds',
 				onClick: () =>
 					state.set((settings) => ({
 						...settings,
 						sound: !settings.sound,
 					})),
-			},
-			{
-				type: NavigationItemType.ACTION,
-				icon: isDark ? 'feather:sun' : 'feather:moon',
-				text: isDark ? 'Light Mode' : 'Dark Mode',
-				onClick: () => setTheme(isDark ? 'light' : 'dark'),
 			},
 		],
 	];
