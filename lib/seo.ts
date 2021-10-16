@@ -21,7 +21,7 @@ export function useSeoProps(): Partial<ComponentProps<typeof NextSeo>> {
 			type: 'website',
 			images: [
 				{
-					url: 'https://nuro.dev/banner.png',
+					url: '/banner.png',
 					alt: description,
 					width: 1280,
 					height: 720,
