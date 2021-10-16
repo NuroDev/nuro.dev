@@ -18,7 +18,7 @@ const Container = styled.a(tw`
 	px-8 py-2 \
 	bg-gray-50 bg-opacity-75 hover:bg-gray-100 dark:bg-gray-900 dark:bg-opacity-75 dark:hover:bg-gray-800 \
 	backdrop-filter backdrop-blur-sm \
-	text-gray-500 dark:text-gray-200 \
+	text-gray-300 dark:text-gray-300 \
 	text-base font-medium \
 	border-2 border-gray-200 dark:border-gray-500 \
 	rounded-lg cursor-pointer \
