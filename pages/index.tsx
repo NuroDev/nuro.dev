@@ -1,15 +1,15 @@
-import Link from 'next/link';
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
-import { differenceInYears } from 'date-fns';
+import Typed from 'typed.js';
+import { Icon } from '@iconify/react';
+import { useEffect, useRef } from 'react';
 
 import { Button, Event, Pill, Wave } from '~/components';
-import { Layout } from '~/layouts';
 import { EventType } from '~/types';
-import { Icon } from '@iconify/react';
+import { Layout } from '~/layouts';
 
 const Container = styled.div(tw`
-	min-h-screen flex items-center justify-center \
+min-h-screen flex items-center justify-center \
 	py-12 px-4 sm:px-6 lg:px-8
 `);
 
@@ -45,23 +45,39 @@ const ActionText = styled.span(tw`
 `);
 
 export default function HomePage() {
-	const age = differenceInYears(new Date(), new Date('1997-08-09'));
+	const titleRef = useRef(null);
+	const titleElementsRef = useRef(null);
+	const typed = useRef(null);
 
 	const today = new Date();
 	const birthday = new Date('1997-08-09');
 	const isBirthday =
 		today.getDate() === birthday.getDate() && today.getMonth() === birthday.getMonth();
 
+	useEffect(() => {
+		typed.current = new Typed(titleRef.current, {
+			showCursor: false,
+			stringsElement: titleElementsRef.current,
+			typeSpeed: 50,
+		});
+
+		return () => typed.current.destroy();
+	}, []);
+
 	return (
 		<Layout.Default>
 			{isBirthday && <Event event={EventType.BIRTHDAY} />}
 			<Container>
 				<Content>
-					<Title tw="mt-6 text-left text-4xl font-extrabold text-gray-900">
-						Hey <Wave>👋</Wave> I'm Ben, a
-						<LineBreak />
-						<StyledPill>developer</StyledPill>
-					</Title>
+					<>
+						<span ref={titleElementsRef}>
+							<span>
+								Hey <Wave>👋</Wave> I'm Ben, a <LineBreak />
+								<StyledPill>developer</StyledPill>
+							</span>
+						</span>
+						<Title ref={titleRef} />
+					</>
 					<Actions>
 						{/* <Link href="/blog"> */}
 						<Button.Outline href="/blog">
