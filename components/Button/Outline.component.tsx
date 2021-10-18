@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { Icon } from '@iconify/react';
@@ -20,7 +21,7 @@ const Container = styled.a(tw`
 	backdrop-filter backdrop-blur-sm saturate-200 \
 	text-primary-200 hover:text-primary-400 \
 	ring-1 ring-offset-4 ring-gray-200 dark:ring-gray-500 \
-	rounded-lg \
+	rounded-lg cursor-pointer \
 	transition ease-in-out duration-300 \
 	focus:outline-none focus:ring-2 focus:ring-offset-4 focus:ring-primary-500
 `);
@@ -31,6 +32,7 @@ export function Outline({
 	children,
 	className,
 	external = false,
+	href,
 	icon,
 	onClick,
 	...rest
@@ -38,17 +40,20 @@ export function Outline({
 	const [play] = useClick();
 
 	return (
-		<Container
-			rel="noopener noreferrer"
-			target={external ? '_blank' : undefined}
-			{...rest}
-			className={className}
-			onClick={(...args) => {
-				play();
-				if (onClick) onClick(...args);
-			}}>
-			{icon && <StyledIcon icon={icon} />}
-			{children}
-		</Container>
+		<Link href={href}>
+			<Container
+				className={className}
+				href={href}
+				onClick={(...args) => {
+					play();
+					if (onClick) onClick(...args);
+				}}
+				rel="noopener noreferrer"
+				target={external ? '_blank' : undefined}
+				{...rest}>
+				{icon && <StyledIcon icon={icon} />}
+				{children}
+			</Container>
+		</Link>
 	);
 }

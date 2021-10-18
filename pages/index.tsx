@@ -63,18 +63,18 @@ export default function HomePage() {
 						<StyledPill>developer</StyledPill>
 					</Title>
 					<Actions>
-						<Link href="/blog">
-							<Button.Outline href="/blog">
-								<ActionIcon icon="feather:edit-3" />
-								<ActionText>Blog</ActionText>
-							</Button.Outline>
-						</Link>
-						<Link href="/projects">
-							<Button.Outline href="/projects">
-								<ActionIcon icon="feather:copy" />
-								<ActionText>Projects</ActionText>
-							</Button.Outline>
-						</Link>
+						{/* <Link href="/blog"> */}
+						<Button.Outline href="/blog">
+							<ActionIcon icon="feather:edit-3" />
+							<ActionText>Blog</ActionText>
+						</Button.Outline>
+						{/* </Link> */}
+						{/* <Link href="/projects"> */}
+						<Button.Outline href="/projects">
+							<ActionIcon icon="feather:copy" />
+							<ActionText>Projects</ActionText>
+						</Button.Outline>
+						{/* </Link> */}
 						<Button.Outline external href="https://github.com/nurodev">
 							<ActionIcon icon="feather:github" />
 							<ActionText>GitHub</ActionText>
