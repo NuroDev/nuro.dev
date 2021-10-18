@@ -32,6 +32,27 @@ const StyledMenu = styled(Menu)(tw`
 	text-left
 `);
 
+const StyledTransition = styled(Transition)`
+	&.enter {
+		${tw`transition ease-in-out duration-100`}
+	}
+	&.enterFrom {
+		${tw`transform scale-95 opacity-0`}
+	}
+	&.enterTo {
+		${tw`transform scale-100 opacity-100`}
+	}
+	&.leave {
+		${tw`transition ease-in-out duration-100`}
+	}
+	&.leaveFrom {
+		${tw`transform scale-100 opacity-100`}
+	}
+	&.leaveTo {
+		${tw`transform scale-95 opacity-0`}
+	}
+`;
+
 const StyledItems = styled(Menu.Items)(tw`
 	origin-top-left absolute left-0 w-56 \
 	mt-2 \
@@ -104,14 +125,14 @@ export function MenuDropdown({ items }: MenuDropdownProps) {
 				</Button.Icon>
 			</Menu.Button>
 
-			<Transition
+			<StyledTransition
 				as={Fragment}
-				enter="transition ease-out duration-100"
-				enterFrom="transform opacity-0 scale-95"
-				enterTo="transform opacity-100 scale-100"
-				leave="transition ease-in duration-75"
-				leaveFrom="transform opacity-100 scale-100"
-				leaveTo="transform opacity-0 scale-95">
+				enter="enter"
+				enterFrom="enterFrom"
+				enterTo="enterTo"
+				leave="leave"
+				leaveFrom="leaveFrom"
+				leaveTo="leaveTo">
 				<StyledItems>
 					{items.map((section, index) => (
 						<MenuSection key={index}>
@@ -164,7 +185,7 @@ export function MenuDropdown({ items }: MenuDropdownProps) {
 						</MenuSection>
 					))}
 				</StyledItems>
-			</Transition>
+			</StyledTransition>
 		</StyledMenu>
 	);
 }
