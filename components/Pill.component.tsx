@@ -2,9 +2,9 @@ import styled from '@emotion/styled';
 import { AnchorHTMLAttributes } from 'react';
 import tw from 'twin.macro';
 
-interface PillProps extends AnchorHTMLAttributes<HTMLAnchorElement> {}
+interface PillProps extends AnchorHTMLAttributes<HTMLDivElement> {}
 
-const Container = styled.a(tw`
+const Container = styled.div(tw`
 	inline-flex \
 	px-3 lg:px-5 py-2 md:pb-4 \
 	bg-primary-500 bg-opacity-15 hover:bg-primary-800 hover:bg-opacity-15 \
