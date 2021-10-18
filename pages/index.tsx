@@ -8,31 +8,31 @@ import { Layout } from '~/layouts';
 import { EventType } from '~/types';
 import { Icon } from '@iconify/react';
 
-const Content = styled.div(tw`h-screen flex flex-col justify-center items-center \
-	px-4 \
-	text-center`);
+const Container = styled.div(tw`
+	min-h-screen flex items-center justify-center \
+	py-12 px-4 sm:px-6 lg:px-8
+`);
 
-const Title = styled.h1`
-	${tw`text-gray-500 dark:text-white \
-		text-5xl sm:text-6xl md:text-6xl lg:text-8xl \
-		tracking-tight font-extrabold`}
-`;
+const Content = styled.div(tw`
+	max-w-md w-full space-y-8
+`);
 
-const Description = styled.p(
-	tw`max-w-xs mt-4 md:mt-8 mx-auto \
-		text-base text-gray-300 sm:text-lg md:text-xl md:max-w-3xl`,
-);
+const Title = styled.h1(tw`
+	text-gray-500 dark:text-white \
+	text-5xl sm:text-6xl md:text-6xl lg:text-8xl \
+	tracking-tight font-extrabold
+`);
 
 const LineBreak = styled.br(tw`
 	hidden sm:block
 `);
 
 const StyledPill = styled(Pill)(tw`
-	mt-4 sm:mt-8 lg:ml-2 md:pb-4
+	mt-4
 `);
 
 const Actions = styled.div(tw`
-	flex flex-col sm:flex-row items-center justify-center sm:space-x-4 space-y-4 sm:space-y-0 w-full \
+	flex flex-col sm:flex-row items-center justify-center sm:space-x-6 space-y-4 sm:space-y-0 w-full \
 	mt-8 sm:mt-4
 `);
 
@@ -55,33 +55,33 @@ export default function HomePage() {
 	return (
 		<Layout.Default>
 			{isBirthday && <Event event={EventType.BIRTHDAY} />}
-			<Content>
-				<Title>
-					Hey <Wave>👋</Wave> I'm Ben,
-					<LineBreak /> a{' '}
-					<StyledPill href="https://github.com/nurodev">developer</StyledPill>
-				</Title>
-				<Description>I am a {age} year old software engineer & games developer</Description>
-
-				<Actions>
-					<Link href="/blog">
-						<Button.Outline href="/blog">
-							<ActionIcon icon="feather:edit-3" />
-							<ActionText>Blog</ActionText>
+			<Container>
+				<Content>
+					<Title tw="mt-6 text-left text-4xl font-extrabold text-gray-900">
+						Hey <Wave>👋</Wave> I'm Ben, a
+						<LineBreak />
+						<StyledPill>developer</StyledPill>
+					</Title>
+					<Actions>
+						<Link href="/blog">
+							<Button.Outline href="/blog">
+								<ActionIcon icon="feather:edit-3" />
+								<ActionText>Blog</ActionText>
+							</Button.Outline>
+						</Link>
+						<Link href="/projects">
+							<Button.Outline href="/projects">
+								<ActionIcon icon="feather:copy" />
+								<ActionText>Projects</ActionText>
+							</Button.Outline>
+						</Link>
+						<Button.Outline external href="https://github.com/nurodev">
+							<ActionIcon icon="feather:github" />
+							<ActionText>GitHub</ActionText>
 						</Button.Outline>
-					</Link>
-					<Link href="/projects">
-						<Button.Outline href="/projects">
-							<ActionIcon icon="feather:copy" />
-							<ActionText>Projects</ActionText>
-						</Button.Outline>
-					</Link>
-					<Button.Outline external href="https://github.com/nurodev">
-						<ActionIcon icon="feather:github" />
-						<ActionText>GitHub</ActionText>
-					</Button.Outline>
-				</Actions>
-			</Content>
+					</Actions>
+				</Content>
+			</Container>
 		</Layout.Default>
 	);
 }
