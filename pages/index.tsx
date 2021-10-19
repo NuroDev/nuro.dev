@@ -9,12 +9,13 @@ import { EventType } from '~/types';
 import { Layout } from '~/layouts';
 
 const Container = styled.div(tw`
-min-h-screen flex items-center justify-center \
-	py-12 px-4 sm:px-6 lg:px-8
+	min-h-screen flex items-center justify-center \
+	py-12
 `);
 
 const Content = styled.div(tw`
-	max-w-md w-full space-y-8
+	max-w-md sm:max-w-2xl w-full space-y-8 \
+	text-center
 `);
 
 const Title = styled.h1(tw`
@@ -72,7 +73,7 @@ export default function HomePage() {
 					<>
 						<span ref={titleElementsRef}>
 							<span>
-								Hey <Wave>👋</Wave> I'm Ben, a <LineBreak />
+								Hey <Wave>👋</Wave> I'm Ben, <LineBreak />a{' '}
 								<StyledPill>developer</StyledPill>
 							</span>
 						</span>
