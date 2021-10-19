@@ -17,7 +17,7 @@ const Container = styled.div(tw`
 `);
 
 const Content = styled.div(tw`
-	max-w-md sm:max-w-2xl w-full space-y-8 \
+	max-w-md sm:max-w-lg md:sm:max-w-2xl lg:sm:max-w-3xl w-full space-y-8 \
 	text-center
 `);
 
