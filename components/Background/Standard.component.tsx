@@ -103,5 +103,5 @@ export function Standard() {
 		};
 	}, []);
 
-	return <Container ref={containerRef}></Container>;
+	return <Container ref={containerRef} />;
 }

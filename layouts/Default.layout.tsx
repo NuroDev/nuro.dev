@@ -24,6 +24,8 @@ export function DefaultLayout({
 	status = true,
 }: DefaultLayoutProps) {
 	const { background } = usePersistantState().get();
+	const showBackground = overrideBackground ?? background;
+
 	const defaultSeoProps = useSeoProps();
 
 	return (
@@ -31,7 +33,7 @@ export function DefaultLayout({
 			<NextSeo {...defaultSeoProps} {...seo} />
 			<Navbar.Standard back={back} status={status} />
 			<Main>
-				{(overrideBackground ?? background) && <Background.Standard />}
+				{showBackground && <Background.Standard />}
 				{children}
 			</Main>
 		</>
