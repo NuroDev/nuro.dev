@@ -106,11 +106,12 @@ export interface GitHubRepo {
 export type GitHubRepos = Array<GitHubRepo>;
 
 export interface Project {
-	icon?: string;
-	name: string;
 	description: string;
-	url: string;
+	icon?: string;
 	language?: string;
+	name: string;
+	template?: boolean;
+	url: string;
 }
 
 export type Projects = Array<Project>;

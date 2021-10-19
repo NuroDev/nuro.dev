@@ -7,7 +7,7 @@ import { Layout } from '~/layouts';
 
 import type { GetServerSideProps } from 'next';
 
-import type { GitHubRepos, Projects } from '~/types';
+import type { GitHubRepos, Project, Projects } from '~/types';
 
 interface ProjectProps {
 	serialisedProjects: string;
@@ -42,7 +42,7 @@ const ProjectCard = styled.li<{
 	border-color: ${({ $color }) => $color};
 `;
 
-export const getServerSideProps: GetServerSideProps<ProjectProps> = async (context) => {
+export const getServerSideProps: GetServerSideProps<ProjectProps> = async () => {
 	const response = await fetch('https://api.github.com/users/nurodev/repos');
 	const json = (await response.json()) as GitHubRepos;
 
@@ -53,22 +53,20 @@ export const getServerSideProps: GetServerSideProps<ProjectProps> = async (conte
 
 			if (repo.archived) return null;
 
-			function getIcon() {
-				if (!repo.description) return undefined;
-
-				const char = repo.description.split(' ')[0];
-
-				return containsEmoji(char) ? char : undefined;
-			}
-
-			// @TODO: Add optional prop for if the repo is a template repo
 			return {
-				icon: getIcon(),
-				name: repo.name,
 				description: repo.description,
-				url: repo.html_url.toLowerCase(),
+				icon: (() => {
+					if (!repo.description) return undefined;
+
+					const char = repo.description.split(' ')[0];
+
+					return containsEmoji(char) ? char : undefined;
+				})(),
 				language: repo.language ? GithubColors.get(repo.language).color : undefined,
-			};
+				name: repo.name,
+				template: false,
+				url: repo.html_url.toLowerCase(),
+			} as Project;
 		})
 		.filter((project) => project !== null);
 
@@ -99,8 +97,7 @@ export default function ProjectsPage({ serialisedProjects }: ProjectProps) {
 									href={project.url}
 									key={index}
 									rel="noreferrer noopener"
-									target="_blank"
-								>
+									target="_blank">
 									<ProjectCard $color={project.language} key={project.name}>
 										<div tw="flex-1 flex flex-col px-2 py-8">
 											<h1 tw="mx-auto text-4xl">{project.icon}</h1>
