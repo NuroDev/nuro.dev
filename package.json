@@ -54,7 +54,6 @@
 		"rehype-prism-plus": "^1.1.0",
 		"rehype-slug": "^5.0.0",
 		"swr": "^1.0.1",
-		"typed.js": "^2.0.12",
 		"use-lanyard": "^1.0.2",
 		"use-sound": "^4.0.1"
 	},

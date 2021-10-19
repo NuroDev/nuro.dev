@@ -1,14 +1,12 @@
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
-import Typed from 'typed.js';
 import { differenceInYears, isSameDay, isSameMonth } from 'date-fns';
 import { Icon } from '@iconify/react';
-import { Transition } from '@headlessui/react';
-import { useEffect, useRef } from 'react';
 
-import { Button, Event, Pill, Wave } from '~/components';
-import { EventType, NavigationItemType } from '~/types';
+import { Button, Event, Pill, Transition, Wave } from '~/components';
+import { EventType, NavigationItemType, WithChildren } from '~/types';
 import { Layout } from '~/layouts';
+import { usePersistantState } from '~/lib';
 
 import type { NavigationItem } from '~/types';
 
@@ -42,31 +40,8 @@ const StyledPill = styled(Pill)(tw`
 	mt-4
 `);
 
-const ActionsTransition = styled(Transition)<{ $delayStagger: number }>`
-	&.enter {
-		${tw`transition ease-in-out duration-500`}
-
-		transition-delay: ${({ $delayStagger }) => 3500 + $delayStagger}ms;
-	}
-	&.enterFrom {
-		${tw`transform scale-95 opacity-0`}
-	}
-	&.enterTo {
-		${tw`transform scale-100 opacity-100`}
-	}
-	&.leave {
-		${tw`transition ease-in-out duration-500`}
-	}
-	&.leaveFrom {
-		${tw`transform scale-100 opacity-100`}
-	}
-	&.leaveTo {
-		${tw`transform scale-95 opacity-0`}
-	}
-`;
-
 const Actions = styled.div(tw`
-	flex flex-col sm:flex-row items-center justify-center sm:space-x-6 space-y-4 sm:space-y-0 w-full \
+	flex flex-col sm:flex-row items-center justify-center sm:space-x-4 space-y-4 sm:space-y-0 w-full \
 	mt-8 sm:mt-4
 `);
 
@@ -101,74 +76,62 @@ const ACTIONS: Array<NavigationItem> = [
 ];
 
 export default function HomePage() {
-	const titleRef = useRef(null);
-	const titleElementsRef = useRef(null);
-	const titleTyped = useRef(null);
-
-	const descriptionRef = useRef(null);
-	const descriptionTyped = useRef(null);
+	const { background: animations } = usePersistantState().get();
 
 	const today = new Date();
 	const birthday = new Date('1997-08-09');
 	const age = differenceInYears(today, birthday);
-
 	const isBirthday = isSameDay(today, birthday) && isSameMonth(today, birthday);
-
-	useEffect(() => {
-		titleTyped.current = new Typed(titleRef.current, {
-			showCursor: false,
-			stringsElement: titleElementsRef.current,
-			typeSpeed: 40,
-		});
-		descriptionTyped.current = new Typed(descriptionRef.current, {
-			showCursor: false,
-			startDelay: 2000,
-			strings: [`I am a ${age} year old software engineer and games developer`],
-			typeSpeed: 15,
-		});
-
-		return () => {
-			titleTyped.current.destroy();
-			descriptionTyped.current.destroy();
-		};
-	}, []);
 
 	return (
 		<Layout.Default>
 			{isBirthday && <Event event={EventType.BIRTHDAY} />}
 			<Container>
 				<Content>
-					<>
-						<span ref={titleElementsRef}>
-							<span>
+					{animations ? (
+						<Transition>
+							<Title>
 								Hey <Wave>👋</Wave> I'm Ben, <LineBreak />a{' '}
 								<StyledPill>developer</StyledPill>
-							</span>
-						</span>
-						<Title ref={titleRef} />
-					</>
-					<Description ref={descriptionRef}></Description>
+							</Title>
+						</Transition>
+					) : (
+						<Title>
+							Hey <Wave>👋</Wave> I'm Ben, <LineBreak />a{' '}
+							<StyledPill>developer</StyledPill>
+						</Title>
+					)}
+					{animations ? (
+						<Transition delay={500}>
+							<Description>
+								I am a {age} year old software engineer and games developer
+							</Description>
+						</Transition>
+					) : (
+						<Description>
+							I am a {age} year old software engineer and games developer
+						</Description>
+					)}
+
 					<Actions>
 						{ACTIONS.map((action, index) => {
 							if (action.type !== NavigationItemType.LINK) return null;
 
+							if (!animations)
+								return (
+									<Button.Outline key={index} href={action.href}>
+										{action.icon}
+										<ActionText>{action.text}</ActionText>
+									</Button.Outline>
+								);
+
 							return (
-								<ActionsTransition
-									$delayStagger={index * 200}
-									appear={true}
-									enter="enter"
-									enterFrom="enterFrom"
-									enterTo="enterTo"
-									key={index}
-									leave="leave"
-									leaveFrom="leaveFrom"
-									leaveTo="leaveTo"
-									show={true}>
+								<Transition delay={1000 + index * 100} key={index} tw="flex-1">
 									<Button.Outline href={action.href}>
 										{action.icon}
 										<ActionText>{action.text}</ActionText>
 									</Button.Outline>
-								</ActionsTransition>
+								</Transition>
 							);
 						})}
 					</Actions>
