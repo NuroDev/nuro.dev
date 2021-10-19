@@ -2,11 +2,14 @@ import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import Typed from 'typed.js';
 import { Icon } from '@iconify/react';
+import { Transition } from '@headlessui/react';
 import { useEffect, useRef } from 'react';
 
 import { Button, Event, Pill, Wave } from '~/components';
-import { EventType } from '~/types';
+import { EventType, NavigationItemType } from '~/types';
 import { Layout } from '~/layouts';
+
+import type { NavigationItem } from '~/types';
 
 const Container = styled.div(tw`
 	min-h-screen flex items-center justify-center \
@@ -32,6 +35,29 @@ const StyledPill = styled(Pill)(tw`
 	mt-4
 `);
 
+const ActionsTransition = styled(Transition)<{ $delayStagger: number }>`
+	&.enter {
+		${tw`transition ease-in-out duration-500`}
+
+		transition-delay: ${({ $delayStagger }) => 2200 + $delayStagger}ms;
+	}
+	&.enterFrom {
+		${tw`transform scale-95 opacity-0`}
+	}
+	&.enterTo {
+		${tw`transform scale-100 opacity-100`}
+	}
+	&.leave {
+		${tw`transition ease-in-out duration-500`}
+	}
+	&.leaveFrom {
+		${tw`transform scale-100 opacity-100`}
+	}
+	&.leaveTo {
+		${tw`transform scale-95 opacity-0`}
+	}
+`;
+
 const Actions = styled.div(tw`
 	flex flex-col sm:flex-row items-center justify-center sm:space-x-6 space-y-4 sm:space-y-0 w-full \
 	mt-8 sm:mt-4
@@ -44,6 +70,28 @@ const ActionIcon = styled(Icon)(tw`
 const ActionText = styled.span(tw`
 	-mt-1 py-1
 `);
+
+const ACTIONS: Array<NavigationItem> = [
+	{
+		type: NavigationItemType.LINK,
+		href: '/blog',
+		icon: <ActionIcon icon="feather:edit-3" />,
+		text: 'Blog',
+	},
+	{
+		type: NavigationItemType.LINK,
+		href: '/projects',
+		icon: <ActionIcon icon="feather:copy" />,
+		text: 'Projects',
+	},
+	{
+		type: NavigationItemType.LINK,
+		external: true,
+		href: 'https://github.com/nurodev',
+		icon: <ActionIcon icon="feather:github" />,
+		text: 'GitHub',
+	},
+];
 
 export default function HomePage() {
 	const titleRef = useRef(null);
@@ -80,22 +128,28 @@ export default function HomePage() {
 						<Title ref={titleRef} />
 					</>
 					<Actions>
-						{/* <Link href="/blog"> */}
-						<Button.Outline href="/blog">
-							<ActionIcon icon="feather:edit-3" />
-							<ActionText>Blog</ActionText>
-						</Button.Outline>
-						{/* </Link> */}
-						{/* <Link href="/projects"> */}
-						<Button.Outline href="/projects">
-							<ActionIcon icon="feather:copy" />
-							<ActionText>Projects</ActionText>
-						</Button.Outline>
-						{/* </Link> */}
-						<Button.Outline external href="https://github.com/nurodev">
-							<ActionIcon icon="feather:github" />
-							<ActionText>GitHub</ActionText>
-						</Button.Outline>
+						{ACTIONS.map((action, index) => {
+							if (action.type !== NavigationItemType.LINK) return null;
+
+							return (
+								<ActionsTransition
+									$delayStagger={index * 200}
+									appear={true}
+									enter="enter"
+									enterFrom="enterFrom"
+									enterTo="enterTo"
+									key={index}
+									leave="leave"
+									leaveFrom="leaveFrom"
+									leaveTo="leaveTo"
+									show={true}>
+									<Button.Outline href={action.href}>
+										{action.icon}
+										<ActionText>{action.text}</ActionText>
+									</Button.Outline>
+								</ActionsTransition>
+							);
+						})}
 					</Actions>
 				</Content>
 			</Container>
