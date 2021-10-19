@@ -77,19 +77,19 @@ export function useNavigation() {
 		[
 			{
 				type: NavigationItemType.ACTION,
-				icon: isDark ? 'feather:check-square' : 'feather:square',
-				text: 'Dark Theme',
-				onClick: () => setTheme(isDark ? 'light' : 'dark'),
-			},
-			{
-				type: NavigationItemType.ACTION,
 				icon: background ? 'feather:check-square' : 'feather:square',
-				text: 'Graphics',
+				text: 'Animations',
 				onClick: () =>
 					state.set((settings) => ({
 						...settings,
 						background: !settings.background,
 					})),
+			},
+			{
+				type: NavigationItemType.ACTION,
+				icon: isDark ? 'feather:check-square' : 'feather:square',
+				text: 'Dark Theme',
+				onClick: () => setTheme(isDark ? 'light' : 'dark'),
 			},
 			{
 				type: NavigationItemType.ACTION,
