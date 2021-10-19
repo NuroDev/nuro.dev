@@ -39,7 +39,6 @@ const Actions = styled.div(tw`
 	mt-6 flex justify-center items-center space-x-4
 `);
 
-// @TODO: Add back button
 export default function Error() {
 	return (
 		<Layout.Error>
@@ -56,6 +55,12 @@ export default function Error() {
 							The page you're looking for couldn't be found.
 						</Description>
 						<Actions>
+							<Button.Standard
+								type="button"
+								onClick={() => history.go(-1)}
+								icon="feather:arrow-left">
+								Back
+							</Button.Standard>
 							<Link href="/">
 								<Button.Standard icon="feather:home">Home</Button.Standard>
 							</Link>

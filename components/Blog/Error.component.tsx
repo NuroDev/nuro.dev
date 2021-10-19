@@ -43,7 +43,6 @@ const Actions = styled.div(tw`
 	mt-6 flex justify-center items-center space-x-4
 `);
 
-// @TODO: Add back button
 export function Error({ routeBlog = true }: ErrorProps) {
 	return (
 		<Layout.Error>
@@ -56,6 +55,12 @@ export function Error({ routeBlog = true }: ErrorProps) {
 						<Title>No Posts Found</Title>
 						<SubTitle>Sorry, we couldn’t find any blog posts ¯\_(ツ)_/¯</SubTitle>
 						<Actions>
+							<Button.Standard
+								type="button"
+								onClick={() => history.go(-1)}
+								icon="feather:arrow-left">
+								Back
+							</Button.Standard>
 							<Link href="/">
 								<Button.Standard icon="feather:home">Home</Button.Standard>
 							</Link>
