@@ -6,7 +6,7 @@ import { Icon } from '@iconify/react';
 import { Menu, Transition } from '@headlessui/react';
 
 import { Button, Navbar } from '~/components';
-import { NavigationItemType } from '~/types';
+import { NavigationItemType, WithClassName } from '~/types';
 import { useClick } from '~/lib';
 
 import type { AnchorHTMLAttributes, ReactNode } from 'react';
@@ -23,8 +23,9 @@ interface MenuLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 	playSound: PlayFunction;
 }
 
-interface MenuButtonIconProps {
+interface MenuButtonIconProps extends WithClassName {
 	icon: string | ReactNode;
+	type?: 'standard' | 'settings';
 }
 
 const StyledMenu = styled(Menu)(tw`
@@ -83,15 +84,27 @@ const StyledMenuItem = styled.a<Pick<MenuLinkProps, '$active'>>`
 			: tw`text-gray-300 hover:text-gray-700 dark:hover:text-white`}
 `;
 
+const MenuItemSpacer = styled.span(tw`
+	flex-1
+`);
+
 const StyledMenuIcon = styled(Icon)(tw`
 	w-5 h-5 \
 	mr-3
 `);
 
-function MenuButtonIcon({ icon }: MenuButtonIconProps) {
+const SettingsIcon = styled(Icon)(tw`
+	w-4 h-4 \
+	ml-3
+`);
+
+function MenuButtonIcon({ className, icon, type = 'standard' }: MenuButtonIconProps) {
 	if (typeof icon !== 'string') return <>{icon}</>;
 
-	return <StyledMenuIcon icon={icon} aria-hidden="true" />;
+	if (type === 'settings')
+		return <SettingsIcon className={className} icon={icon} aria-hidden="true" />;
+
+	return <StyledMenuIcon className={className} icon={icon} aria-hidden="true" />;
 }
 
 /**
@@ -151,6 +164,15 @@ export function MenuDropdown({ items }: MenuDropdownProps) {
 														}}>
 														<MenuButtonIcon icon={item.icon} />
 														{item.text}
+														{item.endIcon && (
+															<>
+																<MenuItemSpacer />
+																<MenuButtonIcon
+																	type="settings"
+																	icon={item.endIcon}
+																/>
+															</>
+														)}
 													</StyledMenuItem>
 												);
 											case NavigationItemType.LINK:

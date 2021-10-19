@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 
 interface NaviationItemBase {
+	endIcon?: string | ReactNode;
 	icon: string | ReactNode;
 	text: string;
 	onClick?: () => void;
