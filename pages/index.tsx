@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import Typed from 'typed.js';
-import { differenceInYears } from 'date-fns';
+import { differenceInYears, isSameDay, isSameMonth } from 'date-fns';
 import { Icon } from '@iconify/react';
 import { Transition } from '@headlessui/react';
 import { useEffect, useRef } from 'react';
@@ -112,8 +112,7 @@ export default function HomePage() {
 	const birthday = new Date('1997-08-09');
 	const age = differenceInYears(today, birthday);
 
-	const isBirthday =
-		today.getDate() === birthday.getDate() && today.getMonth() === birthday.getMonth();
+	const isBirthday = isSameDay(today, birthday) && isSameMonth(today, birthday);
 
 	useEffect(() => {
 		titleTyped.current = new Typed(titleRef.current, {
@@ -121,7 +120,6 @@ export default function HomePage() {
 			stringsElement: titleElementsRef.current,
 			typeSpeed: 40,
 		});
-
 		descriptionTyped.current = new Typed(descriptionRef.current, {
 			showCursor: false,
 			startDelay: 2000,
