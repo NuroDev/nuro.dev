@@ -25,7 +25,7 @@ interface MenuLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 
 interface MenuButtonIconProps extends WithClassName {
 	icon: string | ReactNode;
-	type?: 'standard' | 'settings';
+	direction?: 'left' | 'right';
 }
 
 const StyledMenu = styled(Menu)(tw`
@@ -98,10 +98,10 @@ const SettingsIcon = styled(Icon)(tw`
 	ml-3
 `);
 
-function MenuButtonIcon({ className, icon, type = 'standard' }: MenuButtonIconProps) {
+function MenuButtonIcon({ className, icon, direction: type = 'left' }: MenuButtonIconProps) {
 	if (typeof icon !== 'string') return <>{icon}</>;
 
-	if (type === 'settings')
+	if (type === 'right')
 		return <SettingsIcon className={className} icon={icon} aria-hidden="true" />;
 
 	return <StyledMenuIcon className={className} icon={icon} aria-hidden="true" />;
@@ -168,7 +168,7 @@ export function MenuDropdown({ items }: MenuDropdownProps) {
 															<>
 																<MenuItemSpacer />
 																<MenuButtonIcon
-																	type="settings"
+																	direction="right"
 																	icon={item.endIcon}
 																/>
 															</>
@@ -188,6 +188,11 @@ export function MenuDropdown({ items }: MenuDropdownProps) {
 															target="_blank">
 															<MenuButtonIcon icon={item.icon} />
 															{item.text}
+															<MenuItemSpacer />
+															<MenuButtonIcon
+																direction="right"
+																icon="feather:external-link"
+															/>
 														</StyledMenuItem>
 													);
 
