@@ -54,7 +54,14 @@ const MetaContainer = styled.div(tw`
 `);
 
 const IconContainer = styled.div(tw`
-	flex-shrink-0
+	flex flex-shrink-0 items-center justify-center w-12 h-12 \
+	bg-primary-500
+	rounded-full
+`);
+
+const StyledIcon = styled(Icon)(tw`
+	w-6 h-6 \
+	text-white
 `);
 
 const Meta = styled.div(tw`
@@ -133,7 +140,7 @@ function ReferralCard({ referral }: ReferralCardProps) {
 			<ListItemContainer>
 				<MetaContainer>
 					<IconContainer>
-						<Icon icon={`feather:${referral.icon}`} tw="w-6 h-6 dark:text-gray-400" />
+						<StyledIcon icon={`feather:${referral.icon}`} />
 					</IconContainer>
 					<Meta>
 						<Title>{referral.name}</Title>
