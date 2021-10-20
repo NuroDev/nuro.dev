@@ -2,8 +2,8 @@ import Image from 'next/image';
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { Icon } from '@iconify/react';
-import { Fragment } from 'react';
 
+import { DiscordStatus } from '~/types';
 import { Error, Loading } from '..';
 import { Status } from '~/components';
 import { useStatus } from '~/lib';
@@ -84,7 +84,7 @@ const AnimatedIcon = styled(Icon)(tw`
 `);
 
 export function Widget() {
-	const { loading, status } = useStatus();
+	const { color, loading, status } = useStatus();
 
 	if (loading) return <Loading />;
 
@@ -98,7 +98,12 @@ export function Widget() {
 			},
 			title: status.discord_user.username,
 			description: `#${status.discord_user.discriminator}`,
-			icon: <Status.Indicator />,
+			icon: (
+				<Status.Indicator
+					color={color}
+					pulse={status.discord_status !== DiscordStatus.OFFLINE}
+				/>
+			),
 		},
 		...(status.spotify && status.listening_to_spotify
 			? [

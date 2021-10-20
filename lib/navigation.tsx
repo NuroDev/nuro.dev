@@ -62,7 +62,7 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 export function useNavigation() {
 	const state = usePersistantState();
 	const { animations: background, sound } = state.get();
-	const { loading, status } = useStatus();
+	const { color, loading, status } = useStatus();
 	const { theme, setTheme } = useTheme();
 
 	const isDark = useMemo(() => {
@@ -74,15 +74,20 @@ export function useNavigation() {
 
 	const menuItems: NavigationItems = [
 		...staticMenuItems,
-		...(status && !loading && status.discord_status !== DiscordStatus.OFFLINE
+		...(!loading && status && status.discord_status !== DiscordStatus.OFFLINE
 			? [
 					[
 						{
 							type: NavigationItemType.LINK,
-							icon: <Status.Indicator />,
+							icon: (
+								<Status.Indicator
+									color={color}
+									pulse={status.discord_status !== DiscordStatus.OFFLINE}
+								/>
+							),
 							text: 'Status',
 							href: '/status',
-						},
+						} as NavigationItem,
 					],
 			  ]
 			: []),
