@@ -89,7 +89,7 @@ export default function HomePage() {
 			<Container>
 				<Content>
 					{animations ? (
-						<Transition>
+						<Transition duration={1000}>
 							<Title>
 								Hey <Wave>👋</Wave> I'm Ben, <LineBreak />a{' '}
 								<StyledPill>developer</StyledPill>
@@ -102,7 +102,7 @@ export default function HomePage() {
 						</Title>
 					)}
 					{animations ? (
-						<Transition delay={500}>
+						<Transition delay={500} duration={1000}>
 							<Description>
 								I am a {age} year old software engineer and games developer
 							</Description>
@@ -126,7 +126,11 @@ export default function HomePage() {
 								);
 
 							return (
-								<Transition delay={1000 + index * 100} key={index} tw="flex-1">
+								<Transition
+									delay={1000 + index * 100}
+									key={index}
+									tw="flex-1"
+									duration={1000}>
 									<Button.Outline href={action.href}>
 										{action.icon}
 										<ActionText>{action.text}</ActionText>

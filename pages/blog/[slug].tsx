@@ -113,7 +113,6 @@ const Description = styled.p(tw`
 export default function BlogPost({ post }: BlogPostProps) {
 	return (
 		<Layout.Default
-			back={true}
 			background={false}
 			seo={{
 				title: `nuro ─ blog ─ ${post.frontmatter.title}`,

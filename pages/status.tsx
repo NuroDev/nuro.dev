@@ -16,7 +16,7 @@ const Content = styled.div(tw`
 
 export default function StatusPage() {
 	return (
-		<Layout.Default status={false}>
+		<Layout.Default>
 			<Container>
 				<Content>
 					<Status.Widget />

@@ -8,7 +8,7 @@ import { DiscordStatus, NavigationItemType, Theme } from '~/types';
 
 import type { NavigationItem, NavigationItems } from '~/types';
 
-const staticItems: Array<Array<NavigationItem>> = [
+const staticMenuItems: Array<Array<NavigationItem>> = [
 	[
 		{
 			type: NavigationItemType.LINK,
@@ -62,8 +62,8 @@ const staticItems: Array<Array<NavigationItem>> = [
 export function useNavigation() {
 	const state = usePersistantState();
 	const { background, sound } = state.get();
-	const { theme, setTheme } = useTheme();
 	const { color, loading, status } = useStatus();
+	const { theme, setTheme } = useTheme();
 
 	const isDark = useMemo(() => {
 		if (theme === Theme.SYSTEM)
@@ -72,8 +72,26 @@ export function useNavigation() {
 		return theme === Theme.DARK;
 	}, [theme]);
 
-	let items: NavigationItems = [
-		...staticItems,
+	let menuItems: NavigationItems = [...staticMenuItems];
+
+	// TODO: Convert to inline
+	if (status && !loading && status.discord_status !== DiscordStatus.OFFLINE) {
+		menuItems.push([
+			{
+				type: NavigationItemType.LINK,
+				icon: (
+					<Status.Indicator
+						color={color}
+						pulse={status.discord_status !== DiscordStatus.OFFLINE}
+					/>
+				),
+				text: 'Status',
+				href: '/status',
+			},
+		]);
+	}
+
+	const settingsItems: NavigationItems = [
 		[
 			{
 				type: NavigationItemType.ACTION,
@@ -107,21 +125,8 @@ export function useNavigation() {
 		],
 	];
 
-	if (status && !loading && status.discord_status !== DiscordStatus.OFFLINE) {
-		items.push([
-			{
-				type: NavigationItemType.LINK,
-				icon: (
-					<Status.Indicator
-						color={color}
-						pulse={status.discord_status !== DiscordStatus.OFFLINE}
-					/>
-				),
-				text: 'Status',
-				href: '/status',
-			},
-		]);
-	}
-
-	return items;
+	return {
+		menu: menuItems,
+		settings: settingsItems,
+	};
 }

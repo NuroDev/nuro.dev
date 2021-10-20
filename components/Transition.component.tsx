@@ -7,12 +7,15 @@ import type { WithChildren, WithProps } from '~/types';
 type TransitionProps = WithChildren &
 	WithProps<typeof HeadlessUiTransition> & {
 		delay?: number;
+		duration?: number;
+		show?: boolean;
 	};
 
-const StyledTransition = styled(HeadlessUiTransition)<Pick<TransitionProps, 'delay'>>`
+const StyledTransition = styled(HeadlessUiTransition)<Pick<TransitionProps, 'delay' | 'duration'>>`
 	&.enter {
-		${tw`transition ease-in-out duration-1000`}
+		${tw`transition ease-in-out`}
 
+		transition-duration: ${({ duration }) => duration}ms;
 		transition-delay: ${({ delay }) => delay}ms;
 	}
 	&.enterFrom {
@@ -22,7 +25,9 @@ const StyledTransition = styled(HeadlessUiTransition)<Pick<TransitionProps, 'del
 		${tw`transform scale-100 opacity-100`}
 	}
 	&.leave {
-		${tw`transition ease-in-out duration-1000`}
+		${tw`transition ease-in-out`}
+
+		transition-duration: ${({ duration }) => duration}ms;
 	}
 	&.leaveFrom {
 		${tw`transform scale-100 opacity-100`}
@@ -32,10 +37,11 @@ const StyledTransition = styled(HeadlessUiTransition)<Pick<TransitionProps, 'del
 	}
 `;
 
-export function Transition({ delay = 0, children }: TransitionProps) {
+export function Transition({ children, delay = 0, duration = 300, show = true }: TransitionProps) {
 	return (
 		<StyledTransition
 			delay={delay}
+			duration={duration}
 			appear={true}
 			enter="enter"
 			enterFrom="enterFrom"
@@ -43,7 +49,7 @@ export function Transition({ delay = 0, children }: TransitionProps) {
 			leave="leave"
 			leaveFrom="leaveFrom"
 			leaveTo="leaveTo"
-			show={true}>
+			show={show}>
 			{children}
 		</StyledTransition>
 	);

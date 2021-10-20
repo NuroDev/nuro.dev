@@ -1,62 +1,41 @@
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { Disclosure } from '@headlessui/react';
-import { useRouter } from 'next/router';
 
-import { Button, Navbar, Tooltip } from '..';
-
+import { Button, Navbar } from '~/components';
 import { useNavigation } from '~/lib';
 
-interface StandardProps {
-	back?: boolean;
-	status?: boolean;
-}
-
-const StyledDisclosure = styled(Disclosure)(tw`fixed inset-0 h-24 z-10`);
+const StyledDisclosure = styled(Disclosure)(tw`
+	fixed top-0 left-0 w-full z-10
+`);
 
 const Container = styled.div(tw`
 	mx-auto px-2 
 `);
 
 const Content = styled.div(tw`
-	relative flex items-center justify-start h-16
+	relative flex items-center justify-between h-16
 `);
 
-export function Standard({ back = false, status = true }: StandardProps) {
-	const router = useRouter();
-	const items = useNavigation();
-
-	const goBack = () => router.back();
+export function Standard() {
+	const { menu, settings } = useNavigation();
 
 	return (
 		<StyledDisclosure as="nav">
-			{({ open }) => (
-				<>
-					<Container>
-						<Content>
-							<Navbar.Mobile.Button open={open} />
-
-							<div tw="hidden sm:inline-flex sm:space-x-2">
-								<Navbar.Desktop.Menu items={items} />
-
-								{back && (
-									<Tooltip text="Back">
-										<Button.Icon
-											aria-label="Back"
-											className="group"
-											onClick={goBack}
-										>
-											<Navbar.Icon icon={'feather:arrow-left'} />
-										</Button.Icon>
-									</Tooltip>
-								)}
-							</div>
-						</Content>
-					</Container>
-
-					<Navbar.Mobile.Menu items={items} />
-				</>
-			)}
+			<Container>
+				<Content>
+					<Navbar.Desktop.Standard items={menu} position="top-left">
+						<Button.Icon aria-label="Menu">
+							<Navbar.Icon icon="feather:menu" />
+						</Button.Icon>
+					</Navbar.Desktop.Standard>
+					<Navbar.Desktop.Standard items={settings} position="top-right">
+						<Button.Icon aria-label="Settings">
+							<Navbar.Icon icon="feather:settings" />
+						</Button.Icon>
+					</Navbar.Desktop.Standard>
+				</Content>
+			</Container>
 		</StyledDisclosure>
 	);
 }
