@@ -22,19 +22,18 @@ const ActivityContainer = styled.div(tw`
 	inline-flex items-center
 `);
 
-const AvatarContainer = styled.div(tw`
-	w-12 h-12 \
+const AssetContainer = styled.div(tw`
+	max-w-md max-h-12 \
 	my-auto \
-	bg-gray-100 dark:bg-gray-600 \
-	rounded
-`);
-
-const Avatar = styled(Image)(tw`
-	rounded select-none pointer-events-none \
+	rounded pointer-events-none select-none \
 	ring-2 ring-gray-200 dark:ring-gray-500
 `);
 
-const TextContainer = styled.div(tw`
+const Asset = styled(Image)(tw`
+	w-full max-h-12 rounded
+`);
+
+const Body = styled.div(tw`
 	flex-1 \
 	ml-4
 `);
@@ -57,22 +56,6 @@ const Divider = styled.hr(tw`
 	rounded-full
 `);
 
-const ArtworkContainer = styled.div(tw`
-	max-w-md max-h-12 \
-	my-auto \
-	rounded pointer-events-none select-none \
-	ring-2 ring-gray-200 dark:ring-gray-500
-`);
-
-const Artwork = styled(Image)(tw`
-	w-full max-h-12 rounded
-`);
-
-const Song = styled.div(tw`
-	flex-1 \
-	ml-4
-`);
-
 const Artist = styled.div(tw`
 	mt-1 \
 	text-xs text-gray-500 dark:text-gray-400
@@ -90,20 +73,19 @@ export function Widget() {
 	return (
 		<Container>
 			<ActivityContainer>
-				<AvatarContainer>
-					<Avatar
+				<AssetContainer>
+					<Asset
 						alt="Discord Avatar"
-						height={32}
-						layout="responsive"
-						src={`https://cdn.discordapp.com/avatars/${status.discord_user.id}/${status.discord_user.avatar}.webp?size=80`}
-						width={32}
+						height={48}
+						src={`https://cdn.discordapp.com/avatars/${status.discord_user.id}/${status.discord_user.avatar}.webp?size=256`}
+						width={48}
 					/>
-				</AvatarContainer>
+				</AssetContainer>
 
-				<TextContainer>
-					<Title>Title</Title>
-					<Description>Description</Description>
-				</TextContainer>
+				<Body>
+					<Title>{status.discord_user.username}</Title>
+					<Description>#{status.discord_user.discriminator}</Description>
+				</Body>
 
 				<Status.Indicator />
 			</ActivityContainer>
@@ -112,16 +94,18 @@ export function Widget() {
 				<>
 					<Divider />
 					<ActivityContainer>
-						<ArtworkContainer>
-							<Artwork
-								alt={`${status.spotify.song} - ${status.spotify.artist}`}
-								height={48}
-								src={status.spotify.album_art_url}
-								width={48}
-							/>
-						</ArtworkContainer>
+						<a href={`https://open.spotify.com/track/${status.spotify.track_id}`}>
+							<AssetContainer>
+								<Asset
+									alt={`${status.spotify.song} - ${status.spotify.artist}`}
+									height={48}
+									src={status.spotify.album_art_url}
+									width={48}
+								/>
+							</AssetContainer>
+						</a>
 
-						<Song>
+						<Body>
 							<Title aria-label={status.spotify.song}>{status.spotify.song}</Title>
 							<Artist>
 								{status.spotify.album === status.spotify.artist && (
@@ -129,7 +113,9 @@ export function Widget() {
 								)}
 								<p tw="tracking-wide">{status.spotify.artist}</p>
 							</Artist>
-						</Song>
+						</Body>
+
+						<Icon icon="feather:music" tw="w-6 h-6 mx-3 animate-pulse" />
 					</ActivityContainer>
 				</>
 			)}
@@ -142,9 +128,9 @@ export function Widget() {
 						<Fragment key={activity.name}>
 							<Divider />
 							<ActivityContainer>
-								<ArtworkContainer>
+								<AssetContainer>
 									{activity.assets && activity.assets.large_image ? (
-										<Artwork
+										<Asset
 											aria-label={activity.details}
 											height={48}
 											layout="fixed"
@@ -158,9 +144,9 @@ export function Widget() {
 											tw="w-12 h-12 p-1 text-gray-200 dark:text-gray-400"
 										/>
 									)}
-								</ArtworkContainer>
+								</AssetContainer>
 
-								<Song>
+								<Body>
 									<Title aria-label={activity.name}>{activity.name}</Title>
 									<Description aria-label={activity.details}>
 										{activity.details}
@@ -170,12 +156,7 @@ export function Widget() {
 											{activity.state}
 										</Description>
 									)}
-									{activity.timestamps && activity.timestamps.start && (
-										<Description aria-label={activity.state}>
-											{activity.state}
-										</Description>
-									)}
-								</Song>
+								</Body>
 							</ActivityContainer>
 						</Fragment>
 					);
