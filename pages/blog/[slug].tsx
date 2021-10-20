@@ -82,9 +82,18 @@ const BannerPlaceholder = styled.div(tw`
 	motion-safe:animate-pulse
 `);
 
-const Meta = styled.div(tw`
-	mx-auto \
-	text-lg max-w-prose
+const Article = styled.article`
+	${tw`
+		max-w-prose \
+		mx-auto \
+		prose prose-primary prose-lg text-gray-500 mx-auto
+	`}
+
+	${Blog.ElementStyles}
+`;
+
+const Meta = styled(Article)(tw`
+	text-lg
 `);
 
 const TitlePrefix = styled.span(tw`
@@ -147,9 +156,11 @@ export default function BlogPost({ post }: BlogPostProps) {
 						{post.frontmatter.description && post.frontmatter.description_show && (
 							<Description>{post.frontmatter.description}</Description>
 						)}
-
-						<MDXRemote {...post.source} components={Blog.X} />
 					</Meta>
+
+					<Article>
+						<MDXRemote {...post.source} components={Blog.X} />
+					</Article>
 				</Content>
 			</Container>
 		</Layout.Default>
