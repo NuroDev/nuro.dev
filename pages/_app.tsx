@@ -68,7 +68,7 @@ export default function App({ Component, pageProps }: AppProps) {
 		<ThemeProvider attribute="class" defaultTheme={Theme.SYSTEM} themes={Object.values(Theme)}>
 			<EmotionStyles styles={GlobalStyles} />
 			<TailwindStyles />
-			<Toaster position="top-right" />
+			<Toaster />
 			<Component {...pageProps} />
 		</ThemeProvider>
 	);
