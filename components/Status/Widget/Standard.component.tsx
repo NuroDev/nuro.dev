@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
+import { Fragment } from 'react';
 import { Icon } from '@iconify/react';
 
 import { DiscordStatus } from '~/types';
@@ -8,15 +9,20 @@ import { Error, Loading } from '..';
 import { Status } from '~/components';
 import { useStatus } from '~/lib';
 
-import type { ReactNode } from 'react';
+import { ReactNode } from 'react';
+
+type Avatar =
+	| {
+			icon: boolean;
+	  }
+	| {
+			alt: string;
+			href?: string;
+			url: string;
+	  };
 
 interface Activity {
-	avatar: {
-		alt: string;
-		icon?: boolean;
-		href?: string;
-		url: string;
-	};
+	avatar: Avatar;
 	title: string;
 	description: string | Array<string>;
 	icon?: string | ReactNode;
@@ -90,7 +96,10 @@ export function Widget() {
 
 	if (!status || !status) return <Error />;
 
-	const items: Array<Activity | null> = [
+	const activities: Array<Activity> = [
+		/**
+		 * Discord User
+		 */
 		{
 			avatar: {
 				alt: 'Discord Avatar',
@@ -105,6 +114,10 @@ export function Widget() {
 				/>
 			),
 		},
+
+		/**
+		 * Spotify
+		 */
 		...(status.spotify && status.listening_to_spotify
 			? [
 					{
@@ -119,6 +132,10 @@ export function Widget() {
 					},
 			  ]
 			: []),
+
+		/**
+		 * All other activities
+		 */
 		...(status.activities.length > 0
 			? status.activities.map((activity) => {
 					if (activity.id === 'custom' || activity.id.includes('spotify')) return null;
@@ -149,59 +166,67 @@ export function Widget() {
 
 	return (
 		<Container>
-			{items.map((item, index) => (
-				<>
-					<ActivityContainer>
-						<AssetContainer>
-							{item.avatar.icon ? (
-								<UnknownActivityIcon icon="feather:help-circle" />
-							) : item.avatar.href ? (
+			{activities.map((activity, index) => {
+				return (
+					<Fragment key={index}>
+						<ActivityContainer>
+							{'icon' in activity.avatar ? (
+								<AssetContainer>
+									<UnknownActivityIcon icon="feather:help-circle" />
+								</AssetContainer>
+							) : activity.avatar.href ? (
 								<a
-									href={item.avatar.href}
+									href={activity.avatar.href}
 									target="_blank"
 									rel="noreferrer noopener">
-									<Asset
-										alt={item.avatar.alt}
-										height={48}
-										src={item.avatar.url}
-										width={48}
-									/>
+									<AssetContainer>
+										<Asset
+											alt={activity.avatar.alt}
+											height={48}
+											src={activity.avatar.url}
+											width={48}
+										/>
+									</AssetContainer>
 								</a>
 							) : (
-								<Asset
-									alt={item.avatar.alt}
-									height={48}
-									src={item.avatar.url}
-									width={48}
-								/>
+								<AssetContainer>
+									<Asset
+										alt={activity.avatar.alt}
+										height={48}
+										src={activity.avatar.url}
+										width={48}
+									/>
+								</AssetContainer>
 							)}
-						</AssetContainer>
 
-						<Body>
-							<Title>{item.title}</Title>
+							<Body>
+								<Title>{activity.title}</Title>
 
-							{item.avatar.icon ? (
-								<Description>Unknown Activity</Description>
-							) : Array.isArray(item.description) ? (
-								item.description.map((description) => (
-									<Description>{description}</Description>
-								))
-							) : (
-								<Description>{item.description}</Description>
-							)}
-						</Body>
+								{'icon' in activity.avatar && activity.avatar.icon ? (
+									<Description>Unknown Activity</Description>
+								) : Array.isArray(activity.description) ? (
+									activity.description.map((description, descriptionIndex) => (
+										<Description key={descriptionIndex}>
+											{description}
+										</Description>
+									))
+								) : (
+									<Description>{activity.description}</Description>
+								)}
+							</Body>
 
-						{item.icon &&
-							(typeof item.icon === 'string' ? (
-								<AnimatedIcon icon={item.icon} />
-							) : (
-								item.icon
-							))}
-					</ActivityContainer>
+							{activity.icon &&
+								(typeof activity.icon === 'string' ? (
+									<AnimatedIcon icon={activity.icon} />
+								) : (
+									activity.icon
+								))}
+						</ActivityContainer>
 
-					{index + 1 !== items.length && <Divider />}
-				</>
-			))}
+						{index + 1 !== activities.length && <Divider />}
+					</Fragment>
+				);
+			})}
 		</Container>
 	);
 }
