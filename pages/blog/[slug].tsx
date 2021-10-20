@@ -125,6 +125,16 @@ export default function BlogPost({ post }: BlogPostProps) {
 			seo={{
 				title: `nuro ─ blog ─ ${post.frontmatter.title}`,
 				description: post.frontmatter.description ?? undefined,
+				openGraph: {
+					images: [
+						{
+							url: post.frontmatter.banner ?? '/banner.png',
+							alt: post.frontmatter.description,
+							width: 1280,
+							height: 720,
+						},
+					],
+				},
 			}}>
 			<Container>
 				<Content>
