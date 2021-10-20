@@ -70,6 +70,19 @@ const Divider = styled.hr(tw`
 	rounded-full
 `);
 
+const UnknownActivityIcon = styled(Icon)(tw`
+	w-12 h-12 \
+	p-1 \
+	text-gray-200 dark:text-gray-400
+`);
+
+const AnimatedIcon = styled(Icon)(tw`
+	w-6 h-6 \
+	mx-3 \
+	text-gray-200 dark:text-gray-400 \
+	animate-pulse
+`);
+
 export function Widget() {
 	const { loading, status } = useStatus();
 
@@ -136,10 +149,7 @@ export function Widget() {
 					<ActivityContainer>
 						<AssetContainer>
 							{item.avatar.icon ? (
-								<Icon
-									icon="feather:help-circle"
-									tw="w-12 h-12 p-1 text-gray-200 dark:text-gray-400"
-								/>
+								<UnknownActivityIcon icon="feather:help-circle" />
 							) : item.avatar.href ? (
 								<a
 									href={item.avatar.href}
@@ -178,10 +188,7 @@ export function Widget() {
 
 						{item.icon &&
 							(typeof item.icon === 'string' ? (
-								<Icon
-									icon={item.icon}
-									tw="w-6 h-6 mx-3 text-gray-200 dark:text-gray-400 animate-pulse"
-								/>
+								<AnimatedIcon icon={item.icon} />
 							) : (
 								item.icon
 							))}
