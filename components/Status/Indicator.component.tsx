@@ -2,10 +2,12 @@ import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import TailwindColors from 'tailwindcss/colors';
 
+import { useStatus } from '~/lib';
+import { DiscordStatus } from '~/types';
+
 import type { WithClassName } from '~/types';
 
 interface IndicatorProps extends WithClassName {
-	color?: string;
 	pulse?: boolean;
 }
 
@@ -39,7 +41,13 @@ const Dot = styled.span<{ $color: string }>`
 	background-color: ${({ $color }) => TailwindColors[$color]['500']};
 `;
 
-export function Indicator({ className, color = 'gray', pulse = false }: IndicatorProps) {
+export function Indicator({ className, pulse: pulseOverride }: IndicatorProps) {
+	const { color, loading, status } = useStatus();
+
+	if (loading || !status) return null;
+
+	const pulse = pulseOverride ?? status.discord_status !== DiscordStatus.OFFLINE;
+
 	return (
 		<Container className={className}>
 			<Content>

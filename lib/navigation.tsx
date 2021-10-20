@@ -61,8 +61,8 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 
 export function useNavigation() {
 	const state = usePersistantState();
-	const { background, sound } = state.get();
-	const { color, loading, status } = useStatus();
+	const { animations: background, sound } = state.get();
+	const { loading, status } = useStatus();
 	const { theme, setTheme } = useTheme();
 
 	const isDark = useMemo(() => {
@@ -72,24 +72,21 @@ export function useNavigation() {
 		return theme === Theme.DARK;
 	}, [theme]);
 
-	let menuItems: NavigationItems = [...staticMenuItems];
-
-	// TODO: Convert to inline
-	if (status && !loading && status.discord_status !== DiscordStatus.OFFLINE) {
-		menuItems.push([
-			{
-				type: NavigationItemType.LINK,
-				icon: (
-					<Status.Indicator
-						color={color}
-						pulse={status.discord_status !== DiscordStatus.OFFLINE}
-					/>
-				),
-				text: 'Status',
-				href: '/status',
-			},
-		]);
-	}
+	const menuItems: NavigationItems = [
+		...staticMenuItems,
+		...(status && !loading && status.discord_status !== DiscordStatus.OFFLINE
+			? [
+					[
+						{
+							type: NavigationItemType.LINK,
+							icon: <Status.Indicator />,
+							text: 'Status',
+							href: '/status',
+						},
+					],
+			  ]
+			: []),
+	];
 
 	const settingsItems: NavigationItems = [
 		[
@@ -101,7 +98,7 @@ export function useNavigation() {
 				onClick: () =>
 					state.set((settings) => ({
 						...settings,
-						background: !settings.background,
+						animations: !settings.animations,
 					})),
 			},
 			{
