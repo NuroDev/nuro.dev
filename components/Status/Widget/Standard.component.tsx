@@ -59,7 +59,7 @@ const Body = styled.div(tw`
 `);
 
 const Title = styled.h1(tw`
-	text-xl font-extrabold line-clamp-1 tracking-wide overflow-ellipsis \
+	text-base font-extrabold line-clamp-1 tracking-wide overflow-ellipsis \
 	text-gray-900 dark:text-white
 `);
 
