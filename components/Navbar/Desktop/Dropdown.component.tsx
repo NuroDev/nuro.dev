@@ -120,7 +120,7 @@ function MenuLink({ children, href, onClick, playSound, ...rest }: MenuLinkProps
 	);
 }
 
-export function Standard({ children, items, position }: StandardProps) {
+export function Dropdown({ children, items, position }: StandardProps) {
 	const [playClick] = useClick();
 
 	return (
