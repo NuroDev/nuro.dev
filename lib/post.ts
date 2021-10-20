@@ -54,17 +54,7 @@ export async function getPost(slug: string): Promise<Post> {
 		scope: data,
 		mdxOptions: {
 			rehypePlugins: [[RehypeAutolinkHeadings, {}]],
-			remarkPlugins: [
-				RemarkCodeTitles,
-				RemarkEmoji,
-				[
-					RemarkPrism,
-					{
-						showLineNumbers: true,
-					},
-				],
-				RemarkSlug,
-			],
+			remarkPlugins: [RemarkCodeTitles, RemarkEmoji, RemarkPrism, RemarkSlug],
 		},
 	});
 

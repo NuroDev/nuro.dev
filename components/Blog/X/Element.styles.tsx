@@ -12,9 +12,22 @@ export const ElementStyles = css`
 			dark:text-white
 		`}
 
+		a {
+			${tw`
+				float-left \
+				mt-0.5 -ml-5 pr-2 \
+				border-none \
+				opacity-0 no-underline
+			`}
+
+			.icon-link:before {
+				content: '#';
+			}
+		}
+
 		&:hover,
 		&:focus {
-			.header-anchor {
+			a {
 				${tw`
 					opacity-100
 					no-underline
@@ -43,14 +56,6 @@ export const ElementStyles = css`
 					opacity-100
 				`}
 			}
-		}
-		.header-anchor {
-			${tw`
-				float-left \
-				mt-0.5 -ml-5 pr-2 \
-				border-none \
-				opacity-0 no-underline
-			`}
 		}
 	}
 
