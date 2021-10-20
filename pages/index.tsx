@@ -76,7 +76,7 @@ const ACTIONS: Array<NavigationItem> = [
 ];
 
 export default function HomePage() {
-	const { background: animations } = usePersistantState().get();
+	const { animations: animations } = usePersistantState().get();
 
 	const today = new Date();
 	const birthday = new Date('1997-08-09');

@@ -19,7 +19,7 @@ export function DefaultLayout({
 	children,
 	seo,
 }: DefaultLayoutProps) {
-	const { background } = usePersistantState().get();
+	const { animations: background } = usePersistantState().get();
 	const showBackground = overrideBackground ?? background;
 
 	const defaultSeoProps = useSeoProps();

@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import type { Settings } from '~/types';
 
 const defaultStatus = createState<Settings>({
-	background: true,
+	animations: true,
 	sound: true,
 });
 
