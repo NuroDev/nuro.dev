@@ -140,7 +140,7 @@ function ReferralCard({ referral }: ReferralCardProps) {
 			<ListItemContainer>
 				<MetaContainer>
 					<IconContainer>
-						<StyledIcon icon={`feather:${referral.icon}`} />
+						<StyledIcon icon={referral.icon} />
 					</IconContainer>
 					<Meta>
 						<Title>{referral.name}</Title>

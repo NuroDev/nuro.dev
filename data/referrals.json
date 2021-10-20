@@ -4,7 +4,7 @@
 		"code": "CQ5psRocnkb",
 		"description": "Radically better & smarter car insurance",
 		"homepage": "https://www.cuvva.com/",
-		"icon": "truck",
+		"icon": "feather:truck",
 		"name": "Cuvva",
 		"url": "https://cuvva.insure/CQ5psRocnkb"
 	},
@@ -14,7 +14,7 @@
 		"code": "bend1044",
 		"description": "Your favourite restaurants, shops & supermarkets delivered to your door",
 		"homepage": "https://deliveroo.co.uk/",
-		"icon": "shopping-cart",
+		"icon": "feather:shopping-cart",
 		"name": "Deliveroo",
 		"url": "https://roo.it/bend1044"
 	},
@@ -23,7 +23,7 @@
 		"code": "81fa220bbbe0",
 		"description": "Cloud platform to deploy, manage & scale applications",
 		"homepage": "https://www.digitalocean.com/",
-		"icon": "cloud",
+		"icon": "feather:cloud",
 		"name": "DigitalOcean",
 		"url": "https://m.do.co/c/81fa220bbbe0"
 	},
@@ -33,7 +33,7 @@
 		"code": "3e2d5864",
 		"description": "Smart & simple personal investing",
 		"homepage": "https://freetrade.io",
-		"icon": "dollar-sign",
+		"icon": "feather:dollar-sign",
 		"name": "Freetrade",
 		"url": "https://magic.freetrade.io/join/ben/3e2d5864"
 	},
@@ -43,14 +43,14 @@
 		"code": "xtb2dx",
 		"description": "Help offset your carbon footprint",
 		"homepage": "https://klima.com",
-		"icon": "thermometer",
+		"icon": "feather:thermometer",
 		"name": "Klima",
 		"url": "https://klima.com/multiply/join/"
 	},
 	{
 		"description": "Develop. Preview. Ship.",
 		"homepage": "https://vercel.com/home",
-		"icon": "cloud",
+		"icon": "feather:cloud",
 		"name": "Vercel",
 		"url": "https://vercel.com/home?utm_source=nuro&utm_campaign=oss"
 	},
@@ -58,7 +58,7 @@
 		"code": "7299996",
 		"description": "Deploy public cloud, storage & single tenant bare metal services",
 		"homepage": "https://vultr.com",
-		"icon": "cloud",
+		"icon": "feather:cloud",
 		"name": "Vultr",
 		"url": "https://www.vultr.com/?ref=7299996"
 	}
