@@ -1,7 +1,11 @@
+import Image from 'next/image';
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
+import { Icon } from '@iconify/react';
+import { Fragment } from 'react';
 
 import { Error, Loading } from '..';
+import { Status } from '~/components';
 import { useStatus } from '~/lib';
 
 const Container = styled.div(tw`
@@ -15,18 +19,18 @@ const Container = styled.div(tw`
 `);
 
 const ActivityContainer = styled.div(tw`
-	inline-flex
+	inline-flex items-center
 `);
 
 const AvatarContainer = styled.div(tw`
 	w-12 h-12 \
 	my-auto \
 	bg-gray-100 dark:bg-gray-600 \
-	rounded-full
+	rounded
 `);
 
-const Avatar = styled.img(tw`
-	rounded-full select-none pointer-events-none \
+const Avatar = styled(Image)(tw`
+	rounded select-none pointer-events-none \
 	ring-2 ring-gray-200 dark:ring-gray-500
 `);
 
@@ -36,13 +40,13 @@ const TextContainer = styled.div(tw`
 `);
 
 const Title = styled.h1(tw`
-	text-xl font-extrabold tracking-wide overflow-ellipsis \
+	text-xl font-extrabold line-clamp-1 tracking-wide overflow-ellipsis \
 	text-gray-900 dark:text-white
 `);
 
 const Description = styled.p(tw`
 	mt-1 \
-	text-xs tracking-wide \
+	text-xs tracking-wide font-medium \
 	text-gray-500 dark:text-gray-400
 `);
 
@@ -60,7 +64,7 @@ const ArtworkContainer = styled.div(tw`
 	ring-2 ring-gray-200 dark:ring-gray-500
 `);
 
-const Artwork = styled.img(tw`
+const Artwork = styled(Image)(tw`
 	w-full max-h-12 rounded
 `);
 
@@ -77,6 +81,8 @@ const Artist = styled.div(tw`
 export function Widget() {
 	const { loading, status } = useStatus();
 
+	console.log('status', status);
+
 	if (loading) return <Loading />;
 
 	if (!status || !status) return <Error />;
@@ -86,8 +92,11 @@ export function Widget() {
 			<ActivityContainer>
 				<AvatarContainer>
 					<Avatar
-						src={`https://cdn.discordapp.com/avatars/84300695947218944/88e90d3ac8424a04c216b5a0d315abea.webp?size=80`}
 						alt="Discord Avatar"
+						height={32}
+						layout="responsive"
+						src={`https://cdn.discordapp.com/avatars/${status.discord_user.id}/${status.discord_user.avatar}.webp?size=80`}
+						width={32}
 					/>
 				</AvatarContainer>
 
@@ -95,6 +104,8 @@ export function Widget() {
 					<Title>Title</Title>
 					<Description>Description</Description>
 				</TextContainer>
+
+				<Status.Indicator />
 			</ActivityContainer>
 
 			{status.spotify && status.listening_to_spotify && (
@@ -103,13 +114,15 @@ export function Widget() {
 					<ActivityContainer>
 						<ArtworkContainer>
 							<Artwork
-								src={status.spotify.album_art_url}
 								alt={`${status.spotify.song} - ${status.spotify.artist}`}
+								height={48}
+								src={status.spotify.album_art_url}
+								width={48}
 							/>
 						</ArtworkContainer>
 
 						<Song>
-							<Title>{status.spotify.song}</Title>
+							<Title aria-label={status.spotify.song}>{status.spotify.song}</Title>
 							<Artist>
 								{status.spotify.album === status.spotify.artist && (
 									<p>{status.spotify.album}</p>
@@ -120,6 +133,53 @@ export function Widget() {
 					</ActivityContainer>
 				</>
 			)}
+
+			{status.activities.length > 0 &&
+				status.activities.map((activity) => {
+					if (activity.id === 'custom' || activity.id.includes('spotify')) return null;
+
+					return (
+						<Fragment key={activity.name}>
+							<Divider />
+							<ActivityContainer>
+								<ArtworkContainer>
+									{activity.assets && activity.assets.large_image ? (
+										<Artwork
+											aria-label={activity.details}
+											height={48}
+											layout="fixed"
+											src={`https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.webp`}
+											tw="p-2"
+											width={48}
+										/>
+									) : (
+										<Icon
+											icon="feather:help-circle"
+											tw="w-12 h-12 p-1 text-gray-200 dark:text-gray-400"
+										/>
+									)}
+								</ArtworkContainer>
+
+								<Song>
+									<Title aria-label={activity.name}>{activity.name}</Title>
+									<Description aria-label={activity.details}>
+										{activity.details}
+									</Description>
+									{activity.state && (
+										<Description aria-label={activity.state}>
+											{activity.state}
+										</Description>
+									)}
+									{activity.timestamps && activity.timestamps.start && (
+										<Description aria-label={activity.state}>
+											{activity.state}
+										</Description>
+									)}
+								</Song>
+							</ActivityContainer>
+						</Fragment>
+					);
+				})}
 		</Container>
 	);
 }
