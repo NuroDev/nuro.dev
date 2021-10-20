@@ -147,9 +147,9 @@ export default function BlogPost({ post }: BlogPostProps) {
 						{post.frontmatter.description && post.frontmatter.description_show && (
 							<Description>{post.frontmatter.description}</Description>
 						)}
-					</Meta>
 
-					<MDXRemote {...post.source} components={Blog.X} />
+						<MDXRemote {...post.source} components={Blog.X} />
+					</Meta>
 				</Content>
 			</Container>
 		</Layout.Default>
