@@ -100,7 +100,7 @@ const Title = styled.span(tw`
 	sm:text-4xl text-3xl text-center leading-8 font-extrabold tracking-tight
 `);
 
-const DatePill = styled.span(tw`
+const DateContainer = styled.span(tw`
 	flex justify-center items-center \
 	mt-4
 `);
@@ -140,9 +140,9 @@ export default function BlogPost({ post }: BlogPostProps) {
 							<Title>{post.frontmatter.title}</Title>
 						</h1>
 
-						<Pill.Date>
+						<DateContainer>
 							<Pill.Date>{post.frontmatter.date}</Pill.Date>
-						</Pill.Date>
+						</DateContainer>
 
 						{post.frontmatter.description && post.frontmatter.description_show && (
 							<Description>{post.frontmatter.description}</Description>
