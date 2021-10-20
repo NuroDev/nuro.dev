@@ -8,6 +8,20 @@ import { Error, Loading } from '..';
 import { Status } from '~/components';
 import { useStatus } from '~/lib';
 
+import type { ReactNode } from 'react';
+
+interface Activity {
+	avatar: {
+		alt: string;
+		icon?: boolean;
+		href?: string;
+		url: string;
+	};
+	title: string;
+	description: string | Array<string>;
+	icon?: string | ReactNode;
+}
+
 const Container = styled.div(tw`
 	flex flex-col space-y-5 w-full max-w-sm \
 	mx-auto px-4 py-4 \
@@ -56,111 +70,126 @@ const Divider = styled.hr(tw`
 	rounded-full
 `);
 
-const Artist = styled.div(tw`
-	mt-1 \
-	text-xs text-gray-500 dark:text-gray-400
-`);
-
 export function Widget() {
 	const { loading, status } = useStatus();
-
-	console.log('status', status);
 
 	if (loading) return <Loading />;
 
 	if (!status || !status) return <Error />;
 
-	return (
-		<Container>
-			<ActivityContainer>
-				<AssetContainer>
-					<Asset
-						alt="Discord Avatar"
-						height={48}
-						src={`https://cdn.discordapp.com/avatars/${status.discord_user.id}/${status.discord_user.avatar}.webp?size=256`}
-						width={48}
-					/>
-				</AssetContainer>
-
-				<Body>
-					<Title>{status.discord_user.username}</Title>
-					<Description>#{status.discord_user.discriminator}</Description>
-				</Body>
-
-				<Status.Indicator />
-			</ActivityContainer>
-
-			{status.spotify && status.listening_to_spotify && (
-				<>
-					<Divider />
-					<ActivityContainer>
-						<a href={`https://open.spotify.com/track/${status.spotify.track_id}`}>
-							<AssetContainer>
-								<Asset
-									alt={`${status.spotify.song} - ${status.spotify.artist}`}
-									height={48}
-									src={status.spotify.album_art_url}
-									width={48}
-								/>
-							</AssetContainer>
-						</a>
-
-						<Body>
-							<Title aria-label={status.spotify.song}>{status.spotify.song}</Title>
-							<Artist>
-								{status.spotify.album === status.spotify.artist && (
-									<p>{status.spotify.album}</p>
-								)}
-								<p tw="tracking-wide">{status.spotify.artist}</p>
-							</Artist>
-						</Body>
-
-						<Icon icon="feather:music" tw="w-6 h-6 mx-3 animate-pulse" />
-					</ActivityContainer>
-				</>
-			)}
-
-			{status.activities.length > 0 &&
-				status.activities.map((activity) => {
+	const items: Array<Activity | null> = [
+		{
+			avatar: {
+				alt: 'Discord Avatar',
+				url: `https://cdn.discordapp.com/avatars/${status.discord_user.id}/${status.discord_user.avatar}.webp?size=256`,
+			},
+			title: status.discord_user.username,
+			description: `#${status.discord_user.discriminator}`,
+			icon: <Status.Indicator />,
+		},
+		...(status.spotify && status.listening_to_spotify
+			? [
+					{
+						avatar: {
+							alt: `${status.spotify.song} - ${status.spotify.artist}`,
+							href: `https://open.spotify.com/track/${status.spotify.track_id}`,
+							url: status.spotify.album_art_url,
+						},
+						title: status.spotify.song,
+						description: status.spotify.artist,
+						icon: 'feather:music',
+					},
+			  ]
+			: []),
+		...(status.activities.length > 0
+			? status.activities.map((activity) => {
 					if (activity.id === 'custom' || activity.id.includes('spotify')) return null;
 
-					return (
-						<Fragment key={activity.name}>
-							<Divider />
-							<ActivityContainer>
-								<AssetContainer>
-									{activity.assets && activity.assets.large_image ? (
-										<Asset
-											aria-label={activity.details}
-											height={48}
-											layout="fixed"
-											src={`https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.webp`}
-											tw="p-2"
-											width={48}
-										/>
-									) : (
-										<Icon
-											icon="feather:help-circle"
-											tw="w-12 h-12 p-1 text-gray-200 dark:text-gray-400"
-										/>
-									)}
-								</AssetContainer>
+					const hasAsset = activity.assets && activity.assets.large_image ? true : false;
+					const avatar = hasAsset
+						? {
+								alt: activity.details,
+								url: `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.webp`,
+						  }
+						: {
+								alt: activity.name,
+								icon: true,
+								url: '',
+						  };
 
-								<Body>
-									<Title aria-label={activity.name}>{activity.name}</Title>
-									<Description aria-label={activity.details}>
-										{activity.details}
-									</Description>
-									{activity.state && (
-										<Description aria-label={activity.state}>
-											{activity.state}
-										</Description>
-									)}
-								</Body>
-							</ActivityContainer>
-						</Fragment>
-					);
-				})}
+					return {
+						avatar,
+						title: activity.name,
+						description: [
+							activity.details,
+							...(activity.state ? [activity.state] : []),
+						],
+					};
+			  })
+			: []),
+	].filter((item) => item !== null);
+
+	return (
+		<Container>
+			{items.map((item, index) => (
+				<>
+					<ActivityContainer>
+						<AssetContainer>
+							{item.avatar.icon ? (
+								<Icon
+									icon="feather:help-circle"
+									tw="w-12 h-12 p-1 text-gray-200 dark:text-gray-400"
+								/>
+							) : item.avatar.href ? (
+								<a
+									href={item.avatar.href}
+									target="_blank"
+									rel="noreferrer noopener">
+									<Asset
+										alt={item.avatar.alt}
+										height={48}
+										src={item.avatar.url}
+										width={48}
+									/>
+								</a>
+							) : (
+								<Asset
+									alt={item.avatar.alt}
+									height={48}
+									src={item.avatar.url}
+									width={48}
+								/>
+							)}
+						</AssetContainer>
+
+						<Body>
+							<Title>{item.title}</Title>
+
+							{item.avatar.icon ? (
+								<Description>Unknown Activity</Description>
+							) : Array.isArray(item.description) ? (
+								item.description.map((description) => (
+									<Description>{description}</Description>
+								))
+							) : (
+								<Description>{item.description}</Description>
+							)}
+						</Body>
+
+						{item.icon &&
+							(typeof item.icon === 'string' ? (
+								<Icon
+									icon={item.icon}
+									tw="w-6 h-6 mx-3 text-gray-200 dark:text-gray-400 animate-pulse"
+								/>
+							) : (
+								item.icon
+							))}
+					</ActivityContainer>
+
+					{index + 1 !== items.length && <Divider />}
+				</>
+			))}
 		</Container>
 	);
 }
