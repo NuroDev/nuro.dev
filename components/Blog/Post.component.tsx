@@ -76,11 +76,12 @@ const Footer = styled.div(tw`
 `);
 
 export function _Post({ index, frontmatter }: PostProps) {
+	const ariaLabel = `Read blog post: ${frontmatter.title}`;
+	const href = `/blog/${frontmatter.slug}`;
+
 	return (
-		<Link
-			aria-label={`Read blog post: ${frontmatter.title}`}
-			href={`/blog/${frontmatter.slug}`}>
-			<Container>
+		<Link aria-label={ariaLabel} href={href}>
+			<Container aria-label={ariaLabel} href={href}>
 				{frontmatter.banner && index <= 2 && (
 					<Banner>
 						<BannerPlaceholder />

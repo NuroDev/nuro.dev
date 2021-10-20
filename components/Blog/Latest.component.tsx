@@ -70,11 +70,12 @@ const Footer = styled.div(tw`
 `);
 
 export function Latest({ frontmatter }: LatestProps) {
+	const ariaLabel = `Read blog post: ${frontmatter.title}`;
+	const href = `/blog/${frontmatter.slug}`;
+
 	return (
-		<Link
-			aria-label={`Read blog post: ${frontmatter.title}`}
-			href={`/blog/${frontmatter.slug}`}>
-			<Container>
+		<Link aria-label={ariaLabel} href={href}>
+			<Container aria-label={ariaLabel} href={href}>
 				{(frontmatter.banner_show ?? true) && (
 					<Banner>
 						<BannerPlaceholder />
