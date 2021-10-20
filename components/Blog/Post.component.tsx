@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
 
-import { Blog } from '..';
+import { DatePill } from '~/components';
 
 import type { FrontMatter } from '~/types';
 
@@ -103,7 +103,7 @@ export function _Post({ index, frontmatter }: PostProps) {
 							</Description>
 						)}
 						<Footer>
-							<Blog.Date>{frontmatter.date}</Blog.Date>
+							<DatePill>{frontmatter.date}</DatePill>
 						</Footer>
 					</ContextText>
 				</Content>

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
 
-import { Blog } from '..';
+import { DatePill } from '~/components';
 
 import type { FrontMatter } from '~/types';
 
@@ -94,7 +94,7 @@ export function Latest({ frontmatter }: LatestProps) {
 						</Description>
 					)}
 					<Footer>
-						<Blog.Date>{frontmatter.date}</Blog.Date>
+						<DatePill>{frontmatter.date}</DatePill>
 					</Footer>
 				</Content>
 			</Container>

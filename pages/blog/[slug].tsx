@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { MDXRemote } from 'next-mdx-remote';
 
-import { Blog } from '~/components';
+import { Blog, DatePill } from '~/components';
 import { getPost, getAllPostSlugs } from '~/lib/post';
 import { Layout } from '~/layouts';
 
@@ -100,7 +100,7 @@ const Title = styled.span(tw`
 	sm:text-4xl text-3xl text-center leading-8 font-extrabold tracking-tight
 `);
 
-const Date = styled.span(tw`
+const DatePill = styled.span(tw`
 	flex justify-center items-center \
 	mt-4
 `);
@@ -140,9 +140,9 @@ export default function BlogPost({ post }: BlogPostProps) {
 							<Title>{post.frontmatter.title}</Title>
 						</h1>
 
-						<Date>
-							<Blog.Date>{post.frontmatter.date}</Blog.Date>
-						</Date>
+						<DatePill>
+							<DatePill>{post.frontmatter.date}</DatePill>
+						</DatePill>
 
 						{post.frontmatter.description && post.frontmatter.description_show && (
 							<Description>{post.frontmatter.description}</Description>
