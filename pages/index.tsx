@@ -40,10 +40,18 @@ const StyledPill = styled(Pill.Standard)(tw`
 	mt-4
 `);
 
-const Actions = styled.div(tw`
-	flex flex-col sm:flex-row items-center justify-center sm:space-x-4 space-y-4 sm:space-y-0 w-full \
-	mt-8 sm:mt-4
-`);
+const Actions = styled.div`
+	${tw`
+		flex flex-col sm:flex-row items-center justify-center sm:space-x-4 space-y-4 sm:space-y-0 w-full \
+		mt-8 sm:mt-4
+	`}
+
+	div {
+		${tw`
+			w-full sm:w-auto
+		`}
+	}
+`;
 
 const ActionIcon = styled(Icon)(tw`
 	mr-3
@@ -126,11 +134,7 @@ export default function HomePage() {
 								);
 
 							return (
-								<Transition
-									delay={1000 + index * 100}
-									key={index}
-									tw="flex-1"
-									duration={1000}>
+								<Transition delay={1000 + index * 100} key={index} duration={1000}>
 									<Button.Outline href={action.href}>
 										{action.icon}
 										<ActionText>{action.text}</ActionText>
