@@ -3,7 +3,7 @@ import tw from 'twin.macro';
 import { format } from 'date-fns';
 import { Icon } from '@iconify/react';
 
-import { Button, DatePill as DatePill } from '~/components';
+import { Button, Pill } from '~/components';
 import { Layout } from '~/layouts';
 
 import type { GetStaticProps } from 'next';
@@ -72,9 +72,9 @@ export default function TimelinePage({ timeline }: TimelineProps) {
 											<div tw="min-w-0 flex-1">
 												<h1 tw="flex justify-between mb-2 text-gray-500 dark:text-white text-lg tracking-tight font-bold">
 													<span>{event.title}</span>
-													<DatePill small>
+													<Pill.Date small>
 														{format(event.date, 'PPP')}
-													</DatePill>
+													</Pill.Date>
 												</h1>
 												<div tw="my-2 text-base text-gray-300">
 													<p>{event.description}</p>

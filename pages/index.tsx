@@ -36,7 +36,7 @@ const LineBreak = styled.br(tw`
 	hidden sm:block
 `);
 
-const StyledPill = styled(Pill)(tw`
+const StyledPill = styled(Pill.Standard)(tw`
 	mt-4
 `);
 

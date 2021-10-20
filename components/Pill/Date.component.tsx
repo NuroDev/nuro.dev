@@ -4,7 +4,7 @@ import { Icon } from '@iconify/react';
 
 import type { WithChildren, WithClassName } from '~/types';
 
-interface DateProps extends WithClassName, WithChildren {
+interface DatePillProps extends WithClassName, WithChildren {
 	small?: boolean;
 }
 
@@ -23,7 +23,7 @@ const StyledIcon = styled(Icon)(tw`
 	mt-0.5 mr-3
 `);
 
-export function DatePill({ children, className, small = false }: DateProps) {
+export function DatePill({ children, className, small = false }: DatePillProps) {
 	return (
 		<Container className={className} small={small}>
 			<StyledIcon icon="feather:calendar" />

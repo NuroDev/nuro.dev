@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { AnchorHTMLAttributes } from 'react';
 import tw from 'twin.macro';
 
-interface PillProps extends AnchorHTMLAttributes<HTMLDivElement> {}
+interface StandardPillProps extends AnchorHTMLAttributes<HTMLDivElement> {}
 
 const Container = styled.div(tw`
 	inline-flex \
@@ -15,7 +15,7 @@ const Container = styled.div(tw`
 	focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500
 `);
 
-export function Pill({ children, ...rest }: PillProps) {
+export function Standard({ children, ...rest }: StandardPillProps) {
 	return (
 		<Container target="_blank" rel="noreferrer noopener" {...rest}>
 			{children}
