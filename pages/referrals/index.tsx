@@ -14,6 +14,7 @@ import type { CSSProperties } from 'react';
 import type { GetStaticProps } from 'next';
 
 import type { Referral, Referrals } from '~/types';
+import { css } from '@emotion/react';
 
 interface ReferralsProps {
 	referrals?: Referrals;
@@ -53,11 +54,20 @@ const MetaContainer = styled.div(tw`
 	flex flex-1 items-center
 `);
 
-const IconContainer = styled.div(tw`
-	flex flex-shrink-0 items-center justify-center w-12 h-12 \
-	bg-primary-500
-	rounded-full
-`);
+const IconContainer = styled.div<{ color?: string }>`
+	${tw`
+		flex flex-shrink-0 items-center justify-center w-12 h-12
+		rounded-full
+	`}
+
+	${({ color }) => {
+		if (!color) return tw`bg-primary-500`;
+
+		return css`
+			background-color: ${color};
+		`;
+	}}
+`;
 
 const StyledIcon = styled(Icon)(tw`
 	w-6 h-6 \
@@ -139,7 +149,7 @@ function ReferralCard({ referral }: ReferralCardProps) {
 		<ListItem>
 			<ListItemContainer>
 				<MetaContainer>
-					<IconContainer>
+					<IconContainer color={referral.color}>
 						<StyledIcon icon={referral.icon} />
 					</IconContainer>
 					<Meta>
