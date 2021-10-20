@@ -10,7 +10,7 @@ const Container = styled.div(tw`
 `);
 
 const Content = styled.div(tw`
-	flex-grow flex flex-col justify-center max-w-sm md:max-w-lg w-full \
+	flex-grow flex flex-col justify-center max-w-sm sm:max-w-lg w-full \
 	mx-auto px-0 sm:px-16
 `);
 
