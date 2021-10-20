@@ -4,10 +4,11 @@ import { join } from 'path';
 import { readdirSync, readFileSync } from 'fs';
 import { serialize } from 'next-mdx-remote/serialize';
 
-import RehypeCodeTitles from 'rehype-code-titles';
-import RehypeSlug from 'rehype-slug';
-import RehypeAutoLinkHeadings from 'rehype-autolink-headings';
-import RehypePrismPlus from 'rehype-prism-plus';
+import RehypeAutolinkHeadings from 'rehype-autolink-headings';
+import RemarkCodeTitles from 'remark-code-titles';
+import RemarkEmoji from 'remark-emoji';
+import RemarkPrism from 'remark-prism';
+import RemarkSlug from 'remark-slug';
 
 import type { FrontMatter, Post, RawFrontMatter } from '~/types';
 
@@ -50,21 +51,19 @@ export async function getPost(slug: string): Promise<Post> {
 	const raw = readFileSync(join(process.cwd(), 'data', 'blog', `${slug}.md`)).toString();
 	const { content, data } = matter(raw);
 	const source = await serialize(content, {
-		// scope: data,
+		scope: data,
 		mdxOptions: {
-			rehypePlugins: [
+			rehypePlugins: [[RehypeAutolinkHeadings, {}]],
+			remarkPlugins: [
+				RemarkCodeTitles,
+				RemarkEmoji,
 				[
-					RehypeAutoLinkHeadings,
-					,
+					RemarkPrism,
 					{
-						properties: {
-							className: ['anchor'],
-						},
+						showLineNumbers: true,
 					},
 				],
-				RehypeCodeTitles,
-				RehypePrismPlus,
-				RehypeSlug,
+				RemarkSlug,
 			],
 		},
 	});

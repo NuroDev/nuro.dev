@@ -89,6 +89,7 @@ const Article = styled.article`
 		prose prose-primary prose-lg text-gray-500 mx-auto
 	`}
 
+	${Blog.CodeStyles}
 	${Blog.ElementStyles}
 `;
 
