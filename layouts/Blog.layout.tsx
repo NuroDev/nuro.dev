@@ -11,7 +11,7 @@ interface BlogLayoutProps {
 	seo?: Partial<ComponentProps<typeof NextSeo>>;
 }
 
-const Main = styled.main(tw`flex flex-col justify-center px-8`);
+const Main = styled.main(tw`flex flex-col justify-center sm:px-8`);
 
 export function BlogLayout({ children, seo }: PropsWithChildren<BlogLayoutProps>) {
 	const defaultSeoProps = useSeoProps();

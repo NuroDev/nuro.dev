@@ -92,8 +92,10 @@ const Article = styled.article`
 	${Blog.ElementStyles}
 `;
 
-const Meta = styled(Article)(tw`
-	text-lg
+const Meta = styled.div(tw`
+	flex flex-col space-y-4 max-w-prose \
+	mx-auto my-4
+	text-lg text-center
 `);
 
 const TitlePrefix = styled.span(tw`
@@ -103,15 +105,12 @@ const TitlePrefix = styled.span(tw`
 `);
 
 const Title = styled.span(tw`
-	block \
-	mt-2 \
 	text-gray-900 dark:text-white \
 	sm:text-4xl text-3xl text-center leading-8 font-extrabold tracking-tight
 `);
 
 const DateContainer = styled.span(tw`
-	flex justify-center items-center \
-	mt-4
+	flex justify-center items-center
 `);
 
 const Description = styled.p(tw`
@@ -121,8 +120,7 @@ const Description = styled.p(tw`
 
 export default function BlogPost({ post }: BlogPostProps) {
 	return (
-		<Layout.Default
-			background={false}
+		<Layout.Blog
 			seo={{
 				title: `nuro ─ blog ─ ${post.frontmatter.title}`,
 				description: post.frontmatter.description ?? undefined,
@@ -141,13 +139,13 @@ export default function BlogPost({ post }: BlogPostProps) {
 						</Banner>
 					)}
 
-					<Meta>
-						<h1>
+					<Meta as="div">
+						<div>
 							{post.frontmatter.title_prefix && (
 								<TitlePrefix>{post.frontmatter.title_prefix}</TitlePrefix>
 							)}
 							<Title>{post.frontmatter.title}</Title>
-						</h1>
+						</div>
 
 						<DateContainer>
 							<Pill.Date>{post.frontmatter.date}</Pill.Date>
@@ -163,6 +161,6 @@ export default function BlogPost({ post }: BlogPostProps) {
 					</Article>
 				</Content>
 			</Container>
-		</Layout.Default>
+		</Layout.Blog>
 	);
 }
