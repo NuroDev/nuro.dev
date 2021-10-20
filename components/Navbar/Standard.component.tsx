@@ -24,16 +24,16 @@ export function Standard() {
 		<StyledDisclosure as="nav">
 			<Container>
 				<Content>
-					<Navbar.Desktop.Dropdown items={menu} position="top-left">
+					<Navbar.Dropdown items={menu} position="top-left">
 						<Button.Icon aria-label="Menu">
 							<Navbar.Icon icon="feather:menu" />
 						</Button.Icon>
-					</Navbar.Desktop.Dropdown>
-					<Navbar.Desktop.Dropdown items={settings} position="top-right">
+					</Navbar.Dropdown>
+					<Navbar.Dropdown items={settings} position="top-right">
 						<Button.Icon aria-label="Settings">
 							<Navbar.Icon icon="feather:settings" />
 						</Button.Icon>
-					</Navbar.Desktop.Dropdown>
+					</Navbar.Dropdown>
 				</Content>
 			</Container>
 		</StyledDisclosure>
