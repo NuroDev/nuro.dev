@@ -6,7 +6,6 @@ export * as Status from './Status';
 export { DatePill } from './Date.component';
 export { Event } from './Event.component';
 export { Pill } from './Pill.component';
-export { Tooltip } from './Tooltip.component';
 export { Transition } from './Transition.component';
 
 export * from './Wave.styles';
