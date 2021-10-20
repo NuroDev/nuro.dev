@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import NProgress from 'nprogress';
 import Router from 'next/router';
 import tw, { GlobalStyles as TailwindStyles } from 'twin.macro';
@@ -9,6 +10,7 @@ import { Toaster } from 'react-hot-toast';
 import 'inter-ui/inter.css';
 import 'nprogress/nprogress.css';
 
+import TailwindCSS from '~/tailwind.config';
 import { useAnalytics } from '~/lib';
 import { Theme } from '~/types';
 
@@ -66,6 +68,9 @@ export default function App({ Component, pageProps }: AppProps) {
 
 	return (
 		<ThemeProvider attribute="class" defaultTheme={Theme.SYSTEM} themes={Object.values(Theme)}>
+			<Head>
+				<meta name="theme-color" content={TailwindCSS.theme.extend.colors.primary[500]} />
+			</Head>
 			<EmotionStyles styles={GlobalStyles} />
 			<TailwindStyles />
 			<Toaster />
