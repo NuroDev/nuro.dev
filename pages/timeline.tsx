@@ -142,7 +142,11 @@ export default function TimelinePage({ timeline: rawTimeline }: TimelineProps) {
 											<Description>{event.description}</Description>
 
 											{event.link && (
-												<EventLinkButton small href={event.link.url}>
+												<EventLinkButton
+													small
+													href={event.link.url}
+													target="_blank"
+													rel="noopener noreferrer">
 													{event.link.text}
 													<EventLinkButtonIcon icon="feather:external-link" />
 												</EventLinkButton>
