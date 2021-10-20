@@ -12,8 +12,9 @@ const Container = styled.div<{ small: boolean }>`
 	${tw`
 		inline-flex \
 		bg-primary-500 bg-opacity-15 \
+		backdrop-filter backdrop-blur-sm saturate-200 \
 		rounded-lg \
-		text-sm text-primary-800
+		text-sm text-primary-500
 	`}
 
 	${({ small }) => (small ? tw`px-2 py-1` : tw`px-4 py-2`)}
