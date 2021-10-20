@@ -60,7 +60,7 @@ export default function TimelinePage({ timeline }: TimelineProps) {
 										) : null}
 										<div tw="relative flex items-center space-x-3 bg-gray-50 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 backdrop-filter backdrop-blur-sm px-2 py-3 rounded-lg border-2 border-gray-200 dark:border-gray-600">
 											<div tw="relative px-1">
-												<div tw="h-8 w-8 bg-primary-500 rounded-full flex items-center justify-center">
+												<div tw="h-10 w-10 bg-primary-500 rounded-full flex items-center justify-center">
 													<Icon
 														icon={event.icon}
 														tw="h-5 w-5 text-white"
@@ -80,7 +80,10 @@ export default function TimelinePage({ timeline }: TimelineProps) {
 													<p>{event.description}</p>
 												</div>
 												{event.link && (
-													<Button.Outline tw="mt-2" href={event.link.url}>
+													<Button.Outline
+														small
+														tw="mt-2"
+														href={event.link.url}>
 														{event.link.text}
 														<Icon
 															tw="ml-3"
