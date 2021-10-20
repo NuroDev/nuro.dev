@@ -186,4 +186,4 @@ Any word wrapped with two tildes (like `~~this~~`) will appear ~~crossed out~~.
 
 ## Sandbox
 
-<XSandbox src="https://codesandbox.io/embed/new?codemirror=1" />
+<XSandbox />
