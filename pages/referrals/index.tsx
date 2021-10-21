@@ -46,7 +46,7 @@ const ListItem = styled.li(tw`
 `);
 
 const ListItemContainer = styled.div(tw`
-	flex flex-col sm:flex-row items-start \
+	flex flex-col sm:flex-row items-start justify-center \
 	px-4 py-4 sm:px-6
 `);
 
@@ -92,13 +92,32 @@ const Description = styled.p(tw`
 `);
 
 const Actions = styled.div(tw`
-	flex items-center space-x-2 mt-4 sm:mt-0 sm:pl-4
+	flex items-center justify-center space-x-2 \
+	mt-4 sm:mt-1 sm:pl-4
 `);
 
-const ActionButton = styled(Button.Icon)(tw`
-	w-10 h-10 \
-	border border-gray-100 dark:border-gray-500
+const ActionButtonStyles = css(tw`
+	relative inline-block w-10 h-10 \
+	px-3 py-2 \
+	bg-gray-50 hover:bg-gray-100 dark:bg-gray-900 dark:hover:bg-gray-700 \
+	text-gray-400 hover:text-gray-700 dark:hover:text-white \
+	border border-gray-100 dark:border-gray-500 \
+	rounded-lg \
+	text-sm font-medium \
+	transition ease-in-out duration-300
+	focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-primary-500
 `);
+
+const ActionButton = styled.button(ActionButtonStyles);
+const ActionLink = styled.a`
+	${ActionButtonStyles}
+
+	svg {
+		${tw`
+			mt-1
+		`}
+	}
+`;
 
 export const getStaticProps: GetStaticProps<ReferralsProps> = async () => {
 	const { default: rawReferrals } = await import('~/data/referrals.json');
@@ -159,32 +178,28 @@ function ReferralCard({ referral }: ReferralCardProps) {
 				</MetaContainer>
 
 				<Actions>
-					<a
+					<ActionLink
+						aria-label={`${referral.name} homepage`}
 						href={referral.url}
-						target="_blank"
 						rel="noopener noreferrer"
-						aria-label={`${referral.name} homepage`}>
-						<ActionButton>
-							<span tw="sr-only">Homepage</span>
-							<Icon icon="feather:home" />
-						</ActionButton>
-					</a>
+						target="_blank">
+						<span tw="sr-only">Homepage</span>
+						<Icon icon="feather:home" />
+					</ActionLink>
 					{referral.code && (
 						<ActionButton aria-label="Referral code" onClick={onCopy}>
 							<span tw="sr-only">Code</span>
 							<Icon icon="feather:hash" />
 						</ActionButton>
 					)}
-					<a
+					<ActionLink
+						aria-label="Referral link"
 						href={referral.url}
-						target="_blank"
 						rel="noopener noreferrer"
-						aria-label="Referral link">
-						<ActionButton>
-							<span tw="sr-only">Referral Link</span>
-							<Icon icon="feather:external-link" />
-						</ActionButton>
-					</a>
+						target="_blank">
+						<span tw="sr-only">Referral Link</span>
+						<Icon icon="feather:external-link" />
+					</ActionLink>
 				</Actions>
 			</ListItemContainer>
 		</ListItem>
