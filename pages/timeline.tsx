@@ -81,6 +81,10 @@ const Title = styled.h1`
 	}
 `;
 
+const Spacer = styled.span(tw`
+	flex-1 sm:hidden
+`);
+
 const Description = styled.p(tw`
 	my-2 \
 	text-gray-300 \
@@ -135,6 +139,7 @@ export default function TimelinePage({ timeline: rawTimeline }: TimelineProps) {
 										<EventBody>
 											<Title>
 												<span>{event.title}</span>
+												<Spacer />
 												<Pill.Date small>
 													{format(event.date, 'PPP')}
 												</Pill.Date>
