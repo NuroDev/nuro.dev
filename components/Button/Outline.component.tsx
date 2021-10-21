@@ -20,7 +20,8 @@ const Container = styled.a<{ small?: boolean }>`
 		inline-flex items-center justify-center w-full sm:w-auto \
 		bg-gray-50 bg-opacity-75 hover:bg-gray-100 hover:bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 dark:hover:bg-gray-800 dark:hover:bg-opacity-75 \
 		backdrop-filter backdrop-blur-sm saturate-200 \
-		text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 \
+		text-gray-400 hover:text-gray-500 dark:text-primary-500 dark:hover:text-primary-400 \
+		font-medium \
 		border-2 border-gray-200 dark:border-gray-700 \
 		rounded-lg cursor-pointer \
 		transition ease-in-out duration-300 \
