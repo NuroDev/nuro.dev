@@ -20,14 +20,16 @@ const Container = styled.div<{ small: boolean }>`
 	${({ small }) => (small ? tw`px-2 py-1` : tw`px-4 py-2`)}
 `;
 
-const StyledIcon = styled(Icon)(tw`
-	mt-0.5 mr-3
-`);
+const StyledIcon = styled(Icon)<{ small: boolean }>`
+	${tw`mt-0.5`}
+
+	${({ small }) => (small ? tw`mr-1.5` : tw`mr-3`)}
+`;
 
 export function DatePill({ children, className, small = false }: DatePillProps) {
 	return (
 		<Container className={className} small={small}>
-			<StyledIcon icon="feather:calendar" />
+			<StyledIcon icon="feather:calendar" small={small} />
 			{children}
 		</Container>
 	);
