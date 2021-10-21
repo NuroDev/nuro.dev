@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
-import { format } from 'date-fns';
+import { format, parse } from 'date-fns';
 import { Icon } from '@iconify/react';
 
 import { Button, Pill } from '~/components';
@@ -111,7 +111,8 @@ export const getStaticProps: GetStaticProps<TimelineProps> = async () => {
 export default function TimelinePage({ timeline: rawTimeline }: TimelineProps) {
 	const timeline = rawTimeline.map((event) => ({
 		...event,
-		date: new Date(event.date),
+		// Note: Custom parser needed as Safari on iOS doesn't like the standard `new Date()` parsing
+		date: parse(event.date.toString(), 'MM-dd-yyyy', new Date()),
 	}));
 
 	return (
@@ -119,10 +120,10 @@ export default function TimelinePage({ timeline: rawTimeline }: TimelineProps) {
 			<Container>
 				<Content>
 					<List role="list">
-						{timeline.map((event, eventIndex) => (
+						{timeline.map((event, index) => (
 							<ListItem key={event.title}>
 								<ListItemContainer tw="">
-									{eventIndex !== timeline.length - 1 ? (
+									{index !== timeline.length - 1 ? (
 										<TimelineConnector aria-hidden="true" />
 									) : null}
 
