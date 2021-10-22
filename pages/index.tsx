@@ -91,6 +91,8 @@ export default function HomePage() {
 	const age = differenceInYears(today, birthday);
 	const isBirthday = isSameDay(today, birthday) && isSameMonth(today, birthday);
 
+	const description = `I am a ${age} year old software engineer & games developer`;
+
 	return (
 		<Layout.Default>
 			{isBirthday && <Event event={EventType.BIRTHDAY} />}
@@ -111,14 +113,10 @@ export default function HomePage() {
 					)}
 					{animations ? (
 						<Transition delay={500} duration={1000}>
-							<Description>
-								I am a {age} year old software engineer and games developer
-							</Description>
+							<Description>{description}</Description>
 						</Transition>
 					) : (
-						<Description>
-							I am a {age} year old software engineer and games developer
-						</Description>
+						<Description>{description}</Description>
 					)}
 
 					<Actions>

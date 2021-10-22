@@ -53,15 +53,16 @@ const EventCard = styled.div(tw`
 `);
 
 const EventIconContainer = styled.div(tw`
-	relative flex items-center justify-center w-10 h-10 \
-	bg-primary-500 \
+	relative flex items-center justify-center w-12 h-12 \
+	bg-primary-500 bg-opacity-15 \
+	backdrop-filter backdrop-blur-sm saturate-200 \
 	mx-2 px-1 \
 	rounded-full
 `);
 
 const EventIcon = styled(Icon)(tw`
-	w-5 h-5 \
-	text-white
+	w-6 h-6 \
+	text-primary-500
 `);
 
 const EventBody = styled.div(tw`

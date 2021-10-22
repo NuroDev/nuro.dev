@@ -25,9 +25,7 @@ const ProjectsList = styled.ul(tw`
 	grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3
 `);
 
-const ProjectCard = styled.li<{
-	$color: string;
-}>`
+const ProjectCard = styled.li<{ color: string }>`
 	${tw`
 		flex flex-col col-span-1 \
 		bg-white bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-15 \
@@ -39,7 +37,7 @@ const ProjectCard = styled.li<{
 		transition ease-in-out duration-300
 	`}
 
-	border-color: ${({ $color }) => $color};
+	border-color: ${({ color }) => color};
 `;
 
 export const getServerSideProps: GetServerSideProps<ProjectProps> = async () => {
@@ -98,7 +96,7 @@ export default function ProjectsPage({ serialisedProjects }: ProjectProps) {
 									key={index}
 									rel="noreferrer noopener"
 									target="_blank">
-									<ProjectCard $color={project.language} key={project.name}>
+									<ProjectCard color={project.language} key={project.name}>
 										<div tw="flex-1 flex flex-col px-2 py-8">
 											<h1 tw="mx-auto text-4xl">{project.icon}</h1>
 											<h3 tw="mt-6 text-gray-900 dark:text-white text-sm font-medium">
