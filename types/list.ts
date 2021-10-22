@@ -17,5 +17,6 @@ export type ListAction =
 	  } & ListActionBaseProps)
 	| ({
 			type: ListActionType.LINK;
+			external?: boolean;
 			href: string;
 	  } & ListActionBaseProps);

@@ -111,8 +111,14 @@ export interface Project {
 	icon?: string;
 	language?: string;
 	name: string;
+	post?: string;
 	template?: boolean;
 	url: string;
 }
 
 export type Projects = Array<Project>;
+
+export interface ProjectPost {
+	post: string;
+	repository: string;
+}
