@@ -244,4 +244,4 @@ I will always try to improve accessibility where possible. If you feel I am miss
 
 And with all of that, we have the final result of what you are looking at right now!
 
-![A screenshot of nuro.dev](https://raw.githubusercontent.com/nurodev/nuro.dev/next/.github/assets/screenshot.png 'A screenshot of nuro.dev')
+![A screenshot of nuro.dev](/blog/hello_world/screenshot.png 'A screenshot of nuro.dev')
