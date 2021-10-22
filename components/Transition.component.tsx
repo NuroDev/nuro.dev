@@ -37,6 +37,9 @@ const StyledTransition = styled(HeadlessUiTransition)<Pick<TransitionProps, 'del
 	}
 `;
 
+/**
+ * @TODO Fix the "Can't perform a React state update on an unmounted component." bug being caused here.
+ */
 export function Transition({ children, delay = 0, duration = 300, show = true }: TransitionProps) {
 	return (
 		<StyledTransition
