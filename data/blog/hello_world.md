@@ -75,6 +75,8 @@ The rest of the data returned is pretty standard (Homepage URL, GitHub repositor
 
 With this I can update the contents of my projects page by using GitHub as a form of CMS. All I will need to do to add a project to my projects page page is add the `portfolio` tag to any of my repositories.
 
+![Screenshot of the projects page](/blog/hello_world/projects.png 'Screenshot of the projects page')
+
 <XButton href="/projects" icon="feather:external-link" label="Go to Projects" />
 
 ### :clock1: Timeline
@@ -109,6 +111,8 @@ With more & more companies offering referral rewards, what better place to share
 
 This page is built almost identically to my [timeline](/timeline) page whereby a JSON structure is used to store the data that is then compiled at build time into a static page.
 
+![Screenshot of the referrals page](/blog/hello_world/referrals.png 'Screenshot of the referrals page')
+
 <XButton href="/referrals" icon="feather:external-link" label="Go to Referrals" />
 
 ### :red_circle: Status
@@ -119,7 +123,25 @@ This next feature I am super happy with how it turned out & a HUGE credit has to
 
 Using Lanyard I was able to build a live status widget & indicator component(s) that mean, as long as I am online on Discord, anyone is able to view what I am listening to on Spotify, what game I'm playing or even whatever I am coding thanks to a Visual Studio Code extension that adds rich presence to Discord.
 
+![Status Widget in action](/blog/hello_world/lanyard.gif 'Status Widget in action')
+
 <XButton href="/status" icon="feather:external-link" label="Go to Status" />
+
+### :crescent_moon: Theme
+
+---
+
+A very common feature now days is offering multiple themes for an application. My previous site iteration was no stranger to this as it would switch between light & dark themes based on the users system preference. This worked very well, until you wanted to manually override is. As such I have, again, added both light & dark modes as I did before, but this time offer a way to manually override this setting from your system setting.
+
+### :speaker: Sound
+
+---
+
+A fair few of the portfolio websites I looked at always had a nice touch of flair & one such touch I always found that I really liked was sound. Nothing crazy like playing music in background the whole time, but instead just subtle sound effects like button clicks, etc.
+
+It's a small addition, built using [`use-sound`](https://github.com/joshwcomeau/use-sound), that adds some depth & makes the site feel much more interactive.
+
+Currently the click sound is the only sound effect... For now. In the future I would like to experiment adding more sound effects to the site to continue expanding the feature. One such sound effect I have in mind I plan on looking into in the future is a envelope opening sound for when opening a blog post, or something similar? Not too sure yet but a nice idea I feel.
 
 ### :wheelchair: Accessibility
 
@@ -129,7 +151,13 @@ The final fea... Well, kind of a feature but more of a much needed improvement h
 
 My previous website iteration met a lot of the minimum requirements for basic accessibility, however it could have been a lot better. Since the launch of that site I have learn't a LOT about the importance of accibility when designing & building websites / applications. As such I wanted to do my very best when building this one to improve it & make it as accessible as possible.
 
-Here are just some of the notable accessibility features:
+Here are some of the notable accessibility features/improvements:
+
+#### Alt tags
+
+---
+
+Something small but very noticible is adding alt tags or `aria-label`'s where possible. This includes any & all images and buttons. This way screen readers are able to actually understand what the element is & read it back to the user.
 
 #### Focus Highlights
 
@@ -137,11 +165,15 @@ Here are just some of the notable accessibility features:
 
 Primarily brought to my attention by the work of Discord via there [`focus-rings`](https://github.com/discord/focus-rings) package & [TailwindCSS](https://tailwindcss.com/) offering a new `ring` style system aimed at helping with focus visiblity & accessibility.
 
+![Focus ring](/blog/hello_world/focus.png 'Focus ring')
+
 #### Keyboard navigation
 
 ---
 
-While not complete coverage, I aimed to offer complete or near complete keyboard navigation as it can aid with systems such as screen readers by ensuring that all items both can be navigated to at all, but also in the order you need.
+While not complete coverage, I aimed to offer complete or near complete keyboard navigation as it can aid with accesibility systems by ensuring that all items both can be navigated to at all, but also in the order you need.
+
+![Focus ring switching between buttons](/blog/hello_world/keyboard_nav.gif 'Focus ring switching between buttons')
 
 #### Reduced Motion
 
@@ -149,7 +181,7 @@ While not complete coverage, I aimed to offer complete or near complete keyboard
 
 When implementing my very pretty & fancy looking particles background, I started to consider the performance & accessibility implications of offering such animations. As such I began researching into motion & animation accesbility in the web.
 
-From there I found out about the `prefers-reduced-motion` CSS media query. By defualt when my site first loads, the initial state of the `animations` setting will default to whatever this query provides. If for whatever reason though this fails you are still always able to toggle off animations manually via the settings icon in the top right at all times.
+From there I found out about the [`prefers-reduced-motion`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) CSS media query. By defualt when my site first loads, the initial state of the `animations` setting will default to whatever this query provides. If for whatever reason though this fails you are still always able to toggle off animations manually via the settings icon in the top right at all times.
 
 With this setting I am toggle not only the background aniamtion graphic off, but also toggle off the transitions that are wrapping several components on several pages.
 
@@ -169,6 +201,7 @@ Here are some ways I still want to eventually improve the accessibilty even furt
 
 -   Reduced motion event listener updates settings `animations` state
 -   Improve animated background performance by using `GPGPU` from [`ogl`](https://oframe.github.io/ogl/examples/)
+-   Set theme back to using system theme instead of user override
 -   Many more to come
 
 I will always try to improve accessibility where possible. If you feel I am missing a key feature of accessibility, please reach out, let me know & educate me on its importance so I can try enforce its use in future & in other projects.
