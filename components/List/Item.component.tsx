@@ -27,12 +27,12 @@ const Container = styled.li(tw`
 `);
 
 const Content = styled.div(tw`
-	flex flex-col sm:flex-row items-start justify-center \
+	flex flex-col sm:flex-row items-center justify-between \
 	px-4 py-4 sm:px-6
 `);
 
 const MetaContainer = styled.div(tw`
-	flex flex-1 items-center
+	flex flex-1 items-center justify-start w-full
 `);
 
 const IconContainer = styled.div<{ color?: string }>`
@@ -73,8 +73,8 @@ const Description = styled.p(tw`
 `);
 
 const Actions = styled.div(tw`
-	flex items-center justify-center space-x-2 \
-	mt-4 sm:mt-1 sm:pl-4
+	inline-flex items-center justify-end space-x-2 w-full sm:w-auto \
+	mt-4 sm:mt-1
 `);
 
 export function Item({ actions, description, icon, iconColor, title }: ItemProps) {

@@ -107,6 +107,7 @@ export type GitHubRepos = Array<GitHubRepo>;
 
 export interface Project {
 	description: string;
+	homepage?: string;
 	icon?: string;
 	language?: string;
 	name: string;
