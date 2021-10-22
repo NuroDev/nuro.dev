@@ -96,7 +96,6 @@ export const ElementStyles = css`
 
 	code {
 		${tw`
-			bg-gray-100 dark:bg-gray-700 \
 			mx-0.5 py-1 px-2 \
 			text-gray-400 dark:text-gray-100 \
 			rounded-lg
