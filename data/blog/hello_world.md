@@ -31,20 +31,52 @@ The [project](https://github.com/nurodev/nuro.dev) built using the following too
 
 -   :atom_symbol: [React](https://reactjs.org/) / [Preact](https://preactjs.com/) (For Production)
 -   :muscle: [Next.js](https://nextjs.org/)
+    -   :mag: [next-seo](https://github.com/garmeeh/next-seo)
+    -   :crescent_moon: [next-themes](https://github.com/pacocoursey/next-themes)
 -   :female-singer: [EmotionCSS](https://emotion.sh)
--   :lipstick: [Twin.macro](https://github.com/ben-rogerson/twin.macro) ([TailwindCSS](https://tailwindcss.com/))
+-   :lipstick: [Twin.macro](https://github.com/ben-rogerson/twin.macro) (For [Tailwind CSS](https://tailwindcss.com/))
+-   :tokyo_tower: [Tailwind UI](https://tailwindui.com/)
 -   :feather: [Feather Icons](https://feathericons.com/)
--   :electric_plug: Next.js Plugins
-    -   :mag: [SEO](https://github.com/garmeeh/next-seo)
-    -   :crescent_moon: [Themes](https://github.com/pacocoursey/next-themes)
--   :hook: Hooks
-    -   :+1: [react-use](https://github.com/streamich/react-use)
+-   :file_cabinet: [Hookstate](https://hookstate.js.org/)
+-   :+1: [react-use](https://github.com/streamich/react-use)
+
+## :pinching_hand: Vite
+
+---
+
+I originally began planning, designing & building this ground up re-build at the beginning on 2021 but had to later shelf it for a while due to personal complications taking priority.
+
+When development first began I was planning on building the site using [Vite](https://vitejs.dev/) & [Vue 3](https://vuejs.org/) as at the time I was, and still do, love Vite & Vue.js. However, since then I have learned how to utilize other tools to make even better products faster. [Next.js](https://nextjs.org/) being the most obvious one. Vite's hot module reloading (HMR) is insanely fast! To this day I do still think it is faster than Next.js (Even with the experimental ESModules feature flag enabled), however I was willing to make that trade off for the other features it offer out of the box compared to Vite.
+
+I love Vite & Vue.js, but for this project, and potentially future ones, I have fallen in love with Next.js because of how much it offers.
 
 ## :sparkles: Features
 
 ---
 
 With this new ground up re-build comes a whole host of new features & improvements.
+
+### :atom_symbol: Preact
+
+---
+
+A small feature that I often forget I added but helps a lot with bundle size, is [Preact](https://preactjs.com/).
+
+In summary, my Next.js project is configured to replace [React](https://reactjs.org/) with Preact in production builds.
+
+```js
+webpack: (config, { dev, isServer }) => {
+    if (!dev && !isServer) {
+        Object.assign(config.resolve.alias, {
+            'react': 'preact/compat',
+            'react-dom/test-utils': 'preact/test-utils',
+            'react-dom': 'preact/compat',
+        });
+    }
+
+    return config;
+},
+```
 
 ### :book: Blog
 
