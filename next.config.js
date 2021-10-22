@@ -8,6 +8,9 @@ module.exports = {
 			// Discord assets
 			'cdn.discordapp.com',
 
+			// GitHub assets
+			'raw.githubusercontent.com',
+
 			// Spotify Album Art
 			'i.scdn.co',
 
