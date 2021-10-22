@@ -1,7 +1,9 @@
+import { XButton } from './XButton.component';
 import { XFigure } from './XFigure.component';
 import { XSandbox } from './XSandbox.component';
 
 export const X = {
+	XButton,
 	XFigure,
 	XSandbox,
 };
