@@ -31,7 +31,8 @@ export const Icon = forwardRef<HTMLButtonElement, IconProps>(
 					click();
 					if (onClick) onClick(e);
 				}}
-				{...rest}>
+				{...rest}
+			>
 				{children}
 			</Button>
 		);

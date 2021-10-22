@@ -113,7 +113,8 @@ function MenuLink({ children, href, onClick, playSound, ...rest }: MenuLinkProps
 					playSound();
 					onClick(...args);
 				}}
-				{...rest}>
+				{...rest}
+			>
 				{children}
 			</StyledMenuItem>
 		</Link>
@@ -145,7 +146,8 @@ export function Dropdown({ children, items, position }: StandardProps) {
 																onClick={() => {
 																	playClick();
 																	item.onClick();
-																}}>
+																}}
+															>
 																<MenuButtonIcon icon={item.icon} />
 																{item.text}
 																{item.endIcon && (
@@ -169,7 +171,8 @@ export function Dropdown({ children, items, position }: StandardProps) {
 																	onClick={() => playClick}
 																	href={item.href}
 																	rel="noopener noreferrer"
-																	target="_blank">
+																	target="_blank"
+																>
 																	<MenuButtonIcon
 																		icon={item.icon}
 																	/>
@@ -186,7 +189,8 @@ export function Dropdown({ children, items, position }: StandardProps) {
 															<MenuLink
 																$active={active}
 																playSound={playClick}
-																href={item.href}>
+																href={item.href}
+															>
 																<MenuButtonIcon icon={item.icon} />
 																{item.text}
 															</MenuLink>

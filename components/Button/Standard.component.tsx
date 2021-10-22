@@ -73,7 +73,8 @@ export function Standard({ children, className, icon, ...rest }: StandardProps) 
 					onClick={(e) => {
 						play();
 						rest.onClick(e);
-					}}>
+					}}
+				>
 					{icon && <StyledIcon icon={icon} />}
 					{children}
 				</ButtonContainer>

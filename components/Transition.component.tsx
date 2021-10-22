@@ -52,7 +52,8 @@ export function Transition({ children, delay = 0, duration = 300, show = true }:
 			leave="leave"
 			leaveFrom="leaveFrom"
 			leaveTo="leaveTo"
-			show={show}>
+			show={show}
+		>
 			{children}
 		</StyledTransition>
 	);

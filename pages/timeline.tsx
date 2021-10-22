@@ -153,7 +153,8 @@ export default function TimelinePage({ timeline: rawTimeline }: TimelineProps) {
 													small={true}
 													href={event.link.url}
 													target="_blank"
-													rel="noopener noreferrer">
+													rel="noopener noreferrer"
+												>
 													{event.link.text}
 													<EventLinkButtonIcon icon="feather:external-link" />
 												</EventLinkButton>
