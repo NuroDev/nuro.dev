@@ -43,14 +43,18 @@ const BannerPlaceholder = styled.div(tw`
 	motion-safe:animate-pulse
 `);
 
-const Content = styled.div(tw`
-	flex-1 flex flex-col justify-between \
-	p-6 \
-	bg-transparent \
-	rounded-2xl lg:rounded-tr-none lg:rounded-tl-none \
-	border-2 lg:border-t-0 border-gray-100 dark:border-gray-500 \
-	bg-transparent
-`);
+const Content = styled.div<{ banner: boolean }>`
+	${tw`
+		flex-1 flex flex-col justify-between \
+		p-6 \
+		bg-transparent \
+		rounded-2xl \
+		border-2 border-gray-100 dark:border-gray-500 \
+		bg-transparent
+	`}
+
+	${({ banner }) => banner && tw`lg:rounded-tr-none lg:rounded-tl-none`}
+`;
 
 const ContextText = styled.div(tw`
 	flex flex-col flex-1 justify-around \
@@ -95,7 +99,7 @@ export function _Post({ index, frontmatter }: PostProps) {
 					</Banner>
 				)}
 
-				<Content>
+				<Content banner={frontmatter.banner && index <= 2}>
 					<ContextText>
 						<Title>{frontmatter.title}</Title>
 						{((frontmatter.description && frontmatter.description_show) || true) && (

@@ -14,7 +14,7 @@ interface BlogProps {
 }
 
 const Container = styled.div(tw`
-	mt-24 sm:mt-16 mb-20 mx-4 sm:mx-6 lg:mb-28 lg:mx-8
+	mt-8 sm:mt-16 mb-20 mx-0 sm:mx-6 lg:mb-28 lg:mx-8
 `);
 
 const Content = styled.div(tw`
