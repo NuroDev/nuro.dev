@@ -7,7 +7,7 @@ import { useTheme } from 'next-themes';
 import TailwindCSS from '~/tailwind.config';
 import { List } from '~/components';
 import { Layout } from '~/layouts';
-import { ListActionType, Theme } from '~/types';
+import { ListAction, ListActionType, Theme } from '~/types';
 
 import type { CSSProperties } from 'react';
 import type { GetStaticProps } from 'next';
@@ -86,12 +86,16 @@ export default function ReferralsPage({ referrals }: ReferralsProps) {
 										label: `${referral.name} homepage`,
 										href: referral.homepage,
 									},
-									{
-										type: ListActionType.BUTTON,
-										icon: 'feather:hash',
-										label: 'Copy Referral Code',
-										onClick: () => onCopy(referral.code),
-									},
+									...(referral.code
+										? [
+												{
+													type: ListActionType.BUTTON,
+													icon: 'feather:hash',
+													label: 'Copy Referral Code',
+													onClick: () => onCopy(referral.code),
+												} as ListAction,
+										  ]
+										: []),
 									{
 										type: ListActionType.LINK,
 										icon: 'feather:external-link',
