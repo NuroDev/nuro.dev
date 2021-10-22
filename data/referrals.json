@@ -1,0 +1,72 @@
+[
+	{
+		"bonus": "£10-60 off",
+		"code": "CQ5psRocnkb",
+		"color": "#6544E2",
+		"description": "Radically better & smarter car insurance",
+		"homepage": "https://www.cuvva.com/",
+		"icon": "feather:truck",
+		"name": "Cuvva",
+		"url": "https://cuvva.insure/CQ5psRocnkb"
+	},
+	{
+		"aliases": ["food", "roo"],
+		"bonus": "£10 off",
+		"code": "bend1044",
+		"color": "#00ccbc",
+		"description": "Your favourite restaurants, shops & supermarkets delivered to your door",
+		"homepage": "https://deliveroo.co.uk/",
+		"icon": "feather:shopping-cart",
+		"name": "Deliveroo",
+		"url": "https://roo.it/bend1044"
+	},
+	{
+		"aliases": ["cloud", "do"],
+		"code": "81fa220bbbe0",
+		"color": "#0069ff",
+		"description": "Cloud platform to deploy, manage & scale applications",
+		"homepage": "https://www.digitalocean.com/",
+		"icon": "feather:cloud",
+		"name": "DigitalOcean",
+		"url": "https://m.do.co/c/81fa220bbbe0"
+	},
+	{
+		"aliases": ["investing", "stocks", "stonks"],
+		"bonus": "Free share between £3-200",
+		"code": "3e2d5864",
+		"color": "#f7618b",
+		"description": "Smart & simple personal investing",
+		"homepage": "https://freetrade.io",
+		"icon": "feather:dollar-sign",
+		"name": "Freetrade",
+		"url": "https://magic.freetrade.io/join/ben/3e2d5864"
+	},
+	{
+		"aliases": ["climate", "🌍", "💚"],
+		"bonus": "🌍💚",
+		"code": "xtb2dx",
+		"color": "#25cf7a",
+		"description": "Help offset your carbon footprint",
+		"homepage": "https://klima.com",
+		"icon": "feather:thermometer",
+		"name": "Klima",
+		"url": "https://klima.com/multiply/join/"
+	},
+	{
+		"color": "black",
+		"description": "Develop. Preview. Ship.",
+		"homepage": "https://vercel.com/home",
+		"icon": "feather:cloud",
+		"name": "Vercel",
+		"url": "https://vercel.com/home?utm_source=nuro&utm_campaign=oss"
+	},
+	{
+		"code": "7299996",
+		"color": "#007bfc",
+		"description": "Deploy public cloud, storage & single tenant bare metal services",
+		"homepage": "https://vultr.com",
+		"icon": "feather:cloud",
+		"name": "Vultr",
+		"url": "https://www.vultr.com/?ref=7299996"
+	}
+]
