@@ -1,10 +1,10 @@
-import Link from 'next/link';
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { Icon } from '@iconify/react';
 
 import { Button } from '~/components';
 import { Layout } from '~/layouts';
+import { NavigationItemType } from '~/types';
 
 const Container = styled.div(tw`
 	flex flex-grow min-h-full \
@@ -56,14 +56,17 @@ export default function Error() {
 						</Description>
 						<Actions>
 							<Button.Standard
-								type="button"
+								type={NavigationItemType.ACTION}
 								onClick={() => history.go(-1)}
 								icon="feather:arrow-left">
 								Back
 							</Button.Standard>
-							<Link href="/">
-								<Button.Standard icon="feather:home">Home</Button.Standard>
-							</Link>
+							<Button.Standard
+								type={NavigationItemType.LINK}
+								href="/"
+								icon="feather:home">
+								Home
+							</Button.Standard>
 						</Actions>
 					</Text>
 				</Content>

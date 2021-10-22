@@ -11,7 +11,6 @@ interface NaviationItemBase {
 export enum NavigationItemType {
 	ACTION = 'action',
 	LINK = 'link',
-	TO = 'to',
 }
 
 export type NavigationItem =

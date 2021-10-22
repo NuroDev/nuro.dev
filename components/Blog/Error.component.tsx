@@ -1,9 +1,9 @@
-import Link from 'next/link';
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { Icon } from '@iconify/react';
 import { Layout } from '~/layouts';
 import { Button } from '..';
+import { NavigationItemType } from '~/types';
 
 interface ErrorProps {
 	routeBlog?: boolean;
@@ -56,18 +56,24 @@ export function Error({ routeBlog = true }: ErrorProps) {
 						<SubTitle>Sorry, we couldn’t find any blog posts ¯\_(ツ)_/¯</SubTitle>
 						<Actions>
 							<Button.Standard
-								type="button"
+								icon="feather:arrow-left"
 								onClick={() => history.go(-1)}
-								icon="feather:arrow-left">
+								type={NavigationItemType.ACTION}>
 								Back
 							</Button.Standard>
-							<Link href="/">
-								<Button.Standard icon="feather:home">Home</Button.Standard>
-							</Link>
+							<Button.Standard
+								href="/"
+								icon="feather:home"
+								type={NavigationItemType.LINK}>
+								Home
+							</Button.Standard>
 							{routeBlog && (
-								<Link href="/blog">
-									<Button.Standard icon="feather:book">Blog</Button.Standard>
-								</Link>
+								<Button.Standard
+									href="/blog"
+									icon="feather:book"
+									type={NavigationItemType.LINK}>
+									Blog
+								</Button.Standard>
 							)}
 						</Actions>
 					</Body>

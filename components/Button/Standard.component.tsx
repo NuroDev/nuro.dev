@@ -1,18 +1,32 @@
+import Link from 'next/link';
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
+import { css } from '@emotion/react';
 import { Icon } from '@iconify/react';
 
+import { NavigationItemType } from '~/types';
 import { useClick } from '~/lib';
 
-import type { ButtonHTMLAttributes } from 'react';
+import type { MouseEvent } from 'react';
 
-import type { WithClassName } from '~/types';
+import type { WithChildren, WithClassName } from '~/types';
 
-interface StandardProps extends ButtonHTMLAttributes<HTMLButtonElement>, WithClassName {
+interface DefaultProps extends WithClassName, WithChildren {
 	icon?: string;
 }
 
-const Container = styled.button(tw`
+type StandardProps =
+	| ({
+			type: NavigationItemType.ACTION;
+			onClick: (e: MouseEvent) => void;
+	  } & DefaultProps)
+	| ({
+			type: NavigationItemType.LINK;
+			href: string;
+			external?: boolean;
+	  } & DefaultProps);
+
+const ButtonStyles = css(tw`
 	flex justify-center items-center h-12 px-8 py-4 \
 	bg-gray-50 hover:bg-gray-100 hover:bg-opacity-50 dark:bg-gray-900 dark:hover:bg-gray-800 \
 	text-base font-bold text-primary-300 hover:text-primary-400 \
@@ -21,21 +35,48 @@ const Container = styled.button(tw`
 	focus:outline-none focus:ring-2 focus:ring-primary-500
 `);
 
+const ButtonContainer = styled.button(ButtonStyles);
+
+const LinkContainer = styled.a(ButtonStyles);
+
 const StyledIcon = styled(Icon)(tw`mr-2`);
 
-export function Standard({ children, className, icon, onClick, ...rest }: StandardProps) {
+export function Standard({ children, className, icon, ...rest }: StandardProps) {
 	const [play] = useClick();
 
-	return (
-		<Container
-			{...rest}
-			className={className}
-			onClick={(...args) => {
-				play();
-				onClick(...args);
-			}}>
-			{icon && <StyledIcon icon={icon} />}
-			{children}
-		</Container>
-	);
+	switch (rest.type) {
+		case NavigationItemType.LINK:
+			const onClick = () => play();
+
+			if (rest.external ?? true)
+				return (
+					<LinkContainer {...rest} onClick={onClick}>
+						{icon && <StyledIcon icon={icon} />}
+						{children}
+					</LinkContainer>
+				);
+
+			return (
+				<Link href={rest.href} passHref>
+					<LinkContainer {...rest} href={rest.href} onClick={onClick}>
+						{icon && <StyledIcon icon={icon} />}
+						{children}
+					</LinkContainer>
+				</Link>
+			);
+
+		case NavigationItemType.ACTION:
+			return (
+				<ButtonContainer
+					{...rest}
+					type="button"
+					onClick={(e) => {
+						play();
+						rest.onClick(e);
+					}}>
+					{icon && <StyledIcon icon={icon} />}
+					{children}
+				</ButtonContainer>
+			);
+	}
 }
