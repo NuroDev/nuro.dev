@@ -15,7 +15,6 @@ export const STATE_KEY = 'settings';
 
 export function usePersistantState() {
 	const noMotionPreference = useMedia('(prefers-reduced-motion: no-preference)', true);
-	console.log('noMotionPreference', noMotionPreference);
 
 	const persistance = Persistence(STATE_KEY);
 	const state = useState<Settings>(DEFAULT_STATE);
