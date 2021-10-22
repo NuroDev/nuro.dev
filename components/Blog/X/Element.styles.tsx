@@ -94,11 +94,11 @@ export const ElementStyles = css`
 		`}
 	}
 
-	p code {
+	code {
 		${tw`
-			bg-gray-900 dark:bg-gray-500 \
+			bg-gray-100 dark:bg-gray-700 \
 			mx-0.5 py-1 px-2 \
-			text-gray-200 dark:text-gray-100 \
+			text-gray-400 dark:text-gray-100 \
 			rounded-lg
 		`}
 
