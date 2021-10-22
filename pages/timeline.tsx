@@ -141,7 +141,7 @@ export default function TimelinePage({ timeline: rawTimeline }: TimelineProps) {
 											<Title>
 												<span>{event.title}</span>
 												<Spacer />
-												<Pill.Date small>
+												<Pill.Date small={true}>
 													{format(event.date, 'PPP')}
 												</Pill.Date>
 											</Title>
@@ -150,7 +150,7 @@ export default function TimelinePage({ timeline: rawTimeline }: TimelineProps) {
 
 											{event.link && (
 												<EventLinkButton
-													small
+													small={true}
 													href={event.link.url}
 													target="_blank"
 													rel="noopener noreferrer">

@@ -15,7 +15,7 @@ interface OutlineProps extends AnchorHTMLAttributes<HTMLAnchorElement>, WithClas
 	small?: boolean;
 }
 
-const Container = styled.a<{ small?: boolean }>`
+const Container = styled.a<{ small: boolean }>`
 	${tw`
 		inline-flex items-center justify-center w-full sm:w-auto \
 		bg-gray-50 bg-opacity-75 hover:bg-gray-100 hover:bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 dark:hover:bg-gray-800 dark:hover:bg-opacity-75 \

@@ -23,6 +23,7 @@ const Container = styled.div<{ small: boolean }>`
 const StyledIcon = styled(Icon)<{ small: boolean }>`
 	${tw`mt-0.5`}
 
+	/* @TODO: Getting a "Received 'true' for a non-boolean attribute 'small'." warning here that needs fixing */
 	${({ small }) => (small ? tw`mr-1.5` : tw`mr-3`)}
 `;
 

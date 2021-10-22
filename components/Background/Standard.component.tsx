@@ -101,7 +101,7 @@ export function Standard() {
 		return () => {
 			cancelAnimationFrame(animationId);
 		};
-	}, []);
+	}, [containerRef]);
 
 	return <Container ref={containerRef} />;
 }
