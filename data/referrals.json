@@ -51,6 +51,16 @@
 		"icon": "feather:thermometer",
 		"name": "Klima",
 		"url": "https://klima.com/multiply/join/"
+	},	
+	{
+		"aliases": ["phone", "sim"],
+		"code": "X704rL",
+		"color": "#8ED6C9",
+		"description": "Simple, honest mobile.",
+		"homepage": "https://smarty.co.uk/",
+		"icon": "feather:phone",
+		"name": "Smarty",
+		"url": "https://i.smarty.co.uk/X704rL"
 	},
 	{
 		"color": "black",
