@@ -10,6 +10,7 @@
 		{ "source": "/github", "destination": "https://github.com/nurodev" },
 		{ "source": "/linkedin", "destination": "https://www.linkedin.com/in/nurodev" },
 		{ "source": "/meeting", "destination": "https://cal.com/nurodev" },
+		{ "source": "/portfolio", "destination": "/projects" },
 		{ "source": "/resume", "destination": "https://read.cv/nuro" },
 		{ "source": "/schedule", "destination": "https://cal.com/nurodev" },
 		{ "source": "/twitter", "destination": "https://twitter.com/nurodev" }
