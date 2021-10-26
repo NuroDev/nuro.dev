@@ -1,8 +1,5 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
-	experimental: {
-		esmExternals: true,
-	},
 	images: {
 		domains: [
 			// Discord assets
