@@ -9,7 +9,7 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 	if (!params.name)
 		return {
 			redirect: {
-				destination: '/',
+				destination: '/referrals',
 				permanent: true,
 			},
 		};
@@ -21,23 +21,17 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 	const result = referrals.find((referral) => {
 		const referralName = referral.name.toLowerCase();
 
+		if (referralName === paramName) return referral;
+
 		if (referral.aliases)
 			return referral.aliases.find((alias) => alias.toLowerCase() === paramName);
 
-		return referralName === paramName;
+		return undefined;
 	});
-
-	if (result)
-		return {
-			redirect: {
-				destination: result.url,
-				permanent: true,
-			},
-		};
 
 	return {
 		redirect: {
-			destination: '/',
+			destination: result ? result.url : '/referrals',
 			permanent: true,
 		},
 	};
