@@ -1,6 +1,7 @@
 [
 	{
-		"bonus": "£7.28 in Bitcoin",
+		"aliases": ["crypto", "bitcoin"],
+		"bonus": "£7 in Bitcoin",
 		"code": "dixon_23e",
 		"color": "#0052ff",
 		"description": "Jump start your crypto portfolio",
@@ -71,6 +72,16 @@
 		"icon": "feather:phone",
 		"name": "Smarty",
 		"url": "https://i.smarty.co.uk/X704rL"
+	},
+	{
+		"aliases": ["food"],
+		"code": "eats-bend10725ue",
+		"color": "#000000",
+		"description": "Order food to your door",
+		"homepage": "https://www.ubereats.com",
+		"icon": "feather:coffee",
+		"name": "Uber Eats",
+		"url": "https://ubereats.com/feed?promoCode=eats-bend10725ue"
 	},
 	{
 		"color": "black",
