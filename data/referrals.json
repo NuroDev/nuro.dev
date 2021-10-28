@@ -1,5 +1,15 @@
 [
 	{
+		"bonus": "£7.28 in Bitcoin",
+		"code": "dixon_23e",
+		"color": "#0052ff",
+		"description": "Jump start your crypto portfolio",
+		"homepage": "https://www.coinbase.com",
+		"icon": "feather:dollar-sign",
+		"name": "Coinbase",
+		"url": "https://coinbase.com/join/dixon_23e"
+	},
+	{
 		"bonus": "£10-60 off",
 		"code": "CQ5psRocnkb",
 		"color": "#6544E2",
