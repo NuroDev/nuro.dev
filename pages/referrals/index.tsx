@@ -19,12 +19,11 @@ interface ReferralsProps {
 }
 
 const Container = styled.div(tw`
-	flex items-start sm:items-center justify-center w-full h-screen
+	my-24 mx-2 sm:mx-6 lg:mb-28 lg:mx-8
 `);
 
 const Content = styled.div(tw`
-	max-w-3xl overflow-hidden \
-	py-16 sm:py-0
+	relative max-w-xl mx-auto
 `);
 
 export const getStaticProps: GetStaticProps<ReferralsProps> = async () => {

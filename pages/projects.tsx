@@ -16,7 +16,7 @@ interface ProjectProps {
 }
 
 const Container = styled.div(tw`
-	mt-24 mb-20 mx-2 sm:mx-6 lg:mb-28 lg:mx-8
+	my-24 mx-2 sm:mx-6 lg:mb-28 lg:mx-8
 `);
 
 const Content = styled.div(tw`
