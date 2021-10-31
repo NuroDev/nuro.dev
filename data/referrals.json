@@ -64,6 +64,15 @@
 		"url": "https://klima.com/multiply/join/"
 	},	
 	{
+		"code": "nuro",
+		"color": "#853bce",
+		"description": "Build apps. Not infrastructure.",
+		"homepage": "https://railway.app",
+		"icon": "feather:cloud",
+		"name": "Railway",
+		"url": "https://railway.app?referralCode=nuro"
+	},
+	{
 		"aliases": ["phone", "sim"],
 		"code": "X704rL",
 		"color": "#8ED6C9",
