@@ -121,7 +121,7 @@ export default function TimelinePage({ timeline: rawTimeline }: TimelineProps) {
 	}));
 
 	return (
-		<Layout.Default>
+		<Layout.Default seo={{ title: 'nuro ─ timeline' }}>
 			<Container>
 				<Content>
 					<List role="list">
@@ -153,8 +153,7 @@ export default function TimelinePage({ timeline: rawTimeline }: TimelineProps) {
 													small={true}
 													href={event.link.url}
 													target="_blank"
-													rel="noopener noreferrer"
-												>
+													rel="noopener noreferrer">
 													{event.link.text}
 													<EventLinkButtonIcon icon="feather:external-link" />
 												</EventLinkButton>

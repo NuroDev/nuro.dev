@@ -72,7 +72,7 @@ export default function ReferralsPage({ referrals }: ReferralsProps) {
 	}
 
 	return (
-		<Layout.Default>
+		<Layout.Default seo={{ title: 'nuro ─ referrals' }}>
 			<Container>
 				<Content>
 					<List.Container
