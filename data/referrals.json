@@ -73,6 +73,16 @@
 		"url": "https://railway.app?referralCode=nuro"
 	},
 	{
+		"aliases": ["cv", "resume"],
+		"code": "nuro",
+		"color": "#000000",
+		"description": "I’d like to add you to my professional network.",
+		"homepage": "https://read.cv",
+		"icon": "feather:file-text",
+		"name": "Read.cv",
+		"url": "https://read.cv/join/nuro"
+	},
+	{
 		"aliases": ["phone", "sim"],
 		"code": "X704rL",
 		"color": "#8ED6C9",
