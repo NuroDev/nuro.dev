@@ -1,5 +1,15 @@
 [
 	{
+		"bonus": "Free £5 each",
+		"code": "SXSQNGL",
+		"color": "#00D54B",
+		"description": "The easiest way to send, spend, bank, and invest",
+		"homepage": "https://cash.app",
+		"icon": "feather:dollar-sign",
+		"name": "Cash App",
+		"url": "https://cash.app/app/SXSQNGL"
+	},
+	{
 		"aliases": ["crypto", "bitcoin"],
 		"bonus": "£7 in Bitcoin",
 		"code": "dixon_23e",
