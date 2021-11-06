@@ -52,6 +52,17 @@
 		"url": "https://m.do.co/c/81fa220bbbe0"
 	},
 	{
+		"aliases": ["dividend", "dividends"],
+		"bonus": "3 months free premium",
+		"code": "ANPTL9oVTA",
+		"color": "#0856cc",
+		"description": "All-in-one tool for dividend investors",
+		"homepage": "https://dividend.watch",
+		"icon": "feather:dollar-sign",
+		"name": "DividendWatch",
+		"url": "https://dividend.watch/?forfriends=ANPTL9oVTA"
+	},
+	{
 		"aliases": ["investing", "stocks", "stonks"],
 		"bonus": "Free share between £3-200",
 		"code": "3e2d5864",
