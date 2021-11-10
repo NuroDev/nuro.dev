@@ -35,9 +35,9 @@ export const CodeStyles = css`
 	code[class*='language-'],
 	pre[class*='language-'] {
 		${tw`
-			bg-white dark:bg-gray-800
+			bg-white dark:bg-gray-800 \
+			text-gray-300 dark:text-gray-200
 		`}
-		color: hsl(220, 14%, 71%);
 		font-family: 'Fira Code', 'Fira Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
 		direction: ltr;
 		text-align: left;
@@ -58,28 +58,35 @@ export const CodeStyles = css`
 	code[class*='language-']::-moz-selection,
 	code[class*='language-'] *::-moz-selection,
 	pre[class*='language-'] *::-moz-selection {
-		background: hsl(220, 13%, 28%);
+		${tw`
+			bg-black dark:bg-gray-300 dark:bg-opacity-25
+		`}
 		color: inherit;
 	}
 
 	code[class*='language-']::selection,
 	code[class*='language-'] *::selection,
 	pre[class*='language-'] *::selection {
-		background: hsl(220, 13%, 28%);
+		${tw`
+			bg-black dark:bg-gray-300 dark:bg-opacity-25
+		`}
 		color: inherit;
 	}
 
 	/* Code blocks */
 	pre[class*='language-'] {
-		padding: 1em;
-		margin: 0em 0 0.5em;
-		overflow: auto;
+		${tw`
+			mb-1.5 p-4 \
+			overflow-auto
+		`}
 	}
 
 	/* Inline code */
 	:not(pre) > code[class*='language-'] {
-		padding: 0.2em 0.3em;
-		white-space: normal;
+		${tw`
+			py-1 px-1.5
+			whitespace-normal
+		`}
 	}
 
 	/* Print */
@@ -93,13 +100,18 @@ export const CodeStyles = css`
 	.token.comment,
 	.token.prolog,
 	.token.cdata {
-		color: hsl(220, 10%, 40%);
+		/* color: hsl(220, 10%, 40%); */
+		${tw`
+			text-gray-400
+		`}
 	}
 
 	.token.doctype,
 	.token.punctuation,
 	.token.entity {
-		color: hsl(220, 14%, 71%);
+		${tw`
+			text-gray-200
+		`}
 	}
 
 	.token.attr-name,
@@ -108,11 +120,16 @@ export const CodeStyles = css`
 	.token.constant,
 	.token.number,
 	.token.atrule {
-		color: hsl(29, 54%, 61%);
+		${tw`
+			text-yellow-500
+		`}
 	}
 
 	.token.keyword {
-		color: hsl(286, 60%, 67%);
+		/* color: hsl(286, 60%, 67%); */
+		${tw`
+			text-pink-500
+		`}
 	}
 
 	.token.property,
@@ -120,7 +137,9 @@ export const CodeStyles = css`
 	.token.symbol,
 	.token.deleted,
 	.token.important {
-		color: hsl(355, 65%, 65%);
+		${tw`
+			text-red-500
+		`}
 	}
 
 	.token.selector,
@@ -131,13 +150,17 @@ export const CodeStyles = css`
 	.token.regex,
 	.token.attr-value,
 	.token.attr-value > .token.punctuation {
-		color: hsl(95, 38%, 62%);
+		${tw`
+			text-green-500
+		`}
 	}
 
 	.token.variable,
 	.token.operator,
 	.token.function {
-		color: hsl(207, 82%, 66%);
+		${tw`
+			text-blue-500
+		`}
 	}
 
 	.token.url {
