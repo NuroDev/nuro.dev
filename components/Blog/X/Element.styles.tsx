@@ -94,13 +94,12 @@ export const ElementStyles = css`
 		`}
 	}
 
-	code,
-	pre {
+	code {
 		${tw`
-			bg-gray-200 dark:bg-gray-800 \
-			m-0 \
-			border-2 border-gray-100 dark:border-gray-500 \
-			rounded-lg rounded-t-none
+			bg-gray-100 dark:bg-gray-700 \
+			p-1 \		
+			text-gray-400 dark:text-gray-200 \
+			rounded
 		`}
 
 		&:after,
@@ -109,6 +108,16 @@ export const ElementStyles = css`
 				hidden
 			`}
 		}
+	}
+
+	pre {
+		${tw`
+			bg-gray-200 dark:bg-gray-800 \
+			m-0 \
+			dark:text-white \
+			border-2 border-gray-100 dark:border-gray-500 \
+			rounded-lg rounded-t-none
+		`}
 	}
 
 	th {
