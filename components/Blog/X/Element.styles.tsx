@@ -94,11 +94,13 @@ export const ElementStyles = css`
 		`}
 	}
 
-	code {
+	code,
+	pre {
 		${tw`
-			mx-0.5 py-1 px-2 \
-			text-gray-400 dark:text-gray-100 \
-			rounded-lg
+			bg-gray-200 dark:bg-gray-800 \
+			m-0 \
+			border-2 border-gray-100 dark:border-gray-500 \
+			rounded-lg rounded-t-none
 		`}
 
 		&:after,
@@ -124,6 +126,17 @@ export const ElementStyles = css`
 	ol li::before {
 		${tw`
 			dark:text-gray-300
+		`}
+	}
+
+	.remark-code-title {
+		${tw`
+			light:bg-white \
+			px-4 py-2 \
+			text-gray-300 dark:text-white \
+			font-medium \
+			border-2 border-b-0 border-gray-100 dark:border-gray-500 \
+			rounded-lg rounded-b-none
 		`}
 	}
 `;

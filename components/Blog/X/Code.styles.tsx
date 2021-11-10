@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import tw from 'twin.macro';
 
 export const CodeStyles = css`
 	/**
@@ -33,9 +34,10 @@ export const CodeStyles = css`
 
 	code[class*='language-'],
 	pre[class*='language-'] {
-		background: hsl(220, 13%, 18%);
+		${tw`
+			bg-white dark:bg-gray-800
+		`}
 		color: hsl(220, 14%, 71%);
-		text-shadow: 0 1px rgba(0, 0, 0, 0.3);
 		font-family: 'Fira Code', 'Fira Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
 		direction: ltr;
 		text-align: left;
@@ -58,7 +60,6 @@ export const CodeStyles = css`
 	pre[class*='language-'] *::-moz-selection {
 		background: hsl(220, 13%, 28%);
 		color: inherit;
-		text-shadow: none;
 	}
 
 	code[class*='language-']::selection,
@@ -66,21 +67,18 @@ export const CodeStyles = css`
 	pre[class*='language-'] *::selection {
 		background: hsl(220, 13%, 28%);
 		color: inherit;
-		text-shadow: none;
 	}
 
 	/* Code blocks */
 	pre[class*='language-'] {
 		padding: 1em;
-		margin: 0.5em 0;
+		margin: 0em 0 0.5em;
 		overflow: auto;
-		border-radius: 0.3em;
 	}
 
 	/* Inline code */
 	:not(pre) > code[class*='language-'] {
 		padding: 0.2em 0.3em;
-		border-radius: 0.3em;
 		white-space: normal;
 	}
 
@@ -280,7 +278,6 @@ export const CodeStyles = css`
 		background: hsl(220, 13%, 26%);
 		color: hsl(220, 9%, 55%);
 		padding: 0.1em 0.4em;
-		border-radius: 0.3em;
 	}
 
 	div.code-toolbar > .toolbar.toolbar > .toolbar-item > button:hover,
@@ -305,7 +302,6 @@ export const CodeStyles = css`
 		background: hsl(220, 13%, 26%);
 		color: hsl(220, 14%, 71%);
 		padding: 0.1em 0.6em;
-		border-radius: 0.3em;
 		box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.2); /* same as Toolbar plugin default */
 	}
 
