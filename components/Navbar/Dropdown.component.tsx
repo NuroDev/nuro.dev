@@ -38,7 +38,7 @@ const StyledMenu = styled(Menu)(tw`
 
 const StyledItems = styled(Menu.Items)<{ position: Position }>`
 	${tw` 
-		absolute w-56 \ 
+		absolute sm:w-56 \ 
 		mt-2 \ 
 		bg-gray-50 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 \ 
 		backdrop-filter backdrop-blur-sm \ 
@@ -47,6 +47,8 @@ const StyledItems = styled(Menu.Items)<{ position: Position }>`
 		divide-y divide-gray-100 dark:divide-gray-500 \ 
 		focus:outline-none 
 	`}
+
+	width: calc(100vw - 1rem);
 
 	${({ position }) => {
 		switch (position) {
