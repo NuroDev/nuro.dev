@@ -64,7 +64,7 @@ A small feature that I often forget I added but helps a lot with bundle size, is
 
 In summary, my Next.js project is configured to replace [React](https://reactjs.org/) with Preact in production builds.
 
-```js
+```js:next.config.js
 webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {
         Object.assign(config.resolve.alias, {
