@@ -99,7 +99,7 @@ export function useNavigation() {
 				type: NavigationItemType.ACTION,
 				icon: 'feather:image',
 				endIcon: background ? 'feather:check-square' : 'feather:square',
-				text: 'Animations',
+				text: `Animations ${background ? 'On' : 'Off'}`,
 				onClick: () =>
 					state.set((settings) => ({
 						...settings,
@@ -110,14 +110,14 @@ export function useNavigation() {
 				type: NavigationItemType.ACTION,
 				icon: 'feather:moon',
 				endIcon: isDark ? 'feather:check-square' : 'feather:square',
-				text: 'Dark Theme',
+				text: `Dark Theme ${isDark ? 'On' : 'Off'}`,
 				onClick: () => setTheme(isDark ? 'light' : 'dark'),
 			},
 			{
 				type: NavigationItemType.ACTION,
 				icon: sound ? 'feather:volume-2' : 'feather:volume-x',
 				endIcon: sound ? 'feather:check-square' : 'feather:square',
-				text: sound ? 'Sounds On' : 'Sounds Off',
+				text: `Sounds ${sound ? 'On' : 'Off'}`,
 				onClick: () =>
 					state.set((settings) => ({
 						...settings,
