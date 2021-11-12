@@ -114,6 +114,17 @@
 		"url": "https://i.smarty.co.uk/X704rL"
 	},
 	{
+		"aliases": ["tex", "taxes"],
+		"bonus": "10% off first tax return",
+		"code": "BEN388",
+		"color": "#e5d4f7",
+		"description": "Stress-free tax returns. £119, all in.",
+		"homepage": "https://taxscouts.com/",
+		"icon": "heroicons-outline:receipt-tax",
+		"name": "TaxScouts",
+		"url": "https://taxscouts.com/i/BEN388"
+	},
+	{
 		"aliases": ["food"],
 		"code": "eats-bend10725ue",
 		"color": "#000000",
