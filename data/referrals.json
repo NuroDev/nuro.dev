@@ -26,7 +26,7 @@
 		"color": "#6544E2",
 		"description": "Radically better & smarter car insurance",
 		"homepage": "https://www.cuvva.com/",
-		"icon": "feather:truck",
+		"icon": "heroicons-outline:truck",
 		"name": "Cuvva",
 		"url": "https://cuvva.insure/CQ5psRocnkb"
 	},
@@ -37,7 +37,7 @@
 		"color": "#00ccbc",
 		"description": "Your favourite restaurants, shops & supermarkets delivered to your door",
 		"homepage": "https://deliveroo.co.uk/",
-		"icon": "feather:shopping-cart",
+		"icon": "heroicons-outline:shopping-cart",
 		"name": "Deliveroo",
 		"url": "https://roo.it/bend1044"
 	},
@@ -58,7 +58,7 @@
 		"color": "#0856cc",
 		"description": "All-in-one tool for dividend investors",
 		"homepage": "https://dividend.watch",
-		"icon": "feather:dollar-sign",
+		"icon": "feather:bar-chart-2",
 		"name": "DividendWatch",
 		"url": "https://dividend.watch/?forfriends=ANPTL9oVTA"
 	},
@@ -74,13 +74,13 @@
 		"url": "https://magic.freetrade.io/join/ben/3e2d5864"
 	},
 	{
-		"aliases": ["climate", "🌍", "💚"],
+		"aliases": ["🌍", "💚", "climate", "eco"],
 		"bonus": "🌍💚",
 		"code": "xtb2dx",
 		"color": "#25cf7a",
 		"description": "Help offset your carbon footprint",
 		"homepage": "https://klima.com",
-		"icon": "feather:thermometer",
+		"icon": "heroicons-outline:globe",
 		"name": "Klima",
 		"url": "https://klima.com/multiply/join/"
 	},
