@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { NextSeo } from 'next-seo';
 
-import { usePersistantState, useSeoProps } from '~/lib';
 import { Background, Navbar } from '~/components';
+import { usePersistantState, useSeoProps } from '~/lib';
 
 import type { WithChildren, WithProps } from '~/types';
 
@@ -22,11 +22,11 @@ export function DefaultLayout({
 	const { animations: background } = usePersistantState().get();
 	const showBackground = overrideBackground ?? background;
 
-	const defaultSeoProps = useSeoProps();
+	const seoProps = useSeoProps(seo);
 
 	return (
 		<>
-			<NextSeo {...defaultSeoProps} {...seo} />
+			<NextSeo {...seoProps} />
 			<Navbar.Standard />
 			<Main>
 				{showBackground && <Background.Standard />}

@@ -18,17 +18,14 @@ const Container = styled.div(tw`
 `);
 
 export function ErrorLayout({ children, seo }: DefaultLayoutProps) {
-	const defaultSeoProps = useSeoProps();
-
-	const meta = {
-		...defaultSeoProps,
+	const seoProps = useSeoProps({
 		title: 'nuro ─ Whoops!',
 		...seo,
-	};
+	});
 
 	return (
 		<>
-			<NextSeo {...meta} />
+			<NextSeo {...seoProps} />
 			<Main>
 				<Container>{children}</Container>
 			</Main>

@@ -28,7 +28,27 @@ const ProjectIcon = styled.span(tw`
 `);
 
 export const getServerSideProps: GetServerSideProps<ProjectProps> = async () => {
-	const response = await fetch('https://api.github.com/users/nurodev/repos');
+	const response = await fetch('https://api.github.com/users/nurodev/repos', {
+		headers: {
+			authorization: `token ${process.env.GITHUB_PAT}`,
+		},
+	});
+	if (response.status !== 200) {
+		const json = (await response.json()) as {
+			documentation_url: string;
+			message: string;
+		};
+
+		console.error({ error: json });
+
+		return {
+			redirect: {
+				destination: `/error?status=${response.status}`,
+				permanent: false,
+			},
+		};
+	}
+
 	const json = (await response.json()) as GitHubRepos;
 
 	const { default: rawProjectPosts } = await import('~/data/projects.json');
