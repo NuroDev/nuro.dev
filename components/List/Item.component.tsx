@@ -9,9 +9,9 @@ import { ListActionType } from '~/types';
 
 import type { ReactNode } from 'react';
 
-import type { ListAction } from '~/types';
+import type { ListAction, WithChildren } from '~/types';
 
-interface ItemProps {
+interface ItemProps extends WithChildren {
 	actions?: Array<ListAction>;
 	description?: string;
 	icon?: string | ReactNode;
@@ -78,7 +78,7 @@ const Actions = styled.div(tw`
 	mt-4 sm:mt-1
 `);
 
-export function Item({ actions, description, icon, iconColor, title }: ItemProps) {
+export function Item({ actions, children, description, icon, iconColor, title }: ItemProps) {
 	return (
 		<Container>
 			<Content>
@@ -106,8 +106,7 @@ export function Item({ actions, description, icon, iconColor, title }: ItemProps
 										<Action.Button
 											aria-label={action.label}
 											key={index}
-											onClick={action.onClick}
-										>
+											onClick={action.onClick}>
 											<span tw="sr-only">{action.label}</span>
 											<Icon icon={action.icon} />
 										</Action.Button>
@@ -120,8 +119,7 @@ export function Item({ actions, description, icon, iconColor, title }: ItemProps
 												href={action.href}
 												key={index}
 												rel="noopener noreferrer"
-												target="_blank"
-											>
+												target="_blank">
 												<span tw="sr-only">{action.label}</span>
 												<Icon icon={action.icon} />
 											</Action.Link>
@@ -140,6 +138,7 @@ export function Item({ actions, description, icon, iconColor, title }: ItemProps
 					</Actions>
 				)}
 			</Content>
+			{children}
 		</Container>
 	);
 }

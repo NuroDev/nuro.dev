@@ -1,11 +1,12 @@
 import styled from '@emotion/styled';
 import toast from 'react-hot-toast';
 import tw from 'twin.macro';
+import { Icon } from '@iconify/react';
 import { useCopyToClipboard } from 'react-use';
 import { useTheme } from 'next-themes';
 
 import TailwindCSS from '~/tailwind.config';
-import { List } from '~/components';
+import { List, Pill } from '~/components';
 import { Layout } from '~/layouts';
 import { ListAction, ListActionType, Theme } from '~/types';
 
@@ -106,8 +107,16 @@ export default function ReferralsPage({ referrals }: ReferralsProps) {
 								icon={referral.icon}
 								iconColor={referral.color}
 								key={index}
-								title={referral.name}
-							/>
+								title={referral.name}>
+								{referral.bonus && (
+									<div tw="m-2 mt-0">
+										<Pill.Standard tw="flex justify-center w-full md:pb-2 bg-primary-500 bg-opacity-15 saturate-200 rounded-lg text-sm text-primary-500">
+											<Icon icon="feather:award" tw="mt-0.5 mr-2" />
+											{referral.bonus}
+										</Pill.Standard>
+									</div>
+								)}
+							</List.Item>
 						)}
 						items={referrals}
 					/>
