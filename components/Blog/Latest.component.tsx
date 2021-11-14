@@ -27,6 +27,7 @@ const Banner = styled.div`
 	${tw`
 		relative flex justify-center my-auto \
 		w-full xl:w-2/4 lg:max-w-xl h-64 sm:h-72 lg:h-96 \
+		border-b-2 sm:border-0 sm:border-r-2 border-gray-100 dark:border-gray-500 \
 		overflow-hidden rounded-2xl rounded-bl-none lg:rounded-bl-2xl rounded-br-none lg:rounded-br-2xl lg:rounded-tr-none lg:rounded-br-none \
 		transition ease-in-out duration-300
 	`}
