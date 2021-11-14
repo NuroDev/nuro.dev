@@ -85,6 +85,16 @@
 		"url": "https://klima.com/multiply/join/"
 	},
 	{
+		"aliases": ["bank"],
+		"code": "d8z35vy",
+		"color": "#ff4d56",
+		"description": "Banking made easy",
+		"homepage": "https://monzo.com",
+		"icon": "heroicons-outline:credit-card",
+		"name": "Monzo",
+		"url": "https://join.monzo.com/c/d8z35vy"
+	},
+	{
 		"code": "nuro",
 		"color": "#853bce",
 		"description": "Build apps. Not infrastructure.",
