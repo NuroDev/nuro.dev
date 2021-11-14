@@ -5,7 +5,7 @@
 		"color": "#00D54B",
 		"description": "The easiest way to send, spend, bank, and invest",
 		"homepage": "https://cash.app",
-		"icon": "feather:dollar-sign",
+		"icon": "heroicons-outline:cash",
 		"name": "Cash App",
 		"url": "https://cash.app/app/SXSQNGL"
 	},
@@ -16,7 +16,7 @@
 		"color": "#0052ff",
 		"description": "Jump start your crypto portfolio",
 		"homepage": "https://www.coinbase.com",
-		"icon": "feather:dollar-sign",
+		"icon": "heroicons-outline:currency-dollar",
 		"name": "Coinbase",
 		"url": "https://coinbase.com/join/dixon_23e"
 	},
@@ -47,7 +47,7 @@
 		"color": "#0069ff",
 		"description": "Cloud platform to deploy, manage & scale applications",
 		"homepage": "https://www.digitalocean.com/",
-		"icon": "feather:cloud",
+		"icon": "heroicons-outline:cloud",
 		"name": "DigitalOcean",
 		"url": "https://m.do.co/c/81fa220bbbe0"
 	},
@@ -69,7 +69,7 @@
 		"color": "#f7618b",
 		"description": "Smart & simple personal investing",
 		"homepage": "https://freetrade.io",
-		"icon": "feather:dollar-sign",
+		"icon": "heroicons-outline:cash",
 		"name": "Freetrade",
 		"url": "https://magic.freetrade.io/join/ben/3e2d5864"
 	},
@@ -99,7 +99,7 @@
 		"color": "#853bce",
 		"description": "Build apps. Not infrastructure.",
 		"homepage": "https://railway.app",
-		"icon": "feather:cloud",
+		"icon": "heroicons-outline:cloud",
 		"name": "Railway",
 		"url": "https://railway.app?referralCode=nuro"
 	},
@@ -109,7 +109,7 @@
 		"color": "#000000",
 		"description": "I’d like to add you to my professional network.",
 		"homepage": "https://read.cv",
-		"icon": "feather:file-text",
+		"icon": "heroicons-outline:document-text",
 		"name": "Read.cv",
 		"url": "https://read.cv/join/nuro"
 	},
@@ -119,7 +119,7 @@
 		"color": "#8ED6C9",
 		"description": "Simple, honest mobile.",
 		"homepage": "https://smarty.co.uk/",
-		"icon": "feather:phone",
+		"icon": "heroicons-outline:phone",
 		"name": "Smarty",
 		"url": "https://i.smarty.co.uk/X704rL"
 	},
@@ -148,7 +148,7 @@
 		"color": "black",
 		"description": "Develop. Preview. Ship.",
 		"homepage": "https://vercel.com/home",
-		"icon": "feather:cloud",
+		"icon": "heroicons-outline:cloud",
 		"name": "Vercel",
 		"url": "https://vercel.com/home?utm_source=nuro&utm_campaign=oss"
 	},
@@ -157,7 +157,7 @@
 		"color": "#007bfc",
 		"description": "Deploy public cloud, storage & single tenant bare metal services",
 		"homepage": "https://vultr.com",
-		"icon": "feather:cloud",
+		"icon": "heroicons-outline:cloud",
 		"name": "Vultr",
 		"url": "https://www.vultr.com/?ref=7299996"
 	}
