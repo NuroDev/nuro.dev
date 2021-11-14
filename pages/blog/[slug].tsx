@@ -123,9 +123,10 @@ export default function BlogPost({ post }: BlogPostProps) {
 	return (
 		<Layout.Blog
 			seo={{
-				title: post.frontmatter.title,
+				title: `nuro ─ blog ─ ${post.frontmatter.title}`,
 				description: post.frontmatter.description ?? undefined,
 				openGraph: {
+					title: post.frontmatter.title,
 					images: [
 						{
 							url: post.frontmatter.banner ?? '/banner.png',
@@ -135,8 +136,7 @@ export default function BlogPost({ post }: BlogPostProps) {
 						},
 					],
 				},
-			}}
-		>
+			}}>
 			<Container>
 				<Content>
 					{post.frontmatter.banner && (post.frontmatter.banner_show ?? true) && (
