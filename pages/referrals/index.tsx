@@ -27,6 +27,18 @@ const Content = styled.div(tw`
 	relative max-w-xl mx-auto
 `);
 
+const PillContainer = styled.div(tw`
+	m-2 mt-0
+`);
+
+const StyledPill = styled(Pill.Standard)(tw`
+	flex items-center justify-center w-full \
+	md:pb-2 \
+	bg-primary-500 bg-opacity-15 saturate-200 \
+	text-sm text-primary-500 \
+	rounded-lg \
+`);
+
 export const getStaticProps: GetStaticProps<ReferralsProps> = async () => {
 	const { default: rawReferrals } = await import('~/data/referrals.json');
 
@@ -109,12 +121,12 @@ export default function ReferralsPage({ referrals }: ReferralsProps) {
 								key={index}
 								title={referral.name}>
 								{referral.bonus && (
-									<div tw="m-2 mt-0">
-										<Pill.Standard tw="flex justify-center w-full md:pb-2 bg-primary-500 bg-opacity-15 saturate-200 rounded-lg text-sm text-primary-500">
+									<PillContainer>
+										<StyledPill>
 											<Icon icon="feather:award" tw="mt-0.5 mr-2" />
 											{referral.bonus}
-										</Pill.Standard>
-									</div>
+										</StyledPill>
+									</PillContainer>
 								)}
 							</List.Item>
 						)}
