@@ -11,7 +11,7 @@
 	},
 	{
 		"aliases": ["crypto", "bitcoin"],
-		"bonus": "£7 in Bitcoin",
+		"bonus": "Free £7 in Bitcoin",
 		"code": "dixon_23e",
 		"color": "#0052ff",
 		"description": "Jump start your crypto portfolio",
@@ -21,7 +21,7 @@
 		"url": "https://coinbase.com/join/dixon_23e"
 	},
 	{
-		"bonus": "£10-60 off",
+		"bonus": "Get between £10-60 off",
 		"code": "CQ5psRocnkb",
 		"color": "#6544E2",
 		"description": "Radically better & smarter car insurance",
@@ -32,7 +32,7 @@
 	},
 	{
 		"aliases": ["food", "roo"],
-		"bonus": "£10 off",
+		"bonus": "£10 off the first 4 orders",
 		"code": "bend1044",
 		"color": "#00ccbc",
 		"description": "Your favourite restaurants, shops & supermarkets delivered to your door",
@@ -53,7 +53,7 @@
 	},
 	{
 		"aliases": ["dividend", "dividends"],
-		"bonus": "3 months free premium",
+		"bonus": "Get 3 months premium for free",
 		"code": "ANPTL9oVTA",
 		"color": "#0856cc",
 		"description": "All-in-one tool for dividend investors",
@@ -64,7 +64,7 @@
 	},
 	{
 		"aliases": ["investing", "stocks", "stonks"],
-		"bonus": "Free share between £3-200",
+		"bonus": "Get a free share between £3-200",
 		"code": "3e2d5864",
 		"color": "#f7618b",
 		"description": "Smart & simple personal investing",
@@ -75,7 +75,7 @@
 	},
 	{
 		"aliases": ["🌍", "💚", "climate", "eco"],
-		"bonus": "🌍💚",
+		"bonus": "Help save the planet 🌍💚",
 		"code": "xtb2dx",
 		"color": "#25cf7a",
 		"description": "Help offset your carbon footprint",
@@ -125,7 +125,7 @@
 	},
 	{
 		"aliases": ["tex", "taxes"],
-		"bonus": "10% off first tax return",
+		"bonus": "Get 10% off your first tax return",
 		"code": "BEN388",
 		"color": "#e5d4f7",
 		"description": "Stress-free tax returns. £119, all in.",
