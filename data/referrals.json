@@ -43,6 +43,7 @@
 	},
 	{
 		"aliases": ["cloud", "do"],
+		"bonus": "Free $100 credit over 60 days",
 		"code": "81fa220bbbe0",
 		"color": "#0069ff",
 		"description": "Cloud platform to deploy, manage & scale applications",
@@ -153,6 +154,7 @@
 		"url": "https://vercel.com/home?utm_source=nuro&utm_campaign=oss"
 	},
 	{
+		"bonus": "Free $10 credit over 30 days",
 		"code": "7299996",
 		"color": "#007bfc",
 		"description": "Deploy public cloud, storage & single tenant bare metal services",
