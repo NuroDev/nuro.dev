@@ -16,7 +16,7 @@ As the title implies, this post is going to focus specifically on the [next.conf
 
 If you want to see the full power of Vite I recommend having a scroll through the [Vite config docs](https://vitejs.dev/config), however in the meantime I wanted to focus on a handful of the top/best config options that I feel should be added to Next.js to make the config file actually good & more usable other than for advanced users.
 
-### :wrench: More Options
+### :wrench: Options Galore
 
 ---
 
@@ -32,9 +32,9 @@ In general I feel like there should be more options added to the config file. Lo
 
 -   [`logLevel`](https://vitejs.dev/config/#logLevel): Define global constant replacements
 
-    Speaking from personal experience trying to deploy a Next.js project as a self-hosted solution it would be great to be able to customize the output log level.
+    I have not looked into this too deeply but some quick research doesn't show any "easy" way to customize the log level of a Next.js project. As someone planning on using Next.js for self-hosted projects sometime in the future this would prove very helpful to have.
 
--   [`plugins`](https://vitejs.dev/config/#plugins): Array of plugins to use ([More on this below](#-plugins))
+-   [`plugins`](https://vitejs.dev/config/#plugins): Array of plugins to use
 
     Plugins are a huge feature that I [dive into more below](#-plugins).
 
@@ -52,12 +52,12 @@ The majority of these options simply add project structure flexability & extensi
 
 ---
 
-Starting off with, to me at least, one of the most obvious & best features. TypeScript support.
+Moving on to, to me at least, one of the most obvious & up there features. TypeScript support.
 
-I personally don't like using the [CommonJS syntax](https://flaviocopes.com/commonjs/) where possible. To the point that for most projects now when I want to write a simple Node script I quickly add [`tsup`](https://tsup.egoist.sh/) so I can use TypeScript & a number of other great features.
-One scenario I particularly hate is when a library offers a object type definition & then CAN use it in CommonJS but it looks ugly.
+I personally don't like using the [CommonJS syntax](https://flaviocopes.com/commonjs/) where possible. To the point that for most projects now when I want to write a simple Node script I quickly add [`tsup`](https://tsup.egoist.sh/) so I can use TypeScript & a number of other handy features.
+One scenario I particularly hate is when a library offers a object type definition & but you have to use the CommonJS `@type {import('...').TypeName}` syntax to use it.
 
-This is, to me, ugly:
+For comparison, this, to me, is ugly:
 
 ```js:next.config.js
 /**
@@ -171,7 +171,7 @@ One argunment I could see for NOT to make all these big, possibly breaking, chan
 
 Fair point. But who said new or inexperienced developers would have to use this new system. If they wanted they could stick to using the existing CommonJS `next.config.js` system & then anyone who wants to use the more advanced system, with plugins & TypeScript support, etc can use it. It's the same reason why Vite offers support for both.
 
-### Conclusion
+### :thinking: Conclusion
 
 ---
 
