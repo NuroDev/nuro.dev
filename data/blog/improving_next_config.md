@@ -2,7 +2,7 @@
 banner_alt: A random screenshot of screen showing a Webpack config
 banner: https://images.unsplash.com/photo-1593720213411-697ba0ac0162?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1712&q=80
 title_prefix: Upgrade
-title: next.config.js
+title: Improving the Next.js config
 description: The Next.js config file feels underutilized. Here's how it could be better
 date: '2021-11-14'
 ---
