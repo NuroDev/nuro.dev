@@ -5,7 +5,6 @@ import { css } from '@emotion/react';
 import { Icon } from '@iconify/react';
 
 import { NavigationItemType } from '~/types';
-import { useClick } from '~/lib';
 
 import type { MouseEvent } from 'react';
 
@@ -42,15 +41,11 @@ const LinkContainer = styled.a(ButtonStyles);
 const StyledIcon = styled(Icon)(tw`mr-2`);
 
 export function Standard({ children, className, icon, ...rest }: StandardProps) {
-	const [play] = useClick();
-
 	switch (rest.type) {
 		case NavigationItemType.LINK:
-			const onClick = () => play();
-
 			if (rest.external ?? true)
 				return (
-					<LinkContainer {...rest} onClick={onClick}>
+					<LinkContainer {...rest}>
 						{icon && <StyledIcon icon={icon} />}
 						{children}
 					</LinkContainer>
@@ -58,7 +53,7 @@ export function Standard({ children, className, icon, ...rest }: StandardProps) 
 
 			return (
 				<Link href={rest.href} passHref>
-					<LinkContainer {...rest} href={rest.href} onClick={onClick}>
+					<LinkContainer {...rest} href={rest.href}>
 						{icon && <StyledIcon icon={icon} />}
 						{children}
 					</LinkContainer>
@@ -67,14 +62,7 @@ export function Standard({ children, className, icon, ...rest }: StandardProps) 
 
 		case NavigationItemType.ACTION:
 			return (
-				<ButtonContainer
-					{...rest}
-					type="button"
-					onClick={(e) => {
-						play();
-						rest.onClick(e);
-					}}
-				>
+				<ButtonContainer {...rest} type="button" onClick={(e) => rest.onClick(e)}>
 					{icon && <StyledIcon icon={icon} />}
 					{children}
 				</ButtonContainer>

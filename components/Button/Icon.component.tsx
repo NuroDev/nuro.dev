@@ -2,8 +2,6 @@ import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { forwardRef } from 'react';
 
-import { useClick } from '~/lib';
-
 import type { ButtonHTMLAttributes } from 'react';
 
 interface IconProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
@@ -21,18 +19,12 @@ const Button = styled.button(tw`
 
 export const Icon = forwardRef<HTMLButtonElement, IconProps>(
 	({ children, className, onClick, ...rest }, ref) => {
-		const [click] = useClick();
-
 		return (
 			<Button
 				ref={ref}
 				className={`group ${className}`}
-				onClick={(e) => {
-					click();
-					if (onClick) onClick(e);
-				}}
-				{...rest}
-			>
+				onClick={(e) => onClick && onClick(e)}
+				{...rest}>
 				{children}
 			</Button>
 		);

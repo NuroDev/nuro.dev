@@ -3,8 +3,6 @@ import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { Icon } from '@iconify/react';
 
-import { useClick } from '~/lib';
-
 import type { AnchorHTMLAttributes } from 'react';
 
 import type { WithClassName } from '~/types';
@@ -43,22 +41,16 @@ export function Outline({
 	small = false,
 	...rest
 }: OutlineProps) {
-	const [play] = useClick();
-
 	return (
 		<Link href={href}>
 			<Container
 				className={className}
 				href={href}
-				onClick={(...args) => {
-					play();
-					if (onClick) onClick(...args);
-				}}
+				onClick={(...args) => onClick && onClick(...args)}
 				rel="noopener noreferrer"
 				small={small}
 				target={external ? '_blank' : undefined}
-				{...rest}
-			>
+				{...rest}>
 				{icon && <StyledIcon icon={icon} />}
 				{children}
 			</Container>

@@ -5,11 +5,12 @@ import { AppProps } from 'next/app';
 import { css, Global as EmotionStyles } from '@emotion/react';
 import { ThemeProvider } from 'next-themes';
 import { Toaster } from 'react-hot-toast';
+import { useEvent } from 'react-use';
 
 import 'inter-ui/inter.css';
 import 'nprogress/nprogress.css';
 
-import { useAnalytics } from '~/lib';
+import { useAnalytics, useClick } from '~/lib';
 import { Theme } from '~/types';
 
 NProgress.configure({
@@ -62,7 +63,12 @@ const GlobalStyles = css`
 `;
 
 export default function App({ Component, pageProps }: AppProps) {
+	const [play] = useClick();
+
 	useAnalytics();
+
+	useEvent('mousedown', () => play());
+	useEvent('mouseup', () => play());
 
 	return (
 		<ThemeProvider attribute="class" defaultTheme={Theme.SYSTEM} themes={Object.values(Theme)}>

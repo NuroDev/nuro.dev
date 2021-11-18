@@ -7,10 +7,8 @@ import { Menu } from '@headlessui/react';
 
 import { Transition } from '~/components';
 import { NavigationItemType, WithChildren, WithClassName } from '~/types';
-import { useClick } from '~/lib';
 
 import type { AnchorHTMLAttributes, ReactNode } from 'react';
-import type { PlayFunction } from 'use-sound/dist/types';
 
 import type { NavigationItems } from '~/types';
 
@@ -23,7 +21,6 @@ interface StandardProps extends WithChildren {
 
 interface MenuLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
 	$active: boolean;
-	playSound: PlayFunction;
 }
 
 interface MenuButtonIconProps extends WithClassName {
@@ -107,16 +104,10 @@ function MenuButtonIcon({ className, icon, direction: type = 'left' }: MenuButto
  *
  * @see https://headlessui.dev/react/menu#integrating-with-next-js
  */
-function MenuLink({ children, href, onClick, playSound, ...rest }: MenuLinkProps) {
+function MenuLink({ children, href, onClick, ...rest }: MenuLinkProps) {
 	return (
 		<Link href={href}>
-			<StyledMenuItem
-				onClick={(...args) => {
-					playSound();
-					onClick(...args);
-				}}
-				{...rest}
-			>
+			<StyledMenuItem onClick={(...args) => onClick(...args)} {...rest}>
 				{children}
 			</StyledMenuItem>
 		</Link>
@@ -124,8 +115,6 @@ function MenuLink({ children, href, onClick, playSound, ...rest }: MenuLinkProps
 }
 
 export function Dropdown({ children, items, position }: StandardProps) {
-	const [playClick] = useClick();
-
 	return (
 		<StyledMenu as="div">
 			{({ open }) => (
@@ -145,11 +134,7 @@ export function Dropdown({ children, items, position }: StandardProps) {
 															<StyledMenuItem
 																$active={active}
 																className="group"
-																onClick={() => {
-																	playClick();
-																	item.onClick();
-																}}
-															>
+																onClick={() => item.onClick()}>
 																<MenuButtonIcon icon={item.icon} />
 																{item.text}
 																{item.endIcon && (
@@ -170,11 +155,9 @@ export function Dropdown({ children, items, position }: StandardProps) {
 																<StyledMenuItem
 																	className="group"
 																	$active={active}
-																	onClick={() => playClick}
 																	href={item.href}
 																	rel="noopener noreferrer"
-																	target="_blank"
-																>
+																	target="_blank">
 																	<MenuButtonIcon
 																		icon={item.icon}
 																	/>
@@ -190,9 +173,7 @@ export function Dropdown({ children, items, position }: StandardProps) {
 														return (
 															<MenuLink
 																$active={active}
-																playSound={playClick}
-																href={item.href}
-															>
+																href={item.href}>
 																<MenuButtonIcon icon={item.icon} />
 																{item.text}
 															</MenuLink>
