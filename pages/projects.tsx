@@ -30,7 +30,9 @@ const ProjectIcon = styled.span(tw`
 export const getServerSideProps: GetServerSideProps<ProjectProps> = async () => {
 	const response = await fetch('https://api.github.com/users/nurodev/repos', {
 		headers: {
-			authorization: `token ${process.env.GITHUB_PAT}`,
+			...(process.env.GITHUB_PAT && {
+				authorization: `token ${process.env.GITHUB_PAT}`,
+			}),
 		},
 	});
 	if (response.status !== 200) {
