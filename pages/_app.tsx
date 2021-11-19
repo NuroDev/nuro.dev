@@ -30,9 +30,9 @@ const GlobalStyles = css`
 			antialiased \
 			bg-gray-50 \
 			text-gray-500 dark:text-gray-400 \
+			font-inter \
 			transition ease-in-out duration-300
 		`}
-		font-family: "Inter", "system-ui";
 
 		&.dark {
 			${tw`bg-gray-900`}

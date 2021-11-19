@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
 	mode: 'jit',
 	purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
@@ -33,6 +35,9 @@ module.exports = {
 					900: '#004ad7',
 				},
 			},
+			fontFamily: {
+				inter: ['Inter', ...defaultTheme.fontFamily.sans],
+			}
 		},
 	},
 	variants: {},
