@@ -6,7 +6,7 @@ export function useAnalytics() {
 		if (process.env.NODE_ENV !== 'production') return;
 
 		splitbee.init({
-			disableCookie: false,
+			disableCookie: true,
 		});
 	}, []);
 }
