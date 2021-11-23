@@ -118,6 +118,7 @@ export function Item({ actions, children, description, icon, iconColor, title }:
 												aria-label={action.label}
 												href={action.href}
 												key={index}
+												onClick={action.onClick}
 												rel="noopener noreferrer"
 												target="_blank">
 												<span tw="sr-only">{action.label}</span>
@@ -127,7 +128,10 @@ export function Item({ actions, children, description, icon, iconColor, title }:
 
 									return (
 										<Link href={action.href} passHref>
-											<Action.Link aria-label={action.label} key={index}>
+											<Action.Link
+												aria-label={action.label}
+												key={index}
+												onClick={action.onClick}>
 												<span tw="sr-only">{action.label}</span>
 												<Icon icon={action.icon} />
 											</Action.Link>

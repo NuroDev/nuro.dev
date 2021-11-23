@@ -1,3 +1,4 @@
+import splitbee from '@splitbee/web';
 import styled from '@emotion/styled';
 import toast from 'react-hot-toast';
 import tw from 'twin.macro';
@@ -113,6 +114,12 @@ export default function ReferralsPage({ referrals }: ReferralsProps) {
 										icon: 'feather:external-link',
 										label: 'Referral Link',
 										href: referral.url,
+										onClick: () =>
+											splitbee.track(referral.name.toLowerCase(), {
+												code: referral.code,
+												type: 'referral',
+												url: referral.url,
+											}),
 									},
 								]}
 								description={referral.description}

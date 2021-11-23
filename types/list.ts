@@ -19,4 +19,5 @@ export type ListAction =
 			type: ListActionType.LINK;
 			external?: boolean;
 			href: string;
+			onClick?: (event: MouseEvent) => void;
 	  } & ListActionBaseProps);
