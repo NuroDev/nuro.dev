@@ -58,7 +58,7 @@
 		"color": "#0069ff",
 		"description": "Cloud platform to deploy, manage & scale applications",
 		"homepage": "https://www.digitalocean.com/",
-		"icon": "heroicons-outline:cloud",
+		"icon": "heroicons-outline:server",
 		"name": "DigitalOcean",
 		"url": "https://m.do.co/c/81fa220bbbe0"
 	},
@@ -169,7 +169,7 @@
 		"color": "#007bfc",
 		"description": "Deploy public cloud, storage & single tenant bare metal services",
 		"homepage": "https://vultr.com",
-		"icon": "heroicons-outline:cloud",
+		"icon": "heroicons-outline:server",
 		"name": "Vultr",
 		"url": "https://www.vultr.com/?ref=7299996"
 	}
