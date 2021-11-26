@@ -1,5 +1,15 @@
 [
 	{
+		"aliases": ["uptime", "status"],
+		"code": "7p8z",
+		"color": "#0E153A",
+		"description": "Get notified with a radically better infrastructure monitoring platform",
+		"homepage": "https://betteruptime.com",
+		"icon": "heroicons-outline:status-online",
+		"name": "Better Uptime",
+		"url": "https://betteruptime.com/?ref=7p8z"
+	},
+	{
 		"bonus": "Free £5 each",
 		"code": "SXSQNGL",
 		"color": "#00D54B",
