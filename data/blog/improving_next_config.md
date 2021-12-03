@@ -4,7 +4,7 @@ banner: https://images.unsplash.com/photo-1593720213411-697ba0ac0162?ixid=MnwxMj
 title_prefix: Upgrade
 title: Improving the Next.js config
 description: The Next.js config file feels underutilized. Here's how it could be better
-date: '2021-11-14'
+date: '2021-12-03'
 ---
 
 For the past few years I have been an avid lover of [Vue.js](https://vuejs.org/) and in the past year or so been using it in combination with [Vite](https://vitejs.dev/), an all new build tool that is just out of this world fast :zap:.
@@ -12,11 +12,9 @@ However, spending more time working in the industry I have learned to fall back 
 
 However, since switching back to using Next.js after so many years, I have noticed a number of things that have made me want to go back to using Vue + Vite.
 
-As the title implies, this post is going to focus specifically on the [next.config.js](https://nextjs.org/docs/api-reference/next.config.js/introduction) file.
+As the title implies, this post is going to focus specifically on how to improve the [Next.js config](https://nextjs.org/docs/api-reference/next.config.js/introduction) by focusing on a handful of the top/best config options used in other build tools like [Vite](https://vitejs.dev/).
 
-If you want to see the full power of Vite I recommend having a scroll through the [Vite config docs](https://vitejs.dev/config), however in the meantime I wanted to focus on a handful of the top/best config options that I feel should be added to Next.js to make the config file actually good & more usable other than for advanced users.
-
-### :wrench: Options Galore
+### :wrench: More Options
 
 ---
 
@@ -26,21 +24,19 @@ In general I feel like there should be more options added to the config file. Lo
 
     Offer more customization for the build configuration of your project. In the case of Next.js I feel a lot of existing build options could be moved here. EG: `swcMinify`, `webpack`, etc.
 
--   [`define`](https://vitejs.dev/config/#define): Adjust console output verbosity
+-   [`define`](https://vitejs.dev/config/#define): Define global constant replacements
 
     As a good alternative to having to add `NEXT_PUBLIC_` environment variables all the time you can use this to define public constant variables.
 
--   [`logLevel`](https://vitejs.dev/config/#logLevel): Define global constant replacements
-
-    I have not looked into this too deeply but some quick research doesn't show any "easy" way to customize the log level of a Next.js project. As someone planning on using Next.js for self-hosted projects sometime in the future this would prove very helpful to have.
+-   [`logLevel`](https://vitejs.dev/config/#logLevel): Adjust console output verbosity
 
 -   [`plugins`](https://vitejs.dev/config/#plugins): Array of plugins to use
 
-    Plugins are a huge feature that I [dive into more below](#-plugins).
+    Plugins are a big feature that I'm going to [dive into more later](#-plugins).
 
 -   [`root`](https://vitejs.dev/config/#root): Project root directory
 
-    Not for myself personally but re-learing Next.js over the past few months I have noticed a number of projects like to keep all their `components/`, `pages/`, etc inside of a `src/` directory and this will be beneficial for them.
+    Re-learning Next.js over the past few months I have been researching a number of open source projects, many of which like to point to a custom root directory. Most commonly a `src/` directory.
 
 -   [`server`](https://vitejs.dev/config/#server-host): Server options
 
@@ -52,12 +48,12 @@ The majority of these options simply add project structure flexability & extensi
 
 ---
 
-Moving on to, to me at least, one of the most obvious & up there features. TypeScript support.
+Moving onto what is, to me at least, one of the most obvious features. TypeScript support.
 
 I personally don't like using the [CommonJS syntax](https://flaviocopes.com/commonjs/) where possible. To the point that for most projects now when I want to write a simple Node script I quickly add [`tsup`](https://tsup.egoist.sh/) so I can use TypeScript & a number of other handy features.
-One scenario I particularly hate is when a library offers a object type definition & but you have to use the CommonJS `@type {import('...').TypeName}` syntax to use it.
+One scenario I particularly hate is when a library offers a object type definition & but you have to use the JSDoc `@type {import('...').TypeName}` syntax to use it.
 
-For comparison, this, to me, is ugly:
+For comparison: This, to me, is ugly:
 
 ```js:next.config.js
 /**
@@ -68,7 +64,7 @@ module.exports = {
 }
 ```
 
-This is looks much cleaner:
+This however, looks much cleaner:
 
 ```ts:next.config.ts
 import type { NextConfig } from "next"
@@ -78,9 +74,9 @@ export default {
 } as NextConfig;
 ```
 
-I know type safety isn't needed for a config file. But when writing it it can be very helpful to have tools, such as intellisense, to help you write it faster without having to look up the docs or inspect the `NextConfig` type.
+No, type safety isn't needed for a config file. But when writing it it can be very helpful to have tools, such as intellisense, to help prompt any issues with your setup or help save you from having to even look up the conig documentation.
 
-`next.config.ts` has been [talked about for 3 years now](https://github.com/vercel/next.js/issues/5318) & has still not been added. [This issue](https://github.com/vercel/next.js/issues/5318) has been tracking this request since first posted in 2018 and still to this day has people asking for it.
+`next.config.ts` has been talked about for 3 years now & has still not been added. [This issue](https://github.com/vercel/next.js/issues/5318) has been tracking this request since first posted in 2018 and still to this day has people asking for it.
 
 I can very much understand if there are more pressing features, bugs, etc that need to be addressed. But [Next.js 12 has just been released](https://nextjs.org/blog/next-12), the Next.js core has been running on TypeScript since 2019 & Vercel has constantly preached how amazing TypeScript is to the point it works out of the box pretty much.
 And yet, the Next.js config still only allows a CommonJS JavaScript file.
@@ -90,7 +86,8 @@ And yet, the Next.js config still only allows a CommonJS JavaScript file.
 ---
 
 One of the second features that I think would have the biggest & best impact on Next.js would be an all new plugins system.
-Currently Next.js does KIND OF support plugins but not anything properly. As far as I can tell it currently involves nesting a lot of functions that each return an updated Next config object. Not so pretty.
+
+Currently Next.js does provide a plugin system of sorts but is, as far as I can tell, community made & managed by nesting functions that return an updated Next.js configuration object. Not so pretty.
 
 In an indeal world an all new plugins system could make it even easier to bootstap & customize a Next.js project with your favourite tools in a matter of minutes, not hours like it does today.
 
@@ -115,7 +112,7 @@ module.exports = {
 }
 ```
 
-That's basically how Vite's plugin system works & how nice & easy it is to work with. It has a [`plugins`](https://vitejs.dev/config/#plugins) option that allows you to simply provide an array of plugin methods that you call with your desired options.
+That's basically how Vite's plugin system works & how nice & easy it is to work with. It has a [`plugins`](https://vitejs.dev/config/#plugins) property that allows you to simply provide an array of plugin methods that you call with your desired options.
 
 This system has become so popular that there are a huge number of plugins to let you to almost anything and everything you could need. Here is a few examples of my favourites:
 
@@ -128,7 +125,7 @@ This system has become so popular that there are a huge number of plugins to let
 
 ---
 
-With all of those features all put together you end up with something that looks something like this:
+With all of those features all put together you end up with something that looks a little like this:
 
 ```ts:next.config.ts
 import TailwindCSS from 'next-plugin-windicss';
@@ -169,9 +166,9 @@ export default {
 
 One argunment I could see for NOT to make all these big, possibly breaking, changes to the config system would be "But Next.js is so simple to use. This will just add complexity".
 
-Fair point. But who said new or inexperienced developers would have to use this new system. If they wanted they could stick to using the existing CommonJS `next.config.js` system & then anyone who wants to use the more advanced system, with plugins & TypeScript support, etc can use it. It's the same reason why Vite offers support for both.
+Fair point. But if done correctly it could be backwards compatible with the current config system & then allows more experienced developers who do want to utilize some of the new features, such as plugins, TypeScript support, etc, can do so.
 
-### :thinking: Conclusion
+### :thinking_face: Conclusion
 
 ---
 
