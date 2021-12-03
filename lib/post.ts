@@ -27,19 +27,24 @@ export async function getAllPostSlugs() {
 export async function getAllPostsFrontMatter() {
 	const files = readdirSync(BLOG_POSTS_DIR);
 
-	return files.map((slug) => {
-		const source = readFileSync(join(BLOG_POSTS_DIR, slug), 'utf8');
-		const { data } = matter(source);
+	return files
+		.map((slug) => {
+			const source = readFileSync(join(BLOG_POSTS_DIR, slug), 'utf8');
+			const { data } = matter(source);
 
-		const frontmatter = data as RawFrontMatter;
-		const trimmedSlug = slug.replace('.md', '');
+			const frontmatter = data as RawFrontMatter;
+			const trimmedSlug = slug.replace('.md', '');
 
-		return {
-			...frontmatter,
-			date: format(new Date(frontmatter.date), 'PPP'),
-			slug: trimmedSlug,
-		} as FrontMatter;
-	});
+			return {
+				...frontmatter,
+				slug: trimmedSlug,
+			} as FrontMatter;
+		})
+		.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf())
+		.map((f) => ({
+			...f,
+			date: format(new Date(f.date), 'PPP'),
+		}));
 }
 
 /**

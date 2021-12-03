@@ -10,7 +10,7 @@ interface DatePillProps extends WithClassName, WithChildren {
 
 const Container = styled.div<{ small: boolean }>`
 	${tw`
-		inline-flex \
+		inline-flex justify-center w-full sm:w-auto \
 		bg-primary-500 bg-opacity-15 \
 		backdrop-filter backdrop-blur-sm saturate-200 \
 		rounded-lg \

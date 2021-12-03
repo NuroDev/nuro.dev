@@ -16,6 +16,7 @@ const Container = styled.a(tw`
 	flex flex-col \
 	bg-white bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 \
 	backdrop-filter backdrop-blur-sm \
+	border-2 border-gray-100 dark:border-gray-500 \
 	rounded-2xl overflow-hidden hover:shadow-xl cursor-pointer \
 	transform motion-safe:hover:-translate-y-1 \
 	transition ease-in-out duration-300 \
@@ -24,15 +25,15 @@ const Container = styled.a(tw`
 
 const Banner = styled.div`
 	${tw`
-		relative flex justify-center my-auto \
-			w-full max-w-xl \
-			overflow-hidden
+		relative flex justify-center w-full max-w-xl \
+		my-auto \
+		rounded-t-lg overflow-hidden
 	`}
 
 	img {
 		${tw`
 			absolute top-0 left-0 w-full h-48 \
-				object-cover select-none
+			object-cover select-none
 		`}
 	}
 `;
@@ -49,7 +50,6 @@ const Content = styled.div<{ banner: boolean }>`
 		p-6 \
 		bg-transparent \
 		rounded-2xl \
-		border-2 border-gray-100 dark:border-gray-500 \
 		bg-transparent
 	`}
 
