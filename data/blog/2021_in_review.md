@@ -6,15 +6,28 @@ description: It's been a long year & a lot has happened so I wanted to recap it 
 date: '2021-12-30'
 ---
 
-Text
+2021 has been an interesting year in a number of ways. Lots has happened, some good, some bad. But with a long list of things I wanted to make a recap of the year to take a lookback at what made the year so great & what could change or be done differently in 2022.
 
 ## :family: People
 
 ---
 
--   Who am I extra grateful for this year?
--   What did they give me? What did I give back to them?
--   Who deserves the biggest thank you this year? Can I let them know?
+Life after the pandemic, for the most part, for myself has remained mostly the same. Lots of people spend their free time in a variety of ways. Me? I spend my free time spent online on [Discord](https://discord.com) with many of my closest friends playing games & having fun. It's my escape from a world of work & responsibilities.
+
+Another year gone has gone by that I can't even imagine what it would be like without any of my amazing friends. Just to name a few:
+
+-   [@katiejjk](https://twitter.com/katiejjk)
+-   [@DanBennett](https://twitter.com/DanBennett)
+-   [@Tactical_Sam](https://twitter.com/Tactical_Sam)
+-   [@Nether_Dweller](https://twitter.com/Nether_Dweller)
+
+I think the easiest way to show this is to show some fun clips from us playing the game we find ourselves playing almost every night, [Valorant](https://playvalorant.com/):
+
+<XStreamable id="37g1ib" title="WTF Katie" />
+<XStreamable id="u6gr1f" title="Dance party with Katie" />
+<XStreamable id="6ngns4" title="Skydiving with Raze" />
+<XStreamable id="pd390z" title="You made a mistake Jill" />
+<XStreamable id="67lmnf" title="You mean here?" />
 
 ## :earth_africa: Experiences
 
