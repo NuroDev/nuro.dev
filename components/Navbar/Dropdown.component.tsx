@@ -73,8 +73,8 @@ const StyledMenuItem = styled.a<Pick<MenuLinkProps, '$active'>>`
 
 	${({ $active }) =>
 		$active
-			? tw`bg-gray-100 bg-opacity-50 dark:bg-gray-700 dark:bg-opacity-50 text-gray-900 dark:text-white`
-			: tw`text-gray-300 hover:text-gray-700 dark:hover:text-white`}
+			? tw`bg-gray-100 bg-opacity-50 dark:bg-gray-700 dark:bg-opacity-50 text-gray-900 dark:text-white rounded-none`
+			: tw`text-gray-400 hover:text-gray-700 dark:hover:text-white`}
 `;
 
 const MenuItemSpacer = styled.span(tw`
