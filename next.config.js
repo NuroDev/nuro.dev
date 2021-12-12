@@ -63,7 +63,7 @@ module.exports = {
 };
 
 const ContentSecurityPolicy = `
-  child-src *.google.com codesandbox.io;
+  child-src *.google.com codesandbox.io streamable.com;
   connect-src *;
   default-src 'self';
   font-src 'self';
