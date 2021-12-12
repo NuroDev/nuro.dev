@@ -1,4 +1,5 @@
 export * from './blog';
+export * from './clips';
 export * from './common';
 export * from './events';
 export * from './lanyard';
