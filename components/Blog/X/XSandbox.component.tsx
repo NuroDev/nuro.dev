@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
 
-interface XFigureProps {
+interface XSandboxProps {
 	height?: number;
 	id?: string;
 }
@@ -12,7 +12,7 @@ interface IFrameProps {
 	sandbox: string;
 }
 
-const IFrame = styled.img<IFrameProps>`
+const IFrame = styled.iframe<IFrameProps>`
 	${tw`
 		w-full \
 		border-none \
@@ -22,7 +22,7 @@ const IFrame = styled.img<IFrameProps>`
 	height: ${({ $height }) => $height}rem;
 `;
 
-export function XSandbox({ height = 32, id }: XFigureProps) {
+export function XSandbox({ height = 32, id }: XSandboxProps) {
 	const src = id
 		? 'https://codesandbox.io/embed/new?codemirror=1'
 		: `https://codesandbox.io/embed/${id}?hidenavigation=1&theme=dark`;

@@ -63,7 +63,7 @@ module.exports = {
 };
 
 const ContentSecurityPolicy = `
-  child-src *.google.com;
+  child-src *.google.com codesandbox.io;
   connect-src *;
   default-src 'self';
   font-src 'self';
