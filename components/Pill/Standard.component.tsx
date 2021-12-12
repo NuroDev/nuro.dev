@@ -2,22 +2,25 @@ import styled from '@emotion/styled';
 import { AnchorHTMLAttributes } from 'react';
 import tw from 'twin.macro';
 
-interface StandardPillProps extends AnchorHTMLAttributes<HTMLDivElement> {}
+interface StandardPillProps extends AnchorHTMLAttributes<HTMLDivElement> {
+	small?: boolean;
+}
 
-const Container = styled.div(tw`
-	inline-flex \
-	px-3 lg:px-5 py-2 md:pb-4 \
-	bg-primary-500 bg-opacity-15 \
-	backdrop-filter backdrop-blur-sm saturate-200 \
-	text-primary-200 \
-	rounded-2xl \
-	transition ease-in-out duration-300 \
-	focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500
-`);
+const Container = styled.div<{ small: boolean }>`
+	${tw`
+		inline-flex justify-center w-full sm:w-auto \
+		bg-primary-500 bg-opacity-15 \
+		backdrop-filter backdrop-blur-sm saturate-200 \
+		rounded-lg \
+		text-sm text-primary-500
+	`}
 
-export function Standard({ children, ...rest }: StandardPillProps) {
+	${({ small }) => (small ? tw`px-2 py-1` : tw`px-4 py-2`)}
+`;
+
+export function Standard({ children, small = false, ...rest }: StandardPillProps) {
 	return (
-		<Container target="_blank" rel="noreferrer noopener" {...rest}>
+		<Container small={small} target="_blank" rel="noreferrer noopener" {...rest}>
 			{children}
 		</Container>
 	);

@@ -3,8 +3,8 @@ import tw from 'twin.macro';
 import { differenceInYears, isSameDay, isSameMonth } from 'date-fns';
 import { Icon } from '@iconify/react';
 
-import { Button, Event, Pill, Transition, Wave } from '~/components';
-import { EventType, NavigationItemType, WithChildren } from '~/types';
+import { Button, Event, Transition, Wave } from '~/components';
+import { EventType, NavigationItemType } from '~/types';
 import { Layout } from '~/layouts';
 import { usePersistantState } from '~/lib';
 
@@ -36,8 +36,15 @@ const LineBreak = styled.br(tw`
 	hidden sm:block
 `);
 
-const StyledPill = styled(Pill.Standard)(tw`
-	mt-4
+const Pill = styled.div(tw`
+	inline-flex \
+	mt-4 px-3 lg:px-5 py-2 md:pb-4 \
+	bg-primary-500 bg-opacity-15 \
+	backdrop-filter backdrop-blur-sm saturate-200 \
+	text-primary-200 \
+	rounded-2xl \
+	transition ease-in-out duration-300 \
+	focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500
 `);
 
 const Actions = styled.div`
@@ -101,14 +108,12 @@ export default function HomePage() {
 					{animations ? (
 						<Transition duration={1000}>
 							<Title>
-								Hey <Wave>👋</Wave> I'm Ben, <LineBreak />a{' '}
-								<StyledPill>developer</StyledPill>
+								Hey <Wave>👋</Wave> I'm Ben, <LineBreak />a <Pill>developer</Pill>
 							</Title>
 						</Transition>
 					) : (
 						<Title>
-							Hey <Wave>👋</Wave> I'm Ben, <LineBreak />a{' '}
-							<StyledPill>developer</StyledPill>
+							Hey <Wave>👋</Wave> I'm Ben, <LineBreak />a <Pill>developer</Pill>
 						</Title>
 					)}
 					{animations ? (
