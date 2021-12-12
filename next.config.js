@@ -11,6 +11,9 @@ module.exports = {
 			// Spotify Album Art
 			'i.scdn.co',
 
+			// Streamable thumbnails
+			'cdn-cf-east.streamable.com',
+
 			// Unsplash
 			'source.unsplash.com',
 			'images.unsplash.com',
