@@ -26,7 +26,7 @@ I think the easiest way to show this is to show some fun clips from us playing t
 <XStreamable id="37g1ib" title="WTF Katie" />
 <XStreamable id="u6gr1f" title="Dance party with Katie" />
 <XStreamable id="6ngns4" title="Skydiving with Raze" />
-<XStreamable id="pd390z" title="You made a mistake Jill" />
+<XStreamable id="o806r3" title="What it's like to play Valorant with Katie" />
 <XStreamable id="67lmnf" title="You mean here?" />
 
 ## :earth_africa: Experiences
@@ -43,11 +43,31 @@ I think the easiest way to show this is to show some fun clips from us playing t
 
 ---
 
-_This is meant to be more materialistic!_
+Like most years, there's a lot of "things" that people purchase or finally take the leap on & this year has been no exception, probably more so for me this year as I had finally finished my bachelor's degree & was able to start working full time & thus finally have an income to actually start buying things that I wanted. By the end of the year there are 2 key "big" purchases I've made & mean a lot to me:
 
--   What things or objects am I grateful for this year?
--   What value do those objects have in my life?
--   Do I want to reduce/remove any of those objects?
+### :car: Tesla
+
+Yes, I did what most tech heads have done & bought a Tesla. But this has been a dream of mine for 5 years now. 5 YEARS! 5 years of saving, staring & dreaming about one day purchasing one. Well, in July 2021 I finally accepted a delivery of my Tesla Model 3 SR+ & words cannot describe how happy I am with the car. I felt like a kid at Christmas when I accepted delivery of it.
+
+![A photo of my new Tesla Model 3 in white & sports wheels](/blog/2021_in_review/tesla.jpg 'A photo of my new Tesla Model 3 in white & sports wheels')
+![A photo of the interior of my Tesla](/blog/2021_in_review/tesla_interior.jpg 'A photo of the interior of my Tesla')
+
+Fun fact: I bought it as an "ex-demo" car when it's actually an "ex-press" car features on some media outlets like [What Car?](https://www.youtube.com/watch?v=kHw3bfydrLM). Yes, that is MY car :exploding_head:!
+
+### :computer: Macbook Pro
+
+Like my Tesla above, it has been years of waiting for this. Similar to most other developers towards the end of the year, I purchased a new Macbook Pro with Apple's new M1 Pro processor. I settled on a 14" model in silver (Look 10x better in my opinion) with a maxed out M1 Pro processor. I need a fair bit of power, but not M1 Max power.
+
+![A photo of my new silver Macbook Pro 14"](/blog/2021_in_review/macbook.jpg 'A photo of my new silver Macbook Pro 14"')
+
+The main reasons for the upgrade were:
+
+-   M1 was still too new & I wanted to see the power Apple Silicon had when really fleshed out
+-   My current 2016 Macbook Pro:
+    -   Performance began to degrade overall
+    -   Battery life was terrible (Even after a battery replacement)
+    -   The butterfly keyboard meant keys often didn't work & had to get my device serviced every few months (Some reason they never installed that "fix" for it)
+    -   The touchbar is a battery draining & crashing waste of microchips that should have never been built
 
 ## :star: Accomplishments
 
