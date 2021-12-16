@@ -28,13 +28,13 @@
 	{
 		"date": "07-15-2020",
 		"title": "Graduated University!",
-		"description": "Successfully completed my Bachalors Degree",
+		"description": "Successfully completed my Bachelor's Degree",
 		"icon": "feather:award"
 	},
 	{
 		"date": "10-11-2018",
 		"title": "First Developer Role",
-		"description": "Began a internship as a junior developer working at Stink Studios",
+		"description": "Began an internship as a junior developer working at Stink Studios",
 		"icon": "feather:briefcase",
 		"link": {
 			"text": "Visit Stink Studios",
