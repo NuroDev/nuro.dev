@@ -77,9 +77,9 @@ const ACTIONS: Array<NavigationItem> = [
 	{
 		type: NavigationItemType.LINK,
 		external: true,
-		href: 'https://github.com/nurodev',
-		icon: <ActionIcon icon="feather:github" />,
-		text: 'GitHub',
+		href: '/store',
+		icon: <ActionIcon icon="feather:shopping-cart" />,
+		text: 'Store',
 	},
 ];
 
