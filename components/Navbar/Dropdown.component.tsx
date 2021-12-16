@@ -67,7 +67,7 @@ const StyledMenuItem = styled.a<Pick<MenuLinkProps, '$active'>>`
 		flex items-center \
 		px-4 py-3 \
 		text-sm font-medium tracking-wide \
-		rounded-md cursor-pointer \
+		cursor-pointer \
 		transition ease-in-out duration-300
 	`}
 
