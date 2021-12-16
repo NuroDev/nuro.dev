@@ -2,13 +2,14 @@ import Image from 'next/image';
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
 
+import { getProducts } from '~/lib';
 import { Layout } from '~/layouts';
 import { List } from '~/components';
 import { ListActionType } from '~/types';
 
 import type { GetServerSideProps } from 'next';
 
-import type { GumroadResponse, GumroadProduct, StrippedGumroadProduct } from '~/types';
+import type { StrippedGumroadProduct } from '~/types';
 
 interface StoreProps {
 	products: Array<StrippedGumroadProduct>;
@@ -28,48 +29,15 @@ const ThumbnailContainer = styled.div(tw`
 `);
 
 export const getServerSideProps: GetServerSideProps<StoreProps> = async () => {
-	const response = await fetch(`https://api.gumroad.com/v2/products/`, {
-		headers: {
-			Authorization: `Bearer ${process.env.GUMROAD_API_KEY}`,
-			'Content-Type': 'application/json',
-		},
-		method: 'GET',
-	});
-	if (response.status !== 200)
+	const { products, error } = await getProducts();
+	if (error)
 		return {
-			redirect: {
-				destination: `/error?status=${response.status}`,
-				permanent: false,
-			},
+			redirect: error,
 		};
-
-	const json = (await response.json()) as GumroadResponse<{
-		products: Array<GumroadProduct>;
-	}>;
-	if (!json.success) {
-		console.error({ error: json });
-
-		return {
-			redirect: {
-				destination: `/error?status=${response.status}`,
-				permanent: false,
-			},
-		};
-	}
 
 	return {
 		props: {
-			products: json.products.map(
-				({ currency, custom_summary, name, preview_url, price, short_url }) =>
-					({
-						currency,
-						description: custom_summary,
-						name,
-						thumbnail: preview_url,
-						price,
-						url: short_url,
-					} as StrippedGumroadProduct),
-			),
+			products,
 		},
 	};
 };

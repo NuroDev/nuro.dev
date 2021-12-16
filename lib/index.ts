@@ -5,6 +5,7 @@
  *  - post.ts
  */
 export * from './analytics';
+export * from './gumroad';
 export * from './lanyard';
 export * from './navigation';
 export * from './seo';

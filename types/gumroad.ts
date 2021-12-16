@@ -32,9 +32,10 @@ export interface GumroadProduct {
 export interface StrippedGumroadProduct {
 	currency: string;
 	description: string;
+	id: string;
 	name: string;
-	thumbnail: string;
 	price: number;
+	thumbnail: string;
 	url: string;
 }
 
