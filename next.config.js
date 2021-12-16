@@ -8,6 +8,9 @@ module.exports = {
 			// GitHub assets
 			'raw.githubusercontent.com',
 
+			// Gumroad
+			'public-files.gumroad.com',
+
 			// Spotify Album Art
 			'i.scdn.co',
 
