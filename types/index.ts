@@ -1,6 +1,7 @@
 export * from './blog';
 export * from './common';
 export * from './events';
+export * from './gumroad';
 export * from './lanyard';
 export * from './list';
 export * from './navigation';
