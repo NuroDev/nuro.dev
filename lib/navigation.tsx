@@ -40,6 +40,12 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 			text: 'Referrals',
 			href: '/referrals',
 		},
+		{
+			type: NavigationItemType.LINK,
+			icon: 'feather:shopping-cart',
+			text: 'Store',
+			href: '/store',
+		},
 	],
 	[
 		{
