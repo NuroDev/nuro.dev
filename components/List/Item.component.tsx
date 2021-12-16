@@ -13,6 +13,7 @@ import type { ListAction, WithChildren } from '~/types';
 
 interface ItemProps extends WithChildren {
 	actions?: Array<ListAction>;
+	childrenBefore?: boolean;
 	description?: string;
 	icon?: string | ReactNode;
 	iconColor?: string;
@@ -78,9 +79,18 @@ const Actions = styled.div(tw`
 	mt-4 sm:mt-1
 `);
 
-export function Item({ actions, children, description, icon, iconColor, title }: ItemProps) {
+export function Item({
+	actions,
+	children,
+	childrenBefore = false,
+	description,
+	icon,
+	iconColor,
+	title,
+}: ItemProps) {
 	return (
 		<Container>
+			{children && childrenBefore ? children : null}
 			<Content>
 				<MetaContainer>
 					{icon &&
@@ -142,7 +152,7 @@ export function Item({ actions, children, description, icon, iconColor, title }:
 					</Actions>
 				)}
 			</Content>
-			{children}
+			{!childrenBefore && children}
 		</Container>
 	);
 }
