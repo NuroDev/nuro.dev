@@ -10,15 +10,27 @@ In the blink of an eye, the year is over. With the end of the year come a review
 
 ## :family: People
 
----
+Life is a lot to handle for anyone, but as the years go on it only seems to get harder & harder. More to do, not enough time to do it in. That said though, tehre is one thing that can always help you through it all. Friends.
 
--   Who am I extra grateful for this year?
--   What did they give me? What did I give back to them?
--   Who deserves the biggest thank you this year? Can I let them know?
+Like most years I don't know where I would be without some of my closest friends & family to help me through some of the real hard times life throws at you. In comparison to last year it's not been anywhere near as difficult but still had its fair share of ups & downs none the less.
+
+I want to take a moment to thank just a few of those who I don't know where I would be or what I would do without them:
+
+-   [Katie](https://twitter.com/katiejjk): My very best friend who has & I hope will always be there for me
+-   [Dan](https://twitter.com/DanBennett): You're a twat. But a good twat.
+-   [Sam](https://twitter.com/Tactical_Sam): I don't know how you always make me laugh when I am going through a rough patch
+-   [Toby](https://twitter.com/Nether_Dweller): I swear you're like a brother to me with how much we have in common & have been there for one another
+
+There of course many others who have been there for me & I do thank all of you, but those 4 I don't know what I would do without.
+
+Now, on a more soppy side, there is sadly one person who isn't here anymore but I never forget about.
+At the beginning of 2020, before COVID19 took hold of the world, I lost a very close friend of mine: Jamie. I won't go into details on it but I just want to take a moment to appreciate him, everything he did for us all, how insanely skilled he was at games & how much I & everyone else miss him.
+
+**We all miss you Jamie :heart:**
+
+![A photo from my 2019 New Years Eve party with Dan, Me, Sam, Jamie & Katie](/blog/2021_in_review/new_years_2019.jpeg 'A photo from my 2019 New Years Eve party with Dan, Me, Sam, Jamie & Katie')
 
 ## :earth_africa: Experiences
-
----
 
 -   What experiences did I have this year?
 -   What did those experiences mean to me?
@@ -27,8 +39,6 @@ In the blink of an eye, the year is over. With the end of the year come a review
 -   What’s a memory from this year that makes me sad?
 
 ## :iphone: Things
-
----
 
 Last year was my final year of further education as I finally graduated from University. With that going into 2021 I was finally able to work full-time & earn a living with a paycheck.
 
@@ -63,7 +73,7 @@ This was initially just to get the kit up & running & see how the service was, e
 
 The final & largest purchase of this year is that I finally purchased my dream car, like most tech enthusiast's, a [Tesla Model 3](https://www.tesla.com/model3).
 
-5 years after first learning about the iPad with wheels I wanted one & have been saving up for it ever since. 5 years later, 1 deposit & 1 car trade-in later, I finally purchased my dream car.
+5 years after first learning about the iPad with wheels I wanted one & have been saving up for it ever since. 5 years later, 1 deposit & a car trade-in later, I finally purchased my dream car.
 
 I originally ordered a brand new model, but due to a huge demand for cars & the on-going parts shortage, I later cancelled that order and instead ordered an ex-demo model which I later learned was an ex-press car used for many UK review sites, such as [What Car?](https://www.youtube.com/watch?v=kHw3bfydrLM).
 
@@ -71,14 +81,10 @@ I originally ordered a brand new model, but due to a huge demand for cars & the 
 
 ## :star: Accomplishments
 
----
-
 -   What were the biggest accomplishments of the year?
 -   What do those accomplishments mean for the future ahead?
 
 ## :joystick: Game-changers
-
----
 
 -   How do I define a game-changer for myself?
 -   Which game-changers happened for me this year?
@@ -87,15 +93,11 @@ I originally ordered a brand new model, but due to a huge demand for cars & the 
 
 ## :book: Top Learnings
 
----
-
 -   What were my top learnings this year?
 -   How are those learnings going to change or affect what I think about?
 -   Can I, or do I want to, go deeper on those learnings?
 
 ## :thinking_face: Improvements
-
----
 
 -   Which ares in my life do I want to improve?
     -   Any ideas or early-thinking steps to get there?
@@ -103,8 +105,6 @@ I originally ordered a brand new model, but due to a huge demand for cars & the 
 -   What will improving upon those areas mean for me?
 
 ## :wave: Me
-
----
 
 -   What’s one small way I can become a better person in 2022?
     -   For others? For myself?
@@ -114,9 +114,17 @@ I originally ordered a brand new model, but due to a huge demand for cars & the 
 
 ## :muscle: Strengths, Values, Behaviors
 
----
-
 -   What are my realized strengths? Realized weaknesses?
 -   What motivates me?
 -   What are my values? Have they changed?
 -   What are three objectives I’d like to achieve this year? What are 1-2 key results for each?
+
+---
+
+And that's it. That's a wrap for 2021.
+
+This year has been had its fair share of bumps along the way, but nothing in comparison to what the world endured last year.
+
+To finish it all up I want to thank all of those I spent the year with. Friends, new & old, especially for helping make life that bit easier & more bearable for me.
+
+**See you all in 2022 :wave:**
