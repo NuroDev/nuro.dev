@@ -32,11 +32,38 @@ At the beginning of 2020, before COVID19 took hold of the world, I lost a very c
 
 ## :earth_africa: Experiences
 
--   What experiences did I have this year?
--   What did those experiences mean to me?
--   What did I learn from each one? Would I do it again?
--   What’s a memory from this year that makes me smile?
--   What’s a memory from this year that makes me sad?
+Now, for those who do not know me, I am an introvert.
+Going out & doing everything under the sun is not my thing. To me, especially as I have gotten older, I have found life is alays moving so fast & so much happening at once that any chance I can get to take a moment to slow down, enjoy the moment & have some good memories, I will take it.
+
+Not to say much didn't happen in 2021, but as most years are now, most of my best experiences & memories are had with friends online, not by going somewhere doing something.
+
+The most frequent memories I have are clips saved from games played with friends. In the past year or 2 this has most prominently been [Valorant](https://playvalorant.com/).<br/>
+Here is just a few of my favourite clips from the past year of playing Valorant with my friends:
+
+<XStreamable id="o806r3" title="What it's like to play Valorant with Katie" />
+<XStreamable id="67lmnf" title="You mean here?" />
+<XStreamable id="u6gr1f" title="Dance party with Katie" />
+<XStreamable id="37g1ib" title="WTF Katie" />
+
+As for what other memories I have made in the past year? Well, I think it boils down to 2 big events I attended:
+
+The first of which was the wedding of an old University friend of mine, [Andrew](https://twitter.com/KnTElixar) & his now wife [Jade](https://twitter.com/Calenmiriel_Art).
+Having not been to a wedding for several years now it was a nice occasion to go to & celebrate the occasion.
+
+**Congrats to you both :tada:**
+
+![A photo from Andrew & Jade's wedding with them standing outside in front of the church](/blog/2021_in_review/andrew_and_jades_wedding.jpg 'A photo from Andrew & Jade's wedding with them standing outside in front of the church')
+
+The second big event of the year is the group holiday I have with all my friends, usually to a family holiday home located in Norfolk.
+Honestly so much happened on that week away that I cannot remember it all but I have a few photos to remember some of the best moments.
+
+![A photo of the full English breakfast we made on the day after we arrived](/blog/2021_in_review/norfolk_breakfast.jpg 'A photo of the full English breakfast we made on the day after we arrived')
+![A photo from on top of the cliffs of the North Norfolk coast overlooking the English Channel](/blog/2021_in_review/norfolk_coast.jpg 'A photo from on top of the cliffs of the North Norfolk coast overlooking the English Channel')
+![A photo of us all as a group dressed up in race suits before we go out racing go karts](/blog/2021_in_review/norfolk_gokarting.jpg 'A photo of us all as a group dressed up in race suits before we go out racing go karts')
+![A photo of my friends Katie & Ashley on top of a fallen down tree pretending to be fighting](/blog/2021_in_review/norfolk_fighting_in_the_woods.jpg 'A photo of my friends Katie & Ashley on top of a fallen down tree pretending to be fighting')
+![A photo of my friend Will sat on a bench in the woods pretending to look sad](/blog/2021_in_review/norfolk_will_on_a_bench.jpg 'A photo of my friend Will sat on a bench in the woods pretending to look sad')
+![A photo of the church next to our holiday home showing the beautfiful summer sunset](/blog/2021_in_review/norfolk_church_sunset.jpg 'A photo of the church next to our holiday home showing the beautfiful summer sunset')
+![A photo of far away photo of my friends Ashley & Will throwing a frisbee around the garden](/blog/2021_in_review/norfolk_frisbee.jpg 'A photo of far away photo of my friends Ashley & Will throwing a frisbee around the garden')
 
 ## :iphone: Things
 
