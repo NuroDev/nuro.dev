@@ -18,12 +18,12 @@ export function XFigure({ alt, caption, src }: XFigureProps) {
 			<StyledImage
 				alt={alt ?? caption}
 				draggable={false}
-				layout="responsive"
-				width="100%"
 				height="100%"
+				layout="responsive"
 				src={src}
+				width="100%"
 			/>
-			{caption && <figcaption>{caption}</figcaption>}
+			<figcaption>{alt ?? caption}</figcaption>
 		</figure>
 	);
 }
