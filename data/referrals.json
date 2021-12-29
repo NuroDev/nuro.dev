@@ -106,6 +106,15 @@
 		"url": "https://join.monzo.com/c/d8z35vy"
 	},
 	{
+		"code": "nurodev-charmander",
+		"color": "#582be8",
+		"description": "A new kind of professional network",
+		"homepage": "https://www.polywork.com/",
+		"icon": "heroicons-outline:view-grid",
+		"name": "Polywork",
+		"url": "https://www.polywork.com/invite/nurodev-charmander"
+	},
+	{
 		"code": "nuro",
 		"color": "#853bce",
 		"description": "Build apps. Not infrastructure.",
