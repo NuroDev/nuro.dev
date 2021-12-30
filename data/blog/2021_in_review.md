@@ -10,6 +10,8 @@ In the blink of an eye, the year is over. With the end of the year come a review
 
 ## :family: People
 
+---
+
 Life is a lot to handle for anyone, but as the years go on it only seems to get harder & harder. More to do, not enough time to do it in. That said though, tehre is one thing that can always help you through it all. Friends.
 
 Like most years I don't know where I would be without some of my closest friends & family to help me through some of the real hard times life throws at you. In comparison to last year it's not been anywhere near as difficult but still had its fair share of ups & downs none the less.
@@ -18,7 +20,7 @@ I want to take a moment to thank just a few of those who I don't know where I wo
 
 -   [Katie](https://twitter.com/katiejjk): My very best friend who has & I hope will always be there for me
 -   [Dan](https://twitter.com/DanBennett): You're a twat. But a good twat.
--   [Sam](https://twitter.com/Tactical_Sam): I don't know how you always make me laugh when I am going through a rough patch
+-   [Sam](https://twitter.com/Tactical_Sam): I don't know how you [always make me laugh](https://twitter.com/Tactical_Sam/status/854031251409391616?s=20) when I am going through a rough patch
 -   [Toby](https://twitter.com/Nether_Dweller): I swear you're like a brother to me with how much we have in common & have been there for one another
 
 There of course many others who have been there for me & I do thank all of you, but those 4 I don't know what I would do without.
@@ -31,6 +33,8 @@ At the beginning of 2020, before COVID19 took hold of the world, I lost a very c
 ![A photo from my 2019 New Years Eve party with Dan, Me, Sam, Jamie & Katie](/blog/2021_in_review/new_years_2019.jpeg 'A photo from my 2019 New Years Eve party with Dan, Me, Sam, Jamie & Katie')
 
 ## :earth_africa: Experiences
+
+---
 
 Now, for those who do not know me, I am an introvert.
 Going out & doing everything under the sun is not my thing. To me, especially as I have gotten older, I have found life is alays moving so fast & so much happening at once that any chance I can get to take a moment to slow down, enjoy the moment & have some good memories, I will take it.
@@ -66,6 +70,8 @@ Honestly so much happened on that week away that I cannot remember it all but I 
 ![A photo of far away photo of my friends Ashley & Will throwing a frisbee around the garden](/blog/2021_in_review/norfolk_frisbee.jpg 'A photo of far away photo of my friends Ashley & Will throwing a frisbee around the garden')
 
 ## :iphone: Things
+
+---
 
 Last year was my final year of further education as I finally graduated from University. With that going into 2021 I was finally able to work full-time & earn a living with a paycheck.
 
@@ -106,7 +112,7 @@ I originally ordered a brand new model, but due to a huge demand for cars & the 
 
 ![A photo of my new Tesla Model 3 in white with sports wheels](/blog/2021_in_review/tesla.jpg 'A photo of my new Tesla Model 3 in white with sports wheels')
 
-## :star: Accomplishments
+<!-- ## :star: Accomplishments
 
 -   What were the biggest accomplishments of the year?
 -   What do those accomplishments mean for the future ahead?
@@ -118,33 +124,70 @@ I originally ordered a brand new model, but due to a huge demand for cars & the 
 -   What does each one mean for my future? How will I be impacted?
 -   How will I use each one to propel my thinking/planning for the future?
 
-## :book: Top Learnings
+## :mag: Top Learnings
 
 -   What were my top learnings this year?
 -   How are those learnings going to change or affect what I think about?
--   Can I, or do I want to, go deeper on those learnings?
+-   Can I, or do I want to, go deeper on those learnings? -->
 
-## :thinking_face: Improvements
+## :dart: Targets
 
--   Which ares in my life do I want to improve?
-    -   Any ideas or early-thinking steps to get there?
--   Why do I want to improve those areas?
--   What will improving upon those areas mean for me?
+---
 
-## :wave: Me
+It's always good to try & make some targets for yourself for the future.
+Going into 2022 I have a few key areas I would like to focus on improving:
 
--   What’s one small way I can become a better person in 2022?
-    -   For others? For myself?
--   What am I holding onto that’s no longer serving me well? Why am I holding onto it? Can I let it go?
--   What can I thank myself for this year?
--   What have I outgrown this year?
+### :ship: Ship it
 
-## :muscle: Strengths, Values, Behaviors
+In the past year or so I have begun to follow & see more about the indie hacker community. Bootstrapers, freelancers & those building awesome projects from nothing. It blows my mind some of the amazing work being done by the community.
 
--   What are my realized strengths? Realized weaknesses?
--   What motivates me?
--   What are my values? Have they changed?
--   What are three objectives I’d like to achieve this year? What are 1-2 key results for each?
+With that, in the past year or so, like most developers, I have had more ideas than time to build them. Too many ideas, not enough time. As such I have a list of possible projects to work on going into 2022. I am aiming to build & launch/release a minimum of one, maybe two, projects or products in the space of the year.
+
+For now I am aiming low as I have never launched or released a product before so it will be good to use it as an experience to learn not only how to do it, but how to do it better next time around.
+
+Going to make [Stripe](https://stripe.com/) & [Gumroad](http://gumroad.com/) my new favourite tools in 2022.
+
+### :joystick: Game Dev
+
+Games are a huge part of my life & I spend wasy too much time playing them. But I wish I spent more time making them.
+
+Having finished my Bachelor's degree in Computer Games Programming, I know a majority of the fundamentals to build the tools to make a game, but not a game itself.
+
+Graphics renderer's, physics systems, sound engines, etc. All extremely complex systems that I studied in University & know, to a certain extent, how to implement on my own. But when it comes to building an actual game to be played, I've only built a handful of them. As such I want to start putting a few prototypes & game ideas I've had over the past year or 2 into practice.
+
+Booting up Unity or Unreal Engine and starting to throw come C# scripts ot blueprints together to get an idea working & see what I can put together.
+
+### :skull: Work Ethic
+
+I often find myself in between 2 working states. One where I feel like I am being lazy & not doing enough or anything at all. The other being a pure workaholic where I end up pushing my mental & physical limits to the edge & working 12+ hour days.<br />
+A prime example of this was in 2020 during the final stretch towards finishing my Bachelor's degree at University. At the peak of the pandemic I will never forget me & a close friend of mine, funnily enough also named Ben, being in Discord call's for days at a time, sleeping 6-10 hours a week. I can safely say that that period of my life was worst state my physical & mental health had ever been. All as a push to meet deadlines & get the work done.
+
+During 2021 that extreme & detrimental mentality was near non-existent & instead replaced with a much more laxed & chill work ethic. Often to the point where I am not getting the work done that I needed to get done.<br />
+Going into 2022 I need to try and find a good work/life balance where I am able to manage my time effectively, get the work that needs to be done, done, but also not destroy my mental & physical health in the process.
+
+### :clock1: Time Management
+
+Following on from the improvement in work ethic, I also need to take some steps in trying to improve my time management.
+Currently my time planning is based around whatever I need to do next, I work on. A better method to try & manage it better is starting to track the hours I work, timeboxing certain tasks, etc.
+
+They're all baby steps but they're steps that need to be taken to start improving how I manage my time.
+
+### :zzz: Sleep Schedule
+
+Ironic that I am currently writing about this at 3am but yes, for the past few months, or more so years now, I have been having issues maintaining a consistent sleep schedule.
+Part of the issue is lying in bed waiting to fall asleep & nothing happening, another part being not wanting to cancel the productivity spike. Not sure about others but I find myself most productive in the very early hours of the morning when there is no distractions. No noise. No people awake. Nothing but me & the work that needs to get done.
+
+I guess that goes without saying that improving my sleep schedule is partially linked to my improved time management. The two will go hand in hand.
+
+### :clipboard: Others
+
+There's a few other smaller targets I'd also like to aim for:
+
+-   Fall further down the custom [mechanical keyboard rabbit hole](https://www.reddit.com/r/MechanicalKeyboards/)
+-   Experiment with getting into 3D printing
+-   Contribute more towards open source projects :green_heart:
+-   Begin moving away from GSuite for self-hosted and/or more privacy focused alternatives
+-   Try & learn a new language while the [Duolingo](https://www.duolingo.com/) bird watches me in my sleep
 
 ---
 
@@ -154,4 +197,4 @@ This year has been had its fair share of bumps along the way, but nothing in com
 
 To finish it all up I want to thank all of those I spent the year with. Friends, new & old, especially for helping make life that bit easier & more bearable for me.
 
-**See you all in 2022 :wave:**
+**See you all in 2022**:wave:
