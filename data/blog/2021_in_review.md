@@ -1,6 +1,6 @@
 ---
 banner_alt: A photo of a typewriter with a page in showing the year 2021 in large font
-banner: https://images.unsplash.com/photo-1585776245796-00bafcc7e91f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80
+banner: https://images.unsplash.com/photo-1608870229932-cec85e0390ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1738&q=80
 title: 2021 in review
 description: It's been a long year & a lot has happened so I wanted to recap it all
 date: '2021-12-31'
