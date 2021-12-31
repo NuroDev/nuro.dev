@@ -148,13 +148,19 @@ I consider myself lucky. Lucky in the sense that I feel like I got it easy compa
 
 As mentioned above, I truly got knee deep into investing my money this year after starting to learn more about it last year.
 
-This year I went all in & read through multiple articles, guides & more, as well as watching multiple financial YouTuber's, such as [Graham Stephan](https://www.youtube.com/c/GrahamStephan), who were great at breaking down not only some fundamental investment concepts but also going over some of the current market trends & conditions.
+This year I went all in & read through multiple articles, guides & more, as well as watching multiple financial YouTuber's, such as [Graham Stephan](https://www.youtube.com/c/GrahamStephan) & [James Shack](https://www.youtube.com/channel/UCLXQalldcm6gMYMQfLMliww), who were great at breaking down not only some fundamental investment concepts but also going over some of the current market trends & conditions.
 
 So much of this I wish I had learned in school & was taught at a younger age. But most schools, as far as I am aware, teach close to no or literally no financial eduction. Even explaining the basics of things like "What is a mortgage?", "What's a credit score?", etc are all things that more people should be taught in school.
 
 ### :globe_with_meridians: Web Development
 
 Having spent the past year or so at university studying my Bachelor's degree in Computer Games Programming, pivoting to working full-time as a full-stack / web developer means I have had to pick up a lot in the past year. Everything from truly getting my first hands on with a production backend environment. Learning how to build & use complex React components. Even beginning to finally start using SQL, a language I have always heard of & seen but only touch a handful of times before.
+
+### :clipboard: Task Management
+
+I've taken a huge liking to starting to track any & all tasks I work on. Whether that be for something development based where I can create a new ticket in [Linear](https://linear.app/), or something more personal like using [Todoist](https://todoist.com/) to create a simple daily reminder list of everything I need to do that day.
+
+So much of what I was doing before was quickly writing down something on a sticky note so I don't forget it. But I ended up with a desk & monitor full of them. So I'm glad I have finally learn't to take a better approach to managing tasks & work I do than forgetting tasks or having a rainbow desk made up of sticky notes.
 
 ## :dart: Targets
 
