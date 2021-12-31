@@ -112,12 +112,37 @@ I originally ordered a brand new model, but due to a huge demand for cars & the 
 
 ![A photo of my new Tesla Model 3 in white with sports wheels](/blog/2021_in_review/tesla.jpg 'A photo of my new Tesla Model 3 in white with sports wheels')
 
-<!-- ## :star: Accomplishments
+## :star: Accomplishments
 
--   What were the biggest accomplishments of the year?
--   What do those accomplishments mean for the future ahead?
+---
 
-## :joystick: Game-changers
+### :rocket: Attio
+
+While it was only short lived, I am still extremely proud that I was able to join the team at [Attio](https://attio.com) as a frontend developer & helped build some truly awesome stuff with them.
+
+### :moneybag: Investments
+
+**DISCLAIMER: This section is not financial advice**
+
+Like most in 2020 I had a lot of down time to go down some rabbit holes. One such rabbit hole for me was investing & saving for the future. Learning more about how to invest, the best / smartest ways to save my money, when to save versus spend, etc.
+
+A lot of this was spurred on by me first discovering [Freetrade](https://magic.freetrade.io/join/ben/3e2d5864) & learning how easy it was to start investing in stocks & shares. From there I began going down the rabbit hole of YouTube videos & articles on investing advice.
+
+Going into 2021 I started off by creating my first ever [ISA (Investment Savings Account)](https://freetrade.io/dictionary/individual-savings-account-isa) to allow me to invest safely with less concern about tax implications in the future & start investing more of my income into popular stocks & ETF's, such as the S&P 500, rather than putting it into a savings account/pot in my bank where I earn less than 1% interest.<br/>
+The risk is of course a lot higher than a savings account, but the returns are that much higher I justified the risk & only put in what I could afford to lose.
+
+By the end of the year I am successfully up **17.5%** on what I have invested of the course of the year :tada:
+
+### :mask: COVID
+
+I got COVID. As safe & precautious I was, I ended up testing positive.
+
+Back in September of 2021 I went on holiday with some friends. One such friend sadly tested positive & mean't a few days later so did I.<br />
+2 weeks in quarentine, a runny nose & one brutal migraine later I successfully recovered & began testing negative for again.
+
+I consider myself lucky. Lucky in the sense that I feel like I got it easy compared to most. Considering my age I feel like I naturally wouldn't affect me as much as most, but many others were not so lucky after testing positive.
+
+<!-- ## :joystick: Game-changers
 
 -   How do I define a game-changer for myself?
 -   Which game-changers happened for me this year?
