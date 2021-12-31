@@ -12,7 +12,7 @@ In the blink of an eye, the year is over. With the end of the year come a review
 
 ---
 
-Life is a lot to handle for anyone, but as the years go on it only seems to get harder & harder. More to do, not enough time to do it in. That said though, tehre is one thing that can always help you through it all. Friends.
+Life is a lot to handle for anyone, but as the years go on it only seems to get harder & harder. More to do, not enough time to do it in. That said though, there is one thing that can always help you through it all. Friends.
 
 Like most years I don't know where I would be without some of my closest friends & family to help me through some of the real hard times life throws at you. In comparison to last year it's not been anywhere near as difficult but still had its fair share of ups & downs none the less.
 
@@ -37,7 +37,7 @@ At the beginning of 2020, before COVID19 took hold of the world, I lost a very c
 ---
 
 Now, for those who do not know me, I am an introvert.
-Going out & doing everything under the sun is not my thing. To me, especially as I have gotten older, I have found life is alays moving so fast & so much happening at once that any chance I can get to take a moment to slow down, enjoy the moment & have some good memories, I will take it.
+Going out & doing everything under the sun is not my thing. To me, especially as I have gotten older, I have found life is always moving so fast & so much happening at once that any chance I can get to take a moment to slow down, enjoy the moment & have some good memories, I will take it.
 
 Not to say much didn't happen in 2021, but as most years are now, most of my best experiences & memories are had with friends online, not by going somewhere doing something.
 
@@ -66,7 +66,7 @@ Honestly so much happened on that week away that I cannot remember it all but I 
 ![A photo of us all as a group dressed up in race suits before we go out racing go karts](/blog/2021_in_review/norfolk_gokarting.jpg 'A photo of us all as a group dressed up in race suits before we go out racing go karts')
 ![A photo of my friends Katie & Ashley on top of a fallen down tree pretending to be fighting](/blog/2021_in_review/norfolk_fighting_in_the_woods.jpg 'A photo of my friends Katie & Ashley on top of a fallen down tree pretending to be fighting')
 ![A photo of my friend Will sat on a bench in the woods pretending to look sad](/blog/2021_in_review/norfolk_will_on_a_bench.jpg 'A photo of my friend Will sat on a bench in the woods pretending to look sad')
-![A photo of the church next to our holiday home showing the beautfiful summer sunset](/blog/2021_in_review/norfolk_church_sunset.jpg 'A photo of the church next to our holiday home showing the beautfiful summer sunset')
+![A photo of the church next to our holiday home showing the beautiful summer sunset](/blog/2021_in_review/norfolk_church_sunset.jpg 'A photo of the church next to our holiday home showing the beautiful summer sunset')
 ![A photo of far away photo of my friends Ashley & Will throwing a frisbee around the garden](/blog/2021_in_review/norfolk_frisbee.jpg 'A photo of far away photo of my friends Ashley & Will throwing a frisbee around the garden')
 
 ## :iphone: Things
@@ -95,7 +95,7 @@ The second big purchase of the year that came in at the very end was finally bei
 
 For those unaware I live on a farm in a very isolated location and as such to get anything faster than ADSL I would need to pay BT around £20,000 to install a fiber cable to our location just to upgrade less than a handful of households. Since that wasn't, and probably never will be an option, the other options were wireless or satellite broadband. There are no WISP's in my area so that sadly rules them out & standard satellite broadband is usually pretty slow & has increased latency. As such, Starlink seemed like my best option.
 
-A few hundred pounds & a few days of shipping from Calefornia later I finally received my Starlink kit & got it all set up & running.
+A few hundred pounds & a few days of shipping from California later I finally received my Starlink kit & got it all set up & running.
 
 ![A photo of my Starlink kit delivered outside my front door](/blog/2021_in_review/starlink_box.jpg 'A photo of my Starlink kit delivered outside my front door')
 ![A photo of my Starlink kit all set up outside my front door & aiming at the sky](/blog/2021_in_review/starlink_set_up.jpg 'A photo of my Starlink kit all set up outside my front door & aiming at the sky')
@@ -138,7 +138,7 @@ By the end of the year I am successfully up **17.5%** on what I have invested of
 I got COVID. As safe & precautious I was, I ended up testing positive.
 
 Back in September of 2021 I went on holiday with some friends. One such friend sadly tested positive & mean't a few days later so did I.<br />
-2 weeks in quarentine, a runny nose & one brutal migraine later I successfully recovered & began testing negative for again.
+2 weeks in quarantine, a runny nose & one brutal migraine later I successfully recovered & began testing negative for again.
 
 I consider myself lucky. Lucky in the sense that I feel like I got it easy compared to most. Considering my age I feel like I naturally wouldn't affect me as much as most, but many others were not so lucky after testing positive.
 
@@ -175,7 +175,7 @@ Going to make [Stripe](https://stripe.com/) & [Gumroad](http://gumroad.com/) my 
 
 ### :joystick: Game Dev
 
-Games are a huge part of my life & I spend wasy too much time playing them. But I wish I spent more time making them.
+Games are a huge part of my life & I spend way too much time playing them. But I wish I spent more time making them.
 
 Having finished my Bachelor's degree in Computer Games Programming, I know a majority of the fundamentals to build the tools to make a game, but not a game itself.
 
