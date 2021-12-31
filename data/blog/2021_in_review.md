@@ -118,7 +118,7 @@ I originally ordered a brand new model, but due to a huge demand for cars & the 
 
 ### :rocket: Attio
 
-While it was only short lived, I am still extremely proud that I was able to join the team at [Attio](https://attio.com) as a frontend developer & helped build some truly awesome stuff with them.
+While it was only short lived, I am still extremely proud that I was able to join the team at [Attio](https://attio.com). In the several months I worked along side them & I helped build some truly awesome things & I also learned a lot from so many people while working there :heart:.
 
 ### :moneybag: Investments
 
@@ -144,6 +144,8 @@ I consider myself lucky. Lucky in the sense that I feel like I got it easy compa
 
 ## :mag: Top Learnings
 
+---
+
 ### :moneybag: Investments
 
 As mentioned above, I truly got knee deep into investing my money this year after starting to learn more about it last year.
@@ -155,6 +157,8 @@ So much of this I wish I had learned in school & was taught at a younger age. Bu
 ### :globe_with_meridians: Web Development
 
 Having spent the past year or so at university studying my Bachelor's degree in Computer Games Programming, pivoting to working full-time as a full-stack / web developer means I have had to pick up a lot in the past year. Everything from truly getting my first hands on with a production backend environment. Learning how to build & use complex React components. Even beginning to finally start using SQL, a language I have always heard of & seen but only touch a handful of times before.
+
+A lot can be learned from getting hands on with a production code base.
 
 ### :clipboard: Task Management
 
@@ -194,7 +198,8 @@ Booting up Unity or Unreal Engine and starting to throw come C# scripts ot bluep
 I often find myself in between 2 working states. One where I feel like I am being lazy & not doing enough or anything at all. The other being a pure workaholic where I end up pushing my mental & physical limits to the edge & working 12+ hour days.<br />
 A prime example of this was in 2020 during the final stretch towards finishing my Bachelor's degree at University. At the peak of the pandemic I will never forget me & a close friend of mine, funnily enough also named Ben, being in Discord call's for days at a time, sleeping 6-10 hours a week. I can safely say that that period of my life was worst state my physical & mental health had ever been. All as a push to meet deadlines & get the work done.
 
-During 2021 that extreme & detrimental mentality was near non-existent & instead replaced with a much more laxed & chill work ethic. Often to the point where I am not getting the work done that I needed to get done.<br />
+During 2021 that extreme & detrimental mentality was near non-existent & instead replaced with a much more laxed & chill work ethic. Often to the point where I am not getting the work done that I needed to get done.
+
 Going into 2022 I need to try and find a good work/life balance where I am able to manage my time effectively, get the work that needs to be done, done, but also not destroy my mental & physical health in the process.
 
 ### :clock1: Time Management
