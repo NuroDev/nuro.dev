@@ -142,18 +142,19 @@ Back in September of 2021 I went on holiday with some friends. One such friend s
 
 I consider myself lucky. Lucky in the sense that I feel like I got it easy compared to most. Considering my age I feel like I naturally wouldn't affect me as much as most, but many others were not so lucky after testing positive.
 
-<!-- ## :joystick: Game-changers
-
--   How do I define a game-changer for myself?
--   Which game-changers happened for me this year?
--   What does each one mean for my future? How will I be impacted?
--   How will I use each one to propel my thinking/planning for the future?
-
 ## :mag: Top Learnings
 
--   What were my top learnings this year?
--   How are those learnings going to change or affect what I think about?
--   Can I, or do I want to, go deeper on those learnings? -->
+### :moneybag: Investments
+
+As mentioned above, I truly got knee deep into investing my money this year after starting to learn more about it last year.
+
+This year I went all in & read through multiple articles, guides & more, as well as watching multiple financial YouTuber's, such as [Graham Stephan](https://www.youtube.com/c/GrahamStephan), who were great at breaking down not only some fundamental investment concepts but also going over some of the current market trends & conditions.
+
+So much of this I wish I had learned in school & was taught at a younger age. But most schools, as far as I am aware, teach close to no or literally no financial eduction. Even explaining the basics of things like "What is a mortgage?", "What's a credit score?", etc are all things that more people should be taught in school.
+
+### :globe_with_meridians: Web Development
+
+Having spent the past year or so at university studying my Bachelor's degree in Computer Games Programming, pivoting to working full-time as a full-stack / web developer means I have had to pick up a lot in the past year. Everything from truly getting my first hands on with a production backend environment. Learning how to build & use complex React components. Even beginning to finally start using SQL, a language I have always heard of & seen but only touch a handful of times before.
 
 ## :dart: Targets
 
