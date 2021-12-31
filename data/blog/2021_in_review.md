@@ -1,5 +1,5 @@
 ---
-banner_alt: A photo of a typewriter with a page in showing the year 2021 in large font
+banner_alt: A photo of 3 cupcakes, each with a number on it to spell out 2021
 banner: https://images.unsplash.com/photo-1608870229932-cec85e0390ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1738&q=80
 title: 2021 in review
 description: It's been a long year & a lot has happened so I wanted to recap it all
