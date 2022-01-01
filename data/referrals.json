@@ -74,6 +74,17 @@
 		"url": "https://dividend.watch/?forfriends=ANPTL9oVTA"
 	},
 	{
+		"aliases": ["mail", "email"],
+		"bonus": "10% off your first year",
+		"code": "u27670144",
+		"color": "#1565c0",
+		"description": "Private email peace of mind",
+		"homepage": "https://fastmail.com/",
+		"icon": "heroicons-outline:mail",
+		"name": "Fastmail",
+		"url": "https://ref.fm/u27670144"
+	},
+	{
 		"aliases": ["investing", "stocks", "stonks"],
 		"bonus": "Get a free share between £3-200",
 		"code": "3e2d5864",
