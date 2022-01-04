@@ -166,6 +166,17 @@
 		"url": "https://taxscouts.com/i/BEN388"
 	},
 	{
+		"aliases": ["git"],
+		"bonus": "Get 10% off",
+		"code": "R-3LC5426SFD",
+		"color": "#FFC600",
+		"description": "The most powerful Git client for Mac & Windows",
+		"homepage": "https://www.git-tower.com/",
+		"icon": "feather:git-branch",
+		"name": "Tower",
+		"url": "https://www.git-tower.com/p/refer-a-friend/R-3LC5426SFD"
+	},
+	{
 		"aliases": ["food"],
 		"code": "eats-bend10725ue",
 		"color": "#000000",
