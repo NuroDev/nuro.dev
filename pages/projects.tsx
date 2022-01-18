@@ -26,7 +26,9 @@ const ProjectIcon = styled.span(tw`
 	text-xl
 `);
 
-export const getServerSideProps: GetServerSideProps<ProjectProps> = async () => {
+export const getServerSideProps: GetServerSideProps<ProjectProps> = async ({ res }) => {
+	res.setHeader('Cache-Control', 'public, max-age=3600, immutable');
+
 	const projects = await getProjects();
 
 	return {
