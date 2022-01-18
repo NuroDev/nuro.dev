@@ -1,15 +1,14 @@
 import styled from '@emotion/styled';
-import containsEmoji from 'contains-emoji';
 import tw from 'twin.macro';
-import GithubColors from 'github-colors';
 
+import { getProjects } from '~/lib/projects';
 import { Layout } from '~/layouts';
 import { List } from '~/components';
 import { ListActionType } from '~/types';
 
 import type { GetServerSideProps } from 'next';
 
-import type { GitHubRepos, ListAction, Project, Projects, ProjectPost } from '~/types';
+import type { ListAction, Projects } from '~/types';
 
 interface ProjectProps {
 	projects: string;
@@ -28,70 +27,7 @@ const ProjectIcon = styled.span(tw`
 `);
 
 export const getServerSideProps: GetServerSideProps<ProjectProps> = async () => {
-	const response = await fetch('https://api.github.com/users/nurodev/repos', {
-		headers: {
-			...(process.env.GITHUB_PAT && {
-				authorization: `token ${process.env.GITHUB_PAT}`,
-			}),
-		},
-	});
-	if (response.status !== 200) {
-		const json = (await response.json()) as {
-			documentation_url: string;
-			message: string;
-		};
-
-		console.error({ error: json });
-
-		return {
-			redirect: {
-				destination: `/error?status=${response.status}`,
-				permanent: false,
-			},
-		};
-	}
-
-	const json = (await response.json()) as GitHubRepos;
-
-	const { default: rawProjectPosts } = await import('~/data/projects.json');
-	const projectPosts = rawProjectPosts as Array<ProjectPost>;
-
-	const projects: Projects = json
-		.map((repo) => {
-			if (!repo.topics.includes('portfolio')) return null;
-
-			if (repo.archived) return null;
-
-			// Strip the emoji suffix from the repo description
-			const trimmedDescription = repo.description.split(' ');
-			trimmedDescription.shift();
-			const description = trimmedDescription.join(' ');
-
-			// Check if there is a matching blog post to attach
-			const repoPost =
-				projectPosts.length > 0 &&
-				projectPosts.find(
-					(post) => post.repository.toLowerCase() === repo.full_name.toLowerCase(),
-				);
-
-			return {
-				description,
-				icon: (() => {
-					if (!repo.description) return undefined;
-
-					const char = repo.description.split(' ')[0];
-
-					return containsEmoji(char) ? char : undefined;
-				})(),
-				homepage: repo.homepage ?? undefined,
-				language: repo.language ? GithubColors.get(repo.language).color : undefined,
-				name: repo.name,
-				post: repoPost ? `/blog/${repoPost.post}` : undefined,
-				template: false,
-				url: repo.html_url.toLowerCase(),
-			} as Project;
-		})
-		.filter((project) => project !== null);
+	const projects = await getProjects();
 
 	return {
 		props: {
