@@ -7,7 +7,7 @@ description: Learn how to use GitHub as a CMS using server-side renderering from
 date: '2022-01-19'
 ---
 
-Since re-launching my website with an all new redesign I added a number of cool features. One such feature I thougt worth sharing about was my [portfolio page](/portfolio) as it actually uses [GitHub](https://github.com) as a CMS (Content Management System).
+Since re-launching my website with an all new redesign I added a number of cool features. One such feature I thought worth sharing about was my [projects page](/portfolio) as it actually uses [GitHub](https://github.com) as a CMS (Content Management System).
 
 So, let's go through and breakdown why I added this feature, why not use some other service & of course how it works.
 
@@ -17,7 +17,7 @@ So, let's go through and breakdown why I added this feature, why not use some ot
 
 When re-designing my website I set out with a number of goals. One such goal was to retain a similar portfolio page to my existing website at the time which fetched all my GitHub repositories & just listed them all.
 
-However, I wanted to improve on this page by adding some sort of curation to it. Preferrably via some method that is quick, easy to use, can be accessed from almost anywhere & preferrably free.
+However, I wanted to improve on this page by adding some sort of curation to it. Preferably via some method that is quick, easy to use, can be accessed from almost anywhere & preferably free.
 
 ## :cloud: Headless CMS
 
@@ -27,7 +27,7 @@ I knew I needed some kind of headless CMS in some form to let me curate the cont
 
 I found most people were happy to recommend other headless CMS services like [Strapi](https://strapi.io/), [Sanity](https://www.sanity.io/), [GraphCMS](https://graphcms.com/), etc which did seem to do the job I wanted of providing a platform for me to curate & manage my content without having to redeploy. But most of them had the same issues that I didn't like.
 
-#### Resiliance
+#### Resilience
 
 Is it overkill to try & have your personal portfolio website to have a 99.999% uptime? Probably.
 
@@ -35,7 +35,7 @@ Does it matter if my website goes down? No. But I like to try & treat as any oth
 
 If the 3rd party service goes down will my content somehow still be magically served by some cache somewhere until the service comes back online? Or is there just going to be no content served at all?
 
-"But you're fetching from GitHub, right? So you're still reliant on data from them" Fair point, yes I am. However, I am both more likely to trust GitHub's uptime & platform resiliance than a CMS service, and it's easier to add in a fail safe so if GitHub does go down we can still serve content without them (More on this later).
+"But you're fetching from GitHub, right? So you're still reliant on data from them" Fair point, yes I am. However, I am both more likely to trust GitHub's uptime & platform resilience than a CMS service, and it's easier to add in a fail safe so if GitHub does go down we can still serve content without them (More on this later).
 
 #### Price
 
@@ -73,7 +73,7 @@ export async function getServerSideProps () {
 
 ### Repository filtering
 
-Here is where we can add our own custom logic to curate the data based on the data returned from GitHub. In this example we'll be filtering out all the reposotories that both don't have the `portfolio` topic & are not archived.
+Here is where we can add our own custom logic to curate the data based on the data returned from GitHub. In this example we'll be filtering out all the repositories that both don't have the `portfolio` topic & are not archived.
 
 ```jsx:portfolio.jsx
 export async function getServerSideProps () {
@@ -124,7 +124,7 @@ export async function getServerSideProps () {
 
 #### Caching
 
-This last step is also optional but can help with platform resiliance & response times. In short we'll use some form of superfast caching database, like Redis, to store the request data after the first request & from then on after serve the cached data instead of having to make multiple requests.
+This last step is also optional but can help with platform resilience & response times. In short we'll use some form of super fast caching database, like Redis, to store the request data after the first request & from then on after serve the cached data instead of having to make multiple requests.
 
 For my website I ended up using [Upstash](upstash.com) which offers a single single Redis database for free. I recommend following their guide to [get started setting up your first Redis database](https://docs.upstash.com/redis).
 
@@ -187,7 +187,7 @@ export async function getServerSideProps () {
 
 ---
 
-And that's it, with all of that we have a very simple but resiliant system that allows us to use GitHub to manage what content is displayed on our site, but also is not entirely reliant on GitHub so if there is any downtime for whatever reason on GitHub's end we still have the data cached.
+And that's it, with all of that we have a very simple but resilient system that allows us to use GitHub to manage what content is displayed on our site, but also is not entirely reliant on GitHub so if there is any downtime for whatever reason on GitHub's end we still have the data cached.
 
 ```jsx:portfolio.jsx
 export async function getServerSideProps () {
