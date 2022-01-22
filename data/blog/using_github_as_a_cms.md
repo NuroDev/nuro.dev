@@ -3,7 +3,7 @@ banner_alt: A photo of a forest overlooking the bright white sky in the backgrou
 banner: https://images.unsplash.com/photo-1618401471353-b98afee0b2eb
 title_prefix: Guide
 title: Using GitHub as a CMS
-description: Learn how to use GitHub as a CMS using server-side renderering from Next.js
+description: Learn how to use GitHub as a CMS using server-side rendering from Next.js
 date: '2022-01-19'
 ---
 
