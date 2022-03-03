@@ -20,6 +20,7 @@
 	"scripts": {
 		"dev": "next",
 		"build": "next build",
+		"postbuild": "next-sitemap",
 		"start": "next start",
 		"type-check": "tsc",
 		"prettier": "prettier --write \"**/*.{css,js,json,jsx,ts,tsx,vue}\""
@@ -68,6 +69,7 @@
 		"contains-emoji": "^1.1.0",
 		"gray-matter": "^4.0.3",
 		"ioredis": "^4.28.3",
+		"next-sitemap": "^2.5.4",
 		"prettier": "^2.4.1",
 		"tailwindcss": "^2.2.15",
 		"twin.macro": "^2.7.0",
