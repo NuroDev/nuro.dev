@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { Camera, Color, Geometry, Mesh, Program, Renderer } from 'ogl-typescript';
 import { useEffect, useRef } from 'react';
-import { useCounter } from 'react-use';
 
 import TailwindCSS from '~/tailwind.config';
 import { Shaders } from '.';
@@ -14,9 +13,10 @@ const Container = styled.div`
 
 export function Standard() {
 	const containerRef = useRef<HTMLDivElement | null>(null);
-	const [animationId, { inc: incrementAnimationId }] = useCounter(1);
 
 	useEffect(() => {
+		let animationId = 1;
+
 		const renderer = new Renderer({
 			depth: false,
 			dpr: 2,
@@ -30,7 +30,7 @@ export function Standard() {
 		});
 		camera.position.z = 15;
 
-		function handleReisze() {
+		function handleReisze(): void {
 			renderer.setSize(window.innerWidth, window.innerHeight);
 			camera.perspective({
 				aspect: gl.canvas.width / gl.canvas.height,
@@ -85,8 +85,8 @@ export function Standard() {
 			program,
 		});
 
-		function update(t) {
-			incrementAnimationId(requestAnimationFrame(update));
+		function update(t: number): void {
+			animationId = requestAnimationFrame(update);
 
 			particles.rotation.z += 0.0025;
 			program.uniforms.uTime.value = t * 0.00025;
@@ -96,11 +96,9 @@ export function Standard() {
 				camera: camera,
 			});
 		}
-		incrementAnimationId(requestAnimationFrame(update));
+		animationId = requestAnimationFrame(update);
 
-		return () => {
-			cancelAnimationFrame(animationId);
-		};
+		return () => cancelAnimationFrame(animationId);
 	}, [containerRef]);
 
 	return <Container ref={containerRef} />;
