@@ -42,7 +42,7 @@
 		"next": "^12.1.0",
 		"next-mdx-remote": "^3.0.6",
 		"next-seo": "^4.28.1",
-		"next-themes": "^0.0.15",
+		"next-themes": "^0.1.1",
 		"nprogress": "^0.2.0",
 		"ogl-typescript": "^0.1.40",
 		"preact": "^10.5.14",
