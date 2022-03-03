@@ -22,6 +22,7 @@
 		"build": "next build",
 		"postbuild": "next-sitemap",
 		"start": "next start",
+		"lint": "next lint",
 		"type-check": "tsc",
 		"prettier": "prettier --write \"**/*.{css,js,json,jsx,ts,tsx,vue}\""
 	},
@@ -67,6 +68,8 @@
 		"@types/react": "^17.0.24",
 		"@types/react-dom": "^17.0.9",
 		"contains-emoji": "^1.1.0",
+		"eslint": "8.10.0",
+		"eslint-config-next": "12.1.0",
 		"gray-matter": "^4.0.3",
 		"ioredis": "^4.28.3",
 		"next-sitemap": "^2.5.4",
