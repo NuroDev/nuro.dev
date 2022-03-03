@@ -126,7 +126,8 @@ export default function ReferralsPage({ referrals }: ReferralsProps) {
 								icon={referral.icon}
 								iconColor={referral.color}
 								key={index}
-								title={referral.name}>
+								title={referral.name}
+							>
 								{referral.bonus && (
 									<PillContainer>
 										<StyledPill>

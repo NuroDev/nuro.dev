@@ -136,7 +136,8 @@ export default function BlogPost({ post }: BlogPostProps) {
 						},
 					],
 				},
-			}}>
+			}}
+		>
 			<Container>
 				<Content>
 					{post.frontmatter.banner && (post.frontmatter.banner_show ?? true) && (

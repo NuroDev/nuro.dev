@@ -26,7 +26,8 @@ export const Icon = forwardRef<HTMLButtonElement, IconProps>(function Icon(
 			ref={ref}
 			className={`group ${className}`}
 			onClick={(e) => onClick && onClick(e)}
-			{...rest}>
+			{...rest}
+		>
 			{children}
 		</Button>
 	);

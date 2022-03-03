@@ -106,7 +106,8 @@ export function Item({ actions, children, description, icon, iconColor, title }:
 										<Action.Button
 											aria-label={action.label}
 											key={index}
-											onClick={action.onClick}>
+											onClick={action.onClick}
+										>
 											<span tw="sr-only">{action.label}</span>
 											<Icon icon={action.icon} />
 										</Action.Button>
@@ -120,7 +121,8 @@ export function Item({ actions, children, description, icon, iconColor, title }:
 												key={index}
 												onClick={action.onClick}
 												rel="noopener noreferrer"
-												target="_blank">
+												target="_blank"
+											>
 												<span tw="sr-only">{action.label}</span>
 												<Icon icon={action.icon} />
 											</Action.Link>
@@ -131,7 +133,8 @@ export function Item({ actions, children, description, icon, iconColor, title }:
 											<Action.Link
 												aria-label={action.label}
 												key={index}
-												onClick={action.onClick}>
+												onClick={action.onClick}
+											>
 												<span tw="sr-only">{action.label}</span>
 												<Icon icon={action.icon} />
 											</Action.Link>

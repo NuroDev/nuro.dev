@@ -1,4 +1,4 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
 	mode: 'jit',
@@ -37,7 +37,7 @@ module.exports = {
 			},
 			fontFamily: {
 				inter: ['Inter', ...defaultTheme.fontFamily.sans],
-			}
+			},
 		},
 	},
 	variants: {},

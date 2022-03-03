@@ -50,7 +50,8 @@ export function Outline({
 				rel="noopener noreferrer"
 				small={small}
 				target={external ? '_blank' : undefined}
-				{...rest}>
+				{...rest}
+			>
 				{icon && <StyledIcon icon={icon} />}
 				{children}
 			</Container>
