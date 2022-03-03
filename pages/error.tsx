@@ -56,7 +56,7 @@ export default function Error() {
 						<Description>
 							Looks like something went wrong on our end.
 							<br />
-							This isn't your fault, it's ours. Please try again later.
+							This isn&apos;t your fault, it&apos;s ours. Please try again later.
 						</Description>
 						<Actions>
 							<Button.Standard

@@ -17,16 +17,17 @@ const Button = styled.button(tw`
 	focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-primary-500
 `);
 
-export const Icon = forwardRef<HTMLButtonElement, IconProps>(
-	({ children, className, onClick, ...rest }, ref) => {
-		return (
-			<Button
-				ref={ref}
-				className={`group ${className}`}
-				onClick={(e) => onClick && onClick(e)}
-				{...rest}>
-				{children}
-			</Button>
-		);
-	},
-);
+export const Icon = forwardRef<HTMLButtonElement, IconProps>(function Icon(
+	{ children, className, onClick, ...rest },
+	ref,
+) {
+	return (
+		<Button
+			ref={ref}
+			className={`group ${className}`}
+			onClick={(e) => onClick && onClick(e)}
+			{...rest}>
+			{children}
+		</Button>
+	);
+});

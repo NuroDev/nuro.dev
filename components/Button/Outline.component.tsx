@@ -42,7 +42,7 @@ export function Outline({
 	...rest
 }: OutlineProps) {
 	return (
-		<Link href={href}>
+		<Link href={href} passHref>
 			<Container
 				className={className}
 				href={href}

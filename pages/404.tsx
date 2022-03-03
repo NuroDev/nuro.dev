@@ -52,21 +52,19 @@ export default function Error() {
 						<Description>
 							Looks like you took a wrong turn.
 							<br />
-							The page you're looking for couldn't be found.
+							The page you&apos;re looking for couldn&apos;t be found.
 						</Description>
 						<Actions>
 							<Button.Standard
 								type={NavigationItemType.ACTION}
 								onClick={() => history.go(-1)}
-								icon="feather:arrow-left"
-							>
+								icon="feather:arrow-left">
 								Back
 							</Button.Standard>
 							<Button.Standard
 								type={NavigationItemType.LINK}
 								href="/"
-								icon="feather:home"
-							>
+								icon="feather:home">
 								Home
 							</Button.Standard>
 						</Actions>

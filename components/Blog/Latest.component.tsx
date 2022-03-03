@@ -75,7 +75,7 @@ export function Latest({ frontmatter }: LatestProps) {
 	const href = `/blog/${frontmatter.slug}`;
 
 	return (
-		<Link aria-label={ariaLabel} href={href}>
+		<Link aria-label={ariaLabel} href={href} passHref>
 			<Container aria-label={ariaLabel} href={href}>
 				{(frontmatter.banner_show ?? true) && (
 					<Banner>

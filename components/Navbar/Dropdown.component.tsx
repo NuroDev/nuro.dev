@@ -106,7 +106,7 @@ function MenuButtonIcon({ className, icon, direction: type = 'left' }: MenuButto
  */
 function MenuLink({ children, href, onClick, ...rest }: MenuLinkProps) {
 	return (
-		<Link href={href}>
+		<Link href={href} passHref>
 			<StyledMenuItem onClick={(...args) => onClick(...args)} {...rest}>
 				{children}
 			</StyledMenuItem>

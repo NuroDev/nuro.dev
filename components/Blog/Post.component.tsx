@@ -84,7 +84,7 @@ export function _Post({ index, frontmatter }: PostProps) {
 	const href = `/blog/${frontmatter.slug}`;
 
 	return (
-		<Link aria-label={ariaLabel} href={href}>
+		<Link aria-label={ariaLabel} href={href} passHref>
 			<Container aria-label={ariaLabel} href={href}>
 				{frontmatter.banner && index <= 2 && (
 					<Banner>

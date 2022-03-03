@@ -28,7 +28,7 @@ export function usePersistantState() {
 				...state,
 				animations: noMotionPreference,
 			}));
-	}, [state]);
+	}, [noMotionPreference, persistance, state]);
 
 	return state;
 }

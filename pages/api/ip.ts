@@ -18,7 +18,7 @@ interface Response {
 	zip: string;
 }
 
-export default async function (_req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(_req: NextApiRequest, res: NextApiResponse) {
 	try {
 		const response = await fetch('http://ip-api.com/json');
 		const json: Response = await response.json();
