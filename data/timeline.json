@@ -1,5 +1,15 @@
 [
 	{
+		"date": "03-14-2022",
+		"title": "Started @ Wander",
+		"description": "Joined the Wander team",
+		"icon": "feather:briefcase",
+		"link": {
+			"text": "Visit Wander",
+			"url": "https://wander.com/"
+		}
+	},
+	{
 		"date": "10-22-2021",
 		"title": "Launched nuro.dev",
 		"description": "Successfully launched my newly re-designed portfolio",
