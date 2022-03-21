@@ -126,7 +126,7 @@ export async function getServerSideProps () {
 
 This last step is also optional but can help with platform resilience & response times. In short we'll use some form of super fast caching database, like Redis, to store the request data after the first request & from then on after serve the cached data instead of having to make multiple requests.
 
-For my website I ended up using [Upstash](upstash.com) which offers a single single Redis database for free. I recommend following their guide to [get started setting up your first Redis database](https://docs.upstash.com/redis).
+For my website I ended up using [Upstash](https://upstash.com) which offers a single single Redis database for free. I recommend following their guide to [get started setting up your first Redis database](https://docs.upstash.com/redis).
 
 With your database set up you should now have a `REDIS_URL` to add your `.env` file. It should look something like this `rediss://USERNAME:PASSWORD@HOST:PORT`. Don't worry if there isn't a username.
 
