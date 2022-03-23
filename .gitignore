@@ -35,5 +35,13 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
+# Yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
 # Vercel
 .vercel
