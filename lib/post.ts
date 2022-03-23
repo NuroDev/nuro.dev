@@ -5,10 +5,12 @@ import { readdirSync, readFileSync } from 'fs';
 import { serialize } from 'next-mdx-remote/serialize';
 
 import RehypeAutolinkHeadings from 'rehype-autolink-headings';
+import RehypeRaw from 'rehype-raw';
 import RemarkCodeTitles from 'remark-code-titles';
 import RemarkEmoji from 'remark-emoji';
 import RemarkPrism from 'remark-prism';
 import RemarkSlug from 'remark-slug';
+import { nodeTypes } from '@mdx-js/mdx';
 
 import type { FrontMatter, Post, RawFrontMatter } from '~/types';
 
@@ -58,8 +60,20 @@ export async function getPost(slug: string): Promise<Post> {
 	const source = await serialize(content, {
 		scope: data,
 		mdxOptions: {
-			rehypePlugins: [[RehypeAutolinkHeadings, {}]],
-			remarkPlugins: [RemarkCodeTitles, RemarkEmoji, RemarkPrism, RemarkSlug],
+			rehypePlugins: [
+				[RehypeAutolinkHeadings, {}],
+				[RehypeRaw, { passThrough: nodeTypes }],
+			],
+			remarkPlugins: [
+				/**
+				 * Note: `rehype-raw` plugin required to make `remark-code-titles` work as it adds a required HTML parser
+				 * @see https://github.com/mdx-js/mdx/issues/1820#issuecomment-970430877
+				 */
+				RemarkCodeTitles,
+				RemarkEmoji,
+				RemarkPrism,
+				RemarkSlug,
+			],
 		},
 	});
 
