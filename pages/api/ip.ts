@@ -21,7 +21,7 @@ interface Response {
 export default async function handler(_req: NextApiRequest, res: NextApiResponse) {
 	try {
 		const response = await fetch('http://ip-api.com/json');
-		const json: Response = await response.json();
+		const json = (await response.json()) as Response;
 		res.send(json);
 	} catch (error) {
 		res.send(error);
