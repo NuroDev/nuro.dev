@@ -107,12 +107,7 @@ export function Widget() {
 			},
 			title: status.discord_user.username,
 			description: `#${status.discord_user.discriminator}`,
-			icon: (
-				<Status.Indicator
-					color={color}
-					pulse={status.discord_status !== DiscordStatus.OFFLINE}
-				/>
-			),
+			icon: <Status.Indicator color={color} pulse={status.discord_status !== 'offline'} />,
 		},
 
 		/**
@@ -178,8 +173,7 @@ export function Widget() {
 								<a
 									href={activity.avatar.href}
 									target="_blank"
-									rel="noreferrer noopener"
-								>
+									rel="noreferrer noopener">
 									<AssetContainer>
 										<Asset
 											alt={activity.avatar.alt}

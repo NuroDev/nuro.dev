@@ -74,7 +74,7 @@ export function useNavigation() {
 
 	const menuItems: NavigationItems = [
 		...staticMenuItems,
-		...(!loading && status && status.discord_status !== DiscordStatus.OFFLINE
+		...(!loading && status
 			? [
 					[
 						{
@@ -82,7 +82,7 @@ export function useNavigation() {
 							icon: (
 								<Status.Indicator
 									color={color}
-									pulse={status.discord_status !== DiscordStatus.OFFLINE}
+									pulse={status.discord_status !== 'offline'}
 								/>
 							),
 							text: 'Status',

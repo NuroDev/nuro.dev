@@ -1,29 +1,23 @@
-export enum DiscordStatus {
-	/**
-	 * DND / Do not disturb
-	 */
-	DND = 'dnd',
-	/**
-	 * Idle / Away
-	 */
-	IDLE = 'idle',
-	/**
-	 * Offline
-	 */
-	OFFLINE = 'offline',
-	/**
-	 * Online
-	 */
-	ONLINE = 'online',
-}
+import type { LanyardData } from 'react-use-lanyard';
+
+export type DiscordStatus = LanyardData['discord_status'];
 
 export const READABLE_DISCORD_STATUS: {
 	[S in DiscordStatus]: string;
 } = {
-	[DiscordStatus.DND]: 'Do Not Disturb',
-	[DiscordStatus.IDLE]: 'Away',
-	[DiscordStatus.OFFLINE]: 'Offline',
-	[DiscordStatus.ONLINE]: 'Online',
+	['dnd']: 'Do Not Disturb',
+	['idle']: 'Away',
+	['offline']: 'Offline',
+	['online']: 'Online',
+};
+
+export const DISCORD_STATUS_COLOR: {
+	[S in DiscordStatus]: string;
+} = {
+	['dnd']: 'red',
+	['idle']: 'yellow',
+	['offline']: 'gray',
+	['online']: 'green',
 };
 
 export enum LanyardAvatarType {
