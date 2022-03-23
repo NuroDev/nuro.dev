@@ -173,7 +173,8 @@ export function Widget() {
 								<a
 									href={activity.avatar.href}
 									target="_blank"
-									rel="noreferrer noopener">
+									rel="noreferrer noopener"
+								>
 									<AssetContainer>
 										<Asset
 											alt={activity.avatar.alt}

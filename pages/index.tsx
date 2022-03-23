@@ -4,7 +4,7 @@ import { differenceInYears, isSameDay, isSameMonth } from 'date-fns';
 import { Icon } from '@iconify/react';
 
 import { Button, Event, Pill, Transition, Wave } from '~/components';
-import { EventType, NavigationItemType, WithChildren } from '~/types';
+import { EventType, NavigationItemType } from '~/types';
 import { Layout } from '~/layouts';
 import { usePersistantState } from '~/lib';
 
@@ -98,41 +98,28 @@ export default function HomePage() {
 			{isBirthday && <Event event={EventType.BIRTHDAY} />}
 			<Container>
 				<Content>
-					{animations ? (
-						<Transition duration={1000}>
-							<Title>
-								Hey <Wave>👋</Wave> I&apos;m Ben, <LineBreak />a{' '}
-								<StyledPill>developer</StyledPill>
-							</Title>
-						</Transition>
-					) : (
+					<Transition duration={1000} enabled={animations}>
 						<Title>
 							Hey <Wave>👋</Wave> I&apos;m Ben, <LineBreak />a{' '}
 							<StyledPill>developer</StyledPill>
 						</Title>
-					)}
-					{animations ? (
-						<Transition delay={500} duration={1000}>
-							<Description>{description}</Description>
-						</Transition>
-					) : (
+					</Transition>
+
+					<Transition delay={500} duration={1000} enabled={animations}>
 						<Description>{description}</Description>
-					)}
+					</Transition>
 
 					<Actions>
 						{ACTIONS.map((action, index) => {
 							if (action.type !== NavigationItemType.LINK) return null;
 
-							if (!animations)
-								return (
-									<Button.Outline key={index} href={action.href}>
-										{action.icon}
-										<ActionText>{action.text}</ActionText>
-									</Button.Outline>
-								);
-
 							return (
-								<Transition delay={1000 + index * 100} key={index} duration={1000}>
+								<Transition
+									delay={1000 + index * 100}
+									enabled={animations}
+									key={index}
+									duration={1000}
+								>
 									<Button.Outline href={action.href}>
 										{action.icon}
 										<ActionText>{action.text}</ActionText>
