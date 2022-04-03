@@ -128,11 +128,11 @@ This last step is also optional but can help with platform resilience & response
 
 For my website I ended up using [Upstash](https://upstash.com) which offers a single single Redis database for free. I recommend following their guide to [get started setting up your first Redis database](https://docs.upstash.com/redis).
 
-With your database set up you should now have a `REDIS_URL` to add your `.env` file. It should look something like this `rediss://USERNAME:PASSWORD@HOST:PORT`. Don't worry if there isn't a username.
+With your database set up you should now have a `REDIS_URL` to add your `.env` file. It should look something like this `redis://USERNAME:PASSWORD@HOST:PORT`. Don't worry if there isn't a username.
 
 ```:.env
 GITHUB_PAT=abc123
-REDIS_URL=rediss://USERNAME:PASSWORD@HOST:PORT
+REDIS_URL=redis://USERNAME:PASSWORD@HOST:PORT
 ```
 
 Now that we have a database to access we need a client to access it with. There's a number of Redis client's, including Upstash's [own client](https://www.npmjs.com/package/@upstash/redis), but I personally prefer `ioredis` so that's what I will be using for this example but any others should work fine. Install it as a development dependency.
