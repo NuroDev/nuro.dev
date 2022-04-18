@@ -1,4 +1,4 @@
-const WindiCSS = require('windicss-webpack-plugin')
+const WindiCSS = require('windicss-webpack-plugin');
 
 /**
  * @type {import('next').NextConfig}
@@ -66,7 +66,7 @@ module.exports = {
 		}
 
 		// Add WindiCSS Webpack plugin
-		config.plugins.push(new WindiCSS())
+		config.plugins.push(new WindiCSS());
 
 		return config;
 	},

@@ -32,13 +32,15 @@ export default function Error() {
 							<Button.Standard
 								type={NavigationItemType.ACTION}
 								onClick={() => history.go(-1)}
-								icon="feather:arrow-left">
+								icon="feather:arrow-left"
+							>
 								Back
 							</Button.Standard>
 							<Button.Standard
 								type={NavigationItemType.LINK}
 								href="/"
-								icon="feather:home">
+								icon="feather:home"
+							>
 								Home
 							</Button.Standard>
 						</div>

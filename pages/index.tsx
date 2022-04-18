@@ -68,7 +68,8 @@ export default function HomePage() {
 									delay={1000 + index * 100}
 									key={index}
 									duration={1000}
-									enabled={animations}>
+									enabled={animations}
+								>
 									<Button.Outline href={action.href}>
 										{action.icon}
 										<span className="-mt-1 py-1">{action.text}</span>
