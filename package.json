@@ -37,6 +37,7 @@
 		"@tailwindcss/line-clamp": "^0.2.2",
 		"@tailwindcss/typography": "^0.4.1",
 		"canvas-confetti": "^1.4.0",
+		"clsx": "^1.1.1",
 		"date-fns": "^2.24.0",
 		"github-colors": "^2.2.20",
 		"inter-ui": "^3.19.3",
