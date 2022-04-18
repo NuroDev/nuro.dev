@@ -1,5 +1,3 @@
-import styled from '@emotion/styled';
-import tw from 'twin.macro';
 import { NextSeo } from 'next-seo';
 
 import { Background, Navbar } from '~/components';
@@ -11,8 +9,6 @@ interface DefaultLayoutProps extends WithChildren {
 	background?: boolean;
 	seo?: Partial<WithProps<typeof NextSeo>>;
 }
-
-const Main = styled.main(tw`flex flex-col justify-center px-8`);
 
 export function DefaultLayout({
 	background: overrideBackground,
@@ -28,10 +24,10 @@ export function DefaultLayout({
 		<>
 			<NextSeo {...seoProps} />
 			<Navbar.Standard />
-			<Main>
+			<main className="flex flex-col justify-center px-8">
 				{showBackground && <Background.Standard />}
 				{children}
-			</Main>
+			</main>
 		</>
 	);
 }

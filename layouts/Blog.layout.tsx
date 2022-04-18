@@ -1,5 +1,3 @@
-import styled from '@emotion/styled';
-import tw from 'twin.macro';
 import { NextSeo } from 'next-seo';
 
 import { Navbar } from '~/components';
@@ -11,8 +9,6 @@ interface BlogLayoutProps {
 	seo?: Partial<ComponentProps<typeof NextSeo>>;
 }
 
-const Main = styled.main(tw`flex flex-col justify-center sm:px-8`);
-
 export function BlogLayout({ children, seo }: PropsWithChildren<BlogLayoutProps>) {
 	const seoProps = useSeoProps({
 		title: 'nuro ─ blog',
@@ -23,7 +19,7 @@ export function BlogLayout({ children, seo }: PropsWithChildren<BlogLayoutProps>
 		<>
 			<NextSeo {...seoProps} />
 			<Navbar.Standard />
-			<Main>{children}</Main>
+			<main className="flex flex-col justify-center sm:px-8">{children}</main>
 		</>
 	);
 }
