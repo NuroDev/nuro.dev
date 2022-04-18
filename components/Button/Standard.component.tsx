@@ -1,7 +1,5 @@
+import clsx from 'clsx';
 import Link from 'next/link';
-import styled from '@emotion/styled';
-import tw from 'twin.macro';
-import { css } from '@emotion/react';
 import { Icon } from '@iconify/react';
 
 import { NavigationItemType } from '~/types';
@@ -25,47 +23,40 @@ type StandardProps =
 			external?: boolean;
 	  } & DefaultProps);
 
-const ButtonStyles = css(tw`
-	flex justify-center items-center h-12 px-8 py-4 \
-	bg-gray-50 hover:bg-gray-100 hover:bg-opacity-50 dark:bg-gray-900 dark:hover:bg-gray-800 \
-	text-base font-bold text-primary-300 hover:text-primary-400 \
-	rounded-lg \
-	transition ease-in-out duration-300 \
-	focus:outline-none focus:ring-2 focus:ring-primary-500
-`);
-
-const ButtonContainer = styled.button(ButtonStyles);
-
-const LinkContainer = styled.a(ButtonStyles);
-
-const StyledIcon = styled(Icon)(tw`mr-2`);
+const ButtonStyles =
+	'flex justify-center items-center h-12 px-8 py-4 bg-gray-50 hover:(bg-gray-100 bg-opacity-50 text-primary-400) dark:(bg-gray-900 hover:bg-gray-800) text-base font-bold text-primary-300 rounded-lg default-transition focus:(outline-none ring-2 ring-primary-500)';
 
 export function Standard({ children, className, icon, ...rest }: StandardProps) {
 	switch (rest.type) {
 		case NavigationItemType.LINK:
 			if (rest.external ?? true)
 				return (
-					<LinkContainer {...rest}>
-						{icon && <StyledIcon icon={icon} />}
+					<a {...rest} className={clsx(ButtonStyles, className)}>
+						{icon && <Icon className="mr-2" icon={icon} />}
 						{children}
-					</LinkContainer>
+					</a>
 				);
 
 			return (
 				<Link href={rest.href} passHref>
-					<LinkContainer {...rest} href={rest.href}>
-						{icon && <StyledIcon icon={icon} />}
+					<a {...rest} className={clsx(ButtonStyles, className)} href={rest.href}>
+						{icon && <Icon className="mr-2" icon={icon} />}
 						{children}
-					</LinkContainer>
+					</a>
 				</Link>
 			);
 
 		case NavigationItemType.ACTION:
 			return (
-				<ButtonContainer {...rest} type="button" onClick={(e) => rest.onClick(e)}>
-					{icon && <StyledIcon icon={icon} />}
+				<button
+					{...rest}
+					className={clsx(ButtonStyles, className)}
+					onClick={(e) => rest.onClick(e)}
+					type="button"
+				>
+					{icon && <Icon className="mr-2" icon={icon} />}
 					{children}
-				</ButtonContainer>
+				</button>
 			);
 	}
 }

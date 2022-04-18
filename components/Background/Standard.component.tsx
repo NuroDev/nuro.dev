@@ -1,15 +1,8 @@
-import styled from '@emotion/styled';
-import tw from 'twin.macro';
 import { Camera, Color, Geometry, Mesh, Program, Renderer } from 'ogl-typescript';
 import { useEffect, useRef } from 'react';
 
 import TailwindCSS from '~/tailwind.config';
 import { Shaders } from '.';
-
-const Container = styled.div`
-	${tw`fixed inset-0`}
-	z-index: -10;
-`;
 
 export function Standard() {
 	const containerRef = useRef<HTMLDivElement | null>(null);
@@ -101,5 +94,5 @@ export function Standard() {
 		return () => cancelAnimationFrame(animationId);
 	}, [containerRef]);
 
-	return <Container ref={containerRef} />;
+	return <div className="fixed inset-0 -z-10" ref={containerRef} />;
 }

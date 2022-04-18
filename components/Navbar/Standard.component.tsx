@@ -1,29 +1,15 @@
-import styled from '@emotion/styled';
-import tw from 'twin.macro';
 import { Disclosure } from '@headlessui/react';
 
 import { Button, Navbar } from '~/components';
 import { useNavigation } from '~/lib';
 
-const StyledDisclosure = styled(Disclosure)(tw`
-	fixed top-0 left-0 w-full z-10
-`);
-
-const Container = styled.div(tw`
-	mx-auto px-2 
-`);
-
-const Content = styled.div(tw`
-	relative flex items-center justify-between h-16
-`);
-
 export function Standard() {
 	const { menu, settings } = useNavigation();
 
 	return (
-		<StyledDisclosure as="nav">
-			<Container>
-				<Content>
+		<Disclosure as="nav" className="fixed top-0 left-0 w-full z-10">
+			<div className="mx-auto px-2">
+				<div className="relative flex items-center justify-between h-16">
 					<Navbar.Dropdown items={menu} position="top-left">
 						<Button.Icon aria-label="Menu">
 							<Navbar.Icon icon="feather:menu" />
@@ -34,8 +20,8 @@ export function Standard() {
 							<Navbar.Icon icon="feather:settings" />
 						</Button.Icon>
 					</Navbar.Dropdown>
-				</Content>
-			</Container>
-		</StyledDisclosure>
+				</div>
+			</div>
+		</Disclosure>
 	);
 }
