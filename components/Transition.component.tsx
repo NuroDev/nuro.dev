@@ -2,14 +2,17 @@ import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { Transition as HeadlessUiTransition } from '@headlessui/react';
 
-import type { WithChildren, WithProps } from '~/types';
+import type { WithChildren, WithClassName, WithProps } from '~/types';
 
-type TransitionProps = WithChildren &
-	WithProps<typeof HeadlessUiTransition> & {
-		delay?: number;
-		duration?: number;
-		show?: boolean;
-	};
+interface TransitionProps
+	extends WithChildren,
+		WithClassName,
+		WithProps<typeof HeadlessUiTransition> {
+	delay?: number;
+	duration?: number;
+	enabled?: boolean;
+	show?: boolean;
+}
 
 const StyledTransition = styled(HeadlessUiTransition)<Pick<TransitionProps, 'delay' | 'duration'>>`
 	&.enter {
@@ -39,13 +42,24 @@ const StyledTransition = styled(HeadlessUiTransition)<Pick<TransitionProps, 'del
 
 /**
  * @TODO Fix the "Can't perform a React state update on an unmounted component." bug being caused here.
+ * @TODO Switch to using [motion](https://motion.dev) instead
  */
-export function Transition({ children, delay = 0, duration = 300, show = true }: TransitionProps) {
+export function Transition({
+	children,
+	className,
+	delay = 0,
+	duration = 300,
+	enabled = true,
+	show = true,
+}: TransitionProps) {
+	if (!enabled) return <>{children}</>;
+
 	return (
 		<StyledTransition
+			appear={true}
+			className={className}
 			delay={delay}
 			duration={duration}
-			appear={true}
 			enter="enter"
 			enterFrom="enterFrom"
 			enterTo="enterTo"
