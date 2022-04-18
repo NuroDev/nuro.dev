@@ -41,6 +41,7 @@
 		"date-fns": "^2.24.0",
 		"github-colors": "^2.2.20",
 		"inter-ui": "^3.19.3",
+		"motion": "^10.7.2",
 		"next": "^12.1.0",
 		"next-mdx-remote": "^3.0.6",
 		"next-seo": "^4.28.1",

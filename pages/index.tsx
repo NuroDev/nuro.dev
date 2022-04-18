@@ -1,7 +1,7 @@
 import { differenceInYears, isSameDay, isSameMonth } from 'date-fns';
 import { Icon } from '@iconify/react';
 
-import { Button, Event, Pill, Transition, Wave } from '~/components';
+import { Animate, Button, Event, Pill } from '~/components';
 import { EventType, NavigationItemType } from '~/types';
 import { Layout } from '~/layouts';
 import { usePersistantState } from '~/lib';
@@ -45,36 +45,61 @@ export default function HomePage() {
 			{isBirthday && <Event event={EventType.BIRTHDAY} />}
 			<div className="min-h-screen flex items-center justify-center py-12">
 				<div className="max-w-md sm:max-w-lg md:sm:max-w-2xl lg:sm:max-w-3xl w-full space-y-8 text-center">
-					<Transition duration={1000} enabled={animations}>
-						<h1 className="text-gray-500 dark:text-white text-5xl sm:text-6xl md:text-6xl lg:text-8xl tracking-tight font-extrabold">
-							Hey <Wave>👋</Wave> I&apos;m Ben, <br className="hidden sm:block" />a{' '}
-							<Pill.Standard className="mt-4">developer</Pill.Standard>
-						</h1>
-					</Transition>
+					<Animate
+						as="h1"
+						animation={{
+							y: [50, 0],
+							opacity: [0, 1],
+						}}
+						className="text-gray-500 dark:text-white text-5xl sm:text-6xl md:text-6xl lg:text-8xl tracking-tight font-extrabold"
+						transition={{
+							delay: 0,
+							duration: 0.5,
+						}}
+					>
+						Hey{' '}
+						<span className="inline-block origin-[70%_70%] hover:animate-wave">👋</span>{' '}
+						I&apos;m Ben, <br className="hidden sm:block" />a{' '}
+						<Pill.Standard className="mt-4">developer</Pill.Standard>
+					</Animate>
 
-					<Transition delay={500} duration={1000} enabled={animations}>
-						<p className="max-w-xs mt-4 md:mt-8 mx-auto text-base text-gray-300 sm:text-lg md:text-xl md:max-w-3xl">
-							{description}
-						</p>
-					</Transition>
+					<Animate
+						as="p"
+						animation={{
+							y: [50, 0],
+							opacity: [0, 1],
+						}}
+						className="max-w-xs mt-4 md:mt-8 mx-auto text-base text-gray-300 sm:text-lg md:text-xl md:max-w-3xl"
+						transition={{
+							delay: 0.5,
+							duration: 0.3,
+						}}
+					>
+						{description}
+					</Animate>
 
 					<div className="flex flex-col sm:flex-row items-center justify-center sm:space-x-4 space-y-4 sm:space-y-0 w-full mt-8 sm:mt-4">
 						{ACTIONS.map((action, index) => {
 							if (action.type !== NavigationItemType.LINK) return null;
 
 							return (
-								<Transition
+								<Animate
+									animation={{
+										y: [50, 0],
+										opacity: [0, 1],
+									}}
 									className="w-full sm:w-auto"
-									delay={1000 + index * 100}
 									key={index}
-									duration={1000}
-									enabled={animations}
+									transition={{
+										delay: 0.1 * (index + 2) + 0.5,
+										duration: 0.3,
+									}}
 								>
 									<Button.Outline href={action.href}>
 										{action.icon}
 										<span className="-mt-1 py-1">{action.text}</span>
 									</Button.Outline>
-								</Transition>
+								</Animate>
 							);
 						})}
 					</div>

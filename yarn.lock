@@ -311,7 +311,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emotion/babel-plugin@npm:^11.3.0, @emotion/babel-plugin@npm:^11.7.1":
+"@emotion/babel-plugin@npm:^11.3.0":
+  version: 11.9.2
+  resolution: "@emotion/babel-plugin@npm:11.9.2"
+  dependencies:
+    "@babel/helper-module-imports": ^7.12.13
+    "@babel/plugin-syntax-jsx": ^7.12.13
+    "@babel/runtime": ^7.13.10
+    "@emotion/hash": ^0.8.0
+    "@emotion/memoize": ^0.7.5
+    "@emotion/serialize": ^1.0.2
+    babel-plugin-macros: ^2.6.1
+    convert-source-map: ^1.5.0
+    escape-string-regexp: ^4.0.0
+    find-root: ^1.1.0
+    source-map: ^0.5.7
+    stylis: 4.0.13
+  peerDependencies:
+    "@babel/core": ^7.0.0
+  checksum: 2d2c4fadd389862896bcbc5f42c9b9c1a199810173fcf14e5520506c7179c2ddb991b8832fd273f42104cf0dae98886ad8e767b5e38ad235b652d903c3b8a328
+  languageName: node
+  linkType: hard
+
+"@emotion/babel-plugin@npm:^11.7.1":
   version: 11.7.2
   resolution: "@emotion/babel-plugin@npm:11.7.2"
   dependencies:
@@ -572,6 +594,110 @@ __metadata:
   version: 1.6.22
   resolution: "@mdx-js/util@npm:1.6.22"
   checksum: 4b393907e39a1a75214f0314bf72a0adfa5e5adffd050dd5efe9c055b8549481a3cfc9f308c16dfb33311daf3ff63added7d5fd1fe52db614c004f886e0e559a
+  languageName: node
+  linkType: hard
+
+"@motionone/animation@npm:^10.7.0":
+  version: 10.7.0
+  resolution: "@motionone/animation@npm:10.7.0"
+  dependencies:
+    "@motionone/easing": ^10.7.0
+    "@motionone/types": ^10.7.0
+    "@motionone/utils": ^10.7.0
+    tslib: ^2.3.1
+  checksum: 6fbe723ba3ecfed650b71b4b5de0e363c026bab68b1357afc81f413fbdb493914bc37d67e7b852e3bc72d2989aea11d32cecd62de6ff195cab7be9f86db9edf8
+  languageName: node
+  linkType: hard
+
+"@motionone/dom@npm:^10.7.2":
+  version: 10.7.2
+  resolution: "@motionone/dom@npm:10.7.2"
+  dependencies:
+    "@motionone/animation": ^10.7.0
+    "@motionone/generators": ^10.7.0
+    "@motionone/types": ^10.7.0
+    "@motionone/utils": ^10.7.0
+    hey-listen: ^1.0.8
+    tslib: ^2.3.1
+  checksum: e8b6362de3f1b994a389602831e98e3ff2e656ef45bbf3483fdd60099bcab2cdfdb3a9fb03c61ea249125c5db9fea583a69dc5ad0e070b292441e68529be4c8e
+  languageName: node
+  linkType: hard
+
+"@motionone/easing@npm:^10.7.0":
+  version: 10.7.0
+  resolution: "@motionone/easing@npm:10.7.0"
+  dependencies:
+    "@motionone/utils": ^10.7.0
+    tslib: ^2.3.1
+  checksum: 562ece7670bc8199159b0feae7053c1e1da7c716621f4d11f92d9d6775579732ebdc4c4fdae0491ea6937dacfcb0147ffed860ea36457e9c9ba76f71e25000d0
+  languageName: node
+  linkType: hard
+
+"@motionone/generators@npm:^10.7.0":
+  version: 10.7.0
+  resolution: "@motionone/generators@npm:10.7.0"
+  dependencies:
+    "@motionone/types": ^10.7.0
+    "@motionone/utils": ^10.7.0
+    tslib: ^2.3.1
+  checksum: 76a04f29d4c61852db0811b9eeed9542244fd56039084ec679c0817c9456f3ca93607fa8abd4ecdc2b56402290e7079894c3709e5385d76d26cb6ab5b6c1cb6f
+  languageName: node
+  linkType: hard
+
+"@motionone/react@npm:^10.7.2":
+  version: 10.7.2
+  resolution: "@motionone/react@npm:10.7.2"
+  dependencies:
+    "@motionone/dom": ^10.7.2
+    hey-listen: ^1.0.8
+    tslib: ^2.3.1
+  peerDependencies:
+    react: ^17.0.2
+    react-dom: ^17.0.2
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 8236ccefdcd3098482497a770f53bbb033f4a78df6c12d6e514f6ffe2976440b47803329d8f57929eb2bf13f0bc0921a99154e717180edb5d16fe181bc832bb3
+  languageName: node
+  linkType: hard
+
+"@motionone/svelte@npm:^10.7.2":
+  version: 10.7.2
+  resolution: "@motionone/svelte@npm:10.7.2"
+  dependencies:
+    "@motionone/dom": ^10.7.2
+    tslib: ^2.3.1
+  checksum: b184b0dcdb2c508a68122d1162397488eef67c689e0ede4d0640a0c2421789ec9d5df581e01830bbb6e34fa2dfe255d78380bc3a98ba06cb2db070377316d152
+  languageName: node
+  linkType: hard
+
+"@motionone/types@npm:^10.7.0":
+  version: 10.7.0
+  resolution: "@motionone/types@npm:10.7.0"
+  checksum: 1601ca793caf96f6cb1d7da6fcdbedb8f6832ff30793dc2574f6dba14d588f9e11793a42945547ff4ad597b5d068e802ece5637068aa1ec8fadc94f8913ef6a3
+  languageName: node
+  linkType: hard
+
+"@motionone/utils@npm:^10.7.0":
+  version: 10.7.0
+  resolution: "@motionone/utils@npm:10.7.0"
+  dependencies:
+    "@motionone/types": ^10.7.0
+    hey-listen: ^1.0.8
+    tslib: ^2.3.1
+  checksum: c5347827ac92d2a81a0da9219f5a5ebe0e70d1bbd639125a9c7d91279371206ee2d4f3cb84c3663b027cb95617d8a77a43c7543f170e5f703188351d19af4fc2
+  languageName: node
+  linkType: hard
+
+"@motionone/vue@npm:^10.7.2":
+  version: 10.7.2
+  resolution: "@motionone/vue@npm:10.7.2"
+  dependencies:
+    "@motionone/dom": ^10.7.2
+    tslib: ^2.3.1
+  checksum: 15a83bec3720bb968622d9fbaad459b1cf7cebdde33fcb02851b7477a8e8633d47eb748f854d22dc3da4de4ff8e91651824529bf3068ea43f323daa0cc779399
   languageName: node
   linkType: hard
 
@@ -3211,6 +3337,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hey-listen@npm:^1.0.8":
+  version: 1.0.8
+  resolution: "hey-listen@npm:1.0.8"
+  checksum: 6bad60b367688f5348e25e7ca3276a74b59ac5a09b0455e6ff8ab7d4a9e38cd2116c708a7dcd8a954d27253ce1d8717ec891d175723ea739885b828cf44e4072
+  languageName: node
+  linkType: hard
+
 "hoist-non-react-statics@npm:^3.3.1":
   version: 3.3.2
   resolution: "hoist-non-react-statics@npm:3.3.2"
@@ -4339,6 +4472,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"motion@npm:^10.7.2":
+  version: 10.7.2
+  resolution: "motion@npm:10.7.2"
+  dependencies:
+    "@motionone/animation": ^10.7.0
+    "@motionone/dom": ^10.7.2
+    "@motionone/react": ^10.7.2
+    "@motionone/svelte": ^10.7.2
+    "@motionone/vue": ^10.7.2
+  checksum: 50b89e0c251d82000673ccd31086a3ec0703e6cbaf12c9a5c811abbeb36ee027abb9cac17c1f8a10d8472af4c425c64c8027be3df34e18c62618664671356ec3
+  languageName: node
+  linkType: hard
+
 "ms@npm:2.0.0":
   version: 2.0.0
   resolution: "ms@npm:2.0.0"
@@ -4650,6 +4796,7 @@ __metadata:
     gray-matter: ^4.0.3
     inter-ui: ^3.19.3
     ioredis: ^4.28.3
+    motion: ^10.7.2
     next: ^12.1.0
     next-mdx-remote: ^3.0.6
     next-seo: ^4.28.1
