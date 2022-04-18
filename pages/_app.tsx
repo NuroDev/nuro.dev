@@ -9,6 +9,7 @@ import { useEvent } from 'react-use';
 
 import 'inter-ui/inter.css';
 import 'nprogress/nprogress.css';
+import 'windi.css';
 
 import { useAnalytics, useClick } from '~/lib';
 import { Theme } from '~/types';

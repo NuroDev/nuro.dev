@@ -1,4 +1,8 @@
-/** @type {import('next').NextConfig} */
+const WindiCSS = require('windicss-webpack-plugin')
+
+/**
+ * @type {import('next').NextConfig}
+ */
 module.exports = {
 	images: {
 		domains: [
@@ -60,6 +64,9 @@ module.exports = {
 				'react-dom': 'preact/compat',
 			});
 		}
+
+		// Add WindiCSS Webpack plugin
+		config.plugins.push(new WindiCSS())
 
 		return config;
 	},
