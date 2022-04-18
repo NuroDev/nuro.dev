@@ -4,15 +4,14 @@ import { Transition as HeadlessUiTransition } from '@headlessui/react';
 
 import type { WithChildren, WithClassName, WithProps } from '~/types';
 
-interface TransitionProps
-	extends WithChildren,
-		WithClassName,
-		WithProps<typeof HeadlessUiTransition> {
-	delay?: number;
-	duration?: number;
-	enabled?: boolean;
-	show?: boolean;
-}
+type TransitionProps = WithChildren &
+	WithClassName &
+	WithProps<typeof HeadlessUiTransition> & {
+		delay?: number;
+		duration?: number;
+		enabled?: boolean;
+		show?: boolean;
+	};
 
 const StyledTransition = styled(HeadlessUiTransition)<Pick<TransitionProps, 'delay' | 'duration'>>`
 	&.enter {
