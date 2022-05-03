@@ -1,4 +1,4 @@
-import { BaseLayout } from './Default.layout';
+import { BaseLayout } from './Base.layout';
 
 export const Layout = {
 	Base: BaseLayout,
