@@ -1,9 +1,5 @@
-import { BlogLayout } from './Blog.layout';
-import { DefaultLayout } from './Default.layout';
-import { ErrorLayout } from './Error.layout';
+import { BaseLayout } from './Default.layout';
 
 export const Layout = {
-	Blog: BlogLayout,
-	Default: DefaultLayout,
-	Error: ErrorLayout,
+	Base: BaseLayout,
 };

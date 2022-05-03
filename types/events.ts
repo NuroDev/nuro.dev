@@ -1,4 +1,9 @@
-// @TODO: Add Xmas type with snowing effect
+/**
+ * Event Type
+ *
+ * @description Enum defining all custom events
+ */
 export enum EventType {
 	BIRTHDAY = 'birthday',
+	XMAS = 'xmas',
 }

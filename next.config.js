@@ -1,4 +1,10 @@
-/** @type {import('next').NextConfig} */
+// @ts-check
+
+const WindiCSS = require('windicss-webpack-plugin')
+
+/**
+ * @type {import('next').NextConfig}
+ */
 module.exports = {
 	images: {
 		domains: [
@@ -11,46 +17,43 @@ module.exports = {
 			// Spotify Album Art
 			'i.scdn.co',
 
-			// Streamable thumbnails
-			'cdn-cf-east.streamable.com',
-
 			// Unsplash
 			'source.unsplash.com',
 			'images.unsplash.com',
 		],
 	},
-	// Inspired by: https://github.com/leerob/leerob.io/blob/main/next.config.js#L44-L81
-	async headers() {
-		return [
-			{
-				source: '/(.*)',
-				headers: [
-					// https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
-					{
-						key: 'Content-Security-Policy',
-						value: ContentSecurityPolicy.replace(/\n/g, ''),
-					},
-					// https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
-					{
-						key: 'Referrer-Policy',
-						value: 'origin-when-cross-origin',
-					},
-					// https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
-					{
-						key: 'Strict-Transport-Security',
-						value: 'max-age=31536000; includeSubDomains; preload',
-					},
-					// https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy
-					// Opt-out of Google FLoC: https://amifloced.org/
-					{
-						key: 'Permissions-Policy',
-						value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
-					},
-				],
-			},
-		];
-	},
+	headers: () => [
+		{
+			source: '/(.*)',
+			headers: [
+				/**
+				 * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
+				 */
+				{ key: 'Content-Security-Policy', value: ContentSecurityPolicy.replace(/\n/g, '') },
+
+				/**
+				 * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
+				 */
+				{ key: 'Referrer-Policy', value: 'origin-when-cross-origin' },
+
+				/**
+				 * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
+				 */
+				{ key: 'Strict-Transport-Security', value: 'max-age=31536000; includeSubDomains; preload' },
+
+				/**
+				 * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy
+				 * @see Opt-out of Google FLoC: https://amifloced.org/
+				 */
+				{ key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()' },
+			],
+		},
+	],
 	reactStrictMode: true,
+	rewrites: async () => [
+		{ source: "/bee.js", destination: "https://cdn.splitbee.io/sb.js" },
+		{ source: "/_hive/:slug", destination: "https://hive.splitbee.io/:slug" },
+	],
 	webpack: (config, { dev, isServer }) => {
 		// Replace React with Preact only in client production build
 		if (!dev && !isServer) {
@@ -60,6 +63,9 @@ module.exports = {
 				'react-dom': 'preact/compat',
 			});
 		}
+
+		// Inject WindiCSS
+		config.plugins.push(new WindiCSS())
 
 		return config;
 	},
