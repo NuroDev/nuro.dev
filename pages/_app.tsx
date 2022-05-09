@@ -9,6 +9,7 @@ import 'inter-ui/inter.css';
 import 'nprogress/nprogress.css';
 import 'windi.css';
 
+import { GlobalStyles } from '~/components';
 import { Theme } from '~/types';
 
 import type { AppProps } from 'next/app';
@@ -40,6 +41,7 @@ export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<ThemeProvider attribute="class" defaultTheme={Theme.SYSTEM} themes={Object.values(Theme)}>
 			<Toaster />
+			<GlobalStyles />
 			<Component {...pageProps} />
 		</ThemeProvider>
 	);
