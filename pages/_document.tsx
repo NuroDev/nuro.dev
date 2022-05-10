@@ -7,7 +7,7 @@ export default function Document() {
 				{/* TODO: Dynamic favicon */}
 				<link rel="icon" type="image/png" href="/favicon.png" />
 			</Head>
-			<body>
+			<body className="bg-white dark:bg-gray-900">
 				<Main />
 				<NextScript />
 			</body>
