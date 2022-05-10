@@ -38,6 +38,7 @@
 		"@iconify/react": "^3.2.1",
 		"@splitbee/web": "^0.3.0",
 		"canvas-confetti": "^1.5.1",
+		"clsx": "^1.1.1",
 		"inter-ui": "^3.19.3",
 		"next": "^12.1.5",
 		"next-seo": "^5.4.0",
