@@ -139,7 +139,8 @@ export function Dropdown({ children, items, position }: StandardProps) {
 															<StyledMenuItem
 																$active={active}
 																className="group"
-																onClick={() => item.onClick()}>
+																onClick={() => item.onClick()}
+															>
 																<MenuButtonIcon icon={item.icon} />
 																{item.text}
 																{item.endIcon && (
@@ -164,7 +165,8 @@ export function Dropdown({ children, items, position }: StandardProps) {
 																	$active={active}
 																	href={item.href}
 																	rel="noopener noreferrer"
-																	target="_blank">
+																	target="_blank"
+																>
 																	<MenuButtonIcon
 																		icon={item.icon}
 																	/>
@@ -180,7 +182,8 @@ export function Dropdown({ children, items, position }: StandardProps) {
 														return (
 															<MenuLink
 																$active={active}
-																href={item.href}>
+																href={item.href}
+															>
 																<MenuButtonIcon icon={item.icon} />
 																{item.text}
 															</MenuLink>
