@@ -1,17 +1,17 @@
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
 
-import { getProjects } from '~/lib/projects';
+import { fetchProjects } from '~/lib/projects';
 import { Layout } from '~/layouts';
 import { List } from '~/components';
 import { ListActionType } from '~/types';
 
-import type { GetServerSideProps } from 'next';
+import type { GetStaticProps } from 'next';
 
-import type { ListAction, Projects } from '~/types';
+import type { ListAction, Project } from '~/types';
 
 interface ProjectProps {
-	projects: string;
+	stringifiedProjects: string;
 }
 
 const Container = styled.div(tw`
@@ -26,20 +26,19 @@ const ProjectIcon = styled.span(tw`
 	text-xl
 `);
 
-export const getServerSideProps: GetServerSideProps<ProjectProps> = async ({ res }) => {
-	res.setHeader('Cache-Control', 'public, max-age=3600, immutable');
-
-	const projects = await getProjects();
+export const getStaticProps: GetStaticProps<ProjectProps> = async () => {
+	const projects = await fetchProjects();
 
 	return {
 		props: {
-			projects: JSON.stringify(projects),
+			stringifiedProjects: JSON.stringify(projects),
 		},
+		revalidate: 3600,
 	};
 };
 
-export default function ProjectsPage({ projects: serialisedProjects }: ProjectProps) {
-	const projects = JSON.parse(serialisedProjects) as Projects;
+export default function ProjectsPage({ stringifiedProjects }: ProjectProps) {
+	const projects = JSON.parse(stringifiedProjects) as Array<Project>;
 
 	return (
 		<Layout.Default seo={{ title: 'nuro ─ projects' }}>

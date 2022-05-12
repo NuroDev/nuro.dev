@@ -1,12 +1,7 @@
 import containsEmoji from 'contains-emoji';
 import GithubColors from 'github-colors';
-import Redis from 'ioredis';
 
-import type { Redirect } from 'next';
-
-import type { GitHubRepos, Project, ProjectPost, Projects } from '~/types';
-
-let redis;
+import type { GitHubRepos, Project, ProjectPost } from '~/types';
 
 /**
  * Fetch Projects
@@ -17,7 +12,7 @@ let redis;
  *
  * @TODO Switch to v3 API using GraphQL to save over-fetching
  */
-async function fetchProjects(): Promise<Projects | null> {
+export async function fetchProjects(): Promise<Array<Project> | null> {
 	const response = await fetch('https://api.github.com/users/nurodev/repos', {
 		headers: {
 			...(process.env.GITHUB_PAT && {
@@ -41,7 +36,7 @@ async function fetchProjects(): Promise<Projects | null> {
 	const { default: rawProjectPosts } = await import('~/data/projects.json');
 	const projectPosts = rawProjectPosts as Array<ProjectPost>;
 
-	const projects: Projects = json
+	const projects: Array<Project> = json
 		.map((repo) => {
 			if (!repo.topics.includes('portfolio')) return null;
 
@@ -79,33 +74,4 @@ async function fetchProjects(): Promise<Projects | null> {
 		.filter((project) => project !== null);
 
 	return projects;
-}
-
-/**
- * Get projects
- *
- * Fetch all projects from my GitHub that contain the `portfolio`
- * topic.
- * Results are cached in Upstash (Redis) & attempted to be fetched
- * from there first & if not makes a request to GitHub.
- */
-export async function getProjects(): Promise<Projects | Redirect> {
-	if (!redis) redis = new Redis(process.env.REDIS_URL);
-
-	try {
-		const cache: string | null = await redis.get('projects');
-		if (cache !== null) return JSON.parse(cache) as Projects;
-
-		const projects = await fetchProjects();
-
-		redis.set('projects', JSON.stringify(projects));
-
-		return projects;
-	} catch (err) {
-		console.error('Request error', err);
-		return {
-			destination: '/error?status=500',
-			permanent: false,
-		};
-	}
 }

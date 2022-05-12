@@ -116,8 +116,6 @@ export interface Project {
 	url: string;
 }
 
-export type Projects = Array<Project>;
-
 export interface ProjectPost {
 	post: string;
 	repository: string;
