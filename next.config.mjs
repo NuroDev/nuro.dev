@@ -1,4 +1,16 @@
-const WindiCSS = require('windicss-webpack-plugin');
+import WindiCSS from 'windicss-webpack-plugin';
+
+const ContentSecurityPolicy = `
+  child-src *.google.com streamable.com;
+  connect-src *;
+  default-src 'self';
+  font-src 'self';
+  img-src * blob: data:;
+  media-src 'none';
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' cdn.splitbee.io;
+  style-src 'self' 'unsafe-inline' *.googleapis.com;
+  worker-src 'self' 'unsafe-inline' blob:;
+`;
 
 /**
  * @type {import('next').NextConfig}
