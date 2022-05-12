@@ -1934,6 +1934,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"crawler-user-agents@npm:^1.0.1":
+  version: 1.0.89
+  resolution: "crawler-user-agents@npm:1.0.89"
+  checksum: bd3cb3278c3d286478271fd7cf3a249fd8c487258c47e9937842ed41c93e56cdbbcaf748dffbde9ec4a343c144e70a4a1322ed9ac45fb207b7a4a1a64244a510
+  languageName: node
+  linkType: hard
+
 "cross-spawn@npm:^7.0.2":
   version: 7.0.3
   resolution: "cross-spawn@npm:7.0.3"
@@ -3829,6 +3836,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"is-web-crawler@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "is-web-crawler@npm:1.1.0"
+  dependencies:
+    crawler-user-agents: ^1.0.1
+  checksum: 71d43b9cdcafbe95cd1963716897ba2cbe0dd37032cb78890c7c63ca853412e0508b74bed41dc2dfc7d3bcdc806f745ec00eded5e74bd9e0b0384d969503c668
+  languageName: node
+  linkType: hard
+
 "is-whitespace-character@npm:^1.0.0":
   version: 1.0.4
   resolution: "is-whitespace-character@npm:1.0.4"
@@ -4796,6 +4812,7 @@ __metadata:
     gray-matter: ^4.0.3
     inter-ui: ^3.19.3
     ioredis: ^4.28.3
+    is-web-crawler: ^1.1.0
     motion: ^10.7.2
     next: ^12.1.0
     next-mdx-remote: ^3.0.6
