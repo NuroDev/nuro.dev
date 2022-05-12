@@ -126,7 +126,7 @@ export function Dropdown({ children, items, position }: StandardProps) {
 							{items.map((section, index) => (
 								<MenuSection key={index}>
 									{section.map((item) => (
-										<Menu.Item key={item.text}>
+										<Menu.Item key={item.type}>
 											{({ active }) => {
 												switch (item.type) {
 													case NavigationItemType.ACTION:
@@ -148,6 +148,10 @@ export function Dropdown({ children, items, position }: StandardProps) {
 																	</>
 																)}
 															</StyledMenuItem>
+														);
+													case NavigationItemType.DIVIDER:
+														return (
+															<hr className="mt-2 pb-2 border-gray-100 dark:border-gray-500" />
 														);
 													case NavigationItemType.LINK:
 														const external = item.external ?? false;

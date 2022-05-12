@@ -7,6 +7,7 @@ import type { WithChildren, WithClassName, WithProps } from '~/types';
 type TransitionProps = WithChildren &
 	WithClassName &
 	WithProps<typeof HeadlessUiTransition> & {
+		enabled?: boolean;
 		delay?: number;
 		duration?: number;
 		enabled?: boolean;
@@ -65,8 +66,7 @@ export function Transition({
 			leave="leave"
 			leaveFrom="leaveFrom"
 			leaveTo="leaveTo"
-			show={show}
-		>
+			show={show}>
 			{children}
 		</StyledTransition>
 	);
