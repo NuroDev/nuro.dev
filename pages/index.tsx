@@ -48,14 +48,10 @@ export default function HomePage() {
 					<Animate
 						as="h1"
 						animation={{
-							y: [50, 0],
 							opacity: [0, 1],
+							scale: [0.75, 1],
 						}}
 						className="text-gray-500 dark:text-white text-5xl sm:text-6xl md:text-6xl lg:text-8xl tracking-tight font-extrabold"
-						transition={{
-							delay: 0,
-							duration: 0.5,
-						}}
 					>
 						Hey{' '}
 						<span className="inline-block origin-[70%_70%] hover:animate-wave">👋</span>{' '}
@@ -66,13 +62,12 @@ export default function HomePage() {
 					<Animate
 						as="p"
 						animation={{
-							y: [50, 0],
 							opacity: [0, 1],
+							scale: [0.75, 1],
 						}}
 						className="max-w-xs mt-4 md:mt-8 mx-auto text-base text-gray-300 sm:text-lg md:text-xl md:max-w-3xl"
 						transition={{
 							delay: 0.5,
-							duration: 0.3,
 						}}
 					>
 						{description}
@@ -92,7 +87,6 @@ export default function HomePage() {
 									key={index}
 									transition={{
 										delay: 0.1 * (index + 2) + 0.5,
-										duration: 0.3,
 									}}
 								>
 									<Button.Outline href={action.href}>
