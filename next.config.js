@@ -83,6 +83,6 @@ const config = {
 
 		return config;
 	},
-}
+};
 
 module.exports = config;

@@ -100,7 +100,8 @@ export default function ReferralsPage({ referrals }: ReferralsProps) {
 								icon={referral.icon}
 								iconColor={referral.color}
 								key={index}
-								title={referral.name}>
+								title={referral.name}
+							>
 								{referral.bonus && (
 									<div className="m-2 mt-0">
 										<Pill.Standard className="flex items-center justify-center w-full md:pb-2 bg-primary-500 bg-opacity-15 saturate-200 text-sm text-primary-500 rounded-lg">
