@@ -1,13 +1,14 @@
 import { Camera, Color, Geometry, Mesh, Program, Renderer } from 'ogl-typescript';
-import { useEffect, useRef } from 'react';
+import { useEffectOnce } from 'react-use';
+import { useRef } from 'react';
 
-import TailwindCSS from '~/tailwind.config';
+import { colors } from '~/lib';
 import { Shaders } from '.';
 
 export function Standard() {
 	const containerRef = useRef<HTMLDivElement | null>(null);
 
-	useEffect(() => {
+	useEffectOnce(() => {
 		let animationId = 1;
 
 		const renderer = new Renderer({
@@ -65,7 +66,7 @@ export function Standard() {
 					value: 0,
 				},
 				uColor: {
-					value: new Color(TailwindCSS.theme.extend.colors.primary[500]),
+					value: new Color(colors.primary[500]),
 				},
 			},
 			transparent: true,
@@ -92,7 +93,7 @@ export function Standard() {
 		animationId = requestAnimationFrame(update);
 
 		return () => cancelAnimationFrame(animationId);
-	}, [containerRef]);
+	});
 
 	return <div className="fixed inset-0 -z-10" ref={containerRef} />;
 }
