@@ -1,4 +1,4 @@
-import WindiCSS from 'windicss-webpack-plugin';
+const WindiCSS = require('windicss-webpack-plugin');
 
 const ContentSecurityPolicy = `
   child-src *.google.com streamable.com;
@@ -85,4 +85,4 @@ const config = {
 	},
 }
 
-export default config
+module.exports = config;
