@@ -78,8 +78,12 @@ const config = {
 			});
 		}
 
-		// Add WindiCSS Webpack plugin
 		config.plugins.push(new WindiCSS());
+
+		config.module.rules.push({
+			test: /\.(glsl|vs|fs|frag|vert)$/,
+			use: ['ts-shader-loader'],
+		})
 
 		return config;
 	},

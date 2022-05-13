@@ -3,7 +3,8 @@ import { useEffectOnce } from 'react-use';
 import { useRef } from 'react';
 
 import { colors } from '~/lib';
-import { Shaders } from '.';
+import VertexShader from './vertex.glsl';
+import FragmentShader from './fragment.glsl';
 
 export function Standard() {
 	const containerRef = useRef<HTMLDivElement | null>(null);
@@ -59,8 +60,8 @@ export function Standard() {
 		});
 
 		const program = new Program(gl, {
-			vertex: Shaders.vertex,
-			fragment: Shaders.fragment,
+			vertex: VertexShader,
+			fragment: FragmentShader,
 			uniforms: {
 				uTime: {
 					value: 0,

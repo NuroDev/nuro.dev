@@ -1,8 +1,3 @@
-/**
- * @TODO Add raw file loader and move these to dedicated `.vs` / `.fs` files
- */
-
-export const vertex = `
 attribute vec3 position;
 attribute vec4 random;
 
@@ -36,22 +31,3 @@ void main() {
 	gl_PointSize = 300.0 / length(mvPos.xyz) * (random.x + 0.1);
 	gl_Position = projectionMatrix * mvPos;
 }
-`;
-
-export const fragment = `
-precision highp float;
-
-uniform float uTime;
-uniform vec3 uColor;
-
-varying vec4 vRandom;
-
-void main() {
-	vec2 uv = gl_PointCoord.xy;
-	
-	float circle = smoothstep(0.5, 0.4, length(uv - 0.5)) * 0.8;
-	
-	gl_FragColor.rgb = uColor;
-	gl_FragColor.a = circle;
-}
-`;
