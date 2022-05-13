@@ -3,9 +3,8 @@ import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { Fragment } from 'react';
 import { Icon } from '@iconify/react';
-import { Menu } from '@headlessui/react';
+import { Menu, Transition } from '@headlessui/react';
 
-import { Transition } from '~/components';
 import { NavigationItemType, WithChildren, WithClassName } from '~/types';
 
 import type { AnchorHTMLAttributes, ReactNode } from 'react';
@@ -121,7 +120,16 @@ export function Dropdown({ children, items, position }: StandardProps) {
 				<>
 					<Menu.Button as={Fragment}>{children}</Menu.Button>
 
-					<Transition show={open}>
+					<Transition
+						appear={true}
+						enter="transition ease-in-out"
+						enterFrom="transform scale-95 opacity-0"
+						enterTo="transform scale-100 opacity-100"
+						leave="transition ease-in-out"
+						leaveFrom="transform scale-100 opacity-100"
+						leaveTo="transform scale-95 opacity-0"
+						show={open}
+					>
 						<StyledItems position={position}>
 							{items.map((section, index) => (
 								<MenuSection key={index}>
