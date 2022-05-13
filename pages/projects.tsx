@@ -1,6 +1,3 @@
-import styled from '@emotion/styled';
-import tw from 'twin.macro';
-
 import { fetchProjects } from '~/lib/projects';
 import { Layout } from '~/layouts';
 import { List } from '~/components';
@@ -13,18 +10,6 @@ import type { ListAction, Project } from '~/types';
 interface ProjectProps {
 	stringifiedProjects: string;
 }
-
-const Container = styled.div(tw`
-	my-24 mx-2 sm:mx-6 lg:mb-28 lg:mx-8
-`);
-
-const Content = styled.div(tw`
-	relative max-w-xl mx-auto
-`);
-
-const ProjectIcon = styled.span(tw`
-	text-xl
-`);
 
 export const getStaticProps: GetStaticProps<ProjectProps> = async () => {
 	const projects = await fetchProjects();
@@ -42,8 +27,8 @@ export default function ProjectsPage({ stringifiedProjects }: ProjectProps) {
 
 	return (
 		<Layout.Default seo={{ title: 'nuro ─ projects' }}>
-			<Container>
-				<Content>
+			<div className="my-24 mx-2 sm:mx-6 lg:mb-28 lg:mx-8">
+				<div className="relative max-w-xl mx-auto">
 					<List.Container
 						item={(project, index) => (
 							<List.Item
@@ -77,15 +62,15 @@ export default function ProjectsPage({ stringifiedProjects }: ProjectProps) {
 									},
 								]}
 								description={project.description}
-								icon={<ProjectIcon>{project.icon}</ProjectIcon>}
+								icon={<span className="text-xl">{project.icon}</span>}
 								key={index}
 								title={project.name}
 							/>
 						)}
 						items={projects}
 					/>
-				</Content>
-			</Container>
+				</div>
+			</div>
 		</Layout.Default>
 	);
 }

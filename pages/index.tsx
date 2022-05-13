@@ -4,7 +4,6 @@ import { Icon } from '@iconify/react';
 import { Animate, Button, Event, Pill } from '~/components';
 import { EventType, NavigationItemType } from '~/types';
 import { Layout } from '~/layouts';
-import { usePersistantState } from '~/lib';
 
 import type { NavigationItem } from '~/types';
 
@@ -31,8 +30,6 @@ const ACTIONS: Array<NavigationItem> = [
 ];
 
 export default function HomePage() {
-	const { animations: animations } = usePersistantState().get();
-
 	const today = new Date();
 	const birthday = new Date('1997-08-09');
 	const age = differenceInYears(today, birthday);

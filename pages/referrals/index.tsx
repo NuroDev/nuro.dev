@@ -1,14 +1,12 @@
 import splitbee from '@splitbee/web';
-import styled from '@emotion/styled';
 import toast from 'react-hot-toast';
-import tw from 'twin.macro';
 import { Icon } from '@iconify/react';
 import { useCopyToClipboard } from 'react-use';
 import { useTheme } from 'next-themes';
 
-import TailwindCSS from '~/tailwind.config';
-import { List, Pill } from '~/components';
+import { colors } from '~/lib';
 import { Layout } from '~/layouts';
+import { List, Pill } from '~/components';
 import { ListAction, ListActionType, Theme } from '~/types';
 
 import type { CSSProperties } from 'react';
@@ -19,26 +17,6 @@ import type { Referrals } from '~/types';
 interface ReferralsProps {
 	referrals?: Referrals;
 }
-
-const Container = styled.div(tw`
-	my-24 mx-2 sm:mx-6 lg:mb-28 lg:mx-8
-`);
-
-const Content = styled.div(tw`
-	relative max-w-xl mx-auto
-`);
-
-const PillContainer = styled.div(tw`
-	m-2 mt-0
-`);
-
-const StyledPill = styled(Pill.Standard)(tw`
-	flex items-center justify-center w-full \
-	md:pb-2 \
-	bg-primary-500 bg-opacity-15 saturate-200 \
-	text-sm text-primary-500 \
-	rounded-lg \
-`);
 
 export const getStaticProps: GetStaticProps<ReferralsProps> = async () => {
 	const { default: rawReferrals } = await import('~/data/referrals.json');
@@ -63,32 +41,28 @@ export default function ReferralsPage({ referrals }: ReferralsProps) {
 	const { theme } = useTheme();
 	const [state, copyToClipboard] = useCopyToClipboard();
 
-	const grayColors = TailwindCSS.theme.extend.colors.gray;
 	const isDark = theme === Theme.DARK;
 	const toastOptions = {
 		style: {
-			background: isDark ? grayColors[800] : grayColors[50],
-			color: isDark ? grayColors[400] : grayColors[700],
+			background: isDark ? colors.gray[800] : colors.gray[50],
+			color: isDark ? colors.gray[400] : colors.gray[700],
 			borderWidth: '1px',
-			borderColor: isDark ? grayColors[500] : grayColors[100],
+			borderColor: isDark ? colors.gray[500] : colors.gray[100],
 		} as CSSProperties,
 	};
 
 	function onCopy(code: string) {
 		copyToClipboard(code);
 
-		if (state.error) {
-			toast.error('Failed to copy code', toastOptions);
-			return;
-		}
+		if (state.error) return toast.error('Failed to copy code', toastOptions);
 
 		toast.success('Copied code', toastOptions);
 	}
 
 	return (
 		<Layout.Default seo={{ title: 'nuro ─ referrals' }}>
-			<Container>
-				<Content>
+			<div className="my-24 mx-2 sm:mx-6 lg:mb-28 lg:mx-8">
+				<div className="relative max-w-xl mx-auto">
 					<List.Container
 						item={(referral, index) => (
 							<List.Item
@@ -126,22 +100,21 @@ export default function ReferralsPage({ referrals }: ReferralsProps) {
 								icon={referral.icon}
 								iconColor={referral.color}
 								key={index}
-								title={referral.name}
-							>
+								title={referral.name}>
 								{referral.bonus && (
-									<PillContainer>
-										<StyledPill>
+									<div className="m-2 mt-0">
+										<Pill.Standard className="flex items-center justify-center w-full md:pb-2 bg-primary-500 bg-opacity-15 saturate-200 text-sm text-primary-500 rounded-lg">
 											<Icon icon="feather:award" tw="mt-0.5 mr-2" />
 											{referral.bonus}
-										</StyledPill>
-									</PillContainer>
+										</Pill.Standard>
+									</div>
 								)}
 							</List.Item>
 						)}
 						items={referrals}
 					/>
-				</Content>
-			</Container>
+				</div>
+			</div>
 		</Layout.Default>
 	);
 }
