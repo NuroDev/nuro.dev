@@ -1,4 +1,5 @@
 import NProgress from 'nprogress';
+import splitbee from '@splitbee/web';
 import { AppProps } from 'next/app';
 import { GlobalStyles as TailwindStyles } from 'twin.macro';
 import { ThemeProvider } from 'next-themes';
@@ -24,8 +25,6 @@ export default function App({ Component, pageProps }: AppProps) {
 	const router = useRouter();
 	const [play] = useClick();
 
-	useAnalytics();
-
 	useEvent('mousedown', () => play());
 	useEvent('mouseup', () => play());
 
@@ -33,6 +32,11 @@ export default function App({ Component, pageProps }: AppProps) {
 		router.events.on('routeChangeStart', () => NProgress.start());
 		router.events.on('routeChangeComplete', () => NProgress.done());
 		router.events.on('routeChangeError', () => NProgress.done());
+
+		if (process.env.NODE_ENV === 'production')
+			splitbee.init({
+				disableCookie: true,
+			});
 	});
 
 	return (
