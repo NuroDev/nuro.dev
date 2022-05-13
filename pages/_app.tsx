@@ -1,11 +1,11 @@
 import NProgress from 'nprogress';
-import Router from 'next/router';
+import { useRouter } from 'next/router';
 import tw, { GlobalStyles as TailwindStyles } from 'twin.macro';
 import { AppProps } from 'next/app';
 import { css, Global as EmotionStyles } from '@emotion/react';
 import { ThemeProvider } from 'next-themes';
 import { Toaster } from 'react-hot-toast';
-import { useEvent } from 'react-use';
+import { useEffectOnce, useEvent } from 'react-use';
 
 import 'inter-ui/inter.css';
 import 'nprogress/nprogress.css';
@@ -21,9 +21,6 @@ NProgress.configure({
 	showSpinner: false,
 });
 
-Router.events.on('routeChangeStart', () => NProgress.start());
-Router.events.on('routeChangeComplete', () => NProgress.done());
-Router.events.on('routeChangeError', () => NProgress.done());
 
 const GlobalStyles = css`
 	html {
@@ -64,12 +61,19 @@ const GlobalStyles = css`
 `;
 
 export default function App({ Component, pageProps }: AppProps) {
+	const router = useRouter();
 	const [play] = useClick();
 
 	useAnalytics();
 
 	useEvent('mousedown', () => play());
 	useEvent('mouseup', () => play());
+
+	useEffectOnce(() => {
+		router.events.on('routeChangeStart', () => NProgress.start());
+		router.events.on('routeChangeComplete', () => NProgress.done());
+		router.events.on('routeChangeError', () => NProgress.done());
+	});
 
 	return (
 		<ThemeProvider attribute="class" defaultTheme={Theme.SYSTEM} themes={Object.values(Theme)}>
