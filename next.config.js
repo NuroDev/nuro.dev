@@ -64,6 +64,14 @@ module.exports = {
 			});
 		}
 
+		// Load GLSL shaders as raw text
+		config.module.rules.push({
+			test: /\.(glsl|vs|fs|vert|frag)$/,
+			use: {
+				loader: 'raw-loader'
+			}
+		})
+
 		// Inject WindiCSS
 		config.plugins.push(new WindiCSS())
 

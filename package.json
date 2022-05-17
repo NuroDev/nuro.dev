@@ -68,6 +68,7 @@
 		"next-sitemap": "^2.5.20",
 		"node-fetch": "^3.2.4",
 		"prettier": "^2.6.2",
+		"raw-loader": "^4.0.2",
 		"typescript": "^4.6.4",
 		"windicss-webpack-plugin": "^1.7.2"
 	}
