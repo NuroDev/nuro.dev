@@ -6,19 +6,19 @@ import type { NextRequest } from 'next/server';
 
 const excludedPaths = ['.', '/api', '/favicon', '/sitemap.xml', '/robots.txt'];
 
+const junctions = navigation.map(({ path }) => path).filter((path) => path !== '/');
+
 export default function middleware(req: NextRequest) {
 	const { pathname } = req.nextUrl;
 
 	if (excludedPaths.some((p) => pathname.includes(p))) return;
 
-	const existingJunction = navigation.find(({ path }) => pathname.startsWith(`/${path}`));
+	if (pathname === '/') {
+		const { href: randomIndexPage } = new URL(
+			junctions.at(Math.floor(Math.random() * junctions.length)),
+			req.nextUrl,
+		);
 
-	const url = new URL(
-		existingJunction === undefined
-			? navigation.at(Math.floor(Math.random() * navigation.length)).path
-			: pathname,
-		req.nextUrl,
-	);
-
-	return NextResponse.rewrite(url.href);
+		return NextResponse.rewrite(randomIndexPage);
+	}
 }
