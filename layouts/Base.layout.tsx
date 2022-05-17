@@ -1,7 +1,7 @@
+import { ElementType, forwardRef } from 'react';
 import { NextSeo } from 'next-seo';
-import { ElementType } from 'react';
 
-import { useSeoProps } from '~/lib/seo';
+import { useSeoProps } from '~/lib/useSeoProps';
 
 import type { WithChildren, WithClassName, WithProps } from '~/types';
 
@@ -10,13 +10,18 @@ interface BaseLayoutProps extends WithChildren, WithClassName {
 	seo?: Partial<WithProps<typeof NextSeo>>;
 }
 
-export function BaseLayout({ as: Main = 'main', children, className, seo }: BaseLayoutProps) {
+export const BaseLayout = forwardRef<HTMLElement, BaseLayoutProps>(function BaseLayout(
+	{ as: Main = 'main', children, className, seo },
+	ref,
+) {
 	const seoProps = useSeoProps(seo);
 
 	return (
 		<>
 			<NextSeo {...seoProps} />
-			<Main className={className}>{children}</Main>
+			<Main ref={ref} className={className}>
+				{children}
+			</Main>
 		</>
 	);
-}
+});
