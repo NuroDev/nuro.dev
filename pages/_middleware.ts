@@ -4,7 +4,7 @@ import type { NextRequest } from 'next/server';
 
 const excludedPaths = ['.', '/api', '/favicon', '/sitemap.xml', '/robots.txt'];
 
-const junctions = ['comic', 'grid', 'play'];
+const junctions = ['app', 'comic', 'grid', 'play'];
 
 export default function middleware(req: NextRequest) {
 	const { pathname } = req.nextUrl;
