@@ -167,7 +167,7 @@ export function Widget() {
 						<ActivityContainer>
 							{'icon' in activity.avatar ? (
 								<AssetContainer>
-									<UnknownActivityIcon icon="feather:help-circle" />
+									<UnknownActivityIcon icon="lucide:gamepad-2" />
 								</AssetContainer>
 							) : activity.avatar.href ? (
 								<a
@@ -196,18 +196,27 @@ export function Widget() {
 							)}
 
 							<Body>
-								<Title>{activity.title}</Title>
-
 								{'icon' in activity.avatar && activity.avatar.icon ? (
-									<Description>Unknown Activity</Description>
+									<>
+										<Description tw="mt-0 mb-1">Playing</Description>
+										<Title>{activity.title}</Title>
+									</>
 								) : Array.isArray(activity.description) ? (
-									activity.description.map((description, descriptionIndex) => (
-										<Description key={descriptionIndex}>
-											{description}
-										</Description>
-									))
+									<>
+										<Title>{activity.title}</Title>
+										{activity.description.map(
+											(description, descriptionIndex) => (
+												<Description key={descriptionIndex}>
+													{description}
+												</Description>
+											),
+										)}
+									</>
 								) : (
-									<Description>{activity.description}</Description>
+									<>
+										<Title>{activity.title}</Title>
+										<Description>{activity.description}</Description>
+									</>
 								)}
 							</Body>
 
