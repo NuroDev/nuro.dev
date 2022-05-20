@@ -83,7 +83,7 @@ const config = {
 		config.module.rules.push({
 			test: /\.(glsl|vs|fs|frag|vert)$/,
 			use: ['ts-shader-loader'],
-		})
+		});
 
 		return config;
 	},
