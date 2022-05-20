@@ -1,4 +1,7 @@
+import defaultTheme from 'windicss/defaultTheme';
+
 export const colors: Record<string, Record<number, string>> = {
+	...defaultTheme.colors,
 	gray: {
 		50: '#f9fafb',
 		100: '#eaeaeb',
