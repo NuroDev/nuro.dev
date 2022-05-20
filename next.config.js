@@ -1,52 +1,25 @@
 // @ts-check
 
 const WindiCSS = require('windicss-webpack-plugin')
+const { withContentlayer } = require('next-contentlayer')
 
 /**
  * @type {import('next').NextConfig}
  */
-module.exports = {
+module.exports = withContentlayer({
 	images: {
 		domains: [
-			// Discord assets
 			'cdn.discordapp.com',
-
-			// GitHub assets
 			'raw.githubusercontent.com',
-
-			// Spotify Album Art
-			'i.scdn.co',
-
-			// Unsplash
+			'i.scdn.co', // (Spotify Album Art)
 			'source.unsplash.com',
 			'images.unsplash.com',
 		],
 	},
-	headers: () => [
+	headers: async () => [
 		{
 			source: '/(.*)',
-			headers: [
-				/**
-				 * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
-				 */
-				{ key: 'Content-Security-Policy', value: ContentSecurityPolicy.replace(/\n/g, '') },
-
-				/**
-				 * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
-				 */
-				{ key: 'Referrer-Policy', value: 'origin-when-cross-origin' },
-
-				/**
-				 * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
-				 */
-				{ key: 'Strict-Transport-Security', value: 'max-age=31536000; includeSubDomains; preload' },
-
-				/**
-				 * @see https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy
-				 * @see Opt-out of Google FLoC: https://amifloced.org/
-				 */
-				{ key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()' },
-			],
+			headers: headers.map(([key, value]) => ({ key, value })),
 		},
 	],
 	reactStrictMode: true,
@@ -73,11 +46,12 @@ module.exports = {
 		})
 
 		// Inject WindiCSS
+		// @ts-expect-error
 		config.plugins.push(new WindiCSS())
 
 		return config;
 	},
-};
+});
 
 const ContentSecurityPolicy = `
   child-src *.google.com streamable.com;
@@ -90,3 +64,10 @@ const ContentSecurityPolicy = `
   style-src 'self' 'unsafe-inline' *.googleapis.com;
   worker-src 'self' 'unsafe-inline' blob:;
 `;
+
+const headers = [
+	['Content-Security-Policy', ContentSecurityPolicy.replace(/\n/g, '')], // https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
+	['Referrer-Policy', 'origin-when-cross-origin'], // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy
+	['Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload'], // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security
+	['Permissions-Policy', 'camera=(), microphone=(), geolocation=(), interest-cohort=()'], // https://amifloced.org/ | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy
+]
