@@ -3,6 +3,8 @@ import { format, parseISO } from 'date-fns';
 import { allPosts } from 'contentlayer/generated';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
+import { X } from '~/components';
+
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import type { ParsedUrlQuery } from 'querystring';
 import type { Post } from 'contentlayer/generated';
@@ -32,7 +34,7 @@ export default function BlogPost({ post }) {
 				</time>
 			</div>
 			<div className="prose">
-				<MDXContent components={{}} />
+				<MDXContent components={X} />
 			</div>
 		</article>
 	);
