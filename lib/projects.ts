@@ -1,5 +1,4 @@
 import containsEmoji from 'contains-emoji';
-import GithubColors from 'github-colors';
 
 import type { GitHubRepos, Project, ProjectPost } from '~/types';
 
@@ -64,7 +63,6 @@ export async function fetchProjects(): Promise<Array<Project> | null> {
 					return containsEmoji(char) ? char : undefined;
 				})(),
 				homepage: repo.homepage ?? undefined,
-				language: repo.language ? GithubColors.get(repo.language).color : undefined,
 				name: repo.name,
 				post: repoPost ? `/blog/${repoPost.post}` : undefined,
 				template: false,
