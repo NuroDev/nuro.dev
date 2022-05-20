@@ -80,7 +80,7 @@ export default function BlogPost({ post }: BlogPostProps) {
 							<div className="w-full h-full h-64 lg:h-96 mb-8 bg-gray-200 dark:bg-gray-600 rounded-3xl motion-safe:animate-pulse" />
 							<Image
 								alt={post.frontmatter.banner_alt ?? post.frontmatter.title}
-								className="absolute top-0 left-0 w-full h-auto max-h-64 lg:max-h-96 mb-8 rounded-3xl object-cover select-none shadow-xl transition ease-in-out duration-300"
+								className="absolute top-0 left-0 w-full h-auto max-h-64 lg:max-h-96 mb-8 rounded-3xl object-cover select-none shadow-xl default-transition"
 								draggable={false}
 								layout="fill"
 								src={post.frontmatter.banner}
