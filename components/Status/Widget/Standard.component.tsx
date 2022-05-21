@@ -113,7 +113,8 @@ export function Widget() {
 									className="rounded default-transition default-focus"
 									href={activity.avatar.href}
 									target="_blank"
-									rel="noreferrer noopener">
+									rel="noreferrer noopener"
+								>
 									<div className="max-w-md max-h-12 my-auto rounded pointer-events-none select-none ring-2 ring-gray-200 dark:ring-gray-500">
 										<Image
 											alt={activity.avatar.alt}
@@ -155,7 +156,8 @@ export function Widget() {
 											(description, descriptionIndex) => (
 												<p
 													className="mt-1 text-xs tracking-wide font-medium text-gray-500 dark:text-gray-400"
-													key={descriptionIndex}>
+													key={descriptionIndex}
+												>
 													{description}
 												</p>
 											),
