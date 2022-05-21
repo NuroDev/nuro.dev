@@ -24,7 +24,7 @@ type StandardProps =
 	  } & DefaultProps);
 
 const ButtonStyles =
-	'flex justify-center items-center h-12 px-8 py-4 bg-gray-50 hover:(bg-gray-100 bg-opacity-50 text-primary-400) dark:(bg-gray-900 hover:bg-gray-800) text-base font-bold text-primary-300 rounded-lg default-transition focus:(outline-none ring-2 ring-primary-500)';
+	'flex justify-center items-center h-12 px-8 py-4 bg-gray-50 hover:(bg-gray-100 bg-opacity-50 text-primary-400) dark:(bg-gray-900 hover:bg-gray-800) text-base font-bold text-primary-300 rounded-lg default-transition default-focus';
 
 export function Standard({ children, className, icon, ...rest }: StandardProps) {
 	switch (rest.type) {
@@ -52,8 +52,7 @@ export function Standard({ children, className, icon, ...rest }: StandardProps) 
 					{...rest}
 					className={clsx(ButtonStyles, className)}
 					onClick={(e) => rest.onClick(e)}
-					type="button"
-				>
+					type="button">
 					{icon && <Icon className="mr-2" icon={icon} />}
 					{children}
 				</button>
