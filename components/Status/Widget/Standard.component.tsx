@@ -110,6 +110,7 @@ export function Widget() {
 								</div>
 							) : activity.avatar.href ? (
 								<a
+									className="rounded default-transition default-focus"
 									href={activity.avatar.href}
 									target="_blank"
 									rel="noreferrer noopener"
