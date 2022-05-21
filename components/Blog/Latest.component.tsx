@@ -18,7 +18,8 @@ export function Latest({ frontmatter }: LatestProps) {
 			<a
 				aria-label={ariaLabel}
 				className="flex flex-col lg:flex-row mt-12 bg-white bg-opacity-75 dark:(bg-gray-900 bg-opacity-75 border-gray-500) backdrop-filter backdrop-blur-sm rounded-2xl hover:shadow-xl cursor-pointer border-2 border-gray-100 transform motion-safe:hover:-translate-y-1 default-transition default-focus"
-				href={href}>
+				href={href}
+			>
 				{(frontmatter.banner_show ?? true) && (
 					<div className="relative flex justify-center my-auto w-full xl:w-2/4 h-64 border-b-2 sm:(h-72 border-0 border-r-2) border-gray-100 dark:border-gray-500 overflow-hidden rounded-2xl rounded-b-none lg:(max-w-xl h-96 rounded-l-2xl rounded-r-none) default-transition">
 						<div className="w-full h-full mb-8 bg-gray-200 dark:bg-gray-600 rounded-lg rounded-l-none lg:(rounded-l-lg rounded-r-none) motion-safe:animate-pulse" />

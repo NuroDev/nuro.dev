@@ -29,20 +29,23 @@ export function Error({ routeBlog = true }: ErrorProps) {
 							<Button.Standard
 								icon="feather:arrow-left"
 								onClick={() => history.go(-1)}
-								type={NavigationItemType.ACTION}>
+								type={NavigationItemType.ACTION}
+							>
 								Back
 							</Button.Standard>
 							<Button.Standard
 								href="/"
 								icon="feather:home"
-								type={NavigationItemType.LINK}>
+								type={NavigationItemType.LINK}
+							>
 								Home
 							</Button.Standard>
 							{routeBlog && (
 								<Button.Standard
 									href="/blog"
 									icon="feather:book"
-									type={NavigationItemType.LINK}>
+									type={NavigationItemType.LINK}
+								>
 									Blog
 								</Button.Standard>
 							)}

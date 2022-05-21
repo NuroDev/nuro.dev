@@ -36,7 +36,8 @@ function StyledMenuItem({ active, children, className, ...rest }: MenuLinkProps)
 					: 'text-gray-300 hover:text-gray-700 dark:hover:text-white',
 				className,
 			)}
-			{...rest}>
+			{...rest}
+		>
 			{children}
 		</a>
 	);
@@ -81,13 +82,15 @@ export function Dropdown({ children, items, position = 'top-left' }: StandardPro
 						leave="transition ease-in-out"
 						leaveFrom="transform scale-100 opacity-100"
 						leaveTo="transform scale-95 opacity-0"
-						show={open}>
+						show={open}
+					>
 						<Menu.Items
 							className={clsx(
 								'absolute w-[calc(100vw-1rem)] sm:w-56 mt-2 bg-gray-50 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 backdrop-filter backdrop-blur-sm border border-gray-100 dark:border-gray-500 rounded-md shadow-lg divide-y divide-gray-100 dark:divide-gray-500 focus:outline-none',
 								position === 'top-left' && 'origin-top-left left-0',
 								position === 'top-right' && 'origin-top-right right-0',
-							)}>
+							)}
+						>
 							{items.map((section, index) => (
 								<div className="py-2" key={index}>
 									{section.map((item) => (
@@ -99,7 +102,8 @@ export function Dropdown({ children, items, position = 'top-left' }: StandardPro
 															<StyledMenuItem
 																active={active}
 																className="group"
-																onClick={() => item.onClick()}>
+																onClick={() => item.onClick()}
+															>
 																<MenuButtonIcon icon={item.icon} />
 																{item.text}
 																{item.endIcon && (
@@ -126,7 +130,8 @@ export function Dropdown({ children, items, position = 'top-left' }: StandardPro
 																	active={active}
 																	href={item.href}
 																	rel="noopener noreferrer"
-																	target="_blank">
+																	target="_blank"
+																>
 																	<MenuButtonIcon
 																		icon={item.icon}
 																	/>
@@ -142,7 +147,8 @@ export function Dropdown({ children, items, position = 'top-left' }: StandardPro
 														return (
 															<MenuLink
 																active={active}
-																href={item.href}>
+																href={item.href}
+															>
 																<MenuButtonIcon icon={item.icon} />
 																{item.text}
 															</MenuLink>
