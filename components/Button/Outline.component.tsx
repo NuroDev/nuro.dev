@@ -34,7 +34,8 @@ export function Outline({
 				onClick={(...args) => onClick && onClick(...args)}
 				rel="noopener noreferrer"
 				target={external ? '_blank' : undefined}
-				{...rest}>
+				{...rest}
+			>
 				{icon && <Icon className="mt-1 mr-3" icon={icon} />}
 				{children}
 			</a>

@@ -52,7 +52,8 @@ export function Standard({ children, className, icon, ...rest }: StandardProps) 
 					{...rest}
 					className={clsx(ButtonStyles, className)}
 					onClick={(e) => rest.onClick(e)}
-					type="button">
+					type="button"
+				>
 					{icon && <Icon className="mr-2" icon={icon} />}
 					{children}
 				</button>

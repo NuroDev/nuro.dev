@@ -12,7 +12,8 @@ export function Standard({ children, className, ...rest }: StandardPillProps) {
 			)}
 			target="_blank"
 			rel="noreferrer noopener"
-			{...rest}>
+			{...rest}
+		>
 			{children}
 		</div>
 	);
