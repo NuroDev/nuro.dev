@@ -1,7 +1,5 @@
 import clsx from 'clsx';
 import Link from 'next/link';
-import styled from '@emotion/styled';
-import tw from 'twin.macro';
 import { Fragment } from 'react';
 import { Icon } from '@iconify/react';
 import { Menu, Transition } from '@headlessui/react';
@@ -20,7 +18,7 @@ interface StandardProps extends WithChildren {
 }
 
 interface MenuLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
-	$active: boolean;
+	active: boolean;
 }
 
 interface MenuButtonIconProps extends WithClassName {
@@ -28,45 +26,21 @@ interface MenuButtonIconProps extends WithClassName {
 	direction?: 'left' | 'right';
 }
 
-const StyledItems = styled(Menu.Items)<{ position: Position }>`
-	${tw` 
-		absolute sm:w-56 \ 
-		mt-2 \ 
-		bg-gray-50 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 \ 
-		backdrop-filter backdrop-blur-sm \ 
-		border border-gray-100 dark:border-gray-500 \ 
-		rounded-md shadow-lg \ 
-		divide-y divide-gray-100 dark:divide-gray-500 \ 
-		focus:outline-none 
-	`}
-
-	width: calc(100vw - 1rem);
-
-	${({ position }) => {
-		switch (position) {
-			default:
-			case 'top-left':
-				return tw`origin-top-left left-0`;
-			case 'top-right':
-				return tw`origin-top-right right-0`;
-		}
-	}}
-`;
-
-const StyledMenuItem = styled.a<Pick<MenuLinkProps, '$active'>>`
-	${tw`
-		flex items-center \
-		px-4 py-3 \
-		text-sm font-medium tracking-wide \
-		cursor-pointer \
-		transition ease-in-out duration-300
-	`}
-
-	${({ $active }) =>
-		$active
-			? tw`bg-gray-100 bg-opacity-50 dark:bg-gray-700 dark:bg-opacity-50 text-gray-900 dark:text-white`
-			: tw`text-gray-300 hover:text-gray-700 dark:hover:text-white`}
-`;
+function StyledMenuItem({ active, children, className, ...rest }: MenuLinkProps) {
+	return (
+		<a
+			className={clsx(
+				'flex items-center px-4 py-3 text-sm font-medium tracking-wide cursor-pointer transition ease-in-out duration-300',
+				active
+					? 'bg-gray-100 bg-opacity-50 text-gray-900 dark:(bg-gray-700 bg-opacity-50 text-white)'
+					: 'text-gray-300 hover:text-gray-700 dark:hover:text-white',
+				className,
+			)}
+			{...rest}>
+			{children}
+		</a>
+	);
+}
 
 function MenuButtonIcon({ className, icon, direction: type = 'left' }: MenuButtonIconProps) {
 	if (typeof icon !== 'string') return <>{icon}</>;
@@ -92,7 +66,7 @@ function MenuLink({ children, href, onClick, ...rest }: MenuLinkProps) {
 	);
 }
 
-export function Dropdown({ children, items, position }: StandardProps) {
+export function Dropdown({ children, items, position = 'top-left' }: StandardProps) {
 	return (
 		<Menu as="div" className="relative inline-block text-left">
 			{({ open }) => (
@@ -107,9 +81,13 @@ export function Dropdown({ children, items, position }: StandardProps) {
 						leave="transition ease-in-out"
 						leaveFrom="transform scale-100 opacity-100"
 						leaveTo="transform scale-95 opacity-0"
-						show={open}
-					>
-						<StyledItems position={position}>
+						show={open}>
+						<Menu.Items
+							className={clsx(
+								'absolute w-[calc(100vw-1rem)] sm:w-56 mt-2 bg-gray-50 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 backdrop-filter backdrop-blur-sm border border-gray-100 dark:border-gray-500 rounded-md shadow-lg divide-y divide-gray-100 dark:divide-gray-500 focus:outline-none',
+								position === 'top-left' && 'origin-top-left left-0',
+								position === 'top-right' && 'origin-top-right right-0',
+							)}>
 							{items.map((section, index) => (
 								<div className="py-2" key={index}>
 									{section.map((item) => (
@@ -119,10 +97,9 @@ export function Dropdown({ children, items, position }: StandardProps) {
 													case NavigationItemType.ACTION:
 														return (
 															<StyledMenuItem
-																$active={active}
+																active={active}
 																className="group"
-																onClick={() => item.onClick()}
-															>
+																onClick={() => item.onClick()}>
 																<MenuButtonIcon icon={item.icon} />
 																{item.text}
 																{item.endIcon && (
@@ -146,11 +123,10 @@ export function Dropdown({ children, items, position }: StandardProps) {
 															return (
 																<StyledMenuItem
 																	className="group"
-																	$active={active}
+																	active={active}
 																	href={item.href}
 																	rel="noopener noreferrer"
-																	target="_blank"
-																>
+																	target="_blank">
 																	<MenuButtonIcon
 																		icon={item.icon}
 																	/>
@@ -165,9 +141,8 @@ export function Dropdown({ children, items, position }: StandardProps) {
 
 														return (
 															<MenuLink
-																$active={active}
-																href={item.href}
-															>
+																active={active}
+																href={item.href}>
 																<MenuButtonIcon icon={item.icon} />
 																{item.text}
 															</MenuLink>
@@ -178,7 +153,7 @@ export function Dropdown({ children, items, position }: StandardProps) {
 									))}
 								</div>
 							))}
-						</StyledItems>
+						</Menu.Items>
 					</Transition>
 				</>
 			)}
