@@ -105,7 +105,7 @@ export function Widget() {
 								<div className="max-w-md max-h-12 my-auto rounded pointer-events-none select-none ring-2 ring-gray-200 dark:ring-gray-500">
 									<Icon
 										className="w-12 h-12 p-1 text-gray-200 dark:text-gray-400"
-										icon="feather:help-circle"
+										icon="lucide:gamepad-2"
 									/>
 								</div>
 							) : activity.avatar.href ? (
@@ -113,8 +113,7 @@ export function Widget() {
 									className="rounded default-transition default-focus"
 									href={activity.avatar.href}
 									target="_blank"
-									rel="noreferrer noopener"
-								>
+									rel="noreferrer noopener">
 									<div className="max-w-md max-h-12 my-auto rounded pointer-events-none select-none ring-2 ring-gray-200 dark:ring-gray-500">
 										<Image
 											alt={activity.avatar.alt}
@@ -138,27 +137,39 @@ export function Widget() {
 							)}
 
 							<div className="flex-1 ml-4">
-								<h1 className="text-base font-extrabold line-clamp-1 tracking-wide overflow-ellipsis text-gray-900 dark:text-white">
-									{activity.title}
-								</h1>
-
 								{'icon' in activity.avatar && activity.avatar.icon ? (
-									<p className="mt-1 text-xs tracking-wide font-medium text-gray-500 dark:text-gray-400">
-										Unknown Activity
-									</p>
-								) : Array.isArray(activity.description) ? (
-									activity.description.map((description, descriptionIndex) => (
-										<p
-											className="mt-1 text-xs tracking-wide font-medium text-gray-500 dark:text-gray-400"
-											key={descriptionIndex}
-										>
-											{description}
+									<>
+										<p className="mt-0 mb-1 text-xs tracking-wide font-medium text-gray-500 dark:text-gray-400">
+											Playing
 										</p>
-									))
+										<h1 className="text-base font-extrabold line-clamp-1 tracking-wide overflow-ellipsis text-gray-900 dark:text-white">
+											{activity.title}
+										</h1>
+									</>
+								) : Array.isArray(activity.description) ? (
+									<>
+										<h1 className="text-base font-extrabold line-clamp-1 tracking-wide overflow-ellipsis text-gray-900 dark:text-white">
+											{activity.title}
+										</h1>
+										{activity.description.map(
+											(description, descriptionIndex) => (
+												<p
+													className="mt-1 text-xs tracking-wide font-medium text-gray-500 dark:text-gray-400"
+													key={descriptionIndex}>
+													{description}
+												</p>
+											),
+										)}
+									</>
 								) : (
-									<p className="mt-1 text-xs tracking-wide font-medium text-gray-500 dark:text-gray-400">
-										{activity.description}
-									</p>
+									<>
+										<h1 className="text-base font-extrabold line-clamp-1 tracking-wide overflow-ellipsis text-gray-900 dark:text-white">
+											{activity.title}
+										</h1>
+										<p className="mt-1 text-xs tracking-wide font-medium text-gray-500 dark:text-gray-400">
+											{activity.description}
+										</p>
+									</>
 								)}
 							</div>
 

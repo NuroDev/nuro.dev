@@ -98,7 +98,7 @@ export function useNavigation() {
 			{
 				type: NavigationItemType.ACTION,
 				icon: 'feather:image',
-				endIcon: background ? 'feather:check-circle' : 'feather:square',
+				endIcon: background ? 'feather:check-circle' : 'feather:circle',
 				text: `Animations ${background ? 'On' : 'Off'}`,
 				onClick: () =>
 					state.set((settings) => ({
@@ -109,7 +109,7 @@ export function useNavigation() {
 			{
 				type: NavigationItemType.ACTION,
 				icon: sound ? 'feather:volume-2' : 'feather:volume-x',
-				endIcon: sound ? 'feather:check-circle' : 'feather:square',
+				endIcon: sound ? 'feather:check-circle' : 'feather:circle',
 				text: `Sounds ${sound ? 'On' : 'Off'}`,
 				onClick: () =>
 					state.set((settings) => ({
