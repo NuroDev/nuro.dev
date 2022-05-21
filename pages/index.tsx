@@ -50,8 +50,7 @@ export default function HomePage() {
 						}}
 						className="text-gray-500 dark:text-white text-5xl sm:text-6xl md:text-6xl lg:text-8xl tracking-tight font-extrabold"
 					>
-						Hey{' '}
-						<span className="inline-block origin-[70%_70%] hover:animate-wave">👋</span>{' '}
+						Hey <span className="inline-block origin-70 hover:(animate-wave)">👋</span>{' '}
 						I&apos;m Ben, <br className="hidden sm:block" />a{' '}
 						<Pill.Standard className="mt-4">developer</Pill.Standard>
 					</Animate>
@@ -88,7 +87,7 @@ export default function HomePage() {
 								>
 									<Button.Outline href={action.href}>
 										{action.icon}
-										<span className="-mt-1 py-1">{action.text}</span>
+										<span>{action.text}</span>
 									</Button.Outline>
 								</Animate>
 							);

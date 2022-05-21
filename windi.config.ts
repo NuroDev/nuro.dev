@@ -39,6 +39,14 @@ export default defineConfig({
 					'100%': { transform: 'rotate(0deg)' },
 				},
 			},
+			saturate: {
+				DEFAULT: {
+					200: 'saturate(2)',
+				},
+			},
+			transformOrigin: {
+				70: '70% 70%',
+			},
 		},
 		typography: {
 			DEFAULT: {
