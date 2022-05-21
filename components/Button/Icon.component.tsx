@@ -14,7 +14,7 @@ export const Icon = forwardRef<HTMLButtonElement, IconProps>(function Icon(
 			ref={ref}
 			className={clsx(
 				'group',
-				'relative inline-block px-3 py-2 bg-gray-50 hover:(bg-gray-100 text-gray-700) dark:(bg-gray-900 hover:bg-gray-700 hover:text-white) text-gray-400 rounded-lg text-sm font-medium default-transition default-focus',
+				'relative inline-flex items-center px-3 py-2 bg-gray-50 hover:(bg-gray-100 text-gray-700) dark:(bg-gray-900 hover:bg-gray-700 hover:text-white) text-gray-400 rounded-lg text-sm font-medium default-transition default-focus',
 				className,
 			)}
 			onClick={(e) => onClick && onClick(e)}
