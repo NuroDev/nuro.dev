@@ -1302,15 +1302,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"contains-emoji@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "contains-emoji@npm:1.1.0"
-  dependencies:
-    emoji-regex: ^9.0.0
-  checksum: 717865b5d13cbc0683e7907bab27645047ae60ab7a76162ba4d4058e97b1ccb09af35f7401294b353bb7833bf9489cd1d7d819d932525910d321be61ac0b90f3
-  languageName: node
-  linkType: hard
-
 "convert-source-map@npm:^1.7.0":
   version: 1.8.0
   resolution: "convert-source-map@npm:1.8.0"
@@ -1548,7 +1539,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"emoji-regex@npm:^9.0.0, emoji-regex@npm:^9.2.2":
+"emoji-regex@npm:^10.1.0":
+  version: 10.1.0
+  resolution: "emoji-regex@npm:10.1.0"
+  checksum: 5bc780fc4d75f89369155a87c55f7e83a0bf72bcccda7df7f2c570cde4738d8b17d112d12afdadfec16647d1faef6501307b4304f81d35c823a938fe6547df0f
+  languageName: node
+  linkType: hard
+
+"emoji-regex@npm:^9.2.2":
   version: 9.2.2
   resolution: "emoji-regex@npm:9.2.2"
   checksum: 8487182da74aabd810ac6d6f1994111dfc0e331b01271ae01ec1eb0ad7b5ecc2bbbbd2f053c05cb55a1ac30449527d819bbfbf0e3de1023db308cbcb47f86601
@@ -3398,8 +3396,8 @@ __metadata:
     "@types/react-dom": ^17.0.9
     canvas-confetti: ^1.4.0
     clsx: ^1.1.1
-    contains-emoji: ^1.1.0
     date-fns: ^2.24.0
+    emoji-regex: ^10.1.0
     eslint: 8.10.0
     eslint-config-next: 12.1.0
     gray-matter: ^4.0.3

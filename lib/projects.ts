@@ -1,4 +1,4 @@
-import containsEmoji from 'contains-emoji';
+import emojiRegex from 'emoji-regex';
 
 import type { GitHubRepos, Project, ProjectPost } from '~/types';
 
@@ -60,7 +60,7 @@ export async function fetchProjects(): Promise<Array<Project> | null> {
 
 					const char = repo.description.split(' ')[0];
 
-					return containsEmoji(char) ? char : undefined;
+					return emojiRegex().test(char) ? char : undefined;
 				})(),
 				homepage: repo.homepage ?? undefined,
 				name: repo.name,
