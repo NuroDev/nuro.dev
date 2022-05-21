@@ -1,7 +1,9 @@
 import { Button } from '~/components';
 import { NavigationItemType } from '~/types';
 
-interface XButtonProps {
+import type { ButtonHTMLAttributes } from 'react';
+
+interface XButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	external?: boolean;
 	href: string;
 	icon?: string;

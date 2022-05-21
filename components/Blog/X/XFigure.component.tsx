@@ -1,6 +1,4 @@
 import Image from 'next/image';
-import styled from '@emotion/styled';
-import tw from 'twin.macro';
 
 interface XFigureProps {
 	alt?: string;
@@ -8,15 +6,12 @@ interface XFigureProps {
 	src: string;
 }
 
-const StyledImage = styled(Image)(tw`
-	rounded-3xl object-cover select-none hover:shadow-xl
-`);
-
 export function XFigure({ alt, caption, src }: XFigureProps) {
 	return (
 		<figure>
-			<StyledImage
+			<Image
 				alt={alt ?? caption}
+				className="rounded-3xl object-cover select-none hover:shadow-xl"
 				draggable={false}
 				height="100%"
 				layout="responsive"
