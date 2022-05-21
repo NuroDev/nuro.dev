@@ -1,7 +1,6 @@
 import NProgress from 'nprogress';
 import splitbee from '@splitbee/web';
 import { AppProps } from 'next/app';
-import { GlobalStyles as TailwindStyles } from 'twin.macro';
 import { ThemeProvider } from 'next-themes';
 import { Toaster } from 'react-hot-toast';
 import { useEffectOnce, useEvent } from 'react-use';
@@ -41,7 +40,6 @@ export default function App({ Component, pageProps }: AppProps) {
 
 	return (
 		<ThemeProvider attribute="class" defaultTheme={Theme.SYSTEM} themes={Object.values(Theme)}>
-			<TailwindStyles />
 			<Toaster />
 			<Component {...pageProps} />
 			<style jsx global>{`
