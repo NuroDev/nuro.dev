@@ -40,5 +40,16 @@ export default defineConfig({
 				},
 			},
 		},
+		typography: {
+			DEFAULT: {
+				css: {
+					pre: {
+						marginTop: '0 !important',
+						borderTopLeftRadius: '0 !important',
+						borderTopRightRadius: '0 !important',
+					},
+				},
+			},
+		},
 	},
 });

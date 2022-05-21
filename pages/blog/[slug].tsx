@@ -1,6 +1,4 @@
 import Image from 'next/image';
-import styled from '@emotion/styled';
-import tw from 'twin.macro';
 import { MDXRemote } from 'next-mdx-remote';
 
 import { Blog, Pill } from '~/components';
@@ -45,77 +43,72 @@ export const getStaticProps: GetStaticProps<BlogPostProps, PathProps> = async ({
 	};
 };
 
-const Article = styled.article`
-	${tw`
-		max-w-prose mx-auto prose prose-primary prose-lg text-gray-500 mx-auto
-	`}
-
-	${Blog.CodeStyles}
-	${Blog.ElementStyles}
-`;
-
 export default function BlogPost({ post }: BlogPostProps) {
 	return (
-		<Layout.Blog
-			seo={{
-				title: `nuro ─ blog ─ ${post.frontmatter.title}`,
-				description: post.frontmatter.description ?? undefined,
-				openGraph: {
-					title: post.frontmatter.title,
-					images: [
-						{
-							url: post.frontmatter.banner ?? '/banner.png',
-							alt: post.frontmatter.description,
-							width: 1280,
-							height: 720,
-						},
-					],
-				},
-			}}
-		>
-			<div className="relative px-4 py-16 overflow-hidden">
-				<div className="relative px-4 sm:px-6 lg:px-8">
-					{post.frontmatter.banner && (post.frontmatter.banner_show ?? true) && (
-						<div className="relative sm:max-w-2xl lg:sm:max-w-6xl mx-auto my-2 sm:my-4">
-							<div className="w-full h-full h-64 lg:h-96 mb-8 bg-gray-200 dark:bg-gray-600 rounded-3xl motion-safe:animate-pulse" />
-							<Image
-								alt={post.frontmatter.banner_alt ?? post.frontmatter.title}
-								className="absolute top-0 left-0 w-full h-auto max-h-64 lg:max-h-96 mb-8 rounded-3xl object-cover select-none shadow-xl default-transition"
-								draggable={false}
-								layout="fill"
-								src={post.frontmatter.banner}
-							/>
-						</div>
-					)}
-
-					<div className="flex flex-col space-y-4 max-w-prose mx-auto my-4 text-lg text-center">
-						<div>
-							{post.frontmatter.title_prefix && (
-								<span className="block text-primary-600 font-semibold tracking-wide uppercase text-base text-center">
-									{post.frontmatter.title_prefix}
-								</span>
-							)}
-							<span className="text-gray-900 dark:text-white sm:text-4xl text-3xl text-center leading-8 font-extrabold tracking-tight">
-								{post.frontmatter.title}
-							</span>
-						</div>
-
-						<span className="flex justify-center items-center">
-							<Pill.Date>{post.frontmatter.date}</Pill.Date>
-						</span>
-
-						{post.frontmatter.description && post.frontmatter.description_show && (
-							<p className="mt-8 text-xl text-gray-400 leading-8">
-								{post.frontmatter.description}
-							</p>
+		<>
+			<Layout.Blog
+				seo={{
+					title: `nuro ─ blog ─ ${post.frontmatter.title}`,
+					description: post.frontmatter.description ?? undefined,
+					openGraph: {
+						title: post.frontmatter.title,
+						images: [
+							{
+								url: post.frontmatter.banner ?? '/banner.png',
+								alt: post.frontmatter.description,
+								width: 1280,
+								height: 720,
+							},
+						],
+					},
+				}}
+			>
+				<div className="relative px-4 py-16 overflow-hidden">
+					<div className="relative px-4 sm:px-6 lg:px-8">
+						{post.frontmatter.banner && (post.frontmatter.banner_show ?? true) && (
+							<div className="relative sm:max-w-2xl lg:sm:max-w-6xl mx-auto my-2 sm:my-4">
+								<div className="w-full h-full h-64 lg:h-96 mb-8 bg-gray-200 dark:bg-gray-600 rounded-3xl motion-safe:animate-pulse" />
+								<Image
+									alt={post.frontmatter.banner_alt ?? post.frontmatter.title}
+									className="absolute top-0 left-0 w-full h-auto max-h-64 lg:max-h-96 mb-8 rounded-3xl object-cover select-none shadow-xl default-transition"
+									draggable={false}
+									layout="fill"
+									src={post.frontmatter.banner}
+								/>
+							</div>
 						)}
-					</div>
 
-					<Article>
-						<MDXRemote {...post.source} components={Blog.X} />
-					</Article>
+						<div className="flex flex-col space-y-4 max-w-prose mx-auto my-4 text-lg text-center">
+							<div>
+								{post.frontmatter.title_prefix && (
+									<span className="block text-primary-600 font-semibold tracking-wide uppercase text-base text-center">
+										{post.frontmatter.title_prefix}
+									</span>
+								)}
+								<span className="text-gray-900 dark:text-white sm:text-4xl text-3xl text-center leading-8 font-extrabold tracking-tight">
+									{post.frontmatter.title}
+								</span>
+							</div>
+
+							<span className="flex justify-center items-center">
+								<Pill.Date>{post.frontmatter.date}</Pill.Date>
+							</span>
+
+							{post.frontmatter.description && post.frontmatter.description_show && (
+								<p className="mt-8 text-xl text-gray-400 leading-8">
+									{post.frontmatter.description}
+								</p>
+							)}
+						</div>
+
+						<article className="max-w-prose mx-auto prose prose-primary prose-lg text-gray-500 mx-auto">
+							<MDXRemote {...post.source} components={Blog.X} />
+						</article>
+					</div>
 				</div>
-			</div>
-		</Layout.Blog>
+			</Layout.Blog>
+			<Blog.Styles.Code />
+			<Blog.Styles.Elements />
+		</>
 	);
 }
