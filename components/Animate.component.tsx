@@ -3,6 +3,8 @@ import { isCrawlerUserAgent } from 'is-web-crawler';
 import { useEffect, useRef } from 'react';
 import { useMedia } from 'react-use';
 
+import { usePersistantState } from '~/lib';
+
 import type { AnimationOptionsWithOverrides, MotionKeyframesDefinition } from '@motionone/dom';
 import type { ComponentPropsWithRef, ElementType } from 'react';
 
@@ -20,11 +22,6 @@ const defaultTransition: AnimationOptionsWithOverrides = {
 	repeat: 0,
 };
 
-/**
- * Animate
- *
- * @description A small wrapper component for the `motion` library to make it easier to use with React.js
- */
 export function Animate<T extends ElementType>({
 	animation,
 	as: Component = 'div' as T,
@@ -33,12 +30,13 @@ export function Animate<T extends ElementType>({
 	transition,
 	...rest
 }: AnimateProps<T>): JSX.Element {
+	const { animations } = usePersistantState().get();
 	const prefersReducedMotion = useMedia('(prefers-reduced-motion)', true);
 
 	const ref = useRef<HTMLElement | null>(null);
 
 	useEffect(() => {
-		if (ref.current && enabled && !(prefersReducedMotion || isCrawlerUserAgent()))
+		if (ref.current && enabled && animations && !(prefersReducedMotion || isCrawlerUserAgent()))
 			animate(ref.current, animation, {
 				...defaultTransition,
 				...transition,
