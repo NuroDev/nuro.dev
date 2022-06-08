@@ -93,8 +93,8 @@ export function Dropdown({ children, items, position = 'top-left' }: StandardPro
 						>
 							{items.map((section, index) => (
 								<div className="py-2" key={index}>
-									{section.map((item) => (
-										<Menu.Item key={item.type}>
+									{section.map((item, j) => (
+										<Menu.Item key={j}>
 											{({ active }) => {
 												switch (item.type) {
 													case NavigationItemType.ACTION:
