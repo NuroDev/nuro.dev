@@ -22,7 +22,7 @@ export function Latest({ frontmatter }: LatestProps) {
 			>
 				{(frontmatter.banner_show ?? true) && (
 					<div className="relative flex justify-center my-auto w-full xl:w-2/4 h-64 border-b-2 sm:(h-72 border-0 border-r-2) border-gray-100 dark:border-gray-500 overflow-hidden rounded-2xl rounded-b-none lg:(max-w-xl h-96 rounded-l-2xl rounded-r-none) default-transition">
-						<div className="w-full h-full mb-8 bg-gray-200 dark:bg-gray-600 rounded-lg rounded-l-none lg:(rounded-l-lg rounded-r-none) motion-safe:animate-pulse" />
+						<div className="w-full h-full mb-8 bg-gray-200 dark:bg-gray-600 rounded-lg rounded-l-none lg:(rounded-l-lg rounded-r-none motion-safe:animate-pulse)" />
 						<Image
 							alt={frontmatter.banner_alt ?? frontmatter.title}
 							className="absolute top-0 left-0 w-full h-full rounded-lg rounded-b-none lg:(rounded-l-lg rounded-r-none) object-cover select-none"
