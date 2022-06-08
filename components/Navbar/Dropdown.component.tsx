@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import Link from 'next/link';
-import { Fragment } from 'react';
+import { forwardRef, Fragment } from 'react';
 import { Icon } from '@iconify/react';
 import { Menu, Transition } from '@headlessui/react';
 
@@ -26,7 +26,10 @@ interface MenuButtonIconProps extends WithClassName {
 	direction?: 'left' | 'right';
 }
 
-function StyledMenuItem({ active, children, className, ...rest }: MenuLinkProps) {
+const StyledMenuItem = forwardRef<any, MenuLinkProps>(function StyledMenuItem(
+	{ active, children, className, ...rest },
+	ref,
+) {
 	return (
 		<a
 			className={clsx(
@@ -36,12 +39,13 @@ function StyledMenuItem({ active, children, className, ...rest }: MenuLinkProps)
 					: 'text-gray-300 hover:text-gray-700 dark:hover:text-white',
 				className,
 			)}
+			ref={ref}
 			{...rest}
 		>
 			{children}
 		</a>
 	);
-}
+});
 
 function MenuButtonIcon({ className, icon, direction: type = 'left' }: MenuButtonIconProps) {
 	if (typeof icon !== 'string') return <>{icon}</>;
