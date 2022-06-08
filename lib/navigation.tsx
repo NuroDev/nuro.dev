@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import { useTheme } from 'next-themes';
 
 import { Status } from '~/components';
@@ -65,26 +64,14 @@ export function useNavigation() {
 	const { color, loading, status } = useStatus();
 	const { theme, setTheme } = useTheme();
 
-	const isDark = useMemo(() => {
-		if (theme === Theme.SYSTEM)
-			return window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-		return theme === Theme.DARK;
-	}, [theme]);
-
 	const menuItems: NavigationItems = [
 		...staticMenuItems,
-		...(!loading && status
+		...(!loading && status.discord_status !== 'offline'
 			? [
 					[
 						{
 							type: NavigationItemType.LINK,
-							icon: (
-								<Status.Indicator
-									color={color}
-									pulse={status.discord_status !== 'offline'}
-								/>
-							),
+							icon: <Status.Indicator color={color} pulse />,
 							text: 'Status',
 							href: '/status',
 						} as NavigationItem,
