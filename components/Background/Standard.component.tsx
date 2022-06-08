@@ -37,7 +37,9 @@ export function Standard() {
 			gl.clearColor(0, 0, 0, 0);
 			window.addEventListener('resize', handleReisze, false);
 			handleReisze();
-		} catch (error) {}
+		} catch (error) {
+			console.error(error);
+		}
 
 		const numParticles = 100;
 		const position = new Float32Array(numParticles * 3);
@@ -96,5 +98,5 @@ export function Standard() {
 		return () => cancelAnimationFrame(animationId);
 	});
 
-	return <div className="fixed inset-0 -z-10" ref={containerRef} />;
+	return <div className="fixed inset-0" ref={containerRef} />;
 }
