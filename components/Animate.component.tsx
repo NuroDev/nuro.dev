@@ -41,7 +41,7 @@ export function Animate<T extends ElementType>({
 				...defaultTransition,
 				...transition,
 			});
-	}, [animation, enabled, prefersReducedMotion, transition]);
+	}, [animation, animations, enabled, prefersReducedMotion, transition]);
 
 	return (
 		// @ts-expect-error
