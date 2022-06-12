@@ -36,7 +36,8 @@ export default function ProjectsPage({ stringifiedProjects }: ProjectProps) {
 								key={index}
 								transition={{
 									delay: 0.1 * index,
-								}}>
+								}}
+							>
 								<List.Item
 									actions={[
 										...(project.post
