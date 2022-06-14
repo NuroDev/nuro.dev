@@ -1,7 +1,10 @@
 import splitbee from '@splitbee/web';
 import toast from 'react-hot-toast';
+import writeText from 'copy-to-clipboard';
 import { Icon } from '@iconify/react';
-import { useCopyToClipboard } from 'react-use';
+import { Toaster } from 'react-hot-toast';
+import { useMedia } from 'react-use';
+import { useMemo } from 'react';
 import { useTheme } from 'next-themes';
 
 import { colors } from '~/lib';
@@ -9,7 +12,6 @@ import { Layout } from '~/layouts';
 import { Animate, List, Pill } from '~/components';
 import { ListAction, ListActionType, Theme } from '~/types';
 
-import type { CSSProperties } from 'react';
 import type { GetStaticProps } from 'next';
 
 import type { Referrals } from '~/types';
@@ -39,28 +41,32 @@ export const getStaticProps: GetStaticProps<ReferralsProps> = async () => {
 
 export default function ReferralsPage({ referrals }: ReferralsProps) {
 	const { theme } = useTheme();
-	const [state, copyToClipboard] = useCopyToClipboard();
+	const prefersDarkColorScheme = useMedia('(prefers-color-scheme: dark)', false);
 
-	const isDark = theme === Theme.DARK;
-	const toastOptions = {
-		style: {
-			background: isDark ? colors.gray[800] : colors.gray[50],
-			color: isDark ? colors.gray[400] : colors.gray[700],
-			borderWidth: '1px',
-			borderColor: isDark ? colors.gray[500] : colors.gray[100],
-		} as CSSProperties,
-	};
-
-	function onCopy(code: string) {
-		copyToClipboard(code);
-
-		if (state.error) return toast.error('Failed to copy code', toastOptions);
-
-		toast.success('Copied code', toastOptions);
-	}
+	const isDark = useMemo(() => {
+		switch (theme) {
+			case Theme.SYSTEM:
+				return prefersDarkColorScheme ? true : false;
+			case Theme.LIGHT:
+				return false;
+			case Theme.DARK:
+				return true;
+		}
+	}, [prefersDarkColorScheme, theme]);
 
 	return (
 		<Layout.Default seo={{ title: 'nuro ─ referrals' }}>
+			<Toaster
+				toastOptions={{
+					position: 'bottom-right',
+					style: {
+						background: isDark ? colors.gray[900] : colors.gray[50],
+						borderColor: isDark ? colors.gray[800] : colors.gray[100],
+						borderWidth: '2px',
+						color: isDark ? colors?.gray[400] : colors?.gray[700],
+					},
+				}}
+			/>
 			<div className="my-24 mx-2 sm:mx-6 lg:mb-28 lg:mx-8">
 				<div className="relative max-w-xl mx-auto">
 					<List.Container>
@@ -86,7 +92,10 @@ export default function ReferralsPage({ referrals }: ReferralsProps) {
 														type: ListActionType.BUTTON,
 														icon: 'feather:hash',
 														label: 'Copy Referral Code',
-														onClick: () => onCopy(referral.code),
+														onClick: () => {
+															writeText(referral.code);
+															toast.success('Copied referral code');
+														},
 													} as ListAction,
 											  ]
 											: []),

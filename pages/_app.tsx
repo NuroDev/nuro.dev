@@ -2,7 +2,6 @@ import NProgress from 'nprogress';
 import splitbee from '@splitbee/web';
 import { AppProps } from 'next/app';
 import { ThemeProvider } from 'next-themes';
-import { Toaster } from 'react-hot-toast';
 import { useEffectOnce, useEvent } from 'react-use';
 import { useRouter } from 'next/router';
 
@@ -62,7 +61,6 @@ export default function App({ Component, pageProps }: AppProps) {
 
 	return (
 		<ThemeProvider attribute="class" defaultTheme={Theme.SYSTEM} themes={Object.values(Theme)}>
-			<Toaster />
 			<Component {...pageProps} />
 			<style jsx global>{`
 				#nprogress .bar {
