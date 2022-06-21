@@ -1,11 +1,8 @@
 import Image from 'next/image';
-import styled from '@emotion/styled';
-import tw from 'twin.macro';
 import { Fragment } from 'react';
 import { Icon } from '@iconify/react';
 
-import { DiscordStatus } from '~/types';
-import { Error, Loading } from '..';
+import { Error, Loading } from '~/components/Status';
 import { Status } from '~/components';
 import { useStatus } from '~/lib';
 
@@ -27,67 +24,6 @@ interface Activity {
 	description: string | Array<string>;
 	icon?: string | ReactNode;
 }
-
-const Container = styled.div(tw`
-	flex flex-col space-y-5 w-full max-w-sm \
-	mx-auto px-4 py-4 \
-	bg-white bg-opacity-50 dark:bg-gray-900 dark:bg-opacity-50 \
-	backdrop-filter backdrop-blur-sm \
-	border-2 border-gray-200 dark:border-gray-600 \
-	rounded-lg hover:shadow-lg \
-	transition ease-in-out duration-300
-`);
-
-const ActivityContainer = styled.div(tw`
-	inline-flex items-center
-`);
-
-const AssetContainer = styled.div(tw`
-	max-w-md max-h-12 \
-	my-auto \
-	rounded pointer-events-none select-none \
-	ring-2 ring-gray-200 dark:ring-gray-500
-`);
-
-const Asset = styled(Image)(tw`
-	w-full max-h-12 rounded
-`);
-
-const Body = styled.div(tw`
-	flex-1 \
-	ml-4
-`);
-
-const Title = styled.h1(tw`
-	text-base font-extrabold line-clamp-1 tracking-wide overflow-ellipsis \
-	text-gray-900 dark:text-white
-`);
-
-const Description = styled.p(tw`
-	mt-1 \
-	text-xs tracking-wide font-medium \
-	text-gray-500 dark:text-gray-400
-`);
-
-const Divider = styled.hr(tw`
-	h-0.5 \
-	bg-gray-100 dark:bg-gray-600 \
-	border-none \
-	rounded-full
-`);
-
-const UnknownActivityIcon = styled(Icon)(tw`
-	w-12 h-12 \
-	p-1 \
-	text-gray-200 dark:text-gray-400
-`);
-
-const AnimatedIcon = styled(Icon)(tw`
-	w-6 h-6 \
-	mx-3 \
-	text-gray-200 dark:text-gray-400 \
-	animate-pulse
-`);
 
 export function Widget() {
 	const { color, loading, status } = useStatus();
@@ -160,78 +96,102 @@ export function Widget() {
 	].filter((item) => item !== null);
 
 	return (
-		<Container>
+		<div className="flex flex-col space-y-5 w-full max-w-sm mx-auto px-4 py-4 bg-white bg-opacity-50 dark:(bg-gray-900 bg-opacity-50 border-gray-600) backdrop-filter backdrop-blur-sm border-2 border-gray-200 rounded-lg hover:shadow-lg default-transition">
 			{activities.map((activity, index) => {
 				return (
 					<Fragment key={index}>
-						<ActivityContainer>
+						<div className="inline-flex items-center">
 							{'icon' in activity.avatar ? (
-								<AssetContainer>
-									<UnknownActivityIcon icon="lucide:gamepad-2" />
-								</AssetContainer>
+								<div className="max-w-md max-h-12 my-auto rounded pointer-events-none select-none ring-2 ring-gray-200 dark:ring-gray-500">
+									<Icon
+										className="w-12 h-12 p-1 text-gray-200 dark:text-gray-400"
+										icon="lucide:gamepad-2"
+									/>
+								</div>
 							) : activity.avatar.href ? (
 								<a
+									className="rounded default-transition default-focus"
 									href={activity.avatar.href}
 									target="_blank"
 									rel="noreferrer noopener"
 								>
-									<AssetContainer>
-										<Asset
+									<div className="max-w-md max-h-12 my-auto rounded pointer-events-none select-none ring-2 ring-gray-200 dark:ring-gray-500">
+										<Image
 											alt={activity.avatar.alt}
+											className="w-full max-h-12 rounded"
 											height={48}
 											src={activity.avatar.url}
 											width={48}
 										/>
-									</AssetContainer>
+									</div>
 								</a>
 							) : (
-								<AssetContainer>
-									<Asset
+								<div className="max-w-md max-h-12 my-auto rounded pointer-events-none select-none ring-2 ring-gray-200 dark:ring-gray-500">
+									<Image
 										alt={activity.avatar.alt}
+										className="w-full max-h-12 rounded"
 										height={48}
 										src={activity.avatar.url}
 										width={48}
 									/>
-								</AssetContainer>
+								</div>
 							)}
 
-							<Body>
+							<div className="flex-1 ml-4">
 								{'icon' in activity.avatar && activity.avatar.icon ? (
 									<>
-										<Description tw="mt-0 mb-1">Playing</Description>
-										<Title>{activity.title}</Title>
+										<p className="mt-0 mb-1 text-xs tracking-wide font-medium text-gray-500 dark:text-gray-400">
+											Playing
+										</p>
+										<h1 className="text-base font-extrabold line-clamp-1 tracking-wide overflow-ellipsis text-gray-900 dark:text-white">
+											{activity.title}
+										</h1>
 									</>
 								) : Array.isArray(activity.description) ? (
 									<>
-										<Title>{activity.title}</Title>
+										<h1 className="text-base font-extrabold line-clamp-1 tracking-wide overflow-ellipsis text-gray-900 dark:text-white">
+											{activity.title}
+										</h1>
 										{activity.description.map(
 											(description, descriptionIndex) => (
-												<Description key={descriptionIndex}>
+												<p
+													className="mt-1 text-xs tracking-wide font-medium text-gray-500 dark:text-gray-400"
+													key={descriptionIndex}
+												>
 													{description}
-												</Description>
+												</p>
 											),
 										)}
 									</>
 								) : (
 									<>
-										<Title>{activity.title}</Title>
-										<Description>{activity.description}</Description>
+										<h1 className="text-base font-extrabold line-clamp-1 tracking-wide overflow-ellipsis text-gray-900 dark:text-white">
+											{activity.title}
+										</h1>
+										<p className="mt-1 text-xs tracking-wide font-medium text-gray-500 dark:text-gray-400">
+											{activity.description}
+										</p>
 									</>
 								)}
-							</Body>
+							</div>
 
 							{activity.icon &&
 								(typeof activity.icon === 'string' ? (
-									<AnimatedIcon icon={activity.icon} />
+									<Icon
+										className="w-6 h-6 mx-3 text-gray-200 dark:text-gray-400 motion-safe:animate-pulse"
+										icon={activity.icon}
+									/>
 								) : (
 									activity.icon
 								))}
-						</ActivityContainer>
+						</div>
 
-						{index + 1 !== activities.length && <Divider />}
+						{index + 1 !== activities.length && (
+							<hr className="h-0.5 bg-gray-100 dark:bg-gray-600 border-none rounded-full" />
+						)}
 					</Fragment>
 				);
 			})}
-		</Container>
+		</div>
 	);
 }

@@ -1,5 +1,6 @@
-import { NextApiRequest, NextApiResponse } from 'next';
 import fetch from 'node-fetch';
+
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 interface Response {
 	as: string;

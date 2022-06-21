@@ -1,11 +1,9 @@
+import clsx from 'clsx';
 import Link from 'next/link';
-import styled from '@emotion/styled';
-import tw from 'twin.macro';
-import { Fragment } from 'react';
+import { forwardRef, Fragment } from 'react';
 import { Icon } from '@iconify/react';
-import { Menu } from '@headlessui/react';
+import { Menu, Transition } from '@headlessui/react';
 
-import { Transition } from '~/components';
 import { NavigationItemType, WithChildren, WithClassName } from '~/types';
 
 import type { AnchorHTMLAttributes, ReactNode } from 'react';
@@ -20,7 +18,7 @@ interface StandardProps extends WithChildren {
 }
 
 interface MenuLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
-	$active: boolean;
+	active: boolean;
 }
 
 interface MenuButtonIconProps extends WithClassName {
@@ -28,80 +26,34 @@ interface MenuButtonIconProps extends WithClassName {
 	direction?: 'left' | 'right';
 }
 
-const StyledMenu = styled(Menu)(tw`
-	relative inline-block \
-	text-left
-`);
-
-const StyledItems = styled(Menu.Items)<{ position: Position }>`
-	${tw` 
-		absolute sm:w-56 \ 
-		mt-2 \ 
-		bg-gray-50 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 \ 
-		backdrop-filter backdrop-blur-sm \ 
-		border border-gray-100 dark:border-gray-500 \ 
-		rounded-md shadow-lg \ 
-		divide-y divide-gray-100 dark:divide-gray-500 \ 
-		focus:outline-none 
-	`}
-
-	width: calc(100vw - 1rem);
-
-	${({ position }) => {
-		switch (position) {
-			default:
-			case 'top-left':
-				return tw`origin-top-left left-0`;
-			case 'top-right':
-				return tw`origin-top-right right-0`;
-		}
-	}}
-`;
-
-const StyledDivider = styled.hr(tw`
-	mt-2 pb-2 \
-	border-gray-100 dark:border-gray-500
-`);
-
-const MenuSection = styled.div(tw`
-	py-2
-`);
-
-const StyledMenuItem = styled.a<Pick<MenuLinkProps, '$active'>>`
-	${tw`
-		flex items-center \
-		px-4 py-3 \
-		text-sm font-medium tracking-wide \
-		cursor-pointer \
-		transition ease-in-out duration-300
-	`}
-
-	${({ $active }) =>
-		$active
-			? tw`bg-gray-100 bg-opacity-50 dark:bg-gray-700 dark:bg-opacity-50 text-gray-900 dark:text-white`
-			: tw`text-gray-300 hover:text-gray-700 dark:hover:text-white`}
-`;
-
-const MenuItemSpacer = styled.span(tw`
-	flex-1
-`);
-
-const LeftIcon = styled(Icon)(tw`
-	w-5 h-5 \
-	mr-3
-`);
-
-const RightIcon = styled(Icon)(tw`
-	w-4 h-4 \
-	ml-3
-`);
+const StyledMenuItem = forwardRef<any, MenuLinkProps>(function StyledMenuItem(
+	{ active, children, className, ...rest },
+	ref,
+) {
+	return (
+		<a
+			className={clsx(
+				'flex items-center px-4 py-3 text-sm font-medium tracking-wide cursor-pointer default-transition',
+				active
+					? 'bg-gray-100 bg-opacity-50 text-gray-900 dark:(bg-gray-700 bg-opacity-50 text-white)'
+					: 'text-gray-300 hover:text-gray-700 dark:hover:text-white',
+				className,
+			)}
+			ref={ref}
+			{...rest}
+		>
+			{children}
+		</a>
+	);
+});
 
 function MenuButtonIcon({ className, icon, direction: type = 'left' }: MenuButtonIconProps) {
 	if (typeof icon !== 'string') return <>{icon}</>;
 
-	if (type === 'right') return <RightIcon className={className} icon={icon} aria-hidden="true" />;
+	if (type === 'right')
+		return <Icon aria-hidden="true" className={clsx('w-4 h-4 ml-3', className)} icon={icon} />;
 
-	return <LeftIcon className={className} icon={icon} aria-hidden="true" />;
+	return <Icon aria-hidden="true" className={clsx('w-5 h-5 mr-3', className)} icon={icon} />;
 }
 
 /**
@@ -119,25 +71,40 @@ function MenuLink({ children, href, onClick, ...rest }: MenuLinkProps) {
 	);
 }
 
-export function Dropdown({ children, items, position }: StandardProps) {
+export function Dropdown({ children, items, position = 'top-left' }: StandardProps) {
 	return (
-		<StyledMenu as="div">
+		<Menu as="div" className="relative inline-block text-left">
 			{({ open }) => (
 				<>
 					<Menu.Button as={Fragment}>{children}</Menu.Button>
 
-					<Transition show={open}>
-						<StyledItems position={position}>
+					<Transition
+						appear={true}
+						enter="transition ease-in-out"
+						enterFrom="transform scale-95 opacity-0"
+						enterTo="transform scale-100 opacity-100"
+						leave="transition ease-in-out"
+						leaveFrom="transform scale-100 opacity-100"
+						leaveTo="transform scale-95 opacity-0"
+						show={open}
+					>
+						<Menu.Items
+							className={clsx(
+								'absolute w-[calc(100vw-1rem)] sm:w-56 mt-2 bg-gray-50 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 backdrop-filter backdrop-blur-sm border border-gray-100 dark:border-gray-500 rounded-md shadow-lg divide-y divide-gray-100 dark:divide-gray-500 focus:outline-none',
+								position === 'top-left' && 'origin-top-left left-0',
+								position === 'top-right' && 'origin-top-right right-0',
+							)}
+						>
 							{items.map((section, index) => (
-								<MenuSection key={index}>
-									{section.map((item) => (
-										<Menu.Item key={item.type}>
+								<div className="py-2" key={index}>
+									{section.map((item, j) => (
+										<Menu.Item key={j}>
 											{({ active }) => {
 												switch (item.type) {
 													case NavigationItemType.ACTION:
 														return (
 															<StyledMenuItem
-																$active={active}
+																active={active}
 																className="group"
 																onClick={() => item.onClick()}
 															>
@@ -145,7 +112,7 @@ export function Dropdown({ children, items, position }: StandardProps) {
 																{item.text}
 																{item.endIcon && (
 																	<>
-																		<MenuItemSpacer />
+																		<span className="flex-1" />
 																		<MenuButtonIcon
 																			direction="right"
 																			icon={item.endIcon}
@@ -155,14 +122,16 @@ export function Dropdown({ children, items, position }: StandardProps) {
 															</StyledMenuItem>
 														);
 													case NavigationItemType.DIVIDER:
-														return <StyledDivider />;
+														return (
+															<hr className="mt-2 pb-2 border-gray-100 dark:border-gray-500" />
+														);
 													case NavigationItemType.LINK:
 														const external = item.external ?? false;
 														if (external)
 															return (
 																<StyledMenuItem
 																	className="group"
-																	$active={active}
+																	active={active}
 																	href={item.href}
 																	rel="noopener noreferrer"
 																	target="_blank"
@@ -171,7 +140,7 @@ export function Dropdown({ children, items, position }: StandardProps) {
 																		icon={item.icon}
 																	/>
 																	{item.text}
-																	<MenuItemSpacer />
+																	<span className="flex-1" />
 																	<MenuButtonIcon
 																		direction="right"
 																		icon="feather:external-link"
@@ -181,7 +150,7 @@ export function Dropdown({ children, items, position }: StandardProps) {
 
 														return (
 															<MenuLink
-																$active={active}
+																active={active}
 																href={item.href}
 															>
 																<MenuButtonIcon icon={item.icon} />
@@ -192,12 +161,12 @@ export function Dropdown({ children, items, position }: StandardProps) {
 											}}
 										</Menu.Item>
 									))}
-								</MenuSection>
+								</div>
 							))}
-						</StyledItems>
+						</Menu.Items>
 					</Transition>
 				</>
 			)}
-		</StyledMenu>
+		</Menu>
 	);
 }

@@ -6,7 +6,7 @@ export default function Document() {
 			<Head>
 				<link rel="icon" type="image/png" href="/favicon.png" />
 			</Head>
-			<body>
+			<body className="antialiased font-inter bg-gray-50 text-gray-500 dark:bg-gray-900 selection:(bg-gray-900 dark:bg-white text-white dark:text-primary-500)">
 				<Main />
 				<NextScript />
 			</body>

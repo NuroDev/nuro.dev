@@ -1,6 +1,3 @@
-import styled from '@emotion/styled';
-import tw from 'twin.macro';
-
 import type { IframeHTMLAttributes } from 'react';
 
 interface XStreamableProps {
@@ -11,25 +8,12 @@ interface XStreamableProps {
 
 interface IFrameProps extends IframeHTMLAttributes<HTMLElement> {}
 
-const Container = styled.div`
-	${tw`
-		relative w-full h-0 \
-		my-2
-	`}
-	padding-bottom: 56.250%;
-`;
-
-const IFrame = styled.iframe<IFrameProps>(tw`
-	absolute top-0 left-0 w-full h-full \
-	border-none \
-	rounded-lg overflow-hidden
-`);
-
 export function XStreamable({ id, loop = false, title }: XStreamableProps) {
 	return (
-		<Container>
-			<IFrame
+		<div className="relative w-full h-0 my-2 pb-[56.250%]">
+			<iframe
 				allowFullScreen
+				className="absolute top-0 left-0 w-full h-full border-none rounded-lg overflow-hidden"
 				frameBorder={0}
 				height="100%"
 				loading="lazy"
@@ -37,6 +21,6 @@ export function XStreamable({ id, loop = false, title }: XStreamableProps) {
 				title={title}
 				width="100%"
 			/>
-		</Container>
+		</div>
 	);
 }

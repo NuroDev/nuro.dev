@@ -1,5 +1,3 @@
-import styled from '@emotion/styled';
-import tw from 'twin.macro';
 import { create as createConfetti } from 'canvas-confetti';
 import { useEffect, useRef } from 'react';
 
@@ -8,8 +6,6 @@ import { EventType } from '~/types';
 interface EventProps {
 	event: EventType;
 }
-
-const EventCanvas = styled.canvas(tw`fixed inset-0 z-20`);
 
 export function Event({ event }: EventProps) {
 	const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -45,5 +41,5 @@ export function Event({ event }: EventProps) {
 		}
 	}, [confetti, event]);
 
-	return <EventCanvas ref={canvasRef} />;
+	return <canvas className="fixed inset-0 z-20" ref={canvasRef} />;
 }

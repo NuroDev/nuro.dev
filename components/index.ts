@@ -6,7 +6,5 @@ export * as Navbar from './Navbar';
 export * as Pill from './Pill';
 export * as Status from './Status';
 
+export { Animate } from './Animate.component';
 export { Event } from './Event.component';
-export { Transition } from './Transition.component';
-
-export * from './Wave.styles';

@@ -1,5 +1,10 @@
-import styled from '@emotion/styled';
-import tw from 'twin.macro';
+import clsx from 'clsx';
 import { Icon as IconifyIcon } from '@iconify/react';
 
-export const Icon = styled(IconifyIcon)(tw`w-4 h-4 my-1`);
+import type { WithProps } from '~/types';
+
+interface IconProps extends WithProps<typeof IconifyIcon> {}
+
+export function Icon({ className, ...rest }: IconProps) {
+	return <IconifyIcon className={clsx('w-4 h-4 my-1', className)} {...rest} />;
+}

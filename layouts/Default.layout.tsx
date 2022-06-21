@@ -1,37 +1,38 @@
-import styled from '@emotion/styled';
-import tw from 'twin.macro';
+import dynamic from 'next/dynamic';
 import { NextSeo } from 'next-seo';
 
-import { Background, Navbar } from '~/components';
+import { Navbar } from '~/components';
 import { usePersistantState, useSeoProps } from '~/lib';
 
 import type { WithChildren, WithProps } from '~/types';
+
+const Background = dynamic(() =>
+	import('~/components/Background/Standard.component').then(({ Standard }) => Standard),
+);
 
 interface DefaultLayoutProps extends WithChildren {
 	background?: boolean;
 	seo?: Partial<WithProps<typeof NextSeo>>;
 }
 
-const Main = styled.main(tw`flex flex-col justify-center px-8`);
-
 export function DefaultLayout({
 	background: overrideBackground,
 	children,
-	seo,
+	seo: customSeo,
 }: DefaultLayoutProps) {
 	const { animations: background } = usePersistantState().get();
 	const showBackground = overrideBackground ?? background;
 
-	const seoProps = useSeoProps(seo);
+	const seo = useSeoProps(customSeo);
 
 	return (
 		<>
-			<NextSeo {...seoProps} />
+			<NextSeo {...seo} />
 			<Navbar.Standard />
-			<Main>
-				{showBackground && <Background.Standard />}
+			<main className="flex flex-col justify-center px-8">
+				{showBackground && <Background />}
 				{children}
-			</Main>
+			</main>
 		</>
 	);
 }

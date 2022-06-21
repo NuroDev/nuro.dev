@@ -1,4 +1,4 @@
-// @ts-check
+const WindiCSS = require('windicss-webpack-plugin');
 
 const ContentSecurityPolicy = `
   child-src *.google.com streamable.com;
@@ -67,6 +67,7 @@ const config = {
 		];
 	},
 	reactStrictMode: true,
+	swcMinify: true,
 	webpack: (config, { dev, isServer }) => {
 		// Replace React with Preact only in client production build
 		if (!dev && !isServer) {
@@ -77,8 +78,15 @@ const config = {
 			});
 		}
 
+		config.plugins.push(new WindiCSS());
+
+		config.module.rules.push({
+			test: /\.(glsl|vs|fs|frag|vert)$/,
+			use: ['ts-shader-loader'],
+		});
+
 		return config;
 	},
-}
+};
 
-export default config
+module.exports = config;

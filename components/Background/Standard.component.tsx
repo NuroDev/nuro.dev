@@ -1,20 +1,15 @@
-import styled from '@emotion/styled';
-import tw from 'twin.macro';
 import { Camera, Color, Geometry, Mesh, Program, Renderer } from 'ogl-typescript';
-import { useEffect, useRef } from 'react';
+import { useEffectOnce } from 'react-use';
+import { useRef } from 'react';
 
-import TailwindCSS from '~/tailwind.config';
-import { Shaders } from '.';
-
-const Container = styled.div`
-	${tw`fixed inset-0`}
-	z-index: -10;
-`;
+import { colors } from '~/lib';
+import VertexShader from './vertex.glsl';
+import FragmentShader from './fragment.glsl';
 
 export function Standard() {
 	const containerRef = useRef<HTMLDivElement | null>(null);
 
-	useEffect(() => {
+	useEffectOnce(() => {
 		let animationId = 1;
 
 		const renderer = new Renderer({
@@ -42,7 +37,9 @@ export function Standard() {
 			gl.clearColor(0, 0, 0, 0);
 			window.addEventListener('resize', handleReisze, false);
 			handleReisze();
-		} catch (error) {}
+		} catch (error) {
+			console.error(error);
+		}
 
 		const numParticles = 100;
 		const position = new Float32Array(numParticles * 3);
@@ -65,14 +62,14 @@ export function Standard() {
 		});
 
 		const program = new Program(gl, {
-			vertex: Shaders.vertex,
-			fragment: Shaders.fragment,
+			vertex: VertexShader,
+			fragment: FragmentShader,
 			uniforms: {
 				uTime: {
 					value: 0,
 				},
 				uColor: {
-					value: new Color(TailwindCSS.theme.extend.colors.primary[500]),
+					value: new Color(colors.primary[500]),
 				},
 			},
 			transparent: true,
@@ -99,7 +96,7 @@ export function Standard() {
 		animationId = requestAnimationFrame(update);
 
 		return () => cancelAnimationFrame(animationId);
-	}, [containerRef]);
+	});
 
-	return <Container ref={containerRef} />;
+	return <div className="fixed inset-0" ref={containerRef} />;
 }

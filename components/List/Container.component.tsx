@@ -1,21 +1,11 @@
-import styled from '@emotion/styled';
-import tw from 'twin.macro';
+import type { WithChildren } from '~/types';
 
-interface ContainerProps<T> {
-	item: (props: T, index: number) => JSX.Element;
-	items: Array<T>;
-}
+interface ContainerProps extends WithChildren {}
 
-const StyledContainer = styled.ul(tw`
-	flex flex-col space-y-4
-`);
-
-export function Container<T>({ item: Component, items }: ContainerProps<T>) {
+export function Container({ children }: ContainerProps) {
 	return (
-		<StyledContainer role="list">
-			{items.map((item, index) => (
-				<Component key={index} index={index} {...item} />
-			))}
-		</StyledContainer>
+		<ul className="flex flex-col space-y-4" role="list">
+			{children}
+		</ul>
 	);
 }
