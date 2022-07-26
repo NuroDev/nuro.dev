@@ -26,11 +26,11 @@ interface Activity {
 }
 
 export function Widget() {
-	const { color, loading, status } = useStatus();
+	const { color, loading, status, websocket } = useStatus();
 
 	if (loading) return <Loading />;
 
-	if (!status || !status) return <Error />;
+	if (!status || Object.keys(status).length === 0 || !status) return <Error />;
 
 	const activities: Array<Activity> = [
 		/**
