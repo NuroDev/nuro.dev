@@ -64,7 +64,6 @@
 		"windicss": "^3.5.1"
 	},
 	"devDependencies": {
-		"@iconify/react": "^3.0.1",
 		"@types/canvas-confetti": "^1.4.2",
 		"@types/node": "^16.10.1",
 		"@types/node-fetch": "^2.6.1",
