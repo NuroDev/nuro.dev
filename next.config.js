@@ -69,14 +69,15 @@ const config = {
 	reactStrictMode: true,
 	swcMinify: true,
 	webpack: (config, { dev, isServer }) => {
+		// TODO: Temp disabled as since upgrading `next` to v12.2.3 production builds fail & this seems to be the cause
 		// Replace React with Preact only in client production build
-		if (!dev && !isServer) {
-			Object.assign(config.resolve.alias, {
-				react: 'preact/compat',
-				'react-dom/test-utils': 'preact/test-utils',
-				'react-dom': 'preact/compat',
-			});
-		}
+		// if (!dev && !isServer) {
+		// 	Object.assign(config.resolve.alias, {
+		// 		react: 'preact/compat',
+		// 		'react-dom/test-utils': 'preact/test-utils',
+		// 		'react-dom': 'preact/compat',
+		// 	});
+		// }
 
 		config.plugins.push(new WindiCSS());
 
