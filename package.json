@@ -48,7 +48,7 @@
 		"next-themes": "^0.1.1",
 		"nprogress": "^0.2.0",
 		"ogl-typescript": "^0.1.40",
-		"preact": "^10.5.14",
+		"preact": "^10.10.0",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
 		"react-hot-toast": "^2.1.1",
