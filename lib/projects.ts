@@ -15,7 +15,7 @@ export async function fetchProjects(): Promise<Array<Project> | null> {
 	const response = await fetch('https://api.github.com/users/nurodev/repos', {
 		headers: {
 			...(process.env.GITHUB_PAT && {
-				authorization: `token ${process.env.GITHUB_PAT}`,
+				authorization: `${process.env.GITHUB_PAT}`,
 			}),
 		},
 	});
