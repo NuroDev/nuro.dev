@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 
 import { EventType } from '~/types';
 
-interface EventProps {
+export interface EventProps {
 	event: EventType;
 }
 

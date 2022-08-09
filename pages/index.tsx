@@ -1,11 +1,20 @@
-import { differenceInYears, isSameDay, isSameMonth } from 'date-fns';
+import dynamic from 'next/dynamic';
+import { differenceInYears } from 'date-fns';
 import { Icon } from '@iconify/react';
 
-import { Animate, Button, Event, Pill } from '~/components';
+import { Animate, Button, Pill } from '~/components';
 import { EventType, NavigationItemType } from '~/types';
 import { Layout } from '~/layouts';
 
+import type { EventProps } from '~/components/Event.component';
 import type { NavigationItem } from '~/types';
+
+const Event = dynamic<EventProps>(
+	() => import('~/components/Event.component').then(({ Event }) => Event),
+	{
+		ssr: false,
+	},
+);
 
 const ACTIONS: Array<NavigationItem> = [
 	{
@@ -49,8 +58,7 @@ export default function HomePage() {
 							opacity: [0, 1],
 							scale: [0.75, 1],
 						}}
-						className="text-gray-500 dark:text-white text-5xl sm:text-6xl md:text-6xl lg:text-8xl tracking-tight font-extrabold"
-					>
+						className="text-gray-500 dark:text-white text-5xl sm:text-6xl md:text-6xl lg:text-8xl tracking-tight font-extrabold">
 						Hey <span className="inline-block origin-70 hover:(animate-wave)">👋</span>{' '}
 						I&apos;m Ben, <br className="hidden sm:block" />a{' '}
 						<Pill.Standard className="mt-4">developer</Pill.Standard>
@@ -65,8 +73,7 @@ export default function HomePage() {
 						className="max-w-xs mt-4 md:mt-8 mx-auto text-base text-gray-300 sm:text-lg md:text-xl md:max-w-3xl"
 						transition={{
 							delay: 0.5,
-						}}
-					>
+						}}>
 						{description}
 					</Animate>
 
@@ -84,8 +91,7 @@ export default function HomePage() {
 									key={index}
 									transition={{
 										delay: 0.1 * (index + 2) + 0.5,
-									}}
-								>
+									}}>
 									<Button.Outline href={action.href}>
 										{action.icon}
 										<span>{action.text}</span>
