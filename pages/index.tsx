@@ -33,7 +33,8 @@ export default function HomePage() {
 	const today = new Date();
 	const birthday = new Date('1997-08-09');
 	const age = differenceInYears(today, birthday);
-	const isBirthday = isSameDay(today, birthday) && isSameMonth(today, birthday);
+	const isBirthday =
+		today.getDate() === birthday.getDate() && today.getMonth() === birthday.getMonth();
 
 	const description = `I am a ${age} year old software engineer & games developer`;
 
