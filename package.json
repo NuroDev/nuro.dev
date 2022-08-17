@@ -32,6 +32,7 @@
 		"start": "astro dev"
 	},
 	"devDependencies": {
+		"@astrojs/tailwind": "^1.0.0",
 		"astro": "^1.0.6",
 		"prettier": "^2.7.1"
 	}
