@@ -13,41 +13,16 @@
 
 ## 🛠 Development
 
-Clone the repository
+All commands are run from the root of the project, from a terminal:
 
-```zsh
-git clone https://github.com/nurodev/nuro.dev.git
-```
-
-Install dependencies
-
-```zsh
-npm install
-
-# Or using Yarn
-
-yarn
-```
-
-Start the development server
-
-```zsh
-npm run dev
-
-# Or using Yarn
-
-yarn dev
-```
-
-Build for production
-
-```zsh
-npm run build
-
-# Or using Yarn
-
-yarn build
-```
+| Command             | Action                                             |
+| :------------------ | :------------------------------------------------- |
+| `yarn install`      | Installs dependencies                              |
+| `yarn dev`          | Starts local dev server at `localhost:3000`        |
+| `yarn build`        | Build your production site to `./dist/`            |
+| `yarn preview`      | Preview your build locally, before deploying       |
+| `yarn astro ...`    | Run CLI commands like `astro add`, `astro preview` |
+| `yarn astro --help` | Get help using the Astro CLI                       |
 
 ## 📄 License
 
