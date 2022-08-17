@@ -32,6 +32,7 @@
 		"start": "astro dev"
 	},
 	"devDependencies": {
+		"@astrojs/sitemap": "^1.0.0",
 		"@astrojs/solid-js": "^1.0.0",
 		"@astrojs/tailwind": "^1.0.0",
 		"@astrojs/vercel": "^1.0.0",
