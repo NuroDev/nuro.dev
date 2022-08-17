@@ -4,6 +4,8 @@
 		"exactOptionalPropertyTypes": true,
 		"importsNotUsedAsValues": "error",
 		"isolatedModules": true,
+		"jsx": "preserve",
+		"jsxImportSource": "solid-js",
 		"module": "ESNext",
 		"moduleResolution": "node",
 		"noEmit": true,
