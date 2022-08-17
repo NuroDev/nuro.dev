@@ -15,7 +15,9 @@
 		"noUncheckedIndexedAccess": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
-		"paths": { "~/*": ["./*"] },
+		"paths": {
+			"~/*": ["./src/*"]
+		},
 		"resolveJsonModule": true,
 		"strict": true,
 		"target": "ESNext"
