@@ -1,15 +1,24 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Card from '~/components/Card.astro';
+import Layout from '~/layouts/Layout.astro';
+import { Counter } from '~/components/Counter'
 ---
 
 <Layout title="Astro" description="Hello World">
 	<main>
 		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
+		
 		<p class="instructions">
 			Check out the <code>src/pages</code> directory to get started.<br />
 			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
 		</p>
+
+		<div class="instructions flex items-center justify-center">
+			<h3 class="text-white">
+				<Counter client:load />
+			</h3>
+		</div>
+
 		<ul role="list" class="link-card-grid">
 			<Card
 				href="https://docs.astro.build/"
