@@ -11,6 +11,7 @@
 # next.js
 /.next/
 /out/
+/dist/
 
 # next-sitemap
 public/robots.txt
