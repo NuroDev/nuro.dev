@@ -1,4 +1,5 @@
 import { Camera, Color, Geometry, Mesh, Program, Renderer } from 'ogl-typescript';
+import { log } from 'next-axiom';
 import { useEffectOnce } from 'react-use';
 import { useRef } from 'react';
 
@@ -39,6 +40,7 @@ export function Standard() {
 			handleReisze();
 		} catch (error) {
 			console.error(error);
+			log.error('Failed to initialize canvas', error);
 		}
 
 		const numParticles = 100;

@@ -3312,6 +3312,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"next-axiom@npm:^0.13.0":
+  version: 0.13.0
+  resolution: "next-axiom@npm:0.13.0"
+  dependencies:
+    whatwg-fetch: ^3.6.2
+  peerDependencies:
+    next: ^12.1.4
+  checksum: a515ed5d8a8a53644823b2c89a21c460f2838fbdb6d546d59972fa39617dce7d45d27c1d2903cf420179b3ce8b90f28ee9e3c1a4fe08487f604017a7962e6244
+  languageName: node
+  linkType: hard
+
 "next-mdx-remote@npm:^3.0.6":
   version: 3.0.8
   resolution: "next-mdx-remote@npm:3.0.8"
@@ -3493,6 +3504,7 @@ __metadata:
     is-web-crawler: ^1.1.0
     motion: ^10.7.2
     next: ^12.2.3
+    next-axiom: ^0.13.0
     next-mdx-remote: ^3.0.6
     next-seo: ^4.28.1
     next-sitemap: ^2.5.4
@@ -5130,6 +5142,13 @@ __metadata:
   dependencies:
     iconv-lite: 0.4.24
   checksum: 5be4efe111dce29ddee3448d3915477fcc3b28f991d9cf1300b4e50d6d189010d47bca2f51140a844cf9b726e8f066f4aee72a04d687bfe4f2ee2767b2f5b1e6
+  languageName: node
+  linkType: hard
+
+"whatwg-fetch@npm:^3.6.2":
+  version: 3.6.2
+  resolution: "whatwg-fetch@npm:3.6.2"
+  checksum: ee976b7249e7791edb0d0a62cd806b29006ad7ec3a3d89145921ad8c00a3a67e4be8f3fb3ec6bc7b58498724fd568d11aeeeea1f7827e7e1e5eae6c8a275afed
   languageName: node
   linkType: hard
 

@@ -12,8 +12,6 @@ import 'windi.css';
 import { colors, useClick } from '~/lib';
 import { Theme } from '~/types';
 
-import type { NextWebVitalsMetric } from 'next/app';
-
 NProgress.configure({
 	easing: 'ease',
 	minimum: 0.3,
@@ -21,25 +19,7 @@ NProgress.configure({
 	speed: 800,
 });
 
-export function reportWebVitals(metric: NextWebVitalsMetric) {
-	const url = process.env.NEXT_PUBLIC_AXIOM_INGEST_ENDPOINT;
-	if (!url) return;
-
-	const body = JSON.stringify({
-		route: window.__NEXT_DATA__.page,
-		...metric,
-	});
-
-	if (navigator.sendBeacon) {
-		navigator.sendBeacon(url, body);
-	} else {
-		fetch(url, {
-			body,
-			keepalive: true,
-			method: 'POST',
-		});
-	}
-}
+export { reportWebVitals } from 'next-axiom';
 
 export default function App({ Component, pageProps }: AppProps) {
 	const router = useRouter();

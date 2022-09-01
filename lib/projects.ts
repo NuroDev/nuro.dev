@@ -1,4 +1,5 @@
 import emojiRegex from 'emoji-regex';
+import { log } from 'next-axiom';
 
 import type { GitHubRepos, Project, ProjectPost } from '~/types';
 
@@ -26,6 +27,9 @@ export async function fetchProjects(): Promise<Array<Project> | null> {
 		};
 
 		console.error({ error: json });
+		log.error('Failed to fetch projects', {
+			error: json,
+		});
 
 		return null;
 	}

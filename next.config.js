@@ -1,4 +1,5 @@
 const WindiCSS = require('windicss-webpack-plugin');
+const { withAxiom } = require('next-axiom');
 
 const ContentSecurityPolicy = `
   child-src *.google.com streamable.com;
@@ -90,4 +91,4 @@ const config = {
 	},
 };
 
-module.exports = config;
+module.exports = withAxiom(config);
