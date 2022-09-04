@@ -6,7 +6,11 @@ import type { BaseLayoutProps } from '~/types';
 
 export interface Props extends BaseLayoutProps {}
 
-const { description, title, titleSuffix = ' ─ nuro' } = Astro.props as Props;
+const {
+	description = "Hey 👋 I'm Ben, a developer",
+	title,
+	titleSuffix = ' ─ nuro',
+} = Astro.props as Props;
 const fullTitle = `${title}${titleSuffix}`;
 ---
 
