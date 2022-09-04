@@ -16,7 +16,8 @@
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"paths": {
-			"~/*": ["./src/*"]
+			"~/*": ["./src/*"],
+			"~/data/*": ["./data/*"]
 		},
 		"resolveJsonModule": true,
 		"strict": true,
