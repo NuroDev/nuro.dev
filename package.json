@@ -37,6 +37,7 @@
 		"@astrojs/tailwind": "^1.0.0",
 		"@astrojs/vercel": "^1.0.0",
 		"@babel/core": "^7.18.13",
+		"@splitbee/web": "^0.3.0",
 		"astro": "^1.0.6",
 		"astro-seo": "^0.5.1",
 		"prettier": "^2.7.1",
