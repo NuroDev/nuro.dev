@@ -5,11 +5,11 @@ import { readdirSync, readFileSync } from 'fs';
 import { serialize } from 'next-mdx-remote/serialize';
 
 import RehypeAutolinkHeadings from 'rehype-autolink-headings';
-import RemarkCodeTitles from 'remark-code-titles';
 import RemarkEmoji from 'remark-emoji';
 import RemarkPrism from 'remark-prism';
 import RemarkSlug from 'remark-slug';
 
+import RemarkCodeTitles from '~/lib/remark-code-title';
 import type { FrontMatter, Post, RawFrontMatter } from '~/types';
 
 const BLOG_POSTS_DIR = join(process.cwd(), 'data', 'blog');

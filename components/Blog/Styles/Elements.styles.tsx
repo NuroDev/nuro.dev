@@ -1,6 +1,6 @@
 export function ElementsStyles() {
 	return (
-		<style global jsx>
+		<style>
 			{`
 				h1,
 				h2,
