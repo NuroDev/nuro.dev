@@ -1,104 +1,93 @@
-import { Camera, Color, Geometry, Mesh, Program, Renderer } from 'ogl-typescript';
-import { log } from 'next-axiom';
 import { useEffectOnce } from 'react-use';
 import { useRef } from 'react';
 
 import { colors } from '~/lib';
-import VertexShader from './vertex.glsl';
-import FragmentShader from './fragment.glsl';
 
 export function Standard() {
 	const containerRef = useRef<HTMLDivElement | null>(null);
 
 	useEffectOnce(() => {
-		let animationId = 1;
-
-		const renderer = new Renderer({
-			depth: false,
-			dpr: 2,
-			alpha: true,
-		});
-
-		const gl = renderer.gl;
-
-		const camera = new Camera(gl, {
-			fov: 15,
-		});
-		camera.position.z = 15;
-
-		function handleReisze(): void {
-			renderer.setSize(window.innerWidth, window.innerHeight);
-			camera.perspective({
-				aspect: gl.canvas.width / gl.canvas.height,
-			});
-		}
-
-		try {
-			containerRef.current.appendChild(gl.canvas);
-			gl.clearColor(0, 0, 0, 0);
-			window.addEventListener('resize', handleReisze, false);
-			handleReisze();
-		} catch (error) {
-			console.error(error);
-			log.error('Failed to initialize canvas', error);
-		}
-
-		const numParticles = 100;
-		const position = new Float32Array(numParticles * 3);
-		const random = new Float32Array(numParticles * 4);
-
-		for (let i = 0; i < numParticles; i++) {
-			position.set([Math.random(), Math.random(), Math.random()], i * 3);
-			random.set([Math.random(), Math.random(), Math.random(), Math.random()], i * 4);
-		}
-
-		const geometry = new Geometry(gl, {
-			position: {
-				size: 3,
-				data: position,
-			},
-			random: {
-				size: 4,
-				data: random,
-			},
-		});
-
-		const program = new Program(gl, {
-			vertex: VertexShader,
-			fragment: FragmentShader,
-			uniforms: {
-				uTime: {
-					value: 0,
+		import("particles.js").then(() => {
+			particlesJS("background", {
+				"particles": {
+					"number": {
+						"value": 50,
+						"density": {
+							"enable": true,
+							"value_area": 1000
+						}
+					},
+					"color": {
+						"value": colors.primary[500]
+					},
+					"shape": {
+						"type": "circle",
+					},
+					"opacity": {
+						"value": 0.8,
+						"random": true,
+						"anim": {
+							"enable": true,
+							"speed": 0.4,
+							"opacity_min": 0.1,
+							"sync": false
+						}
+					},
+					"size": {
+						"value": 12,
+						"random": true,
+						"anim": {
+							"enable": true,
+							"speed": 6,
+							"size_min": 1,
+							"sync": false
+						}
+					},
+					"line_linked": {
+						"enable": false,
+					},
+					"move": {
+						"enable": true,
+						"speed": 3,
+						"random": true,
+						"direction": "none",
+						"straight": false,
+						"out_mode": "out",
+						"bounce": false,
+						"attract": {
+							"enable": false,
+						}
+					}
 				},
-				uColor: {
-					value: new Color(colors.primary[500]),
+				"interactivity": {
+					"detect_on": "canvas",
+					"events": {
+						"onhover": {
+							"enable": false,
+							"mode": "repulse"
+						},
+						"onclick": {
+							"enable": false,
+							"mode": "push"
+						},
+						"resize": true
+					},
 				},
-			},
-			transparent: true,
-			depthTest: false,
-		});
-
-		const particles = new Mesh(gl, {
-			mode: gl.POINTS,
-			geometry,
-			program,
-		});
-
-		function update(t: number): void {
-			animationId = requestAnimationFrame(update);
-
-			particles.rotation.z += 0.0025;
-			program.uniforms.uTime.value = t * 0.00025;
-
-			renderer.render({
-				scene: particles,
-				camera: camera,
+				"retina_detect": true
 			});
-		}
-		animationId = requestAnimationFrame(update);
+		});
 
-		return () => cancelAnimationFrame(animationId);
+		return () => {
+			try {
+				const pjs = pJSDom[0].pJS.fn;
+				cancelRequestAnimFrame(pjs.checkAnimFrame);
+				cancelRequestAnimFrame(pjs.drawAnimFrame);
+				pjs.particlesEmpty();
+				pjs.canvasClear();
+				pJSDom = [];
+			} catch { }
+		};
 	});
 
-	return <div className="fixed inset-0" ref={containerRef} />;
+	return <div className="fixed inset-0" id="background" ref={containerRef} />;
 }
