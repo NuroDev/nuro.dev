@@ -1,0 +1,11 @@
+---
+import Layout from '~/layouts/Document.layout.astro';
+import referrals from '~/data/referrals.json';
+
+const referralsStr = JSON.stringify(referrals, null, 4);
+---
+
+<Layout title="referrals">
+	<h1>Referrals</h1>
+	<pre>{referralsStr}</pre>
+</Layout>
