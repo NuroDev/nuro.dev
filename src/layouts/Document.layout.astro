@@ -25,5 +25,14 @@ const fullTitle = `${title}${titleSuffix}`;
 	</head>
 	<body>
 		<slot />
+		<script>
+			import splitbee from '@splitbee/web';
+
+			// TODO: Add Splitbee endpoint proxy
+			if (process.env.NODE_ENV === 'production')
+				splitbee.init({
+					disableCookie: true,
+				});
+		</script>
 	</body>
 </html>
