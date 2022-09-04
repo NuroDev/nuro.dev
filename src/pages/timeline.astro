@@ -1,0 +1,11 @@
+---
+import Layout from '~/layouts/Document.layout.astro';
+import timeline from '~/data/timeline.json';
+
+const timelineStr = JSON.stringify(timeline, null, 4);
+---
+
+<Layout title="timeline">
+	<h1>Timeline</h1>
+	<pre>{timelineStr}</pre>
+</Layout>
