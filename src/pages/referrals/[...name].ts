@@ -1,4 +1,4 @@
-import referrals from '~/data/referrals.json';
+import { referrals } from '~/data/referrals';
 
 import type { APIContext, GetStaticPathsResult } from 'astro';
 
