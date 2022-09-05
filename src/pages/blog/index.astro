@@ -1,9 +1,9 @@
 ---
 import Layout from '~/layouts/Document.layout.astro';
 
-import type { PostFrontmatter } from '~/types';
+import type { Post } from '~/types';
 
-const posts = (await Astro.glob<PostFrontmatter>('./*.md')).sort(
+const posts = (await Astro.glob<Post>('./*.md')).sort(
 	(a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf(),
 );
 ---

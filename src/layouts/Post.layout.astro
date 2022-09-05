@@ -1,11 +1,10 @@
 ---
 import Layout from './Document.layout.astro';
 
-import type { PostFrontmatter } from '~/types';
+import type { Post } from '~/types';
 
 export interface Props {
-	content: PostFrontmatter;
-	frontmatter: PostFrontmatter;
+	frontmatter: Post;
 }
 
 const { frontmatter } = Astro.props as Props;

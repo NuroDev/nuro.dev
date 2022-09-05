@@ -4,7 +4,7 @@ banner: {
 	url: 'https://images.unsplash.com/photo-1593720213411-697ba0ac0162?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1712&q=80'
 }
 date: '2021-12-03'
-description: 'The Next.js config file feels underutilized. Here's how it could be better'
+description: "The Next.js config file feels underutilized. Here's how it could be better"
 layout: '~/layouts/Post.layout.astro'
 title: {
 	prefix: 'Upgrade',
