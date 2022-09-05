@@ -1,0 +1,21 @@
+---
+import Layout from './Document.layout.astro';
+
+import type { PostFrontmatter } from '~/types';
+
+export interface Props {
+	content: PostFrontmatter;
+	frontmatter: PostFrontmatter;
+}
+
+const { frontmatter } = Astro.props as Props;
+const title = typeof frontmatter.title === 'string' ? frontmatter.title : frontmatter.title.text;
+---
+
+<Layout title={title} description={frontmatter.description}>
+	<main>
+		<article>
+			<slot />
+		</article>
+	</main>
+</Layout>

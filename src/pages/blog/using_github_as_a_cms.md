@@ -1,10 +1,15 @@
 ---
-banner_alt: A photo of a forest overlooking the bright white sky in the background
-banner: https://images.unsplash.com/photo-1618401471353-b98afee0b2eb
-title_prefix: Guide
-title: Using GitHub as a CMS
-description: Learn how to use GitHub as a CMS using server-side rendering from Next.js
+banner: {
+	alt: 'A photo of a forest overlooking the bright white sky in the background',
+	url: 'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb'
+}
 date: '2022-01-19'
+description: 'Learn how to use GitHub as a CMS using server-side rendering from Next.js'
+layout: '~/layouts/Post.layout.astro'
+title: {
+	alt: 'Guide',
+	text: 'Using GitHub as a CMS'
+}
 ---
 
 Since re-launching my website with an all new redesign I added a number of cool features. One such feature I thought worth sharing about was my [projects page](/portfolio) as it actually uses [GitHub](https://github.com) as a CMS (Content Management System).

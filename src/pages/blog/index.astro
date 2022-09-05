@@ -1,0 +1,23 @@
+---
+import Layout from '~/layouts/Document.layout.astro';
+
+import type { PostFrontmatter } from '~/types';
+
+const posts = (await Astro.glob<PostFrontmatter>('./*.md')).sort(
+	(a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf(),
+);
+---
+
+<Layout title="blog">
+	<h1 class="font-bold text-2xl">Blog</h1>
+
+	<div class="flex flex-col space-y-3">
+		{
+			posts.map((post) => (
+				<a href={post.url}>
+					Go to {post.url} (<time>{post.frontmatter.date}</time>)
+				</a>
+			))
+		}
+	</div>
+</Layout>

@@ -3,9 +3,17 @@ import Layout from '~/layouts/Document.layout.astro';
 import { Counter } from '~/components/Counter';
 ---
 
-<Layout title="nuro" titleSuffix=" ─ developer">
+<Layout title="developer">
 	<main>
 		<h1>Homepage</h1>
 		<Counter client:load />
+
+		<hr class="my-4" />
+
+		<div class="flex flex-col space-y-3">
+			<a href="/blog">Go to /blog</a>
+			<a href="/referrals">Go to /referrals</a>
+			<a href="/timeline">Go to /timeline</a>
+		</div>
 	</main>
 </Layout>
