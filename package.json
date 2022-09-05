@@ -35,7 +35,7 @@
 		"@astrojs/sitemap": "^1.0.0",
 		"@astrojs/solid-js": "^1.0.0",
 		"@astrojs/tailwind": "^1.0.0",
-		"@astrojs/vercel": "^1.0.0",
+		"@astrojs/vercel": "^1.0.2",
 		"@babel/core": "^7.18.13",
 		"@splitbee/web": "^0.3.0",
 		"astro": "^1.0.6",

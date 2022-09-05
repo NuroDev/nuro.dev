@@ -9,7 +9,7 @@ const { NODE_ENV, VERCEL_URL } = process.env;
 const isVercel = Boolean(NODE_ENV === 'production' && VERCEL_URL);
 
 export default defineConfig({
-	site: isVercel ? (VERCEL_URL ? VERCEL_URL : 'https://nuro.dev') : 'http://localhost:3000',
+	adapter: vercel(),
 	integrations: [sitemap(), solid(), tailwind()],
 	...(isVercel
 		? {
@@ -17,4 +17,6 @@ export default defineConfig({
 				output: 'server',
 		  }
 		: {}),
+	output: 'server',
+	site: isVercel ? (VERCEL_URL ? VERCEL_URL : 'https://nuro.dev') : 'http://localhost:3000',
 });
