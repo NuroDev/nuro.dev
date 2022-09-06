@@ -23,7 +23,7 @@ export function useSeoProps(
 			type: 'website',
 			images: [
 				{
-					url: '/banner.png',
+					url: 'https://nuro.dev/banner.png',
 					alt: description,
 					width: 1280,
 					height: 720,
