@@ -40,6 +40,7 @@
 		"@splitbee/web": "^0.3.0",
 		"astro": "^1.0.6",
 		"astro-seo": "^0.5.1",
+		"date-fns": "^2.29.2",
 		"prettier": "^2.7.1",
 		"solid-js": "^1.4.3"
 	}
