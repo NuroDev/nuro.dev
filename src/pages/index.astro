@@ -1,19 +1,80 @@
 ---
+import { differenceInYears } from 'date-fns';
+
 import Layout from '~/layouts/Document.layout.astro';
 import { Counter } from '~/components/Counter';
+
+const today = new Date();
+const birthday = new Date('1997-08-09');
+const age = differenceInYears(today, birthday);
+const description = `I am a ${age} year old software engineer & games developer`;
+
+const actions = [
+	{
+		href: '/blog',
+		text: 'Blog',
+	},
+	{
+		href: '/referrals',
+		text: 'Referrals',
+	},
+	{
+		href: '/timeline',
+		text: 'Timeline',
+	},
+	{
+		external: true,
+		href: 'https://github.com/nurodev',
+		text: 'GitHub',
+	},
+];
 ---
 
 <Layout title="developer">
-	<main>
-		<h1>Homepage</h1>
-		<Counter client:load />
+	<main class="min-h-screen flex items-center justify-center py-12">
+		<div
+			class="max-w-md sm:max-w-lg md:sm:max-w-2xl lg:sm:max-w-3xl w-full space-y-8 text-center"
+		>
+			<h1
+				class="text-gray-500 dark:text-white text-5xl sm:text-6xl md:text-6xl lg:text-8xl tracking-tight font-extrabold"
+			>
+				Hey <span class="inline-block origin-70 hover:animate-wave">👋</span>{' '}
+				I&apos;m Ben, <br class="hidden sm:block" />a{' '}
+				<div
+					class="inline-flex px-3 lg:px-5 py-2 md:pb-4 mt-4 bg-primary-500 bg-opacity-15 backdrop-filter backdrop-blur-sm filter saturate-200 text-primary-200 rounded-2xl default-transition default-focus"
+				>
+					developer
+				</div>
+			</h1>
 
-		<hr class="my-4" />
+			<p
+				class="max-w-xs mt-4 md:mt-8 mx-auto text-base text-gray-300 sm:text-lg md:text-xl md:max-w-3xl"
+			>
+				{description}
+			</p>
 
-		<div class="flex flex-col space-y-3">
-			<a href="/blog">Go to /blog</a>
-			<a href="/referrals">Go to /referrals</a>
-			<a href="/timeline">Go to /timeline</a>
+			<div
+				class="max-w-xs mt-4 md:mt-8 mx-auto text-base text-gray-300 sm:text-lg md:text-xl md:max-w-3xl"
+			>
+				<Counter client:load />
+			</div>
+
+			<div
+				class="flex flex-col sm:flex-row items-center justify-center sm:space-x-4 space-y-4 sm:space-y-0 w-full mt-8 sm:mt-4"
+			>
+				{
+					actions.map((action) => (
+						<div class="w-full sm:w-auto">
+							<a
+								href={action.href}
+								target={action.external ? '_blank' : undefined}
+								rel="noreferrer noopener">
+								<span>{action.text}</span>
+							</a>
+						</div>
+					))
+				}
+			</div>
 		</div>
 	</main>
 </Layout>
