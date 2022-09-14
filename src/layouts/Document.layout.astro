@@ -2,6 +2,8 @@
 // @ts-expect-error `astro-seo` does not include type definitions
 import { SEO } from 'astro-seo';
 
+import Theme from '~/components/Theme.astro';
+
 import type { BaseLayoutProps } from '~/types';
 
 export interface Props extends BaseLayoutProps {}
@@ -22,8 +24,10 @@ const fullTitle = `${title}${titleSuffix}`;
 		<meta charset="UTF-8" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="viewport" content="width=device-width" />
+		<Theme />
 	</head>
 	<body class="antialiased font-inter bg-gray-50 text-gray-500 dark:bg-gray-900">
+		<button class="fixed top-0 left-0" data-theme-toggle>Toggle Theme 💡</button>
 		<slot />
 		<script>
 			import splitbee from '@splitbee/web';

@@ -1,0 +1,25 @@
+<script is:inline>
+	const root = document.documentElement;
+	const prefersDarkColorScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+	let theme = prefersDarkColorScheme.matches ? 'dark' : 'light';
+
+	prefersDarkColorScheme.addEventListener('change', (event) => {
+		theme = event.matches ? 'dark' : 'light';
+		root.setAttribute('data-theme', theme);
+	});
+
+	root.setAttribute('data-theme', localStorage.getItem('theme') || theme);
+</script>
+
+<script>
+	document.querySelectorAll('[data-theme-toggle]').forEach(({ addEventListener }) =>
+		addEventListener('click', () => {
+			const theme =
+				document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+
+			document.documentElement.setAttribute('data-theme', theme);
+			localStorage.setItem('theme', theme);
+		}),
+	);
+</script>
