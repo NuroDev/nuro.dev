@@ -47,6 +47,15 @@ export default defineConfig({
 			transformOrigin: {
 				70: '70% 70%',
 			},
+			typography: {
+				DEFAULT: {
+					css: {
+						img: {
+							maxWidth: '100%',
+						},
+					},
+				},
+			},
 		},
 		typography: {
 			DEFAULT: {
