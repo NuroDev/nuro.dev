@@ -164,7 +164,7 @@ export default {
 
 ---
 
-One argunment I could see for NOT to make all these big, possibly breaking, changes to the config system would be "But Next.js is so simple to use. This will just add complexity".
+One argument I could see for NOT to make all these big, possibly breaking, changes to the config system would be "But Next.js is so simple to use. This will just add complexity".
 
 Fair point. But if done correctly it could be backwards compatible with the current config system & then allows more experienced developers who do want to utilize some of the new features, such as plugins, TypeScript support, etc, can do so.
 
