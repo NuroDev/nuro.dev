@@ -14,6 +14,7 @@
 		{ "source": "/portfolio", "destination": "/projects" },
 		{ "source": "/resume", "destination": "https://read.cv/nuro" },
 		{ "source": "/schedule", "destination": "https://cal.com/nurodev" },
-		{ "source": "/twitter", "destination": "https://twitter.com/nurodev" }
+		{ "source": "/twitter", "destination": "https://twitter.com/nurodev" },
+		{ "source": "/contact", "destination": "https://twitter.com/direct_messages/create/nurodev" }
 	]
 }
