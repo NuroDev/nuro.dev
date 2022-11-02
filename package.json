@@ -34,6 +34,7 @@
 		"@hookstate/persistence": "^3.0.0",
 		"@iconify/react": "^3.0.1",
 		"@splitbee/web": "^0.3.0",
+		"@vercel/analytics": "^0.1.3",
 		"canvas-confetti": "^1.4.0",
 		"clsx": "^1.1.1",
 		"copy-to-clipboard": "^3.3.1",

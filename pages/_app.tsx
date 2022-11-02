@@ -1,5 +1,6 @@
 import NProgress from 'nprogress';
 import splitbee from '@splitbee/web';
+import { Analytics } from '@vercel/analytics/react';
 import { AppProps } from 'next/app';
 import { ThemeProvider } from 'next-themes';
 import { useEffectOnce, useEvent } from 'react-use';
@@ -41,6 +42,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
 	return (
 		<ThemeProvider attribute="class" defaultTheme={Theme.SYSTEM} themes={Object.values(Theme)}>
+			<Analytics />
 			<Component {...pageProps} />
 			<style jsx global>{`
 				#nprogress .bar {
