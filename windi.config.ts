@@ -1,7 +1,7 @@
 import defaultTheme from 'windicss/defaultTheme';
 import { defineConfig } from 'windicss/helpers';
 
-import { colors } from './lib/colors';
+import { colors } from './src/lib/colors';
 
 export default defineConfig({
 	darkMode: 'class',
