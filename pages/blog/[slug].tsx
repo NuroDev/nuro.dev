@@ -48,7 +48,7 @@ export default function BlogPost({ post }: BlogPostProps) {
 		<>
 			<Layout.Blog
 				seo={{
-					title: `nuro ─ blog ─ ${post.frontmatter.title}`,
+					title: `${post.frontmatter.title} ─ blog ─ nuro`,
 					description: post.frontmatter.description ?? undefined,
 					openGraph: {
 						title: post.frontmatter.title,
