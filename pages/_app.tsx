@@ -44,7 +44,7 @@ export default function App({ Component, pageProps }: AppProps) {
 		<ThemeProvider attribute="class" defaultTheme={Theme.SYSTEM} themes={Object.values(Theme)}>
 			<Analytics />
 			<Component {...pageProps} />
-			<style jsx global>{`
+			<style>{`
 				#nprogress .bar {
 					height: 0.25rem;
 					background-color: ${colors.primary[500]};

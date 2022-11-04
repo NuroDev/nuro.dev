@@ -1,6 +1,6 @@
 export function CodeStyles() {
 	return (
-		<style global jsx>
+		<style>
 			{`
 				/**
 				 * One Dark theme for prism.js
