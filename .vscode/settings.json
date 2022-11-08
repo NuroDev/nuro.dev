@@ -7,5 +7,5 @@
 	"eslint.validate": ["html", "javascriptreact", "typescriptreact"],
 	"prettier.enable": true,
 	"typescript.enablePromptUseWorkspaceTsdk": true,
-	"typescript.tsdk": "node_modules/typescript/lib"
+	"typescript.tsdk": "./node_modules/typescript/lib"
 }
