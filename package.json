@@ -46,7 +46,7 @@
 		"eslint": "8.26.0",
 		"eslint-config-next": "13.0.1",
 		"motion": "^10.14.3",
-		"next": "^13.0.1",
+		"next": "^13.0.2",
 		"next-contentlayer": "^0.2.9",
 		"nprogress": "^0.2.0",
 		"ogl-typescript": "^0.1.40",
