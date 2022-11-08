@@ -58,7 +58,8 @@ export function Button<TElementType extends ElementType>({
 				size,
 				variant,
 			})}
-			{...rest}>
+			{...rest}
+		>
 			{children}
 		</Component>
 	);
