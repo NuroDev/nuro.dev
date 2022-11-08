@@ -1,4 +1,4 @@
-import type { WithChildren } from './util';
+import type { ReactNode } from 'react';
 
 type ParamsValue = string | number | boolean;
 
@@ -24,7 +24,14 @@ export interface NextHeadProps {
 	params?: Record<string, ParamsValue>;
 }
 
-export interface NextLayoutProps extends WithChildren {
+export interface NextLayoutProps {
+	/**
+	 * **Children**
+	 *
+	 * React component containing the route segments the layout is wrapping.
+	 */
+	children: ReactNode;
+
 	/**
 	 * **Params** (Optional)
 	 *
