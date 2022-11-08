@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react';
 
+import type { ArrayElement, UnwrapPromise } from '.';
+
 type ParamsValue = string | number | boolean;
 
 export interface NextErrorPageProps {
@@ -40,13 +42,20 @@ export interface NextLayoutProps {
 	params?: Record<string, ParamsValue>;
 }
 
-export interface NextPageProps {
+type GenerateStaticParamsFn<TParams extends Array<unknown>> = () => TParams | Promise<TParams>;
+
+export interface NextPageProps<
+	TGenerateStaticParams extends GenerateStaticParamsFn<TParams> | undefined = undefined,
+	TParams extends Array<unknown> = Array<unknown>,
+> {
 	/**
 	 * **params** (Optional)
 	 *
 	 * The dynamic route params object from the root segment down that to that page.
 	 */
-	params?: Record<string, ParamsValue>;
+	params: TGenerateStaticParams extends GenerateStaticParamsFn<TParams>
+		? ArrayElement<UnwrapPromise<ReturnType<TGenerateStaticParams>>>
+		: Record<string, ParamsValue> | undefined;
 
 	/**
 	 * **searchParams** (Optional)
