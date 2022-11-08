@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"allowJs": true,
+		"allowJs": false,
 		"baseUrl": ".",
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
@@ -12,13 +12,19 @@
 		"moduleResolution": "node",
 		"noEmit": true,
 		"paths": {
-			"~/*": ["./src/*"]
+			"~/*": ["./src/*"],
+			"~/tailwind": ["./tailwind.config"]
 		},
+		"plugins": [
+			{
+				"name": "next"
+			}
+		],
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
-		"strict": false,
+		"strict": true,
 		"target": "es5"
 	},
-	"include": ["next-env.d.ts", "types/declarations/**/*.d.ts", "**/*.ts", "**/*.tsx"],
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
 	"exclude": ["node_modules"]
 }
