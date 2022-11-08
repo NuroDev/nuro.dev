@@ -8,10 +8,10 @@ export default function RootHead(): JSX.Element {
 		<>
 			<title>developer ─ nuro</title>
 			<meta name="description" content="Hey 👋 I'm Ben, a developer" />
-			<meta charset="utf-8">
-			<meta name="viewport" content="width=device-width">
-			<meta name="robots" content="index,follow">
-			<meta name="googlebot" content="index,follow">
+			<meta charSet="utf-8" />
+			<meta name="viewport" content="width=device-width" />
+			<meta name="robots" content="index,follow" />
+			<meta name="googlebot" content="index,follow" />
 			<link rel="icon" type="image/png" href="/favicon.png" />
 			<link rel="canonical" href={env.DOMAIN}></link>
 			<link rel="icon" type="image/png" href="/favicon.png" />
