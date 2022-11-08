@@ -1,4 +1,4 @@
-import seo from './seo.json';
+import seo from '~/data/seo.json';
 // @ts-expect-error Importing CJS file
 import tailwindCSS from '../../tailwind.config.cjs';
 import { env } from '~/env';
