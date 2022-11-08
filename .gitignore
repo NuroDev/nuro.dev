@@ -46,3 +46,7 @@ next-env.d.ts
 
 # Vercel
 .vercel
+
+# Contentlayer
+.contentlayer
+
