@@ -23,12 +23,4 @@ export default defineNextConfig({
   },
   reactStrictMode: true,
   swcMinify: true,
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /\.(glsl|vs|fs|frag|vert)$/,
-      use: ['ts-shader-loader'],
-    });
-
-    return config;
-  },
 });
