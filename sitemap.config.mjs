@@ -12,11 +12,10 @@ function defineSitemapConfig(config) {
 	return config
 }
 
-const isVercel = process.env.VERCEL === '1';
 const isProduction = process.env.NODE_ENV === 'production';
 
-const domain = isVercel ? process.env.VERCEL_URL : isProduction ? 'nuro.dev' : 'localhost:3000';
-const protocol = isProduction ? 'https' : 'http';
+const domain = isProduction ? 'nuro.dev' : 'localhost:3000';
+const protocol = `http${isProduction ? 's' : ''}`;
 
 export default defineSitemapConfig({
 	generateRobotsTxt: true,
