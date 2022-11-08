@@ -48,4 +48,7 @@ export const Post = defineDocumentType(() => ({
 export default makeSource({
 	contentDirPath: 'src/data/',
 	documentTypes: [Post],
+	markdown: {
+		remarkPlugins: [],
+	},
 });

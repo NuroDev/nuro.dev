@@ -25,7 +25,7 @@
 		"dev": "next dev",
 		"format": "prettier --write \"**/*.{css,js,json,jsx,ts,tsx}\"",
 		"lint": "next lint",
-		"postbuild": "next-sitemap",
+		"postbuild": "next-sitemap --config sitemap.config.mjs",
 		"start": "next start",
 		"type-check": "tsc"
 	},
