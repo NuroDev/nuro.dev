@@ -1,4 +1,4 @@
-import type { WithChildren } from './common';
+import type { WithChildren } from './util';
 
 type ParamsValue = string | number | boolean;
 
