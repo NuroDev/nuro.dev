@@ -13,7 +13,8 @@
 		"noEmit": true,
 		"paths": {
 			"~/*": ["./src/*"],
-			"~/tailwind": ["./tailwind.config"]
+			"~/tailwind": ["./tailwind.config"],
+			"contentlayer/generated": ["./.contentlayer/generated"]
 		},
 		"plugins": [
 			{
@@ -25,6 +26,12 @@
 		"strict": true,
 		"target": "es5"
 	},
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+	"include": [
+		".contentlayer/generated",
+		"**/*.ts",
+		"**/*.tsx",
+		"next-env.d.ts",
+		".next/types/**/*.ts"
+	],
 	"exclude": ["node_modules"]
 }

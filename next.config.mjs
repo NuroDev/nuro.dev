@@ -1,3 +1,5 @@
+import { withContentlayer } from 'next-contentlayer'
+
 /**
  * Don't be scared of the generics here.
  * All they do is to give us autocompletion when using this.
@@ -10,7 +12,7 @@ function defineNextConfig(config) {
   return config;
 }
 
-export default defineNextConfig({
+const config = defineNextConfig({
   experimental: {
     appDir: true,
     fontLoaders: [
@@ -24,3 +26,5 @@ export default defineNextConfig({
   reactStrictMode: true,
   swcMinify: true,
 });
+
+export default withContentlayer(config);
