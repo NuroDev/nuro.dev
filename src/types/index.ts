@@ -11,6 +11,7 @@ export {
 	type NextPageProps,
 } from './next';
 export {
+	type ArrayElement,
 	type Merge,
 	type PropsFrom,
 	type UnwrapPromise,

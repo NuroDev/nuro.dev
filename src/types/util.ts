@@ -82,7 +82,7 @@ export type PropsFrom<
  * // type Example = Props
  * ```
  */
-export type UnwrapPromise<T> = T extends Promise<infer U> ? U : never;
+export type UnwrapPromise<T> = T extends Promise<infer U> ? U : T;
 
 /**
  * Merge
@@ -90,3 +90,10 @@ export type UnwrapPromise<T> = T extends Promise<infer U> ? U : never;
  * @description Merges 2 provided types together
  */
 export type Merge<T, U> = Omit<T, keyof U> & U;
+
+/**
+ * Array Element
+ *
+ * @description Get the type of the element(s) inside an array
+ */
+export type ArrayElement<A> = A extends ReadonlyArray<infer T> ? T : never;
