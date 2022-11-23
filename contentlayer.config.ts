@@ -37,9 +37,14 @@ export const Post = defineDocumentType(() => ({
 		},
 	},
 	computedFields: {
+		slug: {
+			type: 'string',
+			resolve: (post): string => post._raw.flattenedPath.split('/').slice(1).join('/'),
+		},
 		url: {
 			description: 'The absolute URL of the post',
-			resolve: (post): string => `/blog/${post._raw.flattenedPath}`,
+			resolve: (post): string =>
+				`/blog/${post._raw.flattenedPath.split('/').slice(1).join('/')}`,
 			type: 'string',
 		},
 	},
