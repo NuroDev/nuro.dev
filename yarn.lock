@@ -3163,6 +3163,11 @@ next-contentlayer@^0.2.9:
     "@contentlayer/core" "0.2.9"
     "@contentlayer/utils" "0.2.9"
 
+next-seo@^5.14.1:
+  version "5.14.1"
+  resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-5.14.1.tgz#d07322edc37634fbd9beca51fb04177910d8031c"
+  integrity sha512-NiJeQbxYP3z+EMp52q8k3Q+OfX2+Yv2WehERDj98r2wjXxL+woKpRBdsSVYolTD0Hm8IWs42SzaISE93RoQdOw==
+
 next-sitemap@^3.1.30:
   version "3.1.30"
   resolved "https://registry.yarnpkg.com/next-sitemap/-/next-sitemap-3.1.30.tgz#6f81699a3d07366bf6df0da6f9f3fe34de4e67e6"
