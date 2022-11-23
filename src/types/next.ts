@@ -19,14 +19,14 @@ export interface NextErrorPageProps {
 	reset: () => void;
 }
 
-export interface NextHeadProps {
+export interface NextHeadProps<TParams = Record<string, ParamsValue>> {
 	/**
 	 * **Params** (Optional)
 	 */
-	params?: Record<string, ParamsValue>;
+	params?: TParams;
 }
 
-export interface NextLayoutProps {
+export interface NextLayoutProps<TParams = Record<string, ParamsValue>> {
 	/**
 	 * **Children**
 	 *
@@ -39,7 +39,7 @@ export interface NextLayoutProps {
 	 *
 	 * The dynamic route parameters object from the root segment down to that layout.
 	 */
-	params?: Record<string, ParamsValue>;
+	params?: TParams;
 }
 
 type GenerateStaticParamsFn<TParams extends Array<unknown>> = () => TParams | Promise<TParams>;
