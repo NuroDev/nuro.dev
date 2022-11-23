@@ -1,7 +1,5 @@
-export default function BlogHead(): JSX.Element {
-	return (
-		<>
-			<title>blog ─ nuro</title>
-		</>
-	);
-}
+import { defineHead } from '~/utils/defineHead';
+
+export default defineHead({
+	title: 'blog',
+});
