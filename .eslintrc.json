@@ -15,6 +15,12 @@
 			{
 				"allowSingleExtends": true
 			}
+		],
+		"react/no-unknown-property": [
+			2,
+			{
+				"ignore": ["jsx"]
+			}
 		]
 	}
 }
