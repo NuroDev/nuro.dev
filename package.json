@@ -6,7 +6,6 @@
 	"repository": "https://github.com/nurodev/nuro.dev.git",
 	"author": "nurodev <me@nuro.dev>",
 	"license": "MIT",
-	"packageManager": "yarn@3.2.0",
 	"prettier": {
 		"arrowParens": "always",
 		"bracketSpacing": true,
