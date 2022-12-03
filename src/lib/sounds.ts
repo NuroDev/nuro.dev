@@ -7,7 +7,12 @@ export function useClick() {
 		volume: 0.05,
 	});
 
-	if (!state.get().sound) return [() => {}, null];
+	if (!state.get().sound)
+		return [
+			// eslint-disable-next-line @typescript-eslint/no-empty-function
+			(): void => {},
+			null,
+		];
 
 	return result;
 }

@@ -19,7 +19,7 @@ import type { ComponentProps, JSXElementConstructor, PropsWithChildren } from 'r
  * }>
  * ```
  */
-export type WithChildren<T = {}> = PropsWithChildren<T>;
+export type WithChildren<T = Record<string, unknown>> = PropsWithChildren<T>;
 
 /**
  * With ClassName
@@ -40,7 +40,7 @@ export type WithChildren<T = {}> = PropsWithChildren<T>;
  * }>
  * ```
  */
-export type WithClassName<T = {}> = T & {
+export type WithClassName<T = Record<string, unknown>> = T & {
 	className?: string;
 };
 
@@ -62,5 +62,5 @@ export type WithClassName<T = {}> = T & {
  */
 export type WithProps<
 	T extends keyof JSX.IntrinsicElements | JSXElementConstructor<U>,
-	U = any,
+	U = unknown,
 > = ComponentProps<T>;

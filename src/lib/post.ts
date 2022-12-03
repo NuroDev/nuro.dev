@@ -12,7 +12,7 @@ import RemarkSlug from 'remark-slug';
 
 import type { FrontMatter, Post, RawFrontMatter } from '~/types';
 
-const BLOG_POSTS_DIR = join(process.cwd(), 'data', 'blog');
+const BLOG_POSTS_DIR = join(process.cwd(), 'src', 'data', 'blog');
 
 /**
  * Get the slugs of all available blog posts
@@ -53,7 +53,7 @@ export async function getAllPostsFrontMatter() {
  * @param {string} slug - Slug / file name of the blog post to load data from
  */
 export async function getPost(slug: string): Promise<Post> {
-	const raw = readFileSync(join(process.cwd(), 'data', 'blog', `${slug}.md`)).toString();
+	const raw = readFileSync(join(BLOG_POSTS_DIR, `${slug}.md`)).toString();
 	const { content, data } = matter(raw);
 	const source = await serialize(content, {
 		scope: data,

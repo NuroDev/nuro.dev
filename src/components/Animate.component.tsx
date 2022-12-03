@@ -44,7 +44,7 @@ export function Animate<T extends ElementType>({
 	}, [animation, animations, enabled, prefersReducedMotion, transition]);
 
 	return (
-		// @ts-expect-error
+		// @ts-expect-error Valid component
 		<Component ref={ref} {...rest}>
 			{children}
 		</Component>
