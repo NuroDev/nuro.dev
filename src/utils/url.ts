@@ -1,7 +1,7 @@
 import { env } from '~/env';
 
 export function getCanonicalUrl(): string {
-	if (process.env.NEXTAUTH_URL) return process.env.NEXTAUTH_URL;
+	if (env.DOMAIN) return `https://${env.DOMAIN}`;
 
 	if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
 
