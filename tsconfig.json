@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"allowJs": true,
+		"allowJs": false,
 		"baseUrl": ".",
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
@@ -11,14 +11,28 @@
 		"module": "esnext",
 		"moduleResolution": "node",
 		"noEmit": true,
+		"noUncheckedIndexedAccess": true,
 		"paths": {
-			"~/*": ["./src/*"]
+			"~/*": ["./src/*"],
+			"~/tailwind": ["./tailwind.config"]
 		},
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
-		"strict": false,
-		"target": "es5"
+		"strict": true,
+		"target": "es2017",
+		"plugins": [
+			{
+				"name": "next"
+			}
+		]
 	},
-	"include": ["next-env.d.ts", "types/declarations/**/*.d.ts", "**/*.ts", "**/*.tsx"],
+	"include": [
+		"next-env.d.ts",
+		"**/*.ts",
+		"**/*.tsx",
+		"**/*.cjs",
+		"**/*.mjs",
+		".next/types/**/*.ts"
+	],
 	"exclude": ["node_modules"]
 }

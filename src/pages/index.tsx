@@ -1,110 +1,103 @@
-import dynamic from 'next/dynamic';
-import { differenceInYears } from 'date-fns';
-import { Icon } from '@iconify/react';
+import { motion } from '@motionone/react';
 
-import { Animate, Button, Pill } from '~/components';
-import { EventType, NavigationItemType } from '~/types';
-import { Layout } from '~/layouts';
+import { Background } from '~/components/Background';
+import { BaseLayout } from '~/layouts/Base.layout';
+import { defaultTransition } from '~/utils/animate';
 
-import type { EventProps } from '~/components/Event.component';
-import type { NavigationItem } from '~/types';
-
-const Event = dynamic<EventProps>(
-	() => import('~/components/Event.component').then(({ Event }) => Event),
-	{
-		ssr: false,
-	},
-);
-
-const ACTIONS: Array<NavigationItem> = [
-	{
-		type: NavigationItemType.LINK,
-		href: '/blog',
-		icon: <Icon className="mr-3" icon="feather:edit-3" />,
-		text: 'Blog',
-	},
-	{
-		type: NavigationItemType.LINK,
-		href: '/projects',
-		icon: <Icon className="mr-3" icon="feather:copy" />,
-		text: 'Projects',
-	},
-	{
-		type: NavigationItemType.LINK,
-		external: true,
-		href: 'https://github.com/nurodev',
-		icon: <Icon className="mr-3" icon="feather:github" />,
-		text: 'GitHub',
-	},
-];
-
-export default function HomePage() {
-	const today = new Date();
-	const birthday = new Date('1997-08-09');
-	const age = differenceInYears(today, birthday);
-	const isBirthday =
-		today.getDate() === birthday.getDate() && today.getMonth() === birthday.getMonth();
-
-	const description = `I am a ${age} year old software engineer & games developer`;
-
+export default function HomePage(): JSX.Element {
 	return (
-		<Layout.Default>
-			{isBirthday && <Event event={EventType.BIRTHDAY} />}
-			<div className="min-h-screen flex items-center justify-center py-12">
-				<div className="max-w-md sm:max-w-lg md:sm:max-w-2xl lg:sm:max-w-3xl w-full space-y-8 text-center">
-					<Animate
-						as="h1"
-						animation={{
-							opacity: [0, 1],
-							scale: [0.75, 1],
-						}}
-						className="text-gray-500 dark:text-white text-5xl sm:text-6xl md:text-6xl lg:text-8xl tracking-tight font-extrabold"
-					>
-						Hey <span className="inline-block origin-70 hover:(animate-wave)">👋</span>{' '}
-						I&apos;m Ben, <br className="hidden sm:block" />a{' '}
-						<Pill.Standard className="mt-4">developer</Pill.Standard>
-					</Animate>
+		<BaseLayout>
+			<Background />
+			<main className="flex min-h-screen items-end justify-start px-8 py-32 sm:px-16 lg:px-32">
+				<div className="w-full max-w-md text-left sm:max-w-lg md:sm:max-w-2xl lg:sm:max-w-3xl">
+					<div className="space-y-2">
+						<motion.h4
+							animate={{
+								opacity: [0, 1],
+								x: [-100, 0],
+							}}
+							className="text-lg font-extrabold tracking-tight text-gray-500 dark:text-white sm:text-xl lg:text-2xl"
+							transition={defaultTransition}>
+							Hey{' '}
+							<span className="inline-block origin-70 hover:animate-wave">👋</span>
+						</motion.h4>
 
-					<Animate
-						as="p"
-						animation={{
-							opacity: [0, 1],
-							scale: [0.75, 1],
-						}}
-						className="max-w-xs mt-4 md:mt-8 mx-auto text-base text-gray-300 sm:text-lg md:text-xl md:max-w-3xl"
-						transition={{
-							delay: 0.5,
-						}}
-					>
-						{description}
-					</Animate>
+						<motion.h1
+							animate={{
+								opacity: [0, 1],
+								x: [-100, 0],
+							}}
+							className="flex max-w-md flex-col text-5xl font-extrabold tracking-tight text-gray-500 dark:text-white sm:text-6xl lg:text-9xl"
+							transition={{
+								...defaultTransition,
+								delay: 0.25,
+							}}>
+							<span className="z-20">I&apos;m Ben</span>
 
-					<div className="flex flex-col sm:flex-row items-center justify-center sm:space-x-4 space-y-4 sm:space-y-0 w-full mt-8 sm:mt-4">
-						{ACTIONS.map((action, index) => {
-							if (action.type !== NavigationItemType.LINK) return null;
-
-							return (
-								<Animate
-									animation={{
-										y: [50, 0],
-										opacity: [0, 1],
-									}}
-									className="w-full sm:w-auto"
-									key={index}
-									transition={{
-										delay: 0.1 * (index + 2) + 0.5,
-									}}
-								>
-									<Button.Outline href={action.href}>
-										{action.icon}
-										<span>{action.text}</span>
-									</Button.Outline>
-								</Animate>
-							);
-						})}
+							<motion.div
+								animate={{
+									opacity: [0, 1],
+									x: [-100, 0],
+								}}
+								className="z-10 -mt-8 h-[0.58em] w-full"
+								transition={{
+									...defaultTransition,
+									delay: 0.5,
+								}}>
+								<svg
+									// height="47"
+									// width="418"
+									aria-hidden={true}
+									fill="none"
+									preserveAspectRatio="none"
+									viewBox="0 0 418 47"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										className="animate-dash stroke-primary-600"
+										d="M3.5 31C55.6044 18.119 84.5636 11.5337 138 6.5C159.039 4.51809 171.907 3.1994 193 4.5C214.093 5.8006 219 7.49999 220.5 8.5C222 9.5 219.5 14 193 23C180.691 27.1805 171.402 30.6059 164.984 33.0756C162.88 33.8851 163.543 36.7752 165.792 36.6131C182.78 35.3884 214.61 33.2961 237.5 33C268.164 32.6033 285.373 33.4573 316 35C354.35 36.9317 414 43 414 43"
+										strokeLinecap="round"
+										strokeWidth="4"
+										style={{
+											animationDelay: '0.5s',
+											strokeDasharray: 1000,
+											strokeDashoffset: 1000,
+										}}
+									/>
+								</svg>
+							</motion.div>
+						</motion.h1>
 					</div>
+
+					{/* <div className="mt-8 flex w-full flex-col items-center justify-start space-y-4 sm:mt-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+						{indexPageActions.map((action, index) => (
+							<motion.div
+								animate={{
+									opacity: [0, 1],
+									x: [-100, 0],
+								}}
+								className="w-full sm:w-auto"
+								key={index}
+								transition={{
+									...defaultTransition,
+									// delay: 0.1 * (index + 2) + 0.5,
+									delay: 1.0 - 0.1 * index,
+								}}>
+								<Button
+									as={Link}
+									// border={true}
+									href={action.href}
+									rel={action.external ? 'noopener noreferrer' : undefined}
+									size="xl"
+									target={action.external ? '_blank' : undefined}
+									variant="primary">
+									<Icon className="mr-2 inline-block" name={action.icon} />
+									<span>{action.label}</span>
+								</Button>
+							</motion.div>
+						))}
+					</div> */}
 				</div>
-			</div>
-		</Layout.Default>
+			</main>
+		</BaseLayout>
 	);
 }

@@ -1,55 +1,35 @@
-import NProgress from 'nprogress';
-import splitbee from '@splitbee/web';
 import { Analytics } from '@vercel/analytics/react';
-import { AppProps } from 'next/app';
+import { Inter as FontSans } from '@next/font/google';
 import { ThemeProvider } from 'next-themes';
-import { useEffectOnce, useEvent } from 'react-use';
-import { useRouter } from 'next/router';
+import { useEvent } from 'react-use';
+import { useSound } from 'use-sound';
 
-import 'inter-ui/inter.css';
-import 'nprogress/nprogress.css';
-import 'windi.css';
+import { Theme } from '~/types/theme';
 
-import { colors, useClick } from '~/lib';
-import { Theme } from '~/types';
+import '~/styles/globals.css';
 
-NProgress.configure({
-	easing: 'ease',
-	minimum: 0.3,
-	showSpinner: false,
-	speed: 800,
+import type { AppProps } from 'next/app';
+import { cn } from '~/utils/cn';
+
+const fontSans = FontSans({
+	subsets: ['latin'],
+	variable: '--font-inter',
 });
 
-export { reportWebVitals } from 'next-axiom';
-
-export default function App({ Component, pageProps }: AppProps) {
-	const router = useRouter();
-	const [play] = useClick();
-
-	useEvent('mousedown', () => play());
-	useEvent('mouseup', () => play());
-
-	useEffectOnce(() => {
-		router.events.on('routeChangeStart', () => NProgress.start());
-		router.events.on('routeChangeComplete', () => NProgress.done());
-		router.events.on('routeChangeError', () => NProgress.done());
-
-		if (process.env.NODE_ENV === 'production')
-			splitbee.init({
-				disableCookie: true,
-			});
+export default function App({ Component, pageProps }: AppProps): JSX.Element {
+	const [playClickSound] = useSound('/sounds/click.ogg', {
+		volume: 0.05, // TODO: Make this configurable via user settings
 	});
+
+	useEvent('mousedown', playClickSound);
+	useEvent('mouseup', playClickSound);
 
 	return (
 		<ThemeProvider attribute="class" defaultTheme={Theme.SYSTEM} themes={Object.values(Theme)}>
 			<Analytics />
-			<Component {...pageProps} />
-			<style jsx global>{`
-				#nprogress .bar {
-					height: 0.25rem;
-					background-color: ${colors.primary[500]};
-				}
-			`}</style>
+			<div className={cn(fontSans.variable, 'font-sans')}>
+				<Component {...pageProps} />
+			</div>
 		</ThemeProvider>
 	);
 }

@@ -11,8 +11,10 @@ export const READABLE_DISCORD_STATUS: {
 	['online']: 'Online',
 };
 
+export type DiscordStatusColor = 'red' | 'yellow' | 'gray' | 'green';
+
 export const DISCORD_STATUS_COLOR: {
-	[S in DiscordStatus]: string;
+	[S in DiscordStatus]: DiscordStatusColor;
 } = {
 	['dnd']: 'red',
 	['idle']: 'yellow',
