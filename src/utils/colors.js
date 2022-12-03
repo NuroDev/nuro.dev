@@ -1,5 +1,3 @@
-const defaultColors = require('tailwindcss/colors');
-
 // Note: Not using `.ts` as this is used by Tailwind CSS config
 const colors = {
 	// ...defaultColors,
