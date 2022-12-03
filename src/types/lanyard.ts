@@ -26,3 +26,20 @@ export enum LanyardAvatarType {
 	USER = 'user',
 	MUSIC = 'music',
 }
+
+export enum ActivityType {
+	ACCOUNT = 'account',
+	SPOTIFY = 'spotify',
+	CODE = 'code',
+}
+
+interface ActivityAvatar {
+	alt: string;
+	src: string;
+}
+
+export interface BaseActivityProps {
+	avatar: ActivityAvatar;
+	description: string | Array<string>;
+	title: string;
+}
