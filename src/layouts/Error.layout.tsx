@@ -8,7 +8,7 @@ interface DefaultLayoutProps extends WithChildren {
 	seo?: Partial<WithProps<typeof NextSeo>>;
 }
 
-export function ErrorLayout({ children, seo }: DefaultLayoutProps) {
+export function ErrorLayout({ children, seo }: DefaultLayoutProps): JSX.Element {
 	const seoProps = useSeoProps({
 		title: 'nuro ─ Whoops!',
 		...seo,

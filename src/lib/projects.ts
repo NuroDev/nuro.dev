@@ -59,7 +59,7 @@ export async function fetchProjects(): Promise<Array<Project> | null> {
 
 			return {
 				description,
-				icon: (() => {
+				icon: ((): string => {
 					if (!repo.description) return undefined;
 
 					const char = repo.description.split(' ')[0];

@@ -17,7 +17,7 @@ export const Icon = forwardRef<HTMLButtonElement, IconProps>(function Icon(
 				'relative inline-flex items-center px-3 py-2 bg-gray-50 hover:(bg-gray-100 text-gray-700) dark:(bg-gray-900 hover:bg-gray-700 hover:text-white) text-gray-400 rounded-lg text-sm font-medium default-transition default-focus',
 				className,
 			)}
-			onClick={(e) => onClick && onClick(e)}
+			onClick={(e): void => onClick && onClick(e)}
 			{...rest}
 		>
 			{children}

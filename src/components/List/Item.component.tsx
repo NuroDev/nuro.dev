@@ -17,7 +17,14 @@ interface ItemProps extends WithChildren {
 	title: string;
 }
 
-export function Item({ actions, children, description, icon, iconColor, title }: ItemProps) {
+export function Item({
+	actions,
+	children,
+	description,
+	icon,
+	iconColor,
+	title,
+}: ItemProps): JSX.Element {
 	return (
 		<li className="bg-gray-50 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 backdrop-filter backdrop-blur-sm border border-gray-100 dark:border-gray-500 rounded-lg transition ease-in-out duration-300">
 			<div className="flex flex-col sm:flex-row items-center justify-between px-4 py-4 sm:px-6">
@@ -32,8 +39,7 @@ export function Item({ actions, children, description, icon, iconColor, title }:
 								style={{
 									backgroundColor:
 										iconColor !== undefined ? iconColor : undefined,
-								}}
-							>
+								}}>
 								<Icon className="w-6 h-6 text-white" icon={icon} />
 							</div>
 						) : (
@@ -58,8 +64,7 @@ export function Item({ actions, children, description, icon, iconColor, title }:
 										<Action
 											aria-label={action.label}
 											key={index}
-											onClick={action.onClick}
-										>
+											onClick={action.onClick}>
 											<span className="sr-only">{action.label}</span>
 											<Icon className="mt-1" icon={action.icon} />
 										</Action>
@@ -74,8 +79,7 @@ export function Item({ actions, children, description, icon, iconColor, title }:
 												key={index}
 												onClick={action.onClick}
 												rel="noopener noreferrer"
-												target="_blank"
-											>
+												target="_blank">
 												<span className="sr-only">{action.label}</span>
 												<Icon className="mt-1" icon={action.icon} />
 											</Action>
@@ -87,8 +91,7 @@ export function Item({ actions, children, description, icon, iconColor, title }:
 												as="a"
 												aria-label={action.label}
 												key={index}
-												onClick={action.onClick}
-											>
+												onClick={action.onClick}>
 												<span className="sr-only">{action.label}</span>
 												<Icon className="mt-1" icon={action.icon} />
 											</Action>

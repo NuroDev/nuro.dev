@@ -22,7 +22,7 @@ NProgress.configure({
 
 export { reportWebVitals } from 'next-axiom';
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppProps): JSX.Element {
 	const router = useRouter();
 	const [play] = useClick();
 

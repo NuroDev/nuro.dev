@@ -39,7 +39,7 @@ export const getStaticProps: GetStaticProps<ReferralsProps> = async () => {
 	};
 };
 
-export default function ReferralsPage({ referrals }: ReferralsProps) {
+export default function ReferralsPage({ referrals }: ReferralsProps): JSX.Element {
 	const { theme } = useTheme();
 	const prefersDarkColorScheme = useMedia('(prefers-color-scheme: dark)', false);
 
@@ -76,8 +76,7 @@ export default function ReferralsPage({ referrals }: ReferralsProps) {
 								key={index}
 								transition={{
 									delay: 0.1 * index,
-								}}
-							>
+								}}>
 								<List.Item
 									actions={[
 										{
@@ -115,8 +114,7 @@ export default function ReferralsPage({ referrals }: ReferralsProps) {
 									description={referral.description}
 									icon={referral.icon}
 									iconColor={referral.color}
-									title={referral.name}
-								>
+									title={referral.name}>
 									{referral.bonus && (
 										<div className="m-2 mt-0">
 											<Pill.Standard className="flex items-center justify-center w-full md:pb-2 bg-primary-500 bg-opacity-15 saturate-200 text-sm text-primary-500 rounded-lg">

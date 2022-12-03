@@ -19,7 +19,7 @@ export function DefaultLayout({
 	background: overrideBackground,
 	children,
 	seo: customSeo,
-}: DefaultLayoutProps) {
+}: DefaultLayoutProps): JSX.Element {
 	const { animations: background } = usePersistantState().get();
 	const showBackground = overrideBackground ?? background;
 

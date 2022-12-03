@@ -7,7 +7,7 @@ interface ErrorProps {
 	routeBlog?: boolean;
 }
 
-export function Error({ routeBlog = true }: ErrorProps) {
+export function Error({ routeBlog = true }: ErrorProps): JSX.Element {
 	return (
 		<Layout.Error>
 			<div className="flex flex-grow min-h-full pt-16 pb-12">
@@ -28,24 +28,21 @@ export function Error({ routeBlog = true }: ErrorProps) {
 						<div className="mt-6 flex justify-center items-center space-x-4">
 							<Button.Standard
 								icon="feather:arrow-left"
-								onClick={() => history.go(-1)}
-								type={NavigationItemType.ACTION}
-							>
+								onClick={(): void => history.go(-1)}
+								type={NavigationItemType.ACTION}>
 								Back
 							</Button.Standard>
 							<Button.Standard
 								href="/"
 								icon="feather:home"
-								type={NavigationItemType.LINK}
-							>
+								type={NavigationItemType.LINK}>
 								Home
 							</Button.Standard>
 							{routeBlog && (
 								<Button.Standard
 									href="/blog"
 									icon="feather:book"
-									type={NavigationItemType.LINK}
-								>
+									type={NavigationItemType.LINK}>
 									Blog
 								</Button.Standard>
 							)}

@@ -26,7 +26,7 @@ type StandardProps =
 const ButtonStyles =
 	'flex justify-center items-center h-12 px-8 py-4 bg-gray-50 hover:(bg-gray-100 bg-opacity-50 text-primary-400) dark:(bg-gray-900 hover:bg-gray-800) text-base font-bold text-primary-300 rounded-lg default-transition default-focus';
 
-export function Standard({ children, className, icon, ...rest }: StandardProps) {
+export function Standard({ children, className, icon, ...rest }: StandardProps): JSX.Element {
 	switch (rest.type) {
 		case NavigationItemType.LINK:
 			if (rest.external ?? true)
@@ -51,9 +51,8 @@ export function Standard({ children, className, icon, ...rest }: StandardProps) 
 				<button
 					{...rest}
 					className={clsx(ButtonStyles, className)}
-					onClick={(e) => rest.onClick(e)}
-					type="button"
-				>
+					onClick={(e): void => rest.onClick(e)}
+					type="button">
 					{icon && <Icon className="mr-2" icon={icon} />}
 					{children}
 				</button>

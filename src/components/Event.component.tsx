@@ -7,7 +7,7 @@ export interface EventProps {
 	event: EventType;
 }
 
-export function Event({ event }: EventProps) {
+export function Event({ event }: EventProps): JSX.Element {
 	const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
 	const confetti = createConfetti(canvasRef.current, {

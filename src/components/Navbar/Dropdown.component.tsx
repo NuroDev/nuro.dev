@@ -26,7 +26,7 @@ interface MenuButtonIconProps extends WithClassName {
 	direction?: 'left' | 'right';
 }
 
-const StyledMenuItem = forwardRef<any, MenuLinkProps>(function StyledMenuItem(
+const StyledMenuItem = forwardRef<HTMLAnchorElement, MenuLinkProps>(function StyledMenuItem(
 	{ active, children, className, ...rest },
 	ref,
 ) {
@@ -35,19 +35,22 @@ const StyledMenuItem = forwardRef<any, MenuLinkProps>(function StyledMenuItem(
 			className={clsx(
 				'flex items-center px-4 py-3 text-sm font-medium tracking-wide cursor-pointer default-transition',
 				active
-					? 'bg-gray-100 bg-opacity-50 text-gray-900 dark:(bg-gray-700 bg-opacity-50 text-white)'
+					? 'bg-gray-100/50 text-gray-900 dark:bg-gray-700/50 dark:text-white'
 					: 'text-gray-300 hover:text-gray-700 dark:hover:text-white',
 				className,
 			)}
 			ref={ref}
-			{...rest}
-		>
+			{...rest}>
 			{children}
 		</a>
 	);
 });
 
-function MenuButtonIcon({ className, icon, direction: type = 'left' }: MenuButtonIconProps) {
+function MenuButtonIcon({
+	className,
+	icon,
+	direction: type = 'left',
+}: MenuButtonIconProps): JSX.Element {
 	if (typeof icon !== 'string') return <>{icon}</>;
 
 	if (type === 'right')
@@ -61,20 +64,20 @@ function MenuButtonIcon({ className, icon, direction: type = 'left' }: MenuButto
  *
  * @see https://headlessui.dev/react/menu#integrating-with-next-js
  */
-function MenuLink({ children, href, onClick, ...rest }: MenuLinkProps) {
+function MenuLink({ children, href, onClick, ...rest }: MenuLinkProps): JSX.Element {
 	return (
 		<Link href={href} passHref>
-			<StyledMenuItem onClick={(...args) => onClick(...args)} {...rest}>
+			<StyledMenuItem onClick={(...args): void => onClick(...args)} {...rest}>
 				{children}
 			</StyledMenuItem>
 		</Link>
 	);
 }
 
-export function Dropdown({ children, items, position = 'top-left' }: StandardProps) {
+export function Dropdown({ children, items, position = 'top-left' }: StandardProps): JSX.Element {
 	return (
 		<Menu as="div" className="relative inline-block text-left">
-			{({ open }) => (
+			{({ open }): JSX.Element => (
 				<>
 					<Menu.Button as={Fragment}>{children}</Menu.Button>
 
@@ -86,28 +89,27 @@ export function Dropdown({ children, items, position = 'top-left' }: StandardPro
 						leave="transition ease-in-out"
 						leaveFrom="transform scale-100 opacity-100"
 						leaveTo="transform scale-95 opacity-0"
-						show={open}
-					>
+						show={open}>
 						<Menu.Items
 							className={clsx(
 								'absolute w-[calc(100vw-1rem)] sm:w-56 mt-2 bg-gray-50 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 backdrop-filter backdrop-blur-sm border border-gray-100 dark:border-gray-500 rounded-md shadow-lg divide-y divide-gray-100 dark:divide-gray-500 focus:outline-none',
 								position === 'top-left' && 'origin-top-left left-0',
 								position === 'top-right' && 'origin-top-right right-0',
-							)}
-						>
+							)}>
 							{items.map((section, index) => (
 								<div className="py-2" key={index}>
 									{section.map((item, j) => (
 										<Menu.Item key={j}>
-											{({ active }) => {
+											{({ active }): JSX.Element => {
 												switch (item.type) {
 													case NavigationItemType.ACTION:
 														return (
 															<StyledMenuItem
 																active={active}
 																className="group"
-																onClick={() => item.onClick()}
-															>
+																onClick={(): void =>
+																	item.onClick()
+																}>
 																<MenuButtonIcon icon={item.icon} />
 																{item.text}
 																{item.endIcon && (
@@ -134,8 +136,7 @@ export function Dropdown({ children, items, position = 'top-left' }: StandardPro
 																	active={active}
 																	href={item.href}
 																	rel="noopener noreferrer"
-																	target="_blank"
-																>
+																	target="_blank">
 																	<MenuButtonIcon
 																		icon={item.icon}
 																	/>
@@ -151,8 +152,7 @@ export function Dropdown({ children, items, position = 'top-left' }: StandardPro
 														return (
 															<MenuLink
 																active={active}
-																href={item.href}
-															>
+																href={item.href}>
 																<MenuButtonIcon icon={item.icon} />
 																{item.text}
 															</MenuLink>

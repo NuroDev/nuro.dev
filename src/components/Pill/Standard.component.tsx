@@ -3,7 +3,7 @@ import { AnchorHTMLAttributes } from 'react';
 
 interface StandardPillProps extends AnchorHTMLAttributes<HTMLDivElement> {}
 
-export function Standard({ children, className, ...rest }: StandardPillProps) {
+export function Standard({ children, className, ...rest }: StandardPillProps): JSX.Element {
 	return (
 		<div
 			className={clsx(
@@ -12,8 +12,7 @@ export function Standard({ children, className, ...rest }: StandardPillProps) {
 			)}
 			target="_blank"
 			rel="noreferrer noopener"
-			{...rest}
-		>
+			{...rest}>
 			{children}
 		</div>
 	);

@@ -1,7 +1,7 @@
 import { Layout } from '~/layouts';
 import { Status } from '~/components';
 
-export default function StatusPage() {
+export default function StatusPage(): JSX.Element {
 	return (
 		<Layout.Default seo={{ title: 'nuro ─ status' }}>
 			<div className="flex flex-grow min-h-screen pt-16 pb-12">

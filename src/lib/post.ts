@@ -17,14 +17,14 @@ const BLOG_POSTS_DIR = join(process.cwd(), 'src', 'data', 'blog');
 /**
  * Get the slugs of all available blog posts
  */
-export async function getAllPostSlugs() {
+export async function getAllPostSlugs(): Promise<Array<string>> {
 	return readdirSync(BLOG_POSTS_DIR);
 }
 
 /**
  * Get the frontmatter metadata for all available blog posts
  */
-export async function getAllPostsFrontMatter() {
+export async function getAllPostsFrontMatter(): Promise<Array<FrontMatter>> {
 	const files = readdirSync(BLOG_POSTS_DIR);
 
 	return files

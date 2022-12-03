@@ -7,7 +7,7 @@ import { colors } from '~/lib';
 import VertexShader from './vertex.glsl';
 import FragmentShader from './fragment.glsl';
 
-export function Standard() {
+export function Standard(): JSX.Element {
 	const containerRef = useRef<HTMLDivElement | null>(null);
 
 	useEffectOnce(() => {

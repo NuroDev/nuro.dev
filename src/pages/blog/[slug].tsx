@@ -43,7 +43,7 @@ export const getStaticProps: GetStaticProps<BlogPostProps, PathProps> = async ({
 	};
 };
 
-export default function BlogPost({ post }: BlogPostProps) {
+export default function BlogPost({ post }: BlogPostProps): JSX.Element {
 	return (
 		<>
 			<Layout.Blog
@@ -61,8 +61,7 @@ export default function BlogPost({ post }: BlogPostProps) {
 							},
 						],
 					},
-				}}
-			>
+				}}>
 				<div className="relative px-4 py-16 overflow-hidden">
 					<div className="relative px-4 sm:px-6 lg:px-8">
 						{post.frontmatter.banner && (post.frontmatter.banner_show ?? true) && (
@@ -101,7 +100,7 @@ export default function BlogPost({ post }: BlogPostProps) {
 							)}
 						</div>
 
-						<article className="max-w-prose mx-auto prose prose-primary prose-lg text-gray-500 mx-auto">
+						<article className="max-w-prose prose prose-primary prose-lg text-gray-500 mx-auto">
 							<MDXRemote {...post.source} components={Blog.X} />
 						</article>
 					</div>

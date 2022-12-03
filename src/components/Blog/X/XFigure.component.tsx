@@ -6,7 +6,7 @@ interface XFigureProps {
 	src: string;
 }
 
-export function XFigure({ alt, caption, src }: XFigureProps) {
+export function XFigure({ alt, caption, src }: XFigureProps): JSX.Element {
 	return (
 		<figure>
 			<Image

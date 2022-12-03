@@ -4,7 +4,7 @@ import { Button } from '~/components';
 import { Layout } from '~/layouts';
 import { NavigationItemType } from '~/types';
 
-export default function Error() {
+export default function Error(): JSX.Element {
 	return (
 		<Layout.Error>
 			<div className="flex flex-grow min-h-full pt-16 pb-12">
@@ -27,16 +27,14 @@ export default function Error() {
 						<div className="mt-6 flex justify-center items-center space-x-4">
 							<Button.Standard
 								type={NavigationItemType.ACTION}
-								onClick={() => history.go(-1)}
-								icon="feather:arrow-left"
-							>
+								onClick={(): void => history.go(-1)}
+								icon="feather:arrow-left">
 								Back
 							</Button.Standard>
 							<Button.Standard
 								type={NavigationItemType.LINK}
 								href="/"
-								icon="feather:home"
-							>
+								icon="feather:home">
 								Home
 							</Button.Standard>
 						</div>

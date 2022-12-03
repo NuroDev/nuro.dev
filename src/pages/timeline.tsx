@@ -25,7 +25,7 @@ export const getStaticProps: GetStaticProps<TimelineProps> = async () => {
 	};
 };
 
-export default function TimelinePage({ timeline: rawTimeline }: TimelineProps) {
+export default function TimelinePage({ timeline: rawTimeline }: TimelineProps): JSX.Element {
 	const timeline = rawTimeline.map((event) => ({
 		...event,
 		// Note: Custom parser needed as Safari on iOS doesn't like the standard `new Date()` parsing
@@ -75,8 +75,7 @@ export default function TimelinePage({ timeline: rawTimeline }: TimelineProps) {
 													href={event.link.url}
 													rel="noopener noreferrer"
 													small={true}
-													target="_blank"
-												>
+													target="_blank">
 													{event.link.text}
 													<Icon
 														aria-hidden="true"

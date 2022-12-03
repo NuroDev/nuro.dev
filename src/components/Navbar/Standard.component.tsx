@@ -3,7 +3,7 @@ import { Disclosure } from '@headlessui/react';
 import { Button, Navbar } from '~/components';
 import { useNavigation } from '~/lib';
 
-export function Standard() {
+export function Standard(): JSX.Element {
 	const { menu, settings } = useNavigation();
 
 	return (

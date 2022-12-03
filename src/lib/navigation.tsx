@@ -58,7 +58,10 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 	],
 ];
 
-export function useNavigation() {
+export function useNavigation(): {
+	menu: NavigationItems;
+	settings: NavigationItems;
+} {
 	const state = usePersistantState();
 	const { animations: background, sound } = state.get();
 	const { color, loading, status } = useStatus();

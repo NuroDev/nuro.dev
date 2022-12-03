@@ -25,8 +25,8 @@ interface Activity {
 	icon?: string | ReactNode;
 }
 
-export function Widget() {
-	const { color, loading, status, websocket } = useStatus();
+export function Widget(): JSX.Element {
+	const { color, loading, status } = useStatus();
 
 	if (loading) return <Loading />;
 
@@ -96,7 +96,7 @@ export function Widget() {
 	].filter((item) => item !== null);
 
 	return (
-		<div className="flex flex-col space-y-5 w-full max-w-sm mx-auto px-4 py-4 bg-white bg-opacity-50 dark:(bg-gray-900 bg-opacity-50 border-gray-600) backdrop-filter backdrop-blur-sm border-2 border-gray-200 rounded-lg hover:shadow-lg default-transition">
+		<div className="flex flex-col space-y-5 w-full max-w-sm mx-auto px-4 py-4 bg-white/50 dark:bg-gray-900/50 dark:border-gray-600 backdrop-filter backdrop-blur-sm border-2 border-gray-200 rounded-lg hover:shadow-lg default-transition">
 			{activities.map((activity, index) => {
 				return (
 					<Fragment key={index}>
@@ -113,8 +113,7 @@ export function Widget() {
 									className="rounded default-transition default-focus"
 									href={activity.avatar.href}
 									target="_blank"
-									rel="noreferrer noopener"
-								>
+									rel="noreferrer noopener">
 									<div className="max-w-md max-h-12 my-auto rounded pointer-events-none select-none ring-2 ring-gray-200 dark:ring-gray-500">
 										<Image
 											alt={activity.avatar.alt}
@@ -156,8 +155,7 @@ export function Widget() {
 											(description, descriptionIndex) => (
 												<p
 													className="mt-1 text-xs tracking-wide font-medium text-gray-500 dark:text-gray-400"
-													key={descriptionIndex}
-												>
+													key={descriptionIndex}>
 													{description}
 												</p>
 											),

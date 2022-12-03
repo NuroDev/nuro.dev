@@ -9,7 +9,7 @@ interface BlogLayoutProps {
 	seo?: Partial<ComponentProps<typeof NextSeo>>;
 }
 
-export function BlogLayout({ children, seo }: PropsWithChildren<BlogLayoutProps>) {
+export function BlogLayout({ children, seo }: PropsWithChildren<BlogLayoutProps>): JSX.Element {
 	const seoProps = useSeoProps({
 		title: 'nuro ─ blog',
 		...seo,

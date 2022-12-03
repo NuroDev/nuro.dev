@@ -10,7 +10,7 @@ interface XButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	label: string;
 }
 
-export function XButton({ external, href, icon, label }: XButtonProps) {
+export function XButton({ external, href, icon, label }: XButtonProps): JSX.Element {
 	return (
 		<Button.Standard type={NavigationItemType.LINK} external={external} href={href} icon={icon}>
 			{label}

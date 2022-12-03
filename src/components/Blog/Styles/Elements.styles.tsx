@@ -1,4 +1,4 @@
-export function ElementsStyles() {
+export function ElementsStyles(): JSX.Element {
 	return (
 		<style global jsx>
 			{`

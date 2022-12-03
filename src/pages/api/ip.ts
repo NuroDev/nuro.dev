@@ -19,7 +19,7 @@ interface Response {
 	zip: string;
 }
 
-export default async function handler(_req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(_req: NextApiRequest, res: NextApiResponse): Promise<void> {
 	try {
 		const response = await fetch('http://ip-api.com/json');
 		const json = (await response.json()) as Response;

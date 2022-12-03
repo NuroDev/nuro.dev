@@ -45,6 +45,6 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
 	};
 };
 
-export default function ReferralRedirectPage() {
+export default function ReferralRedirectPage(): null {
 	return null;
 }

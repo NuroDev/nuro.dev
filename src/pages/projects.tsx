@@ -22,7 +22,7 @@ export const getStaticProps: GetStaticProps<ProjectProps> = async () => {
 	};
 };
 
-export default function ProjectsPage({ stringifiedProjects }: ProjectProps) {
+export default function ProjectsPage({ stringifiedProjects }: ProjectProps): JSX.Element {
 	const projects = JSON.parse(stringifiedProjects) as Array<Project>;
 
 	return (
@@ -36,8 +36,7 @@ export default function ProjectsPage({ stringifiedProjects }: ProjectProps) {
 								key={index}
 								transition={{
 									delay: 0.1 * index,
-								}}
-							>
+								}}>
 								<List.Item
 									actions={[
 										...(project.post

@@ -20,7 +20,7 @@ export const getStaticProps: GetStaticProps<BlogProps> = async () => {
 	};
 };
 
-export default function BlogPage({ serialisedFrontmatters }: BlogProps) {
+export default function BlogPage({ serialisedFrontmatters }: BlogProps): JSX.Element {
 	const frontmatters = JSON.parse(serialisedFrontmatters) as Array<FrontMatter>;
 
 	if (frontmatters.length <= 0) return <Blog.Error routeBlog={false} />;
