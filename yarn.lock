@@ -24,6 +24,11 @@
   dependencies:
     regenerator-runtime "^0.13.10"
 
+"@corex/deepmerge@^4.0.29":
+  version "4.0.29"
+  resolved "https://registry.yarnpkg.com/@corex/deepmerge/-/deepmerge-4.0.29.tgz#af9debf07d7f6b0d2a9d04a266abf2c1418ed2f6"
+  integrity sha512-q/yVUnqckA8Do+EvAfpy7RLdumnBy9ZsducMUtZTvpdbJC7azEf1hGtnYYxm0QfphYxjwggv6XtH64prvS1W+A==
+
 "@eslint/eslintrc@^1.3.3":
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-1.3.3.tgz#2b044ab39fdfa75b4688184f9e573ce3c5b0ff95"
@@ -147,6 +152,11 @@
   version "13.0.5"
   resolved "https://registry.yarnpkg.com/@next/env/-/env-13.0.5.tgz#f2fafaa42c6693260e00f443853b549509715ad1"
   integrity sha512-F3KLtiDrUslAZhTYTh8Zk5ZaavbYwLUn3NYPBnOjAXU8hWm0QVGVzKIOuURQ098ofRU4e9oglf3Sj9pFx5nI5w==
+
+"@next/env@^13.0.6":
+  version "13.0.6"
+  resolved "https://registry.yarnpkg.com/@next/env/-/env-13.0.6.tgz#3fcab11ffbe95bff127827d9f7f3139bc5e6adff"
+  integrity sha512-yceT6DCHKqPRS1cAm8DHvDvK74DLIkDQdm5iV+GnIts8h0QbdHvkUIkdOvQoOODgpr6018skbmSQp12z5OWIQQ==
 
 "@next/eslint-plugin-next@13.0.2":
   version "13.0.2"
@@ -1754,6 +1764,14 @@ next-seo@^5.14.1:
   version "5.14.1"
   resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-5.14.1.tgz#d07322edc37634fbd9beca51fb04177910d8031c"
   integrity sha512-NiJeQbxYP3z+EMp52q8k3Q+OfX2+Yv2WehERDj98r2wjXxL+woKpRBdsSVYolTD0Hm8IWs42SzaISE93RoQdOw==
+
+next-sitemap@^3.1.32:
+  version "3.1.32"
+  resolved "https://registry.yarnpkg.com/next-sitemap/-/next-sitemap-3.1.32.tgz#e4a7227cab23b5e5c68bc54d335b86d3ff1e05f8"
+  integrity sha512-jkIKpwLXpWWTPfmDO46+6nu4+qpar4CjvUwCR9rYZHWtzE/wFfaCVFKpGtFMl6MFjpu8GjiE6kWFEa7uF3bzzg==
+  dependencies:
+    "@corex/deepmerge" "^4.0.29"
+    minimist "^1.2.6"
 
 next-themes@^0.2.1:
   version "0.2.1"

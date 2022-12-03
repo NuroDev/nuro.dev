@@ -40,6 +40,7 @@
 		"use-sound": "^4.0.1"
 	},
 	"devDependencies": {
+		"@next/env": "^13.0.6",
 		"@tailwindcss/forms": "^0.5.3",
 		"@tailwindcss/line-clamp": "^0.4.2",
 		"@tailwindcss/typography": "^0.5.8",
@@ -52,6 +53,7 @@
 		"eslint": "^8.26.0",
 		"eslint-config-next": "13.0.2",
 		"next-axiom": "^0.15.1",
+		"next-sitemap": "^3.1.32",
 		"postcss": "^8.4.14",
 		"prettier": "^2.7.1",
 		"prettier-plugin-tailwindcss": "^0.1.13",
