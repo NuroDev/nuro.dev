@@ -17,7 +17,7 @@ export default function HomePage(): JSX.Element {
 								opacity: [0, 1],
 								x: [-100, 0],
 							}}
-							className="text-lg font-extrabold tracking-tight text-gray-500 dark:text-white sm:text-xl lg:text-2xl"
+							className="text-lg font-extrabold tracking-tight text-gray-700 dark:text-white sm:text-xl lg:text-2xl"
 							transition={defaultTransition}>
 							Hey{' '}
 							<span
@@ -34,7 +34,7 @@ export default function HomePage(): JSX.Element {
 								opacity: [0, 1],
 								x: [-100, 0],
 							}}
-							className="flex max-w-md flex-col text-5xl font-extrabold tracking-tight text-gray-500 dark:text-white sm:text-6xl lg:text-9xl"
+							className="flex max-w-md flex-col text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-6xl lg:text-9xl"
 							transition={{
 								...defaultTransition,
 								delay: 0.25,
