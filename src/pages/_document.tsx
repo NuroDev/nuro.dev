@@ -9,7 +9,6 @@ export default function Document(): JSX.Element {
 	return (
 		<Html lang="en" className="scroll-smooth antialiased">
 			<Head>
-				<link rel="canonical" href={canonicalUrl}></link>
 				<link rel="icon" type="image/png" href="/favicon.png" />
 				<meta name="msapplication-TileColor" content="#0068f5" />
 				<meta name="theme-color" content="#0c0e10" />
