@@ -2,6 +2,7 @@ import { Background } from '~/components/Background';
 import { BaseLayout } from '~/layouts/Base.layout';
 import { Commander } from '~/components/Commander';
 import { name as personName } from '~/data';
+import { StatusPill } from '~/components/Status/Pill';
 
 export default function HomePage(): JSX.Element {
 	return (
@@ -10,16 +11,19 @@ export default function HomePage(): JSX.Element {
 			<main className="flex min-h-screen items-end justify-start px-8 py-32 sm:px-16 lg:px-32">
 				<div className="w-full max-w-md text-left sm:max-w-lg md:sm:max-w-2xl lg:sm:max-w-3xl">
 					<div className="mb-4 space-y-4 lg:mb-0">
-						<h4 className="text-lg font-extrabold tracking-tight text-gray-700 animate-in duration-1000 motion-safe:slide-in-from-left dark:text-white sm:text-xl lg:text-2xl">
-							Hey{' '}
-							<span
-								className="inline-block origin-70 animate-wave"
-								style={{
-									animationDelay: '1.25s',
-								}}>
-								👋
-							</span>
-						</h4>
+						<div className="w-full max-w-md sm:inline-flex sm:items-center sm:justify-between sm:space-x-2">
+							<h4 className="text-lg font-extrabold tracking-tight text-gray-700 animate-in duration-1000 motion-safe:slide-in-from-left dark:text-white sm:text-xl lg:text-2xl">
+								Hey{' '}
+								<span
+									className="inline-block origin-70 animate-wave"
+									style={{
+										animationDelay: '1.25s',
+									}}>
+									👋
+								</span>
+							</h4>
+							<StatusPill />
+						</div>
 
 						<h1 className="flex max-w-md flex-col text-5xl font-extrabold tracking-tight text-gray-900 animate-in duration-1000 delay-300 motion-safe:slide-in-from-left dark:text-white sm:text-6xl lg:text-9xl">
 							<span className="z-20">I&apos;m {personName}</span>
