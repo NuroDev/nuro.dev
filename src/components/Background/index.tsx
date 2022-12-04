@@ -1,4 +1,5 @@
 import { Camera, Color, Geometry, Mesh, Program, Renderer } from 'ogl-typescript';
+import { isCrawlerUserAgent } from 'is-web-crawler';
 import { useMount, useUnmount } from 'react-use';
 import { useState } from 'react';
 
@@ -8,7 +9,7 @@ import VertexShader from './vertex.glsl';
 import FragmentShader from './fragment.glsl';
 import { colors } from '~/utils/colors';
 
-export function Background(): JSX.Element {
+export function Background(): null {
 	const [animationId, setAnimationId] = useState<number>(1);
 
 	useMount(() => {
@@ -33,6 +34,8 @@ export function Background(): JSX.Element {
 		}
 
 		try {
+			if (isCrawlerUserAgent()) return;
+
 			gl.canvas.className = 'fixed inset-0 select-none pointer-events-none';
 
 			const nextRoot = document.getElementById('__next');
@@ -102,5 +105,5 @@ export function Background(): JSX.Element {
 
 	useUnmount(() => cancelAnimationFrame(animationId));
 
-	return <></>;
+	return null;
 }
