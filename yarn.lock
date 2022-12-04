@@ -627,6 +627,11 @@ core-js-pure@^3.25.1:
   resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.26.1.tgz#653f4d7130c427820dcecd3168b594e8bb095a33"
   integrity sha512-VVXcDpp/xJ21KdULRq/lXdLzQAtX7+37LzpyfFM973il0tWSsDEoyzG38G14AjTpK9VTfiNM9jnFauq/CpaWGQ==
 
+crawler-user-agents@^1.0.1:
+  version "1.0.100"
+  resolved "https://registry.yarnpkg.com/crawler-user-agents/-/crawler-user-agents-1.0.100.tgz#5724082f0dfcf4abdaa9c0a3ad3b5c2e1b414ae3"
+  integrity sha512-eZCn4DnMNLj3BEz3GHvnMtviN5LSeufSf+ewLT/OJc7mE059j51466yctBcMFhpowISw66OL1vEe7/gdpDfcPA==
+
 cross-spawn@^7.0.2:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-7.0.3.tgz#f73a85b9d5d41d045551c177e2882d4ac85728a6"
@@ -1455,6 +1460,13 @@ is-weakref@^1.0.2:
   integrity sha512-qctsuLZmIQ0+vSSMfoVvyFe2+GSEvnmZ2ezTup1SBse9+twCCeial6EEi3Nc2KFcf6+qz2FBPnjXsk8xhKSaPQ==
   dependencies:
     call-bind "^1.0.2"
+
+is-web-crawler@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/is-web-crawler/-/is-web-crawler-1.1.0.tgz#4bf0f1abc06326c543956890bc7f9be4888e0d48"
+  integrity sha512-qGbMU5NCwbcaTT9QH7BniwmilJuWM+LHMKwzPtt8U8Go4GwSN9GLsSPyTs6yYNbMBKsLKaAnEENx7QrXWy2K4w==
+  dependencies:
+    crawler-user-agents "^1.0.1"
 
 isexe@^2.0.0:
   version "2.0.0"

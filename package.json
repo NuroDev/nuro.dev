@@ -26,6 +26,7 @@
 		"cva": "npm:class-variance-authority@0.3.0",
 		"date-fns": "^2.29.3",
 		"envsafe": "^2.0.3",
+		"is-web-crawler": "^1.1.0",
 		"lucide-react": "^0.102.0",
 		"next": "^13.0.5",
 		"next-seo": "^5.14.1",
