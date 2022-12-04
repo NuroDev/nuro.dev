@@ -12,7 +12,7 @@ export default function HomePage(): JSX.Element {
 			<Background />
 			<main className="flex min-h-screen items-end justify-start px-8 py-32 sm:px-16 lg:px-32">
 				<div className="w-full max-w-md text-left sm:max-w-lg md:sm:max-w-2xl lg:sm:max-w-3xl">
-					<div className="mb-4 space-y-2 lg:mb-0">
+					<div className="mb-4 space-y-4 lg:mb-0">
 						<motion.h4
 							animate={{
 								opacity: [0, 1],
@@ -66,38 +66,9 @@ export default function HomePage(): JSX.Element {
 								</svg>
 							</div>
 						</motion.h1>
+
+						<Commander />
 					</div>
-
-					<Commander />
-
-					{/* <div className="mt-8 flex w-full flex-col items-center justify-start space-y-4 sm:mt-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-						{indexPageActions.map((action, index) => (
-							<motion.div
-								animate={{
-									opacity: [0, 1],
-									x: [-100, 0],
-								}}
-								className="w-full sm:w-auto"
-								key={index}
-								transition={{
-									...defaultTransition,
-									// delay: 0.1 * (index + 2) + 0.5,
-									delay: 0.75 - 0.1 * index,
-								}}>
-								<Button
-									as={Link}
-									// border={true}
-									href={action.href}
-									rel={action.external ? 'noopener noreferrer' : undefined}
-									size="lg"
-									target={action.external ? '_blank' : undefined}
-									variant="primary">
-									<Icon className="mr-2 inline-block" name={action.icon} />
-									<span>{action.label}</span>
-								</Button>
-							</motion.div>
-						))}
-					</div> */}
 				</div>
 			</main>
 		</BaseLayout>
