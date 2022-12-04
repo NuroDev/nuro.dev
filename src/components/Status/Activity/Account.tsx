@@ -33,7 +33,8 @@ export function AccountActivity(activity: AccountActivityProps): JSX.Element {
 					activity.description.map((description, descriptionIndex) => (
 						<p
 							className="mt-1 text-xs font-medium tracking-wide text-gray-500 dark:text-gray-400"
-							key={descriptionIndex}>
+							key={descriptionIndex}
+						>
 							{description}
 						</p>
 					))

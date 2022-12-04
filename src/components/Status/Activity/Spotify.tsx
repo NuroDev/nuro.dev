@@ -19,7 +19,8 @@ export function SpotifyActivity({
 			className="default-transition default-focus inline-flex items-center rounded-md"
 			href={href}
 			rel="noreferrer noopener"
-			target="_blank">
+			target="_blank"
+		>
 			<div className="pointer-events-none my-auto max-h-12 max-w-md select-none rounded ring-2 ring-gray-200 dark:ring-gray-500">
 				<Image
 					alt={avatar.alt}
@@ -39,7 +40,8 @@ export function SpotifyActivity({
 					description.map((description, descriptionIndex) => (
 						<p
 							className="mt-1 text-xs font-medium tracking-wide text-gray-500 dark:text-gray-400"
-							key={descriptionIndex}>
+							key={descriptionIndex}
+						>
 							{description}
 						</p>
 					))

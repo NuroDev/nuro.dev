@@ -100,7 +100,8 @@ export default function StatusPage(): JSX.Element | null {
 						transition={{
 							...defaultTransition,
 							delay: 0.3,
-						}}>
+						}}
+					>
 						{activities.map((activity, index) => {
 							const Divider = (): JSX.Element | null =>
 								index + 1 !== activities.length ? (
