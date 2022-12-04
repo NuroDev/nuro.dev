@@ -1,5 +1,7 @@
 import type { IconName } from '~/types/icon';
 
+export const personsName = 'Ben';
+
 export const indexPageActions: Array<{
 	external?: boolean;
 	href: string;
