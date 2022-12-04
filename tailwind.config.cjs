@@ -1,6 +1,5 @@
 // @ts-check
 
-const defaultColors = require('tailwindcss/colors');
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 const { colors } = require('./src/utils/colors')
@@ -19,6 +18,7 @@ module.exports = {
     require('@tailwindcss/forms'),
     require('@tailwindcss/line-clamp'),
     require('@tailwindcss/typography'),
+    require("tailwindcss-animate"),
   ],
   theme: {
     extend: {
