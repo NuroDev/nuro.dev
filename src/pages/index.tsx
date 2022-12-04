@@ -20,7 +20,14 @@ export default function HomePage(): JSX.Element {
 							transition={defaultTransition}
 						>
 							Hey{' '}
-							<span className="inline-block origin-70 hover:animate-wave">👋</span>
+							<span
+								className="inline-block origin-70 animate-wave"
+								style={{
+									animationDelay: '1.25s',
+								}}
+							>
+								👋
+							</span>
 						</motion.h4>
 
 						<motion.h1
