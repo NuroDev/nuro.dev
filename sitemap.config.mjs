@@ -11,7 +11,6 @@ const config = {
 	robotsTxtOptions: {
 		additionalSitemaps: [
 			`${protocol}://${domain}/sitemap.xml`,
-			`${protocol}://${domain}/server-sitemap.xml`,
 		],
 	},
 	siteUrl: `${protocol}://${domain}`,
