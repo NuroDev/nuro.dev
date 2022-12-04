@@ -68,6 +68,8 @@ export default function HomePage(): JSX.Element {
 						</motion.h1>
 					</div>
 
+					<Commander />
+
 					{/* <div className="mt-8 flex w-full flex-col items-center justify-start space-y-4 sm:mt-4 sm:flex-row sm:space-x-4 sm:space-y-0">
 						{indexPageActions.map((action, index) => (
 							<motion.div
