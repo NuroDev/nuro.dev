@@ -1,6 +1,12 @@
-const isProduction = process.env.NODE_ENV === 'production';
-const domain = isProduction ? 'nuro.dev' : 'localhost:3000';
-const protocol = isProduction ? 'https' : 'http';
+export function getCanonicalUrl() {
+	if (process.env.DOMAIN) return `https://${process.env.DOMAIN}`;
+
+	if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
+
+	if (process.env.VERCEL) return `https://${env.DOMAIN}`;
+
+	return `http://localhost:${process.env.PORT ?? 3000}`;
+}
 
 /**
  * @type {import('next-sitemap').IConfig}
