@@ -1,0 +1,34 @@
+import { referrals } from '~/data/referrals';
+
+import type { NextRequest } from 'next/server';
+
+import type { NextApiConfig } from '~/types/next';
+
+export const config: NextApiConfig = {
+	runtime: 'experimental-edge',
+};
+
+export default async function handler(req: NextRequest): Promise<Response> {
+	if (req.method !== 'GET')
+		return new Response(`Method ${req.method} Not Allowed`, {
+			status: 404,
+		});
+
+	const name = req.nextUrl.searchParams.get('name');
+	if (!name) return Response.redirect('/referrals');
+
+	const selectedReferral = referrals.find((referral) => {
+		if (referral.name.toLowerCase() === name.toLowerCase()) return referral;
+
+		if (referral.aliases)
+			return referral.aliases.find((alias) => alias.toLowerCase() === name.toLowerCase());
+
+		return undefined;
+	});
+	if (!selectedReferral)
+		return new Response(`No referral found for '${name}'`, {
+			status: 404,
+		});
+
+	return Response.redirect(selectedReferral.url);
+}

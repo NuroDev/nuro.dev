@@ -26,6 +26,12 @@ const config = defineNextConfig({
     ],
   },
   reactStrictMode: true,
+  rewrites: async () => [
+    {
+      source: '/referrals/:path*',
+      destination: '/api/refer/:path*',
+    },
+  ],
   swcMinify: true,
   webpack: (config) => {
     config.module.rules.push({
