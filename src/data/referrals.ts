@@ -1,16 +1,6 @@
-import type { IconName } from '~/types/icon';
+import type { Referral } from '~/types/data';
 
-export const referrals: Array<{
-	aliases?: Array<string>;
-	bonus?: string;
-	code?: string;
-	color?: string;
-	description: string;
-	homepage: string;
-	icon: IconName;
-	name: string;
-	url: string;
-}> = [
+export const referrals: Array<Referral> = [
 	{
 		aliases: ['uptime', 'status'],
 		code: '7p8z',

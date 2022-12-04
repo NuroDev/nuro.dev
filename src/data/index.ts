@@ -1,13 +1,8 @@
-import type { IconName } from '~/types/icon';
+import type { PageAction } from '~/types/data';
 
-export const personsName = 'Ben';
+export const name = 'Ben';
 
-export const indexPageActions: Array<{
-	external?: boolean;
-	href: string;
-	icon: IconName;
-	label: string;
-}> = [
+export const actions: Array<PageAction> = [
 	{
 		href: '/blog',
 		icon: 'Edit3',

@@ -1,15 +1,6 @@
-import type { IconName } from '~/types/icon';
+import type { Timeline } from '~/types/data';
 
-export const timeline: Array<{
-	date: Date | string;
-	description?: string;
-	icon: IconName;
-	link?: {
-		text: string;
-		url: string;
-	};
-	title: string;
-}> = [
+export const timeline: Array<Timeline> = [
 	{
 		date: '03-14-2022',
 		title: 'Started @ Wander',

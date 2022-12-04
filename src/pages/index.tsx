@@ -3,7 +3,7 @@ import { motion } from '@motionone/react';
 import { Background } from '~/components/Background';
 import { BaseLayout } from '~/layouts/Base.layout';
 import { defaultTransition } from '~/utils/animate';
-import { personsName } from '~/data';
+import { name as personName } from '~/data';
 
 export default function HomePage(): JSX.Element {
 	return (
@@ -39,7 +39,7 @@ export default function HomePage(): JSX.Element {
 								...defaultTransition,
 								delay: 0.25,
 							}}>
-							<span className="z-20">I&apos;m {personsName}</span>
+							<span className="z-20">I&apos;m {personName}</span>
 
 							<motion.div
 								animate={{
