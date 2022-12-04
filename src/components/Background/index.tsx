@@ -3,9 +3,7 @@ import { isCrawlerUserAgent } from 'is-web-crawler';
 import { useMount, useUnmount } from 'react-use';
 import { useState } from 'react';
 
-// @ts-expect-error GLSL Shaders don't have type declarations
 import VertexShader from './vertex.glsl';
-// @ts-expect-error GLSL Shaders don't have type declarations
 import FragmentShader from './fragment.glsl';
 import { colors } from '~/utils/colors';
 
