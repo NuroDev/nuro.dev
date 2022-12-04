@@ -3,7 +3,7 @@ import { motion } from '@motionone/react';
 import { Background } from '~/components/Background';
 import { BaseLayout } from '~/layouts/Base.layout';
 import { defaultTransition } from '~/utils/animate';
-import { personsName } from '~/data/pages/index';
+import { personsName } from '~/data';
 
 export default function HomePage(): JSX.Element {
 	return (
