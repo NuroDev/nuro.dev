@@ -23,7 +23,7 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        dash: 'dash 2s forwards ease-in-out',
+        dash: 'dash 2s forwards ease-in-out 0.5s',
         wave: 'wave 2.25s ease-in-out infinite',
       },
       colors,

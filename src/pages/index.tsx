@@ -41,19 +41,8 @@ export default function HomePage(): JSX.Element {
 							}}>
 							<span className="z-20">I&apos;m {personName}</span>
 
-							<motion.div
-								animate={{
-									opacity: [0, 1],
-									x: [-100, 0],
-								}}
-								className="z-10 -mt-8 h-[0.58em] w-full"
-								transition={{
-									...defaultTransition,
-									delay: 0.5,
-								}}>
+							<div className="z-10 -mt-8 h-[0.58em] w-full">
 								<svg
-									// height="47"
-									// width="418"
 									aria-hidden={true}
 									fill="none"
 									preserveAspectRatio="none"
@@ -65,13 +54,12 @@ export default function HomePage(): JSX.Element {
 										strokeLinecap="round"
 										strokeWidth="4"
 										style={{
-											animationDelay: '0.5s',
-											strokeDasharray: 1000,
-											strokeDashoffset: 1000,
+											strokeDasharray: 800,
+											strokeDashoffset: 800,
 										}}
 									/>
 								</svg>
-							</motion.div>
+							</div>
 						</motion.h1>
 					</div>
 
