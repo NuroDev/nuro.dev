@@ -15,7 +15,10 @@ export default function Document(): JSX.Element {
 
 				{/* OpenGraph */}
 				<meta property="og:description" content={defaultSeo.description} />
-				<meta property="og:image:alt" content={defaultSeo.openGraph.siteName} />
+				<meta
+					property="og:image:alt"
+					content={`Opengraph banner image for ${canonicalUrl}`}
+				/>
 				<meta property="og:image:height" content="1064" />
 				<meta property="og:image:width" content="1926" />
 				<meta property="og:image" content={`${canonicalUrl}/banner.png`} />
