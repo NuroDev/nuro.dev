@@ -37,6 +37,7 @@ export function Background(): null {
 		try {
 			if (isCrawlerUserAgent()) return;
 
+			gl.canvas.id = 'background';
 			gl.canvas.className = 'fixed inset-0 select-none pointer-events-none';
 
 			const nextRoot = document.getElementById('__next');
@@ -104,7 +105,11 @@ export function Background(): null {
 		setAnimationId(requestAnimationFrame(update));
 	});
 
-	useUnmount(() => cancelAnimationFrame(animationId));
+	useUnmount(() => {
+		const existingBackgroundElement = document.getElementById('background');
+		if (existingBackgroundElement) existingBackgroundElement.remove();
+		cancelAnimationFrame(animationId);
+	});
 
 	return null;
 }
