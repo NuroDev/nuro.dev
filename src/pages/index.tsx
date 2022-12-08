@@ -4,7 +4,7 @@ import { Background } from '~/components/Background';
 import { BaseLayout } from '~/layouts/Base.layout';
 import { Commander } from '~/components/Commander';
 import { defaultTransition } from '~/utils/animate';
-import { name as personName } from '~/data';
+import { profile } from '~/data/profile';
 import { StatusPill } from '~/components/Status/Pill';
 
 export default function HomePage(): JSX.Element {
