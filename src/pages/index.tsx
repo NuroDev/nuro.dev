@@ -13,23 +13,25 @@ export default function HomePage(): JSX.Element {
 	return (
 		<BaseLayout>
 			<Background />
-			<main className="flex min-h-screen items-end justify-start px-8 py-32 sm:px-16 lg:px-32">
+			<main className="flex min-h-screen items-end justify-start px-8 pt-32 pb-8 sm:px-16 sm:pb-32 lg:px-32">
 				<div className="w-full max-w-md text-left sm:max-w-lg md:sm:max-w-2xl lg:sm:max-w-3xl">
 					<div className="mb-4 space-y-4 lg:mb-0">
-						<div className="w-full max-w-md sm:inline-flex sm:items-center sm:justify-between sm:space-x-2">
+						<div className="inline-flex w-full max-w-md items-center justify-between space-x-2">
 							<motion.h4
 								animate={{
 									opacity: [0, 1],
 									x: [-100, 0],
 								}}
 								className="text-lg font-extrabold tracking-tight text-gray-700 dark:text-white sm:text-xl lg:text-2xl"
-								transition={defaultTransition}>
+								transition={defaultTransition}
+							>
 								Hey{' '}
 								<span
 									className="inline-block origin-70 animate-wave"
 									style={{
 										animationDelay: '1.25s',
-									}}>
+									}}
+								>
 									👋
 								</span>
 							</motion.h4>
@@ -42,14 +44,13 @@ export default function HomePage(): JSX.Element {
 								opacity: [0, 1],
 								x: [-100, 0],
 							}}
-							className="flex max-w-md flex-col text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-6xl lg:text-9xl"
+							className="flex max-w-md flex-col text-7xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-8xl lg:text-9xl"
 							transition={{
 								...defaultTransition,
 								delay: 0.25,
-							}}>
-							<span className="z-20 w-full whitespace-nowrap">
-								I&apos;m {profile.name}
-							</span>
+							}}
+						>
+							<span className="z-20 w-full">I&apos;m {profile.name}</span>
 
 							<div className="z-10 -mt-4 h-[0.58em] w-full max-w-[12rem] lg:-mt-8 lg:max-w-none">
 								<svg
@@ -57,7 +58,8 @@ export default function HomePage(): JSX.Element {
 									fill="none"
 									preserveAspectRatio="none"
 									viewBox="0 0 418 47"
-									xmlns="http://www.w3.org/2000/svg">
+									xmlns="http://www.w3.org/2000/svg"
+								>
 									<path
 										className="animate-dash stroke-primary-600"
 										d="M3.5 31C55.6044 18.119 84.5636 11.5337 138 6.5C159.039 4.51809 171.907 3.1994 193 4.5C214.093 5.8006 219 7.49999 220.5 8.5C222 9.5 219.5 14 193 23C180.691 27.1805 171.402 30.6059 164.984 33.0756C162.88 33.8851 163.543 36.7752 165.792 36.6131C182.78 35.3884 214.61 33.2961 237.5 33C268.164 32.6033 285.373 33.4573 316 35C354.35 36.9317 414 43 414 43"
@@ -73,7 +75,7 @@ export default function HomePage(): JSX.Element {
 						</motion.h1>
 
 						{profile.links && (
-							<div className="mt-8 flex w-full flex-col items-center justify-start space-y-4 sm:mt-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+							<div className="mt-8 flex w-full flex-col items-center justify-start space-y-6 sm:mt-4 sm:flex-row sm:space-x-4 sm:space-y-0">
 								{profile.links.map((link, index) => (
 									<motion.div
 										animate={{
@@ -86,16 +88,19 @@ export default function HomePage(): JSX.Element {
 											...defaultTransition,
 											delay: 0.1 * (index + 2) + 0.5, // LTR
 											// delay: 0.75 - 0.1 * index, // RTL
-										}}>
+										}}
+									>
 										<Button
+											key={index}
 											as={Link}
-											className="font-semibold tracking-wide"
+											className="inline-flex w-full items-center justify-center font-semibold tracking-wide sm:inline-block sm:w-auto"
 											border={true}
 											href={link.href}
 											rel={link.external ? 'noopener noreferrer' : undefined}
 											size="lg"
 											target={link.external ? '_blank' : undefined}
-											variant="primary">
+											variant="primary"
+										>
 											<Icon className="mr-2 inline-block" name={link.icon} />
 											<span>{link.label}</span>
 										</Button>

@@ -1,6 +1,7 @@
+import Link from 'next/link';
+
 import { StatusIndicator } from './Indicator';
 import { useStatus } from '~/hooks/status.hook';
-import Link from 'next/link';
 
 export function StatusPill(): JSX.Element | null {
 	const status = useStatus();
