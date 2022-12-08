@@ -48,7 +48,9 @@ export default function HomePage(): JSX.Element {
 								delay: 0.25,
 							}}
 						>
-							<span className="z-20">I&apos;m {personName}</span>
+							<span className="z-20 w-full whitespace-nowrap">
+								I&apos;m {profile.name}
+							</span>
 
 							<div className="z-10 -mt-4 h-[0.58em] w-full max-w-[12rem] lg:-mt-8 lg:max-w-none">
 								<svg

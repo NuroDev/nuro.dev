@@ -11,7 +11,14 @@ interface ColorTheme {
 	900: string;
 }
 
+export interface ThemePalette {
+	gray: ColorTheme;
+	primary: ColorTheme;
+	[key: string]: ColorTheme;
+}
+
 export declare const colors: {
 	gray: ColorTheme;
 	primary: ColorTheme;
+	[key: string]: ColorTheme;
 };

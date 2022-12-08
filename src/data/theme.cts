@@ -1,6 +1,5 @@
-// Note: Not using `.ts` as this is used by Tailwind CSS config
+// Note: Having to use CJS / CTS for this because Tailwind (still) doesn't support ESM 🙄
 const colors = {
-	// ...defaultColors,
 	gray: {
 		50: '#f9fafb',
 		100: '#eaeaeb',

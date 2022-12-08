@@ -30,7 +30,7 @@ export interface Seo extends Pick<NextSeoProps, 'title' | 'titleTemplate' | 'des
 	twitter: Pick<Twitter, 'cardType' | 'handle' | 'site'>;
 }
 
-export interface Timeline {
+export interface TimelineEvent {
 	date: Date | `${number}-${number}-${number}`;
 	description?: string;
 	icon: IconName;
@@ -39,4 +39,83 @@ export interface Timeline {
 		url: string;
 	};
 	title: string;
+}
+
+export interface Profile {
+	/**
+	 * Alias
+	 *
+	 * @description An alias or "short name" you prefer to go by.
+	 *
+	 * This is primarily used for the page title suffix.
+	 *
+	 * @example `nuro` would make the page title `developer ─ nuro`
+	 */
+	alias: string;
+	/**
+	 * Bio
+	 *
+	 * @description A short description of yourself used for HTML & OpenGraph description data
+	 */
+	bio: string;
+	/**
+	 * Discord ID
+	 *
+	 * @description Your Discord account ID
+	 *
+	 * @see https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-
+	 *
+	 * If no ID is provided, the status page & all status logic is disabled
+	 */
+	discordAccountId?: string;
+	/**
+	 * Domain
+	 *
+	 * @description The domain you intend to use for your website.
+	 *
+	 * @default `process.env.VERCEL_URL`
+	 */
+	domain?: string;
+	/**
+	 * Handle
+	 *
+	 * @description Twitter handle
+	 */
+	handle?: `@${string}`;
+	/**
+	 * Name
+	 *
+	 * @description Your personal name or name you want to show on the home page
+	 */
+	name: string;
+	/**
+	 * Projects
+	 *
+	 * @description A list of projects you want to show on the projects page
+	 *
+	 * If none are provided, a link to the page will not be generate & instead it will be redirected to the homepage
+	 *
+	 * @TODO Unimplemented
+	 */
+	projects?: Array<Project>;
+	/**
+	 * Referrals
+	 *
+	 * @description A list of referral links you want to show on the referrals page
+	 *
+	 * If none are provided, a link to the page will not be generate & instead it will be redirected to the homepage
+	 *
+	 * @TODO Unimplemented
+	 */
+	referrals?: Array<Referral>;
+	/**
+	 * Timeline
+	 *
+	 * @description A list of events you want to show on the timeline page
+	 *
+	 * If none are provided, a link to the page will not be generate & instead it will be redirected to the homepage
+	 *
+	 * @TODO Unimplemented
+	 */
+	timeline?: Array<TimelineEvent>;
 }

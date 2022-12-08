@@ -5,7 +5,10 @@ import { useState } from 'react';
 
 import VertexShader from './vertex.glsl';
 import FragmentShader from './fragment.glsl';
-import { colors } from '~/utils/colors';
+// @ts-expect-error CJS export because Tailwind doesn't support ESM
+import { colors } from '~/data/theme.cts';
+
+import type { ThemePalettes } from '~/types/theme';
 
 export function Background(): null {
 	const [animationId, setAnimationId] = useState<number>(1);
@@ -74,7 +77,7 @@ export function Background(): null {
 					value: 0,
 				},
 				uColor: {
-					value: new Color(colors.primary?.[500]),
+					value: new Color((colors as ThemePalettes).primary?.[500]),
 				},
 			},
 			transparent: true,

@@ -4,7 +4,7 @@ import { ThemeProvider } from 'next-themes';
 import { useEvent } from 'react-use';
 import { useSound } from 'use-sound';
 
-import { Theme } from '~/types/theme';
+import { ColorScheme } from '~/types/theme';
 
 import '~/styles/globals.css';
 
@@ -25,7 +25,11 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
 	useEvent('mouseup', playClickSound);
 
 	return (
-		<ThemeProvider attribute="class" defaultTheme={Theme.SYSTEM} themes={Object.values(Theme)}>
+		<ThemeProvider
+			attribute="class"
+			defaultTheme={ColorScheme.SYSTEM}
+			themes={Object.values(ColorScheme)}
+		>
 			<Analytics />
 			<div className={cn(fontSans.variable, 'font-sans')}>
 				<Component {...pageProps} />

@@ -1,9 +1,11 @@
 import dynamic from 'next/dynamic';
 import { Fragment } from 'react';
+import { motion } from '@motionone/react';
 
 import { ActivityType } from '~/types/lanyard';
 import { Background } from '~/components/Background';
 import { BaseLayout } from '~/layouts/Base.layout';
+import { defaultTransition } from '~/utils/animate';
 import { Icon } from '~/components/Icon';
 import { useStatus } from '~/hooks/status.hook';
 
@@ -89,7 +91,17 @@ export default function StatusPage(): JSX.Element | null {
 			<Background />
 			<main className="flex min-h-screen flex-grow pt-16 pb-12">
 				<div className="mx-auto flex w-full max-w-sm flex-grow flex-col justify-center px-0 sm:max-w-lg sm:px-16">
-					<div className="default-transition mx-auto flex w-full max-w-sm flex-col space-y-5 rounded-lg border-2 border-gray-200 bg-white/50 px-4 py-4 backdrop-blur-sm backdrop-filter animate-in delay-300 hover:shadow-lg motion-safe:slide-in-from-bottom dark:border-gray-600 dark:bg-gray-900/50">
+					<motion.div
+						animate={{
+							opacity: [0, 1],
+							y: [100, 0],
+						}}
+						className="default-transition mx-auto flex w-full max-w-sm flex-col space-y-5 rounded-lg border-2 border-gray-200 bg-white/50 px-4 py-4 backdrop-blur-sm backdrop-filter animate-in delay-300 hover:shadow-lg motion-safe:slide-in-from-bottom dark:border-gray-600 dark:bg-gray-900/50"
+						transition={{
+							...defaultTransition,
+							delay: 0.3,
+						}}
+					>
 						{activities.map((activity, index) => {
 							const Divider = (): JSX.Element | null =>
 								index + 1 !== activities.length ? (
@@ -172,7 +184,7 @@ export default function StatusPage(): JSX.Element | null {
 									return null;
 							}
 						})}
-					</div>
+					</motion.div>
 				</div>
 			</main>
 		</BaseLayout>

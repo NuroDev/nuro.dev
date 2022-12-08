@@ -1,20 +1,31 @@
 import { useLanyard } from 'react-use-lanyard';
 
-import { clientEnv } from '~/env/client';
 import { DISCORD_STATUS_COLOR } from '~/types/lanyard';
+import { env } from '~/env';
+import { profile } from '~/data/profile';
 
 import type { LanyardData } from 'react-use-lanyard';
 
 import type { DiscordStatusColor } from '~/types/lanyard';
 
+/**
+ * Use Status
+ *
+ * @description A small wrapper around `react-use-lanyard`'s `useLanyard` hook to provide a color based on the user's Discord status
+ */
 export function useStatus(): {
 	color: DiscordStatusColor | null;
 	loading: boolean;
 	websocket?: WebSocket;
 	status: LanyardData | undefined;
 } {
+	if (!profile.discordAccountId && env.NODE_ENV !== 'production')
+		console.warn(
+			'No Discord ID provided. Add one to `data/profile.ts` to enable status functionality.',
+		);
+
 	const { loading, status, ...rest } = useLanyard({
-		userId: clientEnv.NEXT_PUBLIC_DISCORD_ID,
+		userId: profile.discordAccountId || 'UNKNOWN',
 		socket: true,
 	});
 
