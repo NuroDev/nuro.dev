@@ -49,6 +49,16 @@ npm run build
 yarn build
 ```
 
+## ✍ Customize!
+
+Update files in [`src/data`](/src/data) to get started adding your own information.
+
+Types for each are found in [`src/types`](/src/types).   
+All the profile information can be customized from [`src/data/profile.json`](src/data/profile.json).   
+Project post correlation are in [`src/data/projects.json`](src/data/projects.json).   
+Referrals are in [`src/data/referrals.json`](src/data/referrals.json).   
+Your personal timeline are found in [`src/data/timeline.json`](src/data/timeline.json).
+
 ## 📄 License
 
 MIT © [Ben Dixon](https://github.com/nurodev/nuro.dev/blob/main/LICENSE)

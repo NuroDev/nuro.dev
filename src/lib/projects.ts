@@ -2,18 +2,11 @@ import emojiRegex from 'emoji-regex';
 import { log } from 'next-axiom';
 
 import type { GitHubRepos, Project, ProjectPost } from '~/types';
+import { projectSrcs } from '~/data/profile.json';
+import { ProjectSrc } from '~/types/profile';
 
-/**
- * Fetch Projects
- *
- * Make a GET request to the GitHub API to gather all repositories
- * under my `nurodev` username & then filter them down to only
- * include those that contain the `portfolio` topic
- *
- * @TODO Switch to v3 API using GraphQL to save over-fetching
- */
-export async function fetchProjects(): Promise<Array<Project> | null> {
-	const response = await fetch('https://api.github.com/users/nurodev/repos', {
+const fetchRepos = async ({ slug, type, ignore }: ProjectSrc): Promise<GitHubRepos> => {
+	const response = await fetch(`https://api.github.com/${type}/${slug}/repos`, {
 		headers: {
 			...(process.env.GITHUB_PAT && {
 				authorization: `token ${process.env.GITHUB_PAT}`,
@@ -34,19 +27,40 @@ export async function fetchProjects(): Promise<Array<Project> | null> {
 		return null;
 	}
 
-	const json = (await response.json()) as GitHubRepos;
+	const repos = await response.json() as GitHubRepos;
+
+	return repos.filter((repo) => {
+		return !ignore.includes(repo.name);
+	});
+}
+
+/**
+ * Fetch Projects
+ *
+ * Make a GET request to the GitHub API to gather all repositories
+ * under my `nurodev` username & then filter them down to only
+ * include those that contain the `portfolio` topic
+ *
+ * @TODO Switch to v3 API using GraphQL to save over-fetching
+ */
+export async function fetchProjects(): Promise<Array<Project> | null> {
+	const projects = [];
+	for (const source of projectSrcs as Array<ProjectSrc>) {
+		projects.push(...(await fetchRepos(source)));
+	}
 
 	const { default: rawProjectPosts } = await import('~/data/projects.json');
 	const projectPosts = rawProjectPosts as Array<ProjectPost>;
 
-	const projects: Array<Project> = json
+	return projects
 		.map((repo) => {
 			if (!repo.topics.includes('portfolio')) return null;
 
 			if (repo.archived) return null;
+			if (repo.fork) return null;
 
 			// Strip the emoji suffix from the repo description
-			const trimmedDescription = repo.description.split(' ');
+			const trimmedDescription = (repo.description || '').split(' ');
 			trimmedDescription.shift();
 			const description = trimmedDescription.join(' ');
 
@@ -74,6 +88,4 @@ export async function fetchProjects(): Promise<Array<Project> | null> {
 			} as Project;
 		})
 		.filter((project) => project !== null);
-
-	return projects;
 }

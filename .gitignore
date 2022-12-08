@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# Use Yarn!
+package-lock.json
+
 # testing
 /coverage
 
@@ -45,3 +48,7 @@ yarn-error.log*
 
 # Vercel
 .vercel
+
+# JetBrains
+.idea/
+.fleet/

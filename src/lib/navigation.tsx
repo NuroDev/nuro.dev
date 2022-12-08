@@ -7,6 +7,11 @@ import { NavigationItemType, Theme } from '~/types';
 
 import type { NavigationItem, NavigationItems } from '~/types';
 
+import profile from '~/data/profile.json';
+import type { Profile } from '~/types/profile';
+
+const { social, pagesIgnore } = profile as unknown as Profile;
+
 const staticMenuItems: Array<Array<NavigationItem>> = [
 	[
 		{
@@ -39,23 +44,23 @@ const staticMenuItems: Array<Array<NavigationItem>> = [
 			text: 'Referrals',
 			href: '/referrals',
 		},
-	],
+	].filter(e => !pagesIgnore.includes(e.href)),
 	[
-		{
+		social.twitter && {
 			type: NavigationItemType.LINK,
 			icon: 'feather:twitter',
 			text: 'Twitter',
-			href: 'https://twitter.com/nurodev',
+			href: `https://twitter.com/${social.twitter}`,
 			external: true,
 		},
-		{
+		social.github && {
 			type: NavigationItemType.LINK,
 			icon: 'feather:github',
 			text: 'GitHub',
-			href: 'https://github.com/nurodev',
+			href: `https://github.com/${social.github}`,
 			external: true,
 		},
-	],
+	].filter(e => e),
 ];
 
 export function useNavigation(): {
