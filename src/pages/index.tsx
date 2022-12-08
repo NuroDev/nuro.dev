@@ -2,7 +2,6 @@ import { motion } from '@motionone/react';
 
 import { Background } from '~/components/Background';
 import { BaseLayout } from '~/layouts/Base.layout';
-import { Commander } from '~/components/Commander';
 import { defaultTransition } from '~/utils/animate';
 import { profile } from '~/data/profile';
 import { StatusPill } from '~/components/Status/Pill';
@@ -74,7 +73,6 @@ export default function HomePage(): JSX.Element {
 							</div>
 						</motion.h1>
 
-						<Commander />
 					</div>
 				</div>
 			</main>
