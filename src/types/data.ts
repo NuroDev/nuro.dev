@@ -3,7 +3,7 @@ import type { OpenGraph, Twitter } from 'next-seo/lib/types';
 
 import type { IconName } from './icon';
 
-export interface PageAction {
+export interface HomepageLink {
 	external?: boolean;
 	href: string;
 	icon: IconName;
@@ -74,6 +74,12 @@ export interface Profile {
 	 * @description Twitter handle
 	 */
 	handle?: `@${string}`;
+	/**
+	 * Links
+	 *
+	 * @description A list of links you want to show on the home page
+	 */
+	links?: Array<HomepageLink>;
 	/**
 	 * Name
 	 *

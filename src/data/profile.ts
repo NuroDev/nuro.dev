@@ -1,4 +1,4 @@
-import type { Profile, Referral, TimelineEvent } from '~/types/data';
+import type { HomepageLink, Profile, Referral, TimelineEvent } from '~/types/data';
 
 const referrals: Array<Referral> = [
 	{
@@ -286,11 +286,31 @@ const timeline: Array<TimelineEvent> = [
 	},
 ];
 
+const links: Array<HomepageLink> = [
+	{
+		href: '/blog',
+		icon: 'Edit3',
+		label: 'Blog',
+	},
+	{
+		href: '/projects',
+		icon: 'Copy',
+		label: 'Projects',
+	},
+	{
+		external: true,
+		href: 'https://github.com/nurodev',
+		icon: 'Github',
+		label: 'GitHub',
+	},
+];
+
 export const profile: Profile = {
 	alias: 'nuro',
 	bio: "Hey 👋 I'm Ben, a developer",
 	discordAccountId: '84300695947218944',
 	handle: '@nurodev',
+	links,
 	name: 'Ben',
 	referrals,
 	timeline,
