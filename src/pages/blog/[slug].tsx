@@ -9,6 +9,10 @@ import type { GetStaticPaths, GetStaticProps } from 'next';
 import type { ParsedUrlQuery } from 'querystring';
 import type { Post } from '~/types';
 
+import profile from '~/data/profile.json';
+import type { Profile } from '~/types/profile';
+const { alias } = profile as unknown as Profile;
+
 interface PathProps extends ParsedUrlQuery {
 	slug: string;
 }
@@ -48,7 +52,7 @@ export default function BlogPost({ post }: BlogPostProps): JSX.Element {
 		<>
 			<Layout.Blog
 				seo={{
-					title: `${post.frontmatter.title} ─ blog ─ nuro`,
+					title: `${post.frontmatter.title} ─ blog ─ ${alias}`,
 					description: post.frontmatter.description ?? undefined,
 					openGraph: {
 						title: post.frontmatter.title,

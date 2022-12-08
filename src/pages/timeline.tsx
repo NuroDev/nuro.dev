@@ -8,6 +8,10 @@ import type { GetStaticProps } from 'next';
 
 import type { Timeline, TimelineEvent } from '~/types';
 
+import profile from '~/data/profile.json';
+import type { Profile } from '~/types/profile';
+const { alias } = profile as unknown as Profile;
+
 interface TimelineProps {
 	timeline?: Timeline;
 }
@@ -33,7 +37,7 @@ export default function TimelinePage({ timeline: rawTimeline }: TimelineProps): 
 	}));
 
 	return (
-		<Layout.Default seo={{ title: 'nuro ─ timeline' }}>
+		<Layout.Default seo={{ title: `${alias} ─ timeline` }}>
 			<div className="flex flex-grow min-h-screen pt-16 pb-12">
 				<div className="flex-grow flex flex-col justify-center max-w-sm sm:max-w-2xl w-full mx-auto px-0 sm:px-16">
 					<ul className="-mb-8" role="list">

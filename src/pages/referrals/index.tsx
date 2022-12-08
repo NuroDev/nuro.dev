@@ -16,6 +16,10 @@ import type { GetStaticProps } from 'next';
 
 import type { Referrals } from '~/types';
 
+import profile from '~/data/profile.json';
+import type { Profile } from '~/types/profile';
+const { alias } = profile as unknown as Profile;
+
 interface ReferralsProps {
 	referrals?: Referrals;
 }
@@ -55,7 +59,7 @@ export default function ReferralsPage({ referrals }: ReferralsProps): JSX.Elemen
 	}, [prefersDarkColorScheme, theme]);
 
 	return (
-		<Layout.Default seo={{ title: 'nuro ─ referrals' }}>
+		<Layout.Default seo={{ title: `${alias} ─ referrals` }}>
 			<Toaster
 				toastOptions={{
 					position: 'bottom-right',

@@ -9,6 +9,11 @@ import { Layout } from '~/layouts';
 import type { EventProps } from '~/components/Event.component';
 import type { NavigationItem } from '~/types';
 
+import profile from '~/data/profile.json';
+import type { Profile } from '~/types/profile';
+
+const { birthday: bday, role, name, bio, pagesIgnore, social } = profile as unknown as Profile;
+
 const Event = dynamic<EventProps>(
 	() => import('~/components/Event.component').then(({ Event }) => Event),
 	{
@@ -29,23 +34,23 @@ const ACTIONS: Array<NavigationItem> = [
 		icon: <Icon className="mr-3" icon="feather:copy" />,
 		text: 'Projects',
 	},
-	{
+	social.github && {
 		type: NavigationItemType.LINK,
 		external: true,
-		href: 'https://github.com/nurodev',
+		href: `https://github.com/${social.github}`,
 		icon: <Icon className="mr-3" icon="feather:github" />,
 		text: 'GitHub',
 	},
-];
+].filter(e => e && !pagesIgnore.includes(e.href));
 
 export default function HomePage(): JSX.Element {
 	const today = new Date();
-	const birthday = new Date('1997-08-09');
+	const birthday = new Date(bday);
 	const age = differenceInYears(today, birthday);
 	const isBirthday =
 		today.getDate() === birthday.getDate() && today.getMonth() === birthday.getMonth();
 
-	const description = `I am a ${age} year old software engineer & games developer`;
+	const description = `I am a ${age} year old ${bio}`;
 
 	return (
 		<Layout.Default>
@@ -60,8 +65,8 @@ export default function HomePage(): JSX.Element {
 						}}
 						className="text-gray-500 dark:text-white text-5xl sm:text-6xl md:text-6xl lg:text-8xl tracking-tight font-extrabold">
 						Hey <span className="inline-block origin-70 hover:(animate-wave)">👋</span>{' '}
-						I&apos;m Ben, <br className="hidden sm:block" />a{' '}
-						<Pill.Standard className="mt-4">developer</Pill.Standard>
+						I&apos;m {name}, <br className="hidden sm:block" />a{' '}
+						<Pill.Standard className="mt-4">{role}</Pill.Standard>
 					</Animate>
 
 					<Animate
