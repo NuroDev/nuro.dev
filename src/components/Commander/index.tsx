@@ -1,8 +1,10 @@
 import { Combobox, Dialog, Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
+import { motion } from '@motionone/react';
 import { useMount, useUnmount } from 'react-use';
 
 import { cn } from '~/utils/cn';
+import { defaultTransition } from '~/utils/animate';
 import { Icon } from '~/components/Icon';
 
 const people = [
@@ -32,8 +34,18 @@ export function Commander(): JSX.Element {
 
 	return (
 		<>
-			<div className="animate-in slide-in-from-left duration-1000">
+			<motion.div
+				animate={{
+					opacity: [0, 1],
+					y: [100, 0],
+				}}
+				transition={{
+					...defaultTransition,
+					delay: 0.5,
+				}}
+			>
 				<button
+					// className="flex w-full max-w-md items-center justify-between !text-gray-500 hover:!text-white"
 					className="default-transition default-focus flex w-full max-w-md items-center justify-between rounded-lg border-2 border-gray-100/50 bg-gray-100/25 px-4 py-2 backdrop-blur-md dark:border-gray-800 dark:bg-gray-900/25 dark:hover:border-gray-700 dark:hover:bg-gray-700/50"
 					onClick={(): void => setOpen(true)}
 					type="button"
@@ -44,7 +56,7 @@ export function Commander(): JSX.Element {
 					</div>
 					<span>⌘K</span>
 				</button>
-			</div>
+			</motion.div>
 
 			<Transition.Root
 				afterLeave={(): void => setQuery('')}
