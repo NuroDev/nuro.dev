@@ -290,7 +290,6 @@ export const profile: Profile = {
 	alias: 'nuro',
 	bio: "Hey 👋 I'm Ben, a developer",
 	discordAccountId: '84300695947218944',
-	domain: 'nuro.dev',
 	handle: '@nurodev',
 	name: 'Ben',
 	referrals,

@@ -1,3 +1,4 @@
+import { env } from '~/env';
 import { profile } from './profile';
 
 import type { Seo } from '~/types/data';
@@ -8,7 +9,7 @@ export const defaultSeo: Seo = {
 	description: profile.bio,
 	openGraph: {
 		title: `developer ─ ${profile.alias}`,
-		siteName: profile.domain || process.env.VERCEL_URL,
+		siteName: env.DOMAIN,
 	},
 	twitter: {
 		cardType: 'summary_large_image',

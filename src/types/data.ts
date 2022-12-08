@@ -69,14 +69,6 @@ export interface Profile {
 	 */
 	discordAccountId?: string;
 	/**
-	 * Domain
-	 *
-	 * @description The domain you intend to use for your website.
-	 *
-	 * @default `process.env.VERCEL_URL`
-	 */
-	domain?: string;
-	/**
 	 * Handle
 	 *
 	 * @description Twitter handle

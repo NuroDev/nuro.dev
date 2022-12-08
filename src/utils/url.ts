@@ -1,7 +1,7 @@
-import { profile } from '~/data/profile';
+import { env } from '~/env';
 
 export function getCanonicalUrl(): string {
-	if (profile.domain) return `https://${profile.domain}`;
+	if (env.DOMAIN) return `https://${env.DOMAIN}`;
 
 	if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
 
