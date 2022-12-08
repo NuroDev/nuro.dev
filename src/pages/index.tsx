@@ -1,8 +1,12 @@
+import Link from 'next/link';
 import { motion } from '@motionone/react';
 
+import { actions } from '~/data';
 import { Background } from '~/components/Background';
 import { BaseLayout } from '~/layouts/Base.layout';
+import { Button } from '~/components/Button';
 import { defaultTransition } from '~/utils/animate';
+import { Icon } from '~/components/Icon';
 import { profile } from '~/data/profile';
 import { StatusPill } from '~/components/Status/Pill';
 
@@ -73,6 +77,37 @@ export default function HomePage(): JSX.Element {
 							</div>
 						</motion.h1>
 
+						<div className="mt-8 flex w-full flex-col items-center justify-start space-y-4 sm:mt-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+							{actions.map((action, index) => (
+								<motion.div
+									animate={{
+										opacity: [0, 1],
+										y: [100, 0],
+									}}
+									className="w-full sm:w-auto"
+									key={index}
+									transition={{
+										...defaultTransition,
+										// delay: 0.1 * (index + 2) + 0.5,
+										delay: 0.75 - 0.1 * index,
+									}}
+								>
+									<Button
+										as={Link}
+										className="font-semibold tracking-wide"
+										border={true}
+										href={action.href}
+										rel={action.external ? 'noopener noreferrer' : undefined}
+										size="lg"
+										target={action.external ? '_blank' : undefined}
+										variant="primary"
+									>
+										<Icon className="mr-2 inline-block" name={action.icon} />
+										<span>{action.label}</span>
+									</Button>
+								</motion.div>
+							))}
+						</div>
 					</div>
 				</div>
 			</main>
