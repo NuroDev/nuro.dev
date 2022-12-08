@@ -14,7 +14,6 @@ const siteUrl = getCanonicalUrl();
  * @type {import('next-sitemap').IConfig}
  */
 const config = {
-	exclude: ['/server-sitemap.xml'],
 	generateRobotsTxt: true,
 	robotsTxtOptions: {
 		additionalSitemaps: [
