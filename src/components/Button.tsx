@@ -8,15 +8,10 @@ import type { WithChildren, WithClassName } from '~/types/react';
 const buttonStyles = cva(['default-transition', 'default-focus', 'font-medium'], {
 	variants: {
 		border: {
-			true: ['border-2', 'border-gray-100/50 dark:border-gray-800'],
-			false: [],
-		},
-		disabled: {
-			true: ['disabled:opacity-50', 'disabled:cursor-not-allowed'],
-			false: [],
-		},
-		loading: {
-			true: ['!cursor-wait'],
+			true: [
+				'border-2',
+				'border-gray-100/50 hover:border-gray-200/50 focus:border-gray-200/50 dark:border-gray-800',
+			],
 			false: [],
 		},
 		round: {
@@ -26,22 +21,15 @@ const buttonStyles = cva(['default-transition', 'default-focus', 'font-medium'],
 			lg: ['rounded-lg'],
 			xl: ['rounded-xl'],
 		},
-		size: {
-			xs: ['py-0.5', 'px-2'],
-			sm: ['py-1', 'px-3'],
-			md: ['py-1', 'px-5'],
-			lg: ['py-2', 'px-6'],
-			xl: ['py-4', 'px-8'],
-		},
 		variant: {
 			danger: ['bg-red-600', 'hover:bg-red-700', 'text-white', 'focus:ring-red-600'],
 			flat: [
-				'bg-gray-50 hover:bg-gray-100/75 focus:bg-gray-100/75 dark:bg-gray-900/75 dark:hover:bg-gray-800/75 dark:focus:bg-gray-800/75',
+				'bg-gray-50 hover:white focus:bg-white dark:bg-gray-900/75 dark:hover:bg-gray-800/75 dark:focus:bg-gray-800/75',
 				'text-gray-900 dark:text-white',
 			],
 			info: ['bg-blue-600', 'hover:bg-blue-700', 'text-white', 'focus:ring-blue-600'],
 			primary: [
-				'bg-gray-50 hover:bg-gray-100/75 focus:bg-gray-100/75 dark:bg-gray-900/75 dark:hover:bg-gray-800/75 dark:focus:bg-gray-800/75',
+				'bg-gray-50 hover:bg-gray-100 focus:bg-gray-100/75 dark:bg-gray-900/75 dark:hover:bg-gray-800/75 dark:focus:bg-gray-800/75',
 				'text-gray-900 dark:text-primary-600',
 			],
 			success: ['bg-green-600', 'hover:bg-green-700', 'text-white', 'focus:ring-green-600'],
@@ -55,10 +43,7 @@ const buttonStyles = cva(['default-transition', 'default-focus', 'font-medium'],
 	},
 	defaultVariants: {
 		border: false,
-		disabled: false,
-		loading: false,
 		round: 'lg',
-		size: 'md',
 		variant: 'flat',
 	},
 });
@@ -77,10 +62,7 @@ export function Button<TElementType extends ElementType>({
 	border,
 	children,
 	className,
-	disabled,
-	loading = false,
 	round,
-	size,
 	variant,
 	...rest
 }: ButtonProps<TElementType>): JSX.Element {
@@ -89,15 +71,10 @@ export function Button<TElementType extends ElementType>({
 			className={buttonStyles({
 				border,
 				class: className,
-				disabled,
-				loading,
 				round,
-				size,
 				variant,
 			})}
-			disabled={loading || disabled}
-			{...rest}
-		>
+			{...rest}>
 			{children}
 		</Component>
 	);
