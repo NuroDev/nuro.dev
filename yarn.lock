@@ -1778,10 +1778,10 @@ next-sitemap@^3.1.32:
     "@corex/deepmerge" "^4.0.29"
     minimist "^1.2.6"
 
-next-themes@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/next-themes/-/next-themes-0.2.1.tgz#0c9f128e847979daf6c67f70b38e6b6567856e45"
-  integrity sha512-B+AKNfYNIzh0vqQQKqQItTS8evEouKD7H5Hj3kmuPERwddR2TxvDSFZuTj6T7Jfn1oyeUyJMydPl1Bkxkh0W7A==
+"next-themes@npm:@wits/next-themes":
+  version "0.2.14"
+  resolved "https://registry.yarnpkg.com/@wits/next-themes/-/next-themes-0.2.14.tgz#38529a851fa57354786f3b1dcdbf5569e4d5a995"
+  integrity sha512-fHKb/tRcWbYNblGHZtfvAQztDhzUB9d7ZkYOny0BisSPh6EABcsqxKB48ABUQztcmKywlp2zEMkLcSRj/PQBSw==
 
 next@^13.0.7:
   version "13.0.7"
