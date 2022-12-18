@@ -15,6 +15,9 @@ function defineNextConfig(config) {
 }
 
 const config = defineNextConfig({
+  experimental: {
+    appDir: true,
+  },
   i18n: {
     locales: ["en"],
     defaultLocale: "en",

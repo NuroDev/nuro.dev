@@ -9,6 +9,7 @@ const { colors } = require('./src/data/theme.cts');
  */
 module.exports = {
   content: [
+    './src/app/**/*.{astro,js,ts,jsx,tsx}',
     './src/components/**/*.{astro,js,ts,jsx,tsx}',
     './src/layouts/**/*.{astro,js,ts,jsx,tsx}',
     './src/pages/**/*.{astro,js,ts,jsx,tsx}',
