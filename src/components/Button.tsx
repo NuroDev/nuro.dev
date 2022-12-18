@@ -74,7 +74,8 @@ export function Button<TElementType extends ElementType>({
 				round,
 				variant,
 			})}
-			{...rest}>
+			{...rest}
+		>
 			{children}
 		</Component>
 	);
