@@ -27,6 +27,9 @@ module.exports = {
         dash: 'dash 2s forwards ease-in-out 0.5s',
         wave: 'wave 2.25s ease-in-out infinite',
       },
+      backgroundImage: {
+        grid: 'radial-gradient(ellipse at center, var(--tw-gradient-stops) 0%, var(--tw-gradient-stops) 7%, transparent 7%)',
+      },
       colors,
       fontFamily: {
         sans: ['var(--font-inter)', ...(defaultTheme.fontFamily.sans || [])],
@@ -54,6 +57,9 @@ module.exports = {
       transformOrigin: {
         70: '70% 70%',
       },
+      transitionTimingFunction: {
+        spring: 'cubic-bezier(0.68, -0.6, 0.32, 1.6)',
+      }
     },
   },
 };
