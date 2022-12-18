@@ -1,3 +1,5 @@
+'use client';
+
 import { Camera, Color, Geometry, Mesh, Program, Renderer } from 'ogl-typescript';
 import { isCrawlerUserAgent } from 'is-web-crawler';
 import { useMount, useUnmount } from 'react-use';
@@ -40,8 +42,7 @@ export function Background(): null {
 			gl.canvas.id = 'background';
 			gl.canvas.className = 'fixed inset-0 select-none pointer-events-none';
 
-			const nextRoot = document.getElementById('__next');
-			if (nextRoot?.getElementsByTagName('canvas')?.length === 0) nextRoot.prepend(gl.canvas);
+			document.body.prepend(gl.canvas);
 
 			gl.clearColor(0, 0, 0, 0);
 			window.addEventListener('resize', handleReisze, false);
