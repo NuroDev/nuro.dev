@@ -19,6 +19,7 @@
 		"type-check": "tsc"
 	},
 	"dependencies": {
+		"@headlessui/react": "^1.7.7",
 		"@motionone/react": "^10.14.3",
 		"@next/font": "^13.0.6",
 		"@vercel/analytics": "^0.1.5",
