@@ -30,7 +30,7 @@
 		"is-web-crawler": "^1.1.0",
 		"lucide-react": "^0.102.0",
 		"motion": "^10.14.3",
-		"next": "^13.0.7",
+		"next": "^13.1.6",
 		"next-seo": "^5.14.1",
 		"next-themes": "npm:@wits/next-themes",
 		"ogl-typescript": "^0.1.40",
