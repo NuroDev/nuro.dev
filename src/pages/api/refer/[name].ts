@@ -5,7 +5,7 @@ import type { NextRequest } from 'next/server';
 import type { NextApiConfig } from '~/types/next';
 
 export const config: NextApiConfig = {
-	runtime: 'experimental-edge',
+	runtime: 'edge',
 };
 
 export default async function handler(req: NextRequest): Promise<Response> {
