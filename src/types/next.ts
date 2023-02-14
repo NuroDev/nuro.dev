@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 
 import type { ArrayElement, UnwrapPromise } from './util';
+import type { CRON } from './cron';
 
 type ParamsValue = string | number | boolean;
 
@@ -88,6 +89,7 @@ type Region =
 	| 'syd1';
 
 export interface NextApiConfig {
-	runtime?: 'experimental-edge' | 'nodejs';
+	cron?: CRON;
+	runtime?: 'edge' | 'nodejs';
 	regions?: Array<Region>;
 }
