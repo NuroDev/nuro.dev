@@ -2,11 +2,12 @@ import { useLanyard } from 'react-use-lanyard';
 
 import { DISCORD_STATUS_COLOR } from '~/types/lanyard';
 import { env } from '~/env';
-import { profile } from '~/data/profile';
+import { getProfile } from '~/data/profile';
 
 import type { LanyardData } from 'react-use-lanyard';
 
 import type { DiscordStatusColor } from '~/types/lanyard';
+import { use } from 'react';
 
 /**
  * Use Status
@@ -19,6 +20,8 @@ export function useStatus(): {
 	websocket?: WebSocket;
 	status: LanyardData | undefined;
 } {
+	const profile = use(getProfile());
+
 	if (!profile.discordAccountId && env.NODE_ENV !== 'production')
 		console.warn(
 			'No Discord ID provided. Add one to `data/profile.ts` to enable status functionality.',

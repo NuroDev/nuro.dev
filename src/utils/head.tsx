@@ -1,21 +1,21 @@
 // @ts-expect-error TypeScript doesn't know how to resolve `.cts` files.
 import { colors } from '~/data/theme.cts';
-import { defaultSeo } from '~/data/seo';
+import { getSeo } from '~/data/seo';
 import { getCanonicalUrl } from './url';
 
 import type { NextSeoProps } from 'next-seo';
 import type { ReactNode } from 'react';
 
-import type { NextHeadProps } from '~/types/next';
+import type { NextHeadComponent, NextHeadProps } from '~/types/next';
 
 interface HeadProps extends NextSeoProps {}
 
 function BaseHead({
 	canonical = getCanonicalUrl(),
-	description = defaultSeo.description,
+	description,
 	openGraph,
-	title = defaultSeo.title,
-	titleTemplate = defaultSeo.titleTemplate,
+	title,
+	titleTemplate,
 	twitter,
 }: HeadProps): JSX.Element {
 	return (
@@ -29,29 +29,23 @@ function BaseHead({
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 			{/* OpenGraph */}
-			<meta
-				property="og:description"
-				content={openGraph?.description || defaultSeo.description}
-			/>
+			<meta property="og:description" content={openGraph?.description} />
 			<meta property="og:image:alt" content={`Opengraph banner image for ${canonical}`} />
 			<meta property="og:image:height" content="1064" />
 			<meta property="og:image:width" content="1926" />
 			<meta property="og:image" content={`${canonical}/banner.png`} />
-			<meta
-				property="og:site_name"
-				content={openGraph?.siteName || defaultSeo.openGraph.siteName}
-			/>
-			<meta property="og:title" content={openGraph?.title || defaultSeo.openGraph.title} />
+			<meta property="og:site_name" content={openGraph?.siteName} />
+			<meta property="og:title" content={openGraph?.title} />
 			<meta property="og:type" content="website" />
 			<meta property="og:url" content={canonical} />
 
 			{/* Twitter  */}
-			<meta name="twitter:card" content={twitter?.cardType || defaultSeo.twitter.cardType} />
-			<meta name="twitter:creator" content={twitter?.handle || defaultSeo.twitter.handle} />
-			<meta name="twitter:description" content={defaultSeo.description} />
+			<meta name="twitter:card" content={twitter?.cardType} />
+			<meta name="twitter:creator" content={twitter?.handle} />
+			<meta name="twitter:description" content={description} />
 			<meta name="twitter:image" content={`${canonical}/banner.png`} />
-			<meta name="twitter:site" content={twitter?.site || defaultSeo.twitter.site} />
-			<meta name="twitter:title" content={defaultSeo.openGraph.title} />
+			<meta name="twitter:site" content={twitter?.site} />
+			<meta name="twitter:title" content={title} />
 			<meta name="twitter:url" content={canonical} />
 		</>
 	);
@@ -63,17 +57,46 @@ export function defineHead<
 >(
 	options?: TProps | ((props: NextHeadProps<TParams>) => TProps | Promise<TProps>),
 	children?: ReactNode,
-): (props: NextHeadProps<TParams>) => JSX.Element | Promise<JSX.Element> {
+): NextHeadComponent<TParams> {
 	if (typeof options === 'function')
-		return ({ params }) =>
-			(async function Head(): Promise<JSX.Element> {
+		return ({ params }) => {
+			const Component = async function Head(): Promise<JSX.Element> {
+				const defaultSeo = await getSeo();
+				const { description, openGraph, title, titleTemplate, twitter, ...rest } =
+					await options({
+						params,
+					});
+
 				return (
 					<>
-						<BaseHead {...await options({ params })} />
+						<BaseHead
+							{...defaultSeo}
+							description={description || defaultSeo.description}
+							openGraph={{
+								...defaultSeo.openGraph,
+								...openGraph,
+								description: description || defaultSeo.description,
+								siteName: openGraph?.siteName || defaultSeo.openGraph.siteName,
+								title: openGraph?.title || defaultSeo.openGraph.title,
+							}}
+							title={title || defaultSeo.title}
+							titleTemplate={titleTemplate || defaultSeo.titleTemplate}
+							twitter={{
+								...defaultSeo.twitter,
+								...twitter,
+								cardType: twitter?.cardType || defaultSeo.twitter.cardType,
+								handle: twitter?.handle || defaultSeo.twitter.handle,
+								site: twitter?.site || defaultSeo.twitter.site,
+							}}
+							{...rest}
+						/>
 						{children}
 					</>
 				);
-			})();
+			};
+
+			return Component();
+		};
 
 	return function Head() {
 		return (

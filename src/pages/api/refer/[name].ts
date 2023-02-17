@@ -1,4 +1,4 @@
-import { profile } from '~/data/profile';
+import { getProfile } from '~/data/profile';
 
 import type { NextRequest } from 'next/server';
 
@@ -17,6 +17,7 @@ export default async function handler(req: NextRequest): Promise<Response> {
 	const name = req.nextUrl.searchParams.get('name');
 	if (!name) return Response.redirect('/referrals');
 
+	const profile = await getProfile();
 	if (!profile.referrals || profile.referrals.length <= 0) return Response.redirect('/');
 
 	const selectedReferral = profile.referrals.find((referral) => {

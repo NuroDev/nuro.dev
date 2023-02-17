@@ -28,6 +28,10 @@ export interface NextHeadProps<TParams = Record<string, ParamsValue>> {
 	params?: TParams;
 }
 
+export type NextHeadComponent<TParams = Record<string, ParamsValue>> = (
+	props: NextHeadProps<TParams>,
+) => Awaitable<JSX.Element>;
+
 export interface NextLayoutProps<TParams = Record<string, ParamsValue>> {
 	/**
 	 * **Children**
