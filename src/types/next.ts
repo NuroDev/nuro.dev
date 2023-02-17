@@ -1,6 +1,7 @@
+import type { NextResponse } from 'next/server';
 import type { ReactNode } from 'react';
 
-import type { ArrayElement, UnwrapPromise } from './util';
+import type { ArrayElement, Awaitable, UnwrapPromise } from './util';
 import type { CRON } from './cron';
 
 type ParamsValue = string | number | boolean;
@@ -67,6 +68,11 @@ export interface NextPageProps<
 	 */
 	searchParams?: Record<string, ParamsValue>;
 }
+
+export type NextRouteHandler<
+	TParams extends object = Record<string, unknown>,
+	TResponse extends Response = NextResponse,
+> = (request: Request, params: { params?: TParams }) => Awaitable<TResponse>;
 
 type Region =
 	| 'arn1'
