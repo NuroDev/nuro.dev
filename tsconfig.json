@@ -24,7 +24,8 @@
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"strict": true,
-		"target": "es2017"
+		"target": "es2017",
+		"types": ["@ronin/nuro"]
 	},
 	"include": [
 		"next-env.d.ts",
