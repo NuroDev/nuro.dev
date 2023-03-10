@@ -38,7 +38,7 @@
 		"react-dom": "18.2.0",
 		"react-use": "^17.4.0",
 		"react-use-lanyard": "^0.1.4",
-		"ronin": "1.0.3",
+		"ronin": "^1.0.7",
 		"use-sound": "^4.0.1"
 	},
 	"devDependencies": {
