@@ -1,6 +1,13 @@
 {
 	"extends": "astro/tsconfigs/strictest",
 	"compilerOptions": {
+		"allowJs": false,
+		"baseUrl": ".",
+		"forceConsistentCasingInFileNames": true,
+		"isolatedModules": true,
+		"paths": {
+			"~/*": ["./src/*"]
+		},
 		"strictNullChecks": true
 	}
 }
