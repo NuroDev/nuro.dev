@@ -13,6 +13,7 @@
 		"url": "https://nuro.dev"
 	},
 	"license": "MIT",
+	"type": "module",
 	"prettier": {
 		"arrowParens": "always",
 		"bracketSpacing": true,
@@ -24,7 +25,17 @@
 		"trailingComma": "all",
 		"useTabs": true
 	},
-	"scripts": {},
-	"dependencies": {},
-	"devDependencies": {}
+	"scripts": {
+		"astro": "astro",
+		"build": "astro build",
+		"dev": "astro dev",
+		"preview": "astro preview",
+		"start": "astro dev"
+	},
+	"dependencies": {
+		"astro": "^2.0.18",
+		"@astrojs/mdx": "^0.17.2",
+		"@astrojs/rss": "^2.1.1",
+		"@astrojs/sitemap": "^1.1.0"
+	}
 }
