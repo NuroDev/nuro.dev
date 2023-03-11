@@ -21,7 +21,3 @@ const blog = defineCollection({
 export const collections = {
 	blog,
 };
-
-export const title: string = 'My personal website.';
-
-export const description: string = 'Welcome to my website!';
