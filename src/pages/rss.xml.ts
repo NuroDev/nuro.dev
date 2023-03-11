@@ -1,7 +1,7 @@
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 
-import { description, title } from '~/content/config';
+import { description, title } from '~/content/site';
 
 import type { APIRoute } from 'astro';
 

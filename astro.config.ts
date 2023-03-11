@@ -7,7 +7,7 @@ import tailwind from '@astrojs/tailwind';
 
 // Absolute import paths cannot be used in Astro config files
 // because the tsconfig import path aliases are not applied.
-import { siteUrl } from './src/content/user';
+import { siteUrl } from './src/content/site';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
