@@ -1,12 +1,12 @@
 import type { OpenGraph, Twitter } from '~/types/site';
 
-export const title: string = 'My personal website.';
+export const title: string = 'developer ─ nuro';
 
-export const description: string = 'Welcome to my website!';
+export const description: string = "Hey 👋 I'm Ben, a developer";
 
 export const siteUrl: URL = new URL('https://nuro.dev');
 
-export const themeColor: `#${string}` = '#ffffff';
+export const themeColor: `#${string}` = '#0068f5';
 
 export const twitter: Twitter = {
 	cardType: 'summary_large_image',
