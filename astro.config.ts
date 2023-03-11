@@ -1,10 +1,26 @@
 import { defineConfig } from 'astro/config';
-import mdx from '@astrojs/mdx';
-import sitemap from '@astrojs/sitemap';
 
+import mdx from '@astrojs/mdx';
+import prefetch from '@astrojs/prefetch';
+import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 
+// Absolute import paths cannot be used in Astro config files
+// because the tsconfig import path aliases are not applied.
+import { siteUrl } from './src/content/user';
+
+const isProduction = process.env.NODE_ENV === 'production';
+
 export default defineConfig({
-	site: 'https://example.com',
-	integrations: [mdx(), sitemap(), tailwind()],
+	integrations: [
+		mdx(),
+		prefetch(),
+		sitemap(),
+		tailwind({
+			config: {
+				applyBaseStyles: false,
+			},
+		}),
+	],
+	site: isProduction ? siteUrl.href : 'http://localhost:3000',
 });
