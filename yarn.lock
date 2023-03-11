@@ -3086,6 +3086,11 @@ rollup@^3.10.0:
   optionalDependencies:
     fsevents "~2.3.2"
 
+ronin@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/ronin/-/ronin-1.0.7.tgz#25376087544e3cef62dfea56163b8a8033805252"
+  integrity sha512-AVS9oOFggGXQKQIdDlRkP30Wo7csEyx58onw5BWG3IYjl8rKb2lhaX4lASKcBnlP2wRkQEPQHJ3kZL0gDj8hQw==
+
 run-parallel@^1.1.9:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/run-parallel/-/run-parallel-1.2.0.tgz#66d1368da7bdf921eb9d95bd1a9229e7f21a43ee"
