@@ -1,0 +1,16 @@
+{
+	"$schema": "https://openapi.vercel.sh/vercel.json",
+	"framework": "astro",
+	"redirects": [
+		{
+			"source": "/contact",
+			"destination": "https://twitter.com/direct_messages/create/nurodev"
+		},
+		{ "source": "/cv", "destination": "https://read.cv/nuro" },
+		{ "source": "/github", "destination": "https://github.com/nurodev" },
+		{ "source": "/linkedin", "destination": "https://www.linkedin.com/in/nurodev" },
+		{ "source": "/resume", "destination": "https://read.cv/nuro" },
+		{ "source": "/twitter", "destination": "https://twitter.com/nurodev" }
+	],
+	"regions": ["lhr1"]
+}
