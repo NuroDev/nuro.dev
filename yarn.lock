@@ -742,6 +742,11 @@
   resolved "https://registry.yarnpkg.com/@types/yargs-parser/-/yargs-parser-21.0.0.tgz#0c60e537fa790f5f9472ed2776c2b71ec117351b"
   integrity sha512-iO9ZQHkZxHn4mSakYV0vFHAVDyEOIJQrV2uZ06HxEPcx+mt8swXoZHIbaaJ2crJYFfErySgktuTZ3BeLz+XmFA==
 
+"@vercel/analytics@^0.1.11":
+  version "0.1.11"
+  resolved "https://registry.yarnpkg.com/@vercel/analytics/-/analytics-0.1.11.tgz#727a0ac655a4a89104cdea3e6925476470299428"
+  integrity sha512-mj5CPR02y0BRs1tN3oZcBNAX9a8NxsIUl9vElDPcqxnMfP0RbRc9fI9Ud7+QDg/1Izvt5uMumsr+6YsmVHcyuw==
+
 "@vscode/emmet-helper@^2.8.4":
   version "2.8.6"
   resolved "https://registry.yarnpkg.com/@vscode/emmet-helper/-/emmet-helper-2.8.6.tgz#ee2fa52321d6af8a40310fd9d37b8590a4dabb18"
