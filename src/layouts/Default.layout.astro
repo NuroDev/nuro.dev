@@ -1,0 +1,34 @@
+---
+import SEO, { type Props as SEOProps } from '~/components/SEO.astro';
+
+export interface Props extends SEOProps {}
+
+const { ...seoProps } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<SEO {...seoProps} />
+
+		<style is:global>
+			@tailwind base;
+			@tailwind components;
+			@tailwind utilities;
+
+			.default-focus {
+				@apply focus:outline-none focus:ring focus:ring-offset-4 focus:ring-primary-500;
+			}
+			.default-transition {
+				@apply transition duration-300 ease-in-out;
+			}
+		</style>
+
+		<script>
+			import { inject } from '@vercel/analytics';
+			inject();
+		</script>
+	</head>
+	<body class="antialiased bg-gray-50 text-gray-600">
+		<slot />
+	</body>
+</html>

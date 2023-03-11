@@ -1,0 +1,69 @@
+---
+import {
+	description as defaultDescription,
+	openGraph as defaultOpenGraph,
+	themeColor,
+	title as defaultTitle,
+	twitter as defaultTwitter,
+} from '~/content/site';
+import type { OpenGraph, Twitter } from '~/types/content';
+
+export interface Props {
+	description?: string;
+	openGraph?: OpenGraph;
+	title?: string;
+	twitter?: Twitter;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const {
+	description = defaultDescription,
+	openGraph = defaultOpenGraph,
+	title = defaultTitle,
+	twitter = defaultTwitter,
+} = Astro.props;
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="generator" content={Astro.generator} />
+<meta name="msapplication-TileColor" content={themeColor} />
+<meta name="theme-color" content={themeColor} />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/favicon.png" />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- RSS Feed Discovery -->
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml" />
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:description" content={openGraph.description || description} />
+<meta property="og:title" content={openGraph.title || title} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:site_name" content={canonicalURL} />
+
+<!-- TODO: Get image properties -->
+<!-- <meta property="og:image" content={new URL(image, Astro.url)} /> -->
+<meta property="og:image:alt" content={openGraph.title || title} />
+<meta property="og:image:width" content="1926" />
+<meta property="og:image:height" content="1064" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content={twitter.cardType} />
+<meta property="twitter:creator" content={twitter.handle} />
+<meta property="twitter:description" content={description} />
+<!-- <meta property="twitter:image" content={new URL(image, Astro.url)} /> -->
+<meta property="twitter:site" content={twitter.site} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:url" content={Astro.url} />
