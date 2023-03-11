@@ -10,11 +10,13 @@ import { withAxiom } from 'next-axiom';
  * @param {T} config - A generic parameter that flows through to the return type
  * @constraint {{import('next').NextConfig}}
  */
-function defineNextConfig(config) {
-  return config;
+function defineNextConfig(config, plugins = []) {
+  if (!plugins) return config;
+
+  return plugins.reduce((acc, current) => current(acc), config);
 }
 
-const config = defineNextConfig({
+export default defineNextConfig({
   experimental: {
     appDir: true,
   },
@@ -44,6 +46,4 @@ const config = defineNextConfig({
 
     return config;
   },
-});
-
-export default withAxiom(config);
+}, [withAxiom]);
