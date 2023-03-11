@@ -1,7 +1,7 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
-import '../styles/global.css';
+import '~/styles/global.css';
 
 export interface Props {
 	title: string;
@@ -22,7 +22,7 @@ const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
-	
+
 <!-- RSS Feed Discovery -->
 <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml" />
 
