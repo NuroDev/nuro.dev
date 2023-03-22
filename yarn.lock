@@ -265,9 +265,10 @@
     tiny-glob "^0.2.9"
     tslib "^2.4.0"
 
-"@ronin/nuro@https://ronin.supply/@ronin/nuro/-/nuro-latest.tar.gz":
-  version "0.1.1"
-  resolved "https://ronin.supply/@ronin/nuro/-/nuro-latest.tar.gz#8ad2744a5be921c1c9788bd4c2696b2defd1d231"
+"@ronin/nuro@latest":
+  version "0.0.1676474573579"
+  resolved "https://ronin.supply/@ronin/nuro/-/nuro-0.0.1676474573579.tar.gz#undefined"
+  integrity sha512-VtLIKZ5OrJjNYkBRR49hEl5FXWLz0d+CXJgDfCLZx41kgEorSuUSsuuPYtBhzqM3h/wLOfRMf3mNd4QwfdkHkA==
 
 "@rushstack/eslint-patch@^1.1.3":
   version "1.2.0"

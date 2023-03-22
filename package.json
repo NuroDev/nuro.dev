@@ -45,12 +45,12 @@
 		"react-dom": "^18.2.0",
 		"react-use": "^17.4.0",
 		"react-use-lanyard": "^0.3.0",
-		"ronin": "^1.0.7",
+		"ronin": "^1.0.9",
 		"use-sound": "^4.0.1"
 	},
 	"devDependencies": {
 		"@next/env": "^13.0.6",
-		"@ronin/nuro": "https://ronin.supply/@ronin/nuro/-/nuro-latest.tar.gz",
+		"@ronin/nuro": "latest",
 		"@tailwindcss/forms": "^0.5.3",
 		"@tailwindcss/line-clamp": "^0.4.2",
 		"@tailwindcss/typography": "^0.5.9",
