@@ -20,8 +20,8 @@
 	},
 	"dependencies": {
 		"@motionone/react": "^10.14.3",
-		"@next/font": "^13.0.6",
-		"@vercel/analytics": "^0.1.5",
+		"@next/font": "^13.2.4",
+		"@vercel/analytics": "^0.1.11",
 		"clsx": "^1.2.1",
 		"cva": "npm:class-variance-authority@0.3.0",
 		"date-fns": "^2.29.3",
