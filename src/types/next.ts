@@ -77,6 +77,29 @@ export type NextRouteHandler<
 	TResponse extends Response = NextResponse,
 > = (request: Request, params: { params?: TParams }) => Awaitable<TResponse>;
 
+export interface NextGenerateMetadataProps<
+	TGenerateStaticParams extends GenerateStaticParamsFn<TParams> | undefined = undefined,
+	TParams extends Array<unknown> = Array<unknown>,
+> {
+	/**
+	 * **params** (Optional)
+	 *
+	 * The dynamic route params object from the root segment down that to that page.
+	 */
+	params: TGenerateStaticParams extends GenerateStaticParamsFn<TParams>
+		? ArrayElement<UnwrapPromise<ReturnType<TGenerateStaticParams>>>
+		: Record<string, ParamsValue> | undefined;
+
+	/**
+	 * **searchParams** (Optional)
+	 *
+	 * The URL search params object.
+	 *
+	 * @example `acme.com/?q=cat` → `{ q: "cat" }`
+	 */
+	searchParams?: Record<string, ParamsValue>;
+}
+
 type Region =
 	| 'arn1'
 	| 'bom1'
