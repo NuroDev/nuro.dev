@@ -1,36 +1,33 @@
-import { NextResponse } from 'next/server';
+import ronin from 'ronin';
+import { z } from 'zod';
 
 import { defineAppRouteHandler } from '~/utils/define';
-import { getProfile } from '~/data/profile';
+
+import type { Referral } from '@ronin/nuro';
+
+const GetReferralParams = z.object({
+	name: z.string(),
+});
 
 export const { GET, runtime } = defineAppRouteHandler<{ name: string }>({
 	runtime: 'edge',
-	GET: async (req, { params }) => {
-		if (req.method !== 'GET')
-			return new Response(`Method ${req.method} Not Allowed`, {
-				status: 404,
-			});
+	GET: async (request, { params }) => {
+		const referralsUrl = new URL('/referrals', request.url);
 
-		const referralsUrl = new URL('/referrals', req.url);
+		const parsedParams = GetReferralParams.safeParse(params);
+		if (!parsedParams.success) return Response.redirect(referralsUrl);
 
-		if (!params) return Response.redirect(referralsUrl);
-		const { name } = params;
-
-		const profile = await getProfile();
-		if (!profile.referrals || profile.referrals.length <= 0) return Response.redirect('/');
-
-		const selectedReferral = profile.referrals.find((referral) => {
-			if (referral.name.toLowerCase() === name.toLowerCase()) return referral;
-
-			// TODO: Re-add aliases
-			// if (referral.aliases)
-			// 	return referral.aliases.find((alias) => alias.toLowerCase() === name.toLowerCase());
-
-			return undefined;
+		const [referral] = await ronin<[Referral]>(({ get }) => {
+			get.referral = {
+				where: {
+					name: {
+						contains: parsedParams.data.name,
+					},
+				},
+			};
 		});
-		// TODO: Add error logging
-		if (!selectedReferral) return NextResponse.redirect(referralsUrl);
+		if (!referral) return Response.redirect(new URL('/', request.url));
 
-		return Response.redirect(selectedReferral.url);
+		return Response.redirect(referral.url);
 	},
 });
