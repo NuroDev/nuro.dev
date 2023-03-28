@@ -28,9 +28,9 @@ const config = defineNextConfig({
   reactStrictMode: true,
   rewrites: async () => [
     {
-      source: '/referrals/:path*',
-      destination: '/api/refer/:path*',
-    },
+      source: '/refer/:path*',
+      destination: '/referrals/:path*',
+    }
   ],
   swcMinify: true,
   webpack: (config) => {
