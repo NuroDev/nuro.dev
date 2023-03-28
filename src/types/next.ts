@@ -100,3 +100,5 @@ export interface NextApiConfig {
 	runtime?: 'edge' | 'nodejs';
 	regions?: Array<Region>;
 }
+
+export type NextHref = __next_route_internal_types__.RouteImpl<string>;
