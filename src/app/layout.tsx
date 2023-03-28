@@ -1,8 +1,8 @@
 import { Inter as FontSans } from 'next/font/google';
 import { ServerThemeProvider } from 'next-themes';
 
-import { Background } from "~/components/Background/index.client";
 import { Analytics } from './Analytics.client';
+import { Background } from './Background.client';
 import { Click } from './Click.client';
 import { cn } from '~/utils/cn';
 import { ColorScheme } from '~/types/theme';
