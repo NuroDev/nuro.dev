@@ -10,7 +10,11 @@ export const metadata: Metadata = {
 
 export default async function EventsPage(): Promise<JSX.Element> {
 	const [events] = await ronin<[Events]>(({ get }) => {
-		get.events.orderedBy.descending = ['date'];
+		get.events = {
+			orderedBy: {
+				descending: ['date'],
+			},
+		};
 	});
 
 	return (

@@ -10,7 +10,11 @@ export const metadata: Metadata = {
 
 export default async function ReferralsPage(): Promise<JSX.Element> {
 	const [referrals] = await ronin<[Referrals]>(({ get }) => {
-		get.referrals.orderedBy.ascending = ['name'];
+		get.referrals = {
+			orderedBy: {
+				ascending: ['name'],
+			},
+		};
 	});
 
 	return (
