@@ -1,6 +1,6 @@
-import clsx from "clsx";
+import clsx from 'clsx';
 
-import type { ClassValue } from "clsx";
+import type { ClassValue } from 'clsx';
 
 /**
  * Class names
@@ -12,5 +12,5 @@ import type { ClassValue } from "clsx";
  * @returns {String} Concatenated class names
  */
 export function cn(...args: Array<ClassValue>): string {
-  return clsx(...args);
+	return clsx(...args);
 }
