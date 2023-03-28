@@ -26,9 +26,11 @@
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-use": "^17.4.0",
+		"ronin": "^1.0.10",
 		"use-sound": "^4.0.1"
 	},
 	"devDependencies": {
+		"@ronin/nuro": "^0.0.1676474573579",
 		"@types/eslint": "^8.21.3",
 		"@types/node": "^18.15.5",
 		"@types/prettier": "^2.7.2",
