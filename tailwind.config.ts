@@ -32,7 +32,7 @@ export const colors = {
 const config = {
 	content: ['./src/**/*.{js,ts,jsx,tsx}'],
 	darkMode: 'class',
-	plugins: [],
+	plugins: [require('tailwindcss-animate')],
 	theme: {
 		extend: {
 			colors,
