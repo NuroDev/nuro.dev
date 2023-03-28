@@ -25,7 +25,8 @@
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"strict": true,
-		"target": "ESNext"
+		"target": "ESNext",
+		"types": ["@ronin/nuro"]
 	},
 	"include": [
 		".eslintrc.cjs",
