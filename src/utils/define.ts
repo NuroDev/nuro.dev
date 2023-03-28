@@ -5,9 +5,8 @@ type SupportedHTTPMethods = 'DELETE' | 'GET' | 'HEAD' | 'OPTIONS' | 'PATCH' | 'P
 type DefineAppRouteHandlerOptions<TParams extends Record<string, unknown>> = Record<
 	SupportedHTTPMethods,
 	NextRouteHandler<TParams>
-> & {
-	config?: NextApiConfig;
-};
+> &
+	Pick<NextApiConfig, 'runtime'>;
 
 /**
  * Define a route handler for an app route.

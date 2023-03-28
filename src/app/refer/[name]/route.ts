@@ -3,10 +3,8 @@ import { NextResponse } from 'next/server';
 import { defineAppRouteHandler } from '~/utils/define';
 import { getProfile } from '~/data/profile';
 
-export const { config, GET } = defineAppRouteHandler<{ name: string }>({
-	config: {
-		runtime: 'edge',
-	},
+export const { GET, runtime } = defineAppRouteHandler<{ name: string }>({
+	runtime: 'edge',
 	GET: async (req, { params }) => {
 		if (req.method !== 'GET')
 			return new Response(`Method ${req.method} Not Allowed`, {
