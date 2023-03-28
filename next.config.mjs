@@ -17,6 +17,7 @@ function defineNextConfig(config) {
 const config = defineNextConfig({
   experimental: {
     appDir: true,
+    typedRoutes: true,
   },
   images: {
     domains: [
