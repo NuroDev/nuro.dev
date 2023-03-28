@@ -1,5 +1,8 @@
 import Link from 'next/link';
 
+import { StatusPill } from '~/components/Status/Pill.client';
+import { getProfile } from '~/data/profile';
+
 interface CardProps {
 	description?: string;
 	href: __next_route_internal_types__.RouteImpl<string>;
@@ -9,7 +12,7 @@ interface CardProps {
 function Card({ href, title }: CardProps): JSX.Element {
 	return (
 		<Link
-			className="default-focus default-transition flex w-64 flex-col gap-2 rounded-xl border border-gray-100 bg-gray-100/50 p-4 backdrop-blur-sm backdrop-filter hover:bg-gray-200/50 dark:border-gray-600 dark:bg-gray-800/50 dark:text-white dark:hover:bg-gray-700/50"
+			className="default-focus default-transition flex w-64 flex-col gap-2 rounded-xl border border-gray-100 bg-gray-100/25 p-4 backdrop-blur-sm backdrop-filter hover:bg-gray-100/50 dark:border-gray-700 dark:bg-gray-900/25 dark:text-white dark:hover:border-gray-600 dark:hover:bg-gray-700/50"
 			href={href}>
 			<h3 className="text-2xl font-bold">{title}</h3>
 			<div className="text-sm text-gray-400">{href}</div>
@@ -17,7 +20,9 @@ function Card({ href, title }: CardProps): JSX.Element {
 	);
 }
 
-export default function RootPage(): JSX.Element {
+export default async function RootPage(): Promise<JSX.Element> {
+	const profile = await getProfile();
+
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-center">
 			<div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
@@ -28,6 +33,7 @@ export default function RootPage(): JSX.Element {
 					<Card title="Blog" href="/blog" />
 					<Card title="Status" href="/status" />
 				</div>
+				<StatusPill className="fixed left-4 top-4" userId={profile.discordUserId} />
 			</div>
 		</main>
 	);
