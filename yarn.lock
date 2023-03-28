@@ -2151,6 +2151,11 @@ quick-lru@^5.1.1:
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-5.1.1.tgz#366493e6b3e42a3a6885e2e99d18f80fb7a8c932"
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
 
+radash@^10.7.1:
+  version "10.7.1"
+  resolved "https://registry.yarnpkg.com/radash/-/radash-10.7.1.tgz#560a839c990d59d77ff93dc506e6b35ff0f4a6a8"
+  integrity sha512-iEytYXfDN0DxU9fjf8q0aVdikGJxxYYoG6nY6WqYEBXfXjrghiiNhx+IAFmtbrKy2S2aVETq7RBxhZbaEHE4YA==
+
 react-dom@^18.2.0:
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.2.0.tgz#22aaf38708db2674ed9ada224ca4aa708d821e3d"

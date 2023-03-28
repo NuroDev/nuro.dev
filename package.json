@@ -23,6 +23,7 @@
 		"next": "^13.2.4",
 		"next-themes": "npm:@wits/next-themes",
 		"ogl-typescript": "^0.1.40",
+		"radash": "^10.7.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-use": "^17.4.0",
