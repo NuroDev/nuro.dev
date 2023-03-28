@@ -2,7 +2,7 @@
 	"compilerOptions": {
 		"allowJs": false,
 		"baseUrl": ".",
-		"checkJs": true,
+		"checkJs": false,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
 		"incremental": true,
