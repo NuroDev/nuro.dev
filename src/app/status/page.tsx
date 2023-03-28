@@ -3,7 +3,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-	title: 'status ─ nuro',
+	title: 'status',
 };
 
 export default function RootPage(): JSX.Element {
