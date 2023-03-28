@@ -173,7 +173,7 @@
 "@ronin/nuro@^0.0.1676474573579":
   version "0.0.1676474573579"
   resolved "https://ronin.supply/@ronin/nuro/-/nuro-0.0.1676474573579.tar.gz#undefined"
-  integrity sha512-VtLIKZ5OrJjNYkBRR49hEl5FXWLz0d+CXJgDfCLZx41kgEorSuUSsuuPYtBhzqM3h/wLOfRMf3mNd4QwfdkHkA==
+  integrity sha512-wmN8cdeDqwHSmgZydzRLSqw1m5JBo0Vbcj1q9X5Y/FrQZk5MElNuGAYHvkPq40Z/idgr7rLBxEBGVltLk2/wSg==
 
 "@rushstack/eslint-patch@^1.1.3":
   version "1.2.0"
