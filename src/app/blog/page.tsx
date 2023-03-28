@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-	title: 'blog ─ nuro',
+	title: 'blog',
 };
 
 export default function BlogPage(): JSX.Element {

@@ -9,12 +9,55 @@ import { ColorScheme } from '~/types/theme';
 
 import '~/styles/globals.css';
 
+import type { Metadata } from 'next';
+
 import type { NextLayoutProps } from '~/types/next';
 
 const fontSans = FontSans({
 	subsets: ['latin'],
 	variable: '--font-inter',
 });
+
+export const metadata: Metadata = {
+	title: {
+		default: 'developer ─ nuro',
+		template: '%s ─ nuro',
+	},
+	description: 'Developer, writer, and creator.',
+	openGraph: {
+		title: 'nuro',
+		description: 'Developer, writer, and creator.',
+		url: 'https://nuro.dev',
+		siteName: 'nuro',
+		images: [
+			{
+				url: 'https://nuro.dev/banner.png',
+				width: 1920,
+				height: 1080,
+			},
+		],
+		locale: 'en-US',
+		type: 'website',
+	},
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			'max-video-preview': -1,
+			'max-image-preview': 'large',
+			'max-snippet': -1,
+		},
+	},
+	twitter: {
+		title: 'Ben',
+		card: 'summary_large_image',
+	},
+	icons: {
+		shortcut: '/favicon.ico',
+	},
+};
 
 export default function RootLayout({ children }: NextLayoutProps): JSX.Element {
 	return (
