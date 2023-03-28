@@ -3,11 +3,11 @@
 import Link from 'next/link';
 import { useLanyard } from 'react-use-lanyard/dist';
 
-import { StatusIndicator } from './Indicator.client';
+import { cn } from '~/utils/cn';
 import { READABLE_DISCORD_STATUS } from '~/types/lanyard';
+import { StatusIndicator } from './Indicator.client';
 
 import type { WithClassName } from '~/types/react';
-import { cn } from '~/utils/cn';
 
 interface StatusPillProps extends WithClassName {
 	userId: string;
