@@ -13,7 +13,8 @@ function Card({ href, title }: CardProps): JSX.Element {
 	return (
 		<Link
 			className="default-focus default-transition flex w-64 flex-col gap-2 rounded-xl border border-gray-100 bg-gray-100/25 p-4 backdrop-blur-sm backdrop-filter hover:bg-gray-100/50 dark:border-gray-700 dark:bg-gray-900/25 dark:text-white dark:hover:border-gray-600 dark:hover:bg-gray-700/50"
-			href={href}>
+			href={href}
+		>
 			<h3 className="text-2xl font-bold">{title}</h3>
 			<div className="text-sm text-gray-400">{href}</div>
 		</Link>

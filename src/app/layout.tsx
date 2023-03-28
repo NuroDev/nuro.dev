@@ -64,15 +64,18 @@ export default function RootLayout({ children }: NextLayoutProps): JSX.Element {
 		<ServerThemeProvider
 			attribute="class"
 			defaultTheme={ColorScheme.SYSTEM}
-			themes={Object.values(ColorScheme)}>
+			themes={Object.values(ColorScheme)}
+		>
 			<html
 				lang="en"
-				className={cn(fontSans.variable, 'scroll-smooth font-sans antialiased')}>
+				className={cn(fontSans.variable, 'scroll-smooth font-sans antialiased')}
+			>
 				<body
 					className="bg-grid bg-gray-50 from-gray-200 to-gray-200 bg-[0_0] text-gray-500 dark:bg-gray-900 dark:from-gray-700 dark:to-gray-700"
 					style={{
 						backgroundSize: '25px 25px',
-					}}>
+					}}
+				>
 					<Analytics />
 					<Background />
 					<Click />

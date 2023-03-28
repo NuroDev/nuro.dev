@@ -32,7 +32,8 @@ export function StatusIndicator({
 			className={clsx(
 				'relative mr-3 inline-flex h-5 w-5 items-center justify-center',
 				className,
-			)}>
+			)}
+		>
 			<span className="absolute flex h-3 w-3">
 				{pulse && (
 					<span

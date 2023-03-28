@@ -33,7 +33,8 @@ export function StatusPill({ className, userId }: StatusPillProps): JSX.Element 
 				'default-transition default-focus',
 				className,
 			)}
-			href="/status">
+			href="/status"
+		>
 			<span className="font-bold uppercase">Live</span>
 			<StatusIndicator
 				color={
