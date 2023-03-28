@@ -1,4 +1,3 @@
-import type { NextResponse } from 'next/server';
 import type { ReactNode } from 'react';
 
 import type { ArrayElement, Awaitable, UnwrapPromise } from './util';
@@ -74,7 +73,7 @@ export interface NextPageProps<
 
 export type NextRouteHandler<
 	TParams extends object = Record<string, unknown>,
-	TResponse extends Response = NextResponse,
+	TResponse extends Response = Response,
 > = (request: Request, params: { params?: TParams }) => Awaitable<TResponse>;
 
 type Region =
