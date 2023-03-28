@@ -1,11 +1,13 @@
 import Link from 'next/link';
 
+import { profile } from '~/data/profile';
 import { StatusPill } from '~/components/Status/Pill.client';
-import { getProfile } from '~/data/profile';
+
+import type { NextHref } from '~/types/next';
 
 interface CardProps {
 	description?: string;
-	href: __next_route_internal_types__.RouteImpl<string>;
+	href: NextHref;
 	title: string;
 }
 
@@ -21,20 +23,29 @@ function Card({ href, title }: CardProps): JSX.Element {
 	);
 }
 
-export default async function RootPage(): Promise<JSX.Element> {
-	const profile = await getProfile();
+const links: Array<{
+	label: string;
+	href: NextHref;
+}> = [
+	{ label: 'Blog', href: '/blog' },
+	{ label: 'Events', href: '/events' },
+	{ label: 'Referrals', href: '/referrals' },
+	{ label: 'Status', href: '/status' },
+];
 
+export default function RootPage(): JSX.Element {
 	return (
 		<main className="flex min-h-screen flex-col items-center justify-center">
 			<div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
 				<h1 className="z-10 text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-[5rem]">
-					Create <span className="text-primary-600">T3</span> App
+					👋 Hey, I&apos;m <span className="text-primary-600">{profile.name}</span>
 				</h1>
 				<div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
-					<Card title="Blog" href="/blog" />
-					<Card title="Status" href="/status" />
+					{links.map((link, i) => (
+						<Card key={i} title={link.label} href={link.href} />
+					))}
 				</div>
-				<StatusPill className="fixed left-4 top-4" userId={profile.discordUserId} />
+				<StatusPill className="fixed left-4 top-4" />
 			</div>
 		</main>
 	);

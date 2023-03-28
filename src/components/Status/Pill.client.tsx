@@ -4,18 +4,17 @@ import Link from 'next/link';
 import { useLanyard } from 'react-use-lanyard/dist';
 
 import { cn } from '~/utils/cn';
+import { profile } from '~/data/profile';
 import { READABLE_DISCORD_STATUS } from '~/types/lanyard';
 import { StatusIndicator } from './Indicator.client';
 
 import type { WithClassName } from '~/types/react';
 
-interface StatusPillProps extends WithClassName {
-	userId: string;
-}
+interface StatusPillProps extends WithClassName {}
 
-export function StatusPill({ className, userId }: StatusPillProps): JSX.Element | null {
+export function StatusPill({ className }: StatusPillProps): JSX.Element | null {
 	const lanyard = useLanyard({
-		userId,
+		userId: profile.discordUserId,
 		socket: true,
 	});
 
