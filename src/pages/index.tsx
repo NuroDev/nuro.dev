@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic';
-import { differenceInYears } from 'date-fns';
 import { Icon } from '@iconify/react';
 
 import { Animate, Button, Pill } from '~/components';
@@ -41,11 +40,10 @@ const ACTIONS: Array<NavigationItem> = [
 export default function HomePage(): JSX.Element {
 	const today = new Date();
 	const birthday = new Date('1997-08-09');
-	const age = differenceInYears(today, birthday);
 	const isBirthday =
 		today.getDate() === birthday.getDate() && today.getMonth() === birthday.getMonth();
 
-	const description = `I am a ${age} year old software engineer & games developer`;
+	const description = `I am a software engineer & games developer`;
 
 	return (
 		<Layout.Default>
