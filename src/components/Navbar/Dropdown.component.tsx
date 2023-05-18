@@ -36,7 +36,7 @@ const StyledMenuItem = forwardRef<HTMLAnchorElement, MenuLinkProps>(function Sty
 				'flex items-center px-4 py-3 text-sm font-medium tracking-wide cursor-pointer default-transition',
 				active
 					? 'bg-gray-100/50 text-gray-900 dark:bg-gray-700/50 dark:text-white'
-					: 'text-gray-300 hover:text-gray-700 dark:hover:text-white',
+					: 'text-gray-400 hover:text-gray-700 dark:hover:text-white',
 				className,
 			)}
 			ref={ref}
