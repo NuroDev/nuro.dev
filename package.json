@@ -42,7 +42,7 @@
 		"inter-ui": "^3.19.3",
 		"is-web-crawler": "^1.1.0",
 		"motion": "^10.7.2",
-		"next": "^12.2.5",
+		"next": "^12.3.4",
 		"next-axiom": "^0.13.0",
 		"next-mdx-remote": "^3.0.6",
 		"next-seo": "^4.28.1",
