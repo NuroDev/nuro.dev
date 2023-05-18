@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { Head, Html, Main, NextScript } from 'next/document';
 
 export default function Document(): JSX.Element {
@@ -6,7 +7,13 @@ export default function Document(): JSX.Element {
 			<Head>
 				<link rel="icon" type="image/png" href="/favicon.png" />
 			</Head>
-			<body className="antialiased font-inter bg-gray-50 text-gray-500 dark:bg-gray-900 selection:bg-gray-900 selection:dark:bg-white selection:text-white selection:dark:text-primary-500">
+			<body
+				className={clsx(
+					'antialiased',
+					'bg-gradient-to-br from-white via-gray-100 to-white dark:from-black from-20% dark:via-gray-700 dark:to-black to-80%',
+					'font-inter text-gray-500',
+					'selection:bg-gray-900 selection:dark:bg-white selection:text-white selection:dark:text-primary-500',
+				)}>
 				<Main />
 				<NextScript />
 			</body>
