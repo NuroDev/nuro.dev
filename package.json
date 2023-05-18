@@ -62,7 +62,7 @@
 		"remark-slug": "^7.0.0",
 		"swr": "^1.0.1",
 		"use-sound": "^4.0.1",
-		"windicss": "^3.5.1"
+		"windicss": "^3.5.6"
 	},
 	"devDependencies": {
 		"@types/canvas-confetti": "^1.4.2",
@@ -81,6 +81,6 @@
 		"prettier": "^2.4.1",
 		"ts-shader-loader": "^1.0.6",
 		"typescript": "^4.4.3",
-		"windicss-webpack-plugin": "^1.6.10"
+		"windicss-webpack-plugin": "^1.7.8"
 	}
 }

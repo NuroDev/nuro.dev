@@ -104,8 +104,8 @@ dependencies:
     specifier: ^4.0.1
     version: 4.0.1(react@17.0.2)
   windicss:
-    specifier: ^3.5.1
-    version: 3.5.1
+    specifier: ^3.5.6
+    version: 3.5.6
 
 devDependencies:
   '@types/canvas-confetti':
@@ -157,8 +157,8 @@ devDependencies:
     specifier: ^4.4.3
     version: 4.4.3
   windicss-webpack-plugin:
-    specifier: ^1.6.10
-    version: 1.6.10
+    specifier: ^1.7.8
+    version: 1.7.8
 
 packages:
 
@@ -2209,6 +2209,11 @@ packages:
       has-symbols: 1.0.3
     dev: true
 
+  /get-port@6.1.2:
+    resolution: {integrity: sha512-BrGGraKm2uPqurfGVj/z97/zv8dPleC6x9JBNRTrDNtCkkRF4rPwrQXFgL7+I+q8QSdU4ntLQX2D7KIxSy8nGw==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dev: true
+
   /get-symbol-description@1.0.0:
     resolution: {integrity: sha512-2EmdH1YvIQiZpltCNgkuiUnyukzxM/R6NDJX31Ke3BG1Nq5b0S2PhX59UKi9vZpPDQVdqn+1IcaAwnzTT5vCjw==}
     engines: {node: '>= 0.4'}
@@ -3354,8 +3359,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /pathe@0.2.0:
-    resolution: {integrity: sha512-sTitTPYnn23esFR3RlqYBWn4c45WGeLcsKzQiUpXJAyfcWkolvlYpV8FLo7JishK946oQwMFUCHXQ9AjGPKExw==}
+  /pathe@1.1.0:
+    resolution: {integrity: sha512-ODbEPR0KKHqECXW1GoxdDb+AZvULmXjVPy4rt+pGo2+TnjJTIPJQSVS6N63n8T2Ip+syHhbn52OewKicV0373w==}
     dev: true
 
   /picocolors@1.0.0:
@@ -4334,8 +4339,8 @@ packages:
     engines: {node: '>=10.4'}
     dev: false
 
-  /webpack-virtual-modules@0.4.6:
-    resolution: {integrity: sha512-5tyDlKLqPfMqjT3Q9TAqf2YqjwmnUleZwzJi1A5qXnlBCdj2AtOJ6wAWdglTIDOPgOiOrXeBeFcsQ8+aGQ6QbA==}
+  /webpack-virtual-modules@0.5.0:
+    resolution: {integrity: sha512-kyDivFZ7ZM0BVOUteVbDFhlRt7Ah/CSPwJdi8hBpkK7QLumUqdLtVfm/PX/hkcnrvr0i77fO5+TjZ94Pe+C9iw==}
     dev: true
 
   /whatwg-encoding@1.0.5:
@@ -4400,30 +4405,25 @@ packages:
       isexe: 2.0.0
     dev: true
 
-  /windicss-webpack-plugin@1.6.10:
-    resolution: {integrity: sha512-X/0GbXVoAhML4C8WgKWB/jTJ7ForLFjpwvZ5xAtpQPrVgZdfFH31WVafX+8K+gRBvYpJToHO1TB+oLu6gRFJQA==}
+  /windicss-webpack-plugin@1.7.8:
+    resolution: {integrity: sha512-wjKczM/20gOaIaDQfdWV1M6dWAKKp/JQDuUmIEvDopmuo3ereUFVFnGxIjyKAu9U4U7RdcZGUwzL/+bJtIn+pA==}
     dependencies:
       '@windicss/plugin-utils': 1.9.0
       debug: 4.3.4
+      get-port: 6.1.2
       loader-utils: 2.0.4
       lodash: 4.17.21
-      pathe: 0.2.0
-      webpack-virtual-modules: 0.4.6
-      windicss: 3.5.1
+      pathe: 1.1.0
+      webpack-virtual-modules: 0.5.0
+      windicss: 3.5.6
     transitivePeerDependencies:
       - supports-color
     dev: true
-
-  /windicss@3.5.1:
-    resolution: {integrity: sha512-E1hYZATcZFci/XhGS0sJAMRxULjnK+glNukE78Ku7xeb3jxgMY55fFOdIrav+GjQCsgR+IZxPq9/DwmO6eyc4Q==}
-    engines: {node: '>= 12'}
-    hasBin: true
 
   /windicss@3.5.6:
     resolution: {integrity: sha512-P1mzPEjgFMZLX0ZqfFht4fhV/FX8DTG7ERG1fBLiWvd34pTLVReS5CVsewKn9PApSgXnVfPWwvq+qUsRwpnwFA==}
     engines: {node: '>= 12'}
     hasBin: true
-    dev: true
 
   /word-wrap@1.2.3:
     resolution: {integrity: sha512-Hz/mrNwitNRh/HUAtM/VT/5VH+ygD6DV7mYKZAtHOrbs8U7lvPS6xf7EJKMF0uW1KJCl0H701g3ZGus+muE5vQ==}
