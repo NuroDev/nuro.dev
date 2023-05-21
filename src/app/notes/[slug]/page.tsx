@@ -1,22 +1,31 @@
 import { readFile, readdir } from 'node:fs/promises';
-import { join } from 'node:path';
+import { join, parse as parsePath } from 'node:path';
 import type { NextPageProps } from '~/types/next';
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 export async function generateStaticParams() {
 	const allPostSlugs = await readdir(join(process.cwd(), 'src', 'data', 'notes'));
 
-	return allPostSlugs.map((slug) => ({ slug }));
+	const allPosts = await Promise.all(
+		allPostSlugs.map(async (slug) => {
+			const content = await readFile(
+				join(process.cwd(), 'src', 'data', 'notes', `${slug}`),
+				'utf-8',
+			);
+
+			return {
+				slug: parsePath(slug).name,
+				contents: content,
+			};
+		}),
+	);
+
+	return allPosts;
 }
 
 export default async function Post({
 	params,
 }: NextPageProps<typeof generateStaticParams>): Promise<JSX.Element> {
-	const _note = await readFile(
-		join(process.cwd(), 'src', 'data', 'notes', `${params.slug}`),
-		'utf-8',
-	);
-
 	return (
 		<main className="flex min-h-screen items-center justify-center py-12">
 			<h1>Hello {params.slug}</h1>

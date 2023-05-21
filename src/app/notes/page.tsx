@@ -4,7 +4,8 @@ import { join, parse as parsePath } from 'node:path';
 import type { NextPageProps } from '~/types/next';
 
 export default async function Posts(_props: NextPageProps): Promise<JSX.Element> {
-	const allPostSlugs = await readdir(join(process.cwd(), 'src', 'data', 'notes')).then((paths) =>
+	const postFilePath = join(process.cwd(), 'src', 'data', 'notes');
+	const allPostSlugs = await readdir(postFilePath).then((paths) =>
 		paths.map((path) => parsePath(path).name),
 	);
 
