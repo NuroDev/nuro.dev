@@ -27,6 +27,7 @@
 		"zod": "^3.21.4"
 	},
 	"devDependencies": {
+		"@trivago/prettier-plugin-sort-imports": "^4.1.1",
 		"@types/node": "20.2.1",
 		"@types/react": "18.2.6",
 		"@types/react-dom": "18.2.4",
