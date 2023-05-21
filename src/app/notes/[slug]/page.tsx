@@ -23,6 +23,11 @@ export async function generateStaticParams() {
 	return allPosts;
 }
 
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+export const generateMetadata = ({ params }: NextPageProps<typeof generateStaticParams>) => ({
+	title: params.slug,
+});
+
 export default async function Post({
 	params,
 }: NextPageProps<typeof generateStaticParams>): Promise<JSX.Element> {

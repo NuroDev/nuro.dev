@@ -3,7 +3,7 @@ import type { NextLayoutProps } from '~/types/next';
 
 export const metadata: Metadata = {
 	title: {
-		default: 'notes ─ nuro',
+		default: 'notes',
 		template: '%s ─ notes',
 	},
 	description: "Hey 👋 I'm Ben, a developer",

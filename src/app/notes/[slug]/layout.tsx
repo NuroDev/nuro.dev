@@ -4,7 +4,7 @@ import type { NextLayoutProps } from '~/types/next';
 export const metadata: Metadata = {
 	title: {
 		default: 'note ─ nuro',
-		template: '%s ─ note',
+		template: '%s ─ nuro',
 	},
 	description: "Hey 👋 I'm Ben, a developer",
 };
