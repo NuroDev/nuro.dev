@@ -1,10 +1,12 @@
 import './globals.css';
 import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
+import { headers } from 'next/headers';
 import { Inter } from 'next/font/google';
 import { Background } from '~/components/Background';
 import type { NextLayoutProps } from '~/types/next';
 import { cn } from '~/util/cn';
+import isUserAgentBot from 'isbot';
 
 const inter = Inter({
 	subsets: ['latin'],
@@ -20,6 +22,9 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: NextLayoutProps) {
+	const userAgent = headers().get('user-agent');
+	const showBackground = !isUserAgentBot(userAgent);
+
 	return (
 		<html lang="en">
 			<body
@@ -32,7 +37,7 @@ export default function RootLayout({ children }: NextLayoutProps) {
 				)}
 			>
 				{children}
-				<Background />
+				{showBackground ? <Background /> : null}
 			</body>
 			<Analytics />
 		</html>
