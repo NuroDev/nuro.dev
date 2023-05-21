@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { NextPageProps } from '~/types/next';
 
-export default function Home(_props: NextPageProps) {
+export default function Home(_props: NextPageProps): JSX.Element {
 	return (
 		<main className="flex min-h-screen items-center justify-center py-12">
 			<div className="flex flex-col space-y-3">

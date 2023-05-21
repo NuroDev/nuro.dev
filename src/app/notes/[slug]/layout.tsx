@@ -9,6 +9,6 @@ export const metadata: Metadata = {
 	description: "Hey 👋 I'm Ben, a developer",
 };
 
-export default function PostsLayout({ children }: NextLayoutProps) {
+export default function PostsLayout({ children }: NextLayoutProps): JSX.Element {
 	return <>{children}</>;
 }

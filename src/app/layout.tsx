@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 	description: "Hey 👋 I'm Ben, a developer",
 };
 
-export default function RootLayout({ children }: NextLayoutProps) {
+export default function RootLayout({ children }: NextLayoutProps): JSX.Element {
 	const userAgent = headers().get('user-agent');
 	const showBackground = !isUserAgentBot(userAgent);
 
