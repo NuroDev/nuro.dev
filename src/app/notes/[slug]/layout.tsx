@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import type { NextLayoutProps } from '~/types/next';
 
+export const runtime = 'nodejs';
+
 export const metadata: Metadata = {
 	title: {
 		default: 'note ─ nuro',
