@@ -13,8 +13,6 @@ const inter = Inter({
 	variable: '--font-sans',
 });
 
-export const runtime = 'edge';
-
 export const metadata: Metadata = {
 	title: {
 		default: 'developer ─ nuro',
