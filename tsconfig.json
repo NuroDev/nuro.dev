@@ -6,7 +6,6 @@
 		"jsxImportSource": "solid-js",
 		"paths": {
 			"~/*": ["./src/*"],
-			"~/tailwind.config": ["./tailwind.config.ts"]
 		},
 		"strict": true
 	},

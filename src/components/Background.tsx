@@ -1,6 +1,5 @@
 import { Camera, Color, Geometry, Mesh, Program, Renderer } from 'ogl-typescript';
 import { Component, onCleanup, onMount } from 'solid-js';
-import { colors } from '~/tailwind.config';
 
 const FRAGMENT_SHADER = /* glsl */ `precision highp float;
 
@@ -100,7 +99,8 @@ export const Background: Component = () => {
 		fragment: FRAGMENT_SHADER,
 		transparent: true,
 		uniforms: {
-			uColor: { value: new Color(colors.gray[500]) },
+			// TODO: Import color from Tailwind CSS config colors
+			uColor: { value: new Color('#282d34') },
 			uTime: { value: 0 },
 		},
 		vertex: VERTEX_SHADER,
