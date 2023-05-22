@@ -18,6 +18,10 @@ public/sitemap*.xml
 
 # production
 /build
+dist
+
+# generated types
+.astro/
 
 # misc
 .DS_Store

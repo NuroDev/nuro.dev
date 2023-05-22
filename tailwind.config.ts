@@ -1,10 +1,9 @@
-import type { Config } from 'tailwindcss';
-import defaultTheme from 'tailwindcss/defaultTheme';
+import type { Config } from 'tailwindcss'
+import Animate from 'tailwindcss-animate';
 
-const defineConfig = <T extends Config>(config: T) => config;
+const defineConfig = <T extends Config>(config: T): T => config;
 
 export const colors = {
-	...defaultTheme.colors,
 	gray: {
 		50: '#f9fafb',
 		100: '#eaeaeb',
@@ -29,21 +28,16 @@ export const colors = {
 		800: '#0054e1',
 		900: '#004ad7',
 	},
-};
+} as const;
 
 export default defineConfig({
-	content: [
-		'./src/app/**/*.{js,ts,jsx,tsx,mdx}',
-		'./src/components/**/*.{js,ts,jsx,tsx,mdx}',
-		'./src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}'],
+	plugins: [
+		Animate
 	],
-	plugins: [require('tailwindcss-animate')],
 	theme: {
 		extend: {
 			colors,
-			fontFamily: {
-				sans: ['var(--font-sans)', ...defaultTheme.fontFamily.sans],
-			},
 			transitionDuration: {
 				2000: '2000ms',
 			},

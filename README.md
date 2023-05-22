@@ -1,54 +1,47 @@
-<div align="center">
+# Astro Starter Kit: Minimal
 
-<a target="_blank" href="https://nuro.dev">
-    <img alt='Website' src="./public/blog/hello_world/screenshot.png" />
-</a>
-
-[![Website](https://img.shields.io/badge/%20%F0%9F%8F%A1%20website-0072ff.svg?longCache=true&style=for-the-badge)](https://nuro.dev)
-[![License](https://img.shields.io/badge/-mit-red.svg?longCache=true&style=for-the-badge)](https://github.com/tdemapp/website/blob/master/LICENSE)
-[![Website](https://img.shields.io/badge/Deploy-brightgreen.svg?logo=vercel&longCache=true&style=for-the-badge)](https://vercel.com/import/project?template=https://github.com/nurodev/nuro.dev)
-[![Vercel](https://img.shields.io/badge/-powered%20by%20vercel-black.svg?logo=vercel&longCache=true&style=for-the-badge)](https://vercel.com/home?utm_source=nuro&utm_campaign=oss)
-
-</div>
-
-## 🛠 Development
-
-Clone the repository
-
-```zsh
-git clone https://github.com/nurodev/nuro.dev.git
+```
+npm create astro@latest -- --template minimal
 ```
 
-Install dependencies
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
 
-```zsh
-npm install
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-# Or using Yarn
+## 🚀 Project Structure
 
-yarn
+Inside of your Astro project, you'll see the following folders and files:
+
+```
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
 ```
 
-Start the development server
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-```zsh
-npm run dev
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-# Or using Yarn
+Any static assets, like images, can be placed in the `public/` directory.
 
-yarn dev
-```
+## 🧞 Commands
 
-Build for production
+All commands are run from the root of the project, from a terminal:
 
-```zsh
-npm run build
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:3000`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-# Or using Yarn
+## 👀 Want to learn more?
 
-yarn build
-```
-
-## 📄 License
-
-MIT © [Ben Dixon](https://github.com/nurodev/nuro.dev/blob/main/LICENSE)
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
