@@ -9,7 +9,9 @@ function getAdapter(): AstroIntegration | undefined {
 
 	// TODO: Add `VERCEL === '1'` check & default to Node.js server
 
-	return vercel();
+	return vercel({
+		analytics: true,
+	});
 }
 
 export default defineConfig({

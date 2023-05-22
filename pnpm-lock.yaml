@@ -10,9 +10,6 @@ dependencies:
   '@astrojs/vercel':
     specifier: ^3.4.0
     version: 3.4.0(astro@2.5.1)(react@18.2.0)
-  '@vercel/analytics':
-    specifier: ^1.0.1
-    version: 1.0.1
   astro:
     specifier: ^2.5.1
     version: 2.5.1
@@ -854,10 +851,6 @@ packages:
       react: ^16.8||^17||^18
     dependencies:
       react: 18.2.0
-    dev: false
-
-  /@vercel/analytics@1.0.1:
-    resolution: {integrity: sha512-Ux0c9qUfkcPqng3vrR0GTrlQdqNJ2JREn/2ydrVuKwM3RtMfF2mWX31Ijqo1opSjNAq6rK76PwtANw6kl6TAow==}
     dev: false
 
   /@vercel/nft@0.22.6:

@@ -42,9 +42,4 @@ const isWebCrawler = isBot(Astro.request.headers.get('user-agent'));
 		<slot />
 		{!isWebCrawler ? <Background client:only /> : null}
 	</body>
-	<script>
-		import { inject } from '@vercel/analytics';
-
-		inject();
-	</script>
 </html>
