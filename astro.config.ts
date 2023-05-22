@@ -1,3 +1,4 @@
+import prefetch from '@astrojs/prefetch';
 import solidJs from '@astrojs/solid-js';
 import tailwind from '@astrojs/tailwind';
 import vercel from '@astrojs/vercel/edge';
@@ -14,10 +15,11 @@ function getAdapter(): AstroIntegration | undefined {
 	});
 }
 
+// https://astro.build/config
 export default defineConfig({
 	// For some reason Astro does not allow passing `undefined` here
 	// so we need to assert the return type of `getAdapter` to `AstroIntegration`
 	adapter: getAdapter() as AstroIntegration,
-	integrations: [solidJs(), tailwind()],
+	integrations: [solidJs(), tailwind(), prefetch()],
 	output: 'server',
 });

@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  '@astrojs/prefetch':
+    specifier: ^0.2.3
+    version: 0.2.3
   '@astrojs/solid-js':
     specifier: ^2.2.0
     version: 2.2.0(@babel/core@7.21.8)(solid-js@1.4.3)
@@ -99,6 +102,12 @@ packages:
       vfile: 5.3.7
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /@astrojs/prefetch@0.2.3:
+    resolution: {integrity: sha512-r51t4fkGcePA6FHFVDD5vC/whhoKWFSaKNug/4Z2FSKZZga9yjb2qDcrul7u32nVDN+30ywZ/RQAmBMrHOmLiw==}
+    dependencies:
+      throttles: 1.0.1
     dev: false
 
   /@astrojs/prism@2.1.2:
@@ -3485,6 +3494,11 @@ packages:
       minizlib: 2.1.2
       mkdirp: 1.0.4
       yallist: 4.0.0
+    dev: false
+
+  /throttles@1.0.1:
+    resolution: {integrity: sha512-fab7Xg+zELr9KOv4fkaBoe/b3L0GMGLd0IBSCn16GoE/Qx6/OfCr1eGNyEcDU2pUA79qQfZ8kPQWlRuok4YwTw==}
+    engines: {node: '>=6'}
     dev: false
 
   /titleize@3.0.0:
