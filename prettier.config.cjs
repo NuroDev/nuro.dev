@@ -6,6 +6,7 @@ module.exports = {
 	importOrderSeparation: true,
 	plugins: [
 		require.resolve("@trivago/prettier-plugin-sort-imports"),
+		require.resolve('prettier-plugin-astro'),
 		require.resolve("prettier-plugin-tailwindcss"),
 	],
 	printWidth: 100,

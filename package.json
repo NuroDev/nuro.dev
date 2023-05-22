@@ -12,7 +12,7 @@
 		"astro": "astro",
 		"build": "astro build",
 		"dev": "astro dev",
-		"format": "prettier --write '**/*.{js,jsx,ts,tsx,css,json}'",
+		"format": "prettier --write '**/*.{js,jsx,ts,tsx,css,json,astro}'",
 		"preview": "astro preview"
 	},
 	"dependencies": {
@@ -31,6 +31,7 @@
 	"devDependencies": {
 		"@trivago/prettier-plugin-sort-imports": "^4.1.1",
 		"prettier": "^2.8.8",
+		"prettier-plugin-astro": "^0.9.0",
 		"prettier-plugin-tailwindcss": "^0.3.0"
 	}
 }
