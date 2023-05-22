@@ -3,10 +3,11 @@ import { Background } from '~/components/Background';
 import { cn } from '~/utils/cn';
 
 interface Props {
+	description?: string;
 	title?: string;
 }
 
-const { title = 'nuro.dev' } = Astro.props;
+const { description = '"Hey 👋 I\'m Ben, a developer"', title = 'nuro.dev' } = Astro.props;
 ---
 
 <html lang="en">
@@ -14,6 +15,7 @@ const { title = 'nuro.dev' } = Astro.props;
 		<meta charset="utf-8" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description} />
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<title>{title}</title>
 
