@@ -1,9 +1,18 @@
 /** @type {import("prettier").Config} */
 module.exports = {
+	...require('prettier-config-standard'),
 	arrowParens: "always",
 	bracketSameLine: false,
 	bracketSpacing: true,
 	importOrderSeparation: true,
+	overrides: [
+		{
+			files: '*.astro',
+			options: {
+				parser: 'astro'
+			}
+		}
+	],
 	plugins: [
 		require.resolve("@trivago/prettier-plugin-sort-imports"),
 		require.resolve('prettier-plugin-astro'),

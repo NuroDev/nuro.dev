@@ -1,8 +1,19 @@
 {
+	"[astro]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
 	"editor.codeActionsOnSave": { "source.fixAll": true },
 	"editor.formatOnSave": true,
 	"editor.tabSize": 4,
-	"eslint.validate": ["html", "javascriptreact", "typescriptreact"],
+	"eslint.validate": [
+		"astro",
+		"html",
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact"
+	],
+	"prettier.documentSelectors": ["**/*.astro"],
 	"prettier.enable": true,
 	"typescript.tsdk": "node_modules/typescript/lib"
 }

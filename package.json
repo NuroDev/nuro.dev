@@ -13,6 +13,7 @@
 		"build": "astro build",
 		"dev": "astro dev",
 		"format": "prettier --write '**/*.{js,jsx,ts,tsx,css,json,astro}'",
+		"lint": "eslint --fix './**/*.{js,jsx,ts,tsx,astro}'",
 		"preview": "astro preview"
 	},
 	"dependencies": {
@@ -30,7 +31,12 @@
 	},
 	"devDependencies": {
 		"@trivago/prettier-plugin-sort-imports": "^4.1.1",
+		"@typescript-eslint/parser": "^5.59.7",
+		"eslint": "^8.41.0",
+		"eslint-plugin-astro": "^0.27.0",
+		"eslint-plugin-jsx-a11y": "^6.7.1",
 		"prettier": "^2.8.8",
+		"prettier-config-standard": "^5.0.0",
 		"prettier-plugin-astro": "^0.9.0",
 		"prettier-plugin-tailwindcss": "^0.3.0"
 	}
