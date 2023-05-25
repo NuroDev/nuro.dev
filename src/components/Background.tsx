@@ -11,7 +11,7 @@ varying vec4 vRandom;
 void main() {
 	vec2 uv = gl_PointCoord.xy;
 	
-	float circle = smoothstep(0.5, 0.4, length(uv - 0.5)) * 1.0;
+	float circle = smoothstep(0.3, 0.15, length(uv - 0.5)) * 1.0;
 	
 	gl_FragColor.rgb = uColor;
 	gl_FragColor.a = circle;
@@ -41,7 +41,7 @@ void main() {
 	vec4 mPos = modelMatrix * vec4(pos, 1.0);
 
 	// Add some movement in world space
-	float t = uTime * 0.6;
+	float t = uTime * 0.1;
 	mPos.x += sin(t * random.z + 6.28 * random.w) * mix(0.1, 1.5, random.x);
 	mPos.y += sin(t * random.y + 6.28 * random.x) * mix(0.1, 1.5, random.w);
 	mPos.z += sin(t * random.w + 6.28 * random.y) * mix(0.1, 1.5, random.z);
@@ -116,7 +116,7 @@ export const Background: Component = () => {
 		animationId = requestAnimationFrame(update);
 
 		particles.rotation.z += 0.001;
-		program.uniforms.uTime!.value = t * 0.0001;
+		program.uniforms.uTime.value = t * 0.0001;
 
 		renderer.render({
 			scene: particles,
