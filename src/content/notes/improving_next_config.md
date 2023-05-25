@@ -82,7 +82,7 @@ No, type safety isn't needed for a config file. But when writing it it can be ve
 
 `next.config.ts` has been talked about for 3 years now & has still not been added. [This issue](https://github.com/vercel/next.js/issues/5318) has been tracking this request since first posted in 2018 and still to this day has people asking for it.
 
-I can very much understand if there are more pressing features, bugs, etc that need to be addressed. But [Next.js 12 has just been released](https://nextjs.org/blog/next-12), the Next.js core has been running on TypeScript since 2019 & Vercel has constantly preached how amazing TypeScript is to the point it works out of the box pretty much.
+I can very much understand if there are more pressing features, bugs, etc that need to be addressed. But [Next.js 12 has just been released](https://nextjs.org/notes/next-12), the Next.js core has been running on TypeScript since 2019 & Vercel has constantly preached how amazing TypeScript is to the point it works out of the box pretty much.
 And yet, the Next.js config still only allows a CommonJS JavaScript file.
 
 ### :electric_plug: Plugins

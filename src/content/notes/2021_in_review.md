@@ -34,7 +34,7 @@ At the beginning of 2020, before COVID19 took hold of the world, I lost a very c
 
 **We all miss you Jamie :heart:**
 
-![A photo from my 2019 New Years Eve party with Dan, Me, Sam, Jamie & Katie](/blog/2021_in_review/new_years_2019.jpeg 'A photo from my 2019 New Years Eve party with Dan, Me, Sam, Jamie & Katie')
+![A photo from my 2019 New Years Eve party with Dan, Me, Sam, Jamie & Katie](/notes/2021_in_review/new_years_2019.jpeg 'A photo from my 2019 New Years Eve party with Dan, Me, Sam, Jamie & Katie')
 
 ## :earth_africa: Experiences
 
@@ -60,18 +60,18 @@ Having not been to a wedding for several years now it was a nice occasion to go 
 
 **Congrats to you both :tada:**
 
-![A photo from Andrew & Jade's wedding with them standing outside in front of the church](/blog/2021_in_review/andrew_and_jades_wedding.jpg 'A photo from Andrew & Jade's wedding with them standing outside in front of the church')
+![A photo from Andrew & Jade's wedding with them standing outside in front of the church](/notes/2021_in_review/andrew_and_jades_wedding.jpg 'A photo from Andrew & Jade's wedding with them standing outside in front of the church')
 
 The second big event of the year is the group holiday I have with all my friends, usually to a family holiday home located in Norfolk.
 Honestly so much happened on that week away that I cannot remember it all but I have a few photos to remember some of the best moments.
 
-![A photo of the full English breakfast we made on the day after we arrived](/blog/2021_in_review/norfolk_breakfast.jpg 'A photo of the full English breakfast we made on the day after we arrived')
-![A photo from on top of the cliffs of the North Norfolk coast overlooking the English Channel](/blog/2021_in_review/norfolk_coast.jpg 'A photo from on top of the cliffs of the North Norfolk coast overlooking the English Channel')
-![A photo of us all as a group dressed up in race suits before we go out racing go karts](/blog/2021_in_review/norfolk_gokarting.jpg 'A photo of us all as a group dressed up in race suits before we go out racing go karts')
-![A photo of my friends Katie & Ashley on top of a fallen down tree pretending to be fighting](/blog/2021_in_review/norfolk_fighting_in_the_woods.jpg 'A photo of my friends Katie & Ashley on top of a fallen down tree pretending to be fighting')
-![A photo of my friend Will sat on a bench in the woods pretending to look sad](/blog/2021_in_review/norfolk_will_on_a_bench.jpg 'A photo of my friend Will sat on a bench in the woods pretending to look sad')
-![A photo of the church next to our holiday home showing the beautiful summer sunset](/blog/2021_in_review/norfolk_church_sunset.jpg 'A photo of the church next to our holiday home showing the beautiful summer sunset')
-![A photo of far away photo of my friends Ashley & Will throwing a frisbee around the garden](/blog/2021_in_review/norfolk_frisbee.jpg 'A photo of far away photo of my friends Ashley & Will throwing a frisbee around the garden')
+![A photo of the full English breakfast we made on the day after we arrived](/notes/2021_in_review/norfolk_breakfast.jpg 'A photo of the full English breakfast we made on the day after we arrived')
+![A photo from on top of the cliffs of the North Norfolk coast overlooking the English Channel](/notes/2021_in_review/norfolk_coast.jpg 'A photo from on top of the cliffs of the North Norfolk coast overlooking the English Channel')
+![A photo of us all as a group dressed up in race suits before we go out racing go karts](/notes/2021_in_review/norfolk_gokarting.jpg 'A photo of us all as a group dressed up in race suits before we go out racing go karts')
+![A photo of my friends Katie & Ashley on top of a fallen down tree pretending to be fighting](/notes/2021_in_review/norfolk_fighting_in_the_woods.jpg 'A photo of my friends Katie & Ashley on top of a fallen down tree pretending to be fighting')
+![A photo of my friend Will sat on a bench in the woods pretending to look sad](/notes/2021_in_review/norfolk_will_on_a_bench.jpg 'A photo of my friend Will sat on a bench in the woods pretending to look sad')
+![A photo of the church next to our holiday home showing the beautiful summer sunset](/notes/2021_in_review/norfolk_church_sunset.jpg 'A photo of the church next to our holiday home showing the beautiful summer sunset')
+![A photo of far away photo of my friends Ashley & Will throwing a frisbee around the garden](/notes/2021_in_review/norfolk_frisbee.jpg 'A photo of far away photo of my friends Ashley & Will throwing a frisbee around the garden')
 
 ## :iphone: Things
 
@@ -91,7 +91,7 @@ With a fair bit of saving, I was able to finally pull the trigger in October 202
 
 I have no benchmarks to validate it but this device with its 16 CPU cores & 16 GPU cores I feel can in many scenarios stand toe to toe with my desktop Windows PC that's running a [AMD 5900X](https://www.amd.com/en/products/cpu/amd-ryzen-9-5900x) & a [RTX 3060 Ti](https://www.nvidia.com/en-gb/geforce/graphics-cards/30-series/rtx-3060-3060ti/), all while staying cool & silent the entire time. It's mind boggling the engineering behind the device.
 
-![A photo of my new 14" Macbook Pro in silver](/blog/2021_in_review/macbook.jpg 'A photo of my new 14" Macbook Pro in silver')
+![A photo of my new 14" Macbook Pro in silver](/notes/2021_in_review/macbook.jpg 'A photo of my new 14" Macbook Pro in silver')
 
 ### :satellite: Starlink
 
@@ -101,8 +101,8 @@ For those unaware I live on a farm in a very isolated location and as such to ge
 
 A few hundred pounds & a few days of shipping from California later I finally received my Starlink kit & got it all set up & running.
 
-![A photo of my Starlink kit delivered outside my front door](/blog/2021_in_review/starlink_box.jpg 'A photo of my Starlink kit delivered outside my front door')
-![A photo of my Starlink kit all set up outside my front door & aiming at the sky](/blog/2021_in_review/starlink_set_up.jpg 'A photo of my Starlink kit all set up outside my front door & aiming at the sky')
+![A photo of my Starlink kit delivered outside my front door](/notes/2021_in_review/starlink_box.jpg 'A photo of my Starlink kit delivered outside my front door')
+![A photo of my Starlink kit all set up outside my front door & aiming at the sky](/notes/2021_in_review/starlink_set_up.jpg 'A photo of my Starlink kit all set up outside my front door & aiming at the sky')
 
 This was initially just to get the kit up & running & see how the service was, even while partially obstructed. [The end results were pretty good](https://twitter.com/nurodev/status/1472865360122634244) with speeds almost reaching 300 Mbps download & 30 Mbps upload. A huge upgrade over my old ADSL connection offering less than 15 Mbps download and less than 1 Mbps upload.
 
@@ -114,7 +114,7 @@ The final & largest purchase of this year is that I finally purchased my dream c
 
 I originally ordered a brand new model, but due to a huge demand for cars & the on-going parts shortage, I later cancelled that order and instead ordered an ex-demo model which I later learned was an ex-press car used for many UK review sites, such as [What Car?](https://www.youtube.com/watch?v=kHw3bfydrLM).
 
-![A photo of my new Tesla Model 3 in white with sports wheels](/blog/2021_in_review/tesla.jpg 'A photo of my new Tesla Model 3 in white with sports wheels')
+![A photo of my new Tesla Model 3 in white with sports wheels](/notes/2021_in_review/tesla.jpg 'A photo of my new Tesla Model 3 in white with sports wheels')
 
 ## :star: Accomplishments
 

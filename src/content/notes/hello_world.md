@@ -111,7 +111,7 @@ The rest of the data returned is pretty standard (Homepage URL, GitHub repositor
 
 With this I can update the contents of my projects page by using GitHub as a form of CMS. All I will need to do to add a project to my projects page page is add the `portfolio` tag to any of my repositories.
 
-![Screenshot of the projects page](/blog/hello_world/projects.png 'Screenshot of the projects page')
+![Screenshot of the projects page](/notes/hello_world/projects.png 'Screenshot of the projects page')
 
 <XButton href="/projects" icon="feather:external-link" label="Go to Projects" />
 
@@ -133,7 +133,7 @@ To quickly name a few that helped me a lot:
 -   [www.twanmulder.com](https://www.twanmulder.com)
 
 That last one in particular I wanted to thank for this feature as I found it as a really nice way to track & record big events without having to do a blog post every time.
-With a bit of technical planning & building I was able to put together a simple JSON structure that would allow me to simply add a new object with simple data about the event to add it to my timeline page. Most of the heavy lifting of which is done by [Next.js's static site generation (SSG)](https://nextjs.org/blog/next-9-3#next-gen-static-site-generation-ssg-support).
+With a bit of technical planning & building I was able to put together a simple JSON structure that would allow me to simply add a new object with simple data about the event to add it to my timeline page. Most of the heavy lifting of which is done by [Next.js's static site generation (SSG)](https://nextjs.org/notes/next-9-3#next-gen-static-site-generation-ssg-support).
 
 <XButton href="/timeline" icon="feather:external-link" label="Go to Timeline" />
 
@@ -147,7 +147,7 @@ With more & more companies offering referral rewards, what better place to share
 
 This page is built almost identically to my [timeline](/timeline) page whereby a JSON structure is used to store the data that is then compiled at build time into a static page.
 
-![Screenshot of the referrals page](/blog/hello_world/referrals.png 'Screenshot of the referrals page')
+![Screenshot of the referrals page](/notes/hello_world/referrals.png 'Screenshot of the referrals page')
 
 <XButton href="/referrals" icon="feather:external-link" label="Go to Referrals" />
 
@@ -159,7 +159,7 @@ This next feature I am super happy with how it turned out & a HUGE credit has to
 
 Using Lanyard I was able to build a live status widget & indicator component(s) that mean, as long as I am online on Discord, anyone is able to view what I am listening to on Spotify, what game I'm playing or even whatever I am coding thanks to a Visual Studio Code extension that adds rich presence to Discord.
 
-![Status Widget in action](/blog/hello_world/lanyard.gif 'Status Widget in action')
+![Status Widget in action](/notes/hello_world/lanyard.gif 'Status Widget in action')
 
 <XButton href="/status" icon="feather:external-link" label="Go to Status" />
 
@@ -201,7 +201,7 @@ Something small but very noticible is adding alt tags or `aria-label`'s where po
 
 Primarily brought to my attention by the work of Discord via there [`focus-rings`](https://github.com/discord/focus-rings) package & [TailwindCSS](https://tailwindcss.com/) offering a new `ring` style system aimed at helping with focus visiblity & accessibility.
 
-![Focus ring](/blog/hello_world/focus.png 'Focus ring')
+![Focus ring](/notes/hello_world/focus.png 'Focus ring')
 
 #### Keyboard navigation
 
@@ -209,7 +209,7 @@ Primarily brought to my attention by the work of Discord via there [`focus-rings
 
 While not complete coverage, I aimed to offer complete or near complete keyboard navigation as it can aid with accesibility systems by ensuring that all items both can be navigated to at all, but also in the order you need.
 
-![Focus ring switching between buttons](/blog/hello_world/keyboard_nav.gif 'Focus ring switching between buttons')
+![Focus ring switching between buttons](/notes/hello_world/keyboard_nav.gif 'Focus ring switching between buttons')
 
 #### Reduced Motion
 
@@ -248,4 +248,4 @@ I will always try to improve accessibility where possible. If you feel I am miss
 
 And with all of that, we have the final result of what you are looking at right now!
 
-![A screenshot of nuro.dev](/blog/hello_world/screenshot.png 'A screenshot of nuro.dev')
+![A screenshot of nuro.dev](/notes/hello_world/screenshot.png 'A screenshot of nuro.dev')
