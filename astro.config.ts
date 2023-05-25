@@ -15,11 +15,10 @@ function getAdapter(): AstroIntegration | undefined {
 	});
 }
 
-// https://astro.build/config
 export default defineConfig({
 	// For some reason Astro does not allow passing `undefined` here
 	// so we need to assert the return type of `getAdapter` to `AstroIntegration`
 	adapter: getAdapter() as AstroIntegration,
-	integrations: [solidJs(), tailwind(), prefetch()],
+	integrations: [prefetch(), solidJs(), tailwind()],
 	output: 'server',
 });
