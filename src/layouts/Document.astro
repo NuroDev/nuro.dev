@@ -4,11 +4,16 @@ import { Background } from '~/components/Background';
 import { cn } from '~/utils/cn';
 
 interface Props {
+	background?: boolean;
 	description?: string;
 	title?: string;
 }
 
-const { description = '"Hey 👋 I\'m Ben, a developer"', title = 'nuro.dev' } = Astro.props;
+const {
+	background = true,
+	description = '"Hey 👋 I\'m Ben, a developer"',
+	title = 'nuro.dev',
+} = Astro.props;
 
 const isWebCrawler = isBot(Astro.request.headers.get('user-agent'));
 ---
@@ -40,6 +45,6 @@ const isWebCrawler = isBot(Astro.request.headers.get('user-agent'));
 		)}
 	>
 		<slot />
-		{!isWebCrawler ? <Background client:only /> : null}
+		{background && !isWebCrawler ? <Background client:only /> : null}
 	</body>
 </html>
