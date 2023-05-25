@@ -13,6 +13,9 @@ dependencies:
   '@astrojs/vercel':
     specifier: ^3.4.0
     version: 3.4.0(astro@2.5.1)(react@18.2.0)
+  '@astrolib/seo':
+    specifier: ^0.3.0
+    version: 0.3.0(astro@2.5.1)
   astro:
     specifier: ^2.5.1
     version: 2.5.1
@@ -201,6 +204,14 @@ packages:
     resolution: {integrity: sha512-mHZ7VgPNMeV3TYIw3SGHTKaJosBxA8bTzZ3QhNw509qvCJca4Lkjes8JywimuwTn+TMjEiv7ksNfwRluad3jqA==}
     dependencies:
       undici: 5.22.1
+    dev: false
+
+  /@astrolib/seo@0.3.0(astro@2.5.1):
+    resolution: {integrity: sha512-u0CBicM6nj0YIav76dA8ujaLnDwIWTnTkVJMk84jXsTOGR0/lA823WNf6kxSyWbds0kgegKnu1EuU9wIqkyWNg==}
+    peerDependencies:
+      astro: ^1.2.1 || ^2.0.0
+    dependencies:
+      astro: 2.5.1
     dev: false
 
   /@babel/code-frame@7.21.4:
