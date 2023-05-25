@@ -2,17 +2,39 @@
 import isBot from 'isbot';
 import { Background } from '~/components/Background';
 import { cn } from '~/utils/cn';
+import { AstroSeo, type Props as SeoProps } from '@astrolib/seo';
 
-interface Props {
+interface Props extends SeoProps {
 	background?: boolean;
-	description?: string;
-	title?: string;
 }
 
 const {
 	background = true,
-	description = '"Hey 👋 I\'m Ben, a developer"',
-	title = 'nuro.dev',
+	canonical = Astro.url.href,
+	defaultTitle = 'developer ─ nuro',
+	description = "Hey 👋 I'm Ben, a developer",
+	openGraph = {
+		description: "Hey 👋 I'm Ben, a developer",
+		images: [
+			{
+				url: new URL('/banner.png', Astro.url).href,
+				width: 1280,
+				height: 720,
+				type: 'image/png',
+			},
+		],
+		site_name: 'nuro',
+		title: 'developer ─ nuro',
+		url: Astro.url.href,
+	},
+	title = 'developer',
+	titleTemplate = '%s ─ nuro',
+	twitter = {
+		cardType: 'summary_large_image',
+		handle: '@nurodev',
+		site: '@nurodev',
+	},
+	...rest
 } = Astro.props;
 
 const isWebCrawler = isBot(Astro.request.headers.get('user-agent'));
@@ -23,9 +45,18 @@ const isWebCrawler = isBot(Astro.request.headers.get('user-agent'));
 		<meta charset="utf-8" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="description" content={description} />
 		<link rel="icon" type="image/png" href="/favicon.png" />
-		<title>{title}</title>
+
+		<AstroSeo
+			canonical={canonical}
+			defaultTitle={defaultTitle}
+			description={description}
+			openGraph={openGraph}
+			title={title}
+			titleTemplate={titleTemplate}
+			twitter={twitter}
+			{...rest}
+		/>
 
 		<style is:global>
 			.default-focus {
