@@ -1,0 +1,30 @@
+---
+import Document from '~/layouts/Document.astro';
+import { getCollection } from 'astro:content';
+
+const notes = await getCollection('notes');
+---
+
+<Document title="notes">
+	<main class="flex min-h-screen items-center justify-center py-12">
+		<div class="flex flex-col space-y-3">
+			<ul class="max-w-lg">
+				{
+					notes
+						.filter((note) => !note.data.draft)
+						.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+						.map((note) => (
+							<li>
+								<a
+									class="default-transition default-focus rounded-md font-medium text-white"
+									href={new URL(`/notes/${note.slug}`, Astro.url)}
+								>
+									{note.data.title}
+								</a>
+							</li>
+						))
+				}
+			</ul>
+		</div>
+	</main>
+</Document>

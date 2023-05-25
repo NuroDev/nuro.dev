@@ -1,10 +1,14 @@
 ---
-banner_alt: A photo of a forest overlooking the bright white sky in the background
-banner: https://images.unsplash.com/photo-1494825514961-674db1ac2700?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8
-title_prefix: Introducing
+draft: false
+
 title: 👋🏻 Hello World
 description: This site has been long overdue a re-design & fresh lick of paint, so here's how I did it.
-date: '2021-10-22'
+category: Introducing
+date: 2021-10-22
+
+banner:
+    alt: 'A photo of a forest overlooking the bright white sky in the background'
+    url: 'https://images.unsplash.com/photo-1494825514961-674db1ac2700?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8'
 ---
 
 ## :face_with_raised_eyebrow: What is this?

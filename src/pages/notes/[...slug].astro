@@ -1,0 +1,20 @@
+---
+import Document from '~/layouts/Document.astro';
+import { getEntryBySlug } from 'astro:content';
+
+const { slug } = Astro.params;
+if (!slug) return Astro.redirect('/notes');
+
+const note = await getEntryBySlug('notes', slug);
+if (!note || note.data.draft) return Astro.redirect('/notes');
+
+const { Content } = await note.render();
+---
+
+<Document title={note.data.title}>
+	<main class="flex min-h-screen items-center justify-center py-12">
+		<div class="flex flex-col space-y-3">
+			<Content />
+		</div>
+	</main>
+</Document>
