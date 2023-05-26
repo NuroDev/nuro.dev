@@ -16,6 +16,9 @@ dependencies:
   '@astrolib/seo':
     specifier: ^0.3.0
     version: 0.3.0(astro@2.5.1)
+  '@solid-primitives/audio':
+    specifier: ^1.3.13
+    version: 1.3.13(solid-js@1.4.3)
   astro:
     specifier: ^2.5.1
     version: 2.5.1
@@ -845,6 +848,33 @@ packages:
     dependencies:
       estree-walker: 2.0.2
       picomatch: 2.3.1
+    dev: false
+
+  /@solid-primitives/audio@1.3.13(solid-js@1.4.3):
+    resolution: {integrity: sha512-qPs0NL9RYJA1KMrVsZlVy93Fm7DNX3SiOZ1LaTaoI7xch9OxDfLeJ6ylxfq7TxUviFC1FPwFaAsB36pRk/juOw==}
+    peerDependencies:
+      solid-js: ^1.6.12
+    dependencies:
+      '@solid-primitives/static-store': 0.0.4(solid-js@1.4.3)
+      '@solid-primitives/utils': 6.2.0(solid-js@1.4.3)
+      solid-js: 1.4.3
+    dev: false
+
+  /@solid-primitives/static-store@0.0.4(solid-js@1.4.3):
+    resolution: {integrity: sha512-NcLtDNA6H+Z9LmqaUe4SKfMx0YbszIMXEqfV15cB34t5XyEeOM5TihYwsVJ/dpkmpHYzflm0SwAL+P9uwyzvWQ==}
+    peerDependencies:
+      solid-js: ^1.6.12
+    dependencies:
+      '@solid-primitives/utils': 6.2.0(solid-js@1.4.3)
+      solid-js: 1.4.3
+    dev: false
+
+  /@solid-primitives/utils@6.2.0(solid-js@1.4.3):
+    resolution: {integrity: sha512-T62WlLwKkbmicsw/xpwMQyv9MmZRSaVyutXfS5icc9v0cb8qGMUxRxr5LVvZHYQCZ9DEFboZB0r711xsbVBbeA==}
+    peerDependencies:
+      solid-js: ^1.6.12
+    dependencies:
+      solid-js: 1.4.3
     dev: false
 
   /@trivago/prettier-plugin-sort-imports@4.1.1(prettier@2.8.8):
