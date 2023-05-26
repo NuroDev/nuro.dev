@@ -5,7 +5,7 @@ export function Click(): null {
 	const { play, setVolume } = makeAudioPlayer('/sounds/click.ogg');
 
 	onMount((): void => {
-		setVolume(0.25);
+		setVolume(0.5);
 		document.addEventListener('mousedown', play);
 		document.addEventListener('mouseup', play);
 	});
