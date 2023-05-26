@@ -1,0 +1,10 @@
+{
+	"date": "2020-11-16T00:00:00.000Z",
+	"title": "Started @ Aiming.pro",
+	"description": "Joined the Aiming.pro team",
+	"icon": "feather:briefcase",
+	"link": {
+		"text": "Visit Aiming.pro",
+		"url": "https://aiming.pro/"
+	}
+}

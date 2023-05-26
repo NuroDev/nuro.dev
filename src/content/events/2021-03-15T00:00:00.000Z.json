@@ -1,0 +1,10 @@
+{
+	"date": "2021-03-15T00:00:00.000Z",
+	"title": "Started @ Attio",
+	"description": "Joined the Attio team",
+	"icon": "feather:briefcase",
+	"link": {
+		"text": "Visit Attio",
+		"url": "https://attio.com/"
+	}
+}

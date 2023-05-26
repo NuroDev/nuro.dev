@@ -15,6 +15,26 @@ const notesCollection = defineCollection({
 	type: 'content',
 });
 
+const eventsCollection = defineCollection({
+	schema: z.object({
+		title: z.string(),
+		description: z.string().optional(),
+		date: z
+			.string()
+			.datetime()
+			.transform((str) => new Date(str)),
+		icon: z.string(),
+		link: z
+			.object({
+				text: z.string(),
+				url: z.string(),
+			})
+			.optional(),
+	}),
+	type: 'data',
+});
+
 export const collections = {
 	notes: notesCollection,
+	events: eventsCollection,
 };

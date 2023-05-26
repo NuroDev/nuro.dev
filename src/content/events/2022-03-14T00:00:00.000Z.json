@@ -1,0 +1,10 @@
+{
+	"date": "2022-03-14T00:00:00.000Z",
+	"title": "Started @ Wander",
+	"description": "Joined the Wander team",
+	"icon": "feather:briefcase",
+	"link": {
+		"text": "Visit Wander",
+		"url": "https://wander.com/"
+	}
+}

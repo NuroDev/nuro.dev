@@ -1,0 +1,10 @@
+{
+	"date": "2022-12-15T00:00:00.000Z",
+	"title": "Started @ RONIN",
+	"description": "Joined the RONIN team",
+	"icon": "feather:briefcase",
+	"link": {
+		"text": "Visit RONIN",
+		"url": "https://ronin.co/"
+	}
+}

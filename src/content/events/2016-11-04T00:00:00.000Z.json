@@ -1,0 +1,10 @@
+{
+	"date": "2016-11-04T00:00:00.000Z",
+	"title": "First Job!",
+	"description": "Began my first part-time job as a junior service desk analyist at CreeperHost",
+	"icon": "feather:briefcase",
+	"link": {
+		"text": "Visit CreeperHost",
+		"url": "http://creeperhost.net/"
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"date": "2018-10-11T00:00:00.000Z",
+	"title": "First Developer Role",
+	"description": "Began an internship as a junior developer working at Stink Studios",
+	"icon": "feather:briefcase",
+	"link": {
+		"text": "Visit Stink Studios",
+		"url": "https://stinkstudios.com/"
+	}
+}
