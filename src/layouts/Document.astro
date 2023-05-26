@@ -3,6 +3,7 @@ import isBot from 'isbot';
 import { Background } from '~/components/Background';
 import { cn } from '~/utils/cn';
 import { AstroSeo, type Props as SeoProps } from '@astrolib/seo';
+import { Click } from '~/components/Click';
 
 interface Props extends SeoProps {
 	background?: boolean;
@@ -76,6 +77,7 @@ const isWebCrawler = isBot(Astro.request.headers.get('user-agent'));
 		)}
 	>
 		<slot />
+		<Click client:only />
 		{background && !isWebCrawler ? <Background client:only /> : null}
 	</body>
 </html>
