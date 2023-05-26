@@ -1,0 +1,24 @@
+---
+import Document from '~/layouts/Document.astro';
+import { getCollection } from 'astro:content';
+
+const events = await getCollection('events');
+---
+
+<Document title="timeline">
+	<main class="flex min-h-screen items-center justify-center py-12">
+		<div class="flex flex-col space-y-3">
+			<h1 class="text-3xl font-extrabold text-white">Timeline</h1>
+
+			<ul class="text-gray-200" role="list">
+				{
+					events
+						.sort((a, b) => +b.data.date - +a.data.date)
+						.map(({ data: event }) => (
+							<pre class="whitespace-prewrap">{JSON.stringify(event, null, 4)}</pre>
+						))
+				}
+			</ul>
+		</div>
+	</main>
+</Document>
