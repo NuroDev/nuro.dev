@@ -1,11 +1,12 @@
 ---
+import { Live } from '~/components/Live';
 import Document from '~/layouts/Document.astro';
 ---
 
 <Document>
 	<main class="flex min-h-screen items-center justify-center py-12">
-		<div class="flex flex-col space-y-3">
-			<h1 class="text-3xl font-extrabold text-white">Hello World</h1>
+		<div class="flex w-full max-w-sm flex-col space-y-3">
+			<h1 class="text-center text-3xl font-extrabold text-white">Hello World</h1>
 
 			<a
 				class="default-transition default-focus rounded-md border border-gray-500 px-4 py-2 text-center font-bold text-white backdrop-blur-sm backdrop-filter hover:border-gray-600 hover:bg-gray-900/25"
@@ -24,6 +25,8 @@ import Document from '~/layouts/Document.astro';
 				href="/gear"
 				rel="prefetch">Gear</a
 			>
+
+			<Live client:only />
 		</div>
 	</main>
 </Document>
