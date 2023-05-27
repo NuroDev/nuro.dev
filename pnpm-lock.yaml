@@ -34,6 +34,9 @@ dependencies:
   solid-js:
     specifier: ^1.4.3
     version: 1.4.3
+  solid-use-lanyard:
+    specifier: ^1.0.3
+    version: 1.0.3(solid-js@1.4.3)
   tailwindcss:
     specifier: ^3.0.24
     version: 3.0.24(postcss@8.4.23)
@@ -4293,6 +4296,14 @@ packages:
 
   /solid-js@1.4.3:
     resolution: {integrity: sha512-3uh2cbT4ICronIasLAxycF6SVgvqcfwFCDCzlEA9CEahn1qQg8Rw8aRGiI4O51PrHcN5aPRO9knYYRCs0PgzcQ==}
+    dev: false
+
+  /solid-use-lanyard@1.0.3(solid-js@1.4.3):
+    resolution: {integrity: sha512-3gYcN7kgXVdQFpumItIa/4jFAYqxG6pafwtYRTFDT/CbZMHaL4x4V5cZ9mrmf9/uveez3ODTLsoqXbGR5zzk/Q==}
+    peerDependencies:
+      solid-js: '*'
+    dependencies:
+      solid-js: 1.4.3
     dev: false
 
   /source-map-js@1.0.2:

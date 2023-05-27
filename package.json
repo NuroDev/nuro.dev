@@ -28,6 +28,7 @@
 		"isbot": "^3.6.10",
 		"ogl-typescript": "^0.1.40",
 		"solid-js": "^1.4.3",
+		"solid-use-lanyard": "^1.0.3",
 		"tailwindcss": "^3.0.24",
 		"tailwindcss-animate": "^1.0.5"
 	},
