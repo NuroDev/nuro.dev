@@ -116,7 +116,7 @@ export const Background: Component = () => {
 		animationId = requestAnimationFrame(update);
 
 		particles.rotation.z += 0.001;
-		program.uniforms.uTime.value = t * 0.0001;
+		program.uniforms.uTime!.value = t * 0.0001;
 
 		renderer.render({
 			scene: particles,
