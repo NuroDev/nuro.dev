@@ -4,13 +4,15 @@
 // export & use our `colors` property in our `Background` component.
 
 import Animate from 'tailwindcss-animate';
+import Typography from '@tailwindcss/typography';
 
 const defineConfig = (config) => config;
 
 export default defineConfig({
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}'],
 	plugins: [
-		Animate
+		Animate,
+		Typography,
 	],
 	theme: {
 		extend: {
