@@ -36,7 +36,8 @@
 		"solid-js": "^1.4.3",
 		"solid-use-lanyard": "^1.0.3",
 		"tailwindcss": "^3.0.24",
-		"tailwindcss-animate": "^1.0.5"
+		"tailwindcss-animate": "^1.0.5",
+		"zod": "^3.21.4"
 	},
 	"devDependencies": {
 		"@trivago/prettier-plugin-sort-imports": "^4.1.1",
