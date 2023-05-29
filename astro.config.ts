@@ -26,8 +26,10 @@ export default defineConfig({
 	adapter: getAdapter(),
 	integrations: [prefetch(), solidJs(), tailwind()],
 	markdown: {
+		gfm: true,
 		rehypePlugins: [[RehypeAutolinkHeadings, {}]],
 		remarkPlugins: [RemarkCodeTitles, RemarkEmoji, RemarkPrism, RemarkSlug],
+		syntaxHighlight: 'prism',
 	},
 	output: 'server',
 });
