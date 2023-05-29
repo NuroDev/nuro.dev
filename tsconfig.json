@@ -7,7 +7,8 @@
 		"paths": {
 			"~/*": ["./src/*"]
 		},
-		"strict": true
+		"strict": true,
+		"types": ["@astrojs/image/client"]
 	},
 	"include": ["./**/*.ts", "./**/*.tsx"]
 }

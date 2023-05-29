@@ -1,3 +1,4 @@
+import Image from '@astrojs/image';
 import prefetch from '@astrojs/prefetch';
 import solidJs from '@astrojs/solid-js';
 import tailwind from '@astrojs/tailwind';
@@ -22,9 +23,17 @@ function getAdapter(): AstroIntegration {
 	});
 }
 
+// https://astro.build/config
 export default defineConfig({
 	adapter: getAdapter(),
-	integrations: [prefetch(), solidJs(), tailwind()],
+	integrations: [
+		Image({
+			serviceEntryPoint: '@astrojs/image/sharp',
+		}),
+		prefetch(),
+		solidJs(),
+		tailwind(),
+	],
 	markdown: {
 		gfm: true,
 		rehypePlugins: [[RehypeAutolinkHeadings, {}]],
